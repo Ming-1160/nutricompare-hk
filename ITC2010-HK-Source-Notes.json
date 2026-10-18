@@ -1,0 +1,62 @@
+{
+  "title": "NutriCompare HK 香港資料來源核對紀錄",
+  "checked_on": "2026-10-18",
+  "status": "研究與來源核對；原型未完成接入，未完成跨來源商品配對",
+  "records": [
+    {
+      "name": "消費者委員會「格價資訊通」",
+      "role": "香港價格、商戶與優惠",
+      "url": "https://data.gov.hk/tc-data/dataset/cc-pricewatch-pricewatch",
+      "data_url": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+      "dictionary": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch_data_dictionary.pdf",
+      "evidence": "本次成功讀取JSON快照，共2736項商品；官方列每日更新，另有中英文CSV。",
+      "example": "雅樂思原味巧克力三文治餅乾200克：快照有惠康、百佳、Market Place、AEON價格記錄。",
+      "limits": "未有營養、成分、過敏原、庫存欄位；P開頭編號不是GTIN。價格是快照，非各實體店即時售價／庫存。依官方條款標明來源。",
+      "terms": "https://data.gov.hk/en/terms-and-conditions"
+    },
+    {
+      "name": "香港零售商官方頁",
+      "role": "規格、購買連結、價格及部分產品成分",
+      "urls": [
+        "https://www.pns.hk/zh-hk/%E6%99%82%E6%99%82%E9%A3%9F%E5%A4%BE%E5%BF%83%E9%A4%85%E4%BB%80%E9%8C%A6%E5%84%AA%E6%83%A0%E8%A3%9D/p/BP_333982",
+        "https://www.wellcome.com.hk/zh-hant/wellcome/category/100022-100254-101403/1.html"
+      ],
+      "evidence": "已查百佳嘉頓394g夾心餅商品頁及惠康夾心餅分類頁。百佳官方頁搜尋收錄顯示成分及廠房提示，但直接打開的可讀版本缺少這部分。",
+      "limits": "並非每頁有完整營養和過敏聲明；會員／多件優惠、包裝及地區版本可能不同。未取得批量API或圖片重用授權。"
+    },
+    {
+      "name": "實物包裝與品牌官方頁",
+      "role": "指定產品營養、成分、過敏聲明及產品身份核對",
+      "url": "https://www.garden.com.hk/tc/%E7%94%A2%E5%93%81/%E9%A6%99%E6%B8%AF/%E9%9B%B6%E5%94%AE/%E9%A4%85%E4%B9%BE/%E5%A4%BE%E5%BF%83%E9%A4%85/",
+      "evidence": "嘉頓香港產品系列官方搜尋結果可讀；直接讀取曾回502。未聲稱已取得完整產品營養表。自行拍攝當前包裝是擬採用核對方法，尚未完成。",
+      "limits": "要核對口味、容量、配方、條碼及香港銷售版本。找不到資料就記錄未知。"
+    },
+    {
+      "name": "香港營養學會（HKNA）2026預先包裝小食資料庫",
+      "role": "本地產品及標籤資料交叉核對",
+      "url": "https://www.hkna.org.hk/database-of-prepackaged-snacks-2026/",
+      "food_pdf": "https://www.hkna.org.hk/wp-content/uploads/2026/09/Database%20of%20Prepackaged%20Snacks%202026%20-%20Food_EN.pdf",
+      "evidence": "已讀官方頁及2026食品PDF；含產品、成分及部分營養欄位。",
+      "limits": "學生小食分類不是糖尿病患者個人適合標準；沒有完整總碳水欄位。公開PDF不等於開放API或整庫轉載授權。"
+    },
+    {
+      "name": "香港食物安全中心",
+      "role": "營養標籤及過敏原規則依據；一般食物營養背景",
+      "urls": [
+        "https://www.cfs.gov.hk/english/faq/faq_14.html",
+        "https://www.cfs.gov.hk/english/multimedia/multimedia_pub/multimedia_pub_fsf_123_02.html",
+        "https://www.cfs.gov.hk/english/nutrient/index.php"
+      ],
+      "evidence": "已核對標籤／過敏原官方指引及NIIS介紹。",
+      "limits": "NIIS一般食物成分不能填成指定品牌營養值；指引不是商品資料庫，也不是個人醫療判斷。"
+    },
+    {
+      "name": "Open Food Facts",
+      "role": "補充條碼、成分、營養及標籤照片候選",
+      "url": "https://openfoodfacts.github.io/openfoodfacts-server/api/",
+      "license_url": "https://openfoodfacts.github.io/openfoodfacts-server/api/tutorials/license-be-on-the-legal-side/",
+      "evidence": "已查官方API文件。",
+      "limits": "群眾資料及香港特定版本要核對；沒有全港完整覆蓋保證。ODbL及圖片授權等須分別核對，不能假設任意合併。"
+    }
+  ]
+}

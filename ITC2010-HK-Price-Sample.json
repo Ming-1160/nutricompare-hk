@@ -1,0 +1,64 @@
+{
+  "checked_on": "2026-10-18",
+  "source_url": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+  "http_status": 200,
+  "record_count": 2736,
+  "record_keys": [
+    "code",
+    "brand",
+    "name",
+    "cat1Name",
+    "cat2Name",
+    "cat3Name",
+    "prices",
+    "offers"
+  ],
+  "example": {
+    "code": "P000003649",
+    "brand": {
+      "en": "Arnott's Tim Tam",
+      "zh-Hant": "雅樂思",
+      "zh-Hans": "雅乐思"
+    },
+    "name": {
+      "en": "Original Chocolate Biscuits 200g",
+      "zh-Hant": "原味巧克力三文治餅乾 200克",
+      "zh-Hans": "原味巧克力三文治饼乾 200克"
+    },
+    "cat1Name": {
+      "en": "Candies / Biscuits / Snacks",
+      "zh-Hant": "糖果 / 餅乾 / 小食",
+      "zh-Hans": "糖果 / 饼乾 / 小食"
+    },
+    "cat2Name": {
+      "en": "Biscuits",
+      "zh-Hant": "餅乾",
+      "zh-Hans": "饼乾"
+    },
+    "cat3Name": {
+      "en": "Sandwich crackers",
+      "zh-Hant": "夾心餅 / 餡餅",
+      "zh-Hans": "夹心饼 / 馅饼"
+    },
+    "prices": [
+      {
+        "supermarketCode": "WELLCOME",
+        "price": "20.00"
+      },
+      {
+        "supermarketCode": "PARKNSHOP",
+        "price": "33.90"
+      },
+      {
+        "supermarketCode": "JASONS",
+        "price": "20.00"
+      },
+      {
+        "supermarketCode": "AEON",
+        "price": "36.90"
+      }
+    ],
+    "offers": []
+  },
+  "integration_status": "Source read only; no prototype integration or exact nutrition/allergen match completed"
+}
