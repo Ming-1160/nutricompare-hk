@@ -141,6 +141,8 @@ export function filterProducts(products, filters = {}) {
   const store = clean(filters.store);
   const hasAllergenSelection = Array.isArray(filters.allergens) && filters.allergens.length > 0;
   const filtered = (Array.isArray(products) ? products : []).filter(product => {
+    if (filters.dataScope === 'nutrition' && !NUTRIENTS.some(key => numeric(product.nutrition?.[key]) !== null)) return false;
+    if (filters.dataScope === 'hk-label' && product.allergens?.status !== 'complete') return false;
     if (category && category !== 'all' && clean(product.category) !== category) return false;
     if (origin && origin !== 'all' && clean(product.origin) !== origin) return false;
     if (!matchesQuery(product, filters.query)) return false;
@@ -164,6 +166,15 @@ export function filterProducts(products, filters = {}) {
     if (units.size > 1) return filtered;
     const [key, descending] = nutritionSort;
     return filtered.sort((a, b) => compareNullable(nutritionFor(a)[key], nutritionFor(b)[key], descending));
+  }
+  if (clean(filters.query) && (!filters.sort || filters.sort === 'relevance')) {
+    const tokens=searchText(filters.query).split(' ').filter(Boolean);
+    const score=product=>{
+      const primary=searchText([product.nameZh,product.nameEn,typeof product.brand==='object'?Object.values(product.brand??{}).join(' '):product.brand,product.brandEn].filter(Boolean).join(' '));
+      return tokens.reduce((sum,token)=>sum+Number(primary.includes(token)),0);
+    };
+    // A broad source category can match the query, but exact product words come first.
+    return filtered.sort((a,b)=>score(b)-score(a));
   }
   return filtered;
 }

@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "consumer-council-pricewatch",
+  "sourceName": "香港消費者委員會 網上價格一覽通（開放數據）",
+  "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+  "datasetUrl": "https://data.gov.hk/tc-data/dataset/cc-pricewatch-pricewatch",
+  "sourcePortalUrl": "https://online-price-watch.consumer.org.hk/opw/",
+  "sourceDictionaryUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch_data_dictionary.pdf",
+  "termsUrl": "https://data.gov.hk/en/terms-and-conditions",
+  "retrievedAt": "2026-10-21T05:47:56.707Z",
+  "snapshotDate": "2026-10-21",
+  "httpLastModified": "Wed, 21 Oct 2026 05:00:01 GMT",
+  "sourcePriceDate": null,
+  "rawRecordCount": 2735,
+  "foodRecordCount": 1780,
+  "excludedRecordCount": 955,
+  "priceObservationCount": 4489,
+  "offerCount": 1661,
+  "invalidPriceCount": 0,
+  "merchantCount": 9,
+  "curatedRecordCount": 23,
+  "matchedCuratedRecordCount": 15,
+  "additionalRecordCount": 1765,
+  "combinedUniqueRecordCount": 1788,
+  "sourceCategories": [
+    {
+      "en": "Bakery / Cereals / Spreads",
+      "zh": "麵包蛋糕 / 穀類早餐 / 麵包醬",
+      "count": 198,
+      "included": true
+    },
+    {
+      "en": "Dairy / Soy products / Eggs",
+      "zh": "奶類及乳製品 / 大豆製品 / 蛋類",
+      "count": 230,
+      "included": true
+    },
+    {
+      "en": "Candies / Biscuits / Snacks",
+      "zh": "糖果 / 餅乾 / 小食",
+      "count": 283,
+      "included": true
+    },
+    {
+      "en": "Rice / Oil / Canned food / Fruits / Vegetables / Meat",
+      "zh": "米 / 食油 / 罐頭 / 蔬果 / 肉類",
+      "count": 435,
+      "included": true
+    },
+    {
+      "en": "Noodles / Cooking needs / Processed food (cold)",
+      "zh": "粉麵 / 煮食用料 / 冷凍加工食品",
+      "count": 424,
+      "included": true
+    },
+    {
+      "en": "Drinks",
+      "zh": "飲品",
+      "count": 210,
+      "included": true
+    },
+    {
+      "en": "Milk powder / Baby care",
+      "zh": "奶粉 / 嬰兒用品",
+      "count": 148,
+      "included": false
+    },
+    {
+      "en": "Personal care",
+      "zh": "個人護理",
+      "count": 416,
+      "included": false
+    },
+    {
+      "en": "Household / Pet food and care",
+      "zh": "家居用品 / 寵物食品及用品",
+      "count": 306,
+      "included": false
+    },
+    {
+      "en": "Beer / Wines / Spirits",
+      "zh": "酒類",
+      "count": 85,
+      "included": false
+    }
+  ],
+  "uiCategories": {
+    "bakery": 198,
+    "drinks": 334,
+    "dairy": 106,
+    "snacks": 195,
+    "biscuits": 88,
+    "pantry": 435,
+    "meals": 424
+  },
+  "stores": {
+    "PARKNSHOP": {
+      "id": "PARKNSHOP",
+      "name": "百佳 PNS",
+      "url": "https://www.pns.hk/",
+      "linkType": "merchant-home",
+      "linkLabel": "前往商戶網站查找商品",
+      "priceCount": 1430
+    },
+    "WELLCOME": {
+      "id": "WELLCOME",
+      "name": "惠康",
+      "url": "https://www.wellcome.com.hk/",
+      "linkType": "merchant-home",
+      "linkLabel": "前往商戶網站查找商品",
+      "priceCount": 1196
+    },
+    "JASONS": {
+      "id": "JASONS",
+      "name": "Market Place",
+      "url": "https://www.marketplacehk.com/",
+      "linkType": "merchant-home",
+      "linkLabel": "前往商戶網站查找商品",
+      "priceCount": 1102
+    },
+    "AEON": {
+      "id": "AEON",
+      "name": "AEON",
+      "url": "https://www.aeoncity.com.hk/",
+      "linkType": "merchant-home",
+      "linkLabel": "前往商戶網站查找商品",
+      "priceCount": 577
+    },
+    "DCHFOOD": {
+      "id": "DCHFOOD",
+      "name": "大昌食品",
+      "url": "https://online-price-watch.consumer.org.hk/opw/",
+      "linkType": "price-source",
+      "linkLabel": "前往消委會格價頁查閱資料",
+      "priceCount": 108
+    },
+    "LUNGFUNG": {
+      "id": "LUNGFUNG",
+      "name": "龍豐",
+      "url": "https://online-price-watch.consumer.org.hk/opw/",
+      "linkType": "price-source",
+      "linkLabel": "前往消委會格價頁查閱資料",
+      "priceCount": 20
+    },
+    "WATSONS": {
+      "id": "WATSONS",
+      "name": "屈臣氏",
+      "url": "https://www.watsons.com.hk/",
+      "linkType": "merchant-home",
+      "linkLabel": "前往商戶網站查找商品",
+      "priceCount": 49
+    },
+    "MANNINGS": {
+      "id": "MANNINGS",
+      "name": "萬寧",
+      "url": "https://www.mannings.com.hk/",
+      "linkType": "merchant-home",
+      "linkLabel": "前往商戶網站查找商品",
+      "priceCount": 6
+    },
+    "SASA": {
+      "id": "SASA",
+      "name": "莎莎",
+      "url": "https://online-price-watch.consumer.org.hk/opw/",
+      "linkType": "price-source",
+      "linkLabel": "前往消委會格價頁查閱資料",
+      "priceCount": 1
+    }
+  },
+  "compactSchema": "Array of records. Shared provenance, unknown nutrition/allergens and merchant link fields are expanded at runtime; prices are whole-pack published values.",
+  "sourceFields": [
+    "code",
+    "brand (en / zh-Hant)",
+    "name (en / zh-Hant)",
+    "three category levels",
+    "merchant code",
+    "published single-item price",
+    "offer text"
+  ],
+  "absentSourceFields": [
+    "barcode / GTIN",
+    "nutrition panel",
+    "ingredients",
+    "allergen statement",
+    "country of manufacture",
+    "stock",
+    "direct merchant product URL",
+    "per-price effective date"
+  ],
+  "inclusionNote": "匯入消委會六個一般食品頂層分類；糖果、小食、主食、食油、調味料等均保留作搜尋及格價，商品出現不代表適合個別慢性病患者。",
+  "exclusionNote": "不匯入酒類、個人護理、家居／寵物分類；「奶粉／嬰兒用品」整個混合分類亦未納入，因此當中的成人奶粉同樣未覆蓋。這不是全港超市全部商品。",
+  "limitations": [
+    "只覆蓋該開放資料檔案內的指定商戶及商品，不等於直接連接所有超市庫存或全部零售網站。",
+    "商戶資料來自消委會公開價格檔；本次未批量擷取或繞過百佳、惠康等零售網站限制。",
+    "檔案查閱／生成日期不等於每筆價格生效日期；價格、供應、運費及優惠以商戶為準。",
+    "多件／會員優惠僅保留來源文字，不自動套入單件預算及最低價。",
+    "沒有營養、成分及完整過敏聲明的商品維持未知；啟用過敏篩選時不會當作通過。",
+    "消委會 P 開頭編號是來源商品代號，並非條碼；不以名稱相似推斷不同包裝的營養相同。"
+  ],
+  "attribution": "資料來源：香港消費者委員會「網上價格一覽通」開放數據，經 DATA.GOV.HK 發布。NutriCompare 為學生原型，並非消委會或政府認可產品。"
+}
