@@ -13,19 +13,21 @@ Traditional Chinese, mobile-responsive ITC2010 functional prototype. Static HTML
 
 The root page and `app/` both open the functional prototype. `group-brief.html` preserves the earlier group proposal and research notes.
 
-## Data status: 21 October 2026
+## Data status: 21 October 2026, version 1.1
 
-12 products, 31 Consumer Council merchant price observations. Six nutrition records are **overseas manufacturer references**, three are **partial HKNA references**, and three have no nutrition values. Foreign/reference formulations are not verified matches to current Hong Kong packaging. Every product preserves its sources, date, transformations and limitations in `app/data/products.json`.
+23 products and 52 merchant price observations. Eleven new Hong Kong source records comprise **five visually inspected HK-market online back-label photos** and **six full HK manufacturer/retailer online statements**. These are distinguished on cards and in details, with direct label/source links. Five records are complete HK retailer statements, not photographs of a Hong Kong sticker; one is the Hong Kong manufacturer's Bonchi record. Its unmatched 80g pack price remains unknown.
 
-**No complete current HK package allergen record has been verified.** An active allergy filter currently returns no confirmed matching products, with separate known-conflict and unknown counts. This intentionally avoids treating incomplete labels as safe. Next data step: verify actual HK packs, full ingredients/precautions and identity before changing completeness flags. Do not promote records merely to make results non-empty.
+`allergens.status: complete` means all ingredients and visible allergy/precaution information in the specified HK published source were recorded; it is **not physical current-batch verification or a cross-contact safety guarantee**. An active milk restriction returns five source-scoped no-listed-match records; peanut returns six. Combining peanut with HKD20 leaves the exact 236ml Kowloon Dairy record. The three Vitasoy label versions explicitly contain milk and soy, and factory precaution statements remain exclusions. The Vita zero-sugar tea also has factory allergen warnings and is excluded accordingly.
 
-Prices were retrieved on 21 October; this is not a per-price effective date, a live price feed or a stock guarantee. Most purchase links lead to merchant homepages, clearly labelled as such. Member/multi-buy discounts and delivery charges are excluded. No clinical benefit or real-user testing is claimed.
+The original twelve records remain unchanged in completeness: six overseas manufacturer references, three partial HKNA references and three price-only records. They cannot pass an active allergy filter. Missing nutrition stays unknown. Some source image paths/date stamps reflect 2022/2023/2025 packaging; source age and version limits are visible. No newly inspected current physical batch is claimed.
+
+Prices were retrieved on 21 October; this is not a per-price effective date, a live feed or a stock guarantee. Consumer Council prices and exact HK retailer product-page prices are kept distinct. New retail channels include Glutenfree HK (monthly orders/batched delivery) and city'super. Product links and merchant homepage links are labelled separately. Member/multi-buy discounts and delivery charges are excluded. No clinical benefit or real-user testing is claimed.
 
 ## Run and check
 
 Serve this folder over HTTP, for example `python -m http.server 8773`, then open `http://localhost:8773/`. Direct `file:` use cannot fetch the JSON reliably.
 
-Engine tests: `node --test app/tests/engine.test.mjs`.
+Engine and actual-catalogue tests: `node --test app/tests/engine.test.mjs app/tests/catalogue.test.mjs`.
 
 ## Optional AI integration
 

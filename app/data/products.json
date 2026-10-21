@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 1,
-  "updatedAt": "2026-10-21T12:33:45+08:00",
+  "schemaVersion": 2,
+  "updatedAt": "2026-10-21T05:02:05.866Z",
   "priceSnapshotAt": "2026-10-21",
   "priceRetrievedAt": "2026-10-21T12:26:03+08:00",
   "sourcePriceDate": null,
@@ -62,7 +62,7 @@
       "prices": [
         {
           "store": "WELLCOME",
-          "price": 20.0,
+          "price": 20,
           "url": "https://www.wellcome.com.hk/",
           "linkType": "merchant-home",
           "linkLabel": "前往商戶網站查找商品",
@@ -86,7 +86,7 @@
         },
         {
           "store": "JASONS",
-          "price": 20.0,
+          "price": 20,
           "url": "https://www.marketplacehk.com/",
           "linkType": "merchant-home",
           "linkLabel": "前往商戶網站查找商品",
@@ -178,7 +178,7 @@
       "prices": [
         {
           "store": "WELLCOME",
-          "price": 30.0,
+          "price": 30,
           "url": "https://www.wellcome.com.hk/",
           "linkType": "merchant-home",
           "linkLabel": "前往商戶網站查找商品",
@@ -190,7 +190,7 @@
         },
         {
           "store": "JASONS",
-          "price": 30.0,
+          "price": 30,
           "url": "https://www.marketplacehk.com/",
           "linkType": "merchant-home",
           "linkLabel": "前往商戶網站查找商品",
@@ -351,7 +351,7 @@
         "fat": 23.6,
         "saturatedFat": 12.4,
         "protein": 6.7,
-        "fibre": 3.0,
+        "fibre": 3,
         "sodiumMg": 376,
         "carbohydrateDefinition": "unspecified",
         "status": "verified-source",
@@ -372,7 +372,7 @@
       "prices": [
         {
           "store": "WELLCOME",
-          "price": 41.0,
+          "price": 41,
           "url": "https://www.wellcome.com.hk/",
           "linkType": "merchant-home",
           "linkLabel": "前往商戶網站查找商品",
@@ -556,7 +556,7 @@
       "prices": [
         {
           "store": "WELLCOME",
-          "price": 46.0,
+          "price": 46,
           "url": "https://www.wellcome.com.hk/",
           "linkType": "merchant-home",
           "linkLabel": "前往商戶網站查找商品",
@@ -592,7 +592,7 @@
         },
         {
           "store": "AEON",
-          "price": 58.0,
+          "price": 58,
           "url": "https://www.aeoncity.com.hk/",
           "linkType": "merchant-home",
           "linkLabel": "前往商戶網站查找商品",
@@ -972,7 +972,7 @@
         },
         {
           "store": "PARKNSHOP",
-          "price": 18.0,
+          "price": 18,
           "url": "https://www.pns.hk/en/peanut-wafer/p/BP_120139",
           "linkType": "product",
           "linkLabel": "查看百佳商品頁",
@@ -1073,7 +1073,7 @@
         },
         {
           "store": "PARKNSHOP",
-          "price": 18.0,
+          "price": 18,
           "url": "https://www.pns.hk/",
           "linkType": "merchant-home",
           "linkLabel": "前往商戶網站查找商品",
@@ -1167,7 +1167,7 @@
         },
         {
           "store": "PARKNSHOP",
-          "price": 18.0,
+          "price": 18,
           "url": "https://www.pns.hk/",
           "linkType": "merchant-home",
           "linkLabel": "前往商戶網站查找商品",
@@ -1203,6 +1203,1286 @@
       "versionStatus": "hk-label-unverified",
       "ingredientsSummary": null,
       "barcode": null
+    },
+    {
+      "id": "HK-GFHK-TERRASANA-BLACK-SESAME-60",
+      "nameZh": "有機黑芝麻米餅 60克",
+      "nameEn": "Terrasana Organic Black Sesame Crackers 60gr",
+      "brand": "Terrasana",
+      "category": "biscuits",
+      "tags": [
+        "餅乾",
+        "脆餅",
+        "crackers",
+        "gluten-free"
+      ],
+      "packSize": "60克",
+      "quantity": 60,
+      "quantityUnit": "g",
+      "servingSize": null,
+      "origin": null,
+      "sourceCountry": "the Netherlands",
+      "barcode": null,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 467,
+        "carbohydrates": 46.5,
+        "sugars": 1,
+        "fat": 23,
+        "saturatedFat": 3.5,
+        "protein": 14,
+        "fibre": 9,
+        "sodiumMg": 440,
+        "sourceSaltG": 1.1,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-hk-retailer-source",
+        "region": "hk-retailer-online",
+        "conversionNote": "零售商標示salt克，鈉毫克依salt÷2.5×1000換算；未將來源碳水改稱淨碳水。"
+      },
+      "allergens": {
+        "contains": [
+          "soy",
+          "sesame"
+        ],
+        "mayContain": [
+          "eggs",
+          "fish",
+          "crustaceans"
+        ],
+        "status": "complete",
+        "text": "May contain traces of egg, fish and crustaceans. Allergens: tamari soy sauce, soy beans, sesame seeds",
+        "otherMayContain": [],
+        "coverage": "Full HK retailer ingredient and precaution statement inspected",
+        "verificationMethod": "hk-retailer-online-full-statement",
+        "physicalPackVerified": false,
+        "physicalPackChecked": false,
+        "completeSource": "hk-retailer-online-full-statement"
+      },
+      "ingredients": "Brown rice*, black sesame seeds* (29.1%), tamari soy sauce* (soy beans*, water, sea salt, koji ferment). * From certified organic farming.",
+      "prices": [
+        {
+          "store": "GLUTENFREEHK",
+          "price": 69,
+          "currency": "HKD",
+          "url": "https://glutenfreehk.com/products/terrasana-organic-black-sesame-crackers",
+          "sourceUrl": "https://glutenfreehk.com/products/terrasana-organic-black-sesame-crackers",
+          "linkType": "product",
+          "checkedAt": "2026-10-21",
+          "availability": "orderable-online-snapshot",
+          "note": "香港零售商網頁當次單件標價；商戶採月度訂購／分批配送，送貨安排及庫存須到商戶確認。未計配送費。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Glutenfree HK 香港零售商完整產品資料",
+          "url": "https://glutenfreehk.com/products/terrasana-organic-black-sesame-crackers",
+          "checkedAt": "2026-10-21",
+          "scope": "香港上架產品之名稱、規格、完整成分／過敏與預警聲明、每100克營養及港元價格"
+        }
+      ],
+      "dataStatus": "hk-retailer-label",
+      "sourceLimit": "已讀取香港零售商該規格的完整網上營養、成分及過敏聲明；未檢查當前實物包裝／批次。結果只表示來源未列出所選過敏原，不代表無過敏原或保證安全。",
+      "labelEvidence": {
+        "market": "Hong Kong retailer listing",
+        "sourceType": "retailer-product-information",
+        "nutritionPresent": true,
+        "fullIngredientsPresent": true,
+        "explicitPrecautionPresent": true,
+        "physicalPackPhotoInspected": false,
+        "originalCountryField": "the Netherlands",
+        "sourceImage": "//cdn.shopify.com/s/files/1/0671/6139/1192/files/terrasana-zwarte-rijstcrackers_2.png?v=1757223400",
+        "pricePublicJsonUrl": "https://glutenfreehk.com/products/terrasana-organic-black-sesame-crackers.js"
+      },
+      "physicalPackChecked": false
+    },
+    {
+      "id": "HK-GFHK-SCHAR-DIGESTIVE-150",
+      "nameZh": "無麩質消化餅 150克",
+      "nameEn": "Schar Digestive Landtaler Cookies 150gr",
+      "brand": "Schär",
+      "category": "biscuits",
+      "tags": [
+        "餅乾",
+        "脆餅",
+        "crackers",
+        "gluten-free"
+      ],
+      "packSize": "150克",
+      "quantity": 150,
+      "quantityUnit": "g",
+      "servingSize": null,
+      "origin": null,
+      "sourceCountry": "Germany",
+      "barcode": "8008698012819",
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 483,
+        "carbohydrates": 62,
+        "sugars": 21,
+        "fat": 22,
+        "saturatedFat": 9.9,
+        "protein": 6.1,
+        "fibre": 6.2,
+        "sodiumMg": 252,
+        "sourceSaltG": 0.63,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-hk-retailer-source",
+        "region": "hk-retailer-online",
+        "conversionNote": "零售商標示salt克，鈉毫克依salt÷2.5×1000換算；未將來源碳水改稱淨碳水。"
+      },
+      "allergens": {
+        "contains": [
+          "soy"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "May contain traces of lupins. Allergens: soya flour, soya bran",
+        "otherMayContain": [
+          "lupin"
+        ],
+        "coverage": "Full HK retailer ingredient and precaution statement inspected",
+        "verificationMethod": "hk-retailer-online-full-statement",
+        "physicalPackVerified": false,
+        "physicalPackChecked": false,
+        "completeSource": "hk-retailer-online-full-statement"
+      },
+      "ingredients": "Maize starch, palm fat, cane sugar (16%), maize flour, soya flour, soya bran (7%), buckwheat flour (4%), sugar beet syrup, modified tapioca starch, salt, raising agents: ammonium hydrogen carbonate and sodium hydrogen carbonate.",
+      "prices": [
+        {
+          "store": "GLUTENFREEHK",
+          "price": 89,
+          "currency": "HKD",
+          "url": "https://glutenfreehk.com/products/schar-digestive-landtaler-cookies-150gr",
+          "sourceUrl": "https://glutenfreehk.com/products/schar-digestive-landtaler-cookies-150gr",
+          "linkType": "product",
+          "checkedAt": "2026-10-21",
+          "availability": "orderable-online-snapshot",
+          "note": "香港零售商網頁當次單件標價；商戶採月度訂購／分批配送，送貨安排及庫存須到商戶確認。未計配送費。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Glutenfree HK 香港零售商完整產品資料",
+          "url": "https://glutenfreehk.com/products/schar-digestive-landtaler-cookies-150gr",
+          "checkedAt": "2026-10-21",
+          "scope": "香港上架產品之名稱、規格、完整成分／過敏與預警聲明、每100克營養及港元價格"
+        }
+      ],
+      "dataStatus": "hk-retailer-label",
+      "sourceLimit": "已讀取香港零售商該規格的完整網上營養、成分及過敏聲明；未檢查當前實物包裝／批次。結果只表示來源未列出所選過敏原，不代表無過敏原或保證安全。",
+      "labelEvidence": {
+        "market": "Hong Kong retailer listing",
+        "sourceType": "retailer-product-information",
+        "nutritionPresent": true,
+        "fullIngredientsPresent": true,
+        "explicitPrecautionPresent": true,
+        "physicalPackPhotoInspected": false,
+        "originalCountryField": "Germany",
+        "sourceImage": "//cdn.shopify.com/s/files/1/0671/6139/1192/files/schar-digestive-glutenvrij.jpg?v=1755169471",
+        "pricePublicJsonUrl": "https://glutenfreehk.com/products/schar-digestive-landtaler-cookies-150gr.js"
+      },
+      "physicalPackChecked": false
+    },
+    {
+      "id": "HK-GFHK-LEPAIN-BUCKWHEAT-75",
+      "nameZh": "有機迷你蕎麥脆餅 75克",
+      "nameEn": "Le Pain des Fleurs Organic Mini Crackers Buckwheat 75gr",
+      "brand": "Le Pain des Fleurs",
+      "category": "biscuits",
+      "tags": [
+        "餅乾",
+        "脆餅",
+        "crackers",
+        "gluten-free"
+      ],
+      "packSize": "75克",
+      "quantity": 75,
+      "quantityUnit": "g",
+      "servingSize": null,
+      "origin": null,
+      "sourceCountry": "France",
+      "barcode": null,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 385,
+        "carbohydrates": 75,
+        "sugars": 2.6,
+        "fat": 2.8,
+        "saturatedFat": 0.6,
+        "protein": 13,
+        "fibre": 4.4,
+        "sodiumMg": 272,
+        "sourceSaltG": 0.68,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-hk-retailer-source",
+        "region": "hk-retailer-online",
+        "conversionNote": "零售商標示salt克，鈉毫克依salt÷2.5×1000換算；未將來源碳水改稱淨碳水。"
+      },
+      "allergens": {
+        "contains": [],
+        "mayContain": [
+          "peanuts",
+          "tree-nuts"
+        ],
+        "status": "complete",
+        "text": "May contain traces of peanuts and tree nuts.",
+        "otherMayContain": [],
+        "coverage": "Full HK retailer ingredient and precaution statement inspected",
+        "verificationMethod": "hk-retailer-online-full-statement",
+        "physicalPackVerified": false,
+        "physicalPackChecked": false,
+        "completeSource": "hk-retailer-online-full-statement"
+      },
+      "ingredients": "Buckwheat flour (79%), white rice flour, sea salt. Organically grown.",
+      "prices": [
+        {
+          "store": "GLUTENFREEHK",
+          "price": 69,
+          "currency": "HKD",
+          "url": "https://glutenfreehk.com/products/le-pain-des-fleur-organicmini-crackers-buckwheat",
+          "sourceUrl": "https://glutenfreehk.com/products/le-pain-des-fleur-organicmini-crackers-buckwheat",
+          "linkType": "product",
+          "checkedAt": "2026-10-21",
+          "availability": "orderable-online-snapshot",
+          "note": "香港零售商網頁當次單件標價；商戶採月度訂購／分批配送，送貨安排及庫存須到商戶確認。未計配送費。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Glutenfree HK 香港零售商完整產品資料",
+          "url": "https://glutenfreehk.com/products/le-pain-des-fleur-organicmini-crackers-buckwheat",
+          "checkedAt": "2026-10-21",
+          "scope": "香港上架產品之名稱、規格、完整成分／過敏與預警聲明、每100克營養及港元價格"
+        }
+      ],
+      "dataStatus": "hk-retailer-label",
+      "sourceLimit": "已讀取香港零售商該規格的完整網上營養、成分及過敏聲明；未檢查當前實物包裝／批次。結果只表示來源未列出所選過敏原，不代表無過敏原或保證安全。",
+      "labelEvidence": {
+        "market": "Hong Kong retailer listing",
+        "sourceType": "retailer-product-information",
+        "nutritionPresent": true,
+        "fullIngredientsPresent": true,
+        "explicitPrecautionPresent": true,
+        "physicalPackPhotoInspected": false,
+        "originalCountryField": "France",
+        "sourceImage": "//cdn.shopify.com/s/files/1/0671/6139/1192/files/les-pain-des-fleurs-mini-crackers-boekweit.jpg?v=1757224257",
+        "pricePublicJsonUrl": "https://glutenfreehk.com/products/le-pain-des-fleur-organicmini-crackers-buckwheat.js"
+      },
+      "physicalPackChecked": false
+    },
+    {
+      "id": "HK-GFHK-SOMMER-TARALLI-100",
+      "nameZh": "有機芝麻茴香脆餅 100克",
+      "nameEn": "Sommer Organic Crackers Taralli Sesame Fennel 100gr",
+      "brand": "Sommer",
+      "category": "biscuits",
+      "tags": [
+        "餅乾",
+        "脆餅",
+        "crackers",
+        "gluten-free"
+      ],
+      "packSize": "100克",
+      "quantity": 100,
+      "quantityUnit": "g",
+      "servingSize": null,
+      "origin": null,
+      "sourceCountry": "Germany",
+      "barcode": null,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 439,
+        "carbohydrates": 43,
+        "sugars": 4.8,
+        "fat": 21,
+        "saturatedFat": 1.5,
+        "protein": 17,
+        "fibre": 4.9,
+        "sodiumMg": 640,
+        "sourceSaltG": 1.6,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-hk-retailer-source",
+        "region": "hk-retailer-online",
+        "conversionNote": "零售商標示salt克，鈉毫克依salt÷2.5×1000換算；未將來源碳水改稱淨碳水。"
+      },
+      "allergens": {
+        "contains": [
+          "sesame"
+        ],
+        "mayContain": [
+          "tree-nuts",
+          "soy"
+        ],
+        "status": "complete",
+        "text": "May contain traces of cashew nuts, almonds, hazelnuts, soya, mustard and lupins. Allergens: sesame seeds",
+        "otherMayContain": [
+          "mustard",
+          "lupin"
+        ],
+        "coverage": "Full HK retailer ingredient and precaution statement inspected",
+        "verificationMethod": "hk-retailer-online-full-statement",
+        "physicalPackVerified": false,
+        "physicalPackChecked": false,
+        "completeSource": "hk-retailer-online-full-statement"
+      },
+      "ingredients": "Field bean flour* 65%, sunflower oil*, maize starch*, rice flour*, sesame seeds* 5%, fennel* 2%, sea salt, thickener: guar gum*, raising agent: ammonium carbonate. * From certified organic farming.",
+      "prices": [
+        {
+          "store": "GLUTENFREEHK",
+          "price": 99,
+          "currency": "HKD",
+          "url": "https://glutenfreehk.com/products/sommer-organic-crackers-taralli",
+          "sourceUrl": "https://glutenfreehk.com/products/sommer-organic-crackers-taralli",
+          "linkType": "product",
+          "checkedAt": "2026-10-21",
+          "availability": "orderable-online-snapshot",
+          "note": "香港零售商網頁當次單件標價；商戶採月度訂購／分批配送，送貨安排及庫存須到商戶確認。未計配送費。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Glutenfree HK 香港零售商完整產品資料",
+          "url": "https://glutenfreehk.com/products/sommer-organic-crackers-taralli",
+          "checkedAt": "2026-10-21",
+          "scope": "香港上架產品之名稱、規格、完整成分／過敏與預警聲明、每100克營養及港元價格"
+        }
+      ],
+      "dataStatus": "hk-retailer-label",
+      "sourceLimit": "已讀取香港零售商該規格的完整網上營養、成分及過敏聲明；未檢查當前實物包裝／批次。結果只表示來源未列出所選過敏原，不代表無過敏原或保證安全。",
+      "labelEvidence": {
+        "market": "Hong Kong retailer listing",
+        "sourceType": "retailer-product-information",
+        "nutritionPresent": true,
+        "fullIngredientsPresent": true,
+        "explicitPrecautionPresent": true,
+        "physicalPackPhotoInspected": false,
+        "originalCountryField": "Germany",
+        "sourceImage": "//cdn.shopify.com/s/files/1/0671/6139/1192/files/sommer-taralli-sesam-venkel.png?v=1756571036",
+        "pricePublicJsonUrl": "https://glutenfreehk.com/products/sommer-organic-crackers-taralli.js"
+      },
+      "physicalPackChecked": false
+    },
+    {
+      "id": "HK-GFHK-WASA-CRISPBREAD-240",
+      "nameZh": "瑞典脆餅 240克",
+      "nameEn": "Wasa Crackers Crispbread 240gr",
+      "brand": "Wasa",
+      "category": "biscuits",
+      "tags": [
+        "餅乾",
+        "脆餅",
+        "crackers",
+        "gluten-free"
+      ],
+      "packSize": "240克",
+      "quantity": 240,
+      "quantityUnit": "g",
+      "servingSize": null,
+      "origin": null,
+      "sourceCountry": "Sweden",
+      "barcode": null,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 395,
+        "carbohydrates": 72.8,
+        "sugars": 3.1,
+        "fat": 8,
+        "saturatedFat": 1.2,
+        "protein": 4,
+        "fibre": 7.7,
+        "sodiumMg": 440,
+        "sourceSaltG": 1.1,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-hk-retailer-source",
+        "region": "hk-retailer-online",
+        "conversionNote": "零售商標示salt克，鈉毫克依salt÷2.5×1000換算；未將來源碳水改稱淨碳水。"
+      },
+      "allergens": {
+        "contains": [],
+        "mayContain": [
+          "sesame",
+          "milk"
+        ],
+        "status": "complete",
+        "text": "May contain traces of sesame seeds and milk.",
+        "otherMayContain": [],
+        "coverage": "Full HK retailer ingredient and precaution statement inspected",
+        "verificationMethod": "hk-retailer-online-full-statement",
+        "physicalPackVerified": false,
+        "physicalPackChecked": false,
+        "completeSource": "hk-retailer-online-full-statement"
+      },
+      "ingredients": "Potato starch, amaranth flour, sunflower oil, rice flour, sugar cane fiber, sugar, rice sourdough powder (rice flour, water), emulsifier (mono- and diglycerides of fatty acids), yeast, thickener (hydroxypropyl methylcellulose), rice protein, salt, fennel seeds, aniseed, cumin.",
+      "prices": [
+        {
+          "store": "GLUTENFREEHK",
+          "price": 89,
+          "currency": "HKD",
+          "url": "https://glutenfreehk.com/products/wasa-crackers-sesame-sea-salt-240gr-copy",
+          "sourceUrl": "https://glutenfreehk.com/products/wasa-crackers-sesame-sea-salt-240gr-copy",
+          "linkType": "product",
+          "checkedAt": "2026-10-21",
+          "availability": "orderable-online-snapshot",
+          "note": "香港零售商網頁當次單件標價；商戶採月度訂購／分批配送，送貨安排及庫存須到商戶確認。未計配送費。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Glutenfree HK 香港零售商完整產品資料",
+          "url": "https://glutenfreehk.com/products/wasa-crackers-sesame-sea-salt-240gr-copy",
+          "checkedAt": "2026-10-21",
+          "scope": "香港上架產品之名稱、規格、完整成分／過敏與預警聲明、每100克營養及港元價格"
+        }
+      ],
+      "dataStatus": "hk-retailer-label",
+      "sourceLimit": "已讀取香港零售商該規格的完整網上營養、成分及過敏聲明；未檢查當前實物包裝／批次。結果只表示來源未列出所選過敏原，不代表無過敏原或保證安全。",
+      "labelEvidence": {
+        "market": "Hong Kong retailer listing",
+        "sourceType": "retailer-product-information",
+        "nutritionPresent": true,
+        "fullIngredientsPresent": true,
+        "explicitPrecautionPresent": true,
+        "physicalPackPhotoInspected": false,
+        "originalCountryField": "Sweden",
+        "sourceImage": "//cdn.shopify.com/s/files/1/0671/6139/1192/files/AHI_43545239353532393430.jpg?v=1757642609",
+        "pricePublicJsonUrl": "https://glutenfreehk.com/products/wasa-crackers-sesame-sea-salt-240gr-copy.js"
+      },
+      "physicalPackChecked": false
+    },
+    {
+      "id": "P000000124",
+      "nameZh": "維記100%鮮牛奶 236毫升",
+      "nameEn": "100% Fresh Milk 236mL",
+      "brand": "維記",
+      "brandEn": "Kowloon Dairy",
+      "category": "drinks",
+      "tags": [
+        "飲品",
+        "香港包裝標籤",
+        "奶"
+      ],
+      "packSize": "236毫升",
+      "quantity": 236,
+      "quantityUnit": "ml",
+      "servingSize": 236,
+      "origin": "香港",
+      "nutrition": {
+        "basisUnit": "ml",
+        "basisAmount": 100,
+        "energyKcal": 62,
+        "carbohydrates": 4.6,
+        "sugars": 4.6,
+        "fat": 3.5,
+        "saturatedFat": 2.4,
+        "protein": 3.1,
+        "fibre": null,
+        "sodiumMg": 44,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-label-photo",
+        "hkLabelVerified": true,
+        "region": "hong-kong-market"
+      },
+      "allergens": {
+        "contains": [
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "成分列明100%新鮮牛奶；已檢視左右完整標籤，照片未列其他過敏原或廠房提示。這不代表保證沒有交叉接觸。",
+        "evidenceScope": "已閱香港市場商品網頁所刊的完整成分及過敏／廠房提示照片；不代表核實當前實物批次或保證無交叉接觸。",
+        "sourceUrl": "https://homedelivery.kowloondairy.com/100-fresh-milk-237.html",
+        "sourceImageUrls": [
+          "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_freshmilk_lhs_1.png?auto=webp&format=png&fit=cover",
+          "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_freshmilk_rhs_1.png?auto=webp&format=png&fit=cover"
+        ],
+        "physicalPackChecked": false,
+        "completeSource": "hk-published-label-photo",
+        "coverage": "已閱香港市場商品網頁所刊的完整成分及過敏／廠房提示照片；不代表核實當前實物批次或保證無交叉接觸。"
+      },
+      "prices": [
+        {
+          "store": "WELLCOME",
+          "price": 12,
+          "url": "https://www.wellcome.com.hk/",
+          "linkType": "merchant-home",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "價格為當次單件整包記錄；查閱日期不等於價格生效日期，未計會員／多件優惠或運費，庫存待商戶確認。"
+        },
+        {
+          "store": "PARKNSHOP",
+          "price": 9,
+          "url": "https://www.pns.hk/",
+          "linkType": "merchant-home",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "價格為當次單件整包記錄；查閱日期不等於價格生效日期，未計會員／多件優惠或運費，庫存待商戶確認。"
+        },
+        {
+          "store": "JASONS",
+          "price": 12.5,
+          "url": "https://www.marketplacehk.com/",
+          "linkType": "merchant-home",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "價格為當次單件整包記錄；查閱日期不等於價格生效日期，未計會員／多件優惠或運費，庫存待商戶確認。"
+        },
+        {
+          "store": "AEON",
+          "price": 7.5,
+          "url": "https://www.aeoncity.com.hk/",
+          "linkType": "merchant-home",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "價格為當次單件整包記錄；查閱日期不等於價格生效日期，未計會員／多件優惠或運費，庫存待商戶確認。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "香港市場完整標籤相片",
+          "url": "https://homedelivery.kowloondairy.com/100-fresh-milk-237.html",
+          "checkedAt": "2026-10-21",
+          "scope": "同品牌、口味、指定容量的香港銷售頁標籤；營養、成分及全部可見過敏／廠房提示"
+        },
+        {
+          "label": "原標籤相片 1",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_freshmilk_lhs_1.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "已實際下載並逐字視覺核對；圖片公開時間及當前配方日期未由來源明示"
+        },
+        {
+          "label": "原標籤相片 2",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_freshmilk_rhs_1.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "已實際下載並逐字視覺核對；圖片公開時間及當前配方日期未由來源明示"
+        },
+        {
+          "label": "消委會格價資訊通",
+          "url": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "checkedAt": "2026-10-21",
+          "scope": "相同品牌、口味、整包容量香港商戶價格"
+        }
+      ],
+      "dataStatus": "hk-label-photo",
+      "sourceLimit": "已核對香港銷售來源所刊標籤照片；未核實你手上實物、批次或目前最新配方。圖片查閱日期不等於標籤生效日期。購買前請再核對包裝。數值以生產商正視平面標籤為準；同頁斜視圖片不宜用作數字轉錄。",
+      "versionStatus": "hk-online-label-photo-reviewed",
+      "ingredientsSummary": "100%新鮮牛奶。",
+      "barcode": null,
+      "verification": {
+        "labelPhotoVisuallyInspected": true,
+        "physicalPackageInspected": false,
+        "currentBatchVerified": false,
+        "checkedAt": "2026-10-21",
+        "coverage": "full-visible-online-label",
+        "fibre": "未標示，保留未知；不能由一般牛奶／茶數字補填。",
+        "notes": "直接由生產商236mL商品頁HTML取得lhs/rhs標籤；62kcal及3.1g蛋白質由正面直拍營養表確認，沒有由1.5L包裝推定。條碼未清楚核實，保留null。"
+      },
+      "labelEvidence": {
+        "verificationType": "hong-kong-online-label-image",
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "currentBatchChecked": false,
+        "scope": "ONLINE published label panels inspected only; not a purchased physical pack.",
+        "fullVisibleIngredientsInspected": true,
+        "allVisibleAllergenAndPrecautionTextInspected": true,
+        "nutritionPanelInspected": true,
+        "sourcePageUrl": "https://homedelivery.kowloondairy.com/100-fresh-milk-237.html",
+        "sourceImageUrls": [
+          "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_freshmilk_lhs_1.png?auto=webp&format=png&fit=cover",
+          "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_freshmilk_rhs_1.png?auto=webp&format=png&fit=cover"
+        ],
+        "checkedAt": "2026-10-21",
+        "imageAgeNote": "來源未明示影像拍攝日期。",
+        "variantNote": "同頁斜視立體包裝圖文字較模糊，容易誤讀62為64、3.1為3.4；採用清晰正視lhs/rhs平面標籤。不能推論當前實物批次配方已核對。",
+        "sourceType": "hk-online-package-label-photo",
+        "photoDateNote": "來源未明示影像拍攝日期。"
+      },
+      "physicalPackChecked": false,
+      "labelImages": [
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_freshmilk_lhs_1.png?auto=webp&format=png&fit=cover",
+          "label": "查看香港標籤照片 1"
+        },
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_freshmilk_rhs_1.png?auto=webp&format=png&fit=cover",
+          "label": "查看香港標籤照片 2"
+        }
+      ]
+    },
+    {
+      "id": "HK-VITASOY-NS-250X6",
+      "nameZh": "維他奶無添加糖豆奶 250毫升 x 6",
+      "nameEn": "No Added Sugar Soyabean Milk 250mL x6",
+      "brand": "維他奶",
+      "brandEn": "Vitasoy",
+      "category": "drinks",
+      "tags": [
+        "飲品",
+        "香港包裝標籤",
+        "奶"
+      ],
+      "packSize": "250毫升 x 6",
+      "quantity": 1500,
+      "quantityUnit": "ml",
+      "servingSize": 250,
+      "origin": null,
+      "nutrition": {
+        "basisUnit": "ml",
+        "basisAmount": 100,
+        "energyKcal": 36,
+        "carbohydrates": 2.2,
+        "sugars": 1.5,
+        "fat": 1.7,
+        "saturatedFat": 0.4,
+        "protein": 2.8,
+        "fibre": null,
+        "sodiumMg": 30,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-label-photo",
+        "hkLabelVerified": true,
+        "region": "hong-kong-market"
+      },
+      "allergens": {
+        "contains": [
+          "soy",
+          "milk"
+        ],
+        "mayContain": [
+          "gluten",
+          "tree-nuts",
+          "peanuts",
+          "sesame"
+        ],
+        "status": "complete",
+        "text": "含有大豆及奶類；生產廠房亦處理含麩質穀物、木本堅果、花生及芝麻製品。",
+        "evidenceScope": "已閱香港市場商品網頁所刊的完整成分及過敏／廠房提示照片；不代表核實當前實物批次或保證無交叉接觸。",
+        "sourceUrl": "https://www.foodpanda.hk/groceries/product/2R644F/vitasoy-no-added-sugar-soybean-milk-250ml-x6",
+        "sourceImageUrls": [
+          "https://foodpanda.dhmedia.io/image/nv/Hong-Kong/Pandamart/x5np-4891028715498-1-9112023.jpg?height=480"
+        ],
+        "physicalPackChecked": false,
+        "completeSource": "hk-published-label-photo",
+        "coverage": "已閱香港市場商品網頁所刊的完整成分及過敏／廠房提示照片；不代表核實當前實物批次或保證無交叉接觸。"
+      },
+      "prices": [
+        {
+          "store": "PARKNSHOP",
+          "price": 23,
+          "url": "https://www.pns.hk/en/no-added-sugar-soyabean-milk/p/BP_344975",
+          "linkType": "product",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://www.pns.hk/en/no-added-sugar-soyabean-milk/p/BP_344975",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "價格為當次單件整包記錄；查閱日期不等於價格生效日期，未計會員／多件優惠或運費，庫存待商戶確認。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "香港市場完整標籤相片",
+          "url": "https://www.foodpanda.hk/groceries/product/2R644F/vitasoy-no-added-sugar-soybean-milk-250ml-x6",
+          "checkedAt": "2026-10-21",
+          "scope": "同品牌、口味、指定容量的香港銷售頁標籤；營養、成分及全部可見過敏／廠房提示"
+        },
+        {
+          "label": "原標籤相片 1",
+          "url": "https://foodpanda.dhmedia.io/image/nv/Hong-Kong/Pandamart/x5np-4891028715498-1-9112023.jpg?height=480",
+          "checkedAt": "2026-10-21",
+          "scope": "已實際下載並逐字視覺核對；圖片公開時間及當前配方日期未由來源明示"
+        }
+      ],
+      "dataStatus": "hk-label-photo",
+      "sourceLimit": "已核對香港銷售來源所刊標籤照片；未核實你手上實物、批次或目前最新配方。圖片查閱日期不等於標籤生效日期。購買前請再核對包裝。相片版本提示：圖片檔名含9112023、標籤印©2022；僅表示來源沿用該相片，不能宣稱為2026最新配方。Foodpanda來源產地稱香港，Watsons同品稱中國，故origin保留null。",
+      "versionStatus": "hk-online-label-photo-reviewed",
+      "ingredientsSummary": "水、大豆、乳固體、膳食纖維、赤蘚糖醇、大豆油、鹽及維他命（菸酰胺、B6及B2）。",
+      "barcode": null,
+      "verification": {
+        "labelPhotoVisuallyInspected": true,
+        "physicalPackageInspected": false,
+        "currentBatchVerified": false,
+        "checkedAt": "2026-10-21",
+        "coverage": "full-visible-online-label",
+        "fibre": "未標示，保留未知；不能由一般牛奶／茶數字補填。",
+        "imageAgeNote": "圖片檔名含9112023、標籤印©2022；僅表示來源沿用該相片，不能宣稱為2026最新配方。Foodpanda來源產地稱香港，Watsons同品稱中國，故origin保留null。"
+      },
+      "labelEvidence": {
+        "verificationType": "hong-kong-online-label-image",
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "currentBatchChecked": false,
+        "scope": "ONLINE published label panels inspected only; not a purchased physical pack.",
+        "fullVisibleIngredientsInspected": true,
+        "allVisibleAllergenAndPrecautionTextInspected": true,
+        "nutritionPanelInspected": true,
+        "sourcePageUrl": "https://www.foodpanda.hk/groceries/product/2R644F/vitasoy-no-added-sugar-soybean-milk-250ml-x6",
+        "sourceImageUrls": [
+          "https://foodpanda.dhmedia.io/image/nv/Hong-Kong/Pandamart/x5np-4891028715498-1-9112023.jpg?height=480"
+        ],
+        "checkedAt": "2026-10-21",
+        "imageAgeNote": "圖片檔名含9112023、標籤印©2022；僅表示來源沿用該相片，不能宣稱為2026最新配方。Foodpanda來源產地稱香港，Watsons同品稱中國，故origin保留null。",
+        "sourceType": "hk-online-package-label-photo",
+        "photoDateNote": "圖片檔名含9112023、標籤印©2022；僅表示來源沿用該相片，不能宣稱為2026最新配方。Foodpanda來源產地稱香港，Watsons同品稱中國，故origin保留null。"
+      },
+      "physicalPackChecked": false,
+      "labelImages": [
+        {
+          "url": "https://foodpanda.dhmedia.io/image/nv/Hong-Kong/Pandamart/x5np-4891028715498-1-9112023.jpg?height=480",
+          "label": "查看香港標籤照片 1"
+        }
+      ]
+    },
+    {
+      "id": "P000001260",
+      "nameZh": "維他奶低糖豆奶 250毫升 x 6",
+      "nameEn": "Low Sugar Soya Bean Milk 250mL x6",
+      "brand": "維他奶",
+      "brandEn": "Vitasoy",
+      "category": "drinks",
+      "tags": [
+        "飲品",
+        "香港包裝標籤",
+        "奶"
+      ],
+      "packSize": "250毫升 x 6",
+      "quantity": 1500,
+      "quantityUnit": "ml",
+      "servingSize": 250,
+      "origin": "中國",
+      "nutrition": {
+        "basisUnit": "ml",
+        "basisAmount": 100,
+        "energyKcal": 40,
+        "carbohydrates": 4.8,
+        "sugars": 4.5,
+        "fat": 1.5,
+        "saturatedFat": 0.5,
+        "protein": 1.8,
+        "fibre": null,
+        "sodiumMg": 40,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-label-photo",
+        "hkLabelVerified": true,
+        "region": "hong-kong-market"
+      },
+      "allergens": {
+        "contains": [
+          "soy",
+          "milk"
+        ],
+        "mayContain": [
+          "gluten",
+          "tree-nuts",
+          "peanuts",
+          "sesame"
+        ],
+        "status": "complete",
+        "text": "含有大豆及奶類；生產廠房亦處理含麩質穀物、木本堅果、花生及芝麻製品。",
+        "evidenceScope": "已閱香港市場商品網頁所刊的完整成分及過敏／廠房提示照片；不代表核實當前實物批次或保證無交叉接觸。",
+        "sourceUrl": "https://www.wellcome.com.hk/zh-hant/p/%E7%B6%AD%E4%BB%96%E5%A5%B6%E4%BD%8E%E7%B3%96%E8%B1%86%E5%A5%B6%206%20X%20250ML%7D/i/101348599.html",
+        "sourceImageUrls": [
+          "https://img.rtacdn-os.com/20221103/4d6efea7-bb96-454e-8b91-690e180ed240"
+        ],
+        "physicalPackChecked": false,
+        "completeSource": "hk-published-label-photo",
+        "coverage": "已閱香港市場商品網頁所刊的完整成分及過敏／廠房提示照片；不代表核實當前實物批次或保證無交叉接觸。"
+      },
+      "prices": [
+        {
+          "store": "WELLCOME",
+          "price": 23,
+          "url": "https://www.wellcome.com.hk/zh-hant/p/%E7%B6%AD%E4%BB%96%E5%A5%B6%E4%BD%8E%E7%B3%96%E8%B1%86%E5%A5%B6%206%20X%20250ML%7D/i/101348599.html",
+          "linkType": "product",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "價格為當次單件整包記錄；查閱日期不等於價格生效日期，未計會員／多件優惠或運費，庫存待商戶確認。"
+        },
+        {
+          "store": "PARKNSHOP",
+          "price": 23,
+          "url": "https://www.pns.hk/",
+          "linkType": "merchant-home",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "價格為當次單件整包記錄；查閱日期不等於價格生效日期，未計會員／多件優惠或運費，庫存待商戶確認。"
+        },
+        {
+          "store": "JASONS",
+          "price": 23,
+          "url": "https://www.marketplacehk.com/",
+          "linkType": "merchant-home",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "價格為當次單件整包記錄；查閱日期不等於價格生效日期，未計會員／多件優惠或運費，庫存待商戶確認。"
+        },
+        {
+          "store": "WATSONS",
+          "price": 20,
+          "url": "https://www.watsons.com.hk/",
+          "linkType": "merchant-home",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "價格為當次單件整包記錄；查閱日期不等於價格生效日期，未計會員／多件優惠或運費，庫存待商戶確認。"
+        },
+        {
+          "store": "AEON",
+          "price": 22.9,
+          "url": "https://www.aeoncity.com.hk/",
+          "linkType": "merchant-home",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "價格為當次單件整包記錄；查閱日期不等於價格生效日期，未計會員／多件優惠或運費，庫存待商戶確認。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "香港市場完整標籤相片",
+          "url": "https://www.wellcome.com.hk/zh-hant/p/%E7%B6%AD%E4%BB%96%E5%A5%B6%E4%BD%8E%E7%B3%96%E8%B1%86%E5%A5%B6%206%20X%20250ML%7D/i/101348599.html",
+          "checkedAt": "2026-10-21",
+          "scope": "同品牌、口味、指定容量的香港銷售頁標籤；營養、成分及全部可見過敏／廠房提示"
+        },
+        {
+          "label": "原標籤相片 1",
+          "url": "https://img.rtacdn-os.com/20221103/4d6efea7-bb96-454e-8b91-690e180ed240",
+          "checkedAt": "2026-10-21",
+          "scope": "已實際下載並逐字視覺核對；圖片公開時間及當前配方日期未由來源明示"
+        },
+        {
+          "label": "消委會格價資訊通",
+          "url": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "checkedAt": "2026-10-21",
+          "scope": "相同品牌、口味、整包容量香港商戶價格"
+        }
+      ],
+      "dataStatus": "hk-label-photo",
+      "sourceLimit": "已核對香港銷售來源所刊標籤照片；未核實你手上實物、批次或目前最新配方。圖片查閱日期不等於標籤生效日期。購買前請再核對包裝。相片版本提示：惠康圖片路徑含20221103；不是2026配方核實。頁面6x250ml、口味及品牌相符。",
+      "versionStatus": "hk-online-label-photo-reviewed",
+      "ingredientsSummary": "水、大豆、糖、乳固體、鹽及維他命（菸酰胺、B6及B2）。",
+      "barcode": null,
+      "verification": {
+        "labelPhotoVisuallyInspected": true,
+        "physicalPackageInspected": false,
+        "currentBatchVerified": false,
+        "checkedAt": "2026-10-21",
+        "coverage": "full-visible-online-label",
+        "fibre": "未標示，保留未知；不能由一般牛奶／茶數字補填。",
+        "imageAgeNote": "惠康圖片路徑含20221103；不是2026配方核實。頁面6x250ml、口味及品牌相符。"
+      },
+      "labelEvidence": {
+        "verificationType": "hong-kong-online-label-image",
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "currentBatchChecked": false,
+        "scope": "ONLINE published label panels inspected only; not a purchased physical pack.",
+        "fullVisibleIngredientsInspected": true,
+        "allVisibleAllergenAndPrecautionTextInspected": true,
+        "nutritionPanelInspected": true,
+        "sourcePageUrl": "https://www.wellcome.com.hk/zh-hant/p/%E7%B6%AD%E4%BB%96%E5%A5%B6%E4%BD%8E%E7%B3%96%E8%B1%86%E5%A5%B6%206%20X%20250ML%7D/i/101348599.html",
+        "sourceImageUrls": [
+          "https://img.rtacdn-os.com/20221103/4d6efea7-bb96-454e-8b91-690e180ed240"
+        ],
+        "checkedAt": "2026-10-21",
+        "imageAgeNote": "惠康圖片路徑含20221103；不是2026配方核實。頁面6x250ml、口味及品牌相符。",
+        "sourceType": "hk-online-package-label-photo",
+        "photoDateNote": "惠康圖片路徑含20221103；不是2026配方核實。頁面6x250ml、口味及品牌相符。"
+      },
+      "physicalPackChecked": false,
+      "labelImages": [
+        {
+          "url": "https://img.rtacdn-os.com/20221103/4d6efea7-bb96-454e-8b91-690e180ed240",
+          "label": "查看香港標籤照片 1"
+        }
+      ]
+    },
+    {
+      "id": "P000000426",
+      "nameZh": "維他奶豆奶 250毫升 x 6",
+      "nameEn": "Original Soya Bean Milk 250mL x6",
+      "brand": "維他奶",
+      "brandEn": "Vitasoy",
+      "category": "drinks",
+      "tags": [
+        "飲品",
+        "香港包裝標籤",
+        "奶"
+      ],
+      "packSize": "250毫升 x 6",
+      "quantity": 1500,
+      "quantityUnit": "ml",
+      "servingSize": 250,
+      "origin": null,
+      "nutrition": {
+        "basisUnit": "ml",
+        "basisAmount": 100,
+        "energyKcal": 47,
+        "carbohydrates": 6.6,
+        "sugars": 6.5,
+        "fat": 1.5,
+        "saturatedFat": 0.4,
+        "protein": 1.8,
+        "fibre": null,
+        "sodiumMg": 40,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-label-photo",
+        "hkLabelVerified": true,
+        "region": "hong-kong-market"
+      },
+      "allergens": {
+        "contains": [
+          "soy",
+          "milk"
+        ],
+        "mayContain": [
+          "gluten",
+          "tree-nuts",
+          "peanuts",
+          "sesame"
+        ],
+        "status": "complete",
+        "text": "含有大豆及奶類；生產廠房亦處理含麩質穀物、木本堅果、花生及芝麻製品。",
+        "evidenceScope": "已閱香港市場商品網頁所刊的完整成分及過敏／廠房提示照片；不代表核實當前實物批次或保證無交叉接觸。",
+        "sourceUrl": "https://www.foodpanda.hk/groceries/product/49MPO7/vitasoy-soya-bean-milk-250ml-x6",
+        "sourceImageUrls": [
+          "https://images.deliveryhero.io/image/nv/Hong-Kong/Pandamart/x5np-4891028664840-1-9112023.jpg?height=480"
+        ],
+        "physicalPackChecked": false,
+        "completeSource": "hk-published-label-photo",
+        "coverage": "已閱香港市場商品網頁所刊的完整成分及過敏／廠房提示照片；不代表核實當前實物批次或保證無交叉接觸。"
+      },
+      "prices": [
+        {
+          "store": "WELLCOME",
+          "price": 23,
+          "url": "https://www.wellcome.com.hk/",
+          "linkType": "merchant-home",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "價格為當次單件整包記錄；查閱日期不等於價格生效日期，未計會員／多件優惠或運費，庫存待商戶確認。"
+        },
+        {
+          "store": "PARKNSHOP",
+          "price": 23,
+          "url": "https://www.pns.hk/",
+          "linkType": "merchant-home",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "價格為當次單件整包記錄；查閱日期不等於價格生效日期，未計會員／多件優惠或運費，庫存待商戶確認。"
+        },
+        {
+          "store": "JASONS",
+          "price": 23,
+          "url": "https://www.marketplacehk.com/",
+          "linkType": "merchant-home",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "價格為當次單件整包記錄；查閱日期不等於價格生效日期，未計會員／多件優惠或運費，庫存待商戶確認。"
+        },
+        {
+          "store": "WATSONS",
+          "price": 20,
+          "url": "https://www.watsons.com.hk/",
+          "linkType": "merchant-home",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "價格為當次單件整包記錄；查閱日期不等於價格生效日期，未計會員／多件優惠或運費，庫存待商戶確認。"
+        },
+        {
+          "store": "AEON",
+          "price": 22.9,
+          "url": "https://www.aeoncity.com.hk/",
+          "linkType": "merchant-home",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "價格為當次單件整包記錄；查閱日期不等於價格生效日期，未計會員／多件優惠或運費，庫存待商戶確認。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "香港市場完整標籤相片",
+          "url": "https://www.foodpanda.hk/groceries/product/49MPO7/vitasoy-soya-bean-milk-250ml-x6",
+          "checkedAt": "2026-10-21",
+          "scope": "同品牌、口味、指定容量的香港銷售頁標籤；營養、成分及全部可見過敏／廠房提示"
+        },
+        {
+          "label": "原標籤相片 1",
+          "url": "https://images.deliveryhero.io/image/nv/Hong-Kong/Pandamart/x5np-4891028664840-1-9112023.jpg?height=480",
+          "checkedAt": "2026-10-21",
+          "scope": "已實際下載並逐字視覺核對；圖片公開時間及當前配方日期未由來源明示"
+        },
+        {
+          "label": "消委會格價資訊通",
+          "url": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "checkedAt": "2026-10-21",
+          "scope": "相同品牌、口味、整包容量香港商戶價格"
+        }
+      ],
+      "dataStatus": "hk-label-photo",
+      "sourceLimit": "已核對香港銷售來源所刊標籤照片；未核實你手上實物、批次或目前最新配方。圖片查閱日期不等於標籤生效日期。購買前請再核對包裝。相片版本提示：圖片檔名含9112023、標籤印©2022；非當前實物批次核對。",
+      "versionStatus": "hk-online-label-photo-reviewed",
+      "ingredientsSummary": "水、大豆、糖、乳固體、大豆油、鹽及維他命（菸酰胺、B6及B2）。",
+      "barcode": null,
+      "verification": {
+        "labelPhotoVisuallyInspected": true,
+        "physicalPackageInspected": false,
+        "currentBatchVerified": false,
+        "checkedAt": "2026-10-21",
+        "coverage": "full-visible-online-label",
+        "fibre": "未標示，保留未知；不能由一般牛奶／茶數字補填。",
+        "imageAgeNote": "圖片檔名含9112023、標籤印©2022；非當前實物批次核對。"
+      },
+      "labelEvidence": {
+        "verificationType": "hong-kong-online-label-image",
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "currentBatchChecked": false,
+        "scope": "ONLINE published label panels inspected only; not a purchased physical pack.",
+        "fullVisibleIngredientsInspected": true,
+        "allVisibleAllergenAndPrecautionTextInspected": true,
+        "nutritionPanelInspected": true,
+        "sourcePageUrl": "https://www.foodpanda.hk/groceries/product/49MPO7/vitasoy-soya-bean-milk-250ml-x6",
+        "sourceImageUrls": [
+          "https://images.deliveryhero.io/image/nv/Hong-Kong/Pandamart/x5np-4891028664840-1-9112023.jpg?height=480"
+        ],
+        "checkedAt": "2026-10-21",
+        "imageAgeNote": "圖片檔名含9112023、標籤印©2022；非當前實物批次核對。",
+        "sourceType": "hk-online-package-label-photo",
+        "photoDateNote": "圖片檔名含9112023、標籤印©2022；非當前實物批次核對。"
+      },
+      "physicalPackChecked": false,
+      "labelImages": [
+        {
+          "url": "https://images.deliveryhero.io/image/nv/Hong-Kong/Pandamart/x5np-4891028664840-1-9112023.jpg?height=480",
+          "label": "查看香港標籤照片 1"
+        }
+      ]
+    },
+    {
+      "id": "HK-VITA-ZERO-LEMON-500",
+      "nameZh": "維他0糖檸檬茶 500毫升",
+      "nameEn": "Zero Sugar Lemon Tea Drink 500mL",
+      "brand": "維他",
+      "brandEn": "Vita",
+      "category": "drinks",
+      "tags": [
+        "飲品",
+        "香港包裝標籤",
+        "茶"
+      ],
+      "packSize": "500毫升",
+      "quantity": 500,
+      "quantityUnit": "ml",
+      "servingSize": 500,
+      "origin": "香港",
+      "nutrition": {
+        "basisUnit": "ml",
+        "basisAmount": 100,
+        "energyKcal": 0,
+        "carbohydrates": 0,
+        "sugars": 0,
+        "fat": 0,
+        "saturatedFat": 0,
+        "protein": 0,
+        "fibre": null,
+        "sodiumMg": 20,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-label-photo",
+        "hkLabelVerified": true,
+        "region": "hong-kong-market"
+      },
+      "allergens": {
+        "contains": [],
+        "mayContain": [
+          "soy",
+          "gluten",
+          "milk",
+          "tree-nuts",
+          "peanuts",
+          "sesame"
+        ],
+        "status": "complete",
+        "text": "生產廠房亦處理大豆、含麩質穀物、奶類、木本堅果、花生及芝麻製品；苯丙酮尿症患者注意：含苯丙氨酸。",
+        "evidenceScope": "已閱香港市場商品網頁所刊的完整成分及過敏／廠房提示照片；不代表核實當前實物批次或保證無交叉接觸。",
+        "sourceUrl": "https://online.citysuper.com.hk/products/zero-sugar-lemon-tea-drink-301573089",
+        "sourceImageUrls": [
+          "https://online.citysuper.com.hk/cdn/shop/files/301573089_20250121_5_0002_02_800x.jpg?v=1737686577"
+        ],
+        "physicalPackChecked": false,
+        "completeSource": "hk-published-label-photo",
+        "coverage": "已閱香港市場商品網頁所刊的完整成分及過敏／廠房提示照片；不代表核實當前實物批次或保證無交叉接觸。"
+      },
+      "prices": [
+        {
+          "store": "CITYSUPER",
+          "price": 9,
+          "url": "https://online.citysuper.com.hk/products/zero-sugar-lemon-tea-drink-301573089",
+          "linkType": "product",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online.citysuper.com.hk/products/zero-sugar-lemon-tea-drink-301573089",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "價格為當次單件整包記錄；查閱日期不等於價格生效日期，未計會員／多件優惠或運費，庫存待商戶確認。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "香港市場完整標籤相片",
+          "url": "https://online.citysuper.com.hk/products/zero-sugar-lemon-tea-drink-301573089",
+          "checkedAt": "2026-10-21",
+          "scope": "同品牌、口味、指定容量的香港銷售頁標籤；營養、成分及全部可見過敏／廠房提示"
+        },
+        {
+          "label": "原標籤相片 1",
+          "url": "https://online.citysuper.com.hk/cdn/shop/files/301573089_20250121_5_0002_02_800x.jpg?v=1737686577",
+          "checkedAt": "2026-10-21",
+          "scope": "已實際下載並逐字視覺核對；圖片公開時間及當前配方日期未由來源明示"
+        }
+      ],
+      "dataStatus": "hk-label-photo",
+      "sourceLimit": "已核對香港銷售來源所刊標籤照片；未核實你手上實物、批次或目前最新配方。圖片查閱日期不等於標籤生效日期。購買前請再核對包裝。相片版本提示：citysuper圖片檔名含20250121；查閱日期不等於配方生效日期。",
+      "versionStatus": "hk-online-label-photo-reviewed",
+      "ingredientsSummary": "水、檸檬汁、紅茶、調味料、酸度調節劑（330、331）、穩定劑（466）、甜味劑（951、950、955）、維他命C及抗氧化劑（304）。",
+      "barcode": null,
+      "verification": {
+        "labelPhotoVisuallyInspected": true,
+        "physicalPackageInspected": false,
+        "currentBatchVerified": false,
+        "checkedAt": "2026-10-21",
+        "coverage": "full-visible-online-label",
+        "fibre": "未標示，保留未知；不能由一般牛奶／茶數字補填。",
+        "imageAgeNote": "citysuper圖片檔名含20250121；查閱日期不等於配方生效日期。"
+      },
+      "notes": "含甜味劑及苯丙氨酸；不是苯丙酮尿症食物判斷工具。零糖不等於個人適合；此處只比較標籤。",
+      "labelEvidence": {
+        "verificationType": "hong-kong-online-label-image",
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "currentBatchChecked": false,
+        "scope": "ONLINE published label panels inspected only; not a purchased physical pack.",
+        "fullVisibleIngredientsInspected": true,
+        "allVisibleAllergenAndPrecautionTextInspected": true,
+        "nutritionPanelInspected": true,
+        "sourcePageUrl": "https://online.citysuper.com.hk/products/zero-sugar-lemon-tea-drink-301573089",
+        "sourceImageUrls": [
+          "https://online.citysuper.com.hk/cdn/shop/files/301573089_20250121_5_0002_02_800x.jpg?v=1737686577"
+        ],
+        "checkedAt": "2026-10-21",
+        "imageAgeNote": "citysuper圖片檔名含20250121；查閱日期不等於配方生效日期。",
+        "sourceType": "hk-online-package-label-photo",
+        "photoDateNote": "citysuper圖片檔名含20250121；查閱日期不等於配方生效日期。"
+      },
+      "physicalPackChecked": false,
+      "labelImages": [
+        {
+          "url": "https://online.citysuper.com.hk/cdn/shop/files/301573089_20250121_5_0002_02_800x.jpg?v=1737686577",
+          "label": "查看香港標籤照片 1"
+        }
+      ]
+    },
+    {
+      "id": "HK-4902450140175",
+      "nameZh": "Bonchi 脆米餅 原味 80克",
+      "nameEn": "Bonchi Rice Cracker Original Flavour 80g",
+      "brand": "Bonchi",
+      "brandEn": "Bonchi",
+      "category": "snacks",
+      "tags": [
+        "米餅",
+        "脆米餅",
+        "原味",
+        "rice cracker"
+      ],
+      "packSize": "80克",
+      "quantity": 80,
+      "quantityUnit": "g",
+      "servingSize": 80,
+      "origin": null,
+      "barcode": "4902450140175",
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 553,
+        "carbohydrates": 54.4,
+        "sugars": 9.1,
+        "fat": 35,
+        "saturatedFat": 10.9,
+        "protein": 5,
+        "fibre": null,
+        "sodiumMg": 1052,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "region": "hk-online-label",
+        "hkLabelVerified": true
+      },
+      "ingredients": "大米、植物油、醬油（水、大豆、小麥、食鹽）、糖、增稠劑（1420、1412）、調味料及調味劑（魚、昆布）、增味劑（621、635）。",
+      "allergens": {
+        "contains": [
+          "fish",
+          "soy",
+          "gluten"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "香港品牌官網列明含魚類、大豆、含麩質穀物及其製品；完整網上產品頁未另刊可能含有／廠房聲明。這是所刊資料的完整記錄，不是交叉接觸或當前包裝安全保證。",
+        "completeSource": "hk-online-label",
+        "physicalPackChecked": false,
+        "precautionStatementPublished": false,
+        "coverage": "Full published Hong Kong online ingredient/allergen record inspected; no physical current-batch verification"
+      },
+      "prices": [],
+      "sources": [
+        {
+          "label": "日清湖池屋香港官網：Bonchi 原味80克",
+          "url": "https://www.nissinkoikeyafoods.com.hk/tch/products/Bonchi/original-flavour-80g",
+          "checkedAt": "2026-10-21",
+          "scope": "同一80克規格、商品條碼、完整成分、過敏聲明及每100克營養"
+        }
+      ],
+      "dataStatus": "hk-online-label",
+      "versionStatus": "hk-manufacturer-online-record",
+      "sourceLimit": "香港品牌官網80克及條碼4902450140175資料；未檢查當前實物包裝。未找到同一80克版本的可核實香港售價，因此保留價格未知，不配對70克版本。",
+      "physicalPackChecked": false,
+      "notes": "每100克資料直接抄錄，膳食纖維未刊。官網每份80克能量442千卡，與每100克553千卡比例相符（四捨五入）。",
+      "labelEvidence": {
+        "market": "Hong Kong",
+        "sourceType": "hk-manufacturer-product-information",
+        "nutritionPresent": true,
+        "fullIngredientsPresent": true,
+        "explicitAllergenStatementPresent": true,
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false
+      }
     }
   ],
   "stores": {
@@ -1229,6 +2509,24 @@
       "name": "AEON",
       "url": "https://www.aeoncity.com.hk/",
       "linkType": "merchant-home"
+    },
+    "GLUTENFREEHK": {
+      "id": "GLUTENFREEHK",
+      "name": "Glutenfree HK",
+      "url": "https://glutenfreehk.com/",
+      "linkType": "merchant-home"
+    },
+    "CITYSUPER": {
+      "id": "CITYSUPER",
+      "name": "city’super",
+      "url": "https://online.citysuper.com.hk/",
+      "linkType": "merchant-home"
+    },
+    "WATSONS": {
+      "id": "WATSONS",
+      "name": "屈臣氏",
+      "url": "https://www.watsons.com.hk/",
+      "linkType": "merchant-home"
     }
   },
   "attribution": [
@@ -1247,13 +2545,25 @@
       "label": "品牌海外官方營養資料",
       "url": "https://www.arnotts.com/brands/tim-tam",
       "note": "6款海外營養參考尚未與香港包裝核對；不可作為香港商品的醫療或過敏安全保證。"
+    },
+    {
+      "label": "香港市場包裝標籤照片及香港零售商完整資料",
+      "url": "https://homedelivery.kowloondairy.com/100-fresh-milk-237.html",
+      "note": "每項食品另列香港來源、實際閱讀的標籤圖片或完整網頁聲明；網上核對不代表當前實物檢驗。"
     }
   ],
   "limitations": [
-    "這是小型研究原型資料集，不是完整香港食品資料庫。",
-    "沒有任何產品取得已核對的完整香港實物過敏標籤；啟用過敏限制時不能提供已確認符合的產品。",
-    "海外配方及HKNA小包資料只能作清楚標示的比較參考；品牌口味相同不保證香港包裝配方相同。",
-    "糖、總碳水及能量是不同欄位；缺失值保留null，不推算net carbs。",
-    "價格不含送貨、多件／會員優惠，不表示特定分店庫存；商戶首頁連結不代表直接加入購物車。"
-  ]
+    "小型研究原型；不是完整香港食品庫，也不是醫療建議。",
+    "香港背標照片與香港完整網頁聲明分開標示；完整只指指定來源的可見資料已記錄，不代表核實當前實物／批次或保證沒有交叉接觸。",
+    "部分照片網址帶有2022／2023／2025年份或舊版包裝；已保留年代／版本提示，查閱日期不是配方生效日期，購買前仍須核對當前包裝。",
+    "原有海外品牌營養參考及HKNA小包資料未與香港指定包裝完全配對；這些紀錄維持過敏資料不完整，不能通過已啟用的過敏篩選。",
+    "香港零售商網上完整聲明未必是香港加貼標籤照片；這類資料另標示來源範圍，不冒充實物核驗。",
+    "價格按原來源及指定整包容量記錄；不配對相似口味或不同容量。無可核實價格時保留未知，不能通過預算篩選。",
+    "價格不含送貨及多件／會員優惠，不代表每間分店售價或庫存。Glutenfree HK採訂購及分批配送，須到商戶確認。",
+    "糖與總／可利用碳水定義可能不同；未明確的定義標示未知，不計算淨碳水。",
+    "過敏篩選結果只表示已記錄來源未列所選過敏原，不代表無過敏原；含有／可能含有及資料不完整依然排除。"
+  ],
+  "labelReviewedAt": "2026-10-21",
+  "version": "1.1-hk-labels",
+  "allergenCompletenessDefinition": "complete = all ingredients plus visible allergen/precaution information in the specified Hong Kong published label photos or full online statement have been recorded. It does not establish the current physical batch, absence of cross-contact, or personal safety. Unpublished precautions remain unknown, not a guarantee."
 }
