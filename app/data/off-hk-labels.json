@@ -1,0 +1,458 @@
+{
+  "schemaVersion": 1,
+  "sourceName": "Open Food Facts contributors",
+  "checkedAt": "2026-10-21",
+  "recordCount": 4,
+  "attribution": "Contains information from Open Food Facts, made available under the Open Database License (ODbL). Manual label transcriptions/corrections and exact Pricewatch-ID mappings are identified in each record. Source photo authors and licences remain attached.",
+  "databaseLicense": {
+    "name": "ODbL-1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1-0/"
+  },
+  "contentsLicense": {
+    "name": "DbCL-1.0",
+    "url": "https://opendatacommons.org/licenses/dbcl/1-0/"
+  },
+  "imagesLicense": {
+    "name": "CC-BY-SA-3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "reuseNote": "OFF-derived database rights and changes are offered under ODbL. All alteration data and exact merge methods are publicly available in off-hk-labels.json, products.json, pricewatch-foods.json, pricewatch-meta.json and catalogue.mjs. This does not grant rights to trademarks or third-party expressive content; retain per-source notices and image credits.",
+  "mergeMethod": "../catalogue.mjs",
+  "products": [
+    {
+      "id": "P000000038",
+      "nameZh": "雪芳蛋糕 (朱古力味) 60克",
+      "nameEn": "Chiffon Cake (Chocolate Flavour) 60g",
+      "brand": "嘉頓",
+      "category": "bakery",
+      "reviewDecision": "photo-confirmed-hk-allergy-source-complete-nutrition-unreadable",
+      "packSize": "60克（現行品牌目錄）",
+      "quantity": 60,
+      "quantityUnit": "g",
+      "servingSize": null,
+      "origin": null,
+      "barcode": "0089782040961",
+      "nutrition": {
+        "basisUnit": null,
+        "basisAmount": null,
+        "energyKcal": null,
+        "carbohydrates": null,
+        "sugars": null,
+        "fat": null,
+        "saturatedFat": null,
+        "protein": null,
+        "fibre": null,
+        "sodiumMg": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "unknown",
+        "region": "hk-online-statement",
+        "hkLabelVerified": false
+      },
+      "ingredients": "Sugar, Wheat Flour, Egg, Corn Oil, Fresh Milk (5.5%), Cocoa Powder, Corn Starch, Colour (150d) (sulphite), Whey Powder (milk), Raising Agent (450, 500), Salt, Flavouring, Preservative (202), Acidity Regulator (330).",
+      "allergens": {
+        "contains": [
+          "eggs",
+          "milk",
+          "gluten",
+          "sulphites"
+        ],
+        "mayContain": [
+          "soy",
+          "tree-nuts",
+          "peanuts"
+        ],
+        "status": "complete",
+        "text": "照片明列含蛋、奶、含麩質穀類、亞硫酸鹽；廠房處理大豆、木本堅果及花生。",
+        "coverage": "2025-05-24上載照片中完整英文成分、contains及廠房警告均可讀；與現行香港品牌目錄同條碼4096／60克。沒有檢查當前實物批次；照片未涵蓋完整營養表。",
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false
+      },
+      "physicalPackChecked": false,
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "photoDateNote": "Open Food Facts 照片於2025-05-24上載（不是有效期或拍攝日）；營養表右邊被截斷，未擷取任何數字。"
+      },
+      "sources": [
+        {
+          "label": "Open Food Facts：香港市場條碼0089782040961",
+          "url": "https://world.openfoodfacts.org/product/0089782040961",
+          "checkedAt": "2026-10-21",
+          "scope": "人工逐字閱讀上載包裝照片的完整成分、contains及廠房聲明；不依賴自動allergen tags"
+        },
+        {
+          "label": "嘉頓香港官方目錄：朱古力味雪芳蛋糕",
+          "url": "https://garden-catalogue.com/zh-hans/hk/retail/cake/sponge_cake/chiffon_cake/1?back=bca7fb9beefc72664bcd150f8a45e749",
+          "checkedAt": "2026-10-21",
+          "scope": "同款貨號4096、60克、條碼089782040961；現行品牌列大豆／花生廠房警告，照片額外木本堅果警告亦保留"
+        }
+      ],
+      "dataStatus": "hk-market-photo-allergy-only",
+      "sourceLimit": "已讀2025年上載香港市場包裝成分／過敏照片及現行品牌同款條碼資料；沒有檢查當前實物。照片營養表被截斷，數值保留未知。",
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/204/0961/1.jpg",
+          "label": "Open Food Facts 香港包裝成分及過敏聲明照片（2025-05-24）",
+          "author": "halal-food",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "uploadedAt": "2025-05-24"
+        }
+      ],
+      "imageAttribution": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/204/0961/1.jpg",
+          "author": "halal-food",
+          "uploadedAt": "2025-05-24",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        }
+      ],
+      "dataLicence": {
+        "name": "Open Database Licence (ODbL)",
+        "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "source": "Open Food Facts",
+        "note": "OFF-derived record should remain in separately identified ODbL subset; image attribution retained. Manufacturer identity facts separately sourced."
+      }
+    },
+    {
+      "id": "P000000280",
+      "nameZh": "原味薯片 55克",
+      "nameEn": "Potato Chips - Original 55g",
+      "brand": "卡樂B",
+      "brandEn": "Calbee",
+      "category": "snacks",
+      "tags": [],
+      "packSize": "55克",
+      "quantity": 55,
+      "quantityUnit": "g",
+      "servingSize": 27.5,
+      "origin": "香港",
+      "barcode": "4892294210311",
+      "prices": [],
+      "sources": [
+        {
+          "label": "Open Food Facts 原始記錄及標籤照片",
+          "url": "https://world.openfoodfacts.org/product/4892294210311",
+          "checkedAt": "2026-10-21",
+          "scope": "人工閱讀指定包裝照片；不採用未核對的自動過敏原／OCR欄位。"
+        },
+        {
+          "label": "消委會同規格商品",
+          "url": "https://online-price-watch.consumer.org.hk/opw/product/P000000280",
+          "checkedAt": "2026-10-21",
+          "scope": "香港商品身份及包裝規格；價格由既有官方快照保留。"
+        }
+      ],
+      "dataStatus": "hk-label-photo",
+      "physicalPackChecked": false,
+      "licence": {
+        "database": "ODbL-1.0",
+        "databaseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "contents": "DbCL-1.0",
+        "contentsUrl": "https://opendatacommons.org/licenses/dbcl/1-0/",
+        "images": "CC-BY-SA-3.0",
+        "imagesUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "offSource": {
+        "barcode": "4892294210311",
+        "apiUrl": "https://world.openfoodfacts.org/api/v2/product/4892294210311.json",
+        "checkedAt": "2026-10-21",
+        "method": "manual transcription of original label photographs; processed API fields not accepted without photo verification",
+        "apiCountryTags": [
+          "en:hong-kong"
+        ]
+      },
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 548,
+        "carbohydrates": 54.9,
+        "sugars": 0.5,
+        "fat": 36,
+        "saturatedFat": 14.6,
+        "protein": 5.1,
+        "fibre": 4,
+        "sodiumMg": 349,
+        "carbohydrateDefinition": "total",
+        "status": "hk-label-photo",
+        "region": "HK",
+        "hkLabelVerified": true
+      },
+      "ingredients": "馬鈴薯、植物油、麥芽糊精、食鹽、氯化鉀。",
+      "allergens": {
+        "contains": [],
+        "mayContain": [
+          "gluten",
+          "crustaceans",
+          "eggs",
+          "fish",
+          "peanuts",
+          "soy",
+          "milk",
+          "tree-nuts"
+        ],
+        "status": "complete",
+        "text": "生產此產品的廠房亦處理麥質、甲殼類動物、蛋類、魚類、花生、大豆、奶類及堅果製品。",
+        "coverage": "已讀指定香港包裝背面完整成分與廠房交叉接觸警告；未列出不代表保證不存在。",
+        "verificationMethod": "hk-pack-photo-read",
+        "physicalPackChecked": false
+      },
+      "sourceLimit": "背標照片由 Open Food Facts 用戶 tacite 於2020-02上載，屬較舊香港55克包裝；未核對當前實物或批次。2026年另一張英國入口貼紙照片不得冒充香港當前版本。",
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "photoDateNote": "使用2020年香港中英文原背標，保留來源年期警告；OFF同一條碼亦有2026年英國貼紙圖片。",
+        "verificationMethod": "manual online label photo reading"
+      },
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/229/421/0311/2.jpg",
+          "label": "香港55克成分、廠房警告及條碼背標",
+          "author": "tacite",
+          "source": "Open Food Facts contributors",
+          "license": "CC-BY-SA-3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "uploadedAt": "2020-02-09",
+          "modified": false
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/229/421/0311/nutrition_en.8.full.jpg",
+          "label": "香港55克營養表原圖裁選",
+          "author": "tacite",
+          "source": "Open Food Facts contributors",
+          "license": "CC-BY-SA-3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "uploadedAt": "2020-02-09",
+          "modified": false
+        }
+      ],
+      "verification": {
+        "identity": "55g net weight and barcode visible; HK manufacturer/address on original pack",
+        "processedFieldCorrections": "OFF traces_tags omit gluten and tree-nuts. All eight factory allergens manually restored from raw photo.",
+        "numbers": "All eight displayed nutrient fields read directly from original per100g panel."
+      }
+    },
+    {
+      "id": "P000000130",
+      "nameZh": "高鈣低脂牛奶飲品 236毫升",
+      "nameEn": "Hi-Calcium Low Fat Milk Beverage 236mL",
+      "brand": "維他",
+      "brandEn": "Vita",
+      "category": "drinks",
+      "tags": [],
+      "packSize": "236毫升",
+      "quantity": 236,
+      "quantityUnit": "ml",
+      "servingSize": 236,
+      "origin": null,
+      "barcode": "4891028165552",
+      "prices": [],
+      "sources": [
+        {
+          "label": "Open Food Facts 原始記錄及標籤照片",
+          "url": "https://world.openfoodfacts.org/product/4891028165552",
+          "checkedAt": "2026-10-21",
+          "scope": "人工閱讀指定包裝照片；不採用未核對的自動過敏原／OCR欄位。"
+        },
+        {
+          "label": "消委會同規格商品",
+          "url": "https://online-price-watch.consumer.org.hk/opw/product/P000000130",
+          "checkedAt": "2026-10-21",
+          "scope": "香港商品身份及包裝規格；價格由既有官方快照保留。"
+        }
+      ],
+      "dataStatus": "hk-label-photo",
+      "physicalPackChecked": false,
+      "licence": {
+        "database": "ODbL-1.0",
+        "databaseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "contents": "DbCL-1.0",
+        "contentsUrl": "https://opendatacommons.org/licenses/dbcl/1-0/",
+        "images": "CC-BY-SA-3.0",
+        "imagesUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "offSource": {
+        "barcode": "4891028165552",
+        "apiUrl": "https://world.openfoodfacts.org/api/v2/product/4891028165552.json",
+        "checkedAt": "2026-10-21",
+        "method": "manual transcription of original label photographs; processed API fields not accepted without photo verification",
+        "apiCountryTags": [
+          "en:japan"
+        ]
+      },
+      "nutrition": {
+        "basisUnit": "ml",
+        "basisAmount": 100,
+        "energyKcal": 57.6271,
+        "carbohydrates": 6.9915,
+        "sugars": 6.9915,
+        "fat": 1.3983,
+        "saturatedFat": 0.8898,
+        "protein": 4.2797,
+        "fibre": null,
+        "sodiumMg": 55.0847,
+        "carbohydrateDefinition": "unspecified",
+        "status": "partial-hk-label-photo",
+        "region": "HK",
+        "hkLabelVerified": true,
+        "conversionNote": "照片營養表只列每236mL一盒：能量136kcal、蛋白質10.1g、脂肪3.3g、飽和脂肪2.1g、碳水及糖各16.5g、鈉130mg。全部除236乘100換算每100mL；纖維未列。",
+        "sourcePerServing": {
+          "amount": 236,
+          "unit": "ml",
+          "energyKcal": 136,
+          "protein": 10.1,
+          "fat": 3.3,
+          "saturatedFat": 2.1,
+          "carbohydrates": 16.5,
+          "sugars": 16.5,
+          "sodiumMg": 130
+        }
+      },
+      "allergens": {
+        "contains": [
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "partial",
+        "text": "包裝名稱明示牛奶飲品；照片只有營養面及部分正面，完整成分及交叉接觸警告未取得，不能通過過敏篩選。",
+        "physicalPackChecked": false
+      },
+      "ingredientsSummary": "完整成分表尚未取得；不將OFF錯置的營養OCR文字當成成分。",
+      "sourceLimit": "2025年7月上載的236mL香港格式營養照片；OFF國家標籤為Japan，不能代替包裝市場判斷。未有完整成分／警告面，過敏狀態維持不完整；未核對實物包裝。",
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "photoDateNote": "照片由david191624於2025-07-02上載。營養數值人工覆核，完整過敏資料不足。"
+      },
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/816/5552/ingredients_zh.6.full.jpg",
+          "label": "香港格式236mL營養面；OFF誤分類為ingredients",
+          "author": "david191624",
+          "source": "Open Food Facts contributors",
+          "license": "CC-BY-SA-3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "uploadedAt": "2025-07-02",
+          "modified": false
+        }
+      ],
+      "verification": {
+        "processedFieldCorrections": "OFF sodium_100g=0.065g (65mg) does not match photo 130mg/236mL. Correct derived sodium55.0847mg/100mL; do not use API100g basis for liquid.",
+        "identity": "ViTa Hi-Calcium Low Fat Milk 236mL on bilingual HK-format carton; full ingredients panel absent"
+      }
+    },
+    {
+      "id": "P000000327",
+      "nameZh": "電解質補充飲料 500毫升",
+      "nameEn": "Ion Supply Drink 500mL",
+      "brand": "寶礦力水特",
+      "brandEn": "Pocari Sweat",
+      "category": "drinks",
+      "tags": [],
+      "packSize": "500毫升",
+      "quantity": 500,
+      "quantityUnit": "ml",
+      "servingSize": null,
+      "origin": null,
+      "barcode": "6937761805022",
+      "prices": [],
+      "sources": [
+        {
+          "label": "Open Food Facts 原始記錄及標籤照片",
+          "url": "https://world.openfoodfacts.org/product/6937761805022",
+          "checkedAt": "2026-10-21",
+          "scope": "人工閱讀指定包裝照片；不採用未核對的自動過敏原／OCR欄位。"
+        },
+        {
+          "label": "消委會同規格商品",
+          "url": "https://online-price-watch.consumer.org.hk/opw/product/P000000327",
+          "checkedAt": "2026-10-21",
+          "scope": "香港商品身份及包裝規格；價格由既有官方快照保留。"
+        },
+        {
+          "label": "寶礦力水特香港品牌官方營養資料",
+          "url": "https://www.pocarisweat.hk/products/ingredient/",
+          "checkedAt": "2026-10-21",
+          "scope": "香港官方營養參考入口，與指定500mL包裝圖片交叉核對；不採用宣傳文字作個人飲食建議。"
+        }
+      ],
+      "dataStatus": "hk-label-photo",
+      "physicalPackChecked": false,
+      "licence": {
+        "database": "ODbL-1.0",
+        "databaseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "contents": "DbCL-1.0",
+        "contentsUrl": "https://opendatacommons.org/licenses/dbcl/1-0/",
+        "images": "CC-BY-SA-3.0",
+        "imagesUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "offSource": {
+        "barcode": "6937761805022",
+        "apiUrl": "https://world.openfoodfacts.org/api/v2/product/6937761805022.json",
+        "checkedAt": "2026-10-21",
+        "method": "manual transcription of original label photographs; processed API fields not accepted without photo verification",
+        "apiCountryTags": [
+          "en:france"
+        ]
+      },
+      "nutrition": {
+        "basisUnit": "ml",
+        "basisAmount": 100,
+        "energyKcal": 24,
+        "carbohydrates": 6.2,
+        "sugars": 5.7,
+        "fat": 0,
+        "saturatedFat": 0,
+        "protein": 0,
+        "fibre": null,
+        "sodiumMg": 49,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-label-photo",
+        "region": "HK",
+        "hkLabelVerified": true
+      },
+      "ingredients": "水、糖、高果糖玉米糖漿、酸味劑（330、331、296、575）、調味劑、氯化鈉、氯化鉀、乳酸鈣、碳酸鎂、抗氧化劑（300）。",
+      "allergens": {
+        "contains": [],
+        "mayContain": [],
+        "status": "partial",
+        "text": "已讀所提供照片的配料列表，未取得可確認涵蓋完整過敏／交叉接觸聲明的整個包裝，故不當成已通過過敏條件。",
+        "physicalPackChecked": false
+      },
+      "sourceLimit": "消委會500mL商品頁GTIN與OFF條碼完全一致；照片有香港中英文營養格式，2025年11月上載。OFF國家標籤France並非香港批次證明；過敏資料仍不完整，未核對當前實物包裝。",
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "photoDateNote": "riafara於2025-11-08上載配料及營養照片；未將空allergens/traces欄視為無過敏原。"
+      },
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/693/776/180/5022/ingredients_en.24.full.jpg",
+          "label": "香港中英文配料照片",
+          "author": "riafara",
+          "source": "Open Food Facts contributors",
+          "license": "CC-BY-SA-3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "uploadedAt": "2025-11-08",
+          "modified": false
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/693/776/180/5022/nutrition_en.27.full.jpg",
+          "label": "香港中英文每100mL營養表",
+          "author": "riafara",
+          "source": "Open Food Facts contributors",
+          "license": "CC-BY-SA-3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "uploadedAt": "2025-11-08",
+          "modified": false
+        }
+      ],
+      "verification": {
+        "identity": "Official CC P000000327 has exact GTIN6937761805022. 500mL quantity in OFF record and photographed bilingual HK-style panel.",
+        "numbers": "All seven mandatory nutrition values manually read from per100mL label; fibre unlisted remains null.",
+        "allergenDecision": "No empty API field treated as a negative declaration. Full cross-contact coverage not established."
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-10-21T05:02:05.866Z",
+  "updatedAt": "2026-10-21T06:34:27.819Z",
   "priceSnapshotAt": "2026-10-21",
   "priceRetrievedAt": "2026-10-21T12:26:03+08:00",
   "sourcePriceDate": null,
@@ -928,8 +928,8 @@
       "servingSize": null,
       "origin": "香港",
       "nutrition": {
-        "basisUnit": "g",
-        "basisAmount": 100,
+        "basisUnit": null,
+        "basisAmount": null,
         "energyKcal": null,
         "carbohydrates": null,
         "sugars": null,
@@ -940,22 +940,27 @@
         "sodiumMg": null,
         "carbohydrateDefinition": "unspecified",
         "status": "unknown",
+        "region": "hk-online-statement",
         "hkLabelVerified": false
       },
       "allergens": {
         "contains": [
           "gluten",
           "peanuts",
-          "milk",
           "soy",
+          "milk",
           "sesame"
         ],
         "mayContain": [
           "eggs",
           "tree-nuts"
         ],
-        "status": "partial",
-        "text": "百佳成分列小麥、花生醬、奶粉及大豆；警告另列芝麻，共廠處理蛋及堅果。現售包裝尚未核對。"
+        "status": "complete",
+        "text": "此產品含有芝麻製品。生產此食品的廠房亦處理蛋類製品及堅果製品。",
+        "coverage": "已閱讀此香港零售商指定商品頁全部已刊成分及注意事項；沒有檢查目前實物批次，來源未列某過敏原不等於不存在。",
+        "completeSource": "hk-retailer-full-online-statement",
+        "verificationMethod": "hk-retailer-full-online-statement",
+        "physicalPackChecked": false
       },
       "prices": [
         {
@@ -1007,14 +1012,30 @@
           "url": "https://www.pns.hk/en/peanut-wafer/p/BP_120139",
           "checkedAt": "2026-10-21",
           "scope": "香港零售商品容量、產地、成分及警告；尚未取得營養表"
+        },
+        {
+          "label": "香港百佳 PNS：指定包裝成分及注意事項",
+          "url": "https://www.pns.hk/zh-hk/花生味威化/p/BP_120139",
+          "checkedAt": "2026-10-21",
+          "scope": "全份已刊成分、過敏警告及包裝名稱／數量；不是營養背標照片。"
         }
       ],
-      "dataStatus": "price-only",
-      "sourceLimit": "營養及完整過敏標籤待核對；價格不是即時庫存。",
+      "dataStatus": "hk-online-allergy-statement",
+      "sourceLimit": "已閱讀指定香港零售商網頁公開成分及警告；未檢查你購買嘅實物包裝或當前批次。此來源沒有完整營養表，缺項維持未知。",
       "versionStatus": "hk-label-unverified",
       "ingredientsSummary": "百佳資料包括小麥粉、花生醬、全脂奶粉及大豆卵磷脂；請以現售實物完整標籤為準。",
       "barcode": null,
-      "originSource": "https://www.pns.hk/en/peanut-wafer/p/BP_120139"
+      "originSource": "https://www.pns.hk/en/peanut-wafer/p/BP_120139",
+      "reviewDecision": "eligible-complete-published-hk-statement",
+      "ingredients": "小麥粉，花生醬，植物起酥油（棕櫚油）（含有抗氧化劑（抗壞血酸棕櫚酸酯，混合生育酚濃縮物，大豆卵磷脂）），糖，全脂奶粉，玉米澱粉，人造調味劑，膨脹劑（碳酸鈉類，碳酸銨類），乳化劑（大豆卵磷脂），鹽（含有抗結劑（亞鐵氰化鈉））。",
+      "physicalPackChecked": false,
+      "labelEvidence": {
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "method": "香港官方零售商品頁完整已刊成分及警告人工閱讀"
+      },
+      "reviewNote": "不能只由成分表推斷芝麻：百佳注意事項明列含芝麻。未取得同款香港實物照片／完整營養，不填海外威化數據或海外條碼。",
+      "labelImages": []
     },
     {
       "id": "P000000793",
@@ -1752,19 +1773,19 @@
       ],
       "sources": [
         {
-          "label": "香港市場完整標籤相片",
+          "label": "香港市場完整包裝標籤示例圖",
           "url": "https://homedelivery.kowloondairy.com/100-fresh-milk-237.html",
           "checkedAt": "2026-10-21",
           "scope": "同品牌、口味、指定容量的香港銷售頁標籤；營養、成分及全部可見過敏／廠房提示"
         },
         {
-          "label": "原標籤相片 1",
+          "label": "原包裝標籤示例圖 1",
           "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_freshmilk_lhs_1.png?auto=webp&format=png&fit=cover",
           "checkedAt": "2026-10-21",
           "scope": "已實際下載並逐字視覺核對；圖片公開時間及當前配方日期未由來源明示"
         },
         {
-          "label": "原標籤相片 2",
+          "label": "原包裝標籤示例圖 2",
           "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_freshmilk_rhs_1.png?auto=webp&format=png&fit=cover",
           "checkedAt": "2026-10-21",
           "scope": "已實際下載並逐字視覺核對；圖片公開時間及當前配方日期未由來源明示"
@@ -1776,8 +1797,8 @@
           "scope": "相同品牌、口味、整包容量香港商戶價格"
         }
       ],
-      "dataStatus": "hk-label-photo",
-      "sourceLimit": "已核對香港銷售來源所刊標籤照片；未核實你手上實物、批次或目前最新配方。圖片查閱日期不等於標籤生效日期。購買前請再核對包裝。數值以生產商正視平面標籤為準；同頁斜視圖片不宜用作數字轉錄。",
+      "dataStatus": "hk-brand-label-image",
+      "sourceLimit": "已核對香港銷售來源所刊包裝標籤示例圖；未核實你手上實物、批次或目前最新配方。圖片查閱日期不等於標籤生效日期。購買前請再核對包裝。數值以生產商正視平面標籤為準；同頁斜視圖片不宜用作數字轉錄。",
       "versionStatus": "hk-online-label-photo-reviewed",
       "ingredientsSummary": "100%新鮮牛奶。",
       "barcode": null,
@@ -1792,7 +1813,7 @@
       },
       "labelEvidence": {
         "verificationType": "hong-kong-online-label-image",
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
         "currentBatchChecked": false,
         "scope": "ONLINE published label panels inspected only; not a purchased physical pack.",
@@ -1808,7 +1829,9 @@
         "imageAgeNote": "來源未明示影像拍攝日期。",
         "variantNote": "同頁斜視立體包裝圖文字較模糊，容易誤讀62為64、3.1為3.4；採用清晰正視lhs/rhs平面標籤。不能推論當前實物批次配方已核對。",
         "sourceType": "hk-online-package-label-photo",
-        "photoDateNote": "來源未明示影像拍攝日期。"
+        "photoDateNote": "來源未明示影像拍攝日期。",
+        "packageLabelImageInspected": true,
+        "evidenceType": "manufacturer-label-artwork"
       },
       "physicalPackChecked": false,
       "labelImages": [
@@ -2483,6 +2506,1970 @@
         "physicalPackPhotoInspected": false,
         "physicalPackChecked": false
       }
+    },
+    {
+      "id": "P000002531",
+      "nameZh": "維記0.3%脫脂高鈣牛奶飲品 (236毫升)",
+      "nameEn": "Skimmed Hi-Ca Milk Drink 236mL",
+      "brand": "維記",
+      "brandEn": "Kowloon Dairy",
+      "category": "drinks",
+      "sourceCategory": {
+        "zh": "奶類及乳製品 / 大豆製品 / 蛋類",
+        "en": "Dairy / Soy products / Eggs",
+        "pathZh": [
+          "牛奶 / 牛奶飲品",
+          "低溫冷藏鮮奶/牛奶飲品"
+        ],
+        "pathEn": [
+          "Milk / Milk drinks",
+          "Chilled fresh milk/milk drinks"
+        ]
+      },
+      "packSize": "236毫升",
+      "prices": [],
+      "offers": [
+        {
+          "store": "WELLCOME",
+          "textZh": "買2件$12.00",
+          "textEn": "2 for $12.00"
+        },
+        {
+          "store": "PARKNSHOP",
+          "textZh": "買3件慳$7.50",
+          "textEn": "Buy 3 to save $7.50"
+        },
+        {
+          "store": "JASONS",
+          "textZh": "買2件$13.00",
+          "textEn": "2 for $13.00"
+        }
+      ],
+      "quantity": 236,
+      "quantityUnit": "ml",
+      "servingSize": null,
+      "origin": "香港",
+      "barcode": "4893318633635",
+      "nutrition": {
+        "basisAmount": 100,
+        "basisUnit": "ml",
+        "energyKcal": 38,
+        "carbohydrates": 5.4,
+        "sugars": 5.4,
+        "fat": 0.3,
+        "saturatedFat": 0.3,
+        "protein": 3.3,
+        "sodiumMg": 60,
+        "fibre": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-brand-label-image",
+        "region": "hong-kong-market",
+        "hkLabelVerified": true
+      },
+      "ingredients": "水、脫脂鮮奶、奶類固體、碳酸鈣、穩定劑（鹿角菜膠、角豆膠）。",
+      "allergens": {
+        "contains": [
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "包裝標示奶類成分及0.16%鈣；未列其他過敏原或廠房警告。",
+        "evidenceScope": "已逐面閱讀香港品牌香港銷售頁所刊完整包裝標籤示例圖的成分及可見警告；圖片未列出其他過敏原不代表不存在或沒有交叉接觸。",
+        "verificationMethod": "hk-manufacturer-package-label-artwork"
+      },
+      "labelEvidence": {
+        "packageLabelImageInspected": true,
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "evidenceType": "manufacturer-label-artwork",
+        "photoDateNote": "來源為品牌公開包裝示例／標籤圖，唔係本組拍攝或檢查當前批次實物。網頁查閱日期不等於配方或圖片日期。"
+      },
+      "labelImages": [
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_skimmilk_rhs_2.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 1"
+        },
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_hical-skimmed_front_-20_.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 2"
+        },
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_skimmilk_side_2.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 3"
+        },
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_skimmilk_lhs_2.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 4"
+        }
+      ],
+      "sources": [
+        {
+          "label": "維記香港官方商品及包裝標籤圖",
+          "url": "https://homedelivery.kowloondairy.com/0-3-fat-hi-calcium-skimmed-236.html",
+          "checkedAt": "2026-10-21",
+          "scope": "香港銷售指定口味及容量；所有四面公開標籤圖已目視閱讀，含營養、成分及可見警告"
+        },
+        {
+          "label": "官方包裝標籤圖 1",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_skimmilk_rhs_2.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        },
+        {
+          "label": "官方包裝標籤圖 2",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_hical-skimmed_front_-20_.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        },
+        {
+          "label": "官方包裝標籤圖 3",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_skimmilk_side_2.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        },
+        {
+          "label": "官方包裝標籤圖 4",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_skimmilk_lhs_2.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        }
+      ],
+      "physicalPackChecked": false,
+      "dataStatus": "hk-brand-label-image",
+      "sourceLimit": "香港品牌公開包裝標籤示例圖已閱；未核對當前實物或批次。包裝標示奶類成分及0.16%鈣；未列其他過敏原或廠房警告。 購買前仍須核對實際包裝。"
+    },
+    {
+      "id": "P000000122",
+      "nameZh": "維記1.5%高鈣低脂牛奶飲品 (236毫升)",
+      "nameEn": "Slimilk - Low Fat Hi-Ca Milk Drink 236mL",
+      "brand": "維記",
+      "brandEn": "Kowloon Dairy",
+      "category": "drinks",
+      "sourceCategory": {
+        "zh": "奶類及乳製品 / 大豆製品 / 蛋類",
+        "en": "Dairy / Soy products / Eggs",
+        "pathZh": [
+          "牛奶 / 牛奶飲品",
+          "低溫冷藏鮮奶/牛奶飲品"
+        ],
+        "pathEn": [
+          "Milk / Milk drinks",
+          "Chilled fresh milk/milk drinks"
+        ]
+      },
+      "packSize": "236毫升",
+      "prices": [],
+      "offers": [
+        {
+          "store": "WELLCOME",
+          "textZh": "買2件$12.00",
+          "textEn": "2 for $12.00"
+        },
+        {
+          "store": "PARKNSHOP",
+          "textZh": "買3件慳$7.50",
+          "textEn": "Buy 3 to save $7.50"
+        },
+        {
+          "store": "JASONS",
+          "textZh": "買2件$13.00",
+          "textEn": "2 for $13.00"
+        }
+      ],
+      "quantity": 236,
+      "quantityUnit": "ml",
+      "servingSize": null,
+      "origin": "香港",
+      "barcode": "4893318633536",
+      "nutrition": {
+        "basisAmount": 100,
+        "basisUnit": "ml",
+        "energyKcal": 60,
+        "carbohydrates": 7.1,
+        "sugars": 7.1,
+        "fat": 1.5,
+        "saturatedFat": 1,
+        "protein": 4.4,
+        "sodiumMg": 67,
+        "fibre": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-brand-label-image",
+        "region": "hong-kong-market",
+        "hkLabelVerified": true
+      },
+      "ingredients": "水、奶固體、鮮牛奶、碳酸鈣、穩定劑（鹿角菜膠、角豆膠）、維他命A及D。",
+      "allergens": {
+        "contains": [
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "包裝標示奶類成分及0.17%鈣；未列其他過敏原或廠房警告。",
+        "evidenceScope": "已逐面閱讀香港品牌香港銷售頁所刊完整包裝標籤示例圖的成分及可見警告；圖片未列出其他過敏原不代表不存在或沒有交叉接觸。",
+        "verificationMethod": "hk-manufacturer-package-label-artwork"
+      },
+      "labelEvidence": {
+        "packageLabelImageInspected": true,
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "evidenceType": "manufacturer-label-artwork",
+        "photoDateNote": "來源為品牌公開包裝示例／標籤圖，唔係本組拍攝或檢查當前批次實物。網頁查閱日期不等於配方或圖片日期。"
+      },
+      "labelImages": [
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_slimilk_rhs_1_1.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 1"
+        },
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_slimilk_front_-20_.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 2"
+        },
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_slimilk_side_1.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 3"
+        },
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_slimilk_lhs.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 4"
+        }
+      ],
+      "sources": [
+        {
+          "label": "維記香港官方商品及包裝標籤圖",
+          "url": "https://homedelivery.kowloondairy.com/low-fat-hi-calcium-slimilk-236.html",
+          "checkedAt": "2026-10-21",
+          "scope": "香港銷售指定口味及容量；所有四面公開標籤圖已目視閱讀，含營養、成分及可見警告"
+        },
+        {
+          "label": "官方包裝標籤圖 1",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_slimilk_rhs_1_1.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        },
+        {
+          "label": "官方包裝標籤圖 2",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_slimilk_front_-20_.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        },
+        {
+          "label": "官方包裝標籤圖 3",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_slimilk_side_1.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        },
+        {
+          "label": "官方包裝標籤圖 4",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-236_800x800_slimilk_lhs.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        }
+      ],
+      "physicalPackChecked": false,
+      "dataStatus": "hk-brand-label-image",
+      "sourceLimit": "香港品牌公開包裝標籤示例圖已閱；未核對當前實物或批次。包裝標示奶類成分及0.17%鈣；未列其他過敏原或廠房警告。 購買前仍須核對實際包裝。"
+    },
+    {
+      "id": "P000000891",
+      "nameZh": "維記100%鮮牛奶 (946毫升)",
+      "nameEn": "100% Fresh Milk 946mL",
+      "brand": "維記",
+      "brandEn": "Kowloon Dairy",
+      "category": "drinks",
+      "sourceCategory": {
+        "zh": "奶類及乳製品 / 大豆製品 / 蛋類",
+        "en": "Dairy / Soy products / Eggs",
+        "pathZh": [
+          "牛奶 / 牛奶飲品",
+          "低溫冷藏鮮奶/牛奶飲品"
+        ],
+        "pathEn": [
+          "Milk / Milk drinks",
+          "Chilled fresh milk/milk drinks"
+        ]
+      },
+      "packSize": "946毫升",
+      "prices": [],
+      "offers": [
+        {
+          "store": "WELLCOME",
+          "textZh": "買2件$50.00",
+          "textEn": "2 for $50.00"
+        },
+        {
+          "store": "PARKNSHOP",
+          "textZh": "買2件慳$6.00",
+          "textEn": "Buy 2 to save $6.00"
+        },
+        {
+          "store": "JASONS",
+          "textZh": "買2件$50.00",
+          "textEn": "2 for $50.00"
+        },
+        {
+          "store": "AEON",
+          "textZh": "買2件$50.00",
+          "textEn": "Buy 2 at $50.00"
+        }
+      ],
+      "quantity": 946,
+      "quantityUnit": "ml",
+      "servingSize": null,
+      "origin": "香港",
+      "barcode": "4893318633116",
+      "nutrition": {
+        "basisAmount": 100,
+        "basisUnit": "ml",
+        "energyKcal": 62,
+        "carbohydrates": 4.6,
+        "sugars": 4.6,
+        "fat": 3.5,
+        "saturatedFat": 2.4,
+        "protein": 3.1,
+        "sodiumMg": 44,
+        "fibre": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-brand-label-image",
+        "region": "hong-kong-market",
+        "hkLabelVerified": true
+      },
+      "ingredients": "100%新鮮牛奶。",
+      "allergens": {
+        "contains": [
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "成分是100%新鮮牛奶。所閱左右、正面及側面示例圖未列其他過敏原或廠房警告。圖片包含2007–2019年銷量研究註腳，不能當成2026實物照片。",
+        "evidenceScope": "已逐面閱讀香港品牌香港銷售頁所刊完整包裝標籤示例圖的成分及可見警告；圖片未列出其他過敏原不代表不存在或沒有交叉接觸。",
+        "verificationMethod": "hk-manufacturer-package-label-artwork"
+      },
+      "labelEvidence": {
+        "packageLabelImageInspected": true,
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "evidenceType": "manufacturer-label-artwork",
+        "photoDateNote": "來源為品牌公開包裝示例／標籤圖，唔係本組拍攝或檢查當前批次實物。網頁查閱日期不等於配方或圖片日期。"
+      },
+      "labelImages": [
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-946_2400x2400_freshmilk_lhs.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 1"
+        },
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-946_800x800_freshmilk_front.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 2"
+        },
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-946_800x800_freshmilk_side.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 3"
+        },
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-946_2400x2400_freshmilk_rhs.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 4"
+        }
+      ],
+      "sources": [
+        {
+          "label": "維記香港官方商品及包裝標籤圖",
+          "url": "https://homedelivery.kowloondairy.com/100-fresh-milk-946.html",
+          "checkedAt": "2026-10-21",
+          "scope": "香港銷售指定口味及容量；所有四面公開標籤圖已目視閱讀，含營養、成分及可見警告"
+        },
+        {
+          "label": "官方包裝標籤圖 1",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-946_2400x2400_freshmilk_lhs.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        },
+        {
+          "label": "官方包裝標籤圖 2",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-946_800x800_freshmilk_front.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        },
+        {
+          "label": "官方包裝標籤圖 3",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-946_800x800_freshmilk_side.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        },
+        {
+          "label": "官方包裝標籤圖 4",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-946_2400x2400_freshmilk_rhs.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        }
+      ],
+      "physicalPackChecked": false,
+      "dataStatus": "hk-brand-label-image",
+      "sourceLimit": "香港品牌公開包裝標籤示例圖已閱；未核對當前實物或批次。成分是100%新鮮牛奶。所閱左右、正面及側面示例圖未列其他過敏原或廠房警告。圖片包含2007–2019年銷量研究註腳，不能當成2026實物照片。 購買前仍須核對實際包裝。"
+    },
+    {
+      "id": "P000001615",
+      "nameZh": "維記100%鮮牛奶 (1.5公升)",
+      "nameEn": "100% Fresh Milk 1.5L",
+      "brand": "維記",
+      "brandEn": "Kowloon Dairy",
+      "category": "drinks",
+      "sourceCategory": {
+        "zh": "奶類及乳製品 / 大豆製品 / 蛋類",
+        "en": "Dairy / Soy products / Eggs",
+        "pathZh": [
+          "牛奶 / 牛奶飲品",
+          "低溫冷藏鮮奶/牛奶飲品"
+        ],
+        "pathEn": [
+          "Milk / Milk drinks",
+          "Chilled fresh milk/milk drinks"
+        ]
+      },
+      "packSize": "1500毫升",
+      "prices": [],
+      "quantity": 1500,
+      "quantityUnit": "ml",
+      "servingSize": null,
+      "origin": "香港",
+      "barcode": "4893318633079",
+      "nutrition": {
+        "basisAmount": 100,
+        "basisUnit": "ml",
+        "energyKcal": 62,
+        "carbohydrates": 4.6,
+        "sugars": 4.6,
+        "fat": 3.5,
+        "saturatedFat": 2.4,
+        "protein": 3.1,
+        "sodiumMg": 44,
+        "fibre": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-brand-label-image",
+        "region": "hong-kong-market",
+        "hkLabelVerified": true
+      },
+      "ingredients": "100%新鮮牛奶。",
+      "allergens": {
+        "contains": [
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "成分是100%新鮮牛奶。所閱各面示例圖未列其他過敏原或廠房警告；包裝銷量註腳引用截至2021年資料，並非當前實物驗證。",
+        "evidenceScope": "已逐面閱讀香港品牌香港銷售頁所刊完整包裝標籤示例圖的成分及可見警告；圖片未列出其他過敏原不代表不存在或沒有交叉接觸。",
+        "verificationMethod": "hk-manufacturer-package-label-artwork"
+      },
+      "labelEvidence": {
+        "packageLabelImageInspected": true,
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "evidenceType": "manufacturer-label-artwork",
+        "photoDateNote": "來源為品牌公開包裝示例／標籤圖，唔係本組拍攝或檢查當前批次實物。網頁查閱日期不等於配方或圖片日期。"
+      },
+      "labelImages": [
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-1.5l_freshmilk_box_rhs_op2_resized.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 1"
+        },
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-1.5l_milk_box_front_op_resized.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 2"
+        },
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-1.5l_freshmilk_box_side_op3_resized.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 3"
+        },
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-1.5l_freshmilk_box_lhs_op2_resized.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 4"
+        }
+      ],
+      "sources": [
+        {
+          "label": "維記香港官方商品及包裝標籤圖",
+          "url": "https://homedelivery.kowloondairy.com/100-fresh-milk-1501.html",
+          "checkedAt": "2026-10-21",
+          "scope": "香港銷售指定口味及容量；所有四面公開標籤圖已目視閱讀，含營養、成分及可見警告"
+        },
+        {
+          "label": "官方包裝標籤圖 1",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-1.5l_freshmilk_box_rhs_op2_resized.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        },
+        {
+          "label": "官方包裝標籤圖 2",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-1.5l_milk_box_front_op_resized.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        },
+        {
+          "label": "官方包裝標籤圖 3",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-1.5l_freshmilk_box_side_op3_resized.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        },
+        {
+          "label": "官方包裝標籤圖 4",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-1.5l_freshmilk_box_lhs_op2_resized.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        }
+      ],
+      "physicalPackChecked": false,
+      "dataStatus": "hk-brand-label-image",
+      "sourceLimit": "香港品牌公開包裝標籤示例圖已閱；未核對當前實物或批次。成分是100%新鮮牛奶。所閱各面示例圖未列其他過敏原或廠房警告；包裝銷量註腳引用截至2021年資料，並非當前實物驗證。 購買前仍須核對實際包裝。"
+    },
+    {
+      "id": "P000005253",
+      "nameZh": "維記無乳糖鮮牛奶 (946毫升)",
+      "nameEn": "Lactose Free Fresh Milk 946mL",
+      "brand": "維記",
+      "brandEn": "Kowloon Dairy",
+      "category": "drinks",
+      "sourceCategory": {
+        "zh": "奶類及乳製品 / 大豆製品 / 蛋類",
+        "en": "Dairy / Soy products / Eggs",
+        "pathZh": [
+          "牛奶 / 牛奶飲品",
+          "低溫冷藏鮮奶/牛奶飲品"
+        ],
+        "pathEn": [
+          "Milk / Milk drinks",
+          "Chilled fresh milk/milk drinks"
+        ]
+      },
+      "packSize": "946毫升",
+      "prices": [],
+      "quantity": 946,
+      "quantityUnit": "ml",
+      "servingSize": null,
+      "origin": "中國",
+      "barcode": "4893318000420",
+      "nutrition": {
+        "basisAmount": 100,
+        "basisUnit": "ml",
+        "energyKcal": 65,
+        "carbohydrates": 4.6,
+        "sugars": 4.6,
+        "fat": 3.8,
+        "saturatedFat": 2.8,
+        "protein": 3.1,
+        "sodiumMg": 44,
+        "fibre": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-brand-label-image",
+        "region": "hong-kong-market",
+        "hkLabelVerified": true
+      },
+      "ingredients": "新鮮牛奶。",
+      "allergens": {
+        "contains": [
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "標籤寫明無乳糖，但成分仍是新鮮牛奶，必須排除奶類過敏。乳糖不耐與奶類過敏不同。產地按包裝廣州生產地址記為中國，唔以香港品牌推斷香港製造。",
+        "evidenceScope": "已逐面閱讀香港品牌香港銷售頁所刊完整包裝標籤示例圖的成分及可見警告；圖片未列出其他過敏原不代表不存在或沒有交叉接觸。",
+        "verificationMethod": "hk-manufacturer-package-label-artwork"
+      },
+      "labelEvidence": {
+        "packageLabelImageInspected": true,
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "evidenceType": "manufacturer-label-artwork",
+        "photoDateNote": "來源為品牌公開包裝示例／標籤圖，唔係本組拍攝或檢查當前批次實物。網頁查閱日期不等於配方或圖片日期。"
+      },
+      "labelImages": [
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-946_lactosefreemilk_box_lhs_op.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 1"
+        },
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-946_800x800_lactose_front_1.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 2"
+        },
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-946_800x800_lactose_side_1.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 3"
+        },
+        {
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-946_800x800_lactose_rhs_1.png?auto=webp&format=png&fit=cover",
+          "label": "品牌官方包裝標籤圖 4"
+        }
+      ],
+      "sources": [
+        {
+          "label": "維記香港官方商品及包裝標籤圖",
+          "url": "https://homedelivery.kowloondairy.com/lactose-free-fresh-milk-946.html",
+          "checkedAt": "2026-10-21",
+          "scope": "香港銷售指定口味及容量；所有四面公開標籤圖已目視閱讀，含營養、成分及可見警告"
+        },
+        {
+          "label": "官方包裝標籤圖 1",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-946_lactosefreemilk_box_lhs_op.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        },
+        {
+          "label": "官方包裝標籤圖 2",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-946_800x800_lactose_front_1.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        },
+        {
+          "label": "官方包裝標籤圖 3",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-946_800x800_lactose_side_1.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        },
+        {
+          "label": "官方包裝標籤圖 4",
+          "url": "https://homedelivery.kowloondairy.com/media/catalog/product/k/d/kd-946_800x800_lactose_rhs_1.png?auto=webp&format=png&fit=cover",
+          "checkedAt": "2026-10-21",
+          "scope": "逐面實際閱讀，非當前批次實物照片"
+        }
+      ],
+      "physicalPackChecked": false,
+      "dataStatus": "hk-brand-label-image",
+      "sourceLimit": "香港品牌公開包裝標籤示例圖已閱；未核對當前實物或批次。標籤寫明無乳糖，但成分仍是新鮮牛奶，必須排除奶類過敏。乳糖不耐與奶類過敏不同。產地按包裝廣州生產地址記為中國，唔以香港品牌推斷香港製造。 購買前仍須核對實際包裝。"
+    },
+    {
+      "id": "P000000015",
+      "nameZh": "出前一丁即食麵 - 麻油味 91克",
+      "nameEn": "Demae Ramen Instant Noodle - Sesame Oil Flavour 91g",
+      "brand": "日清",
+      "brandEn": "Nissin",
+      "category": "meals",
+      "packSize": "91克",
+      "quantity": 91,
+      "quantityUnit": "g",
+      "servingSize": 91,
+      "origin": null,
+      "barcode": "4897878000012",
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 457.1429,
+        "protein": 10,
+        "fat": null,
+        "saturatedFat": null,
+        "carbohydrates": 59.1209,
+        "sugars": 2.5275,
+        "sodiumMg": 1519.7802,
+        "fibre": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "partial-hk-official-quality-flag",
+        "region": "Hong Kong",
+        "hkLabelVerified": true,
+        "conversionNote": "來源按每食用分量91克列出；本紀錄逐項乘以100/91換算每100克，未把沖調用水計入。",
+        "sourceLimit": "官方頁面每91克總脂肪11.9克、飽和脂肪13.2克，互相矛盾；兩項暫保留未知，沒有借用五包裝或其他版本數值。"
+      },
+      "sourceNutrition": {
+        "basis": "per-serving",
+        "servingSize": 91,
+        "servingsPerPackage": 1,
+        "energyKcal": 416,
+        "protein": 9.1,
+        "fat": 11.9,
+        "saturatedFat": 13.2,
+        "carbohydrates": 53.8,
+        "sugars": 2.3,
+        "sodiumMg": 1383
+      },
+      "allergens": {
+        "contains": [
+          "gluten",
+          "soy",
+          "sesame"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "此產品含有大豆、含有麩質的穀類及其製品。 成分表另列芝麻／麻油，網站亦按含芝麻處理。",
+        "coverage": "香港官方此版本完整網頁成分及過敏段落均已閱讀；官方網頁沒有另列「可能含有」聲明，空白不表示已證實沒有交叉接觸。",
+        "completeSource": "hk-manufacturer-web-statement",
+        "verificationMethod": "hk-manufacturer-full-web-statement",
+        "physicalPackChecked": false
+      },
+      "ingredients": "麵：小麥粉、棕櫚油、食鹽、酸度調節劑(452、501、451、500、339、450)、氯化鉀、增稠劑(401、412)、抗氧化劑(307b、304)、 綠茶粉。；湯粉：食鹽、增味劑(621、 635)、醬油粉(大豆、小麥、食鹽)、白砂糖、色素(150a)、酵母精、水解大豆蛋白、大蒜粉、香料、脫水青葱、調味料及調味劑(雞肉、豬肉)、酸度調節劑(330)、米油、洋葱粉。；調味油：芝麻油(0.9%)、米油、調味料及調味劑 、色素(160b)、香料。",
+      "prices": [],
+      "sources": [
+        {
+          "label": "香港日清官方：此口味及包裝之成分、過敏及營養資料",
+          "url": "https://www.nissinfoods.com.hk/tch/products/demae-iccho/sesame-oil-flavour-450ml",
+          "checkedAt": "2026-10-21",
+          "scope": "淨重、條碼、全部成分及過敏聲明、每份營養表；不是當前實物檢驗"
+        }
+      ],
+      "dataStatus": "hk-manufacturer-online-statement",
+      "sourceLimit": "官方頁面每91克總脂肪11.9克、飽和脂肪13.2克，互相矛盾；兩項暫保留未知，沒有借用五包裝或其他版本數值。 已閱讀香港日清此口味及規格官方網頁嘅全部成分、過敏聲明及營養表，未核對你將購買嘅實物包裝或當前批次。網頁未列出某過敏原唔等於不存在；過敏者仍須核對當前包裝。",
+      "versionStatus": "香港官方網站指定規格；當前實物批次未核對",
+      "physicalPackChecked": false,
+      "labelEvidence": {
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "sourceType": "hk-manufacturer-full-web-statement",
+        "nutritionTextRead": true,
+        "ingredientsTextRead": true,
+        "allergenStatementRead": true,
+        "sourceQualityNote": "官方頁面每91克總脂肪11.9克、飽和脂肪13.2克，互相矛盾；兩項暫保留未知，沒有借用五包裝或其他版本數值。"
+      },
+      "labelImages": [],
+      "verification": {
+        "pricewatchId": "P000000015",
+        "matchingBasis": "品牌、系列、口味及淨重／五包裝完全吻合；條碼由該香港品牌頁取得",
+        "sourceCheckedAt": "2026-10-21"
+      }
+    },
+    {
+      "id": "P000001128",
+      "nameZh": "出前一丁即食麵 - 麻油味 91克 x 5",
+      "nameEn": "Demae Ramen Instant Noodle - Sesame Oil Flavour 91g x 5",
+      "brand": "日清",
+      "brandEn": "Nissin",
+      "category": "meals",
+      "packSize": "91克 x 5",
+      "quantity": 455,
+      "quantityUnit": "g",
+      "servingSize": 91,
+      "origin": null,
+      "barcode": "4897878140015",
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 457.1429,
+        "protein": 10,
+        "fat": 20.1099,
+        "saturatedFat": 13.0769,
+        "carbohydrates": 59.1209,
+        "sugars": 2.5275,
+        "sodiumMg": 1519.7802,
+        "fibre": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-official-online-statement",
+        "region": "Hong Kong",
+        "hkLabelVerified": true,
+        "conversionNote": "來源按每食用分量91克列出；本紀錄逐項乘以100/91換算每100克，未把沖調用水計入。"
+      },
+      "sourceNutrition": {
+        "basis": "per-serving",
+        "servingSize": 91,
+        "servingsPerPackage": 5,
+        "energyKcal": 416,
+        "protein": 9.1,
+        "fat": 18.3,
+        "saturatedFat": 11.9,
+        "carbohydrates": 53.8,
+        "sugars": 2.3,
+        "sodiumMg": 1383
+      },
+      "allergens": {
+        "contains": [
+          "gluten",
+          "soy",
+          "sesame"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "此產品含有大豆、含有麩質的穀類及其製品。 成分表另列芝麻／麻油，網站亦按含芝麻處理。",
+        "coverage": "香港官方此版本完整網頁成分及過敏段落均已閱讀；官方網頁沒有另列「可能含有」聲明，空白不表示已證實沒有交叉接觸。",
+        "completeSource": "hk-manufacturer-web-statement",
+        "verificationMethod": "hk-manufacturer-full-web-statement",
+        "physicalPackChecked": false
+      },
+      "ingredients": "麵：小麥粉、棕櫚油、食鹽、酸度調節劑(452、501、451、500、339、450)、氯化鉀、增稠劑(401、412)、抗氧化劑(307b、304)、 綠茶粉。；湯粉：食鹽、增味劑(621、 635)、醬油粉(大豆、小麥、食鹽)、白砂糖、色素(150a)、酵母精、水解大豆蛋白、大蒜粉、香料、脫水青葱、調味料及調味劑(雞肉、豬肉)、酸度調節劑(330)、米油、洋葱粉。；調味油：芝麻油(0.9%)、米油、調味料及調味劑 、色素(160b)、香料。",
+      "prices": [],
+      "sources": [
+        {
+          "label": "香港日清官方：此口味及包裝之成分、過敏及營養資料",
+          "url": "https://www.nissinfoods.com.hk/tch/products/demae-iccho/5pack-sesame-oil-flavour-450ml",
+          "checkedAt": "2026-10-21",
+          "scope": "淨重、條碼、全部成分及過敏聲明、每份營養表；不是當前實物檢驗"
+        }
+      ],
+      "dataStatus": "hk-manufacturer-online-statement",
+      "sourceLimit": "已閱讀香港日清此口味及規格官方網頁嘅全部成分、過敏聲明及營養表，未核對你將購買嘅實物包裝或當前批次。網頁未列出某過敏原唔等於不存在；過敏者仍須核對當前包裝。",
+      "versionStatus": "香港官方網站指定規格；當前實物批次未核對",
+      "physicalPackChecked": false,
+      "labelEvidence": {
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "sourceType": "hk-manufacturer-full-web-statement",
+        "nutritionTextRead": true,
+        "ingredientsTextRead": true,
+        "allergenStatementRead": true,
+        "sourceQualityNote": null
+      },
+      "labelImages": [],
+      "verification": {
+        "pricewatchId": "P000001128",
+        "matchingBasis": "品牌、系列、口味及淨重／五包裝完全吻合；條碼由該香港品牌頁取得",
+        "sourceCheckedAt": "2026-10-21"
+      }
+    },
+    {
+      "id": "P000000014",
+      "nameZh": "出前一丁即食麵 - 五香牛肉味 90克",
+      "nameEn": "Demae Ramen Instant Noodle - Five Spice Beef Flavour 90g",
+      "brand": "日清",
+      "brandEn": "Nissin",
+      "category": "meals",
+      "packSize": "90克",
+      "quantity": 90,
+      "quantityUnit": "g",
+      "servingSize": 90,
+      "origin": null,
+      "barcode": "4897878000029",
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 465.5556,
+        "protein": 10.3333,
+        "fat": 21.2222,
+        "saturatedFat": 13.7778,
+        "carbohydrates": 58.5556,
+        "sugars": 2.3333,
+        "sodiumMg": 1390,
+        "fibre": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-official-online-statement",
+        "region": "Hong Kong",
+        "hkLabelVerified": true,
+        "conversionNote": "來源按每食用分量90克列出；本紀錄逐項乘以100/90換算每100克，未把沖調用水計入。"
+      },
+      "sourceNutrition": {
+        "basis": "per-serving",
+        "servingSize": 90,
+        "servingsPerPackage": 1,
+        "energyKcal": 419,
+        "protein": 9.3,
+        "fat": 19.1,
+        "saturatedFat": 12.4,
+        "carbohydrates": 52.7,
+        "sugars": 2.1,
+        "sodiumMg": 1251
+      },
+      "allergens": {
+        "contains": [
+          "gluten",
+          "peanuts",
+          "soy"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "此產品含有花生、大豆、含有麩質的穀類及其製品。",
+        "coverage": "香港官方此版本完整網頁成分及過敏段落均已閱讀；官方網頁沒有另列「可能含有」聲明，空白不表示已證實沒有交叉接觸。",
+        "completeSource": "hk-manufacturer-web-statement",
+        "verificationMethod": "hk-manufacturer-full-web-statement",
+        "physicalPackChecked": false
+      },
+      "ingredients": "麵：小麥粉、棕櫚油、食鹽、酸度調節劑(452、501、451、500、339、450)、氯化鉀、增稠劑(401、412)、抗氧化劑(307b、304)、 綠茶粉。；湯粉：食鹽、醬油粉(大豆、小麥、食鹽)、增味劑(621、635)、調味料及調味劑、白砂糖、酵母精、大蒜粉、洋葱粉、色素(150a)、氯化鉀、五香粉(0.08%)(八角、肉桂、花椒、茴香、丁香)、脫水青葱、黑胡椒粉、生薑粉、白胡椒粉、脫水醃薑[生薑、食鹽、梅子醋(梅子、紅紫蘇、食鹽)]、酸度調節劑(330)、抗結劑(551)、米油。；調味油：棕櫚油、調味料及調味劑、可可粉、抗氧化劑(307b)。",
+      "prices": [],
+      "sources": [
+        {
+          "label": "香港日清官方：此口味及包裝之成分、過敏及營養資料",
+          "url": "https://www.nissinfoods.com.hk/tch/products/demae-iccho/pack-five-spice-beef-flavour",
+          "checkedAt": "2026-10-21",
+          "scope": "淨重、條碼、全部成分及過敏聲明、每份營養表；不是當前實物檢驗"
+        }
+      ],
+      "dataStatus": "hk-manufacturer-online-statement",
+      "sourceLimit": "已閱讀香港日清此口味及規格官方網頁嘅全部成分、過敏聲明及營養表，未核對你將購買嘅實物包裝或當前批次。網頁未列出某過敏原唔等於不存在；過敏者仍須核對當前包裝。",
+      "versionStatus": "香港官方網站指定規格；當前實物批次未核對",
+      "physicalPackChecked": false,
+      "labelEvidence": {
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "sourceType": "hk-manufacturer-full-web-statement",
+        "nutritionTextRead": true,
+        "ingredientsTextRead": true,
+        "allergenStatementRead": true,
+        "sourceQualityNote": null
+      },
+      "labelImages": [],
+      "verification": {
+        "pricewatchId": "P000000014",
+        "matchingBasis": "品牌、系列、口味及淨重／五包裝完全吻合；條碼由該香港品牌頁取得",
+        "sourceCheckedAt": "2026-10-21"
+      }
+    },
+    {
+      "id": "P000001590",
+      "nameZh": "出前一丁即食麵 - 九州濃湯豬骨湯味 98克",
+      "nameEn": "Demae Ramen Instant Noodle - Kyushu Tonkotsu Flavour 98g",
+      "brand": "日清",
+      "brandEn": "Nissin",
+      "category": "meals",
+      "packSize": "98克",
+      "quantity": 98,
+      "quantityUnit": "g",
+      "servingSize": 98,
+      "origin": null,
+      "barcode": "4897878800025",
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 443.8776,
+        "protein": 8.1633,
+        "fat": 18.5714,
+        "saturatedFat": 12.0408,
+        "carbohydrates": 61.0204,
+        "sugars": 2.9592,
+        "sodiumMg": 1570.4082,
+        "fibre": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-official-online-statement",
+        "region": "Hong Kong",
+        "hkLabelVerified": true,
+        "conversionNote": "來源按每食用分量98克列出；本紀錄逐項乘以100/98換算每100克，未把沖調用水計入。"
+      },
+      "sourceNutrition": {
+        "basis": "per-serving",
+        "servingSize": 98,
+        "servingsPerPackage": 1,
+        "energyKcal": 435,
+        "protein": 8,
+        "fat": 18.2,
+        "saturatedFat": 11.8,
+        "carbohydrates": 59.8,
+        "sugars": 2.9,
+        "sodiumMg": 1539
+      },
+      "allergens": {
+        "contains": [
+          "gluten",
+          "soy",
+          "milk",
+          "sesame"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "此產品含有大豆、奶類、含有麩質的穀類及其製品。 成分表另列芝麻／麻油，網站亦按含芝麻處理。",
+        "coverage": "香港官方此版本完整網頁成分及過敏段落均已閱讀；官方網頁沒有另列「可能含有」聲明，空白不表示已證實沒有交叉接觸。",
+        "completeSource": "hk-manufacturer-web-statement",
+        "verificationMethod": "hk-manufacturer-full-web-statement",
+        "physicalPackChecked": false
+      },
+      "ingredients": "麵：小麥粉、棕櫚油、木薯澱粉、食鹽、酸度調節劑(452、501、451、500、339、450)、氯化鉀、增稠劑(401、412)、抗氧化劑(307b、304)、 綠茶粉。；湯粉：食鹽、白砂糖、全脂奶粉、增味劑(621、635)、芝麻、植脂末[葡萄糖漿、完全氫化棕櫚油、牛奶蛋白、穩定劑(340、451)、乳化劑(471)、抗結劑(551)]、調味料及調味劑(豬肉、雞肉)、大蒜粉、酵母精、香料、水解大豆蛋白、氯化鉀、醬油粉(大豆、小麥、食鹽)、脫水青葱、洋葱粉、抗結劑(551)、色素(150a)、酸度調節劑(330)。；調味醬：棕櫚油、調味料及調味劑(豬肉、雞肉)、芝麻油、醬油(水、大豆、小麥、食鹽)、紹興酒(水、糯米、小麥)、白砂糖、食鹽、增味劑(621、635)、植脂末[葡萄糖漿、完全氫化棕櫚油、牛奶蛋白、穩定劑(340、451)、乳化劑(471)、抗結劑(551)]、酵母精、增稠劑(466)。",
+      "prices": [],
+      "sources": [
+        {
+          "label": "香港日清官方：此口味及包裝之成分、過敏及營養資料",
+          "url": "https://www.nissinfoods.com.hk/tch/products/demae-iccho/pack-kyushu-tonkotsu-flavour-450ml",
+          "checkedAt": "2026-10-21",
+          "scope": "淨重、條碼、全部成分及過敏聲明、每份營養表；不是當前實物檢驗"
+        }
+      ],
+      "dataStatus": "hk-manufacturer-online-statement",
+      "sourceLimit": "已閱讀香港日清此口味及規格官方網頁嘅全部成分、過敏聲明及營養表，未核對你將購買嘅實物包裝或當前批次。網頁未列出某過敏原唔等於不存在；過敏者仍須核對當前包裝。",
+      "versionStatus": "香港官方網站指定規格；當前實物批次未核對",
+      "physicalPackChecked": false,
+      "labelEvidence": {
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "sourceType": "hk-manufacturer-full-web-statement",
+        "nutritionTextRead": true,
+        "ingredientsTextRead": true,
+        "allergenStatementRead": true,
+        "sourceQualityNote": null
+      },
+      "labelImages": [],
+      "verification": {
+        "pricewatchId": "P000001590",
+        "matchingBasis": "品牌、系列、口味及淨重／五包裝完全吻合；條碼由該香港品牌頁取得",
+        "sourceCheckedAt": "2026-10-21"
+      }
+    },
+    {
+      "id": "P000000302",
+      "nameZh": "出前一丁即食麵 - 九州濃湯豬骨湯味 98克 x 5",
+      "nameEn": "Demae Ramen Instant Noodle - Kyushu Tonkotsu Flavour 98g x 5",
+      "brand": "日清",
+      "brandEn": "Nissin",
+      "category": "meals",
+      "packSize": "98克 x 5",
+      "quantity": 490,
+      "quantityUnit": "g",
+      "servingSize": 98,
+      "origin": null,
+      "barcode": "4897878140039",
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 443.8776,
+        "protein": 8.1633,
+        "fat": 18.5714,
+        "saturatedFat": 12.0408,
+        "carbohydrates": 61.0204,
+        "sugars": 2.9592,
+        "sodiumMg": 1570.4082,
+        "fibre": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-official-online-statement",
+        "region": "Hong Kong",
+        "hkLabelVerified": true,
+        "conversionNote": "來源按每食用分量98克列出；本紀錄逐項乘以100/98換算每100克，未把沖調用水計入。"
+      },
+      "sourceNutrition": {
+        "basis": "per-serving",
+        "servingSize": 98,
+        "servingsPerPackage": 5,
+        "energyKcal": 435,
+        "protein": 8,
+        "fat": 18.2,
+        "saturatedFat": 11.8,
+        "carbohydrates": 59.8,
+        "sugars": 2.9,
+        "sodiumMg": 1539
+      },
+      "allergens": {
+        "contains": [
+          "gluten",
+          "soy",
+          "milk",
+          "sesame"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "此產品含有大豆、奶類、含有麩質的穀類及其製品。 成分表另列芝麻／麻油，網站亦按含芝麻處理。",
+        "coverage": "香港官方此版本完整網頁成分及過敏段落均已閱讀；官方網頁沒有另列「可能含有」聲明，空白不表示已證實沒有交叉接觸。",
+        "completeSource": "hk-manufacturer-web-statement",
+        "verificationMethod": "hk-manufacturer-full-web-statement",
+        "physicalPackChecked": false
+      },
+      "ingredients": "麵：小麥粉、棕櫚油、木薯澱粉、食鹽、酸度調節劑(452、501、451、500、339、450)、氯化鉀、增稠劑(401、412)、抗氧化劑(307b、304)、 綠茶粉。；湯粉：食鹽、白砂糖、全脂奶粉、增味劑(621、635)、芝麻、植脂末[葡萄糖漿、完全氫化棕櫚油、牛奶蛋白、穩定劑(340、451)、乳化劑(471)、抗結劑(551)]、調味料及調味劑(豬肉、雞肉)、大蒜粉、酵母精、香料、水解大豆蛋白、氯化鉀、醬油粉(大豆、小麥、食鹽)、脫水青葱、洋葱粉、抗結劑(551)、色素(150a)、酸度調節劑(330)。；調味醬：棕櫚油、調味料及調味劑(豬肉、雞肉)、芝麻油、醬油(水、大豆、小麥、食鹽)、紹興酒(水、糯米、小麥)、白砂糖、食鹽、增味劑(621、635)、植脂末[葡萄糖漿、完全氫化棕櫚油、牛奶蛋白、穩定劑(340、451)、乳化劑(471)、抗結劑(551)]、酵母精、增稠劑(466)。",
+      "prices": [],
+      "sources": [
+        {
+          "label": "香港日清官方：此口味及包裝之成分、過敏及營養資料",
+          "url": "https://www.nissinfoods.com.hk/tch/products/demae-iccho/5pack-kyushu-tonkotsu-flavour-450ml",
+          "checkedAt": "2026-10-21",
+          "scope": "淨重、條碼、全部成分及過敏聲明、每份營養表；不是當前實物檢驗"
+        }
+      ],
+      "dataStatus": "hk-manufacturer-online-statement",
+      "sourceLimit": "已閱讀香港日清此口味及規格官方網頁嘅全部成分、過敏聲明及營養表，未核對你將購買嘅實物包裝或當前批次。網頁未列出某過敏原唔等於不存在；過敏者仍須核對當前包裝。",
+      "versionStatus": "香港官方網站指定規格；當前實物批次未核對",
+      "physicalPackChecked": false,
+      "labelEvidence": {
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "sourceType": "hk-manufacturer-full-web-statement",
+        "nutritionTextRead": true,
+        "ingredientsTextRead": true,
+        "allergenStatementRead": true,
+        "sourceQualityNote": null
+      },
+      "labelImages": [],
+      "verification": {
+        "pricewatchId": "P000000302",
+        "matchingBasis": "品牌、系列、口味及淨重／五包裝完全吻合；條碼由該香港品牌頁取得",
+        "sourceCheckedAt": "2026-10-21"
+      }
+    },
+    {
+      "id": "P000001872",
+      "nameZh": "出前一丁即食麵 - 黑蒜油豬骨湯味 97克",
+      "nameEn": "Demae Ramen Instant Noodle - Black Garlic Oil Tonkotsu Flavour 97g",
+      "brand": "日清",
+      "brandEn": "Nissin",
+      "category": "meals",
+      "packSize": "97克",
+      "quantity": 97,
+      "quantityUnit": "g",
+      "servingSize": 97,
+      "origin": null,
+      "barcode": "4897878830015",
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 442.268,
+        "protein": 8.5567,
+        "fat": 17.1134,
+        "saturatedFat": 11.134,
+        "carbohydrates": 63.4021,
+        "sugars": 2.7835,
+        "sodiumMg": 1580.4124,
+        "fibre": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-official-online-statement",
+        "region": "Hong Kong",
+        "hkLabelVerified": true,
+        "conversionNote": "來源按每食用分量97克列出；本紀錄逐項乘以100/97換算每100克，未把沖調用水計入。"
+      },
+      "sourceNutrition": {
+        "basis": "per-serving",
+        "servingSize": 97,
+        "servingsPerPackage": 1,
+        "energyKcal": 429,
+        "protein": 8.3,
+        "fat": 16.6,
+        "saturatedFat": 10.8,
+        "carbohydrates": 61.5,
+        "sugars": 2.7,
+        "sodiumMg": 1533
+      },
+      "allergens": {
+        "contains": [
+          "gluten",
+          "soy",
+          "milk",
+          "sesame"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "此產品含有大豆、奶類、含有麩質的穀類及其製品。 成分表另列芝麻／麻油，網站亦按含芝麻處理。",
+        "coverage": "香港官方此版本完整網頁成分及過敏段落均已閱讀；官方網頁沒有另列「可能含有」聲明，空白不表示已證實沒有交叉接觸。",
+        "completeSource": "hk-manufacturer-web-statement",
+        "verificationMethod": "hk-manufacturer-full-web-statement",
+        "physicalPackChecked": false
+      },
+      "ingredients": "麵：小麥粉、棕櫚油、木薯澱粉、食鹽、酸度調節劑(452、501、451、500、339、450)、氯化鉀、增稠劑(401、412)、抗氧化劑(307b、304)、 綠茶粉。；湯粉：增味劑(621、635)、食鹽、植脂末[葡萄糖漿、完全氫化棕櫚油、牛奶蛋白、穩定劑(340、451)、乳化劑(471)、抗結劑(551)]、白砂糖、酵母精、水解蛋白(大豆、豬肉明膠)、大蒜粉、調味料及調味劑(豬肉、雞肉)、醬油粉(大豆、小麥、食鹽)、洋葱粉、葡萄糖、香料、氯化鉀、脫水青葱、麥芽糊精、抗結劑(551)、增稠劑(466)。；黑蒜油 (2.4%))：棕櫚油、調味料及調味劑(豬肉、雞肉)、麻油、大蒜(0.2%)、色素(150a)。",
+      "prices": [],
+      "sources": [
+        {
+          "label": "香港日清官方：此口味及包裝之成分、過敏及營養資料",
+          "url": "https://www.nissinfoods.com.hk/tch/products/demae-iccho/pack-black-garlic-oil-tonkotsu-flavour-450ml",
+          "checkedAt": "2026-10-21",
+          "scope": "淨重、條碼、全部成分及過敏聲明、每份營養表；不是當前實物檢驗"
+        }
+      ],
+      "dataStatus": "hk-manufacturer-online-statement",
+      "sourceLimit": "已閱讀香港日清此口味及規格官方網頁嘅全部成分、過敏聲明及營養表，未核對你將購買嘅實物包裝或當前批次。網頁未列出某過敏原唔等於不存在；過敏者仍須核對當前包裝。",
+      "versionStatus": "香港官方網站指定規格；當前實物批次未核對",
+      "physicalPackChecked": false,
+      "labelEvidence": {
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "sourceType": "hk-manufacturer-full-web-statement",
+        "nutritionTextRead": true,
+        "ingredientsTextRead": true,
+        "allergenStatementRead": true,
+        "sourceQualityNote": null
+      },
+      "labelImages": [],
+      "verification": {
+        "pricewatchId": "P000001872",
+        "matchingBasis": "品牌、系列、口味及淨重／五包裝完全吻合；條碼由該香港品牌頁取得",
+        "sourceCheckedAt": "2026-10-21"
+      }
+    },
+    {
+      "id": "P000000304",
+      "nameZh": "出前一丁碗麵 - 麻油味 99克",
+      "nameEn": "Demae Ramen Bowl Noodle - Sesame Oil Flavour 99g",
+      "brand": "日清",
+      "brandEn": "Nissin",
+      "category": "meals",
+      "packSize": "99克",
+      "quantity": 99,
+      "quantityUnit": "g",
+      "servingSize": 99,
+      "origin": null,
+      "barcode": "4897878120000",
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 425.2525,
+        "protein": 10.202,
+        "fat": 17.1717,
+        "saturatedFat": 11.2121,
+        "carbohydrates": 57.4747,
+        "sugars": 4.6465,
+        "sodiumMg": 2091.9192,
+        "fibre": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-official-online-statement",
+        "region": "Hong Kong",
+        "hkLabelVerified": true,
+        "conversionNote": "來源按每食用分量99克列出；本紀錄逐項乘以100/99換算每100克，未把沖調用水計入。"
+      },
+      "sourceNutrition": {
+        "basis": "per-serving",
+        "servingSize": 99,
+        "servingsPerPackage": 1,
+        "energyKcal": 421,
+        "protein": 10.1,
+        "fat": 17,
+        "saturatedFat": 11.1,
+        "carbohydrates": 56.9,
+        "sugars": 4.6,
+        "sodiumMg": 2071
+      },
+      "allergens": {
+        "contains": [
+          "gluten",
+          "eggs",
+          "soy",
+          "milk",
+          "sesame"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "此產品含有蛋類、大豆、奶類、含有麩質的穀類及其製品。 成分表另列芝麻／麻油，網站亦按含芝麻處理。",
+        "coverage": "香港官方此版本完整網頁成分及過敏段落均已閱讀；官方網頁沒有另列「可能含有」聲明，空白不表示已證實沒有交叉接觸。",
+        "completeSource": "hk-manufacturer-web-statement",
+        "verificationMethod": "hk-manufacturer-full-web-statement",
+        "physicalPackChecked": false
+      },
+      "ingredients": "麵：小麥粉、棕櫚油、木薯澱粉、食鹽、酸度調節劑(500、452、451、339、330、529)、增味劑(621、635)、乳化劑(322)、氯化鉀、醬油(水、大豆、小麥、食鹽)、大蒜粉、小麥蛋白、增稠劑(412)、抗氧化劑(307b、304)。；配料(8.6%)：脫水豬肉粒[豬肉、大豆蛋白、醬油(水、大豆、小麥、食鹽)]、脫水蔬菜(青葱、菠菜、椰菜)、脫水蛋[全蛋粉、小麥粉、水分保持劑(420)、大豆蛋白、玉米油、玉米澱粉、食鹽、白砂糖、增味劑(621)、膨脹劑(503)]。；湯粉：白砂糖、食鹽、增味劑(621、635)、醬油粉(大豆、小麥、食鹽)、酵母精、色素(150a)、香料、大蒜粉、調味料及調味劑、氯化鉀、麥芽糊精、棕櫚油、酸度調節劑(330)。；調味油：芝麻油(2.4%)、米油、調味料及調味劑、香料。",
+      "prices": [],
+      "sources": [
+        {
+          "label": "香港日清官方：此口味及包裝之成分、過敏及營養資料",
+          "url": "https://www.nissinfoods.com.hk/tch/products/demae-iccho/bowl-sesame-oil-flavour",
+          "checkedAt": "2026-10-21",
+          "scope": "淨重、條碼、全部成分及過敏聲明、每份營養表；不是當前實物檢驗"
+        }
+      ],
+      "dataStatus": "hk-manufacturer-online-statement",
+      "sourceLimit": "已閱讀香港日清此口味及規格官方網頁嘅全部成分、過敏聲明及營養表，未核對你將購買嘅實物包裝或當前批次。網頁未列出某過敏原唔等於不存在；過敏者仍須核對當前包裝。",
+      "versionStatus": "香港官方網站指定規格；當前實物批次未核對",
+      "physicalPackChecked": false,
+      "labelEvidence": {
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "sourceType": "hk-manufacturer-full-web-statement",
+        "nutritionTextRead": true,
+        "ingredientsTextRead": true,
+        "allergenStatementRead": true,
+        "sourceQualityNote": null
+      },
+      "labelImages": [],
+      "verification": {
+        "pricewatchId": "P000000304",
+        "matchingBasis": "品牌、系列、口味及淨重／五包裝完全吻合；條碼由該香港品牌頁取得",
+        "sourceCheckedAt": "2026-10-21"
+      }
+    },
+    {
+      "id": "P000002959",
+      "nameZh": "出前一丁棒丁麵 - 北海道味噌豬骨湯味 181克",
+      "nameEn": "Demae Ramen Straight Noodle - Hokkaido Miso Tonkotsu Flavour 181g",
+      "brand": "日清",
+      "brandEn": "Nissin",
+      "category": "meals",
+      "packSize": "181克",
+      "quantity": 181,
+      "quantityUnit": "g",
+      "servingSize": 90.5,
+      "origin": null,
+      "barcode": "4897878850075",
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 337.0166,
+        "protein": 12.5967,
+        "fat": 5.7459,
+        "saturatedFat": 2.8729,
+        "carbohydrates": 58.7845,
+        "sugars": 6.7403,
+        "sodiumMg": 1561.326,
+        "fibre": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-official-online-statement",
+        "region": "Hong Kong",
+        "hkLabelVerified": true,
+        "conversionNote": "來源按每食用分量90.5克列出；本紀錄逐項乘以100/90.5換算每100克，未把沖調用水計入。"
+      },
+      "sourceNutrition": {
+        "basis": "per-serving",
+        "servingSize": 90.5,
+        "servingsPerPackage": 2,
+        "energyKcal": 305,
+        "protein": 11.4,
+        "fat": 5.2,
+        "saturatedFat": 2.6,
+        "carbohydrates": 53.2,
+        "sugars": 6.1,
+        "sodiumMg": 1413
+      },
+      "allergens": {
+        "contains": [
+          "gluten",
+          "soy",
+          "milk",
+          "sesame"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "此產品含有大豆、奶類、含有麩質的穀類及其製品。 成分表另列芝麻／麻油，網站亦按含芝麻處理。",
+        "coverage": "香港官方此版本完整網頁成分及過敏段落均已閱讀；官方網頁沒有另列「可能含有」聲明，空白不表示已證實沒有交叉接觸。",
+        "completeSource": "hk-manufacturer-web-statement",
+        "verificationMethod": "hk-manufacturer-full-web-statement",
+        "physicalPackChecked": false
+      },
+      "ingredients": "麵：小麥粉、水、食鹽、酸度調節劑(500)、色素(164)。；調味醬：味噌醬 (4.0%) (水、大豆、大米、食鹽)、醬油 (水、大豆、小麥、食鹽)、調味料及調味劑 (豬肉、雞肉)、米酒、麻油、酵母精、棕櫚油、大蒜、植脂末 [葡萄糖漿、氫化棕櫚油、牛奶蛋白、酸度調節劑(340)、乳化劑(471)、抗結劑(551)]、豆瓣醬(水、辣椒、大豆、小麥、食鹽)、食鹽。；湯粉：白砂糖、植脂末 [葡萄糖漿、氫化棕櫚油、牛奶蛋白、酸度調節劑(340)、乳化劑(471)、抗結劑(551)]、增味劑(621、635)、調味料及調味劑(雞肉、豬肉)、酵母精、大蒜粉、水解大豆蛋白、色素(150a)、脫水青葱、香料、增稠劑(466)。",
+      "prices": [],
+      "sources": [
+        {
+          "label": "香港日清官方：此口味及包裝之成分、過敏及營養資料",
+          "url": "https://www.nissinfoods.com.hk/tch/products/demae-iccho/hokkaido-miso-tonkotsu-flavour",
+          "checkedAt": "2026-10-21",
+          "scope": "淨重、條碼、全部成分及過敏聲明、每份營養表；不是當前實物檢驗"
+        }
+      ],
+      "dataStatus": "hk-manufacturer-online-statement",
+      "sourceLimit": "已閱讀香港日清此口味及規格官方網頁嘅全部成分、過敏聲明及營養表，未核對你將購買嘅實物包裝或當前批次。網頁未列出某過敏原唔等於不存在；過敏者仍須核對當前包裝。",
+      "versionStatus": "香港官方網站指定規格；當前實物批次未核對",
+      "physicalPackChecked": false,
+      "labelEvidence": {
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "sourceType": "hk-manufacturer-full-web-statement",
+        "nutritionTextRead": true,
+        "ingredientsTextRead": true,
+        "allergenStatementRead": true,
+        "sourceQualityNote": null
+      },
+      "labelImages": [],
+      "verification": {
+        "pricewatchId": "P000002959",
+        "matchingBasis": "品牌、系列、口味及淨重／五包裝完全吻合；條碼由該香港品牌頁取得",
+        "sourceCheckedAt": "2026-10-21"
+      }
+    },
+    {
+      "id": "P000000660",
+      "nameZh": "合味道杯麵 - 五香牛肉味 75克",
+      "nameEn": "Cup Noodle - Beef Flavour 75g",
+      "brand": "日清",
+      "brandEn": "Nissin",
+      "category": "meals",
+      "packSize": "75克",
+      "quantity": 75,
+      "quantityUnit": "g",
+      "servingSize": 75,
+      "origin": null,
+      "barcode": "4897878100026",
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 429.3333,
+        "protein": 11.8667,
+        "fat": 16.6667,
+        "saturatedFat": 6.2667,
+        "carbohydrates": 57.8667,
+        "sugars": 3.7333,
+        "sodiumMg": 2050.6667,
+        "fibre": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-official-online-statement",
+        "region": "Hong Kong",
+        "hkLabelVerified": true,
+        "conversionNote": "來源按每食用分量75克列出；本紀錄逐項乘以100/75換算每100克，未把沖調用水計入。"
+      },
+      "sourceNutrition": {
+        "basis": "per-serving",
+        "servingSize": 75,
+        "servingsPerPackage": 1,
+        "energyKcal": 322,
+        "protein": 8.9,
+        "fat": 12.5,
+        "saturatedFat": 4.7,
+        "carbohydrates": 43.4,
+        "sugars": 2.8,
+        "sodiumMg": 1538
+      },
+      "allergens": {
+        "contains": [
+          "gluten",
+          "eggs",
+          "soy",
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "此產品含有蛋類、大豆、奶類、含有麩質的穀類及其製品。",
+        "coverage": "香港官方此版本完整網頁成分及過敏段落均已閱讀；官方網頁沒有另列「可能含有」聲明，空白不表示已證實沒有交叉接觸。",
+        "completeSource": "hk-manufacturer-web-statement",
+        "verificationMethod": "hk-manufacturer-full-web-statement",
+        "physicalPackChecked": false
+      },
+      "ingredients": "成分：小麥粉、棕櫚油、改性澱粉、脫水牛肉粒[牛肉、大豆蛋白、醬油(水、大豆、小麥、食鹽)、食鹽、增味劑(621)、香料]、麥芽糊精、食鹽、脫水蛋[全蛋粉、小麥粉、水分保持劑(420)、大豆蛋白、玉米油、玉米澱粉、食鹽、白砂糖、增味劑(621)、膨脹劑(503)]、調味料及調味劑(雞肉、牛肉、豬肉)、脫水蔬菜(紅蘿蔔、青葱)、增味劑(621、635)、洋葱粉、酵母精、醬油粉(大豆、小麥、食鹽)、白砂糖、牛脂、酸度調節劑(170、501、451、500、330)、大蒜粉、氯化鉀、色素(150a、160a)、香料、抗結劑(551)、水分保持劑(422)、乳化劑(475)、增稠劑(412)、抗氧化劑(307b、304)。",
+      "prices": [],
+      "sources": [
+        {
+          "label": "香港日清官方：此口味及包裝之成分、過敏及營養資料",
+          "url": "https://www.nissinfoods.com.hk/tch/products/cup-noodles/beef-flavour",
+          "checkedAt": "2026-10-21",
+          "scope": "淨重、條碼、全部成分及過敏聲明、每份營養表；不是當前實物檢驗"
+        }
+      ],
+      "dataStatus": "hk-manufacturer-online-statement",
+      "sourceLimit": "已閱讀香港日清此口味及規格官方網頁嘅全部成分、過敏聲明及營養表，未核對你將購買嘅實物包裝或當前批次。網頁未列出某過敏原唔等於不存在；過敏者仍須核對當前包裝。",
+      "versionStatus": "香港官方網站指定規格；當前實物批次未核對",
+      "physicalPackChecked": false,
+      "labelEvidence": {
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "sourceType": "hk-manufacturer-full-web-statement",
+        "nutritionTextRead": true,
+        "ingredientsTextRead": true,
+        "allergenStatementRead": true,
+        "sourceQualityNote": null
+      },
+      "labelImages": [],
+      "verification": {
+        "pricewatchId": "P000000660",
+        "matchingBasis": "品牌、系列、口味及淨重／五包裝完全吻合；條碼由該香港品牌頁取得",
+        "sourceCheckedAt": "2026-10-21"
+      }
+    },
+    {
+      "id": "P000002159",
+      "nameZh": "合味道杯麵 - 鮮蝦味 74克",
+      "nameEn": "Cup Noodle - Prawn Flavour 74g",
+      "brand": "日清",
+      "brandEn": "Nissin",
+      "category": "meals",
+      "packSize": "74克",
+      "quantity": 74,
+      "quantityUnit": "g",
+      "servingSize": 74,
+      "origin": null,
+      "barcode": "4897878100019",
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 435.1351,
+        "protein": 12.2973,
+        "fat": 17.027,
+        "saturatedFat": 7.8378,
+        "carbohydrates": 58.1081,
+        "sugars": 4.0541,
+        "sodiumMg": 2800,
+        "fibre": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-official-online-statement",
+        "region": "Hong Kong",
+        "hkLabelVerified": true,
+        "conversionNote": "來源按每食用分量74克列出；本紀錄逐項乘以100/74換算每100克，未把沖調用水計入。"
+      },
+      "sourceNutrition": {
+        "basis": "per-serving",
+        "servingSize": 74,
+        "servingsPerPackage": 1,
+        "energyKcal": 322,
+        "protein": 9.1,
+        "fat": 12.6,
+        "saturatedFat": 5.8,
+        "carbohydrates": 43,
+        "sugars": 3,
+        "sodiumMg": 2072
+      },
+      "allergens": {
+        "contains": [
+          "gluten",
+          "crustaceans",
+          "eggs",
+          "soy",
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "此產品含有甲殼類動物、蛋類、大豆、奶類、含有麩質的穀類及其製品。",
+        "coverage": "香港官方此版本完整網頁成分及過敏段落均已閱讀；官方網頁沒有另列「可能含有」聲明，空白不表示已證實沒有交叉接觸。",
+        "completeSource": "hk-manufacturer-web-statement",
+        "verificationMethod": "hk-manufacturer-full-web-statement",
+        "physicalPackChecked": false
+      },
+      "ingredients": "成分：小麥粉、棕櫚油、改性澱粉、食鹽、醬油粉(大豆、小麥、食鹽)、脫水豬肉[豬肉、大豆蛋白、蛋白、醬油粉(大豆、小麥、食鹽)、洋葱、食鹽、增味劑(621)、大蒜、香料、酸度調節劑(500)、抗氧化劑(300)]、脫水蝦[蝦、白砂糖、增味劑(621)、食鹽]、脫水蛋[全蛋粉、小麥粉、水分保持劑(420)、大豆蛋白、玉米油、玉米澱粉、食鹽、白砂糖、增味劑(621)、膨脹劑(503)]、乳糖、調味料及調味劑(雞肉、豬肉)、麥芽糊精、脫水豬肉碎[豬肉、馬鈴薯澱粉、白砂糖、醬油粉(大豆、小麥、食鹽)、食鹽、增味劑(621)、香料、抗氧化劑(300)]、脫水青葱、增味劑(621、635)、洋葱粉、酸度調節劑(170、501、451、500、330)、氯化鉀、大蒜粉、增稠劑(466、412)、香料、豬油、水分保持劑(422)、色素(160a、150a)、酵母精、抗氧化劑(307b、304)。",
+      "prices": [],
+      "sources": [
+        {
+          "label": "香港日清官方：此口味及包裝之成分、過敏及營養資料",
+          "url": "https://www.nissinfoods.com.hk/tch/products/cup-noodles/prawn-flavour",
+          "checkedAt": "2026-10-21",
+          "scope": "淨重、條碼、全部成分及過敏聲明、每份營養表；不是當前實物檢驗"
+        }
+      ],
+      "dataStatus": "hk-manufacturer-online-statement",
+      "sourceLimit": "已閱讀香港日清此口味及規格官方網頁嘅全部成分、過敏聲明及營養表，未核對你將購買嘅實物包裝或當前批次。網頁未列出某過敏原唔等於不存在；過敏者仍須核對當前包裝。",
+      "versionStatus": "香港官方網站指定規格；當前實物批次未核對",
+      "physicalPackChecked": false,
+      "labelEvidence": {
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "sourceType": "hk-manufacturer-full-web-statement",
+        "nutritionTextRead": true,
+        "ingredientsTextRead": true,
+        "allergenStatementRead": true,
+        "sourceQualityNote": null
+      },
+      "labelImages": [],
+      "verification": {
+        "pricewatchId": "P000002159",
+        "matchingBasis": "品牌、系列、口味及淨重／五包裝完全吻合；條碼由該香港品牌頁取得",
+        "sourceCheckedAt": "2026-10-21"
+      }
+    },
+    {
+      "id": "P000000069",
+      "nameZh": "合味道杯麵 - 海鮮味 72克",
+      "nameEn": "Cup Noodle - Seafood Flavour 72g",
+      "brand": "日清",
+      "brandEn": "Nissin",
+      "category": "meals",
+      "packSize": "72克",
+      "quantity": 72,
+      "quantityUnit": "g",
+      "servingSize": 72,
+      "origin": null,
+      "barcode": "4897878100057",
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 433.3333,
+        "protein": 11.25,
+        "fat": 18.0556,
+        "saturatedFat": 8.3333,
+        "carbohydrates": 56.5278,
+        "sugars": 3.6111,
+        "sodiumMg": 1762.5,
+        "fibre": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "hk-official-online-statement",
+        "region": "Hong Kong",
+        "hkLabelVerified": true,
+        "conversionNote": "來源按每食用分量72克列出；本紀錄逐項乘以100/72換算每100克，未把沖調用水計入。"
+      },
+      "sourceNutrition": {
+        "basis": "per-serving",
+        "servingSize": 72,
+        "servingsPerPackage": 1,
+        "energyKcal": 312,
+        "protein": 8.1,
+        "fat": 13,
+        "saturatedFat": 6,
+        "carbohydrates": 40.7,
+        "sugars": 2.6,
+        "sodiumMg": 1269
+      },
+      "allergens": {
+        "contains": [
+          "gluten",
+          "crustaceans",
+          "eggs",
+          "fish",
+          "soy",
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "此產品含有甲殼類動物、蛋類、魚類、大豆、奶類、含有麩質的穀類及其製品。",
+        "coverage": "香港官方此版本完整網頁成分及過敏段落均已閱讀；官方網頁沒有另列「可能含有」聲明，空白不表示已證實沒有交叉接觸。",
+        "completeSource": "hk-manufacturer-web-statement",
+        "verificationMethod": "hk-manufacturer-full-web-statement",
+        "physicalPackChecked": false
+      },
+      "ingredients": "成分：小麥粉、棕櫚油、改性澱粉、食鹽、脫水蔬菜(椰菜、青葱、紅蘿蔔)、植脂末[葡萄糖漿、完全氫化棕櫚油、牛奶蛋白、穩定劑(340、451)、乳化劑(471)、抗結劑(551)]、調味料及調味劑(豬肉、蝦、雞肉、蛤、魷魚、扇貝、魚)、脫水蛋[全蛋粉、小麥粉、水分保持劑(420)、大豆蛋白、玉米油、玉米澱粉、食鹽、白砂糖、增味劑(621)、膨脹劑(503)]、增味劑(621、635)、脫水魷魚、脫水鱈魚肉[鱈魚、玉米澱粉、調味料及調味劑、小麥澱粉、色素(160b、120)]、醬油粉(大豆、小麥、食鹽)、大蒜粉、水解大豆蛋白、麥芽糊精、全脂奶粉、酸度調節劑(170、501、451、500、330)、香料、酵母精、氯化鉀、洋葱粉、白菜粉、增稠劑(412)、脫水生薑、葡萄糖、色素(160a)、抗氧化劑(307b、304)。",
+      "prices": [],
+      "sources": [
+        {
+          "label": "香港日清官方：此口味及包裝之成分、過敏及營養資料",
+          "url": "https://www.nissinfoods.com.hk/tch/products/cup-noodles/seafood-flavour",
+          "checkedAt": "2026-10-21",
+          "scope": "淨重、條碼、全部成分及過敏聲明、每份營養表；不是當前實物檢驗"
+        }
+      ],
+      "dataStatus": "hk-manufacturer-online-statement",
+      "sourceLimit": "已閱讀香港日清此口味及規格官方網頁嘅全部成分、過敏聲明及營養表，未核對你將購買嘅實物包裝或當前批次。網頁未列出某過敏原唔等於不存在；過敏者仍須核對當前包裝。",
+      "versionStatus": "香港官方網站指定規格；當前實物批次未核對",
+      "physicalPackChecked": false,
+      "labelEvidence": {
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "sourceType": "hk-manufacturer-full-web-statement",
+        "nutritionTextRead": true,
+        "ingredientsTextRead": true,
+        "allergenStatementRead": true,
+        "sourceQualityNote": null
+      },
+      "labelImages": [],
+      "verification": {
+        "pricewatchId": "P000000069",
+        "matchingBasis": "品牌、系列、口味及淨重／五包裝完全吻合；條碼由該香港品牌頁取得",
+        "sourceCheckedAt": "2026-10-21"
+      }
+    },
+    {
+      "id": "P000000284",
+      "nameZh": "薄餅味薯片 90克",
+      "nameEn": "Potato Chips - Pizza Flavoured 90g",
+      "brand": "卡樂B",
+      "brandEn": "Calbee",
+      "category": "snacks",
+      "packSize": "90克",
+      "quantity": 90,
+      "quantityUnit": "g",
+      "servingSize": 30,
+      "origin": "香港",
+      "barcode": "4901330300234",
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 543,
+        "protein": 5.1,
+        "fat": 36,
+        "saturatedFat": 14.6,
+        "carbohydrates": 52,
+        "sugars": 5,
+        "fibre": 3.2,
+        "sodiumMg": 706,
+        "carbohydrateDefinition": "total",
+        "status": "hk-label-photo",
+        "region": "Hong Kong",
+        "hkLabelVerified": true
+      },
+      "allergens": {
+        "contains": [
+          "gluten",
+          "soy",
+          "milk"
+        ],
+        "mayContain": [
+          "crustaceans",
+          "eggs",
+          "fish",
+          "peanuts",
+          "tree-nuts"
+        ],
+        "status": "complete",
+        "text": "此產品含有麩質、大豆及奶類製品。生產此食品之廠房亦處理甲殼類動物、蛋類、魚類、花生及堅果製品。",
+        "coverage": "已目視閱讀香港零售商90克包裝背面照片，涵蓋成分、contains及整段廠房警告；工廠共線警告亦排除。",
+        "completeSource": "hk-retailer-label-photo",
+        "verificationMethod": "hk-retailer-online-back-label-photo",
+        "physicalPackChecked": false
+      },
+      "ingredients": "馬鈴薯、植物油、乳糖、完全氫化植物油、糖、糊精、食鹽、增味劑[621、635]、調味料、香辛料、芝士粉、番茄粉、酵母提取物、麥芽糊精、酸度調節劑[330]、抗結劑[551]、色素[辣椒紅、160a]、乳化劑[322、473]、甜味劑[951]。",
+      "prices": [],
+      "sources": [
+        {
+          "label": "香港city’super：卡樂B薄餅味90克及背標照片",
+          "url": "https://online.citysuper.com.hk/products/calbee-pizza-flavoured-potato-chips-301561010",
+          "checkedAt": "2026-10-21",
+          "scope": "90克包裝相片：條碼、營養、成分、過敏及廠房警告；不是當前實物批次"
+        },
+        {
+          "label": "香港卡樂B官方：薄餅味55／90克產品",
+          "url": "https://www.calbee.com.hk/zh/product/6",
+          "checkedAt": "2026-10-21",
+          "scope": "品牌、口味及香港包裝規格；官方頁未提供完整成分或營養"
+        }
+      ],
+      "dataStatus": "hk-retailer-label-photo",
+      "sourceLimit": "已閱讀city’super香港90克包裝照片。檔名含20250226，圖片包裝標示製造2025.1.10、此日期前最佳10.10.25，屬較舊示例包裝；未核對當前實物或批次配方。網上來源未列出某過敏原不代表保證安全。",
+      "versionStatus": "照片包裝2025年示例，當前批次待核對",
+      "physicalPackChecked": false,
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "sourceType": "hk-retailer-online-label-photo",
+        "photoDateNote": "零售圖片檔名20250226；包裝製造2025.1.10／最佳日期10.10.25。"
+      },
+      "labelImages": [
+        {
+          "url": "https://cdn.shopify.com/s/files/1/2597/8324/files/301561010_20250226_3_0002_02.jpg?v=1741054541",
+          "label": "90克完整背標：成分、過敏及工廠警告"
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/2597/8324/files/301561010_20250226_1_0001_01.jpg?v=1741054541",
+          "label": "90克營養標籤近照"
+        }
+      ],
+      "verification": {
+        "pricewatchId": "P000000284",
+        "matchingBasis": "卡樂B薄餅味90克：官方規格＋香港零售背標淨重及條碼",
+        "sourceCheckedAt": "2026-10-21"
+      }
+    },
+    {
+      "id": "P000000033",
+      "nameZh": "切皮三文治方麥包 6片",
+      "nameEn": "Crustless Wheat Sandwich Bread 6 slices",
+      "brand": "嘉頓",
+      "category": "bakery",
+      "reviewDecision": "eligible-complete-published-hk-statement",
+      "packSize": "6片（嘉頓官網現列165克）",
+      "quantity": 165,
+      "quantityUnit": "g",
+      "servingSize": null,
+      "origin": "香港",
+      "barcode": "0089782030092",
+      "nutrition": {
+        "basisUnit": null,
+        "basisAmount": null,
+        "energyKcal": null,
+        "carbohydrates": null,
+        "sugars": null,
+        "fat": null,
+        "saturatedFat": null,
+        "protein": null,
+        "fibre": null,
+        "sodiumMg": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "unknown",
+        "region": "hk-online-statement",
+        "hkLabelVerified": false
+      },
+      "ingredients": "小麥粉，水，麥糠，糖，大豆油，全麥粉，鹽，酵母（含有完全氫化油），小麥麩粉，防腐劑（282），麵粉處理劑（516），預拌粉（澱粉，小麥粉，抗結劑（170），抗氧化劑（300））。",
+      "allergens": {
+        "contains": [
+          "gluten",
+          "soy"
+        ],
+        "mayContain": [
+          "eggs",
+          "milk"
+        ],
+        "status": "complete",
+        "text": "生產此食品的廠房亦處理蛋類、奶類及其製品。",
+        "coverage": "已閱讀此香港零售商指定商品頁全部已刊成分及注意事項；沒有檢查目前實物批次，來源未列某過敏原不等於不存在。",
+        "completeSource": "hk-retailer-full-online-statement",
+        "verificationMethod": "hk-retailer-full-online-statement",
+        "physicalPackChecked": false
+      },
+      "physicalPackChecked": false,
+      "labelEvidence": {
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "method": "香港官方零售商品頁完整已刊成分及警告人工閱讀"
+      },
+      "sources": [
+        {
+          "label": "百佳 PNS：6片切皮麥三文治包",
+          "url": "https://www.pns.hk/zh-hk/切皮麥三文治包/p/BP_185785",
+          "checkedAt": "2026-10-21",
+          "scope": "完整成分及廠房蛋／奶警告"
+        },
+        {
+          "label": "嘉頓香港官方目錄：6片切皮三文治方麥包",
+          "url": "https://garden-catalogue.com/zh-hant/hk/retail/bread/sandwich/crustless_sandwich/2?back=cad2faa279e236c23d222d721929f245",
+          "checkedAt": "2026-10-21",
+          "scope": "現列165克、6片、香港製造、條碼及同一廠房警告"
+        }
+      ],
+      "dataStatus": "hk-online-allergy-statement",
+      "sourceLimit": "已閱讀指定香港零售商網頁公開成分及警告；未檢查你購買嘅實物包裝或當前批次。此來源沒有完整營養表，缺項維持未知。",
+      "identityEvidence": "百佳指定6片切皮麥包；嘉頓香港官網同款6片、165克、貨號3009、條碼089782030092，廠房蛋／奶警告一致。",
+      "labelImages": [],
+      "prices": []
+    },
+    {
+      "id": "P000001338",
+      "nameZh": "厚切方包 6片",
+      "nameEn": "Thick Toast Sandwich Bread 6 slices",
+      "brand": "嘉頓",
+      "category": "bakery",
+      "reviewDecision": "eligible-complete-published-hk-statement",
+      "packSize": "6片",
+      "quantity": null,
+      "quantityUnit": null,
+      "servingSize": null,
+      "origin": "香港",
+      "barcode": null,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": null,
+        "carbohydrates": null,
+        "sugars": null,
+        "fat": null,
+        "saturatedFat": null,
+        "protein": null,
+        "fibre": null,
+        "sodiumMg": 380,
+        "carbohydrateDefinition": "unspecified",
+        "status": "partial-hk-retailer-statement",
+        "region": "hk-online-statement",
+        "hkLabelVerified": false,
+        "sourceLimit": "只記錄百佳對此款厚切方包明確標示的每100克鈉380毫克；不是完整營養標籤。"
+      },
+      "ingredients": "Wheat Flour (contains flour treatment agent (300)), Water, Sugar, Soybean Oil, Salt (contains anticaking agent (535)), Yeast (contains emulsifier (491)), Wheat Gluten, Emulsifier (471) (contains antioxidant (300, 330)), Preservative (282), Flour Treatment Agent (516, 341, 1100) (contains stabilizer (1420)).",
+      "allergens": {
+        "contains": [
+          "gluten",
+          "soy"
+        ],
+        "mayContain": [
+          "eggs",
+          "milk"
+        ],
+        "status": "complete",
+        "text": "Produced in a factory where egg, milk and their products are also handled.",
+        "coverage": "已閱讀此香港零售商指定商品頁全部已刊成分及注意事項；沒有檢查目前實物批次，來源未列某過敏原不等於不存在。",
+        "completeSource": "hk-retailer-full-online-statement",
+        "verificationMethod": "hk-retailer-full-online-statement",
+        "physicalPackChecked": false
+      },
+      "physicalPackChecked": false,
+      "labelEvidence": {
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "method": "香港官方零售商品頁完整已刊成分及警告人工閱讀"
+      },
+      "sources": [
+        {
+          "label": "香港百佳 PNS：指定包裝成分及注意事項",
+          "url": "https://www.pns.hk/en/thick-toast-sandwich-bread/p/BP_191921",
+          "checkedAt": "2026-10-21",
+          "scope": "全份已刊成分、過敏警告及包裝名稱／數量；不是營養背標照片。"
+        }
+      ],
+      "dataStatus": "hk-online-allergy-statement",
+      "sourceLimit": "百佳完整成分及蛋／奶廠房警告已讀；鈉380毫克／100克屬該頁明確產品資料，其餘營養維持未知。未檢查當前實物包裝。",
+      "labelImages": [],
+      "prices": []
+    },
+    {
+      "id": "P000000836",
+      "nameZh": "生命麵包 - 蜜糖雞蛋 14片",
+      "nameEn": "Life Bread - Honey & Egg 14 slices",
+      "brand": "嘉頓",
+      "category": "bakery",
+      "reviewDecision": "eligible-complete-published-hk-statement",
+      "packSize": "14片（嘉頓官網現列430克）",
+      "quantity": 430,
+      "quantityUnit": "g",
+      "servingSize": null,
+      "origin": "香港",
+      "barcode": "0089782031075",
+      "nutrition": {
+        "basisUnit": null,
+        "basisAmount": null,
+        "energyKcal": null,
+        "carbohydrates": null,
+        "sugars": null,
+        "fat": null,
+        "saturatedFat": null,
+        "protein": null,
+        "fibre": null,
+        "sodiumMg": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "unknown",
+        "region": "hk-online-statement",
+        "hkLabelVerified": false
+      },
+      "ingredients": "小麥粉，水，糖，大豆油，蜜糖，蛋黃粉，酵母（含有完全氫化油），鹽，麵粉處理劑（300），乳清粉（奶），脫脂奶粉，防腐劑（282），魚油粉，色素（160a），維他命B2。",
+      "allergens": {
+        "contains": [
+          "gluten",
+          "soy",
+          "eggs",
+          "milk",
+          "fish"
+        ],
+        "mayContain": [
+          "eggs",
+          "soy",
+          "fish"
+        ],
+        "status": "complete",
+        "text": "生產此食品的廠房亦處理蛋類、大豆、魚類及其製品。",
+        "coverage": "已閱讀此香港零售商指定商品頁全部已刊成分及注意事項；沒有檢查目前實物批次，來源未列某過敏原不等於不存在。",
+        "completeSource": "hk-retailer-full-online-statement",
+        "verificationMethod": "hk-retailer-full-online-statement",
+        "physicalPackChecked": false
+      },
+      "physicalPackChecked": false,
+      "labelEvidence": {
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "method": "香港官方零售商品頁完整已刊成分及警告人工閱讀"
+      },
+      "sources": [
+        {
+          "label": "百佳 PNS：生命麵包蜜糖雞蛋14片",
+          "url": "https://www.pns.hk/zh-hk/生命麵包-–-蜜糖雞蛋/p/BP_120059",
+          "checkedAt": "2026-10-21",
+          "scope": "完整成分（包括魚油粉）及蛋／豆／魚廠房警告"
+        },
+        {
+          "label": "嘉頓香港官方目錄：生命甜包蜜糖雞蛋",
+          "url": "https://garden-catalogue.com/zh-hant/hk/retail/bread/sandwich/life/2/?back=90727adf26efb8d0f6c1f3cdb34fa2bd",
+          "checkedAt": "2026-10-21",
+          "scope": "430克、14片、條碼及廠房蛋／豆／魚警告"
+        }
+      ],
+      "dataStatus": "hk-online-allergy-statement",
+      "sourceLimit": "已閱讀指定香港零售商網頁公開成分及警告；未檢查你購買嘅實物包裝或當前批次。此來源沒有完整營養表，缺項維持未知。",
+      "identityEvidence": "嘉頓香港官網貨號3107、14片／430克、條碼089782031075；百佳完整成分包括魚油粉，不能因麵包名稱沒有魚而忽略魚過敏原。",
+      "labelImages": [],
+      "prices": []
+    },
+    {
+      "id": "P000005414",
+      "nameZh": "雪芳蛋糕 (牛奶味) 60克",
+      "nameEn": "Chiffon Cake (Milk Flavour) 60g",
+      "brand": "嘉頓",
+      "category": "bakery",
+      "reviewDecision": "eligible-complete-published-hk-statement",
+      "packSize": "60克",
+      "quantity": 60,
+      "quantityUnit": "g",
+      "servingSize": null,
+      "origin": "中國",
+      "barcode": "0089782041104",
+      "nutrition": {
+        "basisUnit": null,
+        "basisAmount": null,
+        "energyKcal": null,
+        "carbohydrates": null,
+        "sugars": null,
+        "fat": null,
+        "saturatedFat": null,
+        "protein": null,
+        "fibre": null,
+        "sodiumMg": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "unknown",
+        "region": "hk-online-statement",
+        "hkLabelVerified": false
+      },
+      "ingredients": "糖，小麥粉，蛋，粟米油，鮮奶（5.9%），玉米澱粉，乳清粉（奶），膨脹劑（450, 500），鹽，調味劑（大豆）（含有增味劑（637）），防腐劑（202），酸度調節劑（330），色素（160a）（含有抗氧化劑（316））。",
+      "allergens": {
+        "contains": [
+          "eggs",
+          "milk",
+          "gluten",
+          "soy"
+        ],
+        "mayContain": [
+          "tree-nuts",
+          "peanuts"
+        ],
+        "status": "complete",
+        "text": "此產品含有蛋類、奶類、含有麩質的穀類、大豆及其製品。生產此食品的廠房亦處理木本堅果及堅果、花生及其製品。",
+        "coverage": "已閱讀此香港零售商指定商品頁全部已刊成分及注意事項；沒有檢查目前實物批次，來源未列某過敏原不等於不存在。",
+        "completeSource": "hk-retailer-full-online-statement",
+        "verificationMethod": "hk-retailer-full-online-statement",
+        "physicalPackChecked": false
+      },
+      "physicalPackChecked": false,
+      "labelEvidence": {
+        "physicalPackPhotoInspected": false,
+        "physicalPackChecked": false,
+        "method": "香港官方零售商品頁完整已刊成分及警告人工閱讀"
+      },
+      "sources": [
+        {
+          "label": "百佳 PNS：雪芳蛋糕牛奶味60克",
+          "url": "https://www.pns.hk/zh-hk/雪芳蛋糕－牛奶味/p/BP_371090",
+          "checkedAt": "2026-10-21",
+          "scope": "完整成分、含蛋／奶／麩質／豆及木本堅果／花生廠房警告"
+        },
+        {
+          "label": "嘉頓香港官方目錄：雪芳蛋糕牛奶味",
+          "url": "https://garden-catalogue.com/zh-hans/hk/retail/cake/sponge_cake/chiffon_cake/5?back=22c1720294937e8aa17b4e558b690a4c",
+          "checkedAt": "2026-10-21",
+          "scope": "貨號4110、60克、條碼及中國製造；官方另列大豆／花生廠房警告，所有已知來源風險均保留"
+        }
+      ],
+      "dataStatus": "hk-online-allergy-statement",
+      "sourceLimit": "已閱讀指定香港零售商網頁公開成分及警告；未檢查你購買嘅實物包裝或當前批次。此來源沒有完整營養表，缺項維持未知。",
+      "reviewNote": "兩個香港來源的廠房清單詳略不同：PNS列木本堅果／花生、品牌列大豆／花生；大豆已屬contains，聯集後不遺漏任何警告。",
+      "labelImages": [],
+      "prices": []
     }
   ],
   "stores": {
@@ -2564,6 +4551,12 @@
     "過敏篩選結果只表示已記錄來源未列所選過敏原，不代表無過敏原；含有／可能含有及資料不完整依然排除。"
   ],
   "labelReviewedAt": "2026-10-21",
-  "version": "1.1-hk-labels",
-  "allergenCompletenessDefinition": "complete = all ingredients plus visible allergen/precaution information in the specified Hong Kong published label photos or full online statement have been recorded. It does not establish the current physical batch, absence of cross-contact, or personal safety. Unpublished precautions remain unknown, not a guarantee."
+  "version": "1.3-hk-label-expansion",
+  "allergenCompletenessDefinition": "complete = all ingredients plus visible allergen/precaution information in the specified Hong Kong published label photos or full online statement have been recorded. It does not establish the current physical batch, absence of cross-contact, or personal safety. Unpublished precautions remain unknown, not a guarantee.",
+  "labelEnrichment": {
+    "checkedAt": "2026-10-21",
+    "newBrandRetailerRecords": 22,
+    "offRecordsFile": "off-hk-labels.json",
+    "scope": "Exact existing product/pack identities; full published source coverage is not current physical-batch verification. Missing facts stay unknown."
+  }
 }

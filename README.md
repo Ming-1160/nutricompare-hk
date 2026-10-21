@@ -14,9 +14,11 @@ Traditional Chinese, mobile-responsive ITC2010 functional prototype. Static HTML
 
 The root page and `app/` both open the functional prototype. `group-brief.html` preserves the earlier group proposal and research notes.
 
-## Data status: 21 October 2026, version 1.2
+## Data status: 21 October 2026, version 1.3
 
-Bulk Consumer Council Pricewatch import includes **1,780 food records and 4,489 source price observations across nine merchant codes**. Fifteen exact source IDs enrich existing curated records; eight curated records are outside the feed. The combined catalogue has **1,788 unique records and 4,496 price observations** including separately sourced retailer prices. There are still only **20 records with partial/full nutrition and 11 complete source-scoped HK allergy statements**. Adding price data does not establish allergy or nutrition facts.
+The catalogue has **1,788 products and 4,496 merchant-price observations**. This release enriches **26 existing product identities**, using 22 Hong Kong brand/retailer records and four separately attributed Open Food Facts (OFF) records. There are now **41 records with partial/full nutrition and 35 complete source-scoped Hong Kong ingredient/allergy statements** (previously20/11). Two OFF records support complete published allergy coverage; two remain partial. Source completeness is not current-batch or cross-contact safety verification.
+
+The underlying Consumer Council Pricewatch import includes **1,780 food records and 4,489 source price observations across nine merchant codes**. Eight independently curated products are outside that feed. Adding price data never establishes nutrition or allergy facts.
 
 The six included Pricewatch source groups cover bakery/cereals/spreads, dairy/soy/eggs, snacks/biscuits, rice/oils/canned food/fresh ingredients, noodles/cooking/frozen food and drinks. The raw feed has 2,735 records; 955 are excluded as alcohol, personal care, household/pet goods, or the mixed milk-powder/baby-care category. Adult milk powder in that mixed category is consequently not covered. This is not all HK supermarket stock.
 
@@ -28,13 +30,17 @@ Government CFS NIIS was checked, including its downloadable 742-row FRL workbook
 
 ## Curated label evidence
 
-23 products and 52 merchant price observations. Eleven new Hong Kong source records comprise **five visually inspected HK-market online back-label photos** and **six full HK manufacturer/retailer online statements**. These are distinguished on cards and in details, with direct label/source links. Five records are complete HK retailer statements, not photographs of a Hong Kong sticker; one is the Hong Kong manufacturer's Bonchi record. Its unmatched 80g pack price remains unknown.
+New sources include11 exact-pack Nissin HK full product pages, five Kowloon Dairy manufacturer package-label artworks, Calbee Pizza90g HK retailer photos, five Garden HK retailer ingredient/precaution statements, and four OFF records (Calbee original55g, Garden chocolate chiffon60g, Vita high-calcium low-fat milk236ml, Pocari500ml). Actual photographs, brand packaging artwork and online text statements are distinguished. Older images (including a2020 Calbee pack) have visible dates/version caveats. Foreign versions, unreadable panels and same-barcode weight changes were held out rather than silently merged.
 
-`allergens.status: complete` means all ingredients and visible allergy/precaution information in the specified HK published source were recorded; it is **not physical current-batch verification or a cross-contact safety guarantee**. An active milk restriction returns five source-scoped no-listed-match records; peanut returns six. Combining peanut with HKD20 leaves the exact 236ml Kowloon Dairy record. The three Vitasoy label versions explicitly contain milk and soy, and factory precaution statements remain exclusions. The Vita zero-sugar tea also has factory allergen warnings and is excluded accordingly.
+The same conservative rules yield **8 milk-source-no-listed-match choices** (previously5) and **24 peanut-source-no-listed-match choices** (previously6). Peanut avoidance plus HKD20 yields16 foods at recorded whole-pack prices, including bread, milk and noodles. This is label/price comparison, not personal dietary advice. Lactose-free milk still contains milk; contains/may-contain/factory warnings remain exclusions. Partial OFF labels never pass an active allergy restriction.
 
-The original twelve records remain unchanged in completeness: six overseas manufacturer references, three partial HKNA references and three price-only records. They cannot pass an active allergy filter. Missing nutrition stays unknown. Some source image paths/date stamps reflect 2022/2023/2025 packaging; source age and version limits are visible. No newly inspected current physical batch is claimed.
+A Nissin single sesame91g page lists saturated fat higher than total fat: both fields remain unknown, with raw values and the source issue retained. They were not repaired from a five-pack page. Vita236ml photo sodium130mg/carton becomes55.0847mg/100ml rather than OFF's automatic65mg. Per-serving tables use the actual serving amount; cooking water is not added to dry-food weights. Cropped tables and absent fibre remain unknown. Label and barcode readings received independent review.
 
-Prices were retrieved on 21 October; this is not a per-price effective date, a live feed or a stock guarantee. Consumer Council prices and exact HK retailer product-page prices are kept distinct. Retail channels include Glutenfree HK (monthly orders/batched delivery) and city'super. Product links, merchant homepage links and source-only fallback links are labelled separately. Member/multi-buy discounts and delivery charges are excluded. No clinical benefit or real-user testing is claimed.
+app/data/off-hk-labels.json preserves the OFF-derived subset, corrections, exact-ID mappings and photo authors/dates. It is offered under ODbL/DbCL with photo CC-BY-SA notices. All alteration/input data and exact join methods (mergeLabelSources/buildCatalogue) are public. Retain share-alike terms, Consumer Council attribution and other source notices; see [DATA-LICENCES.md](DATA-LICENCES.md).
+
+Older overseas manufacturer and partial HKNA references retain their uncertainties. Factory precautions on Vitasoy and Vita tea are preserved. Hong Kong published sources do not prove what is on the user's current physical batch. All missing facts stay unknown.
+
+Prices are the21October2026 snapshot, not live prices, effective dates or stock. Source/product/merchant links are distinguished; discounts, delivery fees and minimum orders are not applied. The website passed49 tests and was checked in desktop/mobile layouts. No clinical benefit or real-user testing is claimed.
 
 ## Run and check
 
@@ -50,6 +56,7 @@ The current application contains no API keys. EdUHK student ChatGPT/GenAI login 
 
 - Prices: [Consumer Council Pricewatch open data](https://data.gov.hk/tc-data/dataset/cc-pricewatch-pricewatch), owned by Consumer Council, published via DATA.GOV.HK under [DATA.GOV.HK terms](https://data.gov.hk/en/terms-and-conditions). The source organizations do not endorse this prototype.
 - Partial local nutrition references: [HKNA Prepackaged Snacks 2026](https://www.hkna.org.hk/database-of-prepackaged-snacks-2026/).
+- OFF: [Open Food Facts contributors](https://world.openfoodfacts.org), [ODbL](https://opendatacommons.org/licenses/odbl/1-0/) / [DbCL](https://opendatacommons.org/licenses/dbcl/1-0/), photo authors and CC-BY-SA credits in each record.
 - Manufacturer facts: per-product source links; foreign market differences explicitly retained.
 - Label interpretation: [Centre for Food Safety FAQ](https://www.cfs.gov.hk/english/faq/faq_14.html).
 

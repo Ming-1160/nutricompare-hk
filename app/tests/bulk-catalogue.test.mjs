@@ -1,11 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {buildCatalogue} from '../catalogue.mjs';
+import {buildCatalogue,mergeLabelSources} from '../catalogue.mjs';
 import {filterProducts,getAllergenAssessment,getMinPrice,nutritionFor} from '../engine.mjs';
 
 const load=name=>JSON.parse(fs.readFileSync(new URL(`../data/${name}`,import.meta.url),'utf8'));
-const curated=load('products.json');
+const curated=mergeLabelSources(load('products.json'),load('off-hk-labels.json'));
 const input=load('pricewatch-foods.json');
 const meta=load('pricewatch-meta.json');
 const rows=Array.isArray(input)?input:input.products;

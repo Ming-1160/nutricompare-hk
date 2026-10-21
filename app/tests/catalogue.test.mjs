@@ -2,8 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {filterProducts,getAllergenAssessment,nutritionFor,getMinPrice} from '../engine.mjs';
+import {buildCatalogue,mergeLabelSources} from '../catalogue.mjs';
 const catalogue=JSON.parse(fs.readFileSync(new URL('../data/products.json',import.meta.url),'utf8'));
-const products=catalogue.products;
+const load=name=>JSON.parse(fs.readFileSync(new URL(`../data/${name}`,import.meta.url),'utf8'));
+const products=buildCatalogue(mergeLabelSources(catalogue,load('off-hk-labels.json')),load('pricewatch-foods.json'),load('pricewatch-meta.json')).products;
 const byId=id=>products.find(p=>p.id===id);
 
 test('every complete allergy record has HK evidence, full ingredients, dated sources and no physical-batch claim',()=>{
@@ -30,9 +32,12 @@ test('milk restriction has real sourced matches but excludes soy drinks and may-
   assert.ok(!matches.some(p=>/VITASOY|P000001260|P000000426|P000000124|VITA-ZERO/.test(p.id)));
   assert.equal(getAllergenAssessment(byId('HK-GFHK-WASA-CRISPBREAD-240'),['milk']).status,'conflict');
 });
-test('peanut plus HKD20 uses a real inexpensive HK-labelled product, not expensive biscuits or factory warnings',()=>{
+test('peanut plus HKD20 has documented inexpensive choices and excludes factory peanut warnings',()=>{
   const matches=filterProducts(products,{allergens:['peanuts'],budget:20});
-  assert.deepEqual(matches.map(p=>p.id),['P000000124']);
+  assert.ok(matches.some(p=>p.id==='P000000124'));
+  assert.ok(matches.some(p=>p.id==='P000000033'));
+  assert.ok(matches.some(p=>p.id==='P000000015'));
+  assert.ok(matches.every(p=>p.allergens.status==='complete'&&getMinPrice(p)<=20));
   assert.equal(getAllergenAssessment(byId('HK-GFHK-LEPAIN-BUCKWHEAT-75'),['peanuts']).status,'conflict');
   assert.equal(getAllergenAssessment(byId('HK-VITA-ZERO-LEMON-500'),['peanuts']).status,'conflict');
 });

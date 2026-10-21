@@ -7,6 +7,21 @@ function storeRecord(meta, curated, id){
   return typeof record==='string'?{name:record}:record;
 }
 
+/** OFF-derived facts remain separately published and attributed under ODbL/DbCL. */
+export function mergeLabelSources(curated, overlay={}){
+  const rows=Array.isArray(overlay)?overlay:overlay.products??[];
+  const byId=new Map((curated.products??[]).map(product=>[product.id,product]));
+  for(const record of rows){
+    const existing=byId.get(record.id);
+    // Never replace an already complete source-scoped record with a crowdsourced alternative.
+    if(existing?.allergens?.status==='complete')continue;
+    byId.set(record.id,{...existing,...record,prices:record.prices?.length?record.prices:existing?.prices??[],
+      sources:[...(existing?.sources??[]),...(record.sources??[])],
+    });
+  }
+  return {...curated,products:[...byId.values()],openFoodFacts:!Array.isArray(overlay)?{...overlay,products:undefined}:null};
+}
+
 export function buildCatalogue(curated, input, meta={}){
   const rows=Array.isArray(input)?input:input.products??[];
   const checkedAt=meta.retrievedAt??meta.priceRetrievedAt??meta.snapshotAt??curated.priceSnapshotAt;
@@ -39,7 +54,7 @@ export function buildCatalogue(curated, input, meta={}){
     });
     refreshedCurated++;
   }
-  return {...curated,version:'1.2-hk-catalogue',priceSnapshotAt:checkedAt,priceRetrievedAt:checkedAt,
+  return {...curated,version:'1.3-hk-label-expansion',priceSnapshotAt:checkedAt,priceRetrievedAt:checkedAt,
     stores:{...(curated.stores??{}),...(meta.stores??{})},products:[...byId.values()],
     imports:{pricewatch:{...meta,importedCount:rows.length,refreshedCurated}},
   };
