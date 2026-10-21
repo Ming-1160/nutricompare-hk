@@ -1,0 +1,1259 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-21T12:33:45+08:00",
+  "priceSnapshotAt": "2026-10-21",
+  "priceRetrievedAt": "2026-10-21T12:26:03+08:00",
+  "sourcePriceDate": null,
+  "status": "student-prototype-research-catalogue",
+  "products": [
+    {
+      "id": "P000003649",
+      "nameZh": "原味巧克力三文治餅乾 200克",
+      "nameEn": "Original Chocolate Biscuits 200g",
+      "brand": "雅樂思",
+      "brandEn": "Arnott's Tim Tam",
+      "category": "biscuits",
+      "tags": [
+        "餅乾",
+        "夾心",
+        "忌廉",
+        "朱古力",
+        "cream",
+        "sandwich",
+        "chocolate"
+      ],
+      "packSize": "200克",
+      "quantity": 200,
+      "quantityUnit": "g",
+      "servingSize": 18.1,
+      "origin": null,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 523.4,
+        "carbohydrates": 65.1,
+        "sugars": 46,
+        "fat": 26.8,
+        "saturatedFat": 15,
+        "protein": 4.6,
+        "fibre": 1.8,
+        "sodiumMg": 158,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "hkLabelVerified": false,
+        "sourceLimit": "澳洲官網現行配方及9件包裝資料，尚未與香港200克包裝核對；僅供比較原型參考。能量由官方2190kJ÷4.184換算。",
+        "region": "overseas-reference"
+      },
+      "allergens": {
+        "contains": [
+          "gluten",
+          "milk",
+          "soy"
+        ],
+        "mayContain": [
+          "eggs",
+          "tree-nuts",
+          "peanuts",
+          "sesame"
+        ],
+        "status": "partial",
+        "text": "以下為所列海外官網的已知成分／過敏聲明；香港包裝配方與完整聲明未核對。"
+      },
+      "prices": [
+        {
+          "store": "WELLCOME",
+          "price": 20.0,
+          "url": "https://www.wellcome.com.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "PARKNSHOP",
+          "price": 33.9,
+          "url": "https://www.pns.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "JASONS",
+          "price": 20.0,
+          "url": "https://www.marketplacehk.com/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "AEON",
+          "price": 36.9,
+          "url": "https://www.aeoncity.com.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "消委會格價資訊通開放數據",
+          "url": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "checkedAt": "2026-10-21",
+          "scope": "香港同品牌、口味及包裝容量之商戶標價快照"
+        },
+        {
+          "label": "Arnott’s 澳洲官網 Tim Tam Original",
+          "url": "https://www.arnotts.com/brands/tim-tam",
+          "checkedAt": "2026-10-21",
+          "scope": "海外版本每100克營養及成分參考；不是已驗證的香港標籤"
+        }
+      ],
+      "dataStatus": "overseas-reference",
+      "sourceLimit": "澳洲官網現行配方及9件包裝資料，尚未與香港200克包裝核對；僅供比較原型參考。能量由官方2190kJ÷4.184換算。",
+      "versionStatus": "hk-label-unverified",
+      "ingredientsSummary": "官網成分包括小麥、牛奶朱古力及大豆；可能含蛋、堅果、花生和芝麻。",
+      "barcode": null
+    },
+    {
+      "id": "P000000178",
+      "nameZh": "消化餅 400克",
+      "nameEn": "Digestive Biscuits 400g",
+      "brand": "麥維他",
+      "brandEn": "McVitie's",
+      "category": "biscuits",
+      "tags": [
+        "餅乾",
+        "消化餅",
+        "原味",
+        "digestive",
+        "original"
+      ],
+      "packSize": "400克",
+      "quantity": 400,
+      "quantityUnit": "g",
+      "servingSize": 14.8,
+      "origin": null,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 483,
+        "carbohydrates": 63.7,
+        "sugars": 15.1,
+        "fat": 21.3,
+        "saturatedFat": 10.1,
+        "protein": 7.1,
+        "fibre": 3.7,
+        "sodiumMg": 520,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "hkLabelVerified": false,
+        "sourceLimit": "瑞典官網配方，尚未核對香港400克版本；鈉由官網鹽1.3g÷2.5×1000換算。",
+        "region": "overseas-reference"
+      },
+      "allergens": {
+        "contains": [
+          "gluten"
+        ],
+        "mayContain": [
+          "milk"
+        ],
+        "status": "partial",
+        "text": "以下為所列海外官網的已知成分／過敏聲明；香港包裝配方與完整聲明未核對。"
+      },
+      "prices": [
+        {
+          "store": "WELLCOME",
+          "price": 30.0,
+          "url": "https://www.wellcome.com.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "JASONS",
+          "price": 30.0,
+          "url": "https://www.marketplacehk.com/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "AEON",
+          "price": 21.9,
+          "url": "https://www.aeoncity.com.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "消委會格價資訊通開放數據",
+          "url": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "checkedAt": "2026-10-21",
+          "scope": "香港同品牌、口味及包裝容量之商戶標價快照"
+        },
+        {
+          "label": "McVitie’s 瑞典官網 Original",
+          "url": "https://www.mcvities.se/mcvities-digestive-original/",
+          "checkedAt": "2026-10-21",
+          "scope": "海外版本每100克營養及成分參考；不是已驗證的香港標籤"
+        }
+      ],
+      "dataStatus": "overseas-reference",
+      "sourceLimit": "瑞典官網配方，尚未核對香港400克版本；鈉由官網鹽1.3g÷2.5×1000換算。",
+      "versionStatus": "hk-label-unverified",
+      "ingredientsSummary": "小麥及全麥；官網提示可能含牛奶。",
+      "barcode": null
+    },
+    {
+      "id": "P000003652",
+      "nameZh": "輕怡消化餅 250克",
+      "nameEn": "Light Digestive Biscuits 250g",
+      "brand": "麥維他",
+      "brandEn": "McVitie's",
+      "category": "biscuits",
+      "tags": [
+        "餅乾",
+        "消化餅",
+        "輕怡",
+        "light",
+        "digestive"
+      ],
+      "packSize": "250克",
+      "quantity": 250,
+      "quantityUnit": "g",
+      "servingSize": 14.8,
+      "origin": null,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 447,
+        "carbohydrates": 69.7,
+        "sugars": 20.2,
+        "fat": 14.4,
+        "saturatedFat": 1.5,
+        "protein": 7.3,
+        "fibre": 3.6,
+        "sodiumMg": 480,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "hkLabelVerified": false,
+        "sourceLimit": "希臘官網250克版本，香港包裝配方未核對；鈉由官網鹽1.2g÷2.5×1000換算。",
+        "region": "overseas-reference"
+      },
+      "allergens": {
+        "contains": [
+          "gluten"
+        ],
+        "mayContain": [],
+        "status": "partial",
+        "text": "以下為所列海外官網的已知成分／過敏聲明；香港包裝配方與完整聲明未核對。"
+      },
+      "prices": [
+        {
+          "store": "PARKNSHOP",
+          "price": 24.5,
+          "url": "https://www.pns.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "JASONS",
+          "price": 25.5,
+          "url": "https://www.marketplacehk.com/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "消委會格價資訊通開放數據",
+          "url": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "checkedAt": "2026-10-21",
+          "scope": "香港同品牌、口味及包裝容量之商戶標價快照"
+        },
+        {
+          "label": "McVitie’s 希臘官網 Light 250g",
+          "url": "https://www.mcvities.gr/project/mcvities-digestives-light-250g-el/",
+          "checkedAt": "2026-10-21",
+          "scope": "海外版本每100克營養及成分參考；不是已驗證的香港標籤"
+        }
+      ],
+      "dataStatus": "overseas-reference",
+      "sourceLimit": "希臘官網250克版本，香港包裝配方未核對；鈉由官網鹽1.2g÷2.5×1000換算。",
+      "versionStatus": "hk-label-unverified",
+      "ingredientsSummary": "官網成分包括小麥及全麥；未取得香港包裝的交叉接觸聲明。",
+      "barcode": null
+    },
+    {
+      "id": "P000002555",
+      "nameZh": "牛奶朱古力消化餅 266克",
+      "nameEn": "Digestive Biscuits (Milk Chocolate) 266g",
+      "brand": "麥維他",
+      "brandEn": "McVitie's",
+      "category": "biscuits",
+      "tags": [
+        "餅乾",
+        "消化餅",
+        "牛奶朱古力",
+        "chocolate",
+        "digestive"
+      ],
+      "packSize": "266克",
+      "quantity": 266,
+      "quantityUnit": "g",
+      "servingSize": null,
+      "origin": null,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 496,
+        "carbohydrates": 62.5,
+        "sugars": 28.5,
+        "fat": 23.6,
+        "saturatedFat": 12.4,
+        "protein": 6.7,
+        "fibre": 3.0,
+        "sodiumMg": 376,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "hkLabelVerified": false,
+        "sourceLimit": "瑞典官網配方，尚未核對香港266克版本；鈉由官網鹽0.94g÷2.5×1000換算。",
+        "region": "overseas-reference"
+      },
+      "allergens": {
+        "contains": [
+          "gluten",
+          "milk",
+          "soy"
+        ],
+        "mayContain": [],
+        "status": "partial",
+        "text": "以下為所列海外官網的已知成分／過敏聲明；香港包裝配方與完整聲明未核對。"
+      },
+      "prices": [
+        {
+          "store": "WELLCOME",
+          "price": 41.0,
+          "url": "https://www.wellcome.com.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "PARKNSHOP",
+          "price": 34.9,
+          "url": "https://www.pns.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "JASONS",
+          "price": 42.5,
+          "url": "https://www.marketplacehk.com/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "消委會格價資訊通開放數據",
+          "url": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "checkedAt": "2026-10-21",
+          "scope": "香港同品牌、口味及包裝容量之商戶標價快照"
+        },
+        {
+          "label": "McVitie’s 瑞典官網 Milk Chocolate",
+          "url": "https://www.mcvities.se/mcvities-digestive-milk-chocolate/",
+          "checkedAt": "2026-10-21",
+          "scope": "海外版本每100克營養及成分參考；不是已驗證的香港標籤"
+        }
+      ],
+      "dataStatus": "overseas-reference",
+      "sourceLimit": "瑞典官網配方，尚未核對香港266克版本；鈉由官網鹽0.94g÷2.5×1000換算。",
+      "versionStatus": "hk-label-unverified",
+      "ingredientsSummary": "官網成分包括小麥、牛奶及大豆卵磷脂；未核對香港包裝完整聲明。",
+      "barcode": null
+    },
+    {
+      "id": "P000002556",
+      "nameZh": "黑朱古力消化餅 266克",
+      "nameEn": "Digestive Biscuits (Dark Chocolate) 266g",
+      "brand": "麥維他",
+      "brandEn": "McVitie's",
+      "category": "biscuits",
+      "tags": [
+        "餅乾",
+        "消化餅",
+        "黑朱古力",
+        "dark",
+        "chocolate",
+        "digestive"
+      ],
+      "packSize": "266克",
+      "quantity": 266,
+      "quantityUnit": "g",
+      "servingSize": 16.7,
+      "origin": null,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 495,
+        "carbohydrates": 60.8,
+        "sugars": 27.6,
+        "fat": 24.2,
+        "saturatedFat": 12.8,
+        "protein": 6,
+        "fibre": 4.2,
+        "sodiumMg": 348,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "hkLabelVerified": false,
+        "sourceLimit": "塞浦路斯官網200克版本，尚未核對香港266克包裝；鈉由官網鹽0.87g÷2.5×1000換算。",
+        "region": "overseas-reference"
+      },
+      "allergens": {
+        "contains": [
+          "gluten",
+          "milk",
+          "soy"
+        ],
+        "mayContain": [],
+        "status": "partial",
+        "text": "以下為所列海外官網的已知成分／過敏聲明；香港包裝配方與完整聲明未核對。"
+      },
+      "prices": [
+        {
+          "store": "PARKNSHOP",
+          "price": 34.9,
+          "url": "https://www.pns.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "消委會格價資訊通開放數據",
+          "url": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "checkedAt": "2026-10-21",
+          "scope": "香港同品牌、口味及包裝容量之商戶標價快照"
+        },
+        {
+          "label": "McVitie’s 塞浦路斯官網 Dark Chocolate 200g",
+          "url": "https://mcvitiescyprus.com/en/project/mcvities-digestives-dark-chocolate-200g/",
+          "checkedAt": "2026-10-21",
+          "scope": "海外版本每100克營養及成分參考；不是已驗證的香港標籤"
+        }
+      ],
+      "dataStatus": "overseas-reference",
+      "sourceLimit": "塞浦路斯官網200克版本，尚未核對香港266克包裝；鈉由官網鹽0.87g÷2.5×1000換算。",
+      "versionStatus": "hk-label-unverified",
+      "ingredientsSummary": "官網成分包括小麥、牛奶及大豆；未核對香港包裝完整聲明。",
+      "barcode": null
+    },
+    {
+      "id": "P000000927",
+      "nameZh": "全麥營養早餐 430克",
+      "nameEn": "Wheat Cereal Original 430g",
+      "brand": "維他麥",
+      "brandEn": "Weetabix",
+      "category": "snacks",
+      "tags": [
+        "全麥",
+        "穀物",
+        "早餐",
+        "原味",
+        "cereal",
+        "wheat"
+      ],
+      "packSize": "430克",
+      "quantity": 430,
+      "quantityUnit": "g",
+      "servingSize": 37.5,
+      "origin": null,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 362,
+        "carbohydrates": 69,
+        "sugars": 4.2,
+        "fat": 2,
+        "saturatedFat": 0.6,
+        "protein": 12,
+        "fibre": 10,
+        "sodiumMg": 112,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "hkLabelVerified": false,
+        "sourceLimit": "英國官網配方，尚未核對香港430克包裝；鈉由官網鹽0.28g÷2.5×1000換算。",
+        "region": "overseas-reference"
+      },
+      "allergens": {
+        "contains": [
+          "gluten"
+        ],
+        "mayContain": [],
+        "status": "partial",
+        "text": "以下為所列海外官網的已知成分／過敏聲明；香港包裝配方與完整聲明未核對。"
+      },
+      "prices": [
+        {
+          "store": "WELLCOME",
+          "price": 46.0,
+          "url": "https://www.wellcome.com.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "PARKNSHOP",
+          "price": 39.9,
+          "url": "https://www.pns.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "JASONS",
+          "price": 48.9,
+          "url": "https://www.marketplacehk.com/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "AEON",
+          "price": 58.0,
+          "url": "https://www.aeoncity.com.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "消委會格價資訊通開放數據",
+          "url": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "checkedAt": "2026-10-21",
+          "scope": "香港同品牌、口味及包裝容量之商戶標價快照"
+        },
+        {
+          "label": "Weetabix 英國官網 Original",
+          "url": "https://weetabix.co.uk/our-products/original-classic/weetabix/",
+          "checkedAt": "2026-10-21",
+          "scope": "海外版本每100克營養及成分參考；不是已驗證的香港標籤"
+        }
+      ],
+      "dataStatus": "overseas-reference",
+      "sourceLimit": "英國官網配方，尚未核對香港430克包裝；鈉由官網鹽0.28g÷2.5×1000換算。",
+      "versionStatus": "hk-label-unverified",
+      "ingredientsSummary": "官網成分包括全麥及大麥麥芽；未核對香港包裝完整聲明。",
+      "barcode": null
+    },
+    {
+      "id": "P000004227",
+      "nameZh": "燕麥梳打 205克",
+      "nameEn": "OAT SALTINES 205 GM",
+      "brand": "Meadows",
+      "brandEn": "Meadows",
+      "category": "biscuits",
+      "tags": [
+        "餅乾",
+        "梳打",
+        "鹹味",
+        "燕麥",
+        "saltine",
+        "cracker"
+      ],
+      "packSize": "205克",
+      "quantity": 205,
+      "quantityUnit": "g",
+      "servingSize": 19,
+      "origin": null,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 452.6,
+        "carbohydrates": null,
+        "sugars": 0.7,
+        "fat": 21.2,
+        "saturatedFat": null,
+        "protein": null,
+        "fibre": 3,
+        "sodiumMg": 470,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "hkLabelVerified": false,
+        "region": "HKNA-reference",
+        "sourceLimit": "HKNA2026部分標籤資料；每100克能量由19克小包熱量等比例換算。總碳水、蛋白質、飽和脂肪未提供。"
+      },
+      "allergens": {
+        "contains": [
+          "gluten"
+        ],
+        "mayContain": [
+          "eggs",
+          "milk",
+          "tree-nuts",
+          "peanuts",
+          "sulphites",
+          "soy"
+        ],
+        "status": "partial",
+        "text": "HKNA2026所錄成分及共廠處理提示；現售香港完整包裝未核對，未列出的過敏原不代表不存在。"
+      },
+      "prices": [
+        {
+          "store": "WELLCOME",
+          "price": 14.5,
+          "url": "https://www.wellcome.com.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "消委會格價資訊通開放數據",
+          "url": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "checkedAt": "2026-10-21",
+          "scope": "香港同品牌、口味及包裝容量之商戶標價快照"
+        },
+        {
+          "label": "香港營養學會 HKNA 小食資料庫2026",
+          "url": "https://www.hkna.org.hk/wp-content/uploads/2026/09/Database%20of%20Prepackaged%20Snacks%202026%20-%20Food_EN.pdf",
+          "checkedAt": "2026-10-21",
+          "scope": "同品牌及口味19克小包之部分營養／成分，頁2–3；與205克零售包裝未完成逐項核對"
+        }
+      ],
+      "dataStatus": "partial-reference",
+      "sourceLimit": "HKNA資料為19克小包；消委會價格為205克零售包裝。品牌口味相符，但未完成條碼、配方及包裝版本核對。學生小食分類並非糖尿病飲食建議。",
+      "versionStatus": "hk-label-unverified",
+      "ingredientsSummary": "HKNA成分提示含小麥；共廠處理其他過敏原，詳細原文請查看來源。",
+      "barcode": null
+    },
+    {
+      "id": "P000003838",
+      "nameZh": "奶鹽梳打 205克",
+      "nameEn": "Original Saltines 205 GM",
+      "brand": "Meadows",
+      "brandEn": "Meadows",
+      "category": "biscuits",
+      "tags": [
+        "餅乾",
+        "梳打",
+        "鹹味",
+        "原味",
+        "saltine",
+        "cracker"
+      ],
+      "packSize": "205克",
+      "quantity": 205,
+      "quantityUnit": "g",
+      "servingSize": 19,
+      "origin": null,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 478.9,
+        "carbohydrates": null,
+        "sugars": 0,
+        "fat": 23.9,
+        "saturatedFat": null,
+        "protein": null,
+        "fibre": 3.1,
+        "sodiumMg": 466,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "hkLabelVerified": false,
+        "region": "HKNA-reference",
+        "sourceLimit": "HKNA2026部分標籤資料；每100克能量由19克小包熱量等比例換算。總碳水、蛋白質、飽和脂肪未提供。"
+      },
+      "allergens": {
+        "contains": [
+          "gluten"
+        ],
+        "mayContain": [
+          "eggs",
+          "milk",
+          "tree-nuts",
+          "peanuts",
+          "sulphites",
+          "soy"
+        ],
+        "status": "partial",
+        "text": "HKNA2026所錄成分及共廠處理提示；現售香港完整包裝未核對，未列出的過敏原不代表不存在。"
+      },
+      "prices": [
+        {
+          "store": "WELLCOME",
+          "price": 14.5,
+          "url": "https://www.wellcome.com.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "JASONS",
+          "price": 14.5,
+          "url": "https://www.marketplacehk.com/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "消委會格價資訊通開放數據",
+          "url": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "checkedAt": "2026-10-21",
+          "scope": "香港同品牌、口味及包裝容量之商戶標價快照"
+        },
+        {
+          "label": "香港營養學會 HKNA 小食資料庫2026",
+          "url": "https://www.hkna.org.hk/wp-content/uploads/2026/09/Database%20of%20Prepackaged%20Snacks%202026%20-%20Food_EN.pdf",
+          "checkedAt": "2026-10-21",
+          "scope": "同品牌及口味19克小包之部分營養／成分，頁2–3；與205克零售包裝未完成逐項核對"
+        }
+      ],
+      "dataStatus": "partial-reference",
+      "sourceLimit": "HKNA資料為19克小包；消委會價格為205克零售包裝。品牌口味相符，但未完成條碼、配方及包裝版本核對。學生小食分類並非糖尿病飲食建議。",
+      "versionStatus": "hk-label-unverified",
+      "ingredientsSummary": "HKNA成分提示含小麥；共廠處理其他過敏原，詳細原文請查看來源。",
+      "barcode": null
+    },
+    {
+      "id": "P000004226",
+      "nameZh": "海苔梳打 205克",
+      "nameEn": "SEAWEED SALTINES 205 GM",
+      "brand": "Meadows",
+      "brandEn": "Meadows",
+      "category": "biscuits",
+      "tags": [
+        "餅乾",
+        "梳打",
+        "鹹味",
+        "海苔",
+        "saltine",
+        "cracker"
+      ],
+      "packSize": "205克",
+      "quantity": 205,
+      "quantityUnit": "g",
+      "servingSize": 19,
+      "origin": null,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 447.4,
+        "carbohydrates": null,
+        "sugars": 0,
+        "fat": 18.7,
+        "saturatedFat": null,
+        "protein": null,
+        "fibre": 3.8,
+        "sodiumMg": 507,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "hkLabelVerified": false,
+        "region": "HKNA-reference",
+        "sourceLimit": "HKNA2026部分標籤資料；每100克能量由19克小包熱量等比例換算。總碳水、蛋白質、飽和脂肪未提供。"
+      },
+      "allergens": {
+        "contains": [
+          "gluten",
+          "soy"
+        ],
+        "mayContain": [
+          "eggs",
+          "milk",
+          "tree-nuts",
+          "peanuts",
+          "sulphites"
+        ],
+        "status": "partial",
+        "text": "HKNA2026所錄成分及共廠處理提示；現售香港完整包裝未核對，未列出的過敏原不代表不存在。"
+      },
+      "prices": [
+        {
+          "store": "WELLCOME",
+          "price": 14.5,
+          "url": "https://www.wellcome.com.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "JASONS",
+          "price": 14.5,
+          "url": "https://www.marketplacehk.com/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "消委會格價資訊通開放數據",
+          "url": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "checkedAt": "2026-10-21",
+          "scope": "香港同品牌、口味及包裝容量之商戶標價快照"
+        },
+        {
+          "label": "香港營養學會 HKNA 小食資料庫2026",
+          "url": "https://www.hkna.org.hk/wp-content/uploads/2026/09/Database%20of%20Prepackaged%20Snacks%202026%20-%20Food_EN.pdf",
+          "checkedAt": "2026-10-21",
+          "scope": "同品牌及口味19克小包之部分營養／成分，頁2–3；與205克零售包裝未完成逐項核對"
+        }
+      ],
+      "dataStatus": "partial-reference",
+      "sourceLimit": "HKNA資料為19克小包；消委會價格為205克零售包裝。品牌口味相符，但未完成條碼、配方及包裝版本核對。學生小食分類並非糖尿病飲食建議。",
+      "versionStatus": "hk-label-unverified",
+      "ingredientsSummary": "HKNA成分提示含小麥；共廠處理其他過敏原，詳細原文請查看來源。",
+      "barcode": null
+    },
+    {
+      "id": "P000000037",
+      "nameZh": "忌廉威化 - 花生味 200克",
+      "nameEn": "Cream Wafers - Peanut Flavour  200g",
+      "brand": "嘉頓",
+      "brandEn": "Garden",
+      "category": "biscuits",
+      "tags": [
+        "餅乾",
+        "威化",
+        "忌廉",
+        "夾心",
+        "花生",
+        "cream",
+        "wafer",
+        "peanut"
+      ],
+      "packSize": "200克",
+      "quantity": 200,
+      "quantityUnit": "g",
+      "servingSize": null,
+      "origin": "香港",
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": null,
+        "carbohydrates": null,
+        "sugars": null,
+        "fat": null,
+        "saturatedFat": null,
+        "protein": null,
+        "fibre": null,
+        "sodiumMg": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "unknown",
+        "hkLabelVerified": false
+      },
+      "allergens": {
+        "contains": [
+          "gluten",
+          "peanuts",
+          "milk",
+          "soy",
+          "sesame"
+        ],
+        "mayContain": [
+          "eggs",
+          "tree-nuts"
+        ],
+        "status": "partial",
+        "text": "百佳成分列小麥、花生醬、奶粉及大豆；警告另列芝麻，共廠處理蛋及堅果。現售包裝尚未核對。"
+      },
+      "prices": [
+        {
+          "store": "WELLCOME",
+          "price": 16.9,
+          "url": "https://www.wellcome.com.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "PARKNSHOP",
+          "price": 18.0,
+          "url": "https://www.pns.hk/en/peanut-wafer/p/BP_120139",
+          "linkType": "product",
+          "linkLabel": "查看百佳商品頁",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "JASONS",
+          "price": 17.5,
+          "url": "https://www.marketplacehk.com/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "消委會格價資訊通開放數據",
+          "url": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "checkedAt": "2026-10-21",
+          "scope": "香港同品牌、口味及包裝容量之商戶標價快照"
+        },
+        {
+          "label": "百佳 PNS 花生威化200g",
+          "url": "https://www.pns.hk/en/peanut-wafer/p/BP_120139",
+          "checkedAt": "2026-10-21",
+          "scope": "香港零售商品容量、產地、成分及警告；尚未取得營養表"
+        }
+      ],
+      "dataStatus": "price-only",
+      "sourceLimit": "營養及完整過敏標籤待核對；價格不是即時庫存。",
+      "versionStatus": "hk-label-unverified",
+      "ingredientsSummary": "百佳資料包括小麥粉、花生醬、全脂奶粉及大豆卵磷脂；請以現售實物完整標籤為準。",
+      "barcode": null,
+      "originSource": "https://www.pns.hk/en/peanut-wafer/p/BP_120139"
+    },
+    {
+      "id": "P000000793",
+      "nameZh": "忌廉威化 - 朱古力味 200克",
+      "nameEn": "Cream Wafers - Chocolate Flavour 200g",
+      "brand": "嘉頓",
+      "brandEn": "Garden",
+      "category": "biscuits",
+      "tags": [
+        "餅乾",
+        "威化",
+        "忌廉",
+        "夾心",
+        "朱古力",
+        "cream",
+        "wafer"
+      ],
+      "packSize": "200克",
+      "quantity": 200,
+      "quantityUnit": "g",
+      "servingSize": null,
+      "origin": null,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": null,
+        "carbohydrates": null,
+        "sugars": null,
+        "fat": null,
+        "saturatedFat": null,
+        "protein": null,
+        "fibre": null,
+        "sodiumMg": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "unknown",
+        "hkLabelVerified": false
+      },
+      "allergens": {
+        "contains": [],
+        "mayContain": [],
+        "status": "unknown",
+        "text": "尚未取得及核對這款香港包裝的完整成分與過敏聲明。"
+      },
+      "prices": [
+        {
+          "store": "WELLCOME",
+          "price": 16.9,
+          "url": "https://www.wellcome.com.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "PARKNSHOP",
+          "price": 18.0,
+          "url": "https://www.pns.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "JASONS",
+          "price": 17.5,
+          "url": "https://www.marketplacehk.com/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "消委會格價資訊通開放數據",
+          "url": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "checkedAt": "2026-10-21",
+          "scope": "香港同品牌、口味及包裝容量之商戶標價快照"
+        }
+      ],
+      "dataStatus": "price-only",
+      "sourceLimit": "已取得香港商戶價格，這款200克包裝的營養及完整成分／過敏聲明尚未核對。",
+      "versionStatus": "hk-label-unverified",
+      "ingredientsSummary": null,
+      "barcode": null
+    },
+    {
+      "id": "P000000652",
+      "nameZh": "忌廉威化 - 士多啤梨味 200克",
+      "nameEn": "Cream Wafers - Strawberry Flavour 200g",
+      "brand": "嘉頓",
+      "brandEn": "Garden",
+      "category": "biscuits",
+      "tags": [
+        "餅乾",
+        "威化",
+        "忌廉",
+        "夾心",
+        "士多啤梨",
+        "cream",
+        "wafer"
+      ],
+      "packSize": "200克",
+      "quantity": 200,
+      "quantityUnit": "g",
+      "servingSize": null,
+      "origin": null,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": null,
+        "carbohydrates": null,
+        "sugars": null,
+        "fat": null,
+        "saturatedFat": null,
+        "protein": null,
+        "fibre": null,
+        "sodiumMg": null,
+        "carbohydrateDefinition": "unspecified",
+        "status": "unknown",
+        "hkLabelVerified": false
+      },
+      "allergens": {
+        "contains": [],
+        "mayContain": [],
+        "status": "unknown",
+        "text": "尚未取得及核對這款香港包裝的完整成分與過敏聲明。"
+      },
+      "prices": [
+        {
+          "store": "WELLCOME",
+          "price": 16.9,
+          "url": "https://www.wellcome.com.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "PARKNSHOP",
+          "price": 18.0,
+          "url": "https://www.pns.hk/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        },
+        {
+          "store": "JASONS",
+          "price": 17.5,
+          "url": "https://www.marketplacehk.com/",
+          "linkType": "merchant-home",
+          "linkLabel": "前往商戶網站查找商品",
+          "checkedAt": "2026-10-21",
+          "sourceUrl": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "priceDate": null,
+          "currency": "HKD",
+          "note": "擷取日期不等於商戶更新日期；單件標價，不包括配送費及多件優惠，庫存未核實。"
+        }
+      ],
+      "sources": [
+        {
+          "label": "消委會格價資訊通開放數據",
+          "url": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+          "checkedAt": "2026-10-21",
+          "scope": "香港同品牌、口味及包裝容量之商戶標價快照"
+        }
+      ],
+      "dataStatus": "price-only",
+      "sourceLimit": "已取得香港商戶價格，這款200克包裝的營養及完整成分／過敏聲明尚未核對。",
+      "versionStatus": "hk-label-unverified",
+      "ingredientsSummary": null,
+      "barcode": null
+    }
+  ],
+  "stores": {
+    "WELLCOME": {
+      "id": "WELLCOME",
+      "name": "惠康",
+      "url": "https://www.wellcome.com.hk/",
+      "linkType": "merchant-home"
+    },
+    "PARKNSHOP": {
+      "id": "PARKNSHOP",
+      "name": "百佳 PNS",
+      "url": "https://www.pns.hk/",
+      "linkType": "merchant-home"
+    },
+    "JASONS": {
+      "id": "JASONS",
+      "name": "Market Place",
+      "url": "https://www.marketplacehk.com/",
+      "linkType": "merchant-home"
+    },
+    "AEON": {
+      "id": "AEON",
+      "name": "AEON",
+      "url": "https://www.aeoncity.com.hk/",
+      "linkType": "merchant-home"
+    }
+  },
+  "attribution": [
+    {
+      "label": "消費者委員會「格價資訊通」開放數據",
+      "url": "https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json",
+      "terms": "https://data.gov.hk/en/terms-and-conditions",
+      "note": "價格為本次擷取之單件標價；官方資料未提供每項價格生效時間及即時庫存。"
+    },
+    {
+      "label": "香港營養學會2026預先包裝小食資料庫",
+      "url": "https://www.hkna.org.hk/database-of-prepackaged-snacks-2026/",
+      "note": "僅摘錄3款產品之部分事實，原學生小食分類不適用作糖尿病個人飲食評定。"
+    },
+    {
+      "label": "品牌海外官方營養資料",
+      "url": "https://www.arnotts.com/brands/tim-tam",
+      "note": "6款海外營養參考尚未與香港包裝核對；不可作為香港商品的醫療或過敏安全保證。"
+    }
+  ],
+  "limitations": [
+    "這是小型研究原型資料集，不是完整香港食品資料庫。",
+    "沒有任何產品取得已核對的完整香港實物過敏標籤；啟用過敏限制時不能提供已確認符合的產品。",
+    "海外配方及HKNA小包資料只能作清楚標示的比較參考；品牌口味相同不保證香港包裝配方相同。",
+    "糖、總碳水及能量是不同欄位；缺失值保留null，不推算net carbs。",
+    "價格不含送貨、多件／會員優惠，不表示特定分店庫存；商戶首頁連結不代表直接加入購物車。"
+  ]
+}
