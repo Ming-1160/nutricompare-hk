@@ -8,8 +8,8 @@
   <meta name="description" content="按口味、預算及過敏限制，比較包裝食品營養、香港超市價格與購買渠道。每項資料有來源，未知資料清楚標示。">
   <title>NutriCompare HK｜比較清楚，再作選擇</title>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20261021-hk-catalogue">
-  <script type="module" src="app.mjs?v=20261021-hk-label-expansion"></script>
+  <link rel="stylesheet" href="styles.css?v=20261021-nutrition-library">
+  <script type="module" src="app.mjs?v=20261021-nutrition-library"></script>
 </head>
 <body>
 <a class="skip-link" href="#results">跳至食品結果</a>
@@ -17,7 +17,7 @@
   <div class="header-inner">
     <a class="brand" href="./" aria-label="NutriCompare HK 主頁"><span class="brand-icon" aria-hidden="true">n<span>c</span></span><span>NutriCompare<span class="brand-hk">HK</span></span></a>
     <nav aria-label="主要導覽"><a class="nav-current" href="#explore">探索食品</a><button class="text-button" id="sources-button">資料來源</button><a href="../group-brief.html">關於計劃 ↗</a></nav>
-    <span class="prototype-label"><span></span> 功能原型 v1.3</span>
+    <span class="prototype-label"><span></span> 功能原型 v1.4</span>
   </div>
 </header>
 <main>
@@ -69,10 +69,10 @@
 
     <section class="results" id="results" aria-label="食品搜尋結果">
       <div class="category-tabs" role="group" aria-label="食品分類"><button class="active" data-category="" aria-pressed="true">全部</button><button data-category="biscuits" aria-pressed="false">餅乾</button><button data-category="snacks" aria-pressed="false">小食</button><button data-category="drinks" aria-pressed="false">飲品</button><button data-category="bakery" aria-pressed="false">麵包</button><button data-category="dairy" aria-pressed="false">奶 / 蛋</button><button data-category="pantry" aria-pressed="false">糧油調味</button><button data-category="meals" aria-pressed="false">麵食食材</button></div>
-      <section class="coverage-panel" aria-label="資料庫收錄範圍"><div class="coverage-title"><span class="eyebrow">香港資料，一起比較</span><span class="coverage-live">價格＋標籤來源</span></div><div class="coverage-stats"><div><strong id="coverage-products">—</strong><span>可搜尋及格價食品</span></div><div><strong id="coverage-nutrition">—</strong><span>有部分 / 完整營養數值</span></div><div><strong id="coverage-labels">—</strong><span>香港完整過敏聲明紀錄</span></div></div><p id="catalogue-status">正在載入消委會食品價格及逐件核對嘅標籤資料…</p><div class="coverage-bottom"><label for="data-scope">顯示資料範圍</label><select id="data-scope"><option value="">全部食品（包含僅有價格）</option><option value="nutrition">只看有營養數值</option><option value="hk-label">只看有香港完整過敏聲明紀錄</option></select></div></section>
+      <section class="coverage-panel" aria-label="資料庫收錄範圍"><div class="coverage-title"><span class="eyebrow">香港資料，一起比較</span><span class="coverage-live">價格＋標籤來源</span></div><div class="coverage-stats"><div><strong id="coverage-products">—</strong><span>香港格價食品</span></div><div><strong id="coverage-nutrition">—</strong><span>上述食品已有營養數值</span></div><div><strong id="coverage-reference">—</strong><span>另加 OFF 營養參考（未有價格）</span></div><div><strong id="coverage-labels">—</strong><span>香港完整過敏聲明紀錄</span></div></div><p id="catalogue-status">正在載入消委會食品價格及逐件核對嘅標籤資料…</p><div class="coverage-bottom"><label for="library-scope">選擇資料庫</label><select id="library-scope"><option value="priced">香港格價食品（原有目錄）</option><option value="off-library">OFF擴展營養參考（未有價格）</option><option value="">全部資料庫</option></select></div><div class="coverage-bottom"><label for="data-scope">顯示資料範圍</label><select id="data-scope"><option value="">全部食品（包含僅有價格）</option><option value="nutrition">只看有營養數值</option><option value="comparable">只看明確每100g／ml基準</option><option value="hk-label">只看有香港完整過敏聲明紀錄</option></select></div></section>
       <div class="results-toolbar"><div><h2>搵到你想比較嘅</h2><p id="result-count" role="status">正在載入有來源嘅食品資料…</p></div><div class="sort-field"><label for="sort">排序</label><select id="sort"><option value="relevance">資料較完整優先</option><option value="price-asc">價格：低至高</option><option value="carbs-asc">碳水化合物：低至高</option><option value="sugar-asc">糖：低至高</option><option value="protein-desc">蛋白質：高至低</option></select></div></div>
       <div id="active-filters" class="active-filters" aria-label="已套用條件"></div>
-      <div class="data-banner"><span class="banner-icon" aria-hidden="true">✓</span><p><strong>比較有依據，資料有日期。</strong><span id="snapshot-note">價格載入中。</span> 部分食品未有完整標籤；「—」代表未知，唔係零。</p><button id="data-info-button" aria-label="查看資料來源與限制">ⓘ</button></div>
+      <div class="data-banner"><span class="banner-icon" aria-hidden="true">✓</span><p><strong>比較有依據，資料有日期。</strong><span id="snapshot-note">價格載入中。</span> OFF批量營養屬社群參考；部分食品未有完整標籤；「—」代表未知，唔係零。</p><button id="data-info-button" aria-label="查看資料來源與限制">ⓘ</button></div>
       <div id="sort-note" class="inline-notice" hidden></div><div id="allergy-notice" class="inline-notice amber" hidden></div>
       <div id="product-grid" class="product-grid" aria-busy="true"><div class="loading-state">正在核對食品資料…</div></div>
       <div class="catalogue-pagination"><p id="page-status" role="status"></p><button id="load-more" type="button" class="secondary-button" hidden>再顯示 24 項食品 ↓</button></div>

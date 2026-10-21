@@ -18,7 +18,7 @@ const ALLERGEN_ALIASES = {
 };
 
 const NUTRIENTS = Object.freeze([
-  'energyKcal', 'carbohydrates', 'sugars', 'fat', 'saturatedFat', 'protein', 'fibre', 'sodiumMg',
+  'energyKcal', 'carbohydrates', 'sugars', 'fat', 'saturatedFat', 'transFat', 'protein', 'fibre', 'sodiumMg',
 ]);
 
 function clean(value) {
@@ -117,13 +117,16 @@ export function nutritionFor(product, basis = '100', portion = null) {
   const basisUnit = ['g', 'ml'].includes(nutrition.basisUnit) ? nutrition.basisUnit : null;
   const sourceAmount = numeric(nutrition.basisAmount ?? 100);
   let amount = basis === 'portion' ? numeric(portion ?? product?.servingSize) : 100;
-  if (amount === 0 || !basisUnit || !sourceAmount) amount = null;
+  // OFF index supplies normalized values per100g OR100ml without distinguishing the unit.
+  // Show those raw reference values only; never calculate a portion from an assumed unit.
+  const referenceOnly=!basisUnit&&nutrition.referenceBasis==='100g-or-100ml'&&sourceAmount===100&&basis!=='portion';
+  if (amount === 0 || (!basisUnit&&!referenceOnly) || !sourceAmount) amount = null;
   const factor = amount === null || !sourceAmount ? null : amount / sourceAmount;
   const values = Object.fromEntries(NUTRIENTS.map(key => {
     const value = numeric(nutrition[key]);
     return [key, factor === null || value === null ? null : Math.round(value * factor * 10000) / 10000];
   }));
-  return { ...values, basisUnit, basisAmount: amount, amount, basis: basis === 'portion' ? 'portion' : '100' };
+  return { ...values, basisUnit, referenceOnly, basisAmount: amount, amount, basis: basis === 'portion' ? 'portion' : '100' };
 }
 
 function compareNullable(left, right, descending = false) {
@@ -141,7 +144,10 @@ export function filterProducts(products, filters = {}) {
   const store = clean(filters.store);
   const hasAllergenSelection = Array.isArray(filters.allergens) && filters.allergens.length > 0;
   const filtered = (Array.isArray(products) ? products : []).filter(product => {
+    if(filters.libraryScope==='priced'&&product.libraryGroup==='off-library')return false;
+    if(filters.libraryScope==='off-library'&&product.libraryGroup!=='off-library')return false;
     if (filters.dataScope === 'nutrition' && !NUTRIENTS.some(key => numeric(product.nutrition?.[key]) !== null)) return false;
+    if (filters.dataScope === 'comparable' && (!['g','ml'].includes(product.nutrition?.basisUnit)||!NUTRIENTS.some(key=>numeric(product.nutrition?.[key])!==null)))return false;
     if (filters.dataScope === 'hk-label' && product.allergens?.status !== 'complete') return false;
     if (category && category !== 'all' && clean(product.category) !== category) return false;
     if (origin && origin !== 'all' && clean(product.origin) !== origin) return false;
@@ -165,7 +171,8 @@ export function filterProducts(products, filters = {}) {
     // Mixed 100g and 100ml values cannot be treated as a like-for-like ranking.
     if (units.size > 1) return filtered;
     const [key, descending] = nutritionSort;
-    return filtered.sort((a, b) => compareNullable(nutritionFor(a)[key], nutritionFor(b)[key], descending));
+    const value=product=>['g','ml'].includes(product.nutrition?.basisUnit)?nutritionFor(product)[key]:null;
+    return filtered.sort((a, b) => compareNullable(value(a), value(b), descending));
   }
   if (clean(filters.query) && (!filters.sort || filters.sort === 'relevance')) {
     const tokens=searchText(filters.query).split(' ').filter(Boolean);

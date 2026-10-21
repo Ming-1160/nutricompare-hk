@@ -4,17 +4,31 @@ Traditional Chinese, mobile-responsive ITC2010 functional prototype. Static HTML
 
 ## Features
 
-- Chinese/English food and brand search across 1,788 records, with seven food categories and 24-item progressive loading.
+- Chinese/English food and brand search across3,055 records:1,788 original HK price-comparison products plus1,267 separately labelled, unpriced OFF community nutrition references.24-item progressive loading; original priced catalogue shown by default.
 - Whole-pack HKD budget and merchant filters; verified origin field when available.
 - Conservative multi-allergen filtering: contains, may-contain and incomplete records are excluded.
 - Up to three products compared per100g/ml or a custom comparison amount. Missing values remain unknown; package prices do not scale with the nutrition amount.
 - HK retailer price snapshots, source dates and correctly labelled merchant/product links.
 - Transparent fixed-keyword request parser. This is not generative AI or a clinical recommendation engine.
-- Separate views for all prices, records with nutrition, and complete source-scoped HK allergy statements.
+- Separate library scopes for HK priced products, OFF nutrition references, or both; further filter for nutrition, explicit100g/ml basis, or complete source-scoped HK allergy statements.
 
 The root page and `app/` both open the functional prototype. `group-brief.html` preserves the earlier group proposal and research notes.
 
-## Data status: 21 October 2026, version 1.3
+## Data status:21 October2026, version1.4
+
+The1,788 original priced products retain all4,496 merchant-price observations. **228** now have partial/full nutrition, up from41. Another**1,267** unique OFF Hong Kong-country-tagged nutrition references have no invented HK prices or purchase channels. Across both libraries, **1,495** products have some numeric nutrition and **789** explicitly distinguish a100g or100ml basis. The remaining706 retain an unknown g/ml basis: raw per100 reference values may be viewed, but portion arithmetic and nutrition ranking are disabled. These counts do **not** mean1,000 original priced products have verified current HK nutrition labels.
+
+Sources were researched in Traditional Chinese, English and relevant original brand languages. Official HK brand facts supply24 exact-identity candidates; the full2026 HKNA drinks/food PDFs were read (39pages,320rows) and41 exact brand/flavour/individual-pack candidates selected. After existing-source priority and overlap, these add60 nutrition tables to the original41. OFF then adds127 previously missing priced nutrition references. No different-source nutrient fields are spliced together; a partial local table is not silently completed with overseas values.
+
+Bulk OFF research retrieved all2,385 older HK-index records, then1,208 current API records using exact-code and HK-product batches. The public dataset retains134 independently brand/name/exact-pack-consistent priced candidates after11 additional variant/quality holds, and1,299 standalone candidates after48 name/scope holds.32 barcode duplicates are removed on merge. Source-country tags are community reports, not proof of current HK sale/formulation. Current records are preferred; older index records retain their source dates and missing source quality flags. Persistent503 failures prevented a complete current refresh; no claim of exhaustive web coverage is made.
+
+There are now**37 complete source-scoped HK allergy statements**, including two newly read Nestlé HK330g package artworks. All bulk OFF allergy statements remain unknown. Milk avoidance yields8 source-no-listed-match choices; peanut avoidance26; peanut plusHKD20 remains16. None is a safety guarantee. Trans fat is shown when actually reported; missing values stayunknown.
+
+Published inputs: [HK brand/HKNA facts](app/data/hk-nutrition-expansion.json), [OFF-derived tables, source dates, original canonical numbers, mappings and holds](app/data/off-nutrition-library.json), and [exact merge/priority/deduplication code](app/enrichment.mjs). OFF data and alterations are attributed underODbL/DbCL; no bulk photos are rehosted or represented as read. Supplementary CC website barcode discovery responses are internal and are not republished under the open-price-feed licence. See[DATA-LICENCES.md](DATA-LICENCES.md).
+
+Validation:56 tests cover source preservation, exact priced coverage, no duplicate expansion barcodes, unknown basis, missing prices, conservative allergy behavior, full-source priority and actual HK serving arithmetic. No clinical validation or real-user test results are claimed. Prices remain the21October2026 snapshot; no automatic refresh is installed.
+
+## Previous version1.3 snapshot
 
 The catalogue has **1,788 products and 4,496 merchant-price observations**. This release enriches **26 existing product identities**, using 22 Hong Kong brand/retailer records and four separately attributed Open Food Facts (OFF) records. There are now **41 records with partial/full nutrition and 35 complete source-scoped Hong Kong ingredient/allergy statements** (previously20/11). Two OFF records support complete published allergy coverage; two remain partial. Source completeness is not current-batch or cross-contact safety verification.
 
