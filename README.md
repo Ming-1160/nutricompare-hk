@@ -4,7 +4,7 @@ Traditional Chinese, mobile-responsive ITC2010 functional prototype. Static HTML
 
 ## Features
 
-- Chinese/English food and brand search across3,051 records:1,788 original HK price-comparison products plus1,263 separately labelled, unpriced OFF community nutrition references.24-item progressive loading; original priced catalogue shown by default. This release adds no new unpriced products and removes four newly identified duplicate references.
+- Chinese/English food and brand search across3,045 records:1,788 original HK price-comparison products plus1,257 separately labelled, unpriced OFF community nutrition references.24-item progressive loading; original priced catalogue shown by default. This release adds no new unpriced products; newly identified duplicate references are removed.
 - Whole-pack HKD budget and merchant filters; verified origin field when available.
 - Conservative multi-allergen filtering: contains, may-contain and incomplete records are excluded.
 - Up to three products compared per100g/ml or a custom comparison amount. Missing values remain unknown; package prices do not scale with the nutrition amount.
@@ -14,7 +14,21 @@ Traditional Chinese, mobile-responsive ITC2010 functional prototype. Static HTML
 
 The root page and `app/` both open the functional prototype. `group-brief.html` preserves the earlier group proposal and research notes.
 
-## Data status:22 October2026, version1.5
+## Data status:22 October2026, version1.6
+
+Research remains limited to enriching the **original1,788 catalogue identities**, with all **4,496 stored merchant prices unchanged**. They now include **328 with any numeric nutrition**, **182 with a manually read Hong Kong nutrition source**, **143 with all1+7 values**, and **125 with a complete source-scoped published HK allergy statement**. The1,000 HK-source goal is **not achieved**; unpriced OFF records and community/secondary reference tables do not count toward it. Hong Kong source review does not verify the current physical batch.
+
+This turn publishes **130 source records for original products** (88 in the first batch,41 additional HK primary-source records and one additional OFF HK photo record), adding100 previously absent nutrient tables and replacing28 community/secondary tables with coherent HK-source tables. Two further records supplement already stronger HK tables. More exact original products were found by reading Nissin HK full product pages, Wellcome Garden/SanSui/Meadows/Nestlé packaging and the previously documented brand/OFF sources. No product, price or channel was invented to increase coverage. Generic package illustrations remain concept art.
+
+All259 observed Nissin product/category pages were retrieved,190 had nutrition tables, and only seven additional exact original brand/flavour/pack identities qualified. Those seven full tables, ingredients and allergy blocks received independent raw-HTML review. Fuku five-packs retain90g/65g inner-serving amounts; a440g dessert retains its220g portion. Sesame oil exclusions come from ingredients even where a headline allergy block only names soy. Garden's new-formula2026 front paired with a2024 back was held; old2021 incomplete evidence remains partial. Other gallery/GTIN/pack conflicts remain documented. Retailer flat package artwork is identified as a published label image, not asserted to be a physical photograph.
+
+Published extra sources, native serving values, exact identity evidence, source image dates and limits are in [additional HK primary-source reviews](app/data/hk-reviewed-labels-extra.json) and [additional OFF HK photo review](app/data/off-hk-reviewed-labels-extra.json). Prior88 records and [merge/coverage methods](app/hk-labels.mjs) remain below. Government findings are unchanged: exemption data is not a nutrient table, NIIS averages cannot fill branded gaps, and this research yielded no additional reliably readable branded government table. Government compilation/photos are not republished.
+
+Milk avoidance yields52 source-no-listed-match choices, peanut avoidance82, and peanut plusHKD20 yields59. These use stored whole-pack prices; they do not guarantee allergy safety or personal dietary suitability. No prior known allergy hazard was cleared by the source updates. Current ingredients and precautions must be read on the physical pack.
+
+Validation: **75 tests** covering original-only identity/price preservation, no duplicate unpriced barcodes, source priority, unknown/conflicting values, native serving arithmetic, ingredient-derived allergens and partial-evidence exclusions. Desktop and390px mobile UI checks accompany publication. Prices remain the21October snapshot. No clinical/real-user validation, background research or automatic price refresh is claimed.
+
+## Previous version1.5 snapshot
 
 This release concentrates on the **original1,788 priced products**, retaining all4,496 merchant-price observations from the21October snapshot. **293** have partial/full numeric nutrition (was228), **140** have a manually read HK nutrition source (was54), **102** of those have all1+7 numeric fields, and **99** have a complete source-scoped HK allergy statement (was37). The1,000-product HK-source goal has **not** been reached. Community/secondary references and additional unpriced OFF products do not count toward that goal. A reviewed public HK source is not current physical-batch verification.
 

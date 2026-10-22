@@ -1,5 +1,5 @@
 /** NutriCompare HK: deterministic search, conservative filters and label arithmetic. */
-import {hasReviewedHkNutrition} from './hk-labels.mjs?v=20261022-hk-labels';
+import {hasReviewedHkNutrition} from './hk-labels.mjs?v=20261022-hk-labels-more';
 
 export const ALLERGENS = Object.freeze([
   'gluten', 'crustaceans', 'eggs', 'fish', 'peanuts', 'soy', 'milk', 'tree-nuts', 'sesame', 'sulphites',

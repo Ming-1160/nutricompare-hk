@@ -304,8 +304,8 @@
         "status": "complete",
         "text": "由已閱讀完整原料表辨識列名過敏原；圖中沒有額外交叉接觸聲明。",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -343,22 +343,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20250424；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101343422,
         "retailerInternalItemNum": "0000021371257",
         "photoBarcode": "078024902204",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000000088",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 500ml金標生抽；已讀實物UPC078024902204吻合原有商品。",
       "reviewNote": "500ml金標生抽；已讀實物UPC078024902204吻合原有商品。",
@@ -422,8 +424,8 @@
         "status": "complete",
         "text": "This product contains soya beans, cereals containing gluten and their products. Produced in a factory where crustacean, eggs, fish, peanuts, milk, tree nuts and their products are also handled.",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -461,22 +463,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20240926；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101328300,
         "retailerInternalItemNum": "0000021102905",
         "photoBarcode": "4892333101464",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000000186",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 原料為完整來源的精簡轉錄；完整添加劑細項以照片為準。已讀條碼4892333101464及120g份量。",
       "reviewNote": "原料為完整來源的精簡轉錄；完整添加劑細項以照片為準。已讀條碼4892333101464及120g份量。",
@@ -541,8 +545,8 @@
         "status": "complete",
         "text": "Made on equipment that cereal containing gluten, crustacean, mollusc, fish, peanut, milk, nut and sesame products are also handled.",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -568,11 +572,13 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20250506；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-manual-photo-review",
@@ -583,7 +589,7 @@
         "pricewatchId": "P000000234",
         "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 只採用2025年273份／273g的雞粉背面；2023年575g圖排除。原文另外列有軟體動物，本網站十類篩選未設此獨立選項。每1g標示有較大四捨五入限制。",
       "reviewNote": "只採用2025年273份／273g的雞粉背面；2023年575g圖排除。原文另外列有軟體動物，本網站十類篩選未設此獨立選項。每1g標示有較大四捨五入限制。",
@@ -639,8 +645,8 @@
         "status": "complete",
         "text": "由已閱讀完整原料表辨識列名過敏原；圖中沒有額外交叉接觸聲明。",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -666,11 +672,13 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20250506；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-manual-photo-review",
@@ -681,7 +689,7 @@
         "pricewatchId": "P000000243",
         "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 2025年420g背面標示11份，每份37.5g；未用227g資料假冒420g。原料明列二氧化硫，篩選保守列入亞硫酸鹽；濃度未列。",
       "reviewNote": "2025年420g背面標示11份，每份37.5g；未用227g資料假冒420g。原料明列二氧化硫，篩選保守列入亞硫酸鹽；濃度未列。",
@@ -746,8 +754,8 @@
         "status": "complete",
         "text": "This product contains eggs, peanuts, soya beans, milk, cereals containing gluten and their products. Produced in a factory where crustacean, fish, tree nuts and their products are also handled.",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -785,11 +793,13 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20260220；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-manual-photo-review",
@@ -800,7 +810,7 @@
         "pricewatchId": "P000000298",
         "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 除了包裝過敏框的五類，原料還明列芝麻油／芝麻醬，所以另外標記含芝麻。完整添加劑細項以照片為準。106g營養表：飽和脂肪13.4g及鈉1698mg，未誤換成其他份量。",
       "reviewNote": "除了包裝過敏框的五類，原料還明列芝麻油／芝麻醬，所以另外標記含芝麻。完整添加劑細項以照片為準。106g營養表：飽和脂肪13.4g及鈉1698mg，未誤換成其他份量。",
@@ -864,8 +874,8 @@
         "status": "complete",
         "text": "This product contains crustacean, eggs, fish, soya beans, milk, cereals containing gluten and their products. Produced in a factory where peanuts, tree nuts and their products are also handled.",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -915,22 +925,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20260220、20210621；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101358949,
         "retailerInternalItemNum": "6900082020160",
         "photoBarcode": "6900082020160",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000000301",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 2026年成分／營養圖和2021年封蓋條碼同商品34g肉絲味；未把2021封蓋當成2026營養來源。ingredients為摘要，完整成分以連結照片為準。",
       "reviewNote": "2026年成分／營養圖和2021年封蓋條碼同商品34g肉絲味；未把2021封蓋當成2026營養來源。ingredients為摘要，完整成分以連結照片為準。",
@@ -995,8 +1007,8 @@
         "status": "complete",
         "text": "Made on equipment that Cereal containing Gluten, Egg, Fish, Milk, Crustacean, Mollusc, Peanut, Nut and Sesame products are also handled.",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -1022,22 +1034,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20240917；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101356763,
         "retailerInternalItemNum": "0000021603303",
         "photoBarcode": "4898828051214",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000000658",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 2024年80g牛肉味背面條碼4898828051214吻合；每包鈉1881mg（不是1381mg），原標94%NRV亦相符。原文另外列有軟體動物。",
       "reviewNote": "2024年80g牛肉味背面條碼4898828051214吻合；每包鈉1881mg（不是1381mg），原標94%NRV亦相符。原文另外列有軟體動物。",
@@ -1332,8 +1346,8 @@
         "status": "complete",
         "text": "由已閱讀完整原料表辨識列名過敏原；圖中沒有額外交叉接觸聲明。",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -1371,22 +1385,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20201026；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101335768,
         "retailerInternalItemNum": "0000021239038",
         "photoBarcode": "0051000027870",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000000675",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 2020年305g香港中文版營養圖；源頁標明包裝隨機發放，不能保證現售批次配方。西芹亦在原料，現有十類篩選未設此選項。",
       "reviewNote": "2020年305g香港中文版營養圖；源頁標明包裝隨機發放，不能保證現售批次配方。西芹亦在原料，現有十類篩選未設此選項。",
@@ -2739,8 +2755,8 @@
         "status": "complete",
         "text": "由已閱讀完整原料表辨識列名過敏原；圖中沒有額外交叉接觸聲明。",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -2778,22 +2794,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20240523；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101345906,
         "retailerInternalItemNum": "078024916973",
         "photoBarcode": "078024916973",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000000719",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 原標數值以已刊相片為準；來源較舊，不能保證目前配方。",
       "reviewNote": null,
@@ -2850,8 +2868,8 @@
         "status": "complete",
         "text": "由已閱讀完整原料表辨識列名過敏原；圖中沒有額外交叉接觸聲明。",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -2889,22 +2907,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20240523；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101346494,
         "retailerInternalItemNum": "078024914405",
         "photoBarcode": "078024914405",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000000720",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 原標數值以已刊相片為準；來源較舊，不能保證目前配方。",
       "reviewNote": null,
@@ -3081,8 +3101,8 @@
         "status": "complete",
         "text": "This product contains soya beans, cereals containing gluten and their products. Produced in a factory where eggs, milk, fish, crustacean, peanuts, tree nuts and their products are also handled.",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -3108,11 +3128,13 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20210621；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-manual-photo-review",
@@ -3123,7 +3145,7 @@
         "pricewatchId": "P000000826",
         "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 原標數值以已刊相片為準；來源較舊，不能保證目前配方。",
       "reviewNote": null,
@@ -3280,8 +3302,8 @@
         "status": "complete",
         "text": "Made on equipment that Cereal containing Gluten, Fish, Crustacean, Mollusc, Peanut, Nut and Sesame products are also handled.",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -3319,22 +3341,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20230324；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101336552,
         "retailerInternalItemNum": "0000021253829",
         "photoBarcode": "48930079",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000001136",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 營養基準為原標每0.6克，不是每0.6ml；沿用2023年同款240g相片完整資料，保留非常小份量的四捨五入限制。原文另外列有西芹、軟體動物。",
       "reviewNote": "營養基準為原標每0.6克，不是每0.6ml；沿用2023年同款240g相片完整資料，保留非常小份量的四捨五入限制。原文另外列有西芹、軟體動物。",
@@ -3401,8 +3425,8 @@
         "status": "complete",
         "text": "Allergen information: Contains cereals containing gluten.",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -3454,22 +3478,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20201222；可能是舊包裝，購買時核對實物。 品牌200ml營養圖與零售商200ml圖的鈉值不同（8500／9255mg每100ml），本網站保留未知；未判定哪個為現售版本。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101322779,
         "retailerInternalItemNum": "0000021009709",
         "photoBarcode": "6909825021471",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000001141",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 相片實物EAN6909825021471吻合原有200ml商品；零售內部itemNum0000021009709不是實物EAN。 已另讀雀巢香港200ml營養圖，鈉8500mg與惠康200ml照片9255mg有來源衝突；正常化鈉值保持未知，兩個原值及來源保留。 200ml來源鈉值衝突，鈉保留未知。",
       "reviewNote": "相片實物EAN6909825021471吻合原有200ml商品；零售內部itemNum0000021009709不是實物EAN。 已另讀雀巢香港200ml營養圖，鈉8500mg與惠康200ml照片9255mg有來源衝突；正常化鈉值保持未知，兩個原值及來源保留。",
@@ -3571,8 +3597,8 @@
         "status": "complete",
         "text": "Allergen information: Contains cereal containing gluten.",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -3616,22 +3642,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20200915；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101330679,
         "retailerInternalItemNum": "6917878016122",
         "photoBarcode": "6917878016122",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000001142",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 原標數值以已刊相片為準；來源較舊，不能保證目前配方。",
       "reviewNote": null,
@@ -3713,8 +3741,8 @@
         "status": "complete",
         "text": "由已閱讀完整原料表辨識列名過敏原；圖中沒有額外交叉接觸聲明。",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -3740,11 +3768,13 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20210524；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-manual-photo-review",
@@ -3755,7 +3785,7 @@
         "pricewatchId": "P000001175",
         "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 香港零售415g罐2021年相片，淨重415g在同張背面可讀；表中份量207g，這裡直接讀每100g欄。",
       "reviewNote": "香港零售415g罐2021年相片，淨重415g在同張背面可讀；表中份量207g，這裡直接讀每100g欄。",
@@ -3809,8 +3839,8 @@
         "status": "complete",
         "text": "由已閱讀完整原料表辨識列名過敏原；圖中沒有額外交叉接觸聲明。",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -3836,11 +3866,13 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20210524；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-manual-photo-review",
@@ -3851,7 +3883,7 @@
         "pricewatchId": "P000001178",
         "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 香港零售200g罐2021年已刊相片；表中同列每200g及每100g，此處直接讀每100g欄。無把包裝宣稱gluten free提升成實物批次檢測。",
       "reviewNote": "香港零售200g罐2021年已刊相片；表中同列每200g及每100g，此處直接讀每100g欄。無把包裝宣稱gluten free提升成實物批次檢測。",
@@ -3905,8 +3937,8 @@
         "status": "complete",
         "text": "由已閱讀完整原料表辨識列名過敏原；圖中沒有額外交叉接觸聲明。",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -3944,22 +3976,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20240523；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101351298,
         "retailerInternalItemNum": "078024926729",
         "photoBarcode": "078024926729",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000001227",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 原標數值以已刊相片為準；來源較舊，不能保證目前配方。",
       "reviewNote": null,
@@ -4233,8 +4267,8 @@
         "status": "complete",
         "text": "由已閱讀完整原料表辨識列名過敏原；圖中沒有額外交叉接觸聲明。",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -4260,11 +4294,13 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20250506；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-manual-photo-review",
@@ -4275,7 +4311,7 @@
         "pricewatchId": "P000001621",
         "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 2025年227g背面標示6份，每份37.5g；原料明列二氧化硫，篩選保守列入亞硫酸鹽；濃度未列。",
       "reviewNote": "2025年227g背面標示6份，每份37.5g；原料明列二氧化硫，篩選保守列入亞硫酸鹽；濃度未列。",
@@ -4332,8 +4368,8 @@
         "status": "complete",
         "text": "由已閱讀完整原料表辨識列名過敏原；圖中沒有額外交叉接觸聲明。",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -4371,22 +4407,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20210126；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101343649,
         "retailerInternalItemNum": "078024845853",
         "photoBarcode": "078024900262",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000001623",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 500ml金標老抽，舊照片UPC078024900262吻合原有商品；零售itemNum078024845853不是此張相片實物條碼。碳水欄細字不能有把握辨讀，維持未知。",
       "reviewNote": "500ml金標老抽，舊照片UPC078024900262吻合原有商品；零售itemNum078024845853不是此張相片實物條碼。碳水欄細字不能有把握辨讀，維持未知。",
@@ -4685,8 +4723,8 @@
         "status": "complete",
         "text": "原料明列蠔汁／蠔（軟體動物）；現有十類篩選不包括軟體動物，不能用本篩選檢查蠔過敏。",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -4724,22 +4762,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20240523；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101356902,
         "retailerInternalItemNum": "0000021606953",
         "photoBarcode": "078024920710",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000001716",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 555g特級蠔油；實物UPC078024920710吻合。蠔屬軟體動物，不冒稱甲殼類；此過敏原在來源文字保留。",
       "reviewNote": "555g特級蠔油；實物UPC078024920710吻合。蠔屬軟體動物，不冒稱甲殼類；此過敏原在來源文字保留。",
@@ -4912,8 +4952,8 @@
         "status": "complete",
         "text": "由已閱讀完整原料表辨識列名過敏原；圖中沒有額外交叉接觸聲明。",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -4951,22 +4991,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20250424；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101343821,
         "retailerInternalItemNum": "0000021375675",
         "photoBarcode": "078024931181",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000001874",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 實物UPC078024931181及150ml吻合小磨麻油P000001874；不是黑芝麻油P000004944。配料含大豆油，保守標記大豆而不假定精煉豁免。",
       "reviewNote": "實物UPC078024931181及150ml吻合小磨麻油P000001874；不是黑芝麻油P000004944。配料含大豆油，保守標記大豆而不假定精煉豁免。",
@@ -5023,8 +5065,8 @@
         "status": "complete",
         "text": "Product contains milk products, cereals containing gluten.",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -5062,22 +5104,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20201222；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101350665,
         "retailerInternalItemNum": "0000021493188",
         "photoBarcode": "9300644102698",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000001902",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 採用2020年310g香港零售包裝照片，實物EAN9300644102698吻合原有商品。現售批次仍須核對。",
       "reviewNote": "採用2020年310g香港零售包裝照片，實物EAN9300644102698吻合原有商品。現售批次仍須核對。",
@@ -5369,8 +5413,8 @@
         "status": "complete",
         "text": "Made on equipment that Crustacean, Mollusc, Fish, Soyabean, Peanut, Nut and Sesame products are also handled.",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -5396,11 +5440,13 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20250506；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-manual-photo-review",
@@ -5411,7 +5457,7 @@
         "pricewatchId": "P000002288",
         "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 只採用2025年273份／273g純鮮雞粉背面；不是鮮菇粉。原文另外列有軟體動物。每1g標示有較大四捨五入限制。",
       "reviewNote": "只採用2025年273份／273g純鮮雞粉背面；不是鮮菇粉。原文另外列有軟體動物。每1g標示有較大四捨五入限制。",
@@ -5468,8 +5514,8 @@
         "status": "complete",
         "text": "由已閱讀完整原料表辨識列名過敏原；圖中沒有額外交叉接觸聲明。",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -5507,22 +5553,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20250527；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101347713,
         "retailerInternalItemNum": "078024302042",
         "photoBarcode": "078024302042",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000002472",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 原標數值以已刊相片為準；來源較舊，不能保證目前配方。",
       "reviewNote": null,
@@ -6050,8 +6098,8 @@
         "status": "complete",
         "text": "由已閱讀完整原料表辨識列名過敏原；圖中沒有額外交叉接觸聲明。",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -6089,22 +6137,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20200915；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101326148,
         "retailerInternalItemNum": "078024301571",
         "photoBarcode": "078024301571",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000002608",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 原標數值以已刊相片為準；來源較舊，不能保證目前配方。",
       "reviewNote": null,
@@ -6281,8 +6331,8 @@
         "status": "complete",
         "text": "由已閱讀完整原料表辨識列名過敏原；圖中沒有額外交叉接觸聲明。",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -6320,22 +6370,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20260324；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101353143,
         "retailerInternalItemNum": "0000021546556",
         "photoBarcode": "078024906103",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000002807",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 500ml蒸魚豉油UPC078024906103吻合原有商品；「蒸魚」為用途名稱，原料表未列魚，不據名稱推斷含魚。",
       "reviewNote": "500ml蒸魚豉油UPC078024906103吻合原有商品；「蒸魚」為用途名稱，原料表未列魚，不據名稱推斷含魚。",
@@ -6516,8 +6568,8 @@
         "status": "complete",
         "text": "由已閱讀完整原料表辨識列名過敏原；圖中沒有額外交叉接觸聲明。",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -6555,22 +6607,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20260324；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101353672,
         "retailerInternalItemNum": "078024906011",
         "photoBarcode": "078024906110",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000002827",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 500ml減鹽頭抽實物UPC078024906110吻合原有商品；零售itemNum078024906011不吻合只是另一資料欄，沒有以其當實物條碼。減鹽不表示適合任何慢性病個別餐單。",
       "reviewNote": "500ml減鹽頭抽實物UPC078024906110吻合原有商品；零售itemNum078024906011不吻合只是另一資料欄，沒有以其當實物條碼。減鹽不表示適合任何慢性病個別餐單。",
@@ -6874,8 +6928,8 @@
         "status": "partial",
         "text": "由已閱讀完整原料表辨識列名過敏原；圖中沒有額外交叉接觸聲明。",
         "coverage": "只讀到部分已刊標籤，未見全部注意事項。",
-        "completeSource": null,
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -6901,11 +6955,13 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20250506；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-manual-photo-review",
@@ -6916,7 +6972,7 @@
         "pricewatchId": "P000002999",
         "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 只採用2025年180g鮮菇粉圖：同頁另兩張2023圖其實是雞粉／500份裝，已排除。未見180g罐全部注意事項，因此過敏聲明只作部分資料。營養以原標每1g的四捨五入數值換算，不代表高精度化驗值。",
       "reviewNote": "只採用2025年180g鮮菇粉圖：同頁另兩張2023圖其實是雞粉／500份裝，已排除。未見180g罐全部注意事項，因此過敏聲明只作部分資料。營養以原標每1g的四捨五入數值換算，不代表高精度化驗值。",
@@ -6974,8 +7030,8 @@
         "status": "complete",
         "text": "由已閱讀完整原料表辨識列名過敏原；圖中沒有額外交叉接觸聲明。",
         "coverage": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。",
-        "completeSource": "hk-retailer-package-photo",
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -7001,22 +7057,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20210524；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101329463,
         "retailerInternalItemNum": "50157228",
         "photoBarcode": "50157228",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000003159",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 英文字樣為歐洲格式香港零售包裝照片；芥末亦是原料，現有十類篩選未包括芥末。鹽1.5g/100g以鹽÷2.5換算鈉600mg。脂肪、飽和脂肪及碳水字樣解析度不足，維持未知。",
       "reviewNote": "英文字樣為歐洲格式香港零售包裝照片；芥末亦是原料，現有十類篩選未包括芥末。鹽1.5g/100g以鹽÷2.5換算鈉600mg。脂肪、飽和脂肪及碳水字樣解析度不足，維持未知。",
@@ -7411,14 +7469,19 @@
         ],
         "status": "complete",
         "text": "This product contains gluten (wheat and barley) and milk products. Processed in a factory where egg, tree nut, peanut, sulphite, soybean, fish and crustacean products are also handled.",
-        "evidenceScope": "指定香港零售商刊出的整張包裝標籤；非當前批次"
+        "evidenceScope": "指定香港零售商刊出的整張包裝標籤；非當前批次",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading"
       },
       "ingredientsSummary": "Wheat flour, water, palm fat, corn starch, vegetable oil, full cream milk powder, salt, whey powder, malt extract, oats, raising agents (E503, E500(ii)), sugar, liquid glucose, tapioca starch, yeast, corn flakes; permitted antioxidants and enzymes as shown on source.",
       "labelEvidence": {
         "packageLabelImageInspected": true,
         "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "photoDateNote": "惠康公開圖片檔案路徑日期：20230704。檔案日期不等於生產／批次日期；購買前請核對當前包裝。"
+        "photoDateNote": "惠康公開圖片檔案路徑日期：20230704。檔案日期不等於生產／批次日期；購買前請核對當前包裝。",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）"
       },
       "labelImages": [
         {
@@ -7450,7 +7513,7 @@
           "scope": "逐項閱讀圖中每100克營養；細字不能確讀時保留未知"
         }
       ],
-      "dataStatus": "hk-retailer-label-artwork",
+      "dataStatus": "hk-retailer-label-image",
       "sourceLimit": "指定惠康香港商品標籤已讀，未核對現售實物批次。",
       "physicalPackChecked": false
     },
@@ -7507,14 +7570,19 @@
         ],
         "status": "complete",
         "text": "This product contains cereals containing gluten (wheat) and their products. Produced in a factory where eggs, milk, tree nuts and nuts, peanuts, soybeans and their products are also handled.",
-        "evidenceScope": "指定香港零售商刊出的整張包裝標籤；非當前批次"
+        "evidenceScope": "指定香港零售商刊出的整張包裝標籤；非當前批次",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading"
       },
       "ingredientsSummary": "Wheat flour, palm oil, sugar, calcium carbonate, malt extract, salt, maltose, yeast, raising agent INS500(ii).",
       "labelEvidence": {
         "packageLabelImageInspected": true,
         "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "photoDateNote": "惠康公開圖片檔案路徑日期：20260827。檔案日期不等於生產／批次日期；購買前請核對當前包裝。"
+        "photoDateNote": "惠康公開圖片檔案路徑日期：20260827。檔案日期不等於生產／批次日期；購買前請核對當前包裝。",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）"
       },
       "labelImages": [
         {
@@ -7546,7 +7614,7 @@
           "scope": "逐項閱讀圖中每100克營養；細字不能確讀時保留未知"
         }
       ],
-      "dataStatus": "hk-retailer-label-artwork",
+      "dataStatus": "hk-retailer-label-image",
       "sourceLimit": "指定惠康香港商品標籤已讀，未核對現售實物批次。",
       "physicalPackChecked": false
     },
@@ -7597,14 +7665,19 @@
         "mayContain": [],
         "status": "partial",
         "text": "標籤明列含麩質穀物；未見另列完整共廠／交叉接觸聲明，過敏篩選維持資料未齊。",
-        "evidenceScope": "指定香港零售商刊出的整張包裝標籤；非當前批次"
+        "evidenceScope": "指定香港零售商刊出的整張包裝標籤；非當前批次",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading"
       },
       "ingredientsSummary": "100% Australian oats. This product contains cereals containing gluten. 100% 澳洲燕麥；此產品含有穀類的麩質。",
       "labelEvidence": {
         "packageLabelImageInspected": true,
         "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "photoDateNote": "惠康公開圖片檔案路徑日期：20231006。檔案日期不等於生產／批次日期；購買前請核對當前包裝。"
+        "photoDateNote": "惠康公開圖片檔案路徑日期：20231006。檔案日期不等於生產／批次日期；購買前請核對當前包裝。",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）"
       },
       "labelImages": [
         {
@@ -7636,7 +7709,7 @@
           "scope": "逐項閱讀圖中每100克營養；細字不能確讀時保留未知"
         }
       ],
-      "dataStatus": "hk-retailer-label-artwork",
+      "dataStatus": "hk-retailer-label-image",
       "sourceLimit": "指定惠康香港商品標籤已讀，未核對現售實物批次。蛋白質細字未能確讀，保留未知，沒有套用另一款燕麥片數字。",
       "physicalPackChecked": false
     },
@@ -7687,14 +7760,19 @@
         "mayContain": [],
         "status": "partial",
         "text": "標籤明列含麩質穀物；未見另列完整共廠／交叉接觸聲明，過敏篩選維持資料未齊。",
-        "evidenceScope": "指定香港零售商刊出的整張包裝標籤；非當前批次"
+        "evidenceScope": "指定香港零售商刊出的整張包裝標籤；非當前批次",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading"
       },
       "ingredientsSummary": "100% Australian oats. This product contains cereals containing gluten. 100% 澳洲燕麥；此產品含有穀類的麩質。",
       "labelEvidence": {
         "packageLabelImageInspected": true,
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "photoDateNote": "惠康公開圖片檔案路徑日期：20230321。檔案日期不等於生產／批次日期；購買前請核對當前包裝。"
+        "photoDateNote": "惠康公開圖片檔案路徑日期：20230321。檔案日期不等於生產／批次日期；購買前請核對當前包裝。",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）"
       },
       "labelImages": [
         {
@@ -7730,7 +7808,7 @@
           "scope": "逐項閱讀圖中每100克營養；細字不能確讀時保留未知"
         }
       ],
-      "dataStatus": "hk-retailer-label-artwork",
+      "dataStatus": "hk-retailer-label-image",
       "sourceLimit": "指定惠康香港商品標籤已讀，未核對現售實物批次。",
       "physicalPackChecked": false
     },
@@ -7788,14 +7866,19 @@
         ],
         "status": "complete",
         "text": "This product contains cereals containing gluten (wheat) and their products. Produced in a factory where eggs, milk, tree nuts and nuts, peanuts, soybeans and their products are also handled. Sesame seeds are explicitly listed in ingredients.",
-        "evidenceScope": "指定香港零售商刊出的整張包裝標籤；非當前批次"
+        "evidenceScope": "指定香港零售商刊出的整張包裝標籤；非當前批次",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading"
       },
       "ingredientsSummary": "Wheat flour, palm oil, sesame seeds, salt, calcium carbonate, yeast, raising agent INS500(ii).",
       "labelEvidence": {
         "packageLabelImageInspected": true,
         "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "photoDateNote": "惠康公開圖片檔案路徑日期：20260827。檔案日期不等於生產／批次日期；購買前請核對當前包裝。"
+        "photoDateNote": "惠康公開圖片檔案路徑日期：20260827。檔案日期不等於生產／批次日期；購買前請核對當前包裝。",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）"
       },
       "labelImages": [
         {
@@ -7827,7 +7910,7 @@
           "scope": "逐項閱讀圖中每100克營養；細字不能確讀時保留未知"
         }
       ],
-      "dataStatus": "hk-retailer-label-artwork",
+      "dataStatus": "hk-retailer-label-image",
       "sourceLimit": "指定惠康香港商品標籤已讀，未核對現售實物批次。",
       "physicalPackChecked": false
     },
@@ -7878,14 +7961,19 @@
         "mayContain": [],
         "status": "partial",
         "text": "標籤明列含麩質穀物；未見另列完整共廠／交叉接觸聲明，過敏篩選維持資料未齊。",
-        "evidenceScope": "指定香港零售商刊出的整張包裝標籤；非當前批次"
+        "evidenceScope": "指定香港零售商刊出的整張包裝標籤；非當前批次",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading"
       },
       "ingredientsSummary": "100% Australian oats. This product contains cereals containing gluten. 100% 澳洲燕麥；此產品含有穀類的麩質。",
       "labelEvidence": {
         "packageLabelImageInspected": true,
         "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "photoDateNote": "惠康公開圖片檔案路徑日期：20231006。檔案日期不等於生產／批次日期；購買前請核對當前包裝。"
+        "photoDateNote": "惠康公開圖片檔案路徑日期：20231006。檔案日期不等於生產／批次日期；購買前請核對當前包裝。",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）"
       },
       "labelImages": [
         {
@@ -7917,7 +8005,7 @@
           "scope": "逐項閱讀圖中每100克營養；細字不能確讀時保留未知"
         }
       ],
-      "dataStatus": "hk-retailer-label-artwork",
+      "dataStatus": "hk-retailer-label-image",
       "sourceLimit": "指定惠康香港商品標籤已讀，未核對現售實物批次。",
       "physicalPackChecked": false
     },
@@ -7975,14 +8063,19 @@
         ],
         "status": "complete",
         "text": "This product contains tree nuts. Processed in a factory where gluten (cereals), peanuts, soybeans, eggs, milk, crustacean and their products are also handled.",
-        "evidenceScope": "指定香港零售商刊出的整張包裝標籤；非當前批次"
+        "evidenceScope": "指定香港零售商刊出的整張包裝標籤；非當前批次",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading"
       },
       "ingredientsSummary": "Cashew nuts (96%), canola oil, salt (1%).",
       "labelEvidence": {
         "packageLabelImageInspected": true,
         "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "photoDateNote": "惠康公開圖片檔案路徑日期：20231006。檔案日期不等於生產／批次日期；購買前請核對當前包裝。"
+        "photoDateNote": "惠康公開圖片檔案路徑日期：20231006。檔案日期不等於生產／批次日期；購買前請核對當前包裝。",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）"
       },
       "labelImages": [
         {
@@ -8014,7 +8107,7 @@
           "scope": "逐項閱讀圖中每100克營養；細字不能確讀時保留未知"
         }
       ],
-      "dataStatus": "hk-retailer-label-artwork",
+      "dataStatus": "hk-retailer-label-image",
       "sourceLimit": "指定惠康香港商品標籤已讀，未核對現售實物批次。",
       "physicalPackChecked": false
     },
@@ -8066,8 +8159,8 @@
         "status": "unknown",
         "text": "完整原料及注意事項未取得。",
         "coverage": "只讀到部分已刊標籤，未見全部注意事項。",
-        "completeSource": null,
-        "verificationMethod": "manual-photo-reading",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading",
         "physicalPackChecked": false
       },
       "sources": [
@@ -8093,22 +8186,24 @@
         }
       ],
       "labelEvidence": {
-        "physicalPackPhotoInspected": true,
+        "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "method": "香港官方零售商包裝照片人工閱讀",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）",
         "photoDateNote": "圖檔來源日期：20250506；可能是舊包裝，購買時核對實物。",
-        "reviewedAt": "2026-10-22"
+        "reviewedAt": "2026-10-22",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually"
       },
       "identityEvidence": {
         "method": "same-brand-variant-pack-and-visually-read-pack-barcode",
         "retailerSku": 101330222,
         "retailerInternalItemNum": "4892218076191",
         "photoBarcode": "4892218076191",
-        "physicalBarcodeVisuallyVerified": true,
         "pricewatchId": "P000004913",
-        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。"
+        "note": "零售itemNum不作實物條碼證據；原有格價ID維持不變。",
+        "publishedPackageBarcodeVisuallyVerified": true
       },
-      "dataStatus": "hk-retailer-package-photo",
+      "dataStatus": "hk-retailer-label-image",
       "physicalPackChecked": false,
       "sourceLimit": "已人工閱讀指定香港零售商品相片中已刊成分及注意事項；無列名不代表不存在，未檢查現售實物或當前批次。 240g純鮮雞汁背面只有營養表，完整成分未見。鈉欄解析度不足，維持未知。未套用另一商品鮮味雞汁P000003127。",
       "reviewNote": "240g純鮮雞汁背面只有營養表，完整成分未見。鈉欄解析度不足，維持未知。未套用另一商品鮮味雞汁P000003127。",
@@ -8276,14 +8371,19 @@
         "mayContain": [],
         "status": "partial",
         "text": "標籤明列含麩質穀物；未見另列完整共廠／交叉接觸聲明，過敏篩選維持資料未齊。",
-        "evidenceScope": "指定香港零售商刊出的整張包裝標籤；非當前批次"
+        "evidenceScope": "指定香港零售商刊出的整張包裝標籤；非當前批次",
+        "completeSource": "hk-retailer-published-label-image",
+        "verificationMethod": "manual-label-image-reading"
       },
       "ingredientsSummary": "100% Australian oats. This product contains cereals containing gluten. 100% 澳洲燕麥；此產品含有穀類的麩質。",
       "labelEvidence": {
         "packageLabelImageInspected": true,
         "physicalPackPhotoInspected": false,
         "physicalPackChecked": false,
-        "photoDateNote": "惠康公開圖片檔案路徑日期：20231006。檔案日期不等於生產／批次日期；購買前請核對當前包裝。"
+        "photoDateNote": "惠康公開圖片檔案路徑日期：20231006。檔案日期不等於生產／批次日期；購買前請核對當前包裝。",
+        "retailerPackageLabelImagesInspected": true,
+        "imageType": "retailer-published-package-label-image; photograph versus artwork not established individually",
+        "method": "香港零售商公開包裝標籤圖人工閱讀（可能是照片或平面包裝圖）"
       },
       "labelImages": [
         {
@@ -8315,7 +8415,7 @@
           "scope": "逐項閱讀圖中每100克營養；細字不能確讀時保留未知"
         }
       ],
-      "dataStatus": "hk-retailer-label-artwork",
+      "dataStatus": "hk-retailer-label-image",
       "sourceLimit": "指定惠康香港商品標籤已讀，未核對現售實物批次。",
       "physicalPackChecked": false
     }

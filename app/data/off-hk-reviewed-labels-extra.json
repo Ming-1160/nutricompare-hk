@@ -1,0 +1,197 @@
+{
+  "metadata": {
+    "reviewedAt": "2026-10-22",
+    "recordCount": 1,
+    "source": "Additional original priced HK-market package photos manually read; no new OFF expansion",
+    "physicalPackChecked": false,
+    "checkedAt": "2026-10-22",
+    "sourceFamily": "off-hk-photos",
+    "attribution": "Open Food Facts contributors. Database/alterations ODbL1.0; individual contents DbCL1.0. Linked source images per-author CC BY-SA3.0."
+  },
+  "products": [
+    {
+      "id": "P000003311",
+      "nameZh": "無糖香口珠 - 超涼薄荷味 54粒袋裝 75.6克",
+      "nameEn": "Menthol & Eucalyptus Chewing Gum (Mega) 54pcs 75.6g",
+      "brand": "爽浪",
+      "brandEn": "Wrigley's Airwaves",
+      "category": "snacks",
+      "barcode": "4897010441246",
+      "quantity": 75.6,
+      "quantityUnit": "g",
+      "packSize": "75.6克",
+      "servingSize": 2.8,
+      "nutrition": {
+        "basisAmount": 100,
+        "basisUnit": "g",
+        "energyKj": 1102,
+        "protein": 0,
+        "fat": 0,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "carbohydrates": 64.8,
+        "sugars": 0,
+        "sodiumMg": 0,
+        "fibre": null,
+        "energyKcal": 263.384321,
+        "status": "verified-source",
+        "region": "hk-market-pack-photo",
+        "hkLabelVerified": true,
+        "sourceVersionYear": 2022,
+        "sourceIsCurrentVerified": false,
+        "carbohydrateDefinition": "unspecified",
+        "conversionNote": "1102kJ /4.184 =263.384321kcal per100g;polyol-containing gum,not a carb-based energy estimate",
+        "sourceLimit": "人工讀2022-08-05上載的75.6g超涼薄荷味實物包裝；香港Mars地址、852電話、75.6g及27份每份2.8g直接可見。原表每100g能量1102kJ除4.184換成263.384kcal；不是把1102kJ當千卡。2022舊版不當作現售完整過敏清單，過敏partial。"
+      },
+      "labelNutritionOriginal": {
+        "basisAmount": 100,
+        "basisUnit": "g",
+        "energyKj": 1102,
+        "protein": 0,
+        "fat": 0,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "carbohydrates": 64.8,
+        "sugars": 0,
+        "sodiumMg": 0,
+        "fibre": null
+      },
+      "ingredients": "Sweetener (Sorbitol, Isomalt, Maltitol Syrup, Mannitol, Acesulfame K, Aspartame), Gum Base, Flavour, Thickener E414, Emulsifier Soybean Lecithin, Glazing Agent E903, Antioxidant (E321, E320), Colour (E133, E160a).",
+      "allergens": {
+        "contains": [
+          "soy"
+        ],
+        "mayContain": [],
+        "status": "partial",
+        "text": "完整2022配料明列SoybeanLecithin。沒有讀到現售批次；不能用舊版未列其他致敏物來讓篩選通過。",
+        "coverage": "人工讀2022-08-05上載的75.6g超涼薄荷味實物包裝；香港Mars地址、852電話、75.6g及27份每份2.8g直接可見。原表每100g能量1102kJ除4.184換成263.384kcal；不是把1102kJ當千卡。2022舊版不當作現售完整過敏清單，過敏partial。",
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false
+      },
+      "sourceAllergenStatement": {
+        "contains": [
+          "soy"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "Soybean lecithin in full ingredient list; no separate may-contain statement visible in complete photographed ingredient/precaution field",
+        "sourceVersionYear": 2022
+      },
+      "additionalWarnings": [
+        "Excess consumption may have a laxative effect.",
+        "Phenylketonurics: Contains phenylalanine."
+      ],
+      "sources": [
+        {
+          "label": "Open Food Facts：香港75.6g爽浪超涼薄荷味實物包裝",
+          "url": "https://world.openfoodfacts.org/product/4897010441246",
+          "checkedAt": "2026-10-22",
+          "scope": "人工讀正面、75.6g、香港Mars地址、營養表、完整成分和其他警告；不採用社群營養數值或allergen tags代替標籤"
+        }
+      ],
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/701/044/1246/1.jpg",
+          "label": "2022 AirwavesMegaMentholEucalyptusfront",
+          "author": "s03311251",
+          "uploadedAt": "2022-08-05T04:34:50.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "inspectedAt": "2026-10-22",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/701/044/1246/2.jpg",
+          "label": "2022 completeingredients,HKdistributoraddress,net75.6g andlaxative/phenylalaninewarnings",
+          "author": "s03311251",
+          "uploadedAt": "2022-08-05T04:40:25.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "inspectedAt": "2026-10-22",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/701/044/1246/3.jpg",
+          "label": "2022 completeHKbilingualnutritionper100g/per2.8g",
+          "author": "s03311251",
+          "uploadedAt": "2022-08-05T04:41:18.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "inspectedAt": "2026-10-22",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        }
+      ],
+      "imageAttribution": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/701/044/1246/1.jpg",
+          "label": "2022 AirwavesMegaMentholEucalyptusfront",
+          "author": "s03311251",
+          "uploadedAt": "2022-08-05T04:34:50.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "inspectedAt": "2026-10-22",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/701/044/1246/2.jpg",
+          "label": "2022 completeingredients,HKdistributoraddress,net75.6g andlaxative/phenylalaninewarnings",
+          "author": "s03311251",
+          "uploadedAt": "2022-08-05T04:40:25.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "inspectedAt": "2026-10-22",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/701/044/1246/3.jpg",
+          "label": "2022 completeHKbilingualnutritionper100g/per2.8g",
+          "author": "s03311251",
+          "uploadedAt": "2022-08-05T04:41:18.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "inspectedAt": "2026-10-22",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        }
+      ],
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2022,
+        "sourceIsCurrentVerified": false,
+        "photoDateNote": "上載日2022-08-05，不等於拍攝日、有效期或現售配方。",
+        "reviewedAt": "2026-10-22"
+      },
+      "identityEvidence": {
+        "catalogueNameZh": "無糖香口珠 - 超涼薄荷味 54粒袋裝 75.6克",
+        "catalogueNameEn": "Menthol & Eucalyptus Chewing Gum (Mega) 54pcs 75.6g",
+        "method": "visually-read-brand-flavour-75.6g-and-HK-distributor",
+        "hkEvidence": [
+          "MarsCompanyHongKongLimited,23/F DorsetHouse,TaikooPlace,979KingsRoad,QuarryBay,HongKong",
+          "ConsumerLine(852)28589202",
+          "NetWeight75.6g and27servings2.8g"
+        ],
+        "independentNameBrandPackMatch": true,
+        "barcodeAloneUsed": false,
+        "photoBarcodeVerified": false
+      },
+      "dataStatus": "hk-market-photo-nutrition-only",
+      "physicalPackChecked": false,
+      "reviewedAt": "2026-10-22",
+      "reviewDecision": "photo-confirmed-hk-nutrition-only-current-allergy-incomplete",
+      "sourceLimit": "人工讀2022-08-05上載的75.6g超涼薄荷味實物包裝；香港Mars地址、852電話、75.6g及27份每份2.8g直接可見。原表每100g能量1102kJ除4.184換成263.384kcal；不是把1102kJ當千卡。2022舊版不當作現售完整過敏清單，過敏partial。",
+      "dataLicence": {
+        "name": "Open Database Licence (ODbL)",
+        "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "contentsLicense": "DbCL-1.0",
+        "source": "Open Food Facts",
+        "note": "Manual transcription from package photos; author/upload/license shown. No additional unpriced products."
+      }
+    }
+  ]
+}

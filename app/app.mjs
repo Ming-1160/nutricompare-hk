@@ -1,7 +1,7 @@
-import { filterProducts, getEligiblePrices, getMinPrice, getAllergenAssessment, nutritionFor, parseRequest } from './engine.mjs?v=20261022-hk-labels';
+import { filterProducts, getEligiblePrices, getMinPrice, getAllergenAssessment, nutritionFor, parseRequest } from './engine.mjs?v=20261022-hk-labels-more';
 import { buildCatalogue, mergeLabelSources } from './catalogue.mjs?v=20261021-labels-expanded';
 import { enrichCatalogue } from './enrichment.mjs?v=20261021-nutrition-library';
-import { applyHkLabelReview, hkLabelCoverage, hasReviewedHkNutrition } from './hk-labels.mjs?v=20261022-hk-labels';
+import { applyHkLabelReview, hkLabelCoverage, hasReviewedHkNutrition } from './hk-labels.mjs?v=20261022-hk-labels-more';
 
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -35,6 +35,7 @@ function basisLabel(product,amount=100) { const unit=productUnit(product);return
 function hasNutrition(product) { return nutrientFields.some(([key])=>product.nutrition?.[key] !== null && product.nutrition?.[key] !== undefined); }
 function hkEvidenceLabel(product) {
   if(product.allergens?.status!=='complete')return hasReviewedHkNutrition(product)?'香港營養已讀 · 過敏未齊':'';
+  if(product.labelEvidence?.retailerPackageLabelImagesInspected)return '香港零售標籤圖已讀';
   if(product.labelEvidence?.packageLabelImageInspected)return '香港品牌標籤圖已讀';
   const method=product.allergens?.verificationMethod??product.allergens?.completeSource??'';
   if(product.labelEvidence?.physicalPackPhotoInspected || /photo|image/.test(method))return '香港背標照片已讀';
@@ -48,7 +49,7 @@ function labelEvidenceSection(product) {
   const unique=[...new Map(photos.map(photo=>{const item=typeof photo==='string'?{url:photo,label:'香港標籤照片'}:photo;return [item.url,item];})).values()].filter(photo=>photo.url);
   const title=hkEvidenceLabel(product);
   if(!title&&!unique.length)return '';
-  return `<section class="detail-section"><h3>香港標籤核對紀錄</h3><p><strong>${esc(title||'標籤來源待完整核對')}</strong>。${product.labelEvidence?.packageLabelImageInspected?'已閱讀品牌公開圖像中可見嘅標籤；過敏未齊時不會當作完整聲明。屬品牌圖像，並非當前實物照片。':title==='香港背標照片已讀'?'已閱讀網上背標圖片及其可見內容。':unique.length?'已閱讀圖片中可見標籤；尚未完整核實嘅過敏或營養資料會保留未知。':'已閱讀香港品牌／零售商完整已刊成分及過敏聲明；營養只記錄來源實際提供嘅數值。'}未檢查你將購買嘅實物或當前批次；來源冇列出某過敏原唔等於保證不存在。</p>${unique.map(photo=>`<div>${link(photo.url,photo.label??'查看標籤圖片','source-link')}${photo.author?`<p class="source-scope">照片：${esc(photo.author)} / Open Food Facts contributors · ${esc(photo.uploadedAt??'上載日期見來源')} · ${link(photo.licenseUrl??'https://creativecommons.org/licenses/by-sa/3.0/',photo.license??'CC BY-SA 3.0')} · 本網站提供原圖連結</p>`:''}</div>`).join('')}${evidence.photoDateNote?`<p>${esc(evidence.photoDateNote)}</p>`:''}${product.nutrition?.conversionNote?`<p>換算註記：${esc(product.nutrition.conversionNote)}</p>`:''}</section>`;
+  return `<section class="detail-section"><h3>香港標籤核對紀錄</h3><p><strong>${esc(title||'標籤來源待完整核對')}</strong>。${product.labelEvidence?.retailerPackageLabelImagesInspected?'已閱讀香港零售商公開包裝標籤圖；部分屬平面包裝設計圖，未確立每張是否實物照片。':product.labelEvidence?.packageLabelImageInspected?'已閱讀品牌公開圖像中可見嘅標籤；過敏未齊時不會當作完整聲明。屬品牌圖像，並非當前實物照片。':title==='香港背標照片已讀'?'已閱讀網上背標圖片及其可見內容。':unique.length?'已閱讀圖片中可見標籤；尚未完整核實嘅過敏或營養資料會保留未知。':'已閱讀香港品牌／零售商完整已刊成分及過敏聲明；營養只記錄來源實際提供嘅數值。'}未檢查你將購買嘅實物或當前批次；來源冇列出某過敏原唔等於保證不存在。</p>${unique.map(photo=>`<div>${link(photo.url,photo.label??'查看標籤圖片','source-link')}${photo.author?`<p class="source-scope">照片：${esc(photo.author)} / Open Food Facts contributors · ${esc(photo.uploadedAt??'上載日期見來源')} · ${link(photo.licenseUrl??'https://creativecommons.org/licenses/by-sa/3.0/',photo.license??'CC BY-SA 3.0')} · 本網站提供原圖連結</p>`:''}</div>`).join('')}${evidence.photoDateNote?`<p>${esc(evidence.photoDateNote)}</p>`:''}${product.nutrition?.conversionNote?`<p>換算註記：${esc(product.nutrition.conversionNote)}</p>`:''}</section>`;
 }
 function sourceWarning(product) {
   const warning = product.sourceLimit ?? product.versionNote ?? product.nutrition?.sourceLimit ?? product.nutrition?.versionNote;
@@ -180,17 +181,23 @@ function addLabelEvidence(product) {
   const raw=product.sourceNutrition??{},nativeAmount=raw.basisAmount??product.nutrition?.basisAmount;
   const nativeUnit=raw.basisUnit??product.nutrition?.basisUnit;
   if(hasReviewedHkNutrition(product)&&Number.isFinite(nativeAmount)&&nativeAmount!==100){
-    $('detail-content').querySelector('.nutrition-table')?.insertAdjacentHTML('afterend',`<p class="source-scope">原標基準：每 ${number(nativeAmount)} ${esc(nativeUnit)}，表內換算為每100${esc(nativeUnit)}；小份量原標嘅四捨五入會被一併放大，「0」不代表經化驗確認絕對為零。</p>`);
+    $('detail-content').querySelector('.nutrition-table')?.insertAdjacentHTML('afterend',`<p class="source-scope">原標基準：每 ${number(nativeAmount)} ${esc(nativeUnit)}，表內換算為每100${esc(nativeUnit)}；${nativeAmount<100?'小份量原標嘅四捨五入會隨換算放大':'換算保留原標四捨五入及標示精度限制'}，「0」不代表經化驗確認絕對為零。</p>`);
   }
   const conflict=product.nutrition?.sourceConflict;
-  if(conflict){
+  if(conflict?.field==='sodiumMg'&&Number.isFinite(conflict.retailerPhotoValue)&&Number.isFinite(conflict.brandOfficialValue)){
     $('detail-content').querySelector('.nutrition-table')?.insertAdjacentHTML('afterend',`<p class="source-conflict">鈉值暫留未知：同款200ml嘅${link(conflict.retailerPhoto,'香港零售商照片')}列 ${number(conflict.retailerPhotoValue)} mg／100ml，${link(conflict.brandOfficialImage,'品牌香港營養圖')}列 ${number(conflict.brandOfficialValue)} mg／100ml。來源版本未能釐清，沒有選取其中一個當作現售值。</p>`);
+  }
+  const versions=product.nutritionSourceConflict;
+  if(versions?.olderFullTable&&versions?.newerFront&&versions.fields?.length){
+    const differences=versions.fields.map(key=>{const field=nutrientFields.find(f=>f[0]===key);return field?`${field[1]} ${number(versions.olderFullTable.values?.[key])}／${number(versions.newerFront.values?.[key])} ${field[2]}`:'';}).filter(Boolean).join('；');
+    $('detail-content').querySelector('.nutrition-table')?.insertAdjacentHTML('afterend',`<p class="source-conflict">公開版本不同：${link(versions.olderFullTable.transcribedFromImage,'舊完整表')}／${link(versions.newerFront.url,'較新正面摘要')}，原份量每${number(versions.olderFullTable.basisAmount)}${esc(versions.olderFullTable.basisUnit)}：${esc(differences)}。有矛盾嘅欄位保留未知，未判定現售配方。</p>`);
   }
   const additional=product.allergens?.additionalAllergens??[];
   if(additional.length){
     const names={molluscs:'軟體貝類',coconut:'椰子',mustard:'芥末',celery:'芹菜'};
     $('detail-content').querySelectorAll('.detail-section')[2]?.insertAdjacentHTML('beforeend',`<p class="source-scope">來源另提及：${esc(additional.map(x=>names[x]??x).join('、'))}。此頁10類篩選未涵蓋所有過敏情況，請閱讀原標。</p>`);
   }
+  if(product.additionalWarnings?.length)$('detail-content').querySelector('.nutrition-table')?.insertAdjacentHTML('afterend',`<p class="source-scope">原標其他警告：${esc(product.additionalWarnings.join('；'))}。無糖食品仍可能含碳水化合物，請分別閱讀兩欄。</p>`);
 }
 function compareTableRows(chosen) {
   const basis=comparisonBasis;
@@ -232,13 +239,13 @@ function addOpenFoodFactsSources(){
   const expanded=dataset?.enrichment;
   if(expanded)$('sources-content').insertAdjacentHTML('afterbegin',`<div class="source-card"><h3>舊有 OFF 參考庫：不計入1,000款香港來源目標</h3><p>原有 ${number(expanded.pricedCount)} 項香港格價食品中，${number(expanded.pricedNutrition)} 項有部分或完整營養。另保留 ${number(expanded.added)} 項不重複 OFF 香港市場標記營養參考（本輪沒有增加），未有已核實本地價格或渠道。共 ${number(expanded.explicitBasis)} 項營養來源明確區分每100g／100ml；其他每100單位參考不換算份量、不作營養排名。</p><p>香港市場標記由社群填寫，唔代表目前在港有售或香港配方相同。批量 OFF 紀錄未逐張閱讀包裝、過敏一律未知；舊索引部分來源最後更新在2014–2024年，現行API取得嘅紀錄另有2025／2026年更新。每項保留來源最後修改日期。糖、飽和脂肪、鹽鈉及能量矛盾或身份不明嘅候選已扣起；仍可能有來源錯誤。</p><p>資料：Open Food Facts contributors，ODbL1.0／DbCL1.0。香港品牌及HKNA資料個別註明來源及限制。</p><p><a href="data/off-nutrition-library.json" target="_blank" rel="noopener">OFF 衍生營養資料、配對及來源日期 ↗</a> · <a href="data/hk-nutrition-expansion.json" target="_blank" rel="noopener">香港品牌與HKNA配對 ↗</a> · <a href="enrichment.mjs" target="_blank" rel="noopener">公開合併及去重方法 ↗</a></p></div>`);
   if(!off?.recordCount)return;
-  $('sources-content').insertAdjacentHTML('afterbegin',`<div class="source-card"><h3>Open Food Facts：逐張核對香港標籤</h3><p>先前逐張閱圖批次有 ${off.recordCount} 項 OFF 來源紀錄；本輪另有14項，見上方獨立資料檔。先核對香港市場、同款口味、容量及條碼，再人工閱讀原始圖片；唔會用空白自動過敏欄當成「沒有過敏原」。部分照片只見營養／成分，未有完整警告，仍不能通過過敏篩選。照片上載年份及版本限制見商品詳情。</p><p>資料：Open Food Facts contributors，ODbL 1.0；個別內容 DbCL 1.0。圖片按各作者署名，CC BY-SA 3.0；本網站提供原圖連結。OFF 衍生資料及修改另列公開檔案，保留開放及相同方式分享要求；品牌、其他來源及商標權利依原來源。</p>${link('https://world.openfoodfacts.org','Open Food Facts','source-link')}${link('https://opendatacommons.org/licenses/odbl/1-0/','ODbL 使用條款','source-link')}<p><a href="data/off-hk-labels.json" target="_blank" rel="noopener">OFF 衍生紀錄、修正及圖片署名 ↗</a> · <a href="catalogue.mjs" target="_blank" rel="noopener">公開合併方法 ↗</a>；其他合併輸入檔案於下方來源連結提供。</p></div>`);
+  $('sources-content').insertAdjacentHTML('afterbegin',`<div class="source-card"><h3>Open Food Facts：逐張核對香港標籤</h3><p>先前逐張閱圖批次有 ${off.recordCount} 項 OFF 來源紀錄；本輪另有15項，分兩份檔案保留閱圖及授權紀錄。先核對香港市場、同款口味、容量及條碼，再人工閱讀原始圖片；唔會用空白自動過敏欄當成「沒有過敏原」。部分照片只見營養／成分，未有完整警告，仍不能通過過敏篩選。照片上載年份及版本限制見商品詳情。</p><p>資料：Open Food Facts contributors，ODbL 1.0；個別內容 DbCL 1.0。圖片按各作者署名，CC BY-SA 3.0；本網站提供原圖連結。OFF 衍生資料及修改另列公開檔案，保留開放及相同方式分享要求；品牌、其他來源及商標權利依原來源。</p>${link('https://world.openfoodfacts.org','Open Food Facts','source-link')}${link('https://opendatacommons.org/licenses/odbl/1-0/','ODbL 使用條款','source-link')}<p><a href="data/off-hk-labels.json" target="_blank" rel="noopener">OFF 衍生紀錄、修正及圖片署名 ↗</a> · <a href="catalogue.mjs" target="_blank" rel="noopener">公開合併方法 ↗</a>；其他合併輸入檔案於下方來源連結提供。</p></div>`);
 }
 
 function addHkReviewSources(){
   const c=hkLabelCoverage(products),review=dataset.hkLabelReview;
   const records=(review?.batches??[]).reduce((sum,b)=>sum+(b.recordCount??0),0);
-  $('sources-content').insertAdjacentHTML('afterbegin',`<div class="source-card"><h3>原有香港格價商品：本輪人工補標籤</h3><p>只對應原有 ${number(c.original)} 項商品。本輪公開 ${number(records)} 份已讀來源紀錄；${number(review?.nutritionAdded??0)} 項由沒有數值變為有營養，${number(review?.nutritionUpgraded??0)} 項由社群／次級參考改用整份香港來源表。現共 ${number(c.reviewedNutrition)} 項已讀香港營養來源，其中 ${number(c.fullCoreNutrition)} 項有完整1+7數值；${number(c.completeAllergy)} 項有來源版本完整過敏聲明。公開來源已讀不等於現售批次已驗證。</p><p>新增來源包括李錦記／雀巢香港官方標籤圖、惠康商品背標，以及有作者及日期嘅OFF香港包裝照片。按品牌、口味、容量及可見條碼核對；零售商內部貨號不當實物條碼。不同口味舊圖、真實條碼／容量衝突及模糊數字已扣起。美極200ml嘅兩個香港來源鈉值矛盾，保留未知及雙方原圖；沒有用其他容量補入。</p><p><a href="data/hk-reviewed-labels.json" target="_blank" rel="noopener">本輪香港品牌／零售商標籤及配對 ↗</a> · <a href="data/off-hk-reviewed-labels.json" target="_blank" rel="noopener">本輪OFF人工閱圖、署名及修正（ODbL／DbCL）↗</a> · <a href="hk-labels.mjs" target="_blank" rel="noopener">原有商品合併與覆蓋計算 ↗</a></p></div><div class="source-card"><h3>政府來源查到甚麼？</h3><p>已查DATA.GOV.HK、食安中心NIIS、低糖低鹽商品名單及EatSmart。營養標籤豁免資料集提供產品及豁免資料，沒有營養表；NIIS是一般食物成分，不能當指定品牌標籤；低糖低鹽名單362項多為正面／小圖，本輪可讀候選未足以可靠新增數值。EatSmart小食分析是自行輸入營養嘅工具。政府來源本輪沒有新增可核實嘅品牌營養數值，沒有拿平均值或標誌推算。</p>${link('https://data.gov.hk/en-data/dataset/hk-fehd-fehdfics-products-exempted-from-nutrition-labelling','政府：營養標籤豁免名單','source-link')}${link('https://www.cfs.gov.hk/english/nutrient/index.php','食安中心NIIS','source-link')}${link('https://www.cfs.gov.hk/english/programme/programme_rdss/product_list.php?lang=en&search=no','低糖低鹽商品名單','source-link')}${link('https://school.eatsmart.gov.hk/b5/snack_list.aspx','EatSmart 小食分析','source-link')}</div>`);
+  $('sources-content').insertAdjacentHTML('afterbegin',`<div class="source-card"><h3>原有香港格價商品：本輪人工補標籤</h3><p>只對應原有 ${number(c.original)} 項商品。本輪公開 ${number(records)} 份已讀來源紀錄；${number(review?.nutritionAdded??0)} 項由沒有數值變為有營養，${number(review?.nutritionUpgraded??0)} 項由社群／次級參考改用整份香港來源表。現共 ${number(c.reviewedNutrition)} 項已讀香港營養來源，其中 ${number(c.fullCoreNutrition)} 項有完整1+7數值；${number(c.completeAllergy)} 項有來源版本完整過敏聲明。公開來源已讀不等於現售批次已驗證。</p><p>新增來源包括李錦記／雀巢香港官方標籤圖、日清香港完整產品營養頁、惠康包裝標籤圖，以及有作者及日期嘅OFF香港包裝照片。零售圖像可能係平面包裝設計圖，唔當作本組檢查過嘅實物。按品牌、口味、容量及可見條碼核對；零售商內部貨號不當實物條碼。不同口味舊圖、真實條碼／容量衝突及模糊數字已扣起。美極200ml嘅兩個香港來源鈉值矛盾，保留未知及雙方原圖；沒有用其他容量補入。</p><p><a href="data/hk-reviewed-labels.json" target="_blank" rel="noopener">本輪香港品牌／零售商標籤及配對 ↗</a> · <a href="data/off-hk-reviewed-labels.json" target="_blank" rel="noopener">本輪OFF人工閱圖、署名及修正（ODbL／DbCL）↗</a> · <a href="data/hk-reviewed-labels-extra.json" target="_blank" rel="noopener">追加香港來源、原份量及限制 ↗</a> · <a href="data/off-hk-reviewed-labels-extra.json" target="_blank" rel="noopener">追加OFF香港照片、署名及修正 ↗</a> · <a href="hk-labels.mjs" target="_blank" rel="noopener">原有商品合併與覆蓋計算 ↗</a></p></div><div class="source-card"><h3>政府來源查到甚麼？</h3><p>已查DATA.GOV.HK、食安中心NIIS、低糖低鹽商品名單及EatSmart。營養標籤豁免資料集提供產品及豁免資料，沒有營養表；NIIS是一般食物成分，不能當指定品牌標籤；低糖低鹽名單362項多為正面／小圖，本輪可讀候選未足以可靠新增數值。EatSmart小食分析是自行輸入營養嘅工具。政府來源本輪沒有新增可核實嘅品牌營養數值，沒有拿平均值或標誌推算。</p>${link('https://data.gov.hk/en-data/dataset/hk-fehd-fehdfics-products-exempted-from-nutrition-labelling','政府：營養標籤豁免名單','source-link')}${link('https://www.cfs.gov.hk/english/nutrient/index.php','食安中心NIIS','source-link')}${link('https://www.cfs.gov.hk/english/programme/programme_rdss/product_list.php?lang=en&search=no','低糖低鹽商品名單','source-link')}${link('https://school.eatsmart.gov.hk/b5/snack_list.aspx','EatSmart 小食分析','source-link')}</div>`);
 }
 
 function wireEvents(){
@@ -292,7 +299,7 @@ async function start(){
       const [local,offLibrary]=await Promise.all([read('hk-nutrition-expansion.json'),read('off-nutrition-library.json')]);
       dataset=enrichCatalogue(dataset,local,offLibrary);
     }catch(error){expansionUnavailable=true;console.warn('Nutrition expansion unavailable:',error.message);}
-    const reviewResults=await Promise.allSettled(['hk-reviewed-labels.json','off-hk-reviewed-labels.json'].map(read));
+    const reviewResults=await Promise.allSettled(['hk-reviewed-labels.json','off-hk-reviewed-labels.json','hk-reviewed-labels-extra.json','off-hk-reviewed-labels-extra.json'].map(read));
     let reviewUnavailable=false;
     for(const result of reviewResults){
       if(result.status==='fulfilled')dataset=applyHkLabelReview(dataset,result.value);

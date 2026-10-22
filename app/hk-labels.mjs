@@ -31,7 +31,8 @@ export function applyHkLabelReview(dataset,overlay={}){
       next.nutrition={...row.nutrition};next.nutritionSourceFamily='hk-reviewed-label';
       next.dataStatus=row.dataStatus??'hk-retailer-label-photo';
       next.sourceLimit=row.sourceLimit??row.nutrition.sourceLimit;
-      next.sourceNutrition=row.sourceNutrition;next.nutritionIdentityEvidence=row.identityEvidence;
+      next.sourceNutrition=row.sourceNutrition??row.labelNutritionOriginal;next.nutritionIdentityEvidence=row.identityEvidence;
+      if(row.sourceConflict)next.nutritionSourceConflict=row.sourceConflict;
       delete next.offMetadata;
       if(row.servingSize)next.servingSize=row.servingSize;
       if(row.packSize&&(!old.packSize||old.packSize==='規格見商品名稱'))next.packSize=row.packSize;
@@ -51,7 +52,8 @@ export function applyHkLabelReview(dataset,overlay={}){
       next.labelEvidence={...old.labelEvidence,...row.labelEvidence,
         photoDateNote:[old.labelEvidence?.photoDateNote,row.labelEvidence.photoDateNote].filter(Boolean).join(' ')};
     }
-    if(!old.barcode&&row.barcode&&(row.identityEvidence?.physicalBarcodeRead===true||row.identityEvidence?.physicalBarcodeVisuallyVerified===true))next.barcode=row.barcode;
+    if(row.additionalWarnings)next.additionalWarnings=[...new Set([...(old.additionalWarnings??[]),...row.additionalWarnings])];
+    if(!old.barcode&&row.barcode&&(row.identityEvidence?.physicalBarcodeRead===true||row.identityEvidence?.physicalBarcodeVisuallyVerified===true||row.identityEvidence?.publishedPackageBarcodeVisuallyVerified===true||row.identityEvidence?.officialHkBarcodeVerified===true))next.barcode=row.barcode;
     next.sources=[...new Map([...(old.sources??[]),...(row.sources??[])].map(source=>[`${source.url}|${source.scope}`,source])).values()];
     next.hkReview={checkedAt:overlay.metadata?.checkedAt,sourceDateNote:row.labelEvidence?.photoDateNote??null};
     // Prices, name, store coverage and original identity are always owned by the original catalogue.
@@ -67,7 +69,7 @@ export function applyHkLabelReview(dataset,overlay={}){
     nutritionCount:products.filter(hasNutrition).length,
     explicitBasis:products.filter(p=>hasNutrition(p)&&['g','ml'].includes(p.nutrition?.basisUnit)).length}:undefined;
   const previous=dataset.hkLabelReview??{};
-  return {...dataset,version:'1.5-original-hk-labels',products,...(enrichment?{enrichment}:{}),
+  return {...dataset,version:'1.6-original-hk-labels',products,...(enrichment?{enrichment}:{}),
     hkLabelReview:{...overlay.metadata,
       batches:[...(previous.batches??[]),overlay.metadata??{}],
       nutritionAdded:(previous.nutritionAdded??0)+nutritionAdded,
