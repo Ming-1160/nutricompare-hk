@@ -1,0 +1,2397 @@
+{
+  "metadata": {
+    "checkedAt": "2026-10-22",
+    "reviewedAt": "2026-10-22",
+    "recordCount": 14,
+    "source": "Open Food Facts packphotos manually read",
+    "databaseLicense": "https://opendatacommons.org/licenses/odbl/1-0/",
+    "contentsLicense": "https://opendatacommons.org/licenses/dbcl/1-0/",
+    "imageLicense": "CC-BY-SA-3.0",
+    "physicalPackChecked": false,
+    "sourceIsCurrentVerified": false,
+    "scope": "Only existing original 1788 priced IDs. No new unpriced products; no price changes.",
+    "method": "Manual visual reading of exact brand/flavour/pack label images; internal retailer item numbers are not physical barcodes.",
+    "sourceDateLimit": "Review date does not establish current physical batch or current stock. Image dates and uncertainty remain per record.",
+    "countGoal": 1000,
+    "goalDefinition": "Original priced products with reviewed HK-source partial/full nutrition, not bulk OFF community references.",
+    "attribution": "Open Food Facts contributors. Database and our alterations ODbL1.0; individual contents DbCL1.0. Linked source photos CC BY-SA3.0, per-image credits retained."
+  },
+  "products": [
+    {
+      "id": "P000000913",
+      "nameZh": "朱古力牛奶飲品 236毫升",
+      "nameEn": "Chocolate Milk Beverage 236mL",
+      "brand": "維他",
+      "brandEn": "Vita",
+      "category": "drinks",
+      "sourceCategory": {
+        "zh": "奶類及乳製品 / 大豆製品 / 蛋類",
+        "en": "Dairy / Soy products / Eggs",
+        "pathZh": [
+          "牛奶 / 牛奶飲品",
+          "低溫冷藏鮮奶/牛奶飲品"
+        ],
+        "pathEn": [
+          "Milk / Milk drinks",
+          "Chilled fresh milk/milk drinks"
+        ]
+      },
+      "packSize": "236毫升",
+      "barcode": "4891028166269",
+      "quantity": 236,
+      "quantityUnit": "ml",
+      "servingSize": null,
+      "nutrition": {
+        "basisUnit": "ml",
+        "basisAmount": 100,
+        "energyKcal": 77,
+        "protein": 2.5,
+        "fat": 2.6,
+        "saturatedFat": 1.7,
+        "transFat": 0,
+        "carbohydrates": 10.9,
+        "sugars": 10.9,
+        "fibre": null,
+        "sodiumMg": 86,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "region": "hk-market-pack-photo",
+        "hkLabelVerified": true,
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "calciumMg": 80,
+        "sourceLimit": "人工逐字閱讀2026-06-03上載的香港236毫升包裝正背面；每100毫升數值直接照標籤記錄。未檢查當前實物或現售批次。"
+      },
+      "ingredients": "Water, Milk Solid, Sugar, Cocoa Powder, Acidity Regulator (331 and 500), Flavouring, Emulsifier (471), Stabilizer (410 and 407).",
+      "allergens": {
+        "contains": [
+          "milk",
+          "soy",
+          "gluten"
+        ],
+        "mayContain": [],
+        "status": "complete",
+        "text": "照片明列：Contains Milk, Soyabean Products and Cereal Products Containing Gluten.",
+        "coverage": "2026-06-03上載完整背面及摺頂成分/Contains聲明已人工閱讀；該可見完整聲明未列may contain或廠房警告。此完整性限該來源照片，並不證明現售批次或任何零風險。",
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false
+      },
+      "reviewDecision": "photo-confirmed-hk-nutrition-and-source-scoped-ingredient-allergy",
+      "physicalPackChecked": false,
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/816/6269/4.jpg",
+          "author": "macrofactor",
+          "uploadedAt": "2026-06-03T01:36:58.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2026 Hong Kong front: Vita Chocolate Milk Beverage,236mL,Freshly made inHK",
+          "sourcePhotoId": "4"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/816/6269/5.jpg",
+          "author": "macrofactor",
+          "uploadedAt": "2026-06-03T01:37:02.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2026 complete back including per100mL nutrition,fullingredients,Containsstatement,HKaddress,net236mL andprintedGTIN",
+          "sourcePhotoId": "5"
+        }
+      ],
+      "imageAttribution": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/816/6269/4.jpg",
+          "author": "macrofactor",
+          "uploadedAt": "2026-06-03T01:36:58.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2026 Hong Kong front: Vita Chocolate Milk Beverage,236mL,Freshly made inHK",
+          "sourcePhotoId": "4"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/816/6269/5.jpg",
+          "author": "macrofactor",
+          "uploadedAt": "2026-06-03T01:37:02.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2026 complete back including per100mL nutrition,fullingredients,Containsstatement,HKaddress,net236mL andprintedGTIN",
+          "sourcePhotoId": "5"
+        }
+      ],
+      "identityEvidence": {
+        "catalogueNameZh": "朱古力牛奶飲品 236毫升",
+        "catalogueNameEn": "Chocolate Milk Beverage 236mL",
+        "catalogueBrand": "維他",
+        "photoFrontName": "Vita Chocolate Milk Beverage / 維他朱古力牛奶飲品",
+        "photoNetQuantity": "236mL",
+        "photoPrintedBarcode": "4891028166269",
+        "hkEvidence": [
+          "Front says Freshly made inHK",
+          "Back lists Hong Kong Tuen Mun manufacturer address and852hotline",
+          "Bilingual HK1+7 nutrition panel"
+        ],
+        "independentNameBrandPackMatch": true,
+        "barcodeAloneUsed": false
+      },
+      "sources": [
+        {
+          "label": "Open Food Facts：香港維他朱古力牛奶236毫升實物包裝照片",
+          "url": "https://world.openfoodfacts.org/product/4891028166269",
+          "checkedAt": "2026-10-21",
+          "scope": "人工閱讀正面、完整背面營養與成分/Contains；未採用自動allergen tags作完整性證明"
+        }
+      ],
+      "dataStatus": "hk-market-photo-verified",
+      "sourceLimit": "標籤照片上載於2026-06-03；有香港地址、淨容量、條碼及完整成分/Contains。沒有檢查當前實物。",
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "photoDateNote": "上載日不是有效期或拍攝日；2026正背面為同次上載、同款236毫升。"
+      },
+      "dataLicence": {
+        "name": "Open Database Licence (ODbL)",
+        "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "contentsLicense": "DbCL-1.0",
+        "source": "Open Food Facts",
+        "note": "Manual transcription/normalization of OFF package photos; photo authors/upload/licence attached; not CC supplementary barcode-map copy."
+      },
+      "reviewedAt": "2026-10-22"
+    },
+    {
+      "id": "P000000902",
+      "nameZh": "高鈣牛奶飲品 236毫升",
+      "nameEn": "Hi-Calcium Whole Milk Beverage 236mL",
+      "brand": "維他",
+      "brandEn": "Vita",
+      "category": "drinks",
+      "sourceCategory": {
+        "zh": "奶類及乳製品 / 大豆製品 / 蛋類",
+        "en": "Dairy / Soy products / Eggs",
+        "pathZh": [
+          "牛奶 / 牛奶飲品",
+          "低溫冷藏鮮奶/牛奶飲品"
+        ],
+        "pathEn": [
+          "Milk / Milk drinks",
+          "Chilled fresh milk/milk drinks"
+        ]
+      },
+      "packSize": "236毫升",
+      "barcode": "4891028701484",
+      "quantity": 236,
+      "quantityUnit": "ml",
+      "servingSize": 236,
+      "nutrition": {
+        "basisUnit": "ml",
+        "basisAmount": 100,
+        "energyKcal": 66.101695,
+        "protein": 3.220339,
+        "fat": 3.644068,
+        "saturatedFat": 2.5,
+        "transFat": 0,
+        "carbohydrates": 5.084746,
+        "sugars": 5.084746,
+        "fibre": null,
+        "sodiumMg": 41.949153,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "region": "hk-market-pack-photo",
+        "hkLabelVerified": true,
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "calciumMg": 169.915254,
+        "vitaminDUg": 1.016949,
+        "sourceLimit": "人工讀2026-03-07上載香港236毫升包裝營養；原表按每236毫升，全部乘100/236換算。未檢查當前實物。"
+      },
+      "labelNutritionOriginal": {
+        "basisAmount": 236,
+        "basisUnit": "ml",
+        "servingsPerPackage": 1,
+        "energyKcal": 156,
+        "protein": 7.6,
+        "fat": 8.6,
+        "saturatedFat": 5.9,
+        "transFat": 0,
+        "carbohydrates": 12,
+        "sugars": 12,
+        "sodiumMg": 99,
+        "calciumMg": 401,
+        "vitaminDUg": 2.4
+      },
+      "ingredients": "[2022 photo only] Water, Milk Solid, Emulsifier and Stabilizer (471, 460, 340, 466, 401, 412 and 407), Tricalcium Phosphate, Flavouring, Vitamin D.",
+      "allergens": {
+        "contains": [
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "partial",
+        "text": "2022照片完整成分明列ContainsMilk；2026上載只有正面及營養表，未重新核對2026完整成分及交叉接觸聲明。",
+        "coverage": "不可將2022成分完整性轉成2026完整過敏資料；限制篩選不得視為已排除其他致敏物。",
+        "verificationMethod": "older-hk-photo-only-for-allergy",
+        "physicalPackChecked": false
+      },
+      "reviewDecision": "photo-confirmed-hk-nutrition-only-current-allergy-incomplete",
+      "physicalPackChecked": false,
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/870/1484/5.jpg",
+          "author": "macrofactor",
+          "uploadedAt": "2026-03-07T15:00:36.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2026 Hong Kong Vita HiCalcium Whole Milk236mL front",
+          "sourcePhotoId": "5"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/870/1484/6.jpg",
+          "author": "macrofactor",
+          "uploadedAt": "2026-03-07T15:00:42.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2026 per236mL nutrition table",
+          "sourcePhotoId": "6"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/870/1484/2.jpg",
+          "author": "openfoodfacts-contributors",
+          "uploadedAt": "2022-04-02T02:52:54.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2022 complete ingredients/ContainsMilk andsameGTIN; cannot establish2026allergycomposition",
+          "sourcePhotoId": "2"
+        }
+      ],
+      "imageAttribution": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/870/1484/5.jpg",
+          "author": "macrofactor",
+          "uploadedAt": "2026-03-07T15:00:36.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2026 Hong Kong Vita HiCalcium Whole Milk236mL front",
+          "sourcePhotoId": "5"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/870/1484/6.jpg",
+          "author": "macrofactor",
+          "uploadedAt": "2026-03-07T15:00:42.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2026 per236mL nutrition table",
+          "sourcePhotoId": "6"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/870/1484/2.jpg",
+          "author": "openfoodfacts-contributors",
+          "uploadedAt": "2022-04-02T02:52:54.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2022 complete ingredients/ContainsMilk andsameGTIN; cannot establish2026allergycomposition",
+          "sourcePhotoId": "2"
+        }
+      ],
+      "identityEvidence": {
+        "catalogueNameZh": "高鈣牛奶飲品 236毫升",
+        "catalogueNameEn": "Hi-Calcium Whole Milk Beverage 236mL",
+        "catalogueBrand": "維他",
+        "photoFrontName": "Vita Hi-Calcium Whole Milk Beverage / 維他高鈣牛奶飲品",
+        "photoNetQuantity": "236mL",
+        "photoPrintedBarcode": "4891028701484 on2022fullback",
+        "hkEvidence": [
+          "2026 front says香港新鮮製造",
+          "2026 nutrition states1serving/package and236mL",
+          "2022samefront/back listsHKmanufactureraddress andexactbarcode"
+        ],
+        "independentNameBrandPackMatch": true,
+        "barcodeAloneUsed": false
+      },
+      "sources": [
+        {
+          "label": "Open Food Facts：香港維他高鈣牛奶236毫升包裝照片",
+          "url": "https://world.openfoodfacts.org/product/4891028701484",
+          "checkedAt": "2026-10-21",
+          "scope": "2026正面和營養表人工讀取；2022成分只保留已知奶類風險，過敏完整性保持partial"
+        }
+      ],
+      "dataStatus": "hk-market-photo-nutrition-only",
+      "sourceLimit": "營養照片上載2026-03-07；成分照片只有2022-04-02，不能當作現行完整過敏聲明。沒有檢查當前實物。",
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "photoDateNote": "營養源於2026上載照片；2022/2026營養數字相同，但這不能證明2026成分及致敏聲明完全相同。"
+      },
+      "dataLicence": {
+        "name": "Open Database Licence (ODbL)",
+        "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "contentsLicense": "DbCL-1.0",
+        "source": "Open Food Facts",
+        "note": "Manual transcription/normalization of OFF package photos; photo authors/upload/licence attached; not CC supplementary barcode-map copy."
+      },
+      "reviewedAt": "2026-10-22"
+    },
+    {
+      "id": "P000000643",
+      "nameZh": "迷你瑞士卷 (檸檬味) 56克",
+      "nameEn": "Mini Swiss Roll (Lemon Flavour) 56g",
+      "brand": "嘉頓",
+      "brandEn": "Garden",
+      "category": "bakery",
+      "sourceCategory": {
+        "zh": "麵包蛋糕 / 穀類早餐 / 麵包醬",
+        "en": "Bakery / Cereals / Spreads",
+        "pathZh": [
+          "蛋糕",
+          "瑞士卷"
+        ],
+        "pathEn": [
+          "Cakes",
+          "Swiss rolls"
+        ]
+      },
+      "packSize": "56克",
+      "barcode": "0089782040848",
+      "quantity": 56,
+      "quantityUnit": "g",
+      "servingSize": null,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 326,
+        "protein": 7,
+        "fat": 8.8,
+        "saturatedFat": 1.9,
+        "transFat": 0,
+        "carbohydrates": 54.7,
+        "sugars": 31.3,
+        "fibre": null,
+        "sodiumMg": 176,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "region": "hk-market-pack-photo",
+        "hkLabelVerified": true,
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "sourceLimit": "人工逐字讀2024-07-14上載香港56克包裝完整背面及營養近照，每100克照錄；未檢查當前實物。"
+      },
+      "ingredients": "Sugar, Egg, Wheat Flour, Water, Soybean Oil, Glucose Syrup, Corn Starch, Raising Agent (450, 500) (contains acidity regulator (170)), Modified Starch, Thickener (440, 415), Flavoring (contains antioxidant (307c)), Preservative (202), Acidity Regulator (330), Concentrated Lemon Juice (contains flavouring (milk), thickener (466, 412), preservative (211, 221 (sulphite)), antioxidant (300), colour (141, 171)), Colour (160a).",
+      "allergens": {
+        "contains": [
+          "eggs",
+          "gluten",
+          "soy",
+          "milk",
+          "sulphites"
+        ],
+        "mayContain": [
+          "tree-nuts",
+          "peanuts"
+        ],
+        "status": "complete",
+        "text": "完整成分列雞蛋、小麥粉、豆油、奶調味劑及221(sulphite)；廠房亦處理木本堅果及花生。",
+        "coverage": "2024-07-14上載完整英文/中文成分與廠房警告逐字閱讀；soy因成分中的soybean oil保守保留，未推定精煉豁免。完整性限此來源包裝，不證明現售批次或零風險。",
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false
+      },
+      "reviewDecision": "photo-confirmed-hk-nutrition-and-source-scoped-ingredient-allergy",
+      "physicalPackChecked": false,
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/204/0848/4.jpg",
+          "author": "andylaukc",
+          "uploadedAt": "2024-07-14T13:11:36.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2024 front Garden Lemon Mini Swiss Roll",
+          "sourcePhotoId": "4"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/204/0848/2.jpg",
+          "author": "andylaukc",
+          "uploadedAt": "2024-07-14T13:06:21.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2024 full ingredients,factory tree-nut/peanut warning andper100g nutrition",
+          "sourcePhotoId": "2"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/204/0848/3.jpg",
+          "author": "andylaukc",
+          "uploadedAt": "2024-07-14T13:10:13.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2024 clear nutrition table closeup",
+          "sourcePhotoId": "3"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/204/0848/5.jpg",
+          "author": "andylaukc",
+          "uploadedAt": "2024-07-14T13:20:25.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2024 net56g,MadeinHongKong,manufactureraddress andexactprintedUPC089782040848",
+          "sourcePhotoId": "5"
+        }
+      ],
+      "imageAttribution": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/204/0848/4.jpg",
+          "author": "andylaukc",
+          "uploadedAt": "2024-07-14T13:11:36.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2024 front Garden Lemon Mini Swiss Roll",
+          "sourcePhotoId": "4"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/204/0848/2.jpg",
+          "author": "andylaukc",
+          "uploadedAt": "2024-07-14T13:06:21.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2024 full ingredients,factory tree-nut/peanut warning andper100g nutrition",
+          "sourcePhotoId": "2"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/204/0848/3.jpg",
+          "author": "andylaukc",
+          "uploadedAt": "2024-07-14T13:10:13.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2024 clear nutrition table closeup",
+          "sourcePhotoId": "3"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/204/0848/5.jpg",
+          "author": "andylaukc",
+          "uploadedAt": "2024-07-14T13:20:25.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2024 net56g,MadeinHongKong,manufactureraddress andexactprintedUPC089782040848",
+          "sourcePhotoId": "5"
+        }
+      ],
+      "identityEvidence": {
+        "catalogueNameZh": "迷你瑞士卷 (檸檬味) 56克",
+        "catalogueNameEn": "Mini Swiss Roll (Lemon Flavour) 56g",
+        "catalogueBrand": "嘉頓",
+        "photoFrontName": "Garden Lemon Mini Swiss Roll / 嘉頓檸檬迷你瑞士卷",
+        "photoNetQuantity": "56g",
+        "photoPrintedBarcode": "089782040848 UPC, equivalent leading-zero EAN0089782040848",
+        "hkEvidence": [
+          "Package saysMadeinHongKong",
+          "TheGardenCompany58CastlePeakRoadKowloonHongKongmanufactureraddress",
+          "HKbilingual1+7per100gpanel"
+        ],
+        "independentNameBrandPackMatch": true,
+        "barcodeAloneUsed": false
+      },
+      "sources": [
+        {
+          "label": "Open Food Facts：嘉頓香港56克檸檬迷你瑞士卷完整實物包裝",
+          "url": "https://world.openfoodfacts.org/product/0089782040848",
+          "checkedAt": "2026-10-21",
+          "scope": "人工讀2024正背面、56克/UPC/HK廠址、完整成分及廠房警告、營養表；未直接採信自動allergen tags"
+        }
+      ],
+      "dataStatus": "hk-market-photo-verified",
+      "sourceLimit": "香港56克包裝照片上載2024-07-14；完整成分及廠房聲明可讀，未檢查現售批次。",
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "photoDateNote": "照片上載2024-07-14不是拍攝日或有效期；source2完整背面、source3營養、source4正面、source5產地淨重及UPC。"
+      },
+      "dataLicence": {
+        "name": "Open Database Licence (ODbL)",
+        "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "contentsLicense": "DbCL-1.0",
+        "source": "Open Food Facts",
+        "note": "Manual transcription/normalization of OFF package photos; photo authors/upload/licence attached; not CC supplementary barcode-map copy."
+      },
+      "reviewedAt": "2026-10-22"
+    },
+    {
+      "id": "P000005270",
+      "nameZh": "高鈣牛奶飲品 946毫升",
+      "nameEn": "Hi-calcium Whole Milk Beverage 946mL",
+      "brand": "維他",
+      "brandEn": "Vita",
+      "category": "drinks",
+      "sourceCategory": {
+        "zh": "奶類及乳製品 / 大豆製品 / 蛋類",
+        "en": "Dairy / Soy products / Eggs",
+        "pathZh": [
+          "牛奶 / 牛奶飲品",
+          "低溫冷藏鮮奶/牛奶飲品"
+        ],
+        "pathEn": [
+          "Milk / Milk drinks",
+          "Chilled fresh milk/milk drinks"
+        ]
+      },
+      "packSize": "946毫升",
+      "barcode": "4891028705956",
+      "quantity": 946,
+      "quantityUnit": "ml",
+      "servingSize": 236,
+      "nutrition": {
+        "basisUnit": "ml",
+        "basisAmount": 100,
+        "energyKcal": 66.101695,
+        "protein": 3.220339,
+        "fat": 3.644068,
+        "saturatedFat": 2.5,
+        "transFat": 0,
+        "carbohydrates": 5.084746,
+        "sugars": 5.084746,
+        "fibre": null,
+        "sodiumMg": 41.949153,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "region": "hk-market-pack-photo",
+        "hkLabelVerified": true,
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "calciumMg": 169.915254,
+        "vitaminDUg": 1.016949,
+        "sourceLimit": "人工讀2025-08-28上載香港946毫升正面及營養表；原表每236毫升，逐項乘100/236換算，未把946/4當成新食用分量。沒有完整成分照片，過敏partial。未檢查當前實物。"
+      },
+      "labelNutritionOriginal": {
+        "basisAmount": 236,
+        "basisUnit": "ml",
+        "servingsPerPackage": 4,
+        "energyKcal": 156,
+        "protein": 7.6,
+        "fat": 8.6,
+        "saturatedFat": 5.9,
+        "transFat": 0,
+        "carbohydrates": 12,
+        "sugars": 12,
+        "sodiumMg": 99,
+        "calciumMg": 401,
+        "vitaminDUg": 2.4
+      },
+      "ingredients": null,
+      "allergens": {
+        "contains": [
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "partial",
+        "text": "已知含牛奶；本次照片沒有完整涵蓋全包裝致敏物及可能含有/廠房聲明，不能排除其他致敏物。",
+        "coverage": "人工讀2025-08-28上載香港946毫升正面及營養表；原表每236毫升，逐項乘100/236換算，未把946/4當成新食用分量。沒有完整成分照片，過敏partial。未檢查當前實物。",
+        "verificationMethod": "hk-photo-ingredient-or-front-only-allergy-incomplete",
+        "physicalPackChecked": false
+      },
+      "reviewDecision": "photo-confirmed-hk-nutrition-only-current-allergy-incomplete",
+      "physicalPackChecked": false,
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/870/5956/1.jpg",
+          "author": "municorn-calorie-counter-app",
+          "uploadedAt": "2025-08-28T02:58:43.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025 HK Vita HiCalciumWholeMilk front,FreshlymadeinHK",
+          "sourcePhotoId": "1"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/870/5956/2.jpg",
+          "author": "municorn-calorie-counter-app",
+          "uploadedAt": "2025-08-28T02:58:44.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025 per236mL nutrition,4servings/package,net946mL",
+          "sourcePhotoId": "2"
+        }
+      ],
+      "imageAttribution": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/870/5956/1.jpg",
+          "author": "municorn-calorie-counter-app",
+          "uploadedAt": "2025-08-28T02:58:43.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025 HK Vita HiCalciumWholeMilk front,FreshlymadeinHK",
+          "sourcePhotoId": "1"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/870/5956/2.jpg",
+          "author": "municorn-calorie-counter-app",
+          "uploadedAt": "2025-08-28T02:58:44.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025 per236mL nutrition,4servings/package,net946mL",
+          "sourcePhotoId": "2"
+        }
+      ],
+      "identityEvidence": {
+        "catalogueNameZh": "高鈣牛奶飲品 946毫升",
+        "catalogueNameEn": "Hi-calcium Whole Milk Beverage 946mL",
+        "catalogueBrand": "維他",
+        "photoName": "Hi-calcium Whole Milk Beverage 946mL",
+        "photoNetQuantity": "946mL",
+        "hkEvidence": [
+          "Front FreshlymadeinHK",
+          "Back net946mL,traditionalChinese/English1+7panel",
+          "SameVitaHiCalciumWholeMilkbrand/nameasoriginalcatalogue"
+        ],
+        "independentNameBrandPackMatch": true,
+        "barcodeAloneUsed": false
+      },
+      "sources": [
+        {
+          "label": "Open Food Facts：維他香港包裝營養照片",
+          "url": "https://world.openfoodfacts.org/product/4891028705956",
+          "checkedAt": "2026-10-21",
+          "scope": "人工閱讀實物包裝營養及正面/成分照片；完整過敏聲明尚未讀到"
+        }
+      ],
+      "dataStatus": "hk-market-photo-nutrition-only",
+      "sourceLimit": "人工讀2025-08-28上載香港946毫升正面及營養表；原表每236毫升，逐項乘100/236換算，未把946/4當成新食用分量。沒有完整成分照片，過敏partial。未檢查當前實物。",
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "photoDateNote": "人工讀2025-08-28上載香港946毫升正面及營養表；原表每236毫升，逐項乘100/236換算，未把946/4當成新食用分量。沒有完整成分照片，過敏partial。未檢查當前實物。"
+      },
+      "dataLicence": {
+        "name": "Open Database Licence (ODbL)",
+        "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "contentsLicense": "DbCL-1.0",
+        "source": "Open Food Facts",
+        "note": "Manual transcription/normalization of OFF package photos; photo authors/upload/licence attached; not CC supplementary barcode-map copy."
+      },
+      "reviewedAt": "2026-10-22"
+    },
+    {
+      "id": "P000000122",
+      "nameZh": "高鈣低脂牛奶飲品 236毫升",
+      "nameEn": "Slimilk - Low Fat Hi-Ca Milk Drink 236mL",
+      "brand": "維記",
+      "brandEn": "Kowloon Dairy",
+      "category": "drinks",
+      "sourceCategory": {
+        "zh": "奶類及乳製品 / 大豆製品 / 蛋類",
+        "en": "Dairy / Soy products / Eggs",
+        "pathZh": [
+          "牛奶 / 牛奶飲品",
+          "低溫冷藏鮮奶/牛奶飲品"
+        ],
+        "pathEn": [
+          "Milk / Milk drinks",
+          "Chilled fresh milk/milk drinks"
+        ]
+      },
+      "packSize": "236毫升",
+      "barcode": "4893318633536",
+      "quantity": 236,
+      "quantityUnit": "ml",
+      "servingSize": null,
+      "nutrition": {
+        "basisUnit": "ml",
+        "basisAmount": 100,
+        "energyKcal": 60,
+        "protein": 4.4,
+        "fat": 1.5,
+        "saturatedFat": 1,
+        "transFat": 0,
+        "carbohydrates": 7.1,
+        "sugars": 7.1,
+        "fibre": null,
+        "sodiumMg": 67,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "region": "hk-market-pack-photo",
+        "hkLabelVerified": true,
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "calciumMg": 170,
+        "cholesterolMg": 6,
+        "sourceLimit": "人工讀2025-05-18上載維記高鈣低脂Slimmilk236毫升香港正面及每100毫升營養表；沒有完整成分/交叉接觸照片，過敏partial。未檢查現售實物。"
+      },
+      "ingredients": null,
+      "allergens": {
+        "contains": [
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "partial",
+        "text": "已知含牛奶；本次照片沒有完整涵蓋全包裝致敏物及可能含有/廠房聲明，不能排除其他致敏物。",
+        "coverage": "人工讀2025-05-18上載維記高鈣低脂Slimmilk236毫升香港正面及每100毫升營養表；沒有完整成分/交叉接觸照片，過敏partial。未檢查現售實物。",
+        "verificationMethod": "hk-photo-ingredient-or-front-only-allergy-incomplete",
+        "physicalPackChecked": false
+      },
+      "reviewDecision": "photo-confirmed-hk-nutrition-only-current-allergy-incomplete",
+      "physicalPackChecked": false,
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/331/863/3536/1.jpg",
+          "author": "macrofactor",
+          "uploadedAt": "2025-05-18T13:26:52.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025KowloonDairySlimmilkHiCalciumLowFatfront,HKmanufacture,236mL",
+          "sourcePhotoId": "1"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/331/863/3536/2.jpg",
+          "author": "macrofactor",
+          "uploadedAt": "2025-05-18T13:26:57.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025completeper100mL1+7nutritiontable",
+          "sourcePhotoId": "2"
+        }
+      ],
+      "imageAttribution": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/331/863/3536/1.jpg",
+          "author": "macrofactor",
+          "uploadedAt": "2025-05-18T13:26:52.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025KowloonDairySlimmilkHiCalciumLowFatfront,HKmanufacture,236mL",
+          "sourcePhotoId": "1"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/331/863/3536/2.jpg",
+          "author": "macrofactor",
+          "uploadedAt": "2025-05-18T13:26:57.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025completeper100mL1+7nutritiontable",
+          "sourcePhotoId": "2"
+        }
+      ],
+      "identityEvidence": {
+        "catalogueNameZh": "高鈣低脂牛奶飲品 236毫升",
+        "catalogueNameEn": "Slimilk - Low Fat Hi-Ca Milk Drink 236mL",
+        "catalogueBrand": "維記",
+        "photoName": "Slimilk - Low Fat Hi-Ca Milk Drink 236mL",
+        "photoNetQuantity": "236mL",
+        "hkEvidence": [
+          "Front KowloonDairy維記Slimmilk高鈣低脂",
+          "FrontFreshlyProducedon香港製造andnet236mL",
+          "HKbilingual1+7panel"
+        ],
+        "independentNameBrandPackMatch": true,
+        "barcodeAloneUsed": false
+      },
+      "sources": [
+        {
+          "label": "Open Food Facts：維記香港包裝營養照片",
+          "url": "https://world.openfoodfacts.org/product/4893318633536",
+          "checkedAt": "2026-10-21",
+          "scope": "人工閱讀實物包裝營養及正面/成分照片；完整過敏聲明尚未讀到"
+        }
+      ],
+      "dataStatus": "hk-market-photo-nutrition-only",
+      "sourceLimit": "人工讀2025-05-18上載維記高鈣低脂Slimmilk236毫升香港正面及每100毫升營養表；沒有完整成分/交叉接觸照片，過敏partial。未檢查現售實物。",
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "photoDateNote": "人工讀2025-05-18上載維記高鈣低脂Slimmilk236毫升香港正面及每100毫升營養表；沒有完整成分/交叉接觸照片，過敏partial。未檢查現售實物。"
+      },
+      "dataLicence": {
+        "name": "Open Database Licence (ODbL)",
+        "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "contentsLicense": "DbCL-1.0",
+        "source": "Open Food Facts",
+        "note": "Manual transcription/normalization of OFF package photos; photo authors/upload/licence attached; not CC supplementary barcode-map copy."
+      },
+      "reviewedAt": "2026-10-22"
+    },
+    {
+      "id": "P000003564",
+      "nameZh": "新鮮牛奶飲品 236毫升",
+      "nameEn": "Fresh Milk Beverage 236mL",
+      "brand": "明治",
+      "brandEn": "Meiji (CP-Meiji)",
+      "category": "drinks",
+      "sourceCategory": {
+        "zh": "奶類及乳製品 / 大豆製品 / 蛋類",
+        "en": "Dairy / Soy products / Eggs",
+        "pathZh": [
+          "牛奶 / 牛奶飲品",
+          "低溫冷藏鮮奶/牛奶飲品"
+        ],
+        "pathEn": [
+          "Milk / Milk drinks",
+          "Chilled fresh milk/milk drinks"
+        ]
+      },
+      "packSize": "236毫升",
+      "barcode": "8850329134007",
+      "quantity": 236,
+      "quantityUnit": "ml",
+      "servingSize": 236,
+      "nutrition": {
+        "basisUnit": "ml",
+        "basisAmount": 100,
+        "energyKcal": 66,
+        "protein": 3,
+        "fat": 3.9,
+        "saturatedFat": 2.4,
+        "transFat": 0.1,
+        "carbohydrates": 4.7,
+        "sugars": 4.7,
+        "fibre": 0,
+        "sodiumMg": 35,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "region": "hk-market-pack-photo",
+        "hkLabelVerified": true,
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "calciumMg": 94,
+        "phosphorusMg": 87,
+        "cholesterolMg": 14,
+        "sourceLimit": "營養及成分照片上載2025-02-03；正面照片上載2023-12-05，並非同批實物。按2025表明列每100毫升數值照錄(66kcal)，不以每份156kcal重新計成66.1。完整成分為100%鮮奶，但未見其他包裝面及交叉接觸警告，過敏partial。"
+      },
+      "ingredients": "100% Fresh Milk / 新鮮牛奶",
+      "allergens": {
+        "contains": [
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "partial",
+        "text": "已知含牛奶；本次照片沒有完整涵蓋全包裝致敏物及可能含有/廠房聲明，不能排除其他致敏物。",
+        "coverage": "營養及成分照片上載2025-02-03；正面照片上載2023-12-05，並非同批實物。按2025表明列每100毫升數值照錄(66kcal)，不以每份156kcal重新計成66.1。完整成分為100%鮮奶，但未見其他包裝面及交叉接觸警告，過敏partial。",
+        "verificationMethod": "hk-photo-ingredient-or-front-only-allergy-incomplete",
+        "physicalPackChecked": false
+      },
+      "reviewDecision": "photo-confirmed-hk-nutrition-only-current-allergy-incomplete",
+      "physicalPackChecked": false,
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/885/032/913/4007/1.jpg",
+          "author": "foodless",
+          "uploadedAt": "2023-12-05T01:34:31.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2023blueMeijiFreshMilkBeverage3.7%front",
+          "sourcePhotoId": "1"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/885/032/913/4007/2.jpg",
+          "author": "s03311251",
+          "uploadedAt": "2025-02-03T00:57:06.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025per100mL/per236mLHK-formatnutritiontable",
+          "sourcePhotoId": "2"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/885/032/913/4007/3.jpg",
+          "author": "s03311251",
+          "uploadedAt": "2025-02-03T00:57:20.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025completeingredientfield100%FreshMilk",
+          "sourcePhotoId": "3"
+        }
+      ],
+      "imageAttribution": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/885/032/913/4007/1.jpg",
+          "author": "foodless",
+          "uploadedAt": "2023-12-05T01:34:31.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2023blueMeijiFreshMilkBeverage3.7%front",
+          "sourcePhotoId": "1"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/885/032/913/4007/2.jpg",
+          "author": "s03311251",
+          "uploadedAt": "2025-02-03T00:57:06.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025per100mL/per236mLHK-formatnutritiontable",
+          "sourcePhotoId": "2"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/885/032/913/4007/3.jpg",
+          "author": "s03311251",
+          "uploadedAt": "2025-02-03T00:57:20.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025completeingredientfield100%FreshMilk",
+          "sourcePhotoId": "3"
+        }
+      ],
+      "identityEvidence": {
+        "catalogueNameZh": "新鮮牛奶飲品 236毫升",
+        "catalogueNameEn": "Fresh Milk Beverage 236mL",
+        "catalogueBrand": "明治",
+        "photoName": "Fresh Milk Beverage 236mL",
+        "photoNetQuantity": "236mL",
+        "hkEvidence": [
+          "TraditionalChinese/EnglishHK-format1+7panelwith236mLserving",
+          "Catalogue/PNSHKsameMeijiFreshMilkBeverage236mL",
+          "CC2021HKmarkettable independentlyidentifiessame236mLname,100%freshmilkingredients andlabelP3.0/F3.9/Ca94"
+        ],
+        "independentNameBrandPackMatch": true,
+        "barcodeAloneUsed": false
+      },
+      "sources": [
+        {
+          "label": "Open Food Facts：明治香港包裝營養照片",
+          "url": "https://world.openfoodfacts.org/product/8850329134007",
+          "checkedAt": "2026-10-21",
+          "scope": "人工閱讀實物包裝營養及正面/成分照片；完整過敏聲明尚未讀到"
+        },
+        {
+          "label": "香港百佳同款明治新鮮牛奶飲品236毫升",
+          "url": "https://www.pns.hk/en/fresh-milk-beverage-chilled-0-4%C2%B0c-consume-within-4-days-for-best-quality/p/BP_402905",
+          "checkedAt": "2026-10-21",
+          "scope": "僅用作香港同品牌名稱容量身份佐證，營養讀自OFF實物照片"
+        },
+        {
+          "label": "消委會2021香港牛奶樣本表：明治CP-meiji236毫升",
+          "url": "https://www.consumer.org.hk/sc/product-picker/free/dn-product-402109-article-150550-article_tab-402108",
+          "checkedAt": "2026-10-21",
+          "scope": "樣本31佐證香港版236毫升品名、100%鮮奶及標籤P3.0/F3.9/Ca94；不把測試值當作本次照片標籤值"
+        }
+      ],
+      "dataStatus": "hk-market-photo-nutrition-only",
+      "sourceLimit": "營養及成分照片上載2025-02-03；正面照片上載2023-12-05，並非同批實物。按2025表明列每100毫升數值照錄(66kcal)，不以每份156kcal重新計成66.1。完整成分為100%鮮奶，但未見其他包裝面及交叉接觸警告，過敏partial。",
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "photoDateNote": "營養及成分照片上載2025-02-03；正面照片上載2023-12-05，並非同批實物。按2025表明列每100毫升數值照錄(66kcal)，不以每份156kcal重新計成66.1。完整成分為100%鮮奶，但未見其他包裝面及交叉接觸警告，過敏partial。"
+      },
+      "dataLicence": {
+        "name": "Open Database Licence (ODbL)",
+        "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "contentsLicense": "DbCL-1.0",
+        "source": "Open Food Facts",
+        "note": "Manual transcription/normalization of OFF package photos; photo authors/upload/licence attached; not CC supplementary barcode-map copy."
+      },
+      "reviewedAt": "2026-10-22"
+    },
+    {
+      "id": "P000003482",
+      "nameZh": "熱狗包 4個",
+      "nameEn": "Hot Dog Buns 4pcs",
+      "brand": "嘉頓",
+      "brandEn": "Garden",
+      "category": "bakery",
+      "sourceCategory": {
+        "zh": "麵包蛋糕 / 穀類早餐 / 麵包醬",
+        "en": "Bakery / Cereals / Spreads",
+        "pathZh": [
+          "麵包",
+          "餐包 / 餡料麵包"
+        ],
+        "pathEn": [
+          "Breads",
+          "Bread rolls"
+        ]
+      },
+      "packSize": "4個",
+      "barcode": "0089782031488",
+      "quantity": null,
+      "quantityUnit": "g",
+      "servingSize": 50,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 275,
+        "protein": 9.2,
+        "fat": 4.9,
+        "saturatedFat": 1,
+        "transFat": 0,
+        "carbohydrates": 48.6,
+        "sugars": 5.4,
+        "fibre": null,
+        "sodiumMg": 489,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "region": "hk-market-pack-photo",
+        "hkLabelVerified": true,
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "cholesterolMg": 0,
+        "sourceVersionYear": 2021,
+        "sourceIsCurrentVerified": false,
+        "sourceLimit": "照片上載年份2021，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2021照片完整成分及廠房警告可讀，但因舊版本不提升現售過敏完整性；soybean oil保守視作soy。未以4x約50g推定包裝淨重。"
+      },
+      "ingredients": "Wheat Flour, Water, Sugar, Soybean Oil, Sesame, Salt (contains anticaking agent (535)), Yeast (contains emulsifier (491)), Emulsifier (471, 481) (contains antioxidant (300, 330)), Preservative (282), Flour Treatment Agent (516, 341, 1100, 300) (contains stabilizer (1420)).",
+      "allergens": {
+        "contains": [
+          "gluten",
+          "soy",
+          "sesame"
+        ],
+        "mayContain": [
+          "peanuts",
+          "milk"
+        ],
+        "status": "partial",
+        "text": "只確認照片版本中的已知致敏物；未確認現售批次完整性，限制篩選不能通過。",
+        "coverage": "照片上載年份2021，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2021照片完整成分及廠房警告可讀，但因舊版本不提升現售過敏完整性；soybean oil保守視作soy。未以4x約50g推定包裝淨重。",
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2021
+      },
+      "sourceAllergenStatement": {
+        "contains": [
+          "gluten",
+          "soy",
+          "sesame"
+        ],
+        "mayContain": [
+          "peanuts",
+          "milk"
+        ],
+        "status": "complete",
+        "evidenceScope": "Only the photographed package version; not the current retail batch",
+        "sourceVersionYear": 2021
+      },
+      "sourceAllergenStatementComplete": true,
+      "sourceVersionYear": 2021,
+      "sourceIsCurrentVerified": false,
+      "physicalPackChecked": false,
+      "reviewedAt": "2026-10-22",
+      "reviewDecision": "photo-confirmed-hk-nutrition-only-current-allergy-incomplete",
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/1488/1.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-11-27T21:30:38.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 complete per100g nutrition and first ingredients",
+          "sourcePhotoId": "1"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/1488/2.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-11-27T21:31:07.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 complete remaining ingredients, peanut/milk factory warning,quantity4 and printedUPC089782031488",
+          "sourcePhotoId": "2"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/1488/3.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-11-27T21:31:58.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 Garden Hot Dog Buns front",
+          "sourcePhotoId": "3"
+        }
+      ],
+      "imageAttribution": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/1488/1.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-11-27T21:30:38.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 complete per100g nutrition and first ingredients",
+          "sourcePhotoId": "1"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/1488/2.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-11-27T21:31:07.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 complete remaining ingredients, peanut/milk factory warning,quantity4 and printedUPC089782031488",
+          "sourcePhotoId": "2"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/1488/3.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-11-27T21:31:58.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 Garden Hot Dog Buns front",
+          "sourcePhotoId": "3"
+        }
+      ],
+      "identityEvidence": {
+        "catalogueNameZh": "熱狗包 4個",
+        "catalogueNameEn": "Hot Dog Buns 4pcs",
+        "catalogueBrand": "嘉頓",
+        "photoName": "Hot Dog Buns 4pcs",
+        "photoNetQuantity": "4個",
+        "notes": [
+          "正面Hot Dog Buns/熱狗包；背面4pieces，HK雙語1+7及Made in Hong Kong廠址",
+          "UPC089782031488與前導零EAN0089782031488等價"
+        ],
+        "independentNameBrandPackMatch": true,
+        "barcodeAloneUsed": false
+      },
+      "sources": [
+        {
+          "label": "Open Food Facts：嘉頓香港包裝照片（2021年上載）",
+          "url": "https://world.openfoodfacts.org/product/0089782031488",
+          "checkedAt": "2026-10-22",
+          "scope": "人工閱讀照片，營養基準直接照表；舊版聲明不等於現售配方"
+        }
+      ],
+      "dataStatus": "hk-market-photo-nutrition-only",
+      "sourceLimit": "照片上載年份2021，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2021照片完整成分及廠房警告可讀，但因舊版本不提升現售過敏完整性；soybean oil保守視作soy。未以4x約50g推定包裝淨重。",
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2021,
+        "sourceIsCurrentVerified": false,
+        "photoDateNote": "照片上載年份2021，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2021照片完整成分及廠房警告可讀，但因舊版本不提升現售過敏完整性；soybean oil保守視作soy。未以4x約50g推定包裝淨重。"
+      },
+      "dataLicence": {
+        "name": "Open Database Licence (ODbL)",
+        "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "contentsLicense": "DbCL-1.0",
+        "source": "Open Food Facts",
+        "note": "Manual transcription/normalization of OFF package photos; photo authors/upload/licence attached; not CC supplementary barcode-map copy."
+      }
+    },
+    {
+      "id": "P000000642",
+      "nameZh": "方包 8片",
+      "nameEn": "Sandwich Bread 8 slices",
+      "brand": "嘉頓",
+      "brandEn": "Garden",
+      "category": "bakery",
+      "sourceCategory": {
+        "zh": "麵包蛋糕 / 穀類早餐 / 麵包醬",
+        "en": "Bakery / Cereals / Spreads",
+        "pathZh": [
+          "麵包",
+          "方包"
+        ],
+        "pathEn": [
+          "Breads",
+          "Bread loaf"
+        ]
+      },
+      "packSize": "8片",
+      "barcode": "0089782031556",
+      "quantity": null,
+      "quantityUnit": "g",
+      "servingSize": 45,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 260,
+        "protein": 8.3,
+        "fat": 3.3,
+        "saturatedFat": 0.7,
+        "transFat": 0,
+        "carbohydrates": 49.3,
+        "sugars": 3.6,
+        "fibre": null,
+        "sodiumMg": 370,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "region": "hk-market-pack-photo",
+        "hkLabelVerified": true,
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "cholesterolMg": 0,
+        "sourceVersionYear": 2021,
+        "sourceIsCurrentVerified": false,
+        "sourceLimit": "照片上載年份2021，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。按2021-11-27照片每100g直接照錄；第6張上載2021-12-03相同成分佐證。不用2018正面代表2021同批包裝；背面本身列SandwichBread、8份且每份約1片。未用8x45g推定淨重。"
+      },
+      "ingredients": "Wheat Flour (contains flour treatment agent (300)), Water, Sugar, Soybean Oil, Salt (contains anticaking agent (535)), Yeast (contains emulsifier (491)), Wheat Gluten, Emulsifier (471) (contains antioxidant (300, 330)), Preservative (282), Flour Treatment Agent (516, 341, 1100) (contains stabilizer (1420)).",
+      "allergens": {
+        "contains": [
+          "gluten",
+          "soy"
+        ],
+        "mayContain": [
+          "eggs",
+          "milk"
+        ],
+        "status": "partial",
+        "text": "只確認照片版本中的已知致敏物；未確認現售批次完整性，限制篩選不能通過。",
+        "coverage": "照片上載年份2021，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。按2021-11-27照片每100g直接照錄；第6張上載2021-12-03相同成分佐證。不用2018正面代表2021同批包裝；背面本身列SandwichBread、8份且每份約1片。未用8x45g推定淨重。",
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2021
+      },
+      "sourceAllergenStatement": {
+        "contains": [
+          "gluten",
+          "soy"
+        ],
+        "mayContain": [
+          "eggs",
+          "milk"
+        ],
+        "status": "complete",
+        "evidenceScope": "Only the photographed package version; not the current retail batch",
+        "sourceVersionYear": 2021
+      },
+      "sourceAllergenStatementComplete": true,
+      "sourceVersionYear": 2021,
+      "sourceIsCurrentVerified": false,
+      "physicalPackChecked": false,
+      "reviewedAt": "2026-10-22",
+      "reviewDecision": "photo-confirmed-hk-nutrition-only-current-allergy-incomplete",
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/1556/2.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-11-27T22:26:41.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 complete per100g nutrition, ingredients and egg/milk factory warning;MadeinHK",
+          "sourcePhotoId": "2"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/1556/3.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-11-27T22:26:51.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 Sandwich Bread name,8servings and45g/1slice",
+          "sourcePhotoId": "3"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/1556/4.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-11-27T22:31:46.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 complete ingredients,factorywarning andHongKongaddress",
+          "sourcePhotoId": "4"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/1556/6.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-12-03T20:53:29.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 duplicate full ingredients and factorywarning closeup",
+          "sourcePhotoId": "6"
+        }
+      ],
+      "imageAttribution": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/1556/2.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-11-27T22:26:41.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 complete per100g nutrition, ingredients and egg/milk factory warning;MadeinHK",
+          "sourcePhotoId": "2"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/1556/3.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-11-27T22:26:51.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 Sandwich Bread name,8servings and45g/1slice",
+          "sourcePhotoId": "3"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/1556/4.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-11-27T22:31:46.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 complete ingredients,factorywarning andHongKongaddress",
+          "sourcePhotoId": "4"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/1556/6.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-12-03T20:53:29.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 duplicate full ingredients and factorywarning closeup",
+          "sourcePhotoId": "6"
+        }
+      ],
+      "identityEvidence": {
+        "catalogueNameZh": "方包 8片",
+        "catalogueNameEn": "Sandwich Bread 8 slices",
+        "catalogueBrand": "嘉頓",
+        "photoName": "Sandwich Bread 8 slices",
+        "photoNetQuantity": "8片",
+        "notes": [
+          "照片背面Sandwich Bread/嘉頓方包，8servings，每份約1slice",
+          "Made in Hong Kong和852廠家電話；正名片數均符合原目錄"
+        ],
+        "independentNameBrandPackMatch": true,
+        "barcodeAloneUsed": false
+      },
+      "sources": [
+        {
+          "label": "Open Food Facts：嘉頓香港包裝照片（2021年上載）",
+          "url": "https://world.openfoodfacts.org/product/0089782031556",
+          "checkedAt": "2026-10-22",
+          "scope": "人工閱讀照片，營養基準直接照表；舊版聲明不等於現售配方"
+        }
+      ],
+      "dataStatus": "hk-market-photo-nutrition-only",
+      "sourceLimit": "照片上載年份2021，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。按2021-11-27照片每100g直接照錄；第6張上載2021-12-03相同成分佐證。不用2018正面代表2021同批包裝；背面本身列SandwichBread、8份且每份約1片。未用8x45g推定淨重。",
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2021,
+        "sourceIsCurrentVerified": false,
+        "photoDateNote": "照片上載年份2021，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。按2021-11-27照片每100g直接照錄；第6張上載2021-12-03相同成分佐證。不用2018正面代表2021同批包裝；背面本身列SandwichBread、8份且每份約1片。未用8x45g推定淨重。"
+      },
+      "dataLicence": {
+        "name": "Open Database Licence (ODbL)",
+        "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "contentsLicense": "DbCL-1.0",
+        "source": "Open Food Facts",
+        "note": "Manual transcription/normalization of OFF package photos; photo authors/upload/licence attached; not CC supplementary barcode-map copy."
+      }
+    },
+    {
+      "id": "P000000989",
+      "nameZh": "排包 210克",
+      "nameEn": "Milk Bar Bun 210g",
+      "brand": "嘉頓",
+      "brandEn": "Garden",
+      "category": "bakery",
+      "sourceCategory": {
+        "zh": "麵包蛋糕 / 穀類早餐 / 麵包醬",
+        "en": "Bakery / Cereals / Spreads",
+        "pathZh": [
+          "麵包",
+          "餐包 / 餡料麵包"
+        ],
+        "pathEn": [
+          "Breads",
+          "Bread rolls"
+        ]
+      },
+      "packSize": "210克",
+      "barcode": "0089782033796",
+      "quantity": 210,
+      "quantityUnit": "g",
+      "servingSize": null,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 300,
+        "protein": 10.5,
+        "fat": 7.3,
+        "saturatedFat": 4.5,
+        "transFat": 0,
+        "carbohydrates": 45.5,
+        "sugars": 9.4,
+        "fibre": null,
+        "sodiumMg": 275,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "region": "hk-market-pack-photo",
+        "hkLabelVerified": true,
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "calciumMg": 180,
+        "sourceVersionYear": 2021,
+        "sourceIsCurrentVerified": false,
+        "sourceLimit": "照片上載年份2021，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2021-12-09上載照片，210g與正面排包/MilkBarBun直接匹配；舊版完整廠房聲明不當作現售批次。"
+      },
+      "ingredients": "Wheat Flour, Sugar, Water, Butter, Egg, Whole Milk Powder, Yeast (contains emulsifier (491)), Salt (contains anticaking agent (535)), Sweetened Milk Spread (sugar, vegetable oil, whey powder, skimmed milk powder, lactose, thickener (1450, 509, 340)), Wheat Gluten, Flavouring (contains emulsifier (1520)), Flour Treatment Agent (300, 920, 1100, 516) (contains emulsifier (472e)), Tricalcium Phosphate, Preservative (282), Colour (160a) (contains emulsifier (414), antioxidant (301, 307c), anticaking agent (551)).",
+      "allergens": {
+        "contains": [
+          "gluten",
+          "milk",
+          "eggs"
+        ],
+        "mayContain": [
+          "fish",
+          "peanuts",
+          "soy",
+          "tree-nuts"
+        ],
+        "status": "partial",
+        "text": "只確認照片版本中的已知致敏物；未確認現售批次完整性，限制篩選不能通過。",
+        "coverage": "照片上載年份2021，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2021-12-09上載照片，210g與正面排包/MilkBarBun直接匹配；舊版完整廠房聲明不當作現售批次。",
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2021
+      },
+      "sourceAllergenStatement": {
+        "contains": [
+          "gluten",
+          "milk",
+          "eggs"
+        ],
+        "mayContain": [
+          "fish",
+          "peanuts",
+          "soy",
+          "tree-nuts"
+        ],
+        "status": "complete",
+        "evidenceScope": "Only the photographed package version; not the current retail batch",
+        "sourceVersionYear": 2021
+      },
+      "sourceAllergenStatementComplete": true,
+      "sourceVersionYear": 2021,
+      "sourceIsCurrentVerified": false,
+      "physicalPackChecked": false,
+      "reviewedAt": "2026-10-22",
+      "reviewDecision": "photo-confirmed-hk-nutrition-only-current-allergy-incomplete",
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/3796/1.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-12-09T05:58:45.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 full ingredients,fish/peanut/soy/nut factorywarning andfirstnutritionrows",
+          "sourcePhotoId": "1"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/3796/2.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-12-09T05:58:54.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 complete per100g nutrition andnet210g",
+          "sourcePhotoId": "2"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/3796/3.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-12-09T06:00:30.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 Garden MilkBarBunfront",
+          "sourcePhotoId": "3"
+        }
+      ],
+      "imageAttribution": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/3796/1.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-12-09T05:58:45.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 full ingredients,fish/peanut/soy/nut factorywarning andfirstnutritionrows",
+          "sourcePhotoId": "1"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/3796/2.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-12-09T05:58:54.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 complete per100g nutrition andnet210g",
+          "sourcePhotoId": "2"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/203/3796/3.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-12-09T06:00:30.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 Garden MilkBarBunfront",
+          "sourcePhotoId": "3"
+        }
+      ],
+      "identityEvidence": {
+        "catalogueNameZh": "排包 210克",
+        "catalogueNameEn": "Milk Bar Bun 210g",
+        "catalogueBrand": "嘉頓",
+        "photoName": "Milk Bar Bun 210g",
+        "photoNetQuantity": "210克",
+        "notes": [
+          "正面嘉頓排包MilkBarBun",
+          "背面net210g；HK雙語1+7及MadeinHK"
+        ],
+        "independentNameBrandPackMatch": true,
+        "barcodeAloneUsed": false
+      },
+      "sources": [
+        {
+          "label": "Open Food Facts：嘉頓香港包裝照片（2021年上載）",
+          "url": "https://world.openfoodfacts.org/product/0089782033796",
+          "checkedAt": "2026-10-22",
+          "scope": "人工閱讀照片，營養基準直接照表；舊版聲明不等於現售配方"
+        }
+      ],
+      "dataStatus": "hk-market-photo-nutrition-only",
+      "sourceLimit": "照片上載年份2021，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2021-12-09上載照片，210g與正面排包/MilkBarBun直接匹配；舊版完整廠房聲明不當作現售批次。",
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2021,
+        "sourceIsCurrentVerified": false,
+        "photoDateNote": "照片上載年份2021，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2021-12-09上載照片，210g與正面排包/MilkBarBun直接匹配；舊版完整廠房聲明不當作現售批次。"
+      },
+      "dataLicence": {
+        "name": "Open Database Licence (ODbL)",
+        "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "contentsLicense": "DbCL-1.0",
+        "source": "Open Food Facts",
+        "note": "Manual transcription/normalization of OFF package photos; photo authors/upload/licence attached; not CC supplementary barcode-map copy."
+      }
+    },
+    {
+      "id": "P000001533",
+      "nameZh": "法國牛角酥 4個",
+      "nameEn": "French Croissants 4pcs",
+      "brand": "嘉頓",
+      "brandEn": "Garden",
+      "category": "bakery",
+      "sourceCategory": {
+        "zh": "麵包蛋糕 / 穀類早餐 / 麵包醬",
+        "en": "Bakery / Cereals / Spreads",
+        "pathZh": [
+          "麵包",
+          "酥皮包"
+        ],
+        "pathEn": [
+          "Breads",
+          "Pastry"
+        ]
+      },
+      "packSize": "4個",
+      "barcode": "0089782040213",
+      "quantity": null,
+      "quantityUnit": "g",
+      "servingSize": 35,
+      "nutrition": {
+        "basisUnit": "g",
+        "basisAmount": 100,
+        "energyKcal": 433,
+        "protein": 10.8,
+        "fat": 24.4,
+        "saturatedFat": 14,
+        "transFat": 1.2,
+        "carbohydrates": 43.3,
+        "sugars": 7,
+        "fibre": null,
+        "sodiumMg": 474,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "region": "hk-market-pack-photo",
+        "hkLabelVerified": true,
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2021,
+        "sourceIsCurrentVerified": false,
+        "sourceLimit": "照片上載年份2021，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2021-12-03上載照片；法國牛角酥4個正背面、每100g表及完整廠房警告直接可讀。未以4x約35g推定淨重；不把舊版完整聲明當現售批次。"
+      },
+      "ingredients": "Wheat Flour (contains flour treatment agent (300, 1100)), Butter, Sugar, Egg, Skimmed Milk Powder, Yeast (contains emulsifier (491)), Flour Treatment Agent (300, 1100) (contains emulsifier (472e)), Salt (contains anticaking agent (535)), Wheat Gluten. This product contains soybean products.",
+      "allergens": {
+        "contains": [
+          "gluten",
+          "milk",
+          "eggs",
+          "soy"
+        ],
+        "mayContain": [
+          "fish",
+          "peanuts",
+          "tree-nuts"
+        ],
+        "status": "partial",
+        "text": "只確認照片版本中的已知致敏物；未確認現售批次完整性，限制篩選不能通過。",
+        "coverage": "照片上載年份2021，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2021-12-03上載照片；法國牛角酥4個正背面、每100g表及完整廠房警告直接可讀。未以4x約35g推定淨重；不把舊版完整聲明當現售批次。",
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2021
+      },
+      "sourceAllergenStatement": {
+        "contains": [
+          "gluten",
+          "milk",
+          "eggs",
+          "soy"
+        ],
+        "mayContain": [
+          "fish",
+          "peanuts",
+          "tree-nuts"
+        ],
+        "status": "complete",
+        "evidenceScope": "Only the photographed package version; not the current retail batch",
+        "sourceVersionYear": 2021
+      },
+      "sourceAllergenStatementComplete": true,
+      "sourceVersionYear": 2021,
+      "sourceIsCurrentVerified": false,
+      "physicalPackChecked": false,
+      "reviewedAt": "2026-10-22",
+      "reviewDecision": "photo-confirmed-hk-nutrition-only-current-allergy-incomplete",
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/204/0213/1.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-12-03T20:41:20.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 complete ingredients,containssoy andfish/peanut/nutfactorywarning,4pieces,MadeinHK",
+          "sourcePhotoId": "1"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/204/0213/2.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-12-03T20:41:57.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 FrenchCroissants per100g nutrition,4servings/35g",
+          "sourcePhotoId": "2"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/204/0213/3.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-12-03T20:42:51.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 Garden ContinentalBread FrenchCroissantsfront",
+          "sourcePhotoId": "3"
+        }
+      ],
+      "imageAttribution": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/204/0213/1.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-12-03T20:41:20.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 complete ingredients,containssoy andfish/peanut/nutfactorywarning,4pieces,MadeinHK",
+          "sourcePhotoId": "1"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/204/0213/2.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-12-03T20:41:57.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 FrenchCroissants per100g nutrition,4servings/35g",
+          "sourcePhotoId": "2"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/008/978/204/0213/3.jpg",
+          "author": "scholes8",
+          "uploadedAt": "2021-12-03T20:42:51.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2021 Garden ContinentalBread FrenchCroissantsfront",
+          "sourcePhotoId": "3"
+        }
+      ],
+      "identityEvidence": {
+        "catalogueNameZh": "法國牛角酥 4個",
+        "catalogueNameEn": "French Croissants 4pcs",
+        "catalogueBrand": "嘉頓",
+        "photoName": "French Croissants 4pcs",
+        "photoNetQuantity": "4個",
+        "notes": [
+          "Garden FrenchCroissants/法國牛角酥，4pieces",
+          "HK雙語1+7及MadeinHK廠址"
+        ],
+        "independentNameBrandPackMatch": true,
+        "barcodeAloneUsed": false
+      },
+      "sources": [
+        {
+          "label": "Open Food Facts：嘉頓香港包裝照片（2021年上載）",
+          "url": "https://world.openfoodfacts.org/product/0089782040213",
+          "checkedAt": "2026-10-22",
+          "scope": "人工閱讀照片，營養基準直接照表；舊版聲明不等於現售配方"
+        }
+      ],
+      "dataStatus": "hk-market-photo-nutrition-only",
+      "sourceLimit": "照片上載年份2021，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2021-12-03上載照片；法國牛角酥4個正背面、每100g表及完整廠房警告直接可讀。未以4x約35g推定淨重；不把舊版完整聲明當現售批次。",
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2021,
+        "sourceIsCurrentVerified": false,
+        "photoDateNote": "照片上載年份2021，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2021-12-03上載照片；法國牛角酥4個正背面、每100g表及完整廠房警告直接可讀。未以4x約35g推定淨重；不把舊版完整聲明當現售批次。"
+      },
+      "dataLicence": {
+        "name": "Open Database Licence (ODbL)",
+        "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "contentsLicense": "DbCL-1.0",
+        "source": "Open Food Facts",
+        "note": "Manual transcription/normalization of OFF package photos; photo authors/upload/licence attached; not CC supplementary barcode-map copy."
+      }
+    },
+    {
+      "id": "P000005261",
+      "nameZh": "香蕉低脂牛奶飲品 236毫升",
+      "nameEn": "Banana Low Fat Milk Drink 236mL",
+      "brand": "十字牌 十字奶",
+      "brandEn": "Trappist Dairy",
+      "category": "drinks",
+      "sourceCategory": {
+        "zh": "奶類及乳製品 / 大豆製品 / 蛋類",
+        "en": "Dairy / Soy products / Eggs",
+        "pathZh": [
+          "牛奶 / 牛奶飲品",
+          "低溫冷藏鮮奶/牛奶飲品"
+        ],
+        "pathEn": [
+          "Milk / Milk drinks",
+          "Chilled fresh milk/milk drinks"
+        ]
+      },
+      "packSize": "236毫升",
+      "barcode": "4891175102233",
+      "quantity": 236,
+      "quantityUnit": "ml",
+      "servingSize": 236,
+      "nutrition": {
+        "basisUnit": "ml",
+        "basisAmount": 100,
+        "energyKcal": 76,
+        "protein": 4,
+        "fat": 1.5,
+        "saturatedFat": 1.1,
+        "transFat": 0,
+        "carbohydrates": 11.5,
+        "sugars": 11,
+        "fibre": 0,
+        "sodiumMg": 35,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "region": "hk-market-pack-photo",
+        "hkLabelVerified": true,
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "calciumMg": 135,
+        "cholesterolMg": 5,
+        "sourceVersionYear": 2025,
+        "sourceIsCurrentVerified": false,
+        "sourceLimit": "照片上載年份2025，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。照片2025-07-03上載；營養每100ml完整可讀，日期與當時UseBy吻合。照片右側廠房聲明及摺頂成分未完整拍下，不因可見部分字句推定完整或排除其他致敏物。"
+      },
+      "ingredients": null,
+      "allergens": {
+        "contains": [
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "partial",
+        "text": "只確認照片版本中的已知致敏物；未確認現售批次完整性，限制篩選不能通過。",
+        "coverage": "照片上載年份2025，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。照片2025-07-03上載；營養每100ml完整可讀，日期與當時UseBy吻合。照片右側廠房聲明及摺頂成分未完整拍下，不因可見部分字句推定完整或排除其他致敏物。",
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2025
+      },
+      "sourceAllergenStatement": {
+        "contains": [
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "partial",
+        "evidenceScope": "Only the photographed package version; not the current retail batch",
+        "sourceVersionYear": 2025
+      },
+      "sourceAllergenStatementComplete": false,
+      "sourceVersionYear": 2025,
+      "sourceIsCurrentVerified": false,
+      "physicalPackChecked": false,
+      "reviewedAt": "2026-10-22",
+      "reviewDecision": "photo-confirmed-hk-nutrition-only-current-allergy-incomplete",
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/117/510/2233/1.jpg",
+          "author": "david191624",
+          "uploadedAt": "2025-07-03T01:18:30.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025 TrappistBananaLowFatMilkDrinkfront,HKfreshmade andvisibleUseBy04/07/25",
+          "sourcePhotoId": "1"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/117/510/2233/2.jpg",
+          "author": "david191624",
+          "uploadedAt": "2025-07-03T01:18:55.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025 per100ml nutrition and236ml/1serving;HKmanufactureraddress partiallyvisible",
+          "sourcePhotoId": "2"
+        }
+      ],
+      "imageAttribution": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/117/510/2233/1.jpg",
+          "author": "david191624",
+          "uploadedAt": "2025-07-03T01:18:30.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025 TrappistBananaLowFatMilkDrinkfront,HKfreshmade andvisibleUseBy04/07/25",
+          "sourcePhotoId": "1"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/117/510/2233/2.jpg",
+          "author": "david191624",
+          "uploadedAt": "2025-07-03T01:18:55.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025 per100ml nutrition and236ml/1serving;HKmanufactureraddress partiallyvisible",
+          "sourcePhotoId": "2"
+        }
+      ],
+      "identityEvidence": {
+        "catalogueNameZh": "香蕉低脂牛奶飲品 236毫升",
+        "catalogueNameEn": "Banana Low Fat Milk Drink 236mL",
+        "catalogueBrand": "十字牌 十字奶",
+        "photoName": "Banana Low Fat Milk Drink 236mL",
+        "photoNetQuantity": "236毫升",
+        "notes": [
+          "十字牌/TrappistDairy香蕉低脂牛奶飲品正面",
+          "236ml/1serving and新鮮本地製造，香港元朗廠址部分可見"
+        ],
+        "independentNameBrandPackMatch": true,
+        "barcodeAloneUsed": false
+      },
+      "sources": [
+        {
+          "label": "Open Food Facts：十字牌 十字奶香港包裝照片（2025年上載）",
+          "url": "https://world.openfoodfacts.org/product/4891175102233",
+          "checkedAt": "2026-10-22",
+          "scope": "人工閱讀照片，營養基準直接照表；舊版聲明不等於現售配方"
+        }
+      ],
+      "dataStatus": "hk-market-photo-nutrition-only",
+      "sourceLimit": "照片上載年份2025，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。照片2025-07-03上載；營養每100ml完整可讀，日期與當時UseBy吻合。照片右側廠房聲明及摺頂成分未完整拍下，不因可見部分字句推定完整或排除其他致敏物。",
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2025,
+        "sourceIsCurrentVerified": false,
+        "photoDateNote": "照片上載年份2025，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。照片2025-07-03上載；營養每100ml完整可讀，日期與當時UseBy吻合。照片右側廠房聲明及摺頂成分未完整拍下，不因可見部分字句推定完整或排除其他致敏物。"
+      },
+      "dataLicence": {
+        "name": "Open Database Licence (ODbL)",
+        "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "contentsLicense": "DbCL-1.0",
+        "source": "Open Food Facts",
+        "note": "Manual transcription/normalization of OFF package photos; photo authors/upload/licence attached; not CC supplementary barcode-map copy."
+      }
+    },
+    {
+      "id": "P000001926",
+      "nameZh": "4.3特濃牛奶 946毫升",
+      "nameEn": "4.3 Deluxe Milk 946mL",
+      "brand": "明治",
+      "brandEn": "Meiji (CP-Meiji)",
+      "category": "drinks",
+      "sourceCategory": {
+        "zh": "奶類及乳製品 / 大豆製品 / 蛋類",
+        "en": "Dairy / Soy products / Eggs",
+        "pathZh": [
+          "牛奶 / 牛奶飲品",
+          "低溫冷藏鮮奶/牛奶飲品"
+        ],
+        "pathEn": [
+          "Milk / Milk drinks",
+          "Chilled fresh milk/milk drinks"
+        ]
+      },
+      "packSize": "946毫升",
+      "barcode": "8850329183715",
+      "quantity": 946,
+      "quantityUnit": "ml",
+      "servingSize": 200,
+      "nutrition": {
+        "basisUnit": "ml",
+        "basisAmount": 100,
+        "energyKcal": 72,
+        "protein": 3,
+        "fat": 4.5,
+        "saturatedFat": 3,
+        "transFat": 0.1,
+        "carbohydrates": 5,
+        "sugars": 4.9,
+        "fibre": 0,
+        "sodiumMg": 46,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "region": "hk-market-pack-photo",
+        "hkLabelVerified": true,
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "calciumMg": 102,
+        "cholesterolMg": 14,
+        "sourceVersionYear": 2022,
+        "sourceIsCurrentVerified": false,
+        "sourceLimit": "照片上載年份2022，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。照片2022-05-19上載，香港CPF進口商地址、946ml和實物條碼直接可讀。只有完整成分欄，未完整涵蓋其他面交叉接觸聲明；且為2022包裝，過敏partial。"
+      },
+      "ingredients": "100% Fresh Milk / 100% 新鮮牛奶",
+      "allergens": {
+        "contains": [
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "partial",
+        "text": "只確認照片版本中的已知致敏物；未確認現售批次完整性，限制篩選不能通過。",
+        "coverage": "照片上載年份2022，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。照片2022-05-19上載，香港CPF進口商地址、946ml和實物條碼直接可讀。只有完整成分欄，未完整涵蓋其他面交叉接觸聲明；且為2022包裝，過敏partial。",
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2022
+      },
+      "sourceAllergenStatement": {
+        "contains": [
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "partial",
+        "evidenceScope": "Only the photographed package version; not the current retail batch",
+        "sourceVersionYear": 2022
+      },
+      "sourceAllergenStatementComplete": false,
+      "sourceVersionYear": 2022,
+      "sourceIsCurrentVerified": false,
+      "physicalPackChecked": false,
+      "reviewedAt": "2026-10-22",
+      "reviewDecision": "photo-confirmed-hk-nutrition-only-current-allergy-incomplete",
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/885/032/918/3715/1.jpg",
+          "author": "openfoodfacts-contributors",
+          "uploadedAt": "2022-05-19T15:04:26.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2022 Meiji4.3DeluxeMilkfront,visibleUseBy27/05/22",
+          "sourcePhotoId": "1"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/885/032/918/3715/2.jpg",
+          "author": "openfoodfacts-contributors",
+          "uploadedAt": "2022-05-19T15:04:36.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2022 completeingredient100%FreshMilk andHKimporteraddress",
+          "sourcePhotoId": "2"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/885/032/918/3715/3.jpg",
+          "author": "openfoodfacts-contributors",
+          "uploadedAt": "2022-05-19T15:04:43.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2022 fullper100ml/per200mlnutritionpanel",
+          "sourcePhotoId": "3"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/885/032/918/3715/4.jpg",
+          "author": "openfoodfacts-contributors",
+          "uploadedAt": "2022-05-19T15:04:56.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2022 net946ml andprintedGTIN8850329183715",
+          "sourcePhotoId": "4"
+        }
+      ],
+      "imageAttribution": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/885/032/918/3715/1.jpg",
+          "author": "openfoodfacts-contributors",
+          "uploadedAt": "2022-05-19T15:04:26.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2022 Meiji4.3DeluxeMilkfront,visibleUseBy27/05/22",
+          "sourcePhotoId": "1"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/885/032/918/3715/2.jpg",
+          "author": "openfoodfacts-contributors",
+          "uploadedAt": "2022-05-19T15:04:36.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2022 completeingredient100%FreshMilk andHKimporteraddress",
+          "sourcePhotoId": "2"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/885/032/918/3715/3.jpg",
+          "author": "openfoodfacts-contributors",
+          "uploadedAt": "2022-05-19T15:04:43.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2022 fullper100ml/per200mlnutritionpanel",
+          "sourcePhotoId": "3"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/885/032/918/3715/4.jpg",
+          "author": "openfoodfacts-contributors",
+          "uploadedAt": "2022-05-19T15:04:56.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2022 net946ml andprintedGTIN8850329183715",
+          "sourcePhotoId": "4"
+        }
+      ],
+      "identityEvidence": {
+        "catalogueNameZh": "4.3特濃牛奶 946毫升",
+        "catalogueNameEn": "4.3 Deluxe Milk 946mL",
+        "catalogueBrand": "明治",
+        "photoName": "4.3 Deluxe Milk 946mL",
+        "photoNetQuantity": "946毫升",
+        "notes": [
+          "明治CP-meiji4.3Deluxemilk正面；背面NetContent946ml",
+          "香港CPF進口商39WangKwongRoadKowloonBay；PrintedGTIN直接讀取"
+        ],
+        "independentNameBrandPackMatch": true,
+        "barcodeAloneUsed": false
+      },
+      "sources": [
+        {
+          "label": "Open Food Facts：明治香港包裝照片（2022年上載）",
+          "url": "https://world.openfoodfacts.org/product/8850329183715",
+          "checkedAt": "2026-10-22",
+          "scope": "人工閱讀照片，營養基準直接照表；舊版聲明不等於現售配方"
+        }
+      ],
+      "dataStatus": "hk-market-photo-nutrition-only",
+      "sourceLimit": "照片上載年份2022，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。照片2022-05-19上載，香港CPF進口商地址、946ml和實物條碼直接可讀。只有完整成分欄，未完整涵蓋其他面交叉接觸聲明；且為2022包裝，過敏partial。",
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2022,
+        "sourceIsCurrentVerified": false,
+        "photoDateNote": "照片上載年份2022，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。照片2022-05-19上載，香港CPF進口商地址、946ml和實物條碼直接可讀。只有完整成分欄，未完整涵蓋其他面交叉接觸聲明；且為2022包裝，過敏partial。"
+      },
+      "dataLicence": {
+        "name": "Open Database Licence (ODbL)",
+        "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "contentsLicense": "DbCL-1.0",
+        "source": "Open Food Facts",
+        "note": "Manual transcription/normalization of OFF package photos; photo authors/upload/licence attached; not CC supplementary barcode-map copy."
+      }
+    },
+    {
+      "id": "P000005391",
+      "nameZh": "新鮮檸檬茶 (低糖) 480毫升",
+      "nameEn": "Fresh Lemon Tea (Low Sugar) 480mL",
+      "brand": "維他",
+      "brandEn": "Vita",
+      "category": "drinks",
+      "sourceCategory": {
+        "zh": "飲品",
+        "en": "Drinks",
+        "pathZh": [
+          "東方特色飲品",
+          "檸檬茶"
+        ],
+        "pathEn": [
+          "Oriental drinks",
+          "Lemon tea"
+        ]
+      },
+      "packSize": "480毫升",
+      "barcode": "4891028717560",
+      "quantity": 480,
+      "quantityUnit": "ml",
+      "servingSize": null,
+      "nutrition": {
+        "basisUnit": "ml",
+        "basisAmount": 100,
+        "energyKcal": 21,
+        "protein": 0,
+        "fat": 0,
+        "saturatedFat": 0,
+        "transFat": 0,
+        "carbohydrates": 5.2,
+        "sugars": 4.8,
+        "fibre": null,
+        "sodiumMg": 10,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "region": "hk-market-pack-photo",
+        "hkLabelVerified": true,
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2023,
+        "sourceIsCurrentVerified": false,
+        "sourceLimit": "照片上載年份2023，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2023-04-17上載完整背面；有低糖標誌、VitaFreshTeaLemonTeaDrink名稱、480ml、條碼、香港廠址和852電話。完整成分及廠房處理六類致敏物逐字閱讀；不代表現售批次。"
+      },
+      "ingredients": "Water, Sugar, Fructose, English Breakfast Tea (Black Tea), Flavouring, Acidity Regulator (330), Lemon Juice Concentrate, Vitamin C.",
+      "allergens": {
+        "contains": [],
+        "mayContain": [
+          "soy",
+          "gluten",
+          "milk",
+          "tree-nuts",
+          "peanuts",
+          "sesame"
+        ],
+        "status": "complete",
+        "text": "完整閱讀該照片的成分及廠房/過敏聲明。",
+        "coverage": "照片上載年份2023，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2023-04-17上載完整背面；有低糖標誌、VitaFreshTeaLemonTeaDrink名稱、480ml、條碼、香港廠址和852電話。完整成分及廠房處理六類致敏物逐字閱讀；不代表現售批次。",
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2023
+      },
+      "sourceAllergenStatement": {
+        "contains": [],
+        "mayContain": [
+          "soy",
+          "gluten",
+          "milk",
+          "tree-nuts",
+          "peanuts",
+          "sesame"
+        ],
+        "status": "complete",
+        "evidenceScope": "Only the photographed package version; not the current retail batch",
+        "sourceVersionYear": 2023
+      },
+      "sourceAllergenStatementComplete": true,
+      "sourceVersionYear": 2023,
+      "sourceIsCurrentVerified": false,
+      "physicalPackChecked": false,
+      "reviewedAt": "2026-10-22",
+      "reviewDecision": "photo-confirmed-hk-nutrition-and-source-scoped-ingredient-allergy",
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/871/7560/1.jpg",
+          "author": "smoothie-app",
+          "uploadedAt": "2023-04-17T08:05:05.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2023 complete HK VitaFreshTeaLemonTeaDrink low-sugar480ml fullnutrition,ingredients,factorywarning,HKaddress andbarcode",
+          "sourcePhotoId": "1"
+        }
+      ],
+      "imageAttribution": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/871/7560/1.jpg",
+          "author": "smoothie-app",
+          "uploadedAt": "2023-04-17T08:05:05.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2023 complete HK VitaFreshTeaLemonTeaDrink low-sugar480ml fullnutrition,ingredients,factorywarning,HKaddress andbarcode",
+          "sourcePhotoId": "1"
+        }
+      ],
+      "identityEvidence": {
+        "catalogueNameZh": "新鮮檸檬茶 (低糖) 480毫升",
+        "catalogueNameEn": "Fresh Lemon Tea (Low Sugar) 480mL",
+        "catalogueBrand": "維他",
+        "photoName": "Fresh Lemon Tea (Low Sugar) 480mL",
+        "photoNetQuantity": "480毫升",
+        "notes": [
+          "背面VITA FreshTea-LemonTeaDrink與低糖標誌、NetVolume480mL",
+          "Printedbarcode4891028717560 and香港屯門維他奶廠址"
+        ],
+        "independentNameBrandPackMatch": true,
+        "barcodeAloneUsed": false
+      },
+      "sources": [
+        {
+          "label": "Open Food Facts：維他香港包裝照片（2023年上載）",
+          "url": "https://world.openfoodfacts.org/product/4891028717560",
+          "checkedAt": "2026-10-22",
+          "scope": "人工閱讀照片，營養基準直接照表；舊版聲明不等於現售配方"
+        }
+      ],
+      "dataStatus": "hk-market-photo-verified",
+      "sourceLimit": "照片上載年份2023，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2023-04-17上載完整背面；有低糖標誌、VitaFreshTeaLemonTeaDrink名稱、480ml、條碼、香港廠址和852電話。完整成分及廠房處理六類致敏物逐字閱讀；不代表現售批次。",
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2023,
+        "sourceIsCurrentVerified": false,
+        "photoDateNote": "照片上載年份2023，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2023-04-17上載完整背面；有低糖標誌、VitaFreshTeaLemonTeaDrink名稱、480ml、條碼、香港廠址和852電話。完整成分及廠房處理六類致敏物逐字閱讀；不代表現售批次。"
+      },
+      "dataLicence": {
+        "name": "Open Database Licence (ODbL)",
+        "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "contentsLicense": "DbCL-1.0",
+        "source": "Open Food Facts",
+        "note": "Manual transcription/normalization of OFF package photos; photo authors/upload/licence attached; not CC supplementary barcode-map copy."
+      }
+    },
+    {
+      "id": "P000000130",
+      "nameZh": "高鈣低脂牛奶飲品 236毫升",
+      "nameEn": "Hi-Calcium Low Fat Milk Beverage 236mL",
+      "brand": "維他",
+      "brandEn": "Vita",
+      "category": "drinks",
+      "sourceCategory": {
+        "zh": "奶類及乳製品 / 大豆製品 / 蛋類",
+        "en": "Dairy / Soy products / Eggs",
+        "pathZh": [
+          "牛奶 / 牛奶飲品",
+          "低溫冷藏鮮奶/牛奶飲品"
+        ],
+        "pathEn": [
+          "Milk / Milk drinks",
+          "Chilled fresh milk/milk drinks"
+        ]
+      },
+      "packSize": "236毫升",
+      "barcode": "4891028165552",
+      "quantity": 236,
+      "quantityUnit": "ml",
+      "servingSize": 236,
+      "nutrition": {
+        "basisUnit": "ml",
+        "basisAmount": 100,
+        "energyKcal": 57.627119,
+        "protein": 4.279661,
+        "fat": 1.398305,
+        "saturatedFat": 0.889831,
+        "transFat": 0,
+        "carbohydrates": 6.991525,
+        "sugars": 6.991525,
+        "fibre": null,
+        "sodiumMg": 55.084746,
+        "carbohydrateDefinition": "unspecified",
+        "status": "verified-source",
+        "region": "hk-market-pack-photo",
+        "hkLabelVerified": true,
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "calciumMg": 169.915254,
+        "cholesterolMg": 6.779661,
+        "vitaminDUg": 1.016949,
+        "sourceVersionYear": 2025,
+        "sourceIsCurrentVerified": false,
+        "sourceLimit": "照片上載年份2025，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2025-07-02上載實物包裝；原表為每236ml1份，所有數值乘100/236換算，未將每份數值誤稱每100ml。成分摺頂未完整拍下，過敏保持partial。"
+      },
+      "ingredients": null,
+      "allergens": {
+        "contains": [
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "partial",
+        "text": "只確認照片版本中的已知致敏物；未確認現售批次完整性，限制篩選不能通過。",
+        "coverage": "照片上載年份2025，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2025-07-02上載實物包裝；原表為每236ml1份，所有數值乘100/236換算，未將每份數值誤稱每100ml。成分摺頂未完整拍下，過敏保持partial。",
+        "verificationMethod": "hk-market-pack-photo-reviewed",
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2025
+      },
+      "sourceAllergenStatement": {
+        "contains": [
+          "milk"
+        ],
+        "mayContain": [],
+        "status": "partial",
+        "evidenceScope": "Only the photographed package version; not the current retail batch",
+        "sourceVersionYear": 2025
+      },
+      "sourceAllergenStatementComplete": false,
+      "sourceVersionYear": 2025,
+      "sourceIsCurrentVerified": false,
+      "physicalPackChecked": false,
+      "reviewedAt": "2026-10-22",
+      "reviewDecision": "photo-confirmed-hk-nutrition-only-current-allergy-incomplete",
+      "labelImages": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/816/5552/1.jpg",
+          "author": "david191624",
+          "uploadedAt": "2025-07-02T10:30:05.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025 VitaHiCalciumLowFatMilkBeveragefront,HKfreshmanufacture andvisibleUseBy11/07/25",
+          "sourcePhotoId": "1"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/816/5552/2.jpg",
+          "author": "david191624",
+          "uploadedAt": "2025-07-02T10:32:45.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025 completeper236mlnutrition,1serving/package,net236ml andpartialHKaddress/barcode",
+          "sourcePhotoId": "2"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/816/5552/3.jpg",
+          "author": "david191624",
+          "uploadedAt": "2025-07-02T10:33:54.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025 front/packagingcloseup",
+          "sourcePhotoId": "3"
+        }
+      ],
+      "imageAttribution": [
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/816/5552/1.jpg",
+          "author": "david191624",
+          "uploadedAt": "2025-07-02T10:30:05.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025 VitaHiCalciumLowFatMilkBeveragefront,HKfreshmanufacture andvisibleUseBy11/07/25",
+          "sourcePhotoId": "1"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/816/5552/2.jpg",
+          "author": "david191624",
+          "uploadedAt": "2025-07-02T10:32:45.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025 completeper236mlnutrition,1serving/package,net236ml andpartialHKaddress/barcode",
+          "sourcePhotoId": "2"
+        },
+        {
+          "url": "https://images.openfoodfacts.org/images/products/489/102/816/5552/3.jpg",
+          "author": "david191624",
+          "uploadedAt": "2025-07-02T10:33:54.000Z",
+          "licence": "CC BY-SA 3.0",
+          "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "scope": "2025 front/packagingcloseup",
+          "sourcePhotoId": "3"
+        }
+      ],
+      "identityEvidence": {
+        "catalogueNameZh": "高鈣低脂牛奶飲品 236毫升",
+        "catalogueNameEn": "Hi-Calcium Low Fat Milk Beverage 236mL",
+        "catalogueBrand": "維他",
+        "photoName": "Hi-Calcium Low Fat Milk Beverage 236mL",
+        "photoNetQuantity": "236毫升",
+        "notes": [
+          "正面高鈣低脂牛奶飲品及香港新鮮製造",
+          "背面Net236ml與1serving/236ml清楚可讀，HK廠址及852電話部分可見"
+        ],
+        "independentNameBrandPackMatch": true,
+        "barcodeAloneUsed": false
+      },
+      "sources": [
+        {
+          "label": "Open Food Facts：維他香港包裝照片（2025年上載）",
+          "url": "https://world.openfoodfacts.org/product/4891028165552",
+          "checkedAt": "2026-10-22",
+          "scope": "人工閱讀照片，營養基準直接照表；舊版聲明不等於現售配方"
+        }
+      ],
+      "dataStatus": "hk-market-photo-nutrition-only",
+      "sourceLimit": "照片上載年份2025，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2025-07-02上載實物包裝；原表為每236ml1份，所有數值乘100/236換算，未將每份數值誤稱每100ml。成分摺頂未完整拍下，過敏保持partial。",
+      "labelEvidence": {
+        "physicalPackPhotoInspected": true,
+        "physicalPackChecked": false,
+        "sourceVersionYear": 2025,
+        "sourceIsCurrentVerified": false,
+        "photoDateNote": "照片上載年份2025，逐字閱讀日2026-10-22；不是當前實物或現售批次核對。2025-07-02上載實物包裝；原表為每236ml1份，所有數值乘100/236換算，未將每份數值誤稱每100ml。成分摺頂未完整拍下，過敏保持partial。"
+      },
+      "labelNutritionOriginal": {
+        "basisAmount": 236,
+        "basisUnit": "ml",
+        "servingsPerPackage": 1,
+        "energyKcal": 136,
+        "protein": 10.1,
+        "fat": 3.3,
+        "saturatedFat": 2.1,
+        "transFat": 0,
+        "carbohydrates": 16.5,
+        "sugars": 16.5,
+        "sodiumMg": 130,
+        "calciumMg": 401,
+        "cholesterolMg": 16,
+        "vitaminDUg": 2.4
+      },
+      "dataLicence": {
+        "name": "Open Database Licence (ODbL)",
+        "url": "https://opendatacommons.org/licenses/odbl/1-0/",
+        "contentsLicense": "DbCL-1.0",
+        "source": "Open Food Facts",
+        "note": "Manual transcription/normalization of OFF package photos; photo authors/upload/licence attached; not CC supplementary barcode-map copy."
+      }
+    }
+  ]
+}

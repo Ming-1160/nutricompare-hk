@@ -4,17 +4,31 @@ Traditional Chinese, mobile-responsive ITC2010 functional prototype. Static HTML
 
 ## Features
 
-- Chinese/English food and brand search across3,055 records:1,788 original HK price-comparison products plus1,267 separately labelled, unpriced OFF community nutrition references.24-item progressive loading; original priced catalogue shown by default.
+- Chinese/English food and brand search across3,051 records:1,788 original HK price-comparison products plus1,263 separately labelled, unpriced OFF community nutrition references.24-item progressive loading; original priced catalogue shown by default. This release adds no new unpriced products and removes four newly identified duplicate references.
 - Whole-pack HKD budget and merchant filters; verified origin field when available.
 - Conservative multi-allergen filtering: contains, may-contain and incomplete records are excluded.
 - Up to three products compared per100g/ml or a custom comparison amount. Missing values remain unknown; package prices do not scale with the nutrition amount.
 - HK retailer price snapshots, source dates and correctly labelled merchant/product links.
 - Transparent fixed-keyword request parser. This is not generative AI or a clinical recommendation engine.
-- Separate library scopes for HK priced products, OFF nutrition references, or both; further filter for nutrition, explicit100g/ml basis, or complete source-scoped HK allergy statements.
+- Separate library scopes for HK priced products, OFF nutrition references, or both; further filter for nutrition, manually read HK nutrition sources, explicit100g/ml basis, or complete source-scoped HK allergy statements.
 
 The root page and `app/` both open the functional prototype. `group-brief.html` preserves the earlier group proposal and research notes.
 
-## Data status:21 October2026, version1.4
+## Data status:22 October2026, version1.5
+
+This release concentrates on the **original1,788 priced products**, retaining all4,496 merchant-price observations from the21October snapshot. **293** have partial/full numeric nutrition (was228), **140** have a manually read HK nutrition source (was54), **102** of those have all1+7 numeric fields, and **99** have a complete source-scoped HK allergy statement (was37). The1,000-product HK-source goal has **not** been reached. Community/secondary references and additional unpriced OFF products do not count toward that goal. A reviewed public HK source is not current physical-batch verification.
+
+The new88 unique original-product records comprise74 HK brand/retailer records and14 separately attributed OFF photo records. They add65 previously absent nutrition tables and replace21 community/secondary tables with whole HK-source tables; two other reviewed sources attach to already stronger HK tables. Sixty-two complete published allergy statements are added. Sources include32 Lee Kum Kee exact-pack HK official label images, Nestlé HK label images, Wellcome package photos (including Meadows, Knorr, Heinz, Amoy and Doll), and dated OFF HK packaging. Every imported nutrition panel was visually read; complete allergy claims require the published ingredient and precaution statement. Partial or dated incomplete evidence does not pass allergy restrictions. Milk avoidance yields47 choices, peanut71, and peanut plusHKD20 yields49 at stored whole-pack prices; these are not safety guarantees or dietary advice.
+
+Source identity was checked using brand, flavour, exact pack and visible physical barcode where available. Retailer internal item numbers are not package EANs. Different-flavour images mixed into a gallery, genuine barcode/pack conflicts and unreadable fields were held. Maggi200ml has conflicting HK published sodium values8500/9255mg per100ml: the display value stays unknown, while both original values/images remain accessible. Native5ml/1g/236ml source amounts and rounding notes are retained. Different formulations are never combined field by field. Existing stronger reviewed HK tables, complete allergy evidence and all original prices survive. Four old unpriced OFF entries became identifiable duplicates after barcode reading and are removed.
+
+Government research covered DATA.GOV.HK dataset metadata, CFS NIIS, all362 entries of the Salt/Sugar product list, candidate packaging images and EatSmart. The nutrition-labelling exemption dataset contains exemption facts, not nutrient tables. NIIS general-food composition cannot fill a named pack's missing table. Candidate government images were chiefly fronts or too small to read reliably; EatSmart's snack tool accepts user-entered nutrition. This pass adds **zero government-derived numeric branded tables**; no government compilation/photos are republished or averages substituted. These findings do not establish that every government document lacks usable labels.
+
+Public reproducibility inputs: [74 HK source reviews](app/data/hk-reviewed-labels.json), [14 OFF-derived image reviews and credits](app/data/off-hk-reviewed-labels.json), and [original-only merge, source priority, deduplication and coverage](app/hk-labels.mjs). Other source inputs remain linked below. The OFF-derived data/alterations are offered underODbL/DbCL; linked photos retain per-authorCCBYSA notices. Only links to brand/retailer images are public, not local image copies. See[DATA-LICENCES.md](DATA-LICENCES.md).
+
+Validation:69 tests, including source/price preservation, original-only additions, unknown fields, the sodium conflict, serving arithmetic, conservative allergy behavior and deduplication. Desktop and390px mobile layouts and key source/filter dialogs were checked. No clinical or real-user validation is claimed. No background refresh or scheduled research is installed.
+
+## Previous version1.4 snapshot
 
 The1,788 original priced products retain all4,496 merchant-price observations. **228** now have partial/full nutrition, up from41. Another**1,267** unique OFF Hong Kong-country-tagged nutrition references have no invented HK prices or purchase channels. Across both libraries, **1,495** products have some numeric nutrition and **789** explicitly distinguish a100g or100ml basis. The remaining706 retain an unknown g/ml basis: raw per100 reference values may be viewed, but portion arithmetic and nutrition ranking are disabled. These counts do **not** mean1,000 original priced products have verified current HK nutrition labels.
 

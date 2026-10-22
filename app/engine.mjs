@@ -1,4 +1,5 @@
 /** NutriCompare HK: deterministic search, conservative filters and label arithmetic. */
+import {hasReviewedHkNutrition} from './hk-labels.mjs?v=20261022-hk-labels';
 
 export const ALLERGENS = Object.freeze([
   'gluten', 'crustaceans', 'eggs', 'fish', 'peanuts', 'soy', 'milk', 'tree-nuts', 'sesame', 'sulphites',
@@ -147,6 +148,7 @@ export function filterProducts(products, filters = {}) {
     if(filters.libraryScope==='priced'&&product.libraryGroup==='off-library')return false;
     if(filters.libraryScope==='off-library'&&product.libraryGroup!=='off-library')return false;
     if (filters.dataScope === 'nutrition' && !NUTRIENTS.some(key => numeric(product.nutrition?.[key]) !== null)) return false;
+    if (filters.dataScope === 'hk-nutrition' && !hasReviewedHkNutrition(product)) return false;
     if (filters.dataScope === 'comparable' && (!['g','ml'].includes(product.nutrition?.basisUnit)||!NUTRIENTS.some(key=>numeric(product.nutrition?.[key])!==null)))return false;
     if (filters.dataScope === 'hk-label' && product.allergens?.status !== 'complete') return false;
     if (category && category !== 'all' && clean(product.category) !== category) return false;
