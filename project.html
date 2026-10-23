@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#174f46">
+  <meta name="description" content="NutriCompare HK 項目說明：問題、方案、AI 角色、資料、測試、限制及倫理考慮（ITC2010 Digital Literacy 小組項目）。">
+  <title>關於 NutriCompare HK｜ITC2010 小組項目</title>
+  <link rel="icon" href="app/icon.svg" type="image/svg+xml">
+  <style>
+    :root{--ink:#183f38;--text:#2f4a3c;--muted:#4f6352;--green:#215c4d;--dark:#174f46;--lime:#dcebad;--cream:#faf9f5;--panel:#f1f5ea;--line:#dfe6d6;--amber-bg:#fbf1dd;--amber:#6b4d16;
+      font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,-apple-system,sans-serif;color:var(--ink);font-synthesis:none}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--cream);font-size:16px;line-height:1.75;color:var(--text)}
+    a{color:var(--green)}
+    a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #92ac55;outline-offset:3px}
+    .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+    header{border-bottom:1px solid var(--line);background:#faf9f5f2;position:sticky;top:0;z-index:2}
+    .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--dark);text-decoration:none;letter-spacing:-.5px}
+    .brand-icon{width:34px;height:34px;border-radius:10px;background:var(--dark);color:var(--lime);display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:23px;letter-spacing:-3px;padding-right:4px}
+    .brand small{font-size:11px;color:#4e6a3c;letter-spacing:1px;font-weight:700}
+    .cta{background:var(--dark);color:#fff;text-decoration:none;font-weight:700;border-radius:10px;padding:10px 16px;font-size:14px;white-space:nowrap}
+    .hero{padding:44px 0 28px}
+    .eyebrow{font-size:13px;font-weight:700;letter-spacing:1px;color:#4e6a3c;margin:0 0 10px}
+    h1{font-size:clamp(28px,4.6vw,44px);line-height:1.3;margin:0 0 14px;color:var(--ink);letter-spacing:-1px}
+    h1 em{font-style:normal;color:#4e6a3c}
+    .lead{font-size:18px;max-width:760px;margin:0 0 18px}
+    .summary-en{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-size:15px;max-width:860px}
+    .summary-en strong{color:var(--dark)}
+    .meta{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:14px;color:var(--muted);margin-top:16px}
+    .meta span{background:var(--panel);border-radius:30px;padding:3px 12px}
+    nav.toc{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 30px}
+    nav.toc a{font-size:14px;text-decoration:none;border:1px solid #c9d6bb;border-radius:30px;padding:4px 12px;background:#fff}
+    section{border-top:1px solid var(--line);padding:30px 0}
+    h2{font-size:24px;line-height:1.4;margin:0 0 4px;color:var(--ink)}
+    .step{display:block;font-size:13px;font-weight:700;color:#4e6a3c;letter-spacing:.5px;margin-bottom:4px}
+    h3{font-size:18px;margin:20px 0 6px;color:var(--ink)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+    .card h3{margin-top:0}
+    .card p{margin:0}
+    .stat{font-size:34px;font-weight:800;color:var(--dark);line-height:1.1;letter-spacing:-1px}
+    .stat-note{font-size:14px;color:var(--muted);margin-top:6px}
+    .source{font-size:13px;color:var(--muted);margin-top:8px}
+    .flow{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;counter-reset:flow}
+    .flow li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;font-size:14px;position:relative}
+    .flow li strong{display:block;color:var(--dark);font-size:15px;margin-bottom:4px}
+    .flow li::before{counter-increment:flow;content:counter(flow);display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--lime);color:var(--dark);font-weight:800;font-size:13px;align-items:center;justify-content:center;margin-bottom:6px}
+    .flow li.ai{border-color:#9fbf7f;background:#f4f9ee}
+    .flow li.rule{border-color:#9fb7c9;background:#f1f6fa}
+    .tag{display:inline-block;font-size:12px;font-weight:700;border-radius:20px;padding:1px 8px;margin-left:4px;vertical-align:middle}
+    .tag.ai{background:#dcebc8;color:#2f5a22}.tag.rule{background:#dbe8f2;color:#244a63}
+    table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:15px}
+    th,td{padding:10px 12px;border-bottom:1px solid #e9eee2;text-align:left;vertical-align:top}
+    th{background:var(--panel);color:var(--ink);font-weight:700}
+    .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:12px}
+    .todo{color:var(--amber);background:var(--amber-bg);border-radius:6px;padding:1px 6px;font-weight:600}
+    .note{background:var(--amber-bg);color:var(--amber);border-radius:12px;padding:12px 14px;font-size:15px;margin-top:14px}
+    .ok{background:#e8f1e4;color:#2f4a3c;border-radius:12px;padding:12px 14px;font-size:15px;margin-top:14px}
+    ul.clean{padding-left:20px;margin:8px 0}
+    ul.clean li{margin:4px 0}
+    progress{width:100%;height:12px;accent-color:#4d8061}
+    details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-top:12px}
+    summary{cursor:pointer;font-weight:700;color:var(--green)}
+    footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:14px;color:var(--muted)}
+    @media(max-width:860px){.flow{grid-template-columns:1fr}.flow li{display:grid;grid-template-columns:32px 1fr;column-gap:8px}.flow li::before{grid-row:span 2;margin:0}}
+    @media(max-width:540px){.lead{font-size:17px}.cta{padding:8px 12px;font-size:13px}.brand{font-size:18px}h2{font-size:21px}.stat{font-size:30px}}
+  </style>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="./"><span class="brand-icon" aria-hidden="true">nc</span>NutriCompare <small>HK</small></a><a class="cta" href="./">試用原型 →</a></div></header>
+<main class="wrap">
+  <div class="hero">
+    <p class="eyebrow">ITC2010 Digital Literacy · 小組項目 · 原型 v1.7（2026-10-23）</p>
+    <h1>糖尿病人揀包裝食品，<br><em>標籤、過敏同價錢一次比較清楚。</em></h1>
+    <p class="lead">NutriCompare HK 幫香港第二型糖尿病成人同照顧者揀包裝食品。用家講一句想食咩、預算幾多、有咩要避，AI 助手會轉做篩選條件，再並排比較碳水、糖、鈉、過敏警告同港幣價格。營養計算同過敏排除，就由可以檢查嘅規則負責。</p>
+    <div class="summary-en"><strong>In English:</strong> NutriCompare HK is an AI-assisted label-and-price comparison helper for adults with type 2 diabetes and their caregivers in Hong Kong. Users describe what they want to eat, their budget and allergies; an AI assistant (EdUHK MaaS) turns the sentence into filter conditions, and the website compares carbohydrate, sugar and sodium on the same basis, with allergen warnings, HK prices and traceable sources. <strong>AI suggests; transparent rules decide.</strong> It is a data-comparison prototype, not medical advice.</div>
+    <div class="meta"><span>目標用家：第二型糖尿病成人及照顧者</span><span>價格：消委會格價資訊通</span><span>不需登入 · 不收集病歷</span></div>
+  </div>
+  <nav class="toc" aria-label="本頁內容"><a href="#problem">1 問題</a><a href="#solution">2 方案</a><a href="#plan">3 計劃</a><a href="#ai">AI 點樣用</a><a href="#testing">4 原型及測試</a><a href="#limits">5 限制及改進</a><a href="#ethics">倫理考慮</a><a href="#data">資料進度</a><a href="#sources">來源</a></nav>
+
+  <section id="problem" aria-labelledby="problem-title">
+    <span class="step">Step 1 · Problem &amp; pain point</span>
+    <h2 id="problem-title">問題：糖尿病人喺超市好難比較包裝食品</h2>
+    <div class="grid">
+      <div class="card"><div class="stat">8.5%</div><p class="stat-note">香港 15–84 歲人士有糖尿病。</p><p class="source">衞生署《人口健康調查 2020–22》第二部分（2023年4月26日新聞公報）</p></div>
+      <div class="card"><div class="stat">36%</div><p class="stat-note">糖尿病患者唔知道自己有糖尿病，好多係喺調查體檢先發現。</p><p class="source">同上</p></div>
+      <div class="card"><div class="stat">148 / 4,200+</div><p class="stat-note">食安中心 2021–2025 年抽驗嘅預先包裝食品樣本中，有 148 個嘅標示營養同化驗結果有差異。</p><p class="source">立法會 LCQ21 政府答覆（2026年5月27日）</p></div>
+    </div>
+    <h3>邊個受影響？點解咁麻煩？</h3>
+    <ul class="clean">
+      <li><strong>標籤基準唔同：</strong>香港「1+7」營養標籤可以用每100克／毫升，亦可以用每食用份量；份量由廠商自己定，兩包食品好難直接比較。</li>
+      <li><strong>過敏資料分散：</strong>「含有」同「可能含有」警告要逐包睇細字；網上資料亦可能唔齊。</li>
+      <li><strong>價錢喺唔同網站：</strong>同一款食品喺惠康、百佳、AEON 等價錢唔同，要來回搵。</li>
+      <li><strong>字細、資料多：</strong>對年長用家同照顧者嚟講，喺超市即場比較好花時間。</li>
+    </ul>
+    <p class="note">邊啲係事實、邊啲係假設：上面三個數字來自政府來源（見最底「來源」）。「用家覺得難比較」係本組嘅設計假設，要靠用家測試去驗證；我哋未做過患者測試。</p>
+  </section>
+
+  <section id="solution" aria-labelledby="solution-title">
+    <span class="step">Step 2 · Solution</span>
+    <h2 id="solution-title">方案：一個畫面完成「搵 → 篩 → 比較 → 核對來源」</h2>
+    <div class="grid">
+      <div class="card"><h3>✧ AI 條件助手</h3><p>講一句「想食即食麵，少鈉，20蚊以下」，AI 會整理成條件卡同連結。網站內亦有離線快速解讀，唔使 AI 都用得。</p></div>
+      <div class="card"><h3>篩選</h3><p>可以按名稱、品牌、分類、整包預算同商戶篩選，亦可以避開 10 類過敏原：「含有」、「可能含有」同資料不足都會排除。</p></div>
+      <div class="card"><h3>同一基準比較</h3><p>最多比較 3 款，用每100g／ml 或者自訂份量。每100ml 同每100g 會分開排名，網站會標出「最低」，「—」代表未知、唔係零。</p></div>
+      <div class="card"><h3>來源同價格</h3><p>每項數字都有來源連結同日期，價格用消委會格價資訊通（2026-10-21 快照）。另外有 A+ 大字模式，文字對比度亦已經加強。</p></div>
+    </div>
+  </section>
+
+  <section id="plan" aria-labelledby="plan-title">
+    <span class="step">Step 3 · Plan</span>
+    <h2 id="plan-title">計劃：用家、功能、資料、平台、分工</h2>
+    <div class="table-scroll"><table>
+      <tbody>
+        <tr><th scope="row">目標用家</th><td>香港第二型糖尿病成人及照顧者（唔係所有慢性病人）</td></tr>
+        <tr><th scope="row">核心功能</th><td>AI／離線條件解讀 · 預算及商戶篩選 · 10 類過敏排除 · 同一基準營養比較 · 來源及購買渠道 · 分享條件連結 · 大字模式</td></tr>
+        <tr><th scope="row">資料</th><td>消委會格價資訊通開放資料（1,788 款食品、4,496 筆價格）；逐件核對嘅香港品牌、零售商標籤同 Open Food Facts 原圖</td></tr>
+        <tr><th scope="row">平台及原因</th><td><strong>GitHub Pages</strong>：靜態網站，免費、不需登入、冇第三方追蹤，組員同老師開條連結就用得。<br><strong>EdUHK MaaS</strong>：課程 Lesson 2 教嘅 AI 平台，用家唔使登入，亦唔使喺公開網站放 API key。</td></tr>
+      </tbody>
+    </table></div>
+    <h3>組員分工 <span class="todo">請組員填寫</span></h3>
+    <div class="table-scroll"><table>
+      <thead><tr><th scope="col">組員</th><th scope="col">負責部分</th><th scope="col">可以交出嘅證據</th></tr></thead>
+      <tbody>
+        <tr><td><span class="todo">姓名</span></td><td>資料及標籤核對</td><td>新增標籤紀錄、暫緩清單</td></tr>
+        <tr><td><span class="todo">姓名</span></td><td>EdUHK MaaS AI 助手（system prompt、測試）</td><td>AI 測試表、對話截圖</td></tr>
+        <tr><td><span class="todo">姓名</span></td><td>網站原型及 UI</td><td>GitHub commit、測試結果</td></tr>
+        <tr><td><span class="todo">姓名</span></td><td>用家測試、promo video 同簡報</td><td>測試紀錄、MP4、PPT</td></tr>
+      </tbody>
+    </table></div>
+    <p class="source">個人反思（60%）Dimension 1 要寫「你負責邊部分」，所以每人都要保留自己嘅工作紀錄。</p>
+  </section>
+
+  <section id="ai" aria-labelledby="ai-title">
+    <span class="step">AI or related technologies</span>
+    <h2 id="ai-title">AI 點樣用：AI 負責建議，規則負責決定</h2>
+    <ol class="flow">
+      <li><strong>用家講一句</strong>例如「我對花生過敏，想食夾心餅，20蚊以下」</li>
+      <li class="ai"><strong>AI 整理條件 <span class="tag ai">AI</span></strong>EdUHK MaaS 助手按 system prompt 抽出食品、預算、商戶同過敏原；唔清楚就先問</li>
+      <li class="ai"><strong>條件卡＋連結 <span class="tag ai">AI</span></strong>AI 列出條件俾用家核對，再俾一條 NutriCompare 連結</li>
+      <li class="rule"><strong>網站驗證 <span class="tag rule">規則</span></strong>只接受固定清單入面嘅值；未能辨認嘅過敏原會清楚警告，唔會靜靜地略過</li>
+      <li class="rule"><strong>規則計算 <span class="tag rule">規則</span></strong>過敏排除、份量換算、排名同價格，全部用可以檢查嘅程式同已核對資料計算</li>
+    </ol>
+    <div class="grid">
+      <div class="card"><h3>AI 會做</h3><ul class="clean"><li>理解廣東話、英文同混合講法</li><li>追問唔清楚嘅地方</li><li>講清楚篩選條件同限制</li></ul></div>
+      <div class="card"><h3>AI 唔會做</h3><ul class="clean"><li>判斷某食品「糖尿病人可以食」</li><li>保證冇過敏原</li><li>自己作出產品、營養數字或者價格</li><li>處理藥物、份量或者餐單建議</li></ul></div>
+    </div>
+    <p class="note">狀態：網站已經可以接收同驗證 AI 連結（v1.7）。MaaS 助手要由組員喺 EdUHK MaaS 建立同發佈，system prompt 同測試題見 <a href="https://github.com/Ming-1160/nutricompare-hk/blob/main/docs/maas-assistant.md">docs/maas-assistant.md</a>。發佈前，網站會顯示「AI 助手設定中」。</p>
+  </section>
+
+  <section id="testing" aria-labelledby="testing-title">
+    <span class="step">Step 4 · Prototype &amp; testing</span>
+    <h2 id="testing-title">原型及測試</h2>
+    <div class="ok"><strong>程式測試（2026-10-23）：</strong>共 139 項，138 項通過，1 項 skipped（要本機原始價格快照先行到）。項目包括價格保存、過敏排除、份量計算、未知值、AI 連結驗證、分單位排名同離線解讀；離線解讀另外由一個獨立 AI 覆核程式做咗六輪「搵錯」測試（屬自動檢查，唔係真人用家測試），並有一個「句式 × 過敏原」安全矩陣。<br><strong>無障礙自動檢查（axe-core 4.10，WCAG 2 A／AA，2026-10-23）：</strong>v1.6 首頁有 266 處文字對比度不足（手機版 256 處，另外有 1 個排序選單冇名稱）；v1.7 首頁、三個對話框同大字模式都係 0 處。<br>以上都係自動檢查，唔可以代替真人用家測試。</div>
+    <h3>用家測試計劃 <span class="todo">結果待填</span></h3>
+    <p>對象：同學、家人或者照顧者。只記錄完成情況同意見，唔記錄姓名或者健康資料。先講明係學生原型，對方同意先開始。</p>
+    <div class="table-scroll"><table>
+      <thead><tr><th scope="col">任務</th><th scope="col">成功標準</th><th scope="col">結果</th></tr></thead>
+      <tbody>
+        <tr><td>T1 搵一款 $20 以下、糖最低嘅飲品，講出佢每100ml 嘅糖同價錢</td><td>2 分鐘內答啱</td><td><span class="todo">待填</span></td></tr>
+        <tr><td>T2 比較兩款即食麵嘅鈉，講出邊款低啲，同埋用緊咩基準</td><td>講得出「每100g」同較低嗰款</td><td><span class="todo">待填</span></td></tr>
+        <tr><td>T3 設定「避開花生」，喺詳情搵出「可能含有」，解釋「未列出唔等於保證安全」</td><td>搵到警告，解釋正確</td><td><span class="todo">待填</span></td></tr>
+        <tr><td>T4 用 AI 助手（或者離線解讀）講「想食夾心餅，20蚊以下，花生過敏」，核對條件，再解釋點解冇結果</td><td>條件全部啱，明白冇結果嘅原因</td><td><span class="todo">待填</span></td></tr>
+        <tr><td>T5 開 A+ 大字再做一次 T1</td><td>覺得易睇（1–5 分）</td><td><span class="todo">待填</span></td></tr>
+      </tbody>
+    </table></div>
+    <p class="source">每個任務之後問 3 條（1–5 分）：易唔易用、信唔信得過、會唔會再用；再問一條開放意見。測試發現要寫入改進紀錄。</p>
+  </section>
+
+  <section id="limits" aria-labelledby="limits-title">
+    <span class="step">Step 5 · Limitations &amp; future improvement</span>
+    <h2 id="limits-title">限制同之後點改</h2>
+    <div class="grid">
+      <div class="card"><h3>而家做唔到</h3><ul class="clean"><li>1,788 款之中，只有 328 款有營養數值，125 款有完整過敏聲明</li><li>價格係 10 月 21 日嘅快照，唔係即時價，亦唔知有冇貨</li><li>只包括消委會清單入面嘅商戶同商品</li><li>MaaS 連結有到期日同 credit 上限</li><li>未做過患者或者照顧者測試，亦冇臨床驗證</li><li>離線快速解讀用固定字詞，唔係 AI；少見嘅講法仍然可能讀錯，所以每個條件都會列出嚟俾用家核對同移除，過敏以篩選剔選為準</li></ul></div>
+      <div class="card"><h3>之後改進</h3><ul class="clean"><li>優先補 demo 會用到嘅類別（飲品、即食麵、餅乾）嘅完整標籤</li><li>完成用家測試，再按結果修改</li><li>加英文介面</li><li>研究條碼／相片輔助，但要另外設計核對步驟</li><li>如果要搵患者測試，要先處理同意同私隱安排</li></ul></div>
+    </div>
+    <p class="source">老師 Lesson 1：坦白講出限制，個項目會更可信。</p>
+  </section>
+
+  <section id="ethics" aria-labelledby="ethics-title">
+    <span class="step">Ethical considerations</span>
+    <h2 id="ethics-title">倫理考慮</h2>
+    <div class="table-scroll"><table>
+      <thead><tr><th scope="col">議題</th><th scope="col">風險</th><th scope="col">我哋點處理</th></tr></thead>
+      <tbody>
+        <tr><td>私隱</td><td>用家可能輸入病歷或者藥物</td><td>不需登入，網站唔儲存資料，離線解讀喺本機進行。AI 助手旁邊清楚提示句子會傳送到 MaaS，叫用家唔好輸入個人或者健康資料。</td></tr>
+        <tr><td>醫療界線</td><td>用家以為係醫療建議</td><td>網站唔會講「適合糖尿病人」，亦唔評健康分，提醒用家跟醫護人員建議；AI 遇到醫療問題會拒答同轉介。</td></tr>
+        <tr><td>過敏安全</td><td>漏報過敏原</td><td>「含有」、「可能含有」同資料不足都排除，網站唔會自動放寬；未能辨認嘅過敏原會提示用家；一定要核對實物包裝。</td></tr>
+        <tr><td>AI 幻覺</td><td>AI 作出食品或者數字</td><td>AI 只建議條件，產品同數字全部由網站嘅資料同規則提供；網站逐項驗證 AI 連結。</td></tr>
+        <tr><td>透明度</td><td>用家誤會資料完整</td><td>每項數字都有來源同日期；「—」＝未知；資料覆蓋同進度公開。</td></tr>
+        <tr><td>公平及無障礙</td><td>年長或者視力差嘅用家睇唔清楚；資料偏向大型連鎖店</td><td>有 A+ 大字，文字對比度提升到 WCAG AA；亦會清楚講明只涵蓋消委會清單入面嘅商戶。</td></tr>
+        <tr><td>版權及授權</td><td>濫用他人資料或者圖片</td><td>保留消委會、Open Food Facts（ODbL／CC BY-SA）等署名，只連結品牌圖片，唔會整批轉載。</td></tr>
+      </tbody>
+    </table></div>
+    <p class="source">AI 使用：本項目有用生成式 AI 協助寫程式同整理文字，組員要喺 Moodle 填 Declaration Form of AI-Use。</p>
+  </section>
+
+  <section id="data" aria-labelledby="data-title">
+    <span class="step">Data coverage</span>
+    <h2 id="data-title">資料進度（2026-10-22，v1.6 資料）</h2>
+    <p>香港營養來源已讀 <strong>182 / 1,000</strong> 款目標，其中 143 款有完整「1+7」數值。只計原有有價格嘅商品；冇價格嘅 OFF 參考庫唔計入目標。</p>
+    <progress max="1000" value="182" aria-label="香港營養來源已讀 182 / 1,000"></progress>
+    <div class="grid">
+      <div class="card"><div class="stat">1,788</div><p class="stat-note">香港格價食品（消委會）</p></div>
+      <div class="card"><div class="stat">328</div><p class="stat-note">有任何營養數值</p></div>
+      <div class="card"><div class="stat">182</div><p class="stat-note">已人工閱讀香港營養來源</p></div>
+      <div class="card"><div class="stat">125</div><p class="stat-note">有完整過敏聲明</p></div>
+    </div>
+    <p class="source">以上數字唔可以相加。最新數字以原型頁面「資料覆蓋」為準。</p>
+  </section>
+
+  <section id="sources" aria-labelledby="sources-title">
+    <h2 id="sources-title">來源</h2>
+    <ul class="clean">
+      <li><a href="https://www.info.gov.hk/gia/general/202304/26/P2023042600168.htm">衞生署：DH releases Population Health Survey Report (Part II)，2023年4月26日</a>（糖尿病 8.5%；36% 患者唔知道自己有病）</li>
+      <li><a href="https://www.info.gov.hk/gia/general/202605/27/P2026052700277.htm">立法會 LCQ21：Nutrition labelling scheme for packaged food，2026年5月27日</a>（4,200+ 樣本，148 個有差異）</li>
+      <li><a href="https://www.cfs.gov.hk/english/faq/faq_14.html">食物安全中心：Nutrition Labelling – FAQ for general public</a>（「1+7」、每100g／100mL、食用份量）</li>
+      <li><a href="https://data.gov.hk/tc-data/dataset/cc-pricewatch-pricewatch">消費者委員會格價資訊通開放資料（DATA.GOV.HK）</a></li>
+      <li><a href="https://world.openfoodfacts.org">Open Food Facts</a>（ODbL／DbCL；相片 CC BY-SA）</li>
+      <li><a href="https://github.com/Ming-1160/nutricompare-hk">GitHub 程式庫</a> · <a href="https://github.com/Ming-1160/nutricompare-hk/blob/main/DATA-LICENCES.md">資料授權說明</a></li>
+    </ul>
+    <details><summary>早期提案存檔（2026-10-18）</summary><p>早期提案頁保留作紀錄，部分文字同數字已經過時：<a href="group-brief.html">group-brief.html</a></p></details>
+  </section>
+</main>
+<footer><div class="wrap">NutriCompare HK · ITC2010 Digital Literacy 學生功能原型 · 資料比較及資訊輔助，唔係醫療建議。價格擁有權屬消費者委員會，資料供應方冇認可本原型。</div></footer>
+</body>
+</html>

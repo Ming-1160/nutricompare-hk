@@ -14,3 +14,308 @@
 @media(max-width:650px){.coverage-stats{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:18px}.coverage-stats>div:nth-child(3){border-left:0;padding-left:0}.coverage-bottom{display:block}.coverage-bottom label{display:block;margin-bottom:6px}.coverage-bottom select{width:100%}}
 
 .hk-progress{margin-top:18px;padding:14px 15px;border-radius:9px;background:#ffffffa8;border:1px solid #dce5d3}.hk-progress label{font-size:12px;font-weight:650;color:#28583d;line-height:1.7;display:block}.hk-progress progress{display:block;width:100%;height:9px;margin:10px 0 7px;accent-color:#4d8061;border:0;border-radius:9px;overflow:hidden;background:#e4ebde}.hk-progress progress::-webkit-progress-bar{background:#e4ebde}.hk-progress progress::-webkit-progress-value{background:#4d8061;border-radius:9px}.hk-progress p{font-size:10px;line-height:1.7;color:#63745b;margin:0}.source-conflict{border-left:3px solid #b98a36;padding-left:12px}
+/* v1.7: AI assistant entry, shareable links, compact coverage, comparison markers and readable text */
+.text-size-toggle{border:1px solid #c9d6bb;border-radius:30px;background:#fff;color:var(--green);font-weight:700;font-size:13px;padding:5px 12px;line-height:1.4;white-space:nowrap}
+.text-size-toggle[aria-pressed=true]{background:var(--dark);border-color:var(--dark);color:#fff}
+.assistant-panel{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0;padding:0;overflow:hidden}
+.assistant-ai,.assistant-offline{padding:18px 20px}
+.assistant-ai{background:#fff;border-right:1px solid #dce5cc}
+.assistant-panel .assistant-title{font-size:15px;font-weight:800;color:var(--dark);margin:0 0 6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.assistant-badge{font-size:11px;font-weight:700;color:#3f5f35;background:#e3edd5;border-radius:20px;padding:2px 9px}
+.assistant-panel .assistant-lead{font-size:13px;color:#3d5446;line-height:1.75;margin:0 0 12px}
+.assistant-action{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.assistant-action .primary-button{text-decoration:none}
+.assistant-pending{font-size:12px;color:#6b5420;background:#fbf1dd;border-radius:8px;padding:8px 11px;line-height:1.6}
+.assistant-panel .assistant-privacy{font-size:12px;color:#4f6352;line-height:1.75;margin:12px 0 0;border-top:1px dashed #dce5cc;padding-top:10px}
+.assistant-offline label{font-size:13px;color:#2f4a3c;line-height:1.6}
+.assistant-offline p,.assistant-offline #request-feedback{font-size:12px;color:#4f6352}
+.coverage-strip{border:1px solid #d9e4cf;background:linear-gradient(120deg,#eff4e7,#fcfdf9);border-radius:12px;padding:12px 16px;margin:0 0 18px}
+.coverage-line{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0;font-size:13px;color:#3d5446;line-height:1.6}
+.coverage-line strong{font-size:17px;color:#1f5847;margin-right:3px}
+.coverage-source{color:#4f6352}
+.coverage-details{margin-top:8px}
+.coverage-details summary{cursor:pointer;font-size:12px;font-weight:700;color:var(--green)}
+.coverage-details .hk-progress{margin-top:10px}
+.coverage-details #catalogue-status{font-size:12px;line-height:1.8;color:#4f6352;margin:10px 0 0}
+.coverage-reviewed{font-size:13px!important;color:#28583d!important;margin:0 0 4px!important}
+.coverage-reviewed strong{font-size:17px}
+.filter-content .second-select{margin-top:8px}
+.link-banner{display:flex;align-items:flex-start;gap:12px;background:#e8f1e4;border:1px solid #c7dabb;border-radius:10px;padding:11px 14px;margin:0 0 12px}
+.link-banner p{margin:0;font-size:13px;line-height:1.7;color:#2f4a3c;min-width:0;overflow-wrap:anywhere}
+.link-banner.warning{background:#fbf1dd;border-color:#e6cf9f}
+.link-problems{color:#6b4d16;font-weight:600}
+.link-banner .text-button{margin-left:auto;font-size:13px;font-weight:700;white-space:nowrap}
+.filter-row{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.filter-row .active-filters{flex:1}
+.copy-link{font-size:12px;font-weight:700;margin:2px 0 10px auto;white-space:nowrap}
+.empty-actions p{font-size:13px;color:#4f6352;margin:0 auto 10px}
+.empty-actions div{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.lowest-tag{display:inline-block;margin-left:6px;font-size:11px;font-weight:700;color:#1f5847;background:#dcebc8;border-radius:20px;padding:1px 7px;vertical-align:middle}
+:root{--muted:#5b6b61}
+.assistant-toggle{border:1px solid #c9d6bb;background:#fff;border-radius:30px;padding:5px 13px;font-weight:700;color:var(--green);font-size:13px}
+.assistant-toggle[aria-expanded=true]{background:#e8f1e4;border-color:#9fbf7f}
+.floating-note small{color:#5b6b61}
+.pack-label small{color:#1d3b2c}
+.how-it-works li>span{color:#55753a}
+@media(max-width:760px){.assistant-panel{display:block}.assistant-ai{border-right:0;border-bottom:1px solid #dce5cc}}
+@media(max-width:540px){.header-inner nav .nav-about{display:none}.text-size-toggle{font-size:12px;padding:4px 9px}.assistant-ai,.assistant-offline{padding:14px}.coverage-line{font-size:12px;gap:4px 12px}.coverage-line strong{font-size:15px}.copy-link{margin-left:0}}
+/* BEGIN generated readability layer: node tools/build-readability-css.mjs */
+/* 69 text colours darkened to >= 4.6:1 on #edf2e6; 131 informative sizes raised to 12px. */
+html .brand-hk{color:#5d7149}
+html .prototype-label{color:#5f7152;font-size:12px}
+html .eyebrow{color:#5c724b;font-size:12px}
+html .hero h1 em{color:#5d7140}
+html .hero-tags{color:#5d7052;font-size:12px}
+html .search-box input::placeholder{color:#656e5a}
+html .quick-search{font-size:12px}
+html .quick-search>span{color:#646f5e}
+html .quick-search button{color:#626e57;font-size:12px}
+html .assistant-toggle{color:#60714d}
+html .assistant-panel p,html .assistant-panel #request-feedback{color:#636e59;font-size:12px}
+html .filter-count{color:#63714e;font-size:12px}
+html .filter-topline{color:#676e5c;font-size:12px}
+html .filter-topline button{font-size:12px}
+html .currency-label{color:#646f57;font-size:12px}
+html .budget-input span{color:#656d56}
+html .budget-presets button{font-size:12px}
+html .field-note{color:#656f5c;font-size:12px}
+html .filter-content select{color:#607155;font-size:12px}
+html .allergy-grid label{color:#5f7056;font-size:12px}
+html .filter-help{color:#656e5b;font-size:12px}
+html .category-tabs button{color:#626d5b}
+html .results-toolbar p{color:#656f5d;font-size:12px}
+html .sort-field{color:#636d5a;font-size:12px}
+html .sort-field select{color:#5e7152;font-size:12px}
+html .active-filter{color:#5e724a;font-size:12px}
+html .data-banner p{color:#636f57;font-size:12px}
+html .data-banner strong{color:#5c7248}
+html .data-banner button{color:#616f4f}
+html .inline-notice{color:#567158;font-size:12px}
+html .inline-notice.amber{color:#7f673a}
+html .status-badge{color:#636e52;font-size:12px}
+html .status-badge.partial{color:#816848}
+html .product-brand{color:#647059;font-size:12px}
+html .product-size{color:#676f5b;font-size:12px}
+html .nutrient-heading{color:#636e57;font-size:12px}
+html .nutrient-heading button{color:#616f4e;font-size:12px}
+html .nutrient-strip small{color:#646e59;font-size:12px}
+html .nutrient-strip strong small{color:#646f58;font-size:12px}
+html .allergen-line{color:#786a52;font-size:12px}
+html .allergen-line.matched{color:#5a7442}
+html .price small{font-size:12px}
+html .price-line .price-from{color:#636f56;font-size:12px}
+html .merchant-count{color:#646f56;font-size:12px}
+html .merchant-label{color:#616f52;font-size:12px}
+html .card-actions button{color:#5f714c;font-size:12px}
+html .loading-state{color:#627055}
+html .empty-state p{color:#637054}
+html .results-footnote{color:#656f59;font-size:12px}
+html .how-it-works p{color:#646f58;font-size:12px}
+html footer{color:#666e5a}
+html footer p{font-size:12px}
+html footer>div{font-size:12px}
+html footer a{color:#606f52}
+html .tray-copy>span{color:#637054;font-size:12px}
+html .tray-actions>.text-button{font-size:12px}
+html .dialog-top .eyebrow{font-size:12px}
+html .detail-heading p{color:#637056}
+html .detail-section p,html .sources-dialog p,html .sources-dialog li{color:#616e56}
+html .nutrition-table th{color:#636f57}
+html .nutrition-table caption{color:#636f57;font-size:12px}
+html .source-link{font-size:12px}
+html .source-scope{color:#656f58;font-size:12px}
+html .merchant-row small{color:#636f56;font-size:12px}
+html .merchant-row a{font-size:12px}
+html .source-card p{font-size:12px}
+html .source-card a{font-size:12px}
+html .comparison-table th:first-child{color:#616e55}
+html .comparison-table .table-small{color:#616e54;font-size:12px}
+html .comparison-table .neutral{color:#637154;font-size:12px}
+html .comparison-table td small{font-size:12px}
+html .comparison-table a{font-size:12px}
+html .comparison-table .comparison-remove{color:#616f50;font-size:12px}
+html .comparison-table .group-row th{color:#5e714a;font-size:12px}
+html .comparison-note{color:#647053;font-size:12px}
+html .error-message{color:#88652c}
+@media(max-width:760px){html .header-inner nav{font-size:12px}html .hero .eyebrow{font-size:12px}html .hero-tags{font-size:12px}html .search-box .primary-button{font-size:12px}html .quick-search{font-size:12px}html .quick-search button{font-size:12px}html .assistant-toggle{font-size:12px}html .field-note{font-size:12px}html .product-brand{font-size:12px}html .product-size{font-size:12px}html .nutrient-strip small{font-size:12px}html .card-actions button{font-size:12px}}
+@media(max-width:540px){html .brand-hk{font-size:12px}html .header-inner nav{font-size:12px}html .hero-tags{font-size:12px}html .hero .eyebrow{font-size:12px}html .search-box .primary-button{font-size:12px}html .quick-search{font-size:12px}html .quick-search button{font-size:12px}html .assistant-toggle{font-size:12px}html .assistant-panel label{font-size:12px}html .filter-topline{font-size:12px}html .filter-topline button{font-size:12px}html .filter-help{font-size:12px}html .results-toolbar p{font-size:12px}html .sort-field select{font-size:12px}html .data-banner p{font-size:12px}html .product-brand{font-size:12px}html .product-size{font-size:12px}html .nutrient-strip small{font-size:12px}html .nutrient-heading{font-size:12px}html .nutrient-heading button{font-size:12px}html .allergen-line{font-size:12px}html .price-line .price-from{font-size:12px}html .merchant-count{font-size:12px}html .merchant-label{font-size:12px}html .card-actions button{font-size:12px}html .status-badge{font-size:12px}html .results-footnote{font-size:12px}html .how-it-works p{font-size:12px}html footer p{font-size:12px}html .tray-copy>span{font-size:12px}html .tray-actions .primary-button{font-size:12px}html .tray-actions>.text-button{font-size:12px}html .dialog-top .eyebrow{font-size:12px}html .detail-heading p{font-size:12px}html .merchant-row{font-size:12px}html .merchant-row a{font-size:12px}html .comparison-controls{font-size:12px}html .comparison-controls select,html .comparison-controls input{font-size:12px}html .comparison-table{font-size:12px}html .comparison-table .table-small{font-size:12px}html .source-card p{font-size:12px}html .toast{font-size:12px}}
+html .coverage-title .eyebrow{font-size:12px}
+html .coverage-live{font-size:12px}
+html .coverage-stats span{color:#5f6e57;font-size:12px}
+html .coverage-panel>p{color:#5e7151;font-size:12px}
+html .coverage-bottom{font-size:12px}
+html .coverage-bottom select{font-size:12px}
+html .catalogue-pagination p{color:#616f5c;font-size:12px}
+@media(max-width:540px){html .coverage-title .eyebrow{font-size:12px}html .coverage-live{font-size:12px}html .coverage-stats span{font-size:12px}html .coverage-panel>p{font-size:12px}html .category-tabs button{font-size:12px}}
+html .field-note,html .allergen-line,html .results-footnote,html .data-banner p,html .comparison-note{color:#606e5a;font-size:12px}
+html .status-badge{font-size:12px}
+html .merchant-label,html .product-size{color:#636d56}
+html .source-scope{color:#636d56;font-size:12px}
+html .category-tabs button:disabled{font-size:12px}
+@media(max-width:540px){html .allergen-line,html .field-note,html .results-footnote,html .data-banner p{font-size:12px}html .status-badge{font-size:12px}html .category-tabs button:disabled{font-size:12px}}
+html .hk-progress p{color:#5e6e57;font-size:12px}
+html .assistant-badge{font-size:12px}
+html .lowest-tag{font-size:12px}
+/* A+ 大字 mode */
+html.large-text body{font-size:19px}
+html.large-text body{font-size:20px}
+html.large-text .brand{font-size:26px}
+html.large-text .brand-icon{font-size:30px}
+html.large-text .brand-hk{font-size:16px}
+html.large-text .header-inner nav{font-size:18px}
+html.large-text .prototype-label{font-size:15px}
+html.large-text .eyebrow{font-size:15px}
+html.large-text .hero .eyebrow{font-size:16px}
+html.large-text .tiny-leaf{font-size:23px}
+html.large-text .hero h1{font-size:51px}
+html.large-text .hero-description{font-size:18px}
+html.large-text .hero-tags{font-size:15px}
+html.large-text .pack-label{font-size:20px}
+html.large-text .pack-label strong{font-size:28px}
+html.large-text .pack-label small{font-size:15px}
+html.large-text .note-symbol{font-size:25px}
+html.large-text .floating-note small{font-size:15px}
+html.large-text .floating-note strong{font-size:16px}
+html.large-text .art-caption{font-size:15px}
+html.large-text .art-spark{font-size:29px}
+html.large-text .search-box input{font-size:20px}
+html.large-text .primary-button{font-size:17px}
+html.large-text .secondary-button{font-size:17px}
+html.large-text .quick-search{font-size:15px}
+html.large-text .quick-search button{font-size:15px}
+html.large-text .assistant-toggle{font-size:16px}
+html.large-text .assistant-panel label{font-size:17px}
+html.large-text .assistant-panel p,html.large-text .assistant-panel #request-feedback{font-size:15px}
+html.large-text .filter-sidebar summary{font-size:20px}
+html.large-text .filter-count{font-size:15px}
+html.large-text .filter-topline{font-size:15px}
+html.large-text .filter-topline button{font-size:15px}
+html.large-text .filter-content legend{font-size:16px}
+html.large-text .currency-label{font-size:15px}
+html.large-text .budget-input span{font-size:16px}
+html.large-text .budget-input input{font-size:18px}
+html.large-text .budget-presets button{font-size:15px}
+html.large-text .field-note{font-size:15px}
+html.large-text .filter-content select{font-size:15px}
+html.large-text .allergy-grid label{font-size:15px}
+html.large-text .filter-help{font-size:15px}
+html.large-text .category-tabs button{font-size:16px}
+html.large-text .results-toolbar h2{font-size:24px}
+html.large-text .results-toolbar p{font-size:15px}
+html.large-text .sort-field{font-size:15px}
+html.large-text .sort-field select{font-size:15px}
+html.large-text .active-filter{font-size:15px}
+html.large-text .active-filter button{font-size:20px}
+html.large-text .banner-icon{font-size:17px}
+html.large-text .data-banner p{font-size:15px}
+html.large-text .data-banner button{font-size:19px}
+html.large-text .inline-notice{font-size:15px}
+html.large-text .visual-caption{font-size:15px}
+html.large-text .status-badge{font-size:15px}
+html.large-text .product-brand{font-size:15px}
+html.large-text .product-card h3{font-size:18px}
+html.large-text .product-size{font-size:15px}
+html.large-text .nutrient-heading{font-size:15px}
+html.large-text .nutrient-heading button{font-size:15px}
+html.large-text .nutrient-strip small{font-size:15px}
+html.large-text .nutrient-strip strong{font-size:20px}
+html.large-text .nutrient-strip strong small{font-size:15px}
+html.large-text .allergen-line{font-size:15px}
+html.large-text .price-line .price{font-size:25px}
+html.large-text .price small{font-size:15px}
+html.large-text .price-line .price-from{font-size:15px}
+html.large-text .merchant-count{font-size:15px}
+html.large-text .merchant-label{font-size:15px}
+html.large-text .card-actions button{font-size:15px}
+html.large-text .loading-state{font-size:18px}
+html.large-text .empty-state>span{font-size:55px}
+html.large-text .empty-state h3{font-size:22px}
+html.large-text .empty-state p{font-size:16px}
+html.large-text .results-footnote{font-size:15px}
+html.large-text .how-it-works h2{font-size:24px}
+html.large-text .how-it-works li>span{font-size:17px}
+html.large-text .how-it-works strong{font-size:16px}
+html.large-text .how-it-works p{font-size:15px}
+html.large-text footer .brand{font-size:22px}
+html.large-text footer p{font-size:15px}
+html.large-text footer>div{font-size:15px}
+html.large-text .tray-copy strong{font-size:17px}
+html.large-text .tray-copy>span{font-size:15px}
+html.large-text .tray-actions>.text-button{font-size:15px}
+html.large-text .tray-actions>.primary-button{font-size:16px}
+html.large-text .dialog-top .eyebrow{font-size:15px}
+html.large-text .dialog-top h2{font-size:28px}
+html.large-text .close-button{font-size:28px}
+html.large-text .detail-heading h2{font-size:29px}
+html.large-text .detail-heading p{font-size:16px}
+html.large-text .detail-section h3,html.large-text .sources-dialog h3{font-size:20px}
+html.large-text .detail-section p,html.large-text .sources-dialog p,html.large-text .sources-dialog li{font-size:16px}
+html.large-text .nutrition-table{font-size:16px}
+html.large-text .nutrition-table caption{font-size:15px}
+html.large-text .source-link{font-size:15px}
+html.large-text .source-scope{font-size:15px}
+html.large-text .merchant-row{font-size:16px}
+html.large-text .merchant-row small{font-size:15px}
+html.large-text .merchant-row strong{font-size:20px}
+html.large-text .merchant-row a{font-size:15px}
+html.large-text .source-card h3{font-size:18px}
+html.large-text .source-card p{font-size:15px}
+html.large-text .source-card a{font-size:15px}
+html.large-text .comparison-controls{font-size:16px}
+html.large-text .comparison-controls select,html.large-text .comparison-controls input{font-size:16px}
+html.large-text .comparison-table{font-size:16px}
+html.large-text .comparison-table thead th{font-size:17px}
+html.large-text .comparison-table .table-small{font-size:15px}
+html.large-text .comparison-table td{font-size:18px}
+html.large-text .comparison-table .neutral{font-size:15px}
+html.large-text .comparison-table td small{font-size:15px}
+html.large-text .comparison-table a{font-size:15px}
+html.large-text .comparison-table .comparison-remove{font-size:15px}
+html.large-text .comparison-table .group-row th{font-size:15px}
+html.large-text .comparison-note{font-size:15px}
+html.large-text .toast{font-size:16px}
+html.large-text .error-message{font-size:17px}
+@media(min-width:1450px){html.large-text .hero h1{font-size:56px}html.large-text .product-card h3{font-size:20px}}
+@media(max-width:1100px){html.large-text .hero h1{font-size:44px}html.large-text .how-it-works h2{font-size:22px}html.large-text .brand{font-size:24px}}
+@media(max-width:760px){html.large-text .brand{font-size:23px}html.large-text .brand-icon{font-size:28px}html.large-text .header-inner nav{font-size:15px}html.large-text .hero h1{font-size:36px}html.large-text .hero .eyebrow{font-size:15px}html.large-text .hero-description{font-size:16px}html.large-text .hero-tags{font-size:15px}html.large-text .search-box input{font-size:17px}html.large-text .search-box .primary-button{font-size:15px}html.large-text .quick-search{font-size:15px}html.large-text .quick-search button{font-size:15px}html.large-text .assistant-toggle{font-size:15px}html.large-text .filter-sidebar summary{font-size:17px}html.large-text .filter-content select{font-size:16px}html.large-text .allergy-grid label{font-size:16px}html.large-text .field-note{font-size:15px}html.large-text .product-card h3{font-size:16px}html.large-text .product-brand{font-size:15px}html.large-text .product-size{font-size:15px}html.large-text .nutrient-strip strong{font-size:18px}html.large-text .nutrient-strip small{font-size:15px}html.large-text .card-actions button{font-size:15px}html.large-text .price-line .price{font-size:23px}html.large-text .results-toolbar h2{font-size:23px}}
+@media(max-width:540px){html.large-text .brand{font-size:22px}html.large-text .brand-hk{font-size:15px}html.large-text .header-inner nav{font-size:15px}html.large-text .hero h1{font-size:35px}html.large-text .hero-description{font-size:16px}html.large-text .hero-tags{font-size:15px}html.large-text .hero .eyebrow{font-size:15px}html.large-text .tiny-leaf{font-size:18px}html.large-text .search-box input{font-size:16px}html.large-text .search-box .primary-button{font-size:15px}html.large-text .quick-search{font-size:15px}html.large-text .quick-search button{font-size:15px}html.large-text .assistant-toggle{font-size:15px}html.large-text .assistant-panel input{font-size:16px}html.large-text .assistant-panel label{font-size:15px}html.large-text .filter-topline{font-size:15px}html.large-text .filter-topline button{font-size:15px}html.large-text .filter-content legend{font-size:17px}html.large-text .allergy-grid label{font-size:16px}html.large-text .budget-presets button{font-size:16px}html.large-text .filter-help{font-size:15px}html.large-text .category-tabs button{font-size:16px}html.large-text .results-toolbar h2{font-size:20px}html.large-text .results-toolbar p{font-size:15px}html.large-text .sort-field select{font-size:15px}html.large-text .data-banner p{font-size:15px}html.large-text .product-brand{font-size:15px}html.large-text .product-card h3{font-size:17px}html.large-text .product-size{font-size:15px}html.large-text .nutrient-strip strong{font-size:18px}html.large-text .nutrient-strip small{font-size:15px}html.large-text .nutrient-heading{font-size:15px}html.large-text .nutrient-heading button{font-size:15px}html.large-text .allergen-line{font-size:15px}html.large-text .price-line .price{font-size:24px}html.large-text .price-line .price-from{font-size:15px}html.large-text .merchant-count{font-size:15px}html.large-text .merchant-label{font-size:15px}html.large-text .card-actions button{font-size:15px}html.large-text .status-badge{font-size:15px}html.large-text .results-footnote{font-size:15px}html.large-text .how-it-works h2{font-size:23px}html.large-text .how-it-works li>span{font-size:22px}html.large-text .how-it-works strong{font-size:17px}html.large-text .how-it-works p{font-size:15px}html.large-text .footer-brand{font-size:23px!important}html.large-text footer p{font-size:15px}html.large-text .tray-copy strong{font-size:16px}html.large-text .tray-copy>span{font-size:15px}html.large-text .tray-actions .primary-button{font-size:15px}html.large-text .tray-actions>.text-button{font-size:15px}html.large-text .dialog-top h2{font-size:25px}html.large-text .dialog-top .eyebrow{font-size:15px}html.large-text .detail-heading h2{font-size:22px}html.large-text .detail-heading p{font-size:15px}html.large-text .merchant-row{font-size:15px}html.large-text .merchant-row strong{font-size:20px}html.large-text .merchant-row a{font-size:15px}html.large-text .comparison-controls{font-size:15px}html.large-text .comparison-controls select,html.large-text .comparison-controls input{font-size:15px}html.large-text .comparison-table{font-size:15px}html.large-text .comparison-table th,html.large-text .comparison-table td{font-size:16px}html.large-text .comparison-table thead th{font-size:16px}html.large-text .comparison-table .table-small{font-size:15px}html.large-text .source-card p{font-size:15px}html.large-text .toast{font-size:15px}}
+html.large-text .coverage-title .eyebrow{font-size:15px}
+html.large-text .coverage-live{font-size:15px}
+html.large-text .coverage-stats strong{font-size:33px}
+html.large-text .coverage-stats span{font-size:15px}
+html.large-text .coverage-panel>p{font-size:15px}
+html.large-text .coverage-bottom{font-size:15px}
+html.large-text .coverage-bottom select{font-size:15px}
+html.large-text .catalogue-pagination p{font-size:15px}
+@media(max-width:540px){html.large-text .coverage-title .eyebrow{font-size:15px}html.large-text .coverage-live{font-size:15px}html.large-text .coverage-stats strong{font-size:29px}html.large-text .coverage-stats span{font-size:15px}html.large-text .coverage-panel>p{font-size:15px}html.large-text .coverage-bottom select{font-size:16px}html.large-text .category-tabs button{font-size:15px}}
+html.large-text .field-note,html.large-text .allergen-line,html.large-text .results-footnote,html.large-text .data-banner p,html.large-text .comparison-note{font-size:15px}
+html.large-text .status-badge{font-size:15px}
+html.large-text .source-scope{font-size:15px}
+html.large-text .category-tabs button:disabled{font-size:15px}
+@media(max-width:540px){html.large-text .allergen-line,html.large-text .field-note,html.large-text .results-footnote,html.large-text .data-banner p{font-size:15px}html.large-text .status-badge{font-size:15px}html.large-text .category-tabs button:disabled{font-size:15px}}
+html.large-text .price-line .price{font-size:29px}
+html.large-text .hk-progress label{font-size:16px}
+html.large-text .hk-progress p{font-size:15px}
+html.large-text .text-size-toggle{font-size:17px}
+html.large-text .assistant-panel .assistant-title{font-size:20px}
+html.large-text .assistant-badge{font-size:15px}
+html.large-text .assistant-panel .assistant-lead{font-size:17px}
+html.large-text .assistant-pending{font-size:16px}
+html.large-text .assistant-panel .assistant-privacy{font-size:16px}
+html.large-text .assistant-offline label{font-size:17px}
+html.large-text .assistant-offline p,html.large-text .assistant-offline #request-feedback{font-size:16px}
+html.large-text .coverage-line{font-size:17px}
+html.large-text .coverage-line strong{font-size:20px}
+html.large-text .coverage-details summary{font-size:16px}
+html.large-text .coverage-details #catalogue-status{font-size:16px}
+html.large-text .coverage-reviewed{font-size:17px!important}
+html.large-text .coverage-reviewed strong{font-size:20px}
+html.large-text .link-banner p{font-size:17px}
+html.large-text .link-banner .text-button{font-size:17px}
+html.large-text .copy-link{font-size:16px}
+html.large-text .empty-actions p{font-size:17px}
+html.large-text .lowest-tag{font-size:15px}
+html.large-text .assistant-toggle{font-size:17px}
+@media(max-width:540px){html.large-text .text-size-toggle{font-size:16px}html.large-text .coverage-line{font-size:16px}html.large-text .coverage-line strong{font-size:20px}}
+html.large-text .product-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+/* END generated readability layer */

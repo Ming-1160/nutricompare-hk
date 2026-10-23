@@ -7,16 +7,16 @@
   <meta name="description" content="按口味、預算及過敏限制，比較包裝食品營養、香港超市價格與購買渠道。每項資料有來源，未知資料清楚標示。">
   <title>NutriCompare HK｜比較清楚，再作選擇</title>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20261022-hk-labels-more">
-  <script type="module" src="app.mjs?v=20261022-hk-labels-more"></script>
+  <link rel="stylesheet" href="styles.css?v=20261023-v17c">
+  <script type="module" src="app.mjs?v=20261023-v17c"></script>
 </head>
 <body>
 <a class="skip-link" href="#results">跳至食品結果</a>
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="./" aria-label="NutriCompare HK 主頁"><span class="brand-icon" aria-hidden="true">n<span>c</span></span><span>NutriCompare<span class="brand-hk">HK</span></span></a>
-    <nav aria-label="主要導覽"><a class="nav-current" href="#explore">探索食品</a><button class="text-button" id="sources-button">資料來源</button><a href="../group-brief.html">關於計劃 ↗</a></nav>
-    <span class="prototype-label"><span></span> 功能原型 v1.6</span>
+    <nav aria-label="主要導覽"><a class="nav-current" href="#explore">探索食品</a><button class="text-button" id="sources-button">資料來源</button><a class="nav-about" href="../project.html">關於計劃</a><button class="text-size-toggle" id="text-size-toggle" type="button" aria-pressed="false" title="放大網站文字">A+ 大字</button></nav>
+    <span class="prototype-label"><span></span> 功能原型 v1.7</span>
   </div>
 </header>
 <main>
@@ -43,11 +43,19 @@
       <label class="sr-only" for="food-search">食品名稱或品牌</label><input id="food-search" type="search" placeholder="搜尋食品、品牌，例如：夾心餅、嘉頓…" autocomplete="off" maxlength="160">
       <button type="submit" class="primary-button">搜尋食品 <span aria-hidden="true">→</span></button>
     </form>
-    <div class="search-bottom"><div class="quick-search"><span>試下搜尋</span><button type="button" data-query="夾心餅">夾心餅</button><button type="button" data-query="嘉頓">嘉頓</button><button type="button" data-query="燕麥">燕麥</button></div><button class="assistant-toggle text-button" id="assistant-toggle" aria-expanded="false" aria-controls="assistant-panel">✧ 用一句說話設定條件</button></div>
+    <div class="search-bottom"><div class="quick-search"><span>試下搜尋</span><button type="button" data-request="低糖飲品 20蚊以下">低糖飲品 $20 以下</button><button type="button" data-request="即食麵 少鈉">即食麵 · 鈉較低</button><button type="button" data-query="夾心餅">夾心餅</button><button type="button" data-query="嘉頓">嘉頓</button></div><button class="assistant-toggle text-button" id="assistant-toggle" aria-expanded="false" aria-controls="assistant-panel">✧ AI 助手：講一句，幫你設定條件</button></div>
     <div class="assistant-panel" id="assistant-panel" hidden>
-      <label for="request-input">例如：「想食夾心餅，30元以下，花生過敏」</label>
-      <form id="request-form"><input id="request-input" maxlength="240" placeholder="輸入想食嘅食品、預算或過敏限制"><button class="primary-button" type="submit">套用條件</button></form>
-      <p>規則式條件助手：只辨認部分常用字詞，未接駁生成式 AI；套用後請核對篩選條件。</p><div id="request-feedback" role="status"></div>
+      <div class="assistant-ai">
+        <p class="assistant-title"><span aria-hidden="true">✧</span> AI 條件助手 <span class="assistant-badge" id="ai-assistant-platform">EdUHK MaaS</span></p>
+        <p class="assistant-lead">用平時講嘢咁講你想食咩、預算幾多、要避開咩。AI 會整理成一張條件卡，再俾你一條連結返嚟呢度睇結果。</p>
+        <div class="assistant-action"><a id="ai-assistant-link" class="primary-button" href="#" target="_blank" rel="noopener noreferrer" hidden>開啟 AI 助手 <span aria-hidden="true">↗</span></a><span id="ai-assistant-pending" class="assistant-pending">AI 助手設定中：小組喺 EdUHK MaaS 發佈之後，按鈕會喺呢度出現。</span></div>
+        <p class="assistant-privacy">你喺 AI 助手輸入嘅句子，會傳送到教大 MaaS 平台由 AI 模型處理，小組可以睇到對話紀錄用嚟改善。請唔好輸入姓名、病歷、藥物或其他個人資料。AI 只會建議篩選條件；營養數值、過敏排除同價格，全部由本網站用已核對資料計算。</p>
+      </div>
+      <div class="assistant-offline">
+        <label for="request-input">唔使 AI 都得：離線快速解讀，例如「想食即食麵，少鈉，20蚊以下」</label>
+        <form id="request-form"><input id="request-input" maxlength="240" placeholder="輸入想食嘅食品、預算或過敏限制"><button class="primary-button" type="submit">套用條件</button></form>
+        <p>規則式解讀：只認得常用字詞，句子唔會離開你部機；套用後請核對篩選條件。</p><div id="request-feedback" role="status"></div>
+      </div>
     </div>
   </section>
 
@@ -61,6 +69,7 @@
           <fieldset><legend>購買渠道</legend><label class="sr-only" for="store">選擇商戶</label><select id="store"><option value="">所有商戶</option><option value="PARKNSHOP">百佳 PARKnSHOP</option><option value="WELLCOME">惠康 Wellcome</option><option value="JASONS">Market Place</option><option value="AEON">AEON</option></select></fieldset>
           <fieldset><legend>需要避開嘅過敏原</legend><p class="field-note allergy-intro">可選多項；「含有」及「可能含有」都排除。</p><div class="allergy-grid" id="allergy-options"></div><p class="field-note">有選過敏原時，資料不足嘅產品亦唔會列入結果。未列出過敏原唔等於保證安全。篩選只涵蓋列出嘅10類；其他過敏（如芥末、芹菜、軟體貝類）請閱讀原標。</p></fieldset>
           <fieldset><legend>產地</legend><label class="sr-only" for="origin">選擇已核對產地</label><select id="origin"><option value="">所有／未確認產地</option></select><p class="field-note">品牌所屬國家唔等於生產地。</p></fieldset>
+          <fieldset><legend>資料範圍</legend><label class="sr-only" for="library-scope">選擇資料庫</label><select id="library-scope"><option value="priced">香港格價食品（原有目錄）</option><option value="off-library">OFF 擴展營養參考（未有價格）</option><option value="">全部資料庫</option></select><label class="sr-only" for="data-scope">顯示資料範圍</label><select id="data-scope" class="second-select"><option value="">全部食品（包含只有價格）</option><option value="nutrition">只看有營養數值</option><option value="hk-nutrition">只看已讀香港營養來源</option><option value="comparable">只看明確每100g／ml基準</option><option value="hk-label">只看有香港完整過敏聲明</option></select><p class="field-note">OFF 參考庫屬社群資料，未有香港價格。</p></fieldset>
           <div class="filter-help"><span aria-hidden="true">ⓘ</span><p>此工具協助第二型糖尿病成人及照顧者閱讀標籤。個人可食份量及治療需要，請跟醫護人員嘅建議。</p></div>
         </div>
       </details>
@@ -68,26 +77,27 @@
 
     <section class="results" id="results" aria-label="食品搜尋結果">
       <div class="category-tabs" role="group" aria-label="食品分類"><button class="active" data-category="" aria-pressed="true">全部</button><button data-category="biscuits" aria-pressed="false">餅乾</button><button data-category="snacks" aria-pressed="false">小食</button><button data-category="drinks" aria-pressed="false">飲品</button><button data-category="bakery" aria-pressed="false">麵包</button><button data-category="dairy" aria-pressed="false">奶 / 蛋</button><button data-category="pantry" aria-pressed="false">糧油調味</button><button data-category="meals" aria-pressed="false">麵食食材</button></div>
-      <section class="coverage-panel" aria-label="資料庫收錄範圍"><div class="coverage-title"><span class="eyebrow">香港資料，一起比較</span><span class="coverage-live">價格＋標籤來源</span></div><div class="coverage-stats"><div><strong id="coverage-products">—</strong><span>香港格價食品</span></div><div><strong id="coverage-nutrition">—</strong><span>有營養參考數值（含部分資料）</span></div><div><strong id="coverage-hk-nutrition">—</strong><span>香港營養來源已讀</span></div><div><strong id="coverage-labels">—</strong><span>香港完整過敏聲明紀錄</span></div></div><div class="hk-progress"><label for="hk-label-progress" id="hk-progress-text">正在計算香港標籤覆蓋…</label><progress id="hk-label-progress" max="1000" value="0" aria-labelledby="hk-progress-text"></progress><p>目標只計原有有價格商品；已讀公開來源，未核實現售實物批次。</p></div><p id="catalogue-status">正在載入消委會食品價格及逐件核對嘅標籤資料…</p><div class="coverage-bottom"><label for="library-scope">選擇資料庫</label><select id="library-scope"><option value="priced">香港格價食品（原有目錄）</option><option value="off-library">OFF擴展營養參考（未有價格）</option><option value="">全部資料庫</option></select></div><div class="coverage-bottom"><label for="data-scope">顯示資料範圍</label><select id="data-scope"><option value="">全部食品（包含僅有價格）</option><option value="nutrition">只看有營養參考數值</option><option value="hk-nutrition">只看已讀香港營養來源</option><option value="comparable">只看明確每100g／ml基準</option><option value="hk-label">只看有香港完整過敏聲明紀錄</option></select></div></section>
-      <div class="results-toolbar"><div><h2>搵到你想比較嘅</h2><p id="result-count" role="status">正在載入有來源嘅食品資料…</p></div><div class="sort-field"><label for="sort">排序</label><select id="sort"><option value="relevance">資料較完整優先</option><option value="price-asc">價格：低至高</option><option value="carbs-asc">碳水化合物：低至高</option><option value="sugar-asc">糖：低至高</option><option value="protein-desc">蛋白質：高至低</option></select></div></div>
-      <div id="active-filters" class="active-filters" aria-label="已套用條件"></div>
-      <div class="data-banner"><span class="banner-icon" aria-hidden="true">✓</span><p><strong>比較有依據，資料有日期。</strong><span id="snapshot-note">價格載入中。</span> OFF批量營養屬社群參考；部分食品未有完整標籤；「—」代表未知，唔係零。</p><button id="data-info-button" aria-label="查看資料來源與限制">ⓘ</button></div>
+      <section class="coverage-strip" aria-label="資料收錄範圍"><p class="coverage-line"><span><strong id="coverage-products">—</strong> 款香港格價食品</span><span><strong id="coverage-nutrition">—</strong> 款有營養數值</span><span><strong id="coverage-labels">—</strong> 款有完整過敏聲明</span><span class="coverage-source">價格：消委會格價資訊通</span></p><details class="coverage-details"><summary>資料覆蓋及 1,000 款目標進度</summary><div class="hk-progress"><p class="coverage-reviewed"><strong id="coverage-hk-nutrition">—</strong> 款已人工閱讀香港營養來源</p><label for="hk-label-progress" id="hk-progress-text">正在計算香港標籤覆蓋…</label><progress id="hk-label-progress" max="1000" value="0" aria-labelledby="hk-progress-text"></progress><p>目標只計原有有價格商品；已讀公開來源，未核實現售實物批次。</p></div><p id="catalogue-status">正在載入消委會食品價格及逐件核對嘅標籤資料…</p></details></section>
+      <div class="results-toolbar"><div><h2>搵到你想比較嘅</h2><p id="result-count" role="status">正在載入有來源嘅食品資料…</p></div><div class="sort-field"><label for="sort">排序</label><select id="sort" aria-label="排序"><option value="relevance">資料較完整優先</option><option value="price-asc">價格：低至高</option><option value="carbs-asc">碳水化合物：低至高</option><option value="sugar-asc">糖：低至高</option><option value="sodium-asc">鈉：低至高</option><option value="protein-desc">蛋白質：高至低</option></select></div></div>
+      <div id="link-banner" class="link-banner" role="status" hidden></div>
+      <div class="filter-row"><div id="active-filters" class="active-filters" aria-label="已套用條件"></div><button id="copy-link" class="text-button copy-link" type="button" hidden>複製呢組條件嘅連結</button></div>
+      <div class="data-banner"><span class="banner-icon" aria-hidden="true">✓</span><p><strong>「—」代表未知，唔係零。</strong><span id="snapshot-note">價格載入中。</span></p><button id="data-info-button" aria-label="查看資料來源與限制">ⓘ</button></div>
       <div id="sort-note" class="inline-notice" hidden></div><div id="allergy-notice" class="inline-notice amber" hidden></div>
       <div id="product-grid" class="product-grid" aria-busy="true"><div class="loading-state">正在核對食品資料…</div></div>
       <div class="catalogue-pagination"><p id="page-status" role="status"></p><button id="load-more" type="button" class="secondary-button" hidden>再顯示 24 項食品 ↓</button></div>
-      <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">⌕</span><h3>暫時搵唔到符合條件嘅食品</h3><p id="empty-description">試下另一個名稱，或者調整預算及商戶。過敏資料不足亦可能令結果減少。</p><button class="secondary-button" id="empty-reset">重設條件</button></div>
+      <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">⌕</span><h3>暫時搵唔到符合條件嘅食品</h3><p id="empty-description">試下另一個名稱，或者調整預算及商戶。過敏資料不足亦可能令結果減少。</p><div id="empty-actions" class="empty-actions"></div><button class="secondary-button" id="empty-reset">重設全部條件</button></div>
       <p class="results-footnote">價格係資料快照，唔代表各分店即時售價或有貨；優惠條件、運費及庫存請到商戶核實。營養數值只供標籤比較，唔代表個人適合程度。</p>
     </section>
   </div>
 
   <section class="how-it-works"><div><span class="eyebrow">由想食，到睇得明</span><h2>唔使每個網站來回搵。</h2></div><ol><li><span>01</span><div><strong>搵想食嘅食品</strong><p>按名稱、口味或品牌搜尋。</p></div></li><li><span>02</span><div><strong>揀你嘅條件</strong><p>預算、商戶、過敏限制。</p></div></li><li><span>03</span><div><strong>放埋一齊比較</strong><p>睇份量、營養同資料來源。</p></div></li></ol></section>
-  <footer><a class="brand footer-brand" href="./">NutriCompare <span class="brand-hk">HK</span></a><p>香港食品比較 · ITC2010 學生功能原型<br>唔收集姓名、病歷或藥物資料；條件只在此頁處理。</p><div><button class="text-button" id="footer-sources">資料來源與限制</button><a href="../group-brief.html">研究及提案</a></div></footer>
+  <footer><a class="brand footer-brand" href="./">NutriCompare <span class="brand-hk">HK</span></a><p>香港食品比較 · ITC2010 學生功能原型<br>唔收集姓名、病歷或藥物資料；條件只在此頁處理。</p><div><button class="text-button" id="footer-sources">資料來源與限制</button><a href="../project.html">關於計劃</a></div></footer>
 </main>
 <div class="compare-tray" id="compare-tray" hidden><div class="tray-inner"><div class="tray-copy"><strong>已選 <span id="compare-count">0</span> / 3</strong><span id="selected-names">選擇食品作比較</span></div><div class="tray-actions"><button class="text-button" id="clear-comparison">清空</button><button class="primary-button" id="open-comparison" disabled>比較營養 <span aria-hidden="true">↗</span></button></div></div></div>
 <dialog id="detail-dialog" class="detail-dialog"><div class="dialog-top"><span class="eyebrow">食品資料</span><button class="close-button" data-close="detail-dialog" aria-label="關閉食品資料">×</button></div><div id="detail-content"></div></dialog>
 <dialog id="compare-dialog" class="compare-dialog"><div class="dialog-top"><div><span class="eyebrow">放埋一齊，睇得更清楚</span><h2>營養與價格比較</h2></div><button class="close-button" data-close="compare-dialog" aria-label="關閉比較">×</button></div><div id="compare-content"></div></dialog>
 <dialog id="sources-dialog" class="sources-dialog"><div class="dialog-top"><div><span class="eyebrow">每一項數字，都有出處</span><h2>資料來源與比較方式</h2></div><button class="close-button" data-close="sources-dialog" aria-label="關閉資料來源">×</button></div><div id="sources-content"></div></dialog>
 <div id="toast" class="toast" role="status" hidden></div>
-<noscript><p class="noscript">請啟用 JavaScript 使用搜尋、篩選及比較功能。你仍可閱讀<a href="../group-brief.html">研究與資料來源說明</a>。</p></noscript>
+<noscript><p class="noscript">請啟用 JavaScript 使用搜尋、篩選及比較功能。你仍可閱讀<a href="../project.html">關於計劃及資料來源說明</a>。</p></noscript>
 </body>
 </html>

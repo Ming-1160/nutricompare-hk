@@ -1,6 +1,18 @@
 # NutriCompare HK
 
-Traditional Chinese, mobile-responsive ITC2010 functional prototype. Static HTML/CSS/JavaScript; no build dependencies, login, tracking, third-party runtime, stored health profile or paid API required.
+Traditional Chinese, mobile-responsive ITC2010 functional prototype for adults with type 2 diabetes and their caregivers in Hong Kong. Static HTML/CSS/JavaScript; no build dependencies, login, tracking, third-party runtime, stored health profile or paid API required. Project page (problem, plan, AI role, testing, limitations, ethics): [project.html](project.html).
+
+## Version 1.7: 23 October 2026 (Moodle requirement gaps)
+
+- **AI assistant hand-off.** An EdUHK MaaS Dialogue Agent (system prompt, settings and 15 test cases in [docs/maas-assistant.md](docs/maas-assistant.md)) turns one sentence into a condition card and a link. `app/url-state.mjs` validates every link value against fixed lists; unknown values are ignored and an unrecognised allergen produces a visible warning. Links can only add allergy exclusions. The assistant button appears after the published MaaS link is pasted into `app/ai-config.mjs`. AI suggests; the deterministic engine still decides allergy exclusion, arithmetic, ranking and prices.
+- **Offline parser** (still not AI, runs only in the browser) was rewritten as a clause-by-clause reader and checked in six rounds of adversarial testing by a separate AI reviewer agent (automated checks, not user testing). Its safety rules, each covered by tests: allergy or refusal wording never becomes the product search; every allergen named in an allergy statement is kept, and anything it cannot name is reported ("unclear" words, allergies the label filter cannot cover such as molluscs or mustard, foods the site cannot exclude such as 朱古力); 有冇／沒有…嗎 questions ask for a product instead of hiding it; a negation word right before an allergen it could not read ("我唔會食花生", "not peanuts") makes it avoid that allergen and say it guessed. It also reads Cantonese and English refusals (唔食得, 食唔得, 唔想飲, 牛奶唔要, 除咗…都, I don't eat, keep away from, makes me sick), sugar/salt/carbohydrate wishes as rankings, budgets in digits, Chinese (百二蚊, 廿蚊) or English words (twenty dollars), and brand left-overs (嘉頓 30蚊以下). It is still a fixed-word helper: unusual sentences can be misread, so every condition appears as a removable chip and the allergy checkboxes stay authoritative.
+- **Ranking:** 100ml and 100g values are ranked in separate blocks instead of not at all, so 低糖飲品 now lists 0g-sugar drinks first. New sort: 鈉：低至高.
+- **Search precision:** "Cream crackers" / "ice cream" no longer match 夾心; the broad Consumer Council top-level groups are no longer searched (searching "soy" no longer returns every dairy product).
+- **Usability:** shareable condition links and a link banner; empty results suggest single relaxations with counts (never allergy relaxation); comparison table marks the lowest value on a shared basis; compact coverage strip with the 1,000-label progress moved into a details panel; A+ large-text mode; a generated readability layer (`node tools/build-readability-css.mjs`) darkens 69 low-contrast text colours to at least 4.6:1 on the lightest panels and raises informative text below 12px.
+- **Project page:** [project.html](project.html) replaces the outdated 18 October brief in navigation; [group-brief.html](group-brief.html) is kept as a marked archive.
+- Data and prices are unchanged from v1.6 (no labels added in this release).
+- **Links** read the page's own allergen labels and everyday words (蛋類, 含麩質穀物, 牛奶製品, tree nuts, prawns), tell an unrecognised word (未能辨認) apart from an allergy the site cannot filter (網站篩唔到), warn that shellfish/seafood does not cover molluscs, and report repeated parameters; every `q` in an AI link is read for allergy wording.
+- Validation: 139 tests, 138 pass and 1 is skipped (raw-source parity needs the locally downloaded Pricewatch snapshot), including a template × allergen safety matrix and speed checks for long inputs. Desktop 1366px and mobile 390px checks, including large-text mode and horizontal-overflow checks; axe-core 4.10 reports 0 WCAG A/AA violations on the home page, link banner and dialogs. No clinical or real-user validation is claimed.
 
 ## Features
 
@@ -9,7 +21,7 @@ Traditional Chinese, mobile-responsive ITC2010 functional prototype. Static HTML
 - Conservative multi-allergen filtering: contains, may-contain and incomplete records are excluded.
 - Up to three products compared per100g/ml or a custom comparison amount. Missing values remain unknown; package prices do not scale with the nutrition amount.
 - HK retailer price snapshots, source dates and correctly labelled merchant/product links.
-- Transparent fixed-keyword request parser. This is not generative AI or a clinical recommendation engine.
+- AI assistant hand-off through validated links (EdUHK MaaS), plus a transparent fixed-keyword offline parser. Neither is a clinical recommendation engine.
 - Separate library scopes for HK priced products, OFF nutrition references, or both; further filter for nutrition, manually read HK nutrition sources, explicit100g/ml basis, or complete source-scoped HK allergy statements.
 
 The root page and `app/` both open the functional prototype. `group-brief.html` preserves the earlier group proposal and research notes.
@@ -90,9 +102,9 @@ Serve this folder over HTTP, for example `python -m http.server 8773`, then open
 
 Engine and catalogue tests: `node --test app/tests/*.test.mjs`. The bulk suite checks complete in-scope import, exclusions, exact-ID preservation, prices, missing data, allergy safety behavior, and bilingual/merchant/budget search. Optional raw-source parity runs when the downloaded source snapshot is available locally.
 
-## Optional AI integration
+## AI integration (v1.7)
 
-The current application contains no API keys. EdUHK student ChatGPT/GenAI login does not establish API entitlement. An actual integration needs an approved API endpoint, deployment/model, usage permission and server-side secret handling. Keep secrets out of GitHub Pages and never ask patients to enter university credentials. The existing deterministic data/filter functions should remain authoritative even after AI is added.
+The website contains no API keys. The AI part is an EdUHK MaaS Dialogue Agent published by the group as a share link (credits are charged to the developer account; the developer can see chat logs, so the site tells users not to enter personal or health details). The agent never sees product data: it only returns conditions and a link such as `?q=instant%20noodles&budget=20&sort=sodium-asc&avoid=peanuts&src=ai`. Accepted link keys: `q`, `cat` (biscuits, snacks, drinks, bakery, dairy, pantry, meals), `budget` (0–10000), `store` (merchant codes in the data), `avoid` (gluten, crustaceans, eggs, fish, peanuts, soy, milk, tree-nuts, sesame, sulphites, plus plain aliases), `sort` (relevance, price-asc, carbs-asc, sugar-asc, sodium-asc, protein-desc), `data`, `lib`, `src=ai`. The deterministic data/filter functions remain authoritative. Never ask patients to enter university credentials, and never put secrets into GitHub Pages.
 
 ## Sources and attribution
 
