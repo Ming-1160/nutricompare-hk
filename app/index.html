@@ -7,8 +7,8 @@
   <meta name="description" content="按口味、預算及過敏限制，比較包裝食品營養、香港超市價格與購買渠道。每項資料有來源，未知資料清楚標示。">
   <title>NutriCompare HK｜比較清楚，再作選擇</title>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=18">
-  <script type="module" src="app.mjs?v=18"></script>
+  <link rel="stylesheet" href="styles.css?v=19">
+  <script type="module" src="app.mjs?v=19"></script>
 </head>
 <body>
 <a class="skip-link" href="#results">跳至食品結果</a>
@@ -16,7 +16,7 @@
   <div class="header-inner">
     <a class="brand" href="./" aria-label="NutriCompare HK 主頁"><span class="brand-icon" aria-hidden="true">n<span>c</span></span><span>NutriCompare<span class="brand-hk">HK</span></span></a>
     <nav aria-label="主要導覽"><a class="nav-current" href="#explore">探索食品</a><button class="text-button" id="sources-button">資料來源</button><a class="nav-about" href="../project.html">關於計劃</a><button class="text-size-toggle" id="text-size-toggle" type="button" aria-pressed="false" title="放大網站文字">A+ 大字</button></nav>
-    <span class="prototype-label"><span></span> 功能原型 v1.8</span>
+    <span class="prototype-label"><span></span> 功能原型 v1.9</span>
   </div>
 </header>
 <main>
@@ -85,12 +85,14 @@
       <div class="results-toolbar"><div><h2>食品結果</h2><p id="result-count" role="status">正在載入食品資料…</p></div><div class="sort-field"><label for="sort">排序</label><select id="sort" aria-label="排序"><option value="relevance">資料較完整優先</option><option value="price-asc">價格：低至高</option><option value="carbs-asc">碳水：低至高</option><option value="sugar-asc">糖：低至高</option><option value="sodium-asc">鈉：低至高</option><option value="protein-desc">蛋白質：高至低</option></select></div></div>
       <p class="inline-notice" id="search-feedback" role="status" hidden></p>
       <div id="link-banner" class="link-banner" role="status" hidden></div>
-      <div class="filter-row"><div id="active-filters" class="active-filters" aria-label="已套用條件"></div><button id="copy-link" class="text-button copy-link" type="button" hidden>複製呢組條件嘅連結</button></div>
+      <div class="filter-row"><div id="active-filters" class="active-filters" role="group" aria-label="已套用條件"></div><button id="copy-link" class="text-button copy-link" type="button" hidden>複製呢組條件嘅連結</button></div>
       <div class="data-banner"><p><strong>過敏請核對手上包裝。</strong><span class="unknown-note">「—」係未知。</span><span id="snapshot-note">價格載入中。</span></p><button id="data-info-button" type="button">資料來源</button></div>
       <div id="sort-note" class="inline-notice" hidden></div><div id="allergy-notice" class="inline-notice amber" hidden></div>
+      <button id="exclusion-toggle" class="text-button exclusion-toggle" type="button" aria-controls="exclusion-panel" aria-expanded="false" hidden></button>
       <div id="product-grid" class="product-grid" aria-busy="true"><div class="loading-state">正在核對食品資料…</div></div>
       <div class="catalogue-pagination"><p id="page-status" role="status"></p><button id="load-more" type="button" class="secondary-button" hidden>再顯示 24 項食品 ↓</button></div>
       <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">⌕</span><h3>暫時搵唔到符合條件嘅食品</h3><p id="empty-description">試下另一個名稱，或者調整預算及商戶。過敏資料不足亦可能令結果減少。</p><div id="empty-actions" class="empty-actions"></div><button class="secondary-button" id="empty-reset">重設全部條件</button></div>
+      <section class="exclusion-panel" id="exclusion-panel" aria-labelledby="exclusion-title" hidden></section>
       <section class="coverage-strip" aria-label="資料收錄範圍"><details class="coverage-details"><summary>資料覆蓋及 1,000 款目標進度</summary><p class="coverage-line"><span><strong id="coverage-products">—</strong> 款香港格價食品</span><span><strong id="coverage-nutrition">—</strong> 款有營養數值</span><span><strong id="coverage-labels">—</strong> 款有完整過敏聲明</span><span class="coverage-source">價格：消委會格價資訊通</span></p><div class="hk-progress"><p class="coverage-reviewed"><strong id="coverage-hk-nutrition">—</strong> 款已人工閱讀香港營養來源</p><label for="hk-label-progress" id="hk-progress-text">正在計算香港標籤覆蓋…</label><progress id="hk-label-progress" max="1000" value="0" aria-labelledby="hk-progress-text"></progress><p>只計原有有價格商品；已讀公開來源，未核實現售批次。</p></div><p id="catalogue-status">正在載入價格同標籤資料…</p></details></section>
       <p class="results-footnote">售價、優惠同庫存請向商戶核實。營養數值只供標籤比較；個人份量同治療請跟醫護建議。</p>
     </section>
@@ -103,6 +105,19 @@
 <dialog id="detail-dialog" class="detail-dialog" aria-labelledby="detail-title"><div class="dialog-top"><span id="detail-title" class="eyebrow">食品資料</span><button class="close-button" data-close="detail-dialog" aria-label="關閉食品資料">×</button></div><div id="detail-content"></div></dialog>
 <dialog id="compare-dialog" class="compare-dialog" aria-labelledby="comparison-title"><div class="dialog-top"><h2 id="comparison-title">營養與價格比較</h2><button class="close-button" data-close="compare-dialog" aria-label="關閉比較">×</button></div><div id="compare-content"></div></dialog>
 <dialog id="sources-dialog" class="sources-dialog" aria-labelledby="sources-title"><div class="dialog-top"><h2 id="sources-title">資料來源與比較方式</h2><button class="close-button" data-close="sources-dialog" aria-label="關閉資料來源">×</button></div><div id="sources-content"></div></dialog>
+<dialog id="nutrient-evidence-dialog" class="nutrient-evidence-dialog" aria-labelledby="nutrient-evidence-title">
+  <div class="dialog-top"><h2 id="nutrient-evidence-title">營養數字出處</h2><button type="button" class="close-button" data-close="nutrient-evidence-dialog" aria-label="關閉數字出處">×</button></div>
+  <div id="nutrient-evidence-content"></div>
+</dialog>
+<dialog id="comparison-share-dialog" class="comparison-share-dialog" aria-labelledby="comparison-share-title">
+  <div class="dialog-top"><h2 id="comparison-share-title">分享比較</h2><button type="button" class="close-button" data-close="comparison-share-dialog" aria-label="關閉分享比較">×</button></div>
+  <div id="comparison-qr-image"></div>
+  <p>連結會帶埋所選食品同目前篩選條件，包括已揀嘅過敏原。</p>
+  <label for="comparison-link-field">比較連結</label>
+  <input id="comparison-link-field" type="url" readonly>
+  <button id="copy-comparison-link" class="secondary-button" type="button">複製連結</button>
+  <p id="comparison-qr-status" role="status"></p>
+</dialog>
 <div id="toast" class="toast" role="status" hidden></div>
 <noscript><p class="noscript">請啟用 JavaScript 使用搜尋、篩選及比較功能。你仍可閱讀<a href="../project.html">關於計劃及資料來源說明</a>。</p></noscript>
 </body>

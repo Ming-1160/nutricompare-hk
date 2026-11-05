@@ -2,10 +2,19 @@
 
 Traditional Chinese, mobile-responsive ITC2010 functional prototype for adults with type 2 diabetes and their caregivers in Hong Kong. Static HTML/CSS/JavaScript; no build dependencies, login, tracking, third-party runtime, stored health profile or paid API required. Project page (problem, plan, AI role, testing, limitations, ethics): [project.html](project.html).
 
+## Version 1.9 · Batch 1
+
+- Mobile cards show carbohydrate, sugars and sodium, the nutrition basis and the source type. The nutrient used for sorting is emphasised. Pack comparisons use one inner pack when its size is known. Product details retain the whole-pack nutrition and prices.
+- Quick requests and AI filter links retain brands recognised in the current catalogue when a food type is also specified. Try `維他 檸檬茶`, `李錦記 蠔油` or `嘉頓 梳打餅`. A low-GI bread search shows bread with an explanation of the missing GI data.
+- With an allergy filter, the exclusion count opens a separate list below the results. Comparison and product details show the evidence for each displayed or missing nutrient value. Product details can also show up to three same-category alternatives with reviewed Hong Kong label values, a common retailer within HK$2 and at least 20% lower sodium or sugars on the same basis. Active allergy filters apply to each alternative.
+- Share links restore up to three catalogue products along with the filters. Share via the device, copy the link, use WhatsApp or show the locally generated QR code. The link includes active allergy choices. The bundled QR encoder is Kazuhiko Arase’s `qrcode-generator` v2.0.4. See [MIT licence](app/vendor/qrcode-generator.LICENSE).
+- This batch uses the existing data. MaaS is pending setup and publication. Real-user testing, fieldwork import and the four Batch 2 features remain pending.
+- To run locally, serve the repository root over HTTP and open either the root page or `app/`. Run `node --test app/tests/*.test.mjs` for the automated checks. The original raw Pricewatch file is required for one optional test. Copy the extracted website files to the GitHub Pages repository root to deploy.
+
 ## Version 1.8 · 6 November 2026
 
 - The phone layout starts with search and uses compact product rows. The comparison table shows all two or three selected products side by side. Secondary filters and longer source notes are expandable.
-- Search now keeps the requested food type when filters change, recognises common Cantonese variants, and reports the limit of GI searches. A request for a brand and a food type keeps both. Try `夾心餅`, `代糖`, `低糖乳酪`, `檸茶`, `凍檸茶`, `蘇打餅`, `低GI` and the quick request `嘉頓 梳打餅`.
+- Search kept the requested food type when filters changed, recognised common Cantonese variants and reported the limit of GI searches. The quick request `嘉頓 梳打餅` retained both parts in this version.
 - Whole retail pack prices remain the basis of the budget filter. When pack sizes are clear, cards, comparison and retailer details show prices per 100 g or 100 ml, plus prices per inner pack for multipacks. The comparison and product details calculate package nutrition from compatible label and size data. Offers are listed separately.
 - The data files retain the 21 October price snapshot and the existing label evidence. For a working demo, use quick request `想搵即食麵，20蚊以下，避開花生，少鈉` and compare two results. Use `我對花生過敏，想食夾心餅，20蚊以下` to demonstrate how the site explains an empty result and keeps allergy restrictions.
 - Verification used the existing snapshot and local Chrome. All 152 tests passed with the original raw snapshot available. The portable ZIP passes 151 tests and skips the snapshot parity check. The browser walkthrough confirmed both entry points, the two demo outcomes, unit prices, package nutrition and three-product comparison.
@@ -28,7 +37,7 @@ Traditional Chinese, mobile-responsive ITC2010 functional prototype for adults w
 - Chinese/English food and brand search across3,045 records:1,788 original HK price-comparison products plus1,257 separately labelled, unpriced OFF community nutrition references.24-item progressive loading; original priced catalogue shown by default. This release adds no new unpriced products; newly identified duplicate references are removed.
 - Whole-pack HKD budget and merchant filters; verified origin field when available.
 - Conservative multi-allergen filtering: contains, may-contain and incomplete records are excluded.
-- Up to three products compared per100g/ml or a custom comparison amount. Missing values remain unknown; package prices do not scale with the nutrition amount.
+- Compare up to three products per 100 g/ml, per pack or inner pack when known, or at a custom amount. Missing values remain unknown and package prices stay on their original price basis.
 - HK retailer price snapshots, source dates and correctly labelled merchant/product links.
 - AI assistant hand-off through validated links (EdUHK MaaS), plus a transparent fixed-keyword offline parser. Neither is a clinical recommendation engine.
 - Separate library scopes for HK priced products, OFF nutrition references, or both; further filter for nutrition, manually read HK nutrition sources, explicit100g/ml basis, or complete source-scoped HK allergy statements.

@@ -1,5 +1,5 @@
 /** Derive pack values from declared sizes, without changing the listed retail price. */
-import { nutritionFor } from './engine.mjs?v=18';
+import { nutritionFor } from './engine.mjs?v=19';
 
 const text = value => typeof value === 'string' ? value.normalize('NFKC').trim().toLowerCase() : '';
 const number = value => {

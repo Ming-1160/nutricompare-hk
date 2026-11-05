@@ -491,3 +491,41 @@ html.large-text .assistant-toggle{font-size:17px}
 @media(max-width:540px){html.large-text .text-size-toggle{font-size:16px}html.large-text .coverage-line{font-size:16px}html.large-text .coverage-line strong{font-size:20px}}
 html.large-text .product-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
 /* END generated readability layer */
+
+.card-nutrient{display:block;color:var(--ink);font-size:1rem;font-variant-numeric:tabular-nums}
+.card-nutrient small{display:block}
+.mobile-nutrient-basis{display:none}
+.comparison-source-badge{display:block;margin:3px 0;color:#37563b;font-size:.8em;font-weight:600}
+.comparison-share-actions{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:8px 0}
+.comparison-share-actions .secondary-button{display:inline-flex;align-items:center;min-height:36px;padding:5px 9px;text-decoration:none}
+.comparison-share-actions [role="status"]{font-size:.85em}
+.nutrient-evidence-button{padding:2px 3px;border:0;border-radius:3px;background:transparent;color:#215c4d;font-weight:inherit;text-decoration:underline;text-underline-offset:3px;text-align:left}
+.nutrient-evidence-button:focus-visible{outline-offset:1px}
+.table-scroll:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+.nutrient-evidence-dialog,.comparison-share-dialog{max-width:34rem}
+.nutrient-evidence-list{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 12px}
+.nutrient-evidence-list dt{font-weight:700}
+.nutrient-evidence-list dd{margin:0;overflow-wrap:anywhere}
+.nutrient-conflicts{padding-inline-start:1.4em}
+#comparison-qr-image svg{width:min(15rem,100%);height:auto;margin:0 auto;background:white;shape-rendering:crispEdges}
+#comparison-link-field{display:block;width:100%;margin:4px 0 10px;padding:8px;color:var(--ink);background:#fff;border:1px solid #687e68;border-radius:5px}
+.exclusion-toggle{margin:0 0 8px;text-decoration:underline;text-underline-offset:3px;font-weight:700}
+.exclusion-panel{margin:12px 0;padding:14px;border-top:2px solid #aeba9c;background:#f6f7ee}
+.exclusion-panel h3,.exclusion-panel h4{margin:4px 0}
+.exclusion-panel ul,.alternatives ul{margin:0 0 10px;padding-inline-start:1.3em}
+.exclusion-panel li+li,.alternatives li+li{margin-top:8px}
+.exclusion-panel li span{display:block}
+.exclusion-panel button,.alternatives button{text-align:left;text-decoration:underline;text-underline-offset:3px}
+.alternatives li p{margin:0}
+
+@media(max-width:540px){
+  .product-card .nutrient-strip{display:flex;grid-column:1/-1;grid-row:3;flex-wrap:wrap;align-items:baseline;gap:0 4px;margin:4px 0 0;padding:4px 0 0;line-height:1.35}
+  .product-card .nutrient-strip div{flex:none;padding:0;border:0}
+  .product-card .nutrient-strip div+div::before{content:'·';margin-right:4px}
+  html .product-card .card-nutrient,html .product-card .card-nutrient small,.mobile-nutrient-basis{display:inline;font-size:12px}
+  html.large-text .product-card .card-nutrient,html.large-text .product-card .card-nutrient small,html.large-text .mobile-nutrient-basis{font-size:15px}
+  .results:has(#allergy-notice:not([hidden])) .product-card .allergen-line{grid-row:4}
+  .nutrient-evidence-button{padding-inline:1px}
+  .detail-dialog .nutrition-table{table-layout:fixed}
+  .detail-dialog .nutrition-table th,.detail-dialog .nutrition-table td{width:auto;padding:6px 4px;overflow-wrap:anywhere}
+}

@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { buildCatalogue, mergeLabelSources } from '../catalogue.mjs';
 import { enrichCatalogue } from '../enrichment.mjs';
 import { applyHkLabelReview } from '../hk-labels.mjs';
-import { filterProducts, getAllergenAssessment, getMinPrice, nutritionFor, parseRequest, searchQueryLimitations } from '../engine.mjs';
+import { buildBrandIndex, filterProducts, getAllergenAssessment, getMinPrice, nutritionFor, parseRequest, searchQueryLimitations } from '../engine.mjs';
 import { filtersFromParams, paramsFromFilters } from '../url-state.mjs';
 
 const read = name => JSON.parse(readFileSync(new URL('../data/' + name + '.json', import.meta.url), 'utf8'));
@@ -14,6 +14,7 @@ for (const overlay of ['hk-reviewed-labels', 'off-hk-reviewed-labels', 'hk-revie
   catalogue = applyHkLabelReview(catalogue, read(overlay));
 }
 const products = catalogue.products;
+const brandIndex = buildBrandIndex(products);
 const byId = new Map(products.map(product => [product.id, product]));
 const priced = { libraryScope: 'priced' };
 const search = (query, filters = {}) => filterProducts(products, { ...priced, query, ...filters });
@@ -91,11 +92,110 @@ test('蘇打餅 works in both search boxes and 嘉頓 stays attached to the bisc
   const expected = ['P000000651', 'P000001187'];
   for (const request of [
     { query: '嘉頓梳打餅' },
-    parseRequest('嘉頓 梳打餅'),
-    filtersFromParams('?q=Garden%20soda%20crackers&src=ai', { base: priced }).filters,
+    parseRequest('嘉頓 梳打餅', { brandIndex }),
+    filtersFromParams('?q=Garden%20soda%20crackers&src=ai', { base: priced, brandIndex }).filters,
   ]) {
     assert.match(request.query, /嘉頓|garden/i);
     assert.deepEqual(ids(filterProducts(products, { ...request, ...priced })).sort(), expected);
+  }
+});
+
+test('v1.9 AI links keep the catalogue brand alongside the food, including multi-word brands', () => {
+  const cases = [
+    ['Vita lemon tea', /^vita /i, /^vita$/i, ['P000000125', 'P000005059']],
+    ['Lee Kum Kee oyster sauce', /^lee kum kee /i, /^lee kum kee$/i, ['P000000071']],
+    ['Nissin cup noodles', /^nissin /i, /^nissin$/i, ['P000000660']],
+    ['Nestle coffee', /^nestle /i, /^nestle(?: |$)/i, ['P000002282']],
+  ];
+  for (const [q, expectedQuery, expectedBrand, expectedIds] of cases) {
+    const state = filtersFromParams(new URLSearchParams({ q, src: 'ai' }), { base: priced, brandIndex });
+    assert.match(state.filters.query, expectedQuery);
+    const hits = filterProducts(products, state.filters);
+    assert.ok(expectedIds.every(id => ids(hits).includes(id)), q);
+    assert.ok(hits.every(product => expectedBrand.test(product.brandEn)), q);
+    if (q === 'Lee Kum Kee oyster sauce') assert.equal(hits[0].id, 'P000000071');
+  }
+});
+
+test('main search retains v1.8 result counts for words that resemble brands', t => {
+  for (const [query, expected] of [
+    ['fresh milk', 63],
+    ['雀巢 咖啡', 9],
+    ['extra virgin olive oil', 17],
+    ['粟米 片', 24],
+    ['lemon cake', 3],
+    ['藍莓 乳酪', 2],
+  ]) {
+    const count = search(query).length;
+    assert.equal(count, expected, query);
+    t.diagnostic(`${query}: ${count} (v1.8: ${expected})`);
+  }
+});
+
+test('AI fresh milk link retains the v1.8 count of 96', () => {
+  const state = filtersFromParams('?q=fresh%20milk&src=ai', { base: priced, brandIndex });
+  assert.equal(state.filters.query, '牛奶');
+  assert.equal(filterProducts(products, state.filters).length, 96);
+});
+
+test('brand lookup excludes OFF-only brands and produce placeholders', () => {
+  for (const alias of ['fresh', 'extra', '番茄', '粟米', '檸檬']) {
+    assert.equal(brandIndex.has(alias), false, alias);
+  }
+  for (const alias of ['vita', '維他', 'lee kum kee', '李錦記', 'nissin', 'nestle']) {
+    assert.ok(brandIndex.has(alias), alias);
+  }
+});
+
+test('v1.9 the quick parser keeps Chinese brands and catalogue punctuation', () => {
+  for (const [q, expectedQuery, expectedId] of [
+    ['維他 檸檬茶', '維他 檸檬茶', 'P000000125'],
+    ['想買維他檸檬茶', '維他 檸檬茶', 'P000005059'],
+    ['李錦記 蠔油', '李錦記 蠔油', 'P000000071'],
+    ['嘉頓 梳打餅', '嘉頓 克力架', 'P000001187'],
+    ['Baker’s Choice sandwich bread', "Baker's Choice 夾心麵包", 'P000003983'],
+  ]) {
+    const request = parseRequest(q, { brandIndex });
+    assert.equal(request.query, expectedQuery);
+    assert.ok(ids(filterProducts(products, { ...priced, ...request })).includes(expectedId), q);
+  }
+});
+
+test('v1.9 奶油曲奇 is a butter-cookie search in both boxes', () => {
+  const quick = parseRequest('奶油曲奇', { brandIndex });
+  const direct = search('奶油曲奇');
+  assert.deepEqual(ids(filterProducts(products, { ...priced, ...quick })), ids(direct));
+  assert.ok(ids(direct).includes('P000000967'), 'Kjeldsens');
+  assert.ok(ids(direct).includes('P000003211'), 'Walkers');
+  assert.ok(!ids(direct).includes('P000001318'), 'Lemon Puff sandwich biscuit');
+});
+
+test('v1.9 low GI bread uses the same 96 hits in both searches and discloses the limitation', () => {
+  const query = '低GI 麵包';
+  const quick = parseRequest(query, { brandIndex });
+  const direct = search(query);
+  assert.equal(direct.length, 96);
+  assert.deepEqual(ids(filterProducts(products, { ...priced, ...quick })), ids(direct));
+  assert.match(quick.notices.join(' '), /冇升糖指數（GI）資料/);
+});
+
+test('v1.9 named soda crackers rank ahead of products matching only by category', () => {
+  const direct = ids(search('蘇打餅'));
+  const quick = parseRequest('蘇打餅', { brandIndex });
+  assert.deepEqual(ids(filterProducts(products, { ...priced, ...quick })), direct);
+  for (const named of ['P000000366', 'P000001187', 'P000000651']) {
+    assert.ok(direct.includes(named) && direct.includes('P000003660'));
+    assert.ok(direct.indexOf(named) < direct.indexOf('P000003660'), 'named cracker before almond crisp');
+  }
+});
+
+test('v1.9 sandwich bread and cream cake keep the bakery category', () => {
+  for (const [query, expectedId] of [['夾心麵包', 'P000003983'], ['忌廉蛋糕', 'P000005408']]) {
+    const quick = parseRequest(query, { brandIndex });
+    assert.equal(quick.category, 'bakery');
+    const hits = filterProducts(products, { ...priced, ...quick });
+    assert.ok(ids(hits).includes(expectedId));
+    assert.ok(hits.every(product => product.category === 'bakery'));
   }
 });
 

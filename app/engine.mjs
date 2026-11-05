@@ -1,5 +1,5 @@
 /** NutriCompare HK: deterministic search, conservative filters and label arithmetic. */
-import {hasReviewedHkNutrition} from './hk-labels.mjs?v=20261022-hk-labels-more';
+import {hasReviewedHkNutrition} from './hk-labels.mjs?v=19';
 
 export const ALLERGENS = Object.freeze([
   'gluten', 'crustaceans', 'eggs', 'fish', 'peanuts', 'soy', 'milk', 'tree-nuts', 'sesame', 'sulphites',
@@ -28,6 +28,13 @@ function clean(value) {
 
 const SODA_CRACKERS = /梳打[餅饼][乾干]?|[蘇苏]打[餅饼][乾干]?|克力架|\b(?:soda|cream)[\s-]*crackers?\b|\bsaltines?(?:[\s-]*crackers?)?\b/giu;
 const FILLED_BISCUITS = /[夾夹]心\s*(?:[餅饼][乾干]?|曲奇|威化[餅饼]?)|(?:忌廉|奶油)\s*(?:[餅饼][乾干]?|曲奇|威化[餅饼]?)|\b(?:cream(?:[\s-]*sandwich)?|sandwich|filled)[\s-]*(?:biscu[il]ts?|cookies?|wafers?|crackers?)\b/giu;
+const BUTTER_COOKIES = /(?:奶油|牛油)\s*曲奇|\bbutter[\s-]*(?:cookies?|shortbread)\b/giu;
+const BAKERY_BREAD = /[麵面]包|方包|\bbreads?\b/giu;
+const BAKERY_CAKE = /蛋糕|\bcakes?\b/giu;
+const FILLED_BREAD = /(?:[夾夹]心|三文治)\s*(?:[麵面]包|方包)|\b(?:sandwich|filled)[\s-]*breads?\b/giu;
+const CREAM_CAKE = /(?:忌廉|奶油)\s*蛋糕|\bcream[\s-]*cakes?\b/giu;
+const CREAM = /忌廉|奶油|\bcream\b/iu;
+const CUP_NOODLES = /杯[麵面]|\bcup[\s-]*noodles?\b/giu;
 const SWEETENERS = /代[糖醣]|糖(?:替代|代用)品|甜味[劑剂素]|\b(?:sweeteners?|sugar[\s-]*(?:substitutes?|alternatives?|replacements?))\b/giu;
 const YOGHURT = /乳[酪酭]|[優优]格|酸奶|\byogh?urts?\b/giu;
 const LOW_SUGAR = /低糖|少糖|\blow[\s-]*sugar\b/giu;
@@ -48,6 +55,53 @@ function searchText(value) {
     .replace(/\bice[\s-]*cream\b/g, '雪糕')
     .replace(/[\s\p{P}\p{S}]+/gu, ' ')
     .trim();
+}
+
+function brandText(value) {
+  return clean(value).normalize('NFD').replace(/\p{M}/gu, '').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+}
+
+function productBrandLabels(product) {
+  const brand = typeof product.brand === 'object' ? Object.values(product.brand ?? {}) : [product.brand];
+  return [...brand, product.brandEn].filter(label => typeof label === 'string' && label.trim());
+}
+
+const brandIndexes = new WeakMap();
+
+/** Brand spellings from packaged products in the priced catalogue. */
+export function buildBrandIndex(products) {
+  if (!Array.isArray(products)) return new Map();
+  if (!brandIndexes.has(products)) {
+    const brands = new Map();
+    for (const product of products) {
+      if (product.libraryGroup === 'off-library' || /^(?:\(|包裝)/u.test(clean(product.nameZh))) continue;
+      for (const label of productBrandLabels(product)) {
+        const key = brandText(label);
+        if (key && !brands.has(key)) brands.set(key, label);
+      }
+    }
+    brandIndexes.set(products, brands);
+  }
+  return brandIndexes.get(products);
+}
+
+function isPlainFood(text) {
+  return REQUEST_FOOD_CUES.some(([pattern]) => text.match(pattern)?.includes(text))
+    || /^(?:[麵面]包|方包|蛋糕|breads?|cakes?)$/u.test(text);
+}
+
+function splitLeadingBrand(value, brandIndex) {
+  const text = brandText(value);
+  if (!text || !brandIndex?.size || isPlainFood(text)) return null;
+  if (brandIndex.has(text)) return { brand: text, food: '' };
+  for (let end = text.length - 1; end > 0; end--) {
+    const brand = text.slice(0, end);
+    if (!brandIndex.has(brand)) continue;
+    const food = text.slice(end).trim();
+    // Chinese brands can run directly into a known food word, e.g. 維他檸檬茶.
+    if (text[end] === ' ' || (/\p{Script=Han}$/u.test(brand) && isPlainFood(food))) return { brand, food };
+  }
+  return null;
 }
 
 /** Disclose which parts of a search are not product criteria. */
@@ -73,6 +127,10 @@ function queryTokens(query) {
   }
   if (hasLowSugarYoghurt(value)) value = value.replace(LOW_SUGAR, ' ');
   return searchText(value
+    .replace(BUTTER_COOKIES, ' 牛油曲奇 ')
+    .replace(FILLED_BREAD, ' 夾心麵包 ')
+    .replace(CREAM_CAKE, ' 忌廉蛋糕 ')
+    .replace(CUP_NOODLES, ' 杯麵 ')
     .replace(SODA_CRACKERS, ' 克力架 ')
     .replace(FILLED_BISCUITS, ' 夾心 ')
     .replace(/夹心/g, '夾心')
@@ -92,6 +150,8 @@ function normalizeAllergen(value) {
   const key = clean(value).replace(/^en:/, '');
   return ALLERGENS.find(id => ALLERGEN_ALIASES[id].includes(key)) ?? null;
 }
+
+export { normalizeAllergen };
 
 function normalizedSelection(values) {
   const selected = Array.isArray(values) ? values : [];
@@ -120,17 +180,23 @@ function searchableProduct(product) {
   const biscuit = !product.category || clean(product.category) === 'biscuits';
   // Combined source headings include unrelated products (sugar/sweetener, cheese/yoghurt).
   // Specific food concepts match the name, except a biscuit subcategory that names one kind of biscuit.
-  const biscuitIdentity = biscuit ? [name, narrowCategory].join(' ').replace(SODA_CRACKERS, ' ') : '';
+  const biscuitIdentity = biscuit ? [name, narrowCategory].join(' ').replace(SODA_CRACKERS, ' ').replace(BUTTER_COOKIES, ' ') : '';
+  const namedSodaCracker = testPattern(SODA_CRACKERS, name);
+  const bakery = clean(product.category) === 'bakery';
   const concepts = {
     夾心: biscuit && (/[夾夹]心/.test(name) || testPattern(FILLED_BISCUITS, biscuitIdentity)),
-    克力架: biscuit && (testPattern(SODA_CRACKERS, name) || testPattern(SODA_CRACKERS, narrowCategory)),
+    克力架: biscuit && (namedSodaCracker || testPattern(SODA_CRACKERS, narrowCategory)),
+    牛油曲奇: biscuit && testPattern(BUTTER_COOKIES, name),
+    夾心麵包: bakery && testPattern(FILLED_BREAD, name),
+    忌廉蛋糕: bakery && CREAM.test(name) && testPattern(BAKERY_CAKE, name),
+    杯麵: testPattern(CUP_NOODLES, name),
     代糖: testPattern(SWEETENERS, name),
     乳酪: testPattern(YOGHURT, name),
     檸檬茶: testPattern(LEMON_TEA, name) && !DRY_TEA_OR_MIX.test([name, narrowCategory].join(' ')),
     cream: /\bcream\b/u.test(primary) || /忌廉|奶油/u.test(name),
   };
   const text = searchText([primary, product.category, product.packSize, ...searchableTags(product)].filter(Boolean).join(' '));
-  const entry = { primary, text, concepts };
+  const entry = { primary, text, concepts, namedSodaCracker };
   if (product && typeof product === 'object') haystacks.set(product, entry);
   return entry;
 }
@@ -274,8 +340,9 @@ export function filterProducts(products, filters = {}) {
   }
   if (tokens?.length && (!filters.sort || filters.sort === 'relevance')) {
     const score=product=>{
-      const {primary, concepts}=searchableProduct(product);
-      return tokens.reduce((sum,token)=>sum+Number(concepts[token] === true || primary.includes(token)),0);
+      const {primary, concepts, namedSodaCracker}=searchableProduct(product);
+      return tokens.reduce((sum,token)=>sum+Number(concepts[token] === true || primary.includes(token)),0)
+        + Number(tokens.includes('克力架') && namedSodaCracker);
     };
     // A broad source category can match the query, but exact product words come first.
     return filtered.sort((a,b)=>score(b)-score(a));
@@ -350,6 +417,15 @@ const CATEGORY_CUES = Object.freeze([
   ['bakery', /麵包|面包|方包|蛋糕|bread|cakes?/giu],
 ]);
 const BISCUIT_CUE = /餅乾|饼干|餅干|餅|饼|biscuits?|crackers?|cookies?|wafers?/iu;
+// These are product searches only. The earlier cues still serve the allergy-clause parser.
+const REQUEST_FOOD_CUES = Object.freeze([
+  [BUTTER_COOKIES, '牛油曲奇', 'biscuits'],
+  [FILLED_BREAD, '夾心麵包', 'bakery'],
+  [CREAM_CAKE, '忌廉蛋糕', 'bakery'],
+  [CUP_NOODLES, '杯麵', 'meals'],
+  ...FOOD_CUES,
+]);
+const BRAND_REQUEST_LEAD = /^(?:[\s\p{P}\p{S}]+|(?:我)?(?:想(?:食|飲|買|搵|要)|要(?:食|飲|買|搵)?|幫我|請問|想|搵|買)|\b(?:i\s+want(?:\s+to)?|please|looking\s+for|show\s+me|find|buy|get)\b)+/iu;
 const STORE_CUES = Object.freeze([
   ['PARKNSHOP', /百佳|parknshop|park\s*['’]?\s*n\s*['’]?\s*shop|\bpns\b/giu],
   ['WELLCOME', /惠康|wellcome/giu],
@@ -1088,7 +1164,7 @@ function chineseNumber(text) {
  * Small, transparent phrase parser; this is not generative AI or medical advice.
  * Explicit form fields remain the authoritative way to adjust the parsed request.
  */
-export function parseRequest(text = '') {
+export function parseRequest(text = '', { brandIndex } = {}) {
   const request = typeof text === 'string' ? text.normalize('NFKC').trim().slice(0, 240) : '';
   const lower = clean(request);
   const result = {
@@ -1174,15 +1250,30 @@ export function parseRequest(text = '') {
   }
   if (sorts.length) result.sort = sorts[0];
   if (sorts.length > 1) result.notices.push(`你提到多於一個排序要求；網站一次只用一個，已用「${SORT_LABELS[sorts[0]]}」，可以喺「排序」再改。`);
+  const medical = /藥|药|medicine|medication|insulin|胰島素|胰岛素/iu.test(lower);
+  // Do this only after allergy, refusal and other restrictions have been read.
+  const refusalLeft = report.negationGuess.length > 0;
+  const directBrand = !medical && !refusalLeft
+    ? splitLeadingBrand(rest, brandIndex) ?? splitLeadingBrand(rest.replace(BRAND_REQUEST_LEAD, ''), brandIndex)
+    : null;
+  if (directBrand) rest = directBrand.food;
   const hasBiscuitWord = BISCUIT_CUE.test(rest);
+  const bread = testPattern(BAKERY_BREAD, rest);
+  const cake = testPattern(BAKERY_CAKE, rest);
   let foodCategory = null;
   if (lactoseFree && rest.includes(LACTOSE_TOKEN)) { result.query = '無乳糖'; foodCategory = 'drinks'; }
   rest = rest.replaceAll(LACTOSE_TOKEN, ' ');
-  for (const [pattern, query, category] of FOOD_CUES) {
+  for (const [pattern, query, category] of REQUEST_FOOD_CUES) {
+    if ((bread || cake) && category !== 'bakery') continue;
+    if (!directBrand && pattern === CUP_NOODLES) continue;
     if (testPattern(pattern, rest) && !result.query) { result.query = query; foodCategory = category; }
     rest = rest.replace(pattern, ' ');
   }
-  if (hasBiscuitWord) result.category = 'biscuits';
+  if (bread || cake) {
+    if (!result.query) result.query = rest.match(cake ? BAKERY_CAKE : BAKERY_BREAD)[0].replace('面包', '麵包');
+    // Keep a plain low-GI bread request on the same search as the main box.
+    if (!(hasLowGi(lower) && bread && !cake && !foodCategory)) result.category = 'bakery';
+  } else if (hasBiscuitWord) result.category = 'biscuits';
   else if (foodCategory) result.category = foodCategory;
   else {
     const category = CATEGORY_CUES.find(([, pattern]) => testPattern(pattern, rest));
@@ -1201,13 +1292,13 @@ export function parseRequest(text = '') {
     .replace(/(?:預算|预算|budget|唔好超過|唔超過|不超過|超過|少於|低於|以下|以內|以内|蚊|元|港元|hkd|\$|食|飲|買|要)/giu, ' ')
     .replace(/[\d\s\p{P}\p{S}]+/gu, ' ').trim().replace(/\s+/g, ' ');
   const meaningful = /[㐀-鿿]{2,}|[a-z]{3,}/iu.test(leftover) && leftover.split(' ').length <= 2;
-  const medical = /藥|药|medicine|medication|insulin|胰島素|胰岛素/iu.test(lower);
   const allergyLeft = /過敏|过敏|敏感|allerg|不耐|intoleran/iu.test(leftover) || (report.triggered && testPattern(ALIAS_ANY, leftover));
   // A sentence that only made sense as a refusal ("花生對我嚟講好危險") never searches what is left of it.
-  const refusalLeft = report.negationGuess.length > 0;
-  if (meaningful && !medical && !allergyLeft && !refusalLeft) {
-    if (!result.query) result.query = leftover.slice(0, 30);
-    else if (/^(?:嘉[頓顿]|garden)$/iu.test(leftover)) result.query = `${leftover.replace('嘉顿', '嘉頓')} ${result.query}`;
+  if (!medical && !allergyLeft && !refusalLeft) {
+    const otherBrand = brandText(leftover);
+    const brand = brandIndex?.get(directBrand?.brand ?? otherBrand);
+    if (brand) result.query = [brand, result.query || (directBrand ? leftover : '')].filter(Boolean).join(' ');
+    else if (!result.query && meaningful) result.query = leftover.slice(0, 30);
   }
   // A sentence that clearly talks about an allergy but names nothing the site can use is flagged, never searched.
   const talksAboutAllergy = /過敏|过敏|allerg|anaphyla|不耐受|intoleran/iu.test(lower);

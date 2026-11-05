@@ -4,7 +4,7 @@
  * Every value is checked against a fixed list; anything unknown is reported and ignored, never guessed.
  * A link can only add allergy exclusions. It can never weaken the deterministic allergy exclusion.
  */
-import { ALLERGENS, parseRequest, readAllergenPhrase, searchQueryLimitations } from './engine.mjs?v=18';
+import { ALLERGENS, getAllergenAssessment, parseRequest, readAllergenPhrase, searchQueryLimitations } from './engine.mjs?v=19';
 
 export const CATEGORY_IDS = Object.freeze(['biscuits', 'snacks', 'drinks', 'bakery', 'dairy', 'pantry', 'meals']);
 export const SORT_IDS = Object.freeze(['relevance', 'price-asc', 'carbs-asc', 'sugar-asc', 'sodium-asc', 'protein-desc']);
@@ -20,7 +20,7 @@ const KEY_ALIASES = new Map([
   ['avoid', 'avoid'], ['allergens', 'avoid'], ['allergen', 'avoid'], ['allergy', 'avoid'], ['allergies', 'avoid'],
   ['exclude', 'avoid'], ['excludes', 'avoid'], ['without', 'avoid'], ['free', 'avoid'],
   ['sort', 'sort'], ['order', 'sort'], ['sortby', 'sort'],
-  ['data', 'data'], ['lib', 'lib'], ['library', 'lib'], ['src', 'src'], ['source', 'src'],
+  ['data', 'data'], ['lib', 'lib'], ['library', 'lib'], ['src', 'src'], ['source', 'src'], ['compare', 'compare'],
 ]);
 const KEY_LABELS = Object.freeze({ cat: '分類', budget: '預算', store: '商戶', sort: '排序', data: '資料範圍', lib: '資料庫', src: '來源' });
 
@@ -49,12 +49,38 @@ function cleanText(value, max = 60) {
 }
 const shown = value => { const text = cleanText(value, 200); return text.length > 24 ? `${text.slice(0, 24)}…` : text; };
 
+function readComparison(values, products, allergens, notes) {
+  if (!values.length) return [];
+  const byId = new Map(products.map(product => [product.id, product]));
+  const selected = [];
+  const seen = new Set();
+  const omitted = [];
+  for (const entry of values.flatMap(value => value.split(','))) {
+    const id = entry.trim();
+    const product = byId.get(id);
+    const label = `「${shown(id) || '空白'}」`;
+    if (!product) omitted.push(`${label}未能辨認`);
+    else if (seen.has(id)) omitted.push(`${label}重複`);
+    else if (allergens.length && getAllergenAssessment(product, allergens).status !== 'no-listed-match') {
+      omitted.push(`${label}未能符合過敏條件`);
+    } else if (selected.length >= 3) omitted.push(`${label}超出 3 款上限`);
+    else selected.push(id);
+    seen.add(id);
+  }
+  if (selected.length) notes.push(`已還原 ${selected.length} 款比較食品。`);
+  if (omitted.length) {
+    const details = [...new Set(omitted)];
+    notes.push(`有 ${omitted.length} 項比較資料已略過（${details.slice(0, 5).join('、')}${details.length > 5 ? '等' : ''}）。`);
+  }
+  return selected;
+}
+
 /**
- * Reads ?q=&cat=&budget=&store=&avoid=&sort=&data=&lib=&src= into the app's filter shape.
+ * Reads ?q=&cat=&budget=&store=&avoid=&sort=&data=&lib=&src=&compare= into the app's filter shape.
  * ignoredAllergens are avoid words the site could not recognise; unsupportedAllergens are allergies it recognises but cannot filter.
- * @returns {{present:boolean, source:'ai'|'link'|null, filters:object, applied:string[], ignored:string[], ignoredAllergens:string[], unsupportedAllergens:string[], notes:string[]}}
+ * @returns {{present:boolean, source:'ai'|'link'|null, filters:object, compareIds:string[], applied:string[], ignored:string[], ignoredAllergens:string[], unsupportedAllergens:string[], notes:string[]}}
  */
-export function filtersFromParams(input, { storeIds = [], base = {} } = {}) {
+export function filtersFromParams(input, { storeIds = [], base = {}, products = [], brandIndex } = {}) {
   const raw = input instanceof URLSearchParams ? input : new URLSearchParams(String(input ?? ''));
   const values = new Map();
   const unknownKeys = [];
@@ -71,7 +97,7 @@ export function filtersFromParams(input, { storeIds = [], base = {} } = {}) {
   const ignoredAllergens = [];
   const unsupportedAllergens = [];
   const notes = [];
-  if (!present) return { present: false, source: null, filters, applied, ignored, ignoredAllergens, unsupportedAllergens, notes };
+  if (!present) return { present: false, source: null, filters, compareIds: [], applied, ignored, ignoredAllergens, unsupportedAllergens, notes };
   const source = /^(?:ai|maas)$/i.test(first('src')) ? 'ai' : 'link';
   const addAllergen = id => { if (!filters.allergens.includes(id)) filters.allergens.push(id); };
   // Single-value parameters use the first value; a different repeated value is reported, never silently dropped.
@@ -88,7 +114,7 @@ export function filtersFromParams(input, { storeIds = [], base = {} } = {}) {
     if (source === 'ai') {
       // v1.7 MaaS prompts sent bare "cream" for filled biscuits. Keep that old link working
       // without giving the same special meaning to a person's direct search for cream.
-      const parsedList = queries.map(query => ({ query, parsed: parseRequest(/^cream$/i.test(query) ? 'cream sandwich biscuits' : query) }));
+      const parsedList = queries.map(query => ({ query, parsed: parseRequest(/^cream$/i.test(query) ? 'cream sandwich biscuits' : query, { brandIndex }) }));
       const named = new Set();
       for (const [index, { query, parsed }] of parsedList.entries()) {
         const allergyWords = parsed.allergens.length || parsed.unsupportedAllergens.length || parsed.allergyUnclear || parsed.avoidedFoods.length || parsed.otherRestrictions.length;
@@ -171,14 +197,16 @@ export function filtersFromParams(input, { storeIds = [], base = {} } = {}) {
     else ignored.push(`資料庫「${shown(library)}」`);
   }
 
+  const compareIds = readComparison(values.get('compare') ?? [], products, filters.allergens, notes);
+  if (compareIds.length) applied.push('compare');
   return {
-    present: true, source, filters, applied, ignored,
+    present: true, source, filters, compareIds, applied, ignored,
     ignoredAllergens: [...new Set(ignoredAllergens)], unsupportedAllergens: [...new Set(unsupportedAllergens)], notes: [...new Set(notes)],
   };
 }
 
 /** The shortest link that reproduces the current filters (defaults are left out). */
-export function paramsFromFilters(filters = {}) {
+export function paramsFromFilters(filters = {}, { compareIds = [] } = {}) {
   const params = new URLSearchParams();
   if (filters.query) params.set('q', cleanText(filters.query));
   if (filters.category && CATEGORY_IDS.includes(filters.category)) params.set('cat', filters.category);
@@ -188,5 +216,6 @@ export function paramsFromFilters(filters = {}) {
   if (filters.sort && filters.sort !== 'relevance' && SORT_IDS.includes(filters.sort)) params.set('sort', filters.sort);
   if (filters.dataScope && DATA_SCOPES.includes(filters.dataScope)) params.set('data', filters.dataScope);
   if (filters.libraryScope !== undefined && filters.libraryScope !== 'priced') params.set('lib', filters.libraryScope === '' ? 'all' : filters.libraryScope);
+  if (compareIds.length) params.set('compare', [...new Set(compareIds)].slice(0, 3).join(','));
   return params.toString();
 }
