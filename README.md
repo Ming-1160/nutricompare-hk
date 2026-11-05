@@ -2,6 +2,15 @@
 
 Traditional Chinese, mobile-responsive ITC2010 functional prototype for adults with type 2 diabetes and their caregivers in Hong Kong. Static HTML/CSS/JavaScript; no build dependencies, login, tracking, third-party runtime, stored health profile or paid API required. Project page (problem, plan, AI role, testing, limitations, ethics): [project.html](project.html).
 
+## Version 1.8 · 6 November 2026
+
+- The phone layout starts with search and uses compact product rows. The comparison table shows all two or three selected products side by side. Secondary filters and longer source notes are expandable.
+- Search now keeps the requested food type when filters change, recognises common Cantonese variants, and reports the limit of GI searches. A request for a brand and a food type keeps both. Try `夾心餅`, `代糖`, `低糖乳酪`, `檸茶`, `凍檸茶`, `蘇打餅`, `低GI` and the quick request `嘉頓 梳打餅`.
+- Whole retail pack prices remain the basis of the budget filter. When pack sizes are clear, cards, comparison and retailer details show prices per 100 g or 100 ml, plus prices per inner pack for multipacks. The comparison and product details calculate package nutrition from compatible label and size data. Offers are listed separately.
+- The data files retain the 21 October price snapshot and the existing label evidence. For a working demo, use quick request `想搵即食麵，20蚊以下，避開花生，少鈉` and compare two results. Use `我對花生過敏，想食夾心餅，20蚊以下` to demonstrate how the site explains an empty result and keeps allergy restrictions.
+- Verification used the existing snapshot and local Chrome. All 152 tests passed with the original raw snapshot available. The portable ZIP passes 151 tests and skips the snapshot parity check. The browser walkthrough confirmed both entry points, the two demo outcomes, unit prices, package nutrition and three-product comparison.
+- Deploy by copying the contents of this ZIP to the GitHub Pages repository root, keeping the `app`, `docs` and `tools` paths. Check both the root and `app/` entry points. Run `node --test app/tests/*.test.mjs` before publishing. The original raw Pricewatch file is needed for the optional snapshot parity test. The MaaS URL can be added after the group publishes and tests its assistant.
+
 ## Version 1.7: 23 October 2026 (Moodle requirement gaps)
 
 - **AI assistant hand-off.** An EdUHK MaaS Dialogue Agent (system prompt, settings and 15 test cases in [docs/maas-assistant.md](docs/maas-assistant.md)) turns one sentence into a condition card and a link. `app/url-state.mjs` validates every link value against fixed lists; unknown values are ignored and an unrecognised allergen produces a visible warning. Links can only add allergy exclusions. The assistant button appears after the published MaaS link is pasted into `app/ai-config.mjs`. AI suggests; the deterministic engine still decides allergy exclusion, arithmetic, ranking and prices.

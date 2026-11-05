@@ -4,7 +4,7 @@
  * Every value is checked against a fixed list; anything unknown is reported and ignored, never guessed.
  * A link can only add allergy exclusions. It can never weaken the deterministic allergy exclusion.
  */
-import { ALLERGENS, parseRequest, readAllergenPhrase } from './engine.mjs?v=20261023-v17c';
+import { ALLERGENS, parseRequest, readAllergenPhrase, searchQueryLimitations } from './engine.mjs?v=18';
 
 export const CATEGORY_IDS = Object.freeze(['biscuits', 'snacks', 'drinks', 'bakery', 'dairy', 'pantry', 'meals']);
 export const SORT_IDS = Object.freeze(['relevance', 'price-asc', 'carbs-asc', 'sugar-asc', 'sodium-asc', 'protein-desc']);
@@ -86,7 +86,9 @@ export function filtersFromParams(input, { storeIds = [], base = {} } = {}) {
   let impliedCategory = '';
   if (queries.length) {
     if (source === 'ai') {
-      const parsedList = queries.map(query => ({ query, parsed: parseRequest(query) }));
+      // v1.7 MaaS prompts sent bare "cream" for filled biscuits. Keep that old link working
+      // without giving the same special meaning to a person's direct search for cream.
+      const parsedList = queries.map(query => ({ query, parsed: parseRequest(/^cream$/i.test(query) ? 'cream sandwich biscuits' : query) }));
       const named = new Set();
       for (const [index, { query, parsed }] of parsedList.entries()) {
         const allergyWords = parsed.allergens.length || parsed.unsupportedAllergens.length || parsed.allergyUnclear || parsed.avoidedFoods.length || parsed.otherRestrictions.length;
@@ -109,6 +111,8 @@ export function filtersFromParams(input, { storeIds = [], base = {} } = {}) {
       if (queries.length > 1) notes.push(`連結有多於一個搜尋字詞，只用第一個「${shown(queries[0])}」；冇用「${queries.slice(1).map(shown).join('、')}」。`);
     }
     applied.push('q');
+    notes.push(...searchQueryLimitations(filters.query));
+    if (source === 'ai' && queries[0] !== filters.query) notes.push(...searchQueryLimitations(queries[0]));
   }
 
   const categoryText = cleanText(first('cat'), 20).toLowerCase();

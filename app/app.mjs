@@ -1,16 +1,30 @@
-import { filterProducts, getEligiblePrices, getMinPrice, getAllergenAssessment, nutritionFor, parseRequest, rankingGroups } from './engine.mjs?v=20261023-v17c';
-import { filtersFromParams, paramsFromFilters } from './url-state.mjs?v=20261023-v17c';
+import { filterProducts, getEligiblePrices, getMinPrice, getAllergenAssessment, nutritionFor, parseRequest, rankingGroups, searchQueryLimitations } from './engine.mjs?v=18';
+import { filtersFromParams, paramsFromFilters } from './url-state.mjs?v=18';
 import { AI_ASSISTANT } from './ai-config.mjs?v=20261023-v17c';
 import { buildCatalogue, mergeLabelSources } from './catalogue.mjs?v=20261021-labels-expanded';
 import { enrichCatalogue } from './enrichment.mjs?v=20261021-nutrition-library';
 import { applyHkLabelReview, hkLabelCoverage, hasReviewedHkNutrition } from './hk-labels.mjs?v=20261022-hk-labels-more';
+import { getPackPrices, getPackNutrition } from './pack-values.mjs?v=18';
 
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safeUrl = value => { try { const url = new URL(value); return url.protocol === 'https:' ? url.href : '#'; } catch { return '#'; } };
 const link = (url, label, cls='') => `<a class="${esc(cls)}" href="${esc(safeUrl(url))}" target="_blank" rel="noopener noreferrer">${esc(label)} ↗</a>`;
-const money = value => value === null || value === undefined ? '—' : Number(value).toFixed(1);
+const money = value => value === null || value === undefined ? '—' : Number(value).toFixed(2).replace(/0$/, '');
 const number = value => value === null || value === undefined || !Number.isFinite(Number(value)) ? '—' : Number(value).toLocaleString('zh-HK', {maximumFractionDigits:1});
+const hongKongDate = new Intl.DateTimeFormat('zh-Hant-HK', {
+  timeZone:'Asia/Hong_Kong', year:'numeric', month:'numeric', day:'numeric'
+});
+function dateLabel(value, fallback='日期未記錄') {
+  if(typeof value!=='string'||!value.trim())return fallback;
+  const dateOnly=value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(dateOnly)return `${dateOnly[1]}年${Number(dateOnly[2])}月${Number(dateOnly[3])}日`;
+  const date=new Date(value);
+  if(Number.isNaN(date.getTime()))return value;
+  const parts=Object.fromEntries(hongKongDate.formatToParts(date).map(({type,value})=>[type,value]));
+  return `${parts.year}年${parts.month}月${parts.day}日`;
+}
+function snapshotLabel() { return dateLabel(dataset?.priceSnapshotAt??dataset?.updatedAt,'見各項來源'); }
 const stores = {PARKNSHOP:'百佳',WELLCOME:'惠康',JASONS:'Market Place',AEON:'AEON',DCHFOOD:'大昌食品',WATSONS:'屈臣氏'};
 const allergens = {gluten:'含麩質穀物',crustaceans:'甲殼類',eggs:'蛋類',fish:'魚類',peanuts:'花生',soy:'大豆',milk:'奶類','tree-nuts':'木本堅果',sesame:'芝麻',sulphites:'亞硫酸鹽'};
 const categories = {biscuits:'餅乾',snacks:'小食',drinks:'飲品',bakery:'麵包 / 蛋糕',dairy:'奶 / 豆品 / 蛋',pantry:'糧油 / 調味',meals:'麵食 / 罐頭 / 食材'};
@@ -39,6 +53,20 @@ let linkSignature=null;
 function toast(message) { $('toast').textContent=message; $('toast').hidden=false; clearTimeout(toastTimeout); toastTimeout=setTimeout(()=>$('toast').hidden=true,4200); }
 function brandName(product) { return typeof product.brand === 'object' ? product.brand['zh-Hant'] ?? product.brand.zh ?? product.brand.en ?? '' : product.brand ?? ''; }
 function productUnit(product) { return ['g','ml'].includes(product.nutrition?.basisUnit)?product.nutrition.basisUnit:null; }
+function packPriceLines(product,price) {
+  const pack=getPackPrices(product,price);
+  const lines=[];
+  if(pack.per100!==null)lines.push(`HK$${money(pack.per100)}／100${pack.unit}`);
+  if(pack.perInner!==null)lines.push(`HK$${money(pack.perInner)}／小包`);
+  return lines;
+}
+function cardUnitPrice(product,price) {
+  const lines=packPriceLines(product,price);
+  return lines.length?`<p class="product-unit-price">${esc(lines.join(' · '))}</p>`:'';
+}
+function nutrientValue(value,unit) {
+  return shownValue(value)===null?'—':`${number(value)} <small>${unit}</small>`;
+}
 function basisLabel(product,amount=100) { const unit=productUnit(product);return unit?`每 ${number(amount)} ${unit}`:product.nutrition?.referenceBasis==='100g-or-100ml'?'來源每100g／ml · 單位待核對':'標籤基準未確認'; }
 function hasNutrition(product) { return nutrientFields.some(([key])=>product.nutrition?.[key] !== null && product.nutrition?.[key] !== undefined); }
 function hkEvidenceLabel(product) {
@@ -68,10 +96,10 @@ function sourceWarning(product) {
 function notesText(product) { return Array.isArray(product.notes) ? product.notes.join('；') : typeof product.notes==='string' ? product.notes : ''; }
 function allergyLabel(product) {
   const assessment = getAllergenAssessment(product,filters.allergens);
-  if (assessment.status==='no-listed-match') return {text:'聲明未列所選過敏原；仍需核對包裝',cls:'matched'};
+  if (assessment.status==='no-listed-match') return {text:'來源未列所選過敏原',cls:'matched'};
   const list = (product.allergens?.contains??[]).map(id=>allergens[id]??id).join('、');
   const maybe = (product.allergens?.mayContain??[]).map(id=>allergens[id]??id).join('、');
-  if (product.allergens?.status==='complete') return {text:[list?`含有：${list}`:'',maybe?`可能含有：${maybe}`:''].filter(Boolean).join('；')||'已記錄完整聲明；仍需核對包裝',cls:''};
+  if (product.allergens?.status==='complete') return {text:[list?`含有：${list}`:'',maybe?`可能含有：${maybe}`:''].filter(Boolean).join('；')||'已有完整來源聲明',cls:''};
   return {text:list?`已知含有：${list}；資料未齊`:'過敏資料未齊，未能確認',cls:''};
 }
 function foodArt(product,index=0) {
@@ -87,10 +115,39 @@ function productCard(product,index) {
   const price=getMinPrice(product,filters);
   const chosen=selected.includes(product.id);
   const a=allergyLabel(product);
-  const warning=sourceWarning(product);
-  const overseas=product.dataStatus==='overseas-reference'||product.nutrition?.region==='overseas-reference';
-  const sourceStatus=hkEvidenceLabel(product)||(product.nutritionSourceFamily==='off-community-reference'?'OFF 社群參考 · 香港包裝未核對':product.nutritionSourceFamily==='hk-brand-nutrition'?'香港品牌營養資料':product.nutritionSourceFamily==='hkna-reference'?'HKNA 部分營養參考':'')||(!hasNutrition(product)?'營養資料待補':overseas?'海外配方參考 · 香港未核對':product.dataStatus==='hkna-reference'?'本地部分資料 · 包裝未核對':'部分標籤資料 · 包裝未核對');
-  return `<article class="product-card${chosen?' selected':''}" data-product="${esc(product.id)}"><div style="position:relative">${foodArt(product,index)}<span class="status-badge${!hasNutrition(product)||warning?' partial':''}">${esc(sourceStatus)}</span></div><div class="product-body"><p class="product-brand">${esc(brandName(product))}</p><h3>${esc(product.nameZh || product.nameEn)}</h3><p class="product-size">${esc(product.packSize??'包裝待確認')} · ${esc(categories[product.category]??'包裝食品')}</p><div class="nutrient-heading"><span>${esc(basisLabel(product))}</span><button type="button" data-detail="${esc(product.id)}" aria-label="查看${esc(product.nameZh)}標籤來源">標籤來源 ↗</button></div><div class="nutrient-strip"><div><small>碳水化合物</small><strong>${number(n.carbohydrates)}<small>g</small></strong></div><div><small>糖</small><strong>${number(n.sugars)}<small>g</small></strong></div><div><small>鈉</small><strong>${number(n.sodiumMg)}<small>mg</small></strong></div></div><p class="allergen-line ${a.cls}">${esc(a.text)}</p>${(product.labelImages??[]).some(photo=>photo.author)?`<p class="source-scope">圖片上載：${esc([...new Set(product.labelImages.map(photo=>String(photo.uploadedAt??"見來源").slice(0,4)))].join(" / "))} · 請核對現售版本</p>`:""}<div class="price-line"><span class="price">${price===null?'價格待補':`<small>HK$</small>${money(price)}<span class="price-from">${filters.store?'':'起'}</span>`}</span><span class="merchant-count">${prices.length} 個渠道</span></div><p class="merchant-label">${esc(prices.length?stores[prices[0].store]??prices[0].store:'暫無已核實價格')} · 整包單件價</p><div class="card-actions"><button type="button" data-detail="${esc(product.id)}">詳情 / 購買 ↗</button><button class="compare-add" type="button" data-compare="${esc(product.id)}" aria-pressed="${chosen}" aria-label="${chosen?'移除':'加入'}${esc(product.nameZh)}${chosen?'嘅比較':'作比較'}">${chosen?'✓ 已加入':'＋ 加入比較'}</button></div></div></article>`;
+  const complete=product.allergens?.status==='complete';
+  const documented=hasNutrition(product);
+  const sourceStatus=complete?'完整過敏聲明':documented?'有營養資料':'標籤待補';
+  const sourceQualifier=product.nutritionSourceFamily==='off-community-reference'?'OFF 社群參考':
+    product.nutrition?.hkVersionVerified===false||product.hkVersionVerified===false||product.nutrition?.region==='overseas-reference'?'海外配方參考':'';
+  const offer=(product.offers??[]).some(item=>(!filters.store||item.store===filters.store)&&(item.textZh||item.textEn));
+  const productName=product.nameZh||product.nameEn;
+  return `<article class="product-card${chosen?' selected':''}" data-product="${esc(product.id)}">
+    <div class="product-artwork">${foodArt(product,index)}</div>
+    <div class="product-body">
+      <div class="product-identity">
+        <p class="product-brand">${esc(brandName(product))}</p>
+        <h3>${esc(productName)}</h3>
+        <p class="product-size">${esc(product.packSize??'包裝待確認')} · ${esc(categories[product.category]??'包裝食品')}</p>
+      </div>
+      <div class="product-badges"><span class="status-badge${complete?'':' partial'}">${sourceStatus}</span>
+        ${offer?'<span class="offer-badge" title="來源記有優惠，請向商戶確認">有優惠紀錄</span>':''}
+      </div>
+      <div class="nutrient-heading"><span>${esc(basisLabel(product))}${sourceQualifier?` · ${sourceQualifier}`:''}</span></div>
+      <div class="nutrient-strip">
+        ${[['碳水',n.carbohydrates,'g'],['糖',n.sugars,'g'],['鈉',n.sodiumMg,'mg']].map(([label,value,unit])=>`<div><small>${label}</small><strong>${number(value)}${shownValue(value)===null?'':`<small> ${unit}</small>`}</strong></div>`).join('')}
+      </div>
+      <p class="allergen-line ${a.cls}">${esc(a.text)}</p>
+      <div class="product-pricing">
+        <div class="price-line"><span class="price">${price===null?'價格待補':`<small>HK$</small>${money(price)}<span class="price-from">${filters.store?'':'起'}</span>`}</span><span class="merchant-count">${prices.length} 個渠道</span></div>
+        <p class="merchant-label">${esc(prices.length?stores[prices[0].store]??prices[0].store:'暫無已核實價格')}${prices.length?' · 整包單件價':''}</p>
+        ${cardUnitPrice(product,price)}
+      </div>
+      <div class="card-actions">
+        <button type="button" data-detail="${esc(product.id)}" aria-label="查看 ${esc(productName)} 詳情及購買渠道"><span class="action-long">詳情 / 購買 ↗</span><span class="action-short">詳情</span></button>
+        <button class="compare-add" type="button" data-compare="${esc(product.id)}" aria-pressed="${chosen}" aria-label="${chosen?'移除':'加入'}${esc(productName)}${chosen?'嘅比較':'作比較'}"><span class="action-long">${chosen?'✓ 已加入':'＋ 加入比較'}</span><span class="action-short">${chosen?'已選':'比較'}</span></button>
+      </div>
+    </div></article>`;
 }
 function filterTotal() { return Number(Boolean(filters.query))+Number(Boolean(filters.category))+Number(filters.budget!==null)+Number(Boolean(filters.store))+filters.allergens.length+Number(Boolean(filters.origin))+Number(Boolean(filters.dataScope))+Number(filters.libraryScope!=='priced'); }
 function syncInputs() {
@@ -126,8 +183,11 @@ function render() {
   // The banner describes what the link set; once the person changes the conditions it no longer applies.
   if(linkSignature&&signature!==linkSignature){$('link-banner').hidden=true;linkSignature=null;}
   results=filterProducts(products,filters);
-  const scopeCount=products.filter(p=>filters.libraryScope==='priced'?p.libraryGroup!=='off-library':filters.libraryScope==='off-library'?p.libraryGroup==='off-library':true).length;
-  $('result-count').textContent=filters.allergens.length?`${results.length} 項來源未列所選過敏原 · 本資料庫共 ${number(scopeCount)} 項食品`:`${number(results.length)} 項符合條件 · ${filters.libraryScope==='priced'?'香港格價食品':filters.libraryScope==='off-library'?'OFF營養參考庫':'全部資料庫'}`;
+  const queryWarnings=searchQueryLimitations(filters.query);
+  $('search-feedback').textContent=queryWarnings.join(' ');
+  $('search-feedback').hidden=!queryWarnings.length;
+  $('result-count').textContent=filters.allergens.length?`${number(results.length)} 項來源未列所選過敏原`:
+    `${number(results.length)} 項食品${filters.libraryScope==='off-library'?' · OFF 參考庫':filters.libraryScope==='all'?' · 全部資料庫':''}`;
   $('product-grid').innerHTML=results.slice(0,visibleCount).map(productCard).join('');
   $('load-more').hidden=visibleCount>=results.length;
   $('page-status').textContent=results.length?`顯示 ${Math.min(visibleCount,results.length)} / ${results.length} 項；搜尋及篩選已涵蓋全部資料。`:'';
@@ -138,7 +198,7 @@ function render() {
     const candidates=filterProducts(products,{...filters,allergens:[]});
     const conflicts=candidates.filter(p=>getAllergenAssessment(p,filters.allergens).status==='conflict').length;
     const unknown=candidates.filter(p=>getAllergenAssessment(p,filters.allergens).status==='unknown').length;
-    $('allergy-notice').textContent=`已避開${filters.allergens.map(id=>allergens[id]??id).join('、')}：${conflicts} 項因含有／可能含有而排除，${unknown} 項因資料不足而排除。結果唔等於安全保證，請核對實物包裝。`;
+    $('allergy-notice').textContent=`排除含有／可能含有嘅 ${conflicts} 項同資料不足嘅 ${unknown} 項。購買前請核對實物包裝。`;
     $('empty-description').textContent=results.length?'':`目前條件下，${conflicts} 項列出所選過敏原，${unknown} 項資料不足。未有可確認符合條件嘅產品；你可以調整名稱、預算或商戶，網站唔會自動放寬過敏限制。`;
   }else $('empty-description').textContent='試下另一個名稱，或者調整預算及商戶。資料庫仍在逐件補充；冇結果唔代表市面冇呢類食品。';
   const groups=rankingGroups(results,filters.sort);
@@ -174,20 +234,41 @@ function updateFilters({sync=false}={}) {
 function resetFilters(){filters=defaults();syncInputs();render();$('request-feedback').textContent='';}
 function openDialog(id){$(id).showModal();}
 function sourceLinks(product){
-  return (product.sources??[]).map(source=>`<div>${link(source.url,source.label??source.name??'資料來源','source-link')}<div class="source-scope">${esc(Array.isArray(source.scope)?source.scope.join('、'):source.scope??'產品資料')} · 查閱 ${esc(source.checkedAt??'日期未記錄')}</div></div>`).join('') || '<p>此項來源尚待補充。</p>';
+  return (product.sources??[]).map(source=>`<div>${link(source.url,source.label??source.name??'資料來源','source-link')}<div class="source-scope">${esc(Array.isArray(source.scope)?source.scope.join('、'):source.scope??'產品資料')} · 查閱 ${esc(dateLabel(source.checkedAt))}</div></div>`).join('') || '<p>此項來源尚待補充。</p>';
 }
 function carbDefinition(product) {
   const value=product.nutrition?.carbohydrateDefinition;
   return value==='available'?'可利用碳水化合物':value==='total'?'總碳水化合物（來源定義）':'來源未明確區分總／可利用碳水';
 }
+function detailNutritionTable(product) {
+  const base=nutritionFor(product);
+  const pack=getPackNutrition(product);
+  const columns=[{label:basisLabel(product),values:base}];
+  if(pack.whole)columns.push({label:`每售賣包裝 ${number(pack.totalAmount)} ${pack.unit}`,values:pack.whole});
+  if(pack.inner)columns.push({label:`每小包 ${number(pack.innerAmount)} ${pack.unit}`,values:pack.inner});
+  return `<table class="nutrition-table"><caption>營養數值 · 「—」代表未知</caption>
+    <thead><tr><th scope="col">營養項目</th>${columns.map(column=>`<th scope="col">${esc(column.label)}</th>`).join('')}</tr></thead>
+    <tbody>${nutrientFields.map(([key,label,unit])=>`<tr><th scope="row">${label}</th>${columns.map(column=>`<td>${nutrientValue(column.values[key],unit)}</td>`).join('')}</tr>`).join('')}</tbody>
+    </table>${pack.whole?'<p class="source-scope">每包數值按標籤及包裝份量換算。</p>':''}`;
+}
+function merchantPriceRows(product,prices) {
+  if(!prices.length)return '<p>暫無已核實價格。</p>';
+  return prices.map(price=>{
+    const date=dateLabel(price.checkedAt??dataset.priceSnapshotAt??dataset.updatedAt);
+    const unitPrices=packPriceLines(product,price.price);
+    const destination=(price.linkType==='product'||price.urlKind==='product')?'到商品頁':price.linkType==='search'?'到商戶搜尋':price.linkType==='price-source'?'到消委會格價頁':'到商戶網站';
+    return `<div class="merchant-row"><div>${esc(stores[price.store]??price.store)}<small>查閱 ${esc(date)}</small></div>
+      <div><strong>HK$${money(price.price)}</strong>${unitPrices.length?`<small>${esc(unitPrices.join(' · '))}</small>`:''}</div>
+      ${link(price.url??price.sourceUrl,destination)}</div>`;
+  }).join('');
+}
 function renderDetail(product) {
   detailProduct=product;
   const index=products.indexOf(product);
-  const n=nutritionFor(product);
   const warning=sourceWarning(product);
   const prices=getEligiblePrices(product).sort((a,b)=>a.price-b.price);
   const label=product.allergens??{};
-  $('detail-content').innerHTML=`<div class="detail-heading">${foodArt(product,index)}<div><p>${esc(brandName(product))}</p><h2>${esc(product.nameZh??product.nameEn)}</h2><p>${esc(product.nameEn??'')}</p><p>${esc(product.packSize??'包裝待確認')} · 產地：${esc(product.origin??'未確認')}</p>${product.offMetadata?`<p class="source-scope">OFF 來源最後修改：${esc(String(product.offMetadata.lastModifiedAt??'未提供').slice(0,10))} · ${esc(product.offMetadata.sourceApi??'社群資料')} · 未逐張核對香港包裝</p>`:''}${product.barcode?`<p>來源條碼：${esc(product.barcode)}</p>`:''}</div></div>${warning?`<div class="inline-notice amber">${esc(warning)}</div>`:''}${product.sourceCategory?`<p class="source-scope">消委會分類：${esc([product.sourceCategory.zh,...(product.sourceCategory.pathZh??[])].filter(Boolean).join(" / "))} · 商品代號 ${esc(product.id)}（非條碼）</p>`:''}<section class="detail-section"><h3>營養標籤比較</h3><table class="nutrition-table"><caption>${esc(basisLabel(product))} · 「—」代表未知</caption><tbody>${nutrientFields.map(([key,label,unit])=>`<tr><th scope="row">${label}</th><td>${number(n[key])} ${unit}</td></tr>`).join('')}</tbody></table><p>碳水定義：${esc(carbDefinition(product))}。糖係碳水化合物嘅一部分；本頁唔計算「淨碳水」。</p>${notesText(product)?`<p>${esc(notesText(product))}</p>`:''}</section><section class="detail-section"><h3>成分與過敏聲明</h3><p><strong>資料狀態：</strong>${label.status==='complete'?'已記錄指定版本完整聲明；仍須核對當前包裝':'未完整核實，不能用作確認過敏安全'}</p><p><strong>已知含有：</strong>${esc(label.contains?.length?label.contains.map(id=>allergens[id]??id).join('、'):'未列出／未能確認')}</p><p><strong>已知可能含有：</strong>${esc(label.mayContain?.length?label.mayContain.map(id=>allergens[id]??id).join('、'):'未列出／未能確認')}</p>${label.text?`<p>${esc(label.text)}</p>`:''}${product.ingredients||product.ingredientsSummary?`<p><strong>成分資料摘要：</strong>${esc(product.ingredientsSummary??(typeof product.ingredients==='string'?product.ingredients:product.ingredients.text??'見原始來源'))}</p>`:''}<p>未列出唔代表不存在。對食品過敏者應核對實物包裝，必要時直接向生產商確認。</p></section><section class="detail-section"><h3>香港價格與購買渠道</h3><p>以下係整包單件價格快照，並未套用多件／會員優惠。商戶連結唔代表已確認庫存；查閱日期唔等於價格生效日期。</p>${prices.length?prices.map(price=>`<div class="merchant-row"><div>${esc(stores[price.store]??price.store)}<small>查閱 ${esc(price.checkedAt??dataset.priceSnapshotAt??dataset.updatedAt??'日期未記錄')}</small></div><strong>HK$${money(price.price)}</strong>${link(price.url??price.sourceUrl,(price.linkType==='product'||price.urlKind==='product')?'到商品頁':price.linkType==='search'?'到商戶搜尋':price.linkType==='price-source'?'到消委會格價頁':'到商戶網站')}</div>`).join(''):'<p>暫無已核實價格。</p>'}</section>${product.offers?.length?`<section class="detail-section"><h3>來源優惠備註</h3><p>以下只保留原始優惠文字，未套入單件預算；適用日期、會員及購買數量請向商戶核實。</p>${product.offers.map(offer=>`<p><strong>${esc(stores[offer.store]??offer.store)}：</strong>${esc(offer.textZh||offer.textEn||'見來源')}</p>`).join('')}</section>`:''}<section class="detail-section"><h3>逐項資料來源</h3>${sourceLinks(product)}</section><div style="margin-top:20px"><button class="secondary-button" data-detail-compare="${esc(product.id)}">${selected.includes(product.id)?'從比較移除':'加入營養比較'}</button></div>`;
+  $('detail-content').innerHTML=`<div class="detail-heading">${foodArt(product,index)}<div><p>${esc(brandName(product))}</p><h2>${esc(product.nameZh??product.nameEn)}</h2><p>${esc(product.nameEn??'')}</p><p>${esc(product.packSize??'包裝待確認')} · 產地：${esc(product.origin??'未確認')}</p>${product.offMetadata?`<p class="source-scope">OFF 來源最後修改：${esc(String(product.offMetadata.lastModifiedAt??'未提供').slice(0,10))} · ${esc(product.offMetadata.sourceApi??'社群資料')} · 未逐張核對香港包裝</p>`:''}${product.barcode?`<p>來源條碼：${esc(product.barcode)}</p>`:''}</div></div>${warning?`<div class="inline-notice amber">${esc(warning)}</div>`:''}${product.sourceCategory?`<p class="source-scope">消委會分類：${esc([product.sourceCategory.zh,...(product.sourceCategory.pathZh??[])].filter(Boolean).join(" / "))} · 商品代號 ${esc(product.id)}（非條碼）</p>`:''}<section class="detail-section"><h3>營養標籤比較</h3>${detailNutritionTable(product)}<p>碳水定義：${esc(carbDefinition(product))}。糖係碳水化合物嘅一部分；本頁唔計算「淨碳水」。</p>${notesText(product)?`<p>${esc(notesText(product))}</p>`:''}</section><section class="detail-section" data-allergen-evidence><h3>成分與過敏聲明</h3><p><strong>資料狀態：</strong>${label.status==='complete'?'已記錄指定版本完整聲明；仍須核對當前包裝':'未完整核實，不能用作確認過敏安全'}</p><p><strong>已知含有：</strong>${esc(label.contains?.length?label.contains.map(id=>allergens[id]??id).join('、'):'未列出／未能確認')}</p><p><strong>已知可能含有：</strong>${esc(label.mayContain?.length?label.mayContain.map(id=>allergens[id]??id).join('、'):'未列出／未能確認')}</p>${label.text?`<p>${esc(label.text)}</p>`:''}${product.ingredients||product.ingredientsSummary?`<p><strong>成分資料摘要：</strong>${esc(product.ingredientsSummary??(typeof product.ingredients==='string'?product.ingredients:product.ingredients.text??'見原始來源'))}</p>`:''}<p>未列出唔代表不存在。對食品過敏者應核對實物包裝，必要時直接向生產商確認。</p></section><section class="detail-section"><h3>香港價格與購買渠道</h3><p>整包單件價格快照。單位價按標示淨重／容量計，優惠另列。</p>${merchantPriceRows(product,prices)}</section>${product.offers?.length?`<section class="detail-section"><h3>來源優惠備註</h3><p>以下只保留原始優惠文字，未套入單件預算；適用日期、會員及購買數量請向商戶核實。</p>${product.offers.map(offer=>`<p><strong>${esc(stores[offer.store]??offer.store)}：</strong>${esc(offer.textZh||offer.textEn||'見來源')}</p>`).join('')}</section>`:''}<section class="detail-section"><h3>逐項資料來源</h3>${sourceLinks(product)}</section><div style="margin-top:20px"><button class="secondary-button" data-detail-compare="${esc(product.id)}">${selected.includes(product.id)?'從比較移除':'加入營養比較'}</button></div>`;
 }
 function addLabelEvidence(product) {
   const markup=labelEvidenceSection(product);
@@ -209,37 +290,86 @@ function addLabelEvidence(product) {
   const additional=product.allergens?.additionalAllergens??[];
   if(additional.length){
     const names={molluscs:'軟體貝類',coconut:'椰子',mustard:'芥末',celery:'芹菜'};
-    $('detail-content').querySelectorAll('.detail-section')[2]?.insertAdjacentHTML('beforeend',`<p class="source-scope">來源另提及：${esc(additional.map(x=>names[x]??x).join('、'))}。此頁10類篩選未涵蓋所有過敏情況，請閱讀原標。</p>`);
+    $('detail-content').querySelector('[data-allergen-evidence]')?.insertAdjacentHTML('beforeend',`<p class="source-scope">來源另提及：${esc(additional.map(x=>names[x]??x).join('、'))}。此頁10類篩選未涵蓋所有過敏情況，請閱讀原標。</p>`);
   }
   if(product.additionalWarnings?.length)$('detail-content').querySelector('.nutrition-table')?.insertAdjacentHTML('afterend',`<p class="source-scope">原標其他警告：${esc(product.additionalWarnings.join('；'))}。無糖食品仍可能含碳水化合物，請分別閱讀兩欄。</p>`);
 }
 function compareTableRows(chosen) {
   const basis=comparisonBasis;
-  const values=chosen.map(product=>nutritionFor(product,basis,basis==='portion'?comparisonPortion:null));
-  let html=`<tr><th scope="row">本表比較份量</th>${chosen.map(product=>`<td>${productUnit(product)?`${basis==='100'?'100':number(comparisonPortion)} ${esc(productUnit(product))}`:basis==='100'?basisLabel(product):'基準未明，不能換算'}</td>`).join('')}</tr><tr><th scope="row">碳水定義</th>${chosen.map(product=>`<td class="neutral">${esc(carbDefinition(product))}</td>`).join('')}</tr>`;
+  const packNutrition=basis==='package'?chosen.map(getPackNutrition):[];
+  const values=chosen.map((product,index)=>basis==='package'?packNutrition[index].whole??{}:
+    nutritionFor(product,basis,basis==='portion'?comparisonPortion:null));
+  const basisCells=chosen.map((product,index)=>{
+    if(basis==='package'){
+      const pack=packNutrition[index];
+      return pack.whole?`${number(pack.totalAmount)} ${pack.unit}`:'—';
+    }
+    if(productUnit(product))return `${basis==='100'?'100':number(comparisonPortion)} ${productUnit(product)}`;
+    return basis==='100'?basisLabel(product):'—';
+  });
+  let html=`<tr><th scope="row">比較份量</th>${basisCells.map(label=>`<td>${esc(label)}</td>`).join('')}</tr>`;
   const units=new Set(chosen.map(productUnit));
-  const sameBasis=units.size===1&&!units.has(null);
+  const sameBasis=basis!=='package'&&units.size===1&&!units.has(null);
+  const definitions=new Set(chosen.map(product=>product.nutrition?.carbohydrateDefinition));
   const lowest=key=>{
     if(!sameBasis||!LOWEST_KEYS.has(key))return null;
+    if(key==='carbohydrates'&&(definitions.size!==1||![...definitions].every(value=>value==='available'||value==='total')))return null;
     const known=values.map(n=>shownValue(n[key])).filter(value=>value!==null);
     if(known.length<2||Math.min(...known)===Math.max(...known))return null;
     return Math.min(...known);
   };
-  html+=nutrientFields.map(([key,label,unit])=>{const min=lowest(key);return `<tr><th scope="row">${label}</th>${values.map(n=>`<td>${number(n[key])} <small>${unit}</small>${min!==null&&shownValue(n[key])===min?'<span class="lowest-tag">最低</span>':''}</td>`).join('')}</tr>`;}).join('');
-  html+=`<tr class="group-row"><th colspan="${chosen.length+1}">香港整包價格 · ${esc(stores[filters.store]??'所有商戶')} · 不隨營養份量換算</th></tr>`;
-  html+=`<tr><th scope="row">最低整包價</th>${chosen.map(product=>`<td>HK$${money(getMinPrice(product,filters))}<span class="table-small">${esc(product.packSize??'包裝待確認')}</span></td>`).join('')}</tr>`;
-  html+=`<tr><th scope="row">有價格記錄渠道</th>${chosen.map(product=>`<td class="neutral">${esc(getEligiblePrices(product,filters).map(price=>`${stores[price.store]??price.store} $${money(price.price)}`).join(' / ')||'所選商戶暫無價格')}</td>`).join('')}</tr>`;
-  html+=`<tr><th scope="row">過敏聲明狀態</th>${chosen.map(product=>`<td class="neutral">${esc(allergyLabel(product).text)}</td>`).join('')}</tr>`;
-  html+=`<tr><th scope="row">資料版本</th>${chosen.map(product=>`<td class="neutral">${esc(sourceWarning(product)||'詳情請核對原始來源及香港包裝')}</td>`).join('')}</tr>`;
-  html+=`<tr><th scope="row">來源</th>${chosen.map(product=>`<td>${(product.sources??[]).slice(0,3).map(source=>link(source.url,source.label??'資料來源','source-link')).join('')}</td>`).join('')}</tr>`;
+  html+=nutrientFields.map(([key,label,unit])=>{
+    const min=lowest(key);
+    return `<tr><th scope="row">${label}</th>${values.map(n=>`<td>${nutrientValue(n[key],unit)}${min!==null&&shownValue(n[key])===min?'<span class="lowest-tag">最低</span>':''}</td>`).join('')}</tr>`;
+  }).join('');
+  const prices=chosen.map(product=>getMinPrice(product,filters));
+  const packPrices=chosen.map((product,index)=>getPackPrices(product,prices[index]));
+  html+=`<tr class="group-row"><th colspan="${chosen.length+1}">香港價格 · ${esc(stores[filters.store]??'所有商戶')}</th></tr>`;
+  html+=`<tr><th scope="row">整包單件價</th>${chosen.map((product,index)=>`<td>${prices[index]===null?'—':`HK$${money(prices[index])}`}<span class="table-small">${esc(product.packSize??'包裝待確認')}</span></td>`).join('')}</tr>`;
+  html+=`<tr><th scope="row">每 100 g／ml</th>${packPrices.map(pack=>`<td>${pack.per100===null?'—':`HK$${money(pack.per100)}<span class="table-small">／100${pack.unit}</span>`}</td>`).join('')}</tr>`;
+  if(packPrices.some(pack=>pack.perInner!==null))html+=`<tr><th scope="row">每小包價</th>${packPrices.map(pack=>`<td>${pack.perInner===null?'—':`HK$${money(pack.perInner)}<span class="table-small">${pack.innerCount} 小包</span>`}</td>`).join('')}</tr>`;
+  html+=`<tr><th scope="row">過敏聲明</th>${chosen.map(product=>`<td class="neutral">${esc(allergyLabel(product).text)}</td>`).join('')}</tr>`;
   return html;
+}
+function comparisonSources(chosen) {
+  return `<details class="comparison-context"><summary>碳水定義、價格渠道與來源</summary>
+    ${chosen.map(product=>`<section class="detail-section">
+      <h3>${esc(product.nameZh||product.nameEn)}</h3>
+      <p>${esc(carbDefinition(product))}</p>
+      <p>${esc(getEligiblePrices(product,filters).map(price=>`${stores[price.store]??price.store} HK$${money(price.price)}`).join(' / ')||'所選商戶暫無價格')}</p>
+      ${sourceWarning(product)?`<p>${esc(sourceWarning(product))}</p>`:''}
+      ${sourceLinks(product)}
+    </section>`).join('')}
+  </details>`;
 }
 function renderComparison(){
   const chosen=selected.map(id=>products.find(p=>p.id===id)).filter(Boolean);
   if(chosen.length<2){if($('compare-dialog').open)$('compare-dialog').close();toast('請先揀至少 2 項食品作比較。');return;}
   const mixed=new Set(chosen.map(productUnit).filter(Boolean)).size>1;
   const excluded=chosen.filter(product=>!results.some(p=>p.id===product.id));
-  $('compare-content').innerHTML=`${excluded.length?'<div class="inline-notice amber">部分已選食品唔符合目前搜尋／預算／商戶條件；保留喺比較表供核對，唔代表通過篩選。</div>':''}${mixed?'<div class="inline-notice amber">包含 g 同 ml 兩種標籤基準，不能直接當成相同份量比較；請留意各欄單位。</div>':''}${chosen.some(product=>!productUnit(product))?'<div class="inline-notice">部分營養來源未能區分每100g／100ml，不能視為相同基準直接比較或換算份量；只得價格嘅記錄則保留營養未知。</div>':''}<div class="comparison-controls"><label for="comparison-basis">比較方式</label><select id="comparison-basis"><option value="100"${comparisonBasis==='100'?' selected':''}>每 100 g / ml</option><option value="portion"${comparisonBasis==='portion'?' selected':''}>自訂相同 g / ml 份量</option></select><label for="comparison-portion"${comparisonBasis==='100'?' hidden':''}>自訂份量</label><input id="comparison-portion" type="number" min="0.1" max="10000" step="0.1" value="${comparisonPortion}" aria-label="自訂比較份量，按各食品標籤的克或毫升"${comparisonBasis==='100'?' hidden':''}></div><p class="comparison-note">自訂份量只係按標籤比例計算，唔係建議食量；碳水定義及地區配方可能不同。本表唔作個人健康評分；「最低」只係同一基準下嘅數字比較，唔代表更健康或更適合你。</p><div class="table-scroll" tabindex="0" aria-label="食品比較表，可左右捲動"><table class="comparison-table"><thead><tr><th scope="col">比較項目</th>${chosen.map(product=>`<th scope="col">${esc(product.nameZh)}<span class="table-small">${esc(brandName(product))}</span><button class="comparison-remove" data-remove-compare="${esc(product.id)}">移除此項 ×</button></th>`).join('')}</tr></thead><tbody id="comparison-rows">${compareTableRows(chosen)}</tbody></table></div><p class="comparison-note">價格查閱：${esc(dataset.priceSnapshotAt??dataset.updatedAt??'見各來源')}。未計運費、會員及多件優惠；請到商戶確認售價與庫存。營養「—」係未知，唔係零。</p>`;
+  $('compare-content').innerHTML=`
+    ${excluded.length?'<p class="inline-notice amber">部分已選食品超出目前搜尋、預算或商戶條件。</p>':''}
+    ${mixed?'<p class="inline-notice amber">比較時請分開睇 g 同 ml。</p>':''}
+    <div class="comparison-controls">
+      <label for="comparison-basis">比較方式</label>
+      <select id="comparison-basis">
+        ${[['100','每 100 g／ml'],['package','每個售賣包裝'],['portion','自訂份量']].map(([value,label])=>`<option value="${value}"${comparisonBasis===value?' selected':''}>${label}</option>`).join('')}
+      </select>
+      <label for="comparison-portion"${comparisonBasis==='portion'?'':' hidden'}>自訂份量（g／ml）</label>
+      <input id="comparison-portion" type="number" min="0.1" max="10000" step="0.1" value="${Number.isFinite(comparisonPortion)?comparisonPortion:''}"${comparisonBasis==='portion'?'':' hidden'}>
+    </div>
+    <p class="comparison-note">營養按標籤換算。「—」係未知。購買前請核對實物。</p>
+    <div class="table-scroll" aria-label="食品比較表">
+      <table class="comparison-table comparison-${chosen.length}">
+        <thead><tr><th scope="col">項目</th>${chosen.map(product=>`<th scope="col">
+          <span class="compare-product-name">${esc(product.nameZh||product.nameEn)}</span>
+          <button type="button" class="comparison-remove" data-remove-compare="${esc(product.id)}" aria-label="移除 ${esc(product.nameZh||product.nameEn)}">移除 ×</button>
+        </th>`).join('')}</tr></thead>
+        <tbody id="comparison-rows">${compareTableRows(chosen)}</tbody>
+      </table>
+    </div>
+    <p class="comparison-note">價格快照 ${esc(snapshotLabel())} · 未套用優惠。</p>
+    ${comparisonSources(chosen)}`;
 }
 function showPortionError(invalid) {
   let error=$('portion-error');
@@ -248,7 +378,7 @@ function showPortionError(invalid) {
   error.textContent=invalid?'請輸入大於 0、最多 10000 嘅份量。數值未有效前，營養換算保留未知。':'';
 }
 function renderSources(){
-  const dated=String(dataset?.priceSnapshotAt??dataset?.updatedAt??'見各項來源').slice(0,10);
+  const dated=snapshotLabel();
   const nutritionCount=products.filter(hasNutrition).length;
   const completeCount=products.filter(p=>p.allergens?.status==='complete').length;
   const imported=dataset?.imports?.pricewatch;
@@ -277,7 +407,8 @@ function applyParsedRequest(text){
     // A new sentence never removes allergy conditions already set; they are removed only by their own × button.
     allergens:[...new Set([...parsed.allergens,...kept])]};
   if(filters.store&&!$('store').querySelector(`option[value="${CSS.escape(filters.store)}"]`))filters.store='';
-  const notes=[...(parsed.notices??[])];
+  const queryWarnings=new Set(searchQueryLimitations(filters.query));
+  const notes=(parsed.notices??[]).filter(note=>!queryWarnings.has(note));
   if(kept.length)notes.unshift(`已保留之前揀嘅過敏條件：避開${kept.map(id=>allergens[id]??id).join('、')}（要取消請撳佢個 ×）。`);
   $('request-feedback').textContent=notes.join(' ');
   updateFilters({sync:true});
@@ -295,7 +426,6 @@ function renderEmptyActions(){
   const tryRelax=(key,label,patch)=>{const count=filterProducts(products,{...filters,...patch}).length;if(count)options.push(`<button type="button" class="secondary-button" data-relax="${esc(key)}">${esc(label)}（${number(count)} 項）</button>`);};
   if(filters.budget!==null)tryRelax('budget','唔限預算',{budget:null});
   if(filters.store)tryRelax('store','所有商戶',{store:''});
-  if(filters.query)tryRelax('query','唔限搜尋字詞',{query:''});
   if(filters.category)tryRelax('category','所有分類',{category:''});
   if(filters.dataScope)tryRelax('dataScope','全部資料範圍',{dataScope:''});
   box.innerHTML=options.length?`<p>可以試吓放寬其中一項（過敏條件唔會自動放寬）：</p><div>${options.join('')}</div>`:'';
@@ -372,7 +502,7 @@ function wireEvents(){
   $('clear-comparison').addEventListener('click',()=>{selected=[];render();});
   $('open-comparison').addEventListener('click',()=>{renderComparison();if(selected.length>=2)openDialog('compare-dialog');});
   $('compare-content').addEventListener('click',event=>{const button=event.target.closest('[data-remove-compare]');if(button)toggleCompare(button.dataset.removeCompare);});
-  $('compare-content').addEventListener('change',event=>{if(event.target.id==='comparison-basis'){comparisonBasis=event.target.value;renderComparison();}});
+  $('compare-content').addEventListener('change',event=>{if(event.target.id==='comparison-basis'){comparisonBasis=event.target.value;renderComparison();$('comparison-basis').focus();}});
   $('compare-content').addEventListener('input',event=>{if(event.target.id==='comparison-portion'){const value=Number(event.target.value);const invalid=event.target.value===''||!Number.isFinite(value)||value<=0||value>10000;event.target.setCustomValidity(invalid?'請輸入大於0、最多10000嘅份量。':'');comparisonPortion=invalid?NaN:value;showPortionError(invalid);const chosen=selected.map(id=>products.find(p=>p.id===id));$('comparison-rows').innerHTML=compareTableRows(chosen);}});
   ['sources-button','data-info-button','footer-sources'].forEach(id=>$(id).addEventListener('click',()=>{renderSources();addOpenFoodFactsSources();addHkReviewSources();openDialog('sources-dialog');}));
   document.querySelectorAll('[data-close]').forEach(button=>button.addEventListener('click',()=>$(button.dataset.close).close()));
@@ -435,7 +565,7 @@ async function start(){
     $('store').innerHTML='<option value="">所有商戶</option>'+storeIds.map(id=>`<option value="${esc(id)}">${esc(stores[id]??id)}</option>`).join('');
     const origins=[...new Set(products.map(product=>product.origin).filter(origin=>typeof origin==='string'&&origin.trim()))].sort();
     $('origin').innerHTML='<option value="">所有／未確認產地</option>'+origins.map(origin=>`<option value="${esc(origin)}">${esc(origin)}</option>`).join('');
-    $('snapshot-note').textContent=`價格擷取：${String(dataset.priceSnapshotAt??dataset.updatedAt??'見詳情').slice(0,10)}，非即時售價。`;
+    $('snapshot-note').textContent=`價格快照 ${snapshotLabel()}（非即時）`;
     // Stable default puts documented nutrition before price-only records without implying health ranking.
     products=[...products].sort((a,b)=>Number(Boolean(hkEvidenceLabel(b)))-Number(Boolean(hkEvidenceLabel(a)))||Number(hasNutrition(b))-Number(hasNutrition(a))||Number(Boolean(productUnit(b)))-Number(Boolean(productUnit(a)))||
       (a.nutritionSourceFamily==='off-community-reference'&&b.nutritionSourceFamily==='off-community-reference'?String(b.offMetadata?.lastModifiedAt??'').localeCompare(String(a.offMetadata?.lastModifiedAt??'')):0));

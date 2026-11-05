@@ -26,17 +26,59 @@ function clean(value) {
   return typeof value === 'string' ? value.trim().toLocaleLowerCase('en').normalize('NFKC') : '';
 }
 
+const SODA_CRACKERS = /梳打[餅饼][乾干]?|[蘇苏]打[餅饼][乾干]?|克力架|\b(?:soda|cream)[\s-]*crackers?\b|\bsaltines?(?:[\s-]*crackers?)?\b/giu;
+const FILLED_BISCUITS = /[夾夹]心\s*(?:[餅饼][乾干]?|曲奇|威化[餅饼]?)|(?:忌廉|奶油)\s*(?:[餅饼][乾干]?|曲奇|威化[餅饼]?)|\b(?:cream(?:[\s-]*sandwich)?|sandwich|filled)[\s-]*(?:biscu[il]ts?|cookies?|wafers?|crackers?)\b/giu;
+const SWEETENERS = /代[糖醣]|糖(?:替代|代用)品|甜味[劑剂素]|\b(?:sweeteners?|sugar[\s-]*(?:substitutes?|alternatives?|replacements?))\b/giu;
+const YOGHURT = /乳[酪酭]|[優优]格|酸奶|\byogh?urts?\b/giu;
+const LOW_SUGAR = /低糖|少糖|\blow[\s-]*sugar\b/giu;
+const LEMON_TEA = /(?:凍|冻|冰)?(?:檸檬|柠檬|檸|柠)\s*茶|\b(?:lemon[\s-]*(?:iced?[\s-]*)?tea|iced?[\s-]*tea[\s-]*lemon)\b/giu;
+const DRY_TEA_OR_MIX = /茶包|茶[葉叶粉]|[濃浓]縮|沖[調调]|蜂蜜柚子茶|\b(?:tea[\s-]*(?:bags?|leaves|mix|powder|concentrate)|honey citron tea)\b/iu;
+const LOW_GI = /低\s*(?:g\.?\s*i\.?(?![a-z])|(?:升糖|血糖生成)指[數数])|\blow[\s-]*(?:g\.?\s*i\.?(?![a-z])|glyc(?:ae|e)mic(?:[\s-]+index)?\b)/giu;
+const GI_GENERIC_WORDS = /^(?:\s|\p{P}|\p{S}|食品|食物|[產产]品|foods?|products?|items?)+$/iu;
+const GI_TERM = '低GI';
+const hasLowGi = value => testPattern(LOW_GI, value);
+const hasLowSugarYoghurt = value => testPattern(YOGHURT, value) && testPattern(LOW_SUGAR, value);
+const LOW_SUGAR_YOGHURT_NOTE = '只按「乳酪」等搜尋字詞搵產品，未判定是否低糖；可揀「糖：低至高」比較已知糖量。';
+
 function searchText(value) {
   return clean(value)
     .replace(/朱古力/g, '巧克力')
     .replace(/餅乾|饼干|餅干/g, '餅')
     .replace(/花生醬/g, '花生')
-    // "Cream crackers" are plain crackers and "ice cream" is not a filled biscuit: keep them out of the 夾心 synonym.
-    .replace(/cream\s*crackers?/g, '克力架')
-    .replace(/ice\s*cream/g, '雪糕')
-    .replace(/忌廉|奶油|cream/g, '夾心')
+    .replace(/\bice[\s-]*cream\b/g, '雪糕')
     .replace(/[\s\p{P}\p{S}]+/gu, ' ')
     .trim();
+}
+
+/** Disclose which parts of a search are not product criteria. */
+export function searchQueryLimitations(query) {
+  const value = clean(query);
+  const notes = [];
+  if (hasLowGi(value)) {
+    const remainder = value.replace(LOW_GI, ' ').trim();
+    notes.push(remainder && !GI_GENERIC_WORDS.test(remainder)
+      ? '網站冇升糖指數（GI）資料，未能篩選低 GI；以下只按其他已套用嘅條件搜尋。'
+      : '網站冇升糖指數（GI）資料，未能搜尋低 GI。請改搜指定食品，或比較標籤上嘅碳水化合物同糖數值。');
+  }
+  if (hasLowSugarYoghurt(value)) notes.push(LOW_SUGAR_YOGHURT_NOTE);
+  return notes;
+}
+
+function queryTokens(query) {
+  let value = clean(query);
+  if (hasLowGi(value)) {
+    value = value.replace(LOW_GI, ' ').trim();
+    // null means this request has no searchable part. An empty array means there is no query filter.
+    if (!value || GI_GENERIC_WORDS.test(value)) return null;
+  }
+  if (hasLowSugarYoghurt(value)) value = value.replace(LOW_SUGAR, ' ');
+  return searchText(value
+    .replace(SODA_CRACKERS, ' 克力架 ')
+    .replace(FILLED_BISCUITS, ' 夾心 ')
+    .replace(/夹心/g, '夾心')
+    .replace(SWEETENERS, ' 代糖 ')
+    .replace(YOGHURT, ' 乳酪 ')
+    .replace(LEMON_TEA, ' 檸檬茶 ')).split(' ').filter(Boolean);
 }
 
 function numeric(value) {
@@ -72,19 +114,32 @@ function searchableProduct(product) {
   const brand = typeof product.brand === 'object'
     ? Object.values(product.brand ?? {}).join(' ')
     : product.brand;
-  const text = searchText([
-    product.nameZh, product.nameEn, brand, product.brandEn, product.brandZh, product.category, product.packSize,
-    ...searchableTags(product),
-  ].filter(Boolean).join(' '));
-  if (product && typeof product === 'object') haystacks.set(product, text);
-  return text;
+  const name = clean([product.nameZh, product.nameEn].filter(Boolean).join(' '));
+  const primary = searchText([name, brand, product.brandEn, product.brandZh].filter(Boolean).join(' '));
+  const narrowCategory = [product.sourceCategory?.pathZh?.at(-1), product.sourceCategory?.pathEn?.at(-1)].filter(Boolean).join(' ');
+  const biscuit = !product.category || clean(product.category) === 'biscuits';
+  // Combined source headings include unrelated products (sugar/sweetener, cheese/yoghurt).
+  // Specific food concepts match the name, except a biscuit subcategory that names one kind of biscuit.
+  const biscuitIdentity = biscuit ? [name, narrowCategory].join(' ').replace(SODA_CRACKERS, ' ') : '';
+  const concepts = {
+    夾心: biscuit && (/[夾夹]心/.test(name) || testPattern(FILLED_BISCUITS, biscuitIdentity)),
+    克力架: biscuit && (testPattern(SODA_CRACKERS, name) || testPattern(SODA_CRACKERS, narrowCategory)),
+    代糖: testPattern(SWEETENERS, name),
+    乳酪: testPattern(YOGHURT, name),
+    檸檬茶: testPattern(LEMON_TEA, name) && !DRY_TEA_OR_MIX.test([name, narrowCategory].join(' ')),
+    cream: /\bcream\b/u.test(primary) || /忌廉|奶油/u.test(name),
+  };
+  const text = searchText([primary, product.category, product.packSize, ...searchableTags(product)].filter(Boolean).join(' '));
+  const entry = { primary, text, concepts };
+  if (product && typeof product === 'object') haystacks.set(product, entry);
+  return entry;
 }
 
-function matchesQuery(product, query) {
-  const tokens = searchText(query).split(' ').filter(Boolean);
+function matchesQuery(product, tokens) {
+  if (!tokens) return false;
   if (!tokens.length) return true;
   const haystack = searchableProduct(product);
-  return tokens.every(token => haystack.includes(token));
+  return tokens.every(token => Object.hasOwn(haystack.concepts, token) ? haystack.concepts[token] : haystack.text.includes(token));
 }
 
 /** Valid full-pack prices for the chosen merchant. Multi-buy offers are not applied. */
@@ -186,6 +241,7 @@ export function filterProducts(products, filters = {}) {
   const category = clean(filters.category);
   const origin = clean(filters.origin);
   const store = clean(filters.store);
+  const tokens = queryTokens(filters.query);
   const hasAllergenSelection = Array.isArray(filters.allergens) && filters.allergens.length > 0;
   const filtered = (Array.isArray(products) ? products : []).filter(product => {
     if(filters.libraryScope==='priced'&&product.libraryGroup==='off-library')return false;
@@ -196,7 +252,7 @@ export function filterProducts(products, filters = {}) {
     if (filters.dataScope === 'hk-label' && product.allergens?.status !== 'complete') return false;
     if (category && category !== 'all' && clean(product.category) !== category) return false;
     if (origin && origin !== 'all' && clean(product.origin) !== origin) return false;
-    if (!matchesQuery(product, filters.query)) return false;
+    if (!matchesQuery(product, tokens)) return false;
     if (hasAllergenSelection && getAllergenAssessment(product, filters.allergens).status !== 'no-listed-match') return false;
     if (store && store !== 'all' && !getEligiblePrices(product, filters).length) return false;
     const price = getMinPrice(product, filters);
@@ -216,11 +272,10 @@ export function filterProducts(products, filters = {}) {
     const block = product => value(product) === null ? order.length : order.indexOf(unitOf(product));
     return filtered.sort((a, b) => block(a) - block(b) || compareNullable(value(a), value(b), descending));
   }
-  if (clean(filters.query) && (!filters.sort || filters.sort === 'relevance')) {
-    const tokens=searchText(filters.query).split(' ').filter(Boolean);
+  if (tokens?.length && (!filters.sort || filters.sort === 'relevance')) {
     const score=product=>{
-      const primary=searchText([product.nameZh,product.nameEn,typeof product.brand==='object'?Object.values(product.brand??{}).join(' '):product.brand,product.brandEn].filter(Boolean).join(' '));
-      return tokens.reduce((sum,token)=>sum+Number(primary.includes(token)),0);
+      const {primary, concepts}=searchableProduct(product);
+      return tokens.reduce((sum,token)=>sum+Number(concepts[token] === true || primary.includes(token)),0);
     };
     // A broad source category can match the query, but exact product words come first.
     return filtered.sort((a,b)=>score(b)-score(a));
@@ -260,20 +315,25 @@ const NUTRIENT_LIMITS = Object.freeze([
 
 /** Food wording -> [search word, category or null]. The first match wins, so more specific wording comes first. */
 const FOOD_CUES = Object.freeze([
-  [/cream\s*crackers?|soda\s*crackers?|saltines?|克力架|梳打餅|梳打饼/giu, '克力架', 'biscuits'],
+  [SODA_CRACKERS, '克力架', 'biscuits'],
+  [FILLED_BISCUITS, '夾心', 'biscuits'],
+  [/[夾夹]心/giu, '夾心', 'biscuits'],
+  [SWEETENERS, '代糖', null],
   [/椰漿|椰浆|椰奶|coconut\s*(?:milk|cream)/giu, '椰漿', null],
-  [/夾心|夹心|忌廉|奶油|(?<!ice\s?)(?<![a-z])creams?(?![a-z])(?!\s*crackers?)|sandwich/giu, '夾心', null],
   [/牛油果|avocados?/giu, '牛油果', null],
   [/牛奶糖|奶糖|milk\s*cand(?:y|ies)/giu, '奶糖', null],
   [/朱古力|巧克力|chocolate/giu, '巧克力', null],
   [/黑咖啡|black\s*coffee/giu, 'black coffee', 'drinks'],
   [/咖啡|coffee/giu, 'coffee', 'drinks'],
   [/奶茶|milk\s*tea/giu, '奶茶', 'drinks'],
-  [/檸檬茶|柠檬茶|lemon\s*tea/giu, '檸檬茶', 'drinks'],
+  [LEMON_TEA, '檸檬茶', 'drinks'],
   [/豆奶|荳奶|豆漿|豆浆|soy.?milk|soya.?milk/giu, 'soy', 'drinks'],
   [/燕麥奶|燕麦奶|oat\s*milk/giu, '燕麥', 'drinks'],
   [/杏仁奶|almond\s*milk/giu, '杏仁', 'drinks'],
   [/椰子水|椰青水|椰青|coconut\s*water/giu, '椰青水', 'drinks'],
+  [/全脂淡奶|\bfull[\s-]*cream[\s-]*evaporated[\s-]*milk\b/giu, '全脂淡奶', 'drinks'],
+  [/淡奶|\bevaporated[\s-]*milk\b/giu, '淡奶', 'drinks'],
+  [/全脂(?:鮮)?(?:牛)?奶|\bfull[\s-]*cream[\s-]*milk\b/giu, '全脂 奶', 'drinks'],
   [/鮮奶|牛奶|(?<!(?:soy|soya|oat|almond|rice|coconut|dairy)[\s-]?)(?<![a-z])milk(?!\s*(?:chocolate|tea))/giu, '牛奶', 'drinks'],
   [/綠茶|绿茶|烏龍|乌龙|茶包|(?<!奶|檸檬|柠檬)茶|(?<!milk\s|lemon\s)(?<![a-z])teas?(?![a-z])/giu, '茶', 'drinks'],
   [/即食麵|即食面|杯麵|杯面|碗麵|碗面|公仔麵|快熟麵|出前一丁|instant\s*noodles?|cup\s*noodles?/giu, '即食麵', 'meals'],
@@ -281,7 +341,7 @@ const FOOD_CUES = Object.freeze([
   [/麥片|燕麥|燕麦|(?<![a-z])oat(?:meal|s)?(?![a-z])/giu, '麥片', null],
   [/果汁|juice/giu, '果汁', 'drinks'],
   [/汽水|可樂|可乐|(?<![a-z])colas?(?![a-z])|soft\s*drinks?/giu, '汽水', 'drinks'],
-  [/乳酪|yogh?urt/giu, '乳酪', 'dairy'],
+  [YOGHURT, '乳酪', 'dairy'],
   [/蠔油|蚝油|oyster\s*sauce/giu, '蠔油', null],
 ]);
 const CATEGORY_CUES = Object.freeze([
@@ -1047,7 +1107,7 @@ export function parseRequest(text = '') {
   const coeliac = testPattern(COELIAC, lower);
   if (coeliac) { report.add('gluten'); report.triggered = true; }
   // 無殼花生 / peanuts without shells describe the food, not an allergy.
-  const scan = lower.replace(/(?:無|冇|去|唔要|不要)殼|without\s+(?:the\s+)?shells?(?![a-z])|shell(?:ed|-less|less)(?![a-z])/giu, ' ').replace(LACTOSE_FREE, ` ${LACTOSE_TOKEN} `).replace(NON_DAIRY_MILK, ' ').replace(COELIAC, ' ');
+  const scan = lower.replace(/(?:無|冇|去|唔要|不要)殼|without\s+(?:the\s+)?shells?(?![a-z])|shell(?:ed|-less|less)(?![a-z])/giu, ' ').replace(LACTOSE_FREE, ` ${LACTOSE_TOKEN} `).replace(NON_DAIRY_MILK, ' ').replace(COELIAC, ' ').replace(LOW_GI, ' ');
   let rest = clausesOf(scan).map(clause => readClause(clause, report)).join(' ， ');
   if (coeliac) result.notices.push('你提到乳糜瀉：已避開含麩質穀物；網站只睇標籤聲明，請仍然睇清楚包裝。');
   if (nonDairy) { report.add('milk'); result.notices.push('非奶類奶（例如燕麥、豆、杏仁飲品）：已避開奶類，可以試吓搜「燕麥」或者「soy」。'); }
@@ -1134,8 +1194,8 @@ export function parseRequest(text = '') {
   if (/藥|药|medicine|medication|insulin|胰島素|胰岛素|安全食|safe\s*to\s*eat|適合.*糖尿|适合.*糖尿|diabet/i.test(lower)) {
     result.notices.push('此工具只比較標籤及價格，不能判斷藥物相容性、個人安全食量或整日飲食是否合適。');
   }
-  // Leftover words (often a brand such as 嘉頓) become the search only when no food word was recognised and
-  // nothing in them still looks like allergy wording.
+  // Keep an explicitly recognised brand alongside the food; otherwise only use leftover words
+  // when no food was recognised and nothing still looks like allergy wording.
   const leftover = rest.replace(CONTEXT_WORDS, ' ').replace(FILLER_WORDS, ' ')
     .replace(/\d+\s*(?:包|件|個|盒|罐|支|樽|袋|片|粒)/gu, ' ')
     .replace(/(?:預算|预算|budget|唔好超過|唔超過|不超過|超過|少於|低於|以下|以內|以内|蚊|元|港元|hkd|\$|食|飲|買|要)/giu, ' ')
@@ -1145,13 +1205,23 @@ export function parseRequest(text = '') {
   const allergyLeft = /過敏|过敏|敏感|allerg|不耐|intoleran/iu.test(leftover) || (report.triggered && testPattern(ALIAS_ANY, leftover));
   // A sentence that only made sense as a refusal ("花生對我嚟講好危險") never searches what is left of it.
   const refusalLeft = report.negationGuess.length > 0;
-  if (!result.query && meaningful && !medical && !allergyLeft && !refusalLeft) result.query = leftover.slice(0, 30);
+  if (meaningful && !medical && !allergyLeft && !refusalLeft) {
+    if (!result.query) result.query = leftover.slice(0, 30);
+    else if (/^(?:嘉[頓顿]|garden)$/iu.test(leftover)) result.query = `${leftover.replace('嘉顿', '嘉頓')} ${result.query}`;
+  }
   // A sentence that clearly talks about an allergy but names nothing the site can use is flagged, never searched.
   const talksAboutAllergy = /過敏|过敏|allerg|anaphyla|不耐受|intoleran/iu.test(lower);
   if (talksAboutAllergy && !report.noAllergy && !result.allergens.length && !result.unsupportedAllergens.length && !result.allergyUnclear) {
     result.allergyUnclear = true;
     if (testPattern(ALIAS_ANY, result.query)) result.query = '';
     result.notices.push('你提到過敏，但系統認唔到係邊種；請喺篩選親手剔選要避開嘅過敏原（網站唔會自己估）。');
+  }
+  if (hasLowGi(lower)) {
+    result.query = [GI_TERM, result.query].filter(Boolean).join(' ');
+    result.notices.push(...searchQueryLimitations(result.query));
+  }
+  if (hasLowSugarYoghurt(lower) && result.sort === 'sugar-asc' && testPattern(YOGHURT, result.query)) {
+    result.notices.push('已按已知糖量排序，未判定是否低糖；請睇每款標籤數值。');
   }
   result.notices.push('以固定關鍵字解讀，並非 AI；請核對已填入的搜尋及篩選條件。');
   return result;
