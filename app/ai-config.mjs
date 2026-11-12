@@ -14,10 +14,14 @@
  *
  * Keep every quote mark and comma exactly as below. If this file has a typing mistake, the site still works
  * but the AI button stays hidden. After changing it, open the live site and check the button.
+ *
+ * Set on 12 November 2026: the link below is the agent's login-free share link ("免登入視窗"), created that day
+ * with an expiry of 12 November 2027 23:59 Hong Kong time. A share link is meant to be public and is not an API key.
+ * If the link is deleted or re-created in MaaS, update url and linkExpires here.
  */
 export const AI_ASSISTANT = Object.freeze({
-  url: '',
+  url: 'https://maas.eduhk.hk/chat/share?shareId=cmjiOZDStcuEC5yJpZDd21kw',
   platform: 'EdUHK MaaS',
-  linkExpires: '',
+  linkExpires: '2027-11-12',
   explainTested: false,
 });

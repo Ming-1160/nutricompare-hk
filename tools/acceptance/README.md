@@ -38,7 +38,7 @@ Run `node --test app/tests/*.test.mjs` from the repository root as well. Those u
 
 - They run against a local server. They have not been run against the GitHub Pages address.
 - They use Chromium with phone emulation. They are not a real iPhone or Android phone, and not Safari or Firefox.
-- They cannot test the MaaS assistant. Where a check needs an assistant link, it uses a made-up address and only checks what the website does with it.
+- They cannot test the MaaS assistant and never open its link. Where a check needs a particular assistant state, it supplies its own settings with a made-up address and only checks what the website does with it. Two checks follow the settings file being served (`app/ai-config.mjs`): with a working link they expect the button and that link, without one they expect the "being set up" note.
 - They are not user tests.
 
 The output of the last run before each release is kept in `docs/evidence/`.

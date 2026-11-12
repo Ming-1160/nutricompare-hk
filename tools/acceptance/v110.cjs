@@ -8,7 +8,9 @@ const axeSrc = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
 const BASE = process.argv[2] || 'http://127.0.0.1:8800/';
 const SHOTS = process.argv[3] || path.join(require('os').tmpdir(), 'nutricompare-v110-shots');
 const CHECKER = require('url').pathToFileURL(path.join(__dirname, '..', 'check-ai-numbers.mjs')).href;
-// Settings used when a check needs a working AI assistant link (the real settings file ships without one).
+// Settings used when a check needs a particular AI assistant state. These checks never open the group's real MaaS link.
+// Two checks follow whatever the served settings file (app/ai-config.mjs) says; see `shipped`, filled in before the flows run.
+let shipped = { state: 'pending', url: '', explain: false };
 const assistantConfig = ({ url = 'https://maas.example.org/agent/abc', expires = '2099-12-31', tested = true } = {}) =>
   `export const AI_ASSISTANT = Object.freeze({ url: '${url}', platform: 'EdUHK MaaS', linkExpires: '${expires}', explainTested: ${tested} });`;
 const useAssistant = (page, options) => page.route('**/ai-config.mjs*', r => r.fulfill({ status: 200, contentType: 'text/javascript', body: assistantConfig(options) }));
@@ -48,7 +50,9 @@ async function flow(browser, label, contextOptions) {
   await page.click('#assistant-toggle'); await page.waitForTimeout(200);
   const titles = await page.$$eval('#assistant-panel .assistant-title', els => els.map(e => e.textContent.replace(/\s+/g, ' ').trim()));
   check(T('panel names the sentence filter (not AI) first and the AI assistant second'), /一句話篩選.*唔係 AI/.test(titles[0]) && /AI 助手/.test(titles[1]), titles.join(' | '));
-  check(T('AI assistant shows "being set up" while no link is configured'), await page.locator('#ai-assistant-pending').isVisible() && await page.locator('#ai-assistant-link').isHidden());
+  // The AI assistant area follows the served settings file: a button when a working link is set, otherwise a note.
+  if (shipped.state === 'ready') check(T('AI assistant button opens the link in the settings file'), await page.locator('#ai-assistant-link').isVisible() && (await page.getAttribute('#ai-assistant-link', 'href')) === shipped.url && await page.locator('#ai-assistant-pending').isHidden(), await text(page, '#ai-assistant-expiry'));
+  else check(T(`AI assistant shows a note and no button (settings: ${shipped.state})`), await page.locator('#ai-assistant-pending').isVisible() && await page.locator('#ai-assistant-link').isHidden(), (await text(page, '#ai-assistant-pending')).slice(0, 40));
   await axe(page, `${label} sentence filter / AI panel open`);
   await page.fill('#request-input', 'pure orange juice'); await page.press('#request-input', 'Enter'); await page.waitForTimeout(600);
   check(T('sentence "pure orange juice" → 30 foods and a note that the brand was not used'), /^30 /.test(await text(page, '#result-count')) && /搵唔到「PURE」牌子嘅呢類食品，所以改為搜尋所有牌子嘅「果汁」/.test(await text(page, '#request-feedback')), `${await text(page, '#result-count')}`);
@@ -83,10 +87,10 @@ async function flow(browser, label, contextOptions) {
   check(T('reload restores the unit-price ranking'), (await page.inputValue('#sort')) === 'unit-price-asc');
   await axe(page, `${label} unit-price ranking`);
 
-  // Comparison table. As shipped (no assistant link, Mode 2 not tested) there is no "ask the AI" button.
+  // Comparison table. "Ask the AI" is offered only when the served settings have a working link and Mode 2 is marked as tested.
   await open(page, '?sort=sodium-asc&compare=P000000304,P000000298,P000000014');
   await page.click('#open-comparison'); await page.waitForTimeout(400);
-  check(T('as shipped, the comparison has no "ask the AI to explain" button'), await page.locator('#explain-comparison').count() === 0 && await page.locator('#share-comparison').isVisible());
+  check(T(`with the served settings, "ask the AI to explain" is ${shipped.explain ? 'offered' : 'not offered'}`), (await page.locator('#explain-comparison').count() === 1) === shipped.explain && await page.locator('#share-comparison').isVisible());
   await closeDialogs(page);
   await useAssistant(page);
   await open(page, '?sort=sodium-asc&compare=P000000304,P000000298,P000000014');
@@ -384,17 +388,19 @@ async function assistantFlow(browser) {
     { name: 'working link, Mode 2 tested', expires: '2099-12-31', tested: true, button: true, explain: true },
     { name: 'working link, Mode 2 not tested yet', expires: '2099-12-31', tested: false, button: true, explain: false },
     { name: 'expired link', expires: '2020-01-01', tested: true, button: false, explain: false },
+    { name: 'no link yet', url: '', expires: '', tested: false, button: false, pending: true, explain: false },
   ];
   for (const item of cases) {
     const ctx = await browser.newContext({ ...devices['iPhone 13'] });
     const page = await ctx.newPage();
-    await useAssistant(page, { expires: item.expires, tested: item.tested });
+    await useAssistant(page, { url: item.url, expires: item.expires, tested: item.tested });
     await open(page, '?compare=P000000304,P000000298');
     await page.click('#assistant-toggle'); await page.waitForTimeout(200);
     const linkVisible = await page.locator('#ai-assistant-link').isVisible();
     const pending = await text(page, '#ai-assistant-pending');
     const expiryNote = await text(page, '#ai-assistant-expiry');
     if (item.button) check(`assistant (${item.name}): button shown with the expiry date`, linkVisible && /連結有效至 2099年12月31日/.test(expiryNote) && (await page.getAttribute('#ai-assistant-link', 'href')) === 'https://maas.example.org/agent/abc', expiryNote);
+    else if (item.pending) check(`assistant (${item.name}): no button, and the page says the assistant is being set up`, !linkVisible && /AI 助手設定中/.test(pending), pending.slice(0, 60));
     else check(`assistant (${item.name}): button hidden and the page says the link expired`, !linkVisible && /已經喺 2020年1月1日 到期/.test(pending), pending.slice(0, 60));
     await axe(page, `phone assistant panel (${item.name})`);
     await page.click('#open-comparison'); await page.waitForTimeout(300);
@@ -409,6 +415,13 @@ async function assistantFlow(browser) {
 }
 
 (async () => {
+  // What the served settings file says right now (read over HTTP, so it is the copy the browser gets).
+  const settingsSource = await (await fetch(new URL('app/ai-config.mjs', BASE))).text();
+  const { AI_ASSISTANT } = await import('data:text/javascript,' + encodeURIComponent(settingsSource));
+  const { assistantState } = await import(require('url').pathToFileURL(path.join(__dirname, '..', '..', 'app', 'assistant-state.mjs')).href);
+  const status = assistantState(AI_ASSISTANT);
+  shipped = { state: status.state, url: status.url, explain: status.state === 'ready' && AI_ASSISTANT.explainTested === true };
+  console.log(`served assistant settings: ${shipped.state}${shipped.explain ? ', Mode 2 on' : ', Mode 2 off'}`);
   const browser = await chromium.launch();
   for (const [label, options] of [['phone', { ...devices['iPhone 13'] }], ['desktop', { viewport: { width: 1366, height: 900 } }]]) {
     try { await flow(browser, label, options); } catch (e) { check(`${label} flow crashed`, false, e.message.split('\n')[0]); }
