@@ -529,3 +529,85 @@ html.large-text .product-grid{grid-template-columns:repeat(auto-fill,minmax(300p
   .detail-dialog .nutrition-table{table-layout:fixed}
   .detail-dialog .nutrition-table th,.detail-dialog .nutrition-table td{width:auto;padding:6px 4px;overflow-wrap:anywhere}
 }
+
+/* ===== v1.10 additions ===== */
+/* Data that failed to load: always visible above the results, with a retry button. */
+.load-notice{align-items:center;flex-wrap:wrap}
+.load-notice p{flex:1 1 260px}
+.load-notice strong{display:block;margin-bottom:2px}
+.load-notice .secondary-button{margin-left:auto;white-space:nowrap}
+.error-message p{margin:0 0 12px}
+#request-feedback .request-notes,#request-feedback .applied-summary{display:block}
+#request-feedback .applied-summary{margin-top:6px;padding:8px 10px;border-radius:8px;background:#f1f6e6;color:#2f4a3c;line-height:1.6}
+#request-feedback .text-button{margin-top:6px;font-weight:700}
+.product-grid>.error-message{grid-column:1/-1;padding:18px 20px;border:1px solid #e6cf9f;border-radius:10px;background:#fbf1dd;font-size:14px;line-height:1.7;color:#5b4215}
+.product-grid>.error-message strong{font-size:15px}
+html.large-text .product-grid>.error-message{font-size:17px}
+html.large-text .product-grid>.error-message strong{font-size:18px}
+[data-retry-load]:disabled{opacity:.65;cursor:progress}
+html.large-text .load-notice p{font-size:16px}
+/* Sentence filter (on this device) comes first; the AI assistant (another website) is second. */
+.assistant-offline{border-right:1px solid #dce5cc}
+.assistant-ai{border-right:0}
+.assistant-expiry{font-size:12px;color:#4f6352}
+html.large-text .assistant-expiry{font-size:15px}
+@media(max-width:760px){.assistant-offline{border-right:0;border-bottom:1px solid #dce5cc}.assistant-ai{border-bottom:0}}
+/* The unit price is emphasised while it is the ranking in use. */
+.product-unit-price.sorted{font-weight:800;color:var(--ink)}
+/* Comparison table: the row being ranked is marked, and same-basis rows show the gap between highest and lowest. */
+.comparison-table .row-difference,.comparison-table .row-sorted{display:block;font-size:12px;line-height:1.4;margin-top:3px;font-weight:400;color:#4f5f47}
+.comparison-table .row-sorted{font-weight:700;color:var(--dark)}
+.comparison-table tr.sorted-row>th,.comparison-table tr.sorted-row>td{background:#f1f6e6}
+html.large-text .comparison-table .row-difference,html.large-text .comparison-table .row-sorted{font-size:15px}
+/* Desktop and tablet: food names, figures and prices reach the first screen.
+   The repeated illustrative pack becomes a small category icon beside the name. */
+@media(min-width:761px){
+  html .hero{min-height:0;padding-top:14px;padding-bottom:6px}
+  html .hero-art{height:176px;transform:scale(.56);transform-origin:center}
+  html .product-card{position:relative}
+  html .product-card .product-artwork{position:absolute;top:12px;right:12px;width:58px;height:52px;border-radius:12px;overflow:hidden}
+  html .product-card .product-visual{height:100%;min-height:0}
+  html .product-card .product-visual::before{width:44px;height:44px}
+  html .product-card .product-visual svg{width:54px;height:46px;filter:none}
+  html .product-card .visual-caption{display:none}
+  html .product-card .product-identity{padding-right:66px;min-height:52px}
+}
+/* Privacy receipt and other short information dialogs. */
+.privacy-dialog,.label-lesson-dialog{max-width:36rem}
+.privacy-list{margin:6px 0 0;padding-left:20px;font-size:13px;line-height:1.75;color:#3d5446}
+.privacy-list li{margin-bottom:5px;overflow-wrap:anywhere}
+.privacy-result{font-size:13px;font-weight:700;color:#1f5847;background:#e8f1e4;border-radius:8px;padding:8px 11px;margin:10px 0 0}
+.privacy-result.warning{color:#6b5420;background:#fbf1dd}
+#privacy-content>p{font-size:13px;line-height:1.7;color:#3d5446}
+html.large-text .privacy-list,html.large-text .privacy-result,html.large-text #privacy-content>p{font-size:16px}
+/* "Ask the AI to explain": the person sees exactly what would be handed to the assistant. */
+.ai-explain-dialog{max-width:38rem}
+.ai-explain-dialog p,.ai-explain-dialog label{font-size:13px;line-height:1.7;color:#3d5446}
+.ai-explain-dialog label{display:block;font-weight:700;margin:10px 0 4px}
+.ai-explain-dialog textarea{width:100%;min-height:190px;border:1px solid #c9d6bb;border-radius:10px;padding:10px 12px;font:inherit;font-size:13px;line-height:1.6;color:var(--ink);background:#fbfcf8;resize:vertical}
+.ai-explain-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px}
+.ai-explain-actions a{text-decoration:none}
+.ai-explain-dialog .ai-explain-note{font-size:12px;color:#4f6352;border-top:1px dashed #dce5cc;padding-top:10px;margin-top:12px}
+html.large-text .ai-explain-dialog p,html.large-text .ai-explain-dialog label,html.large-text .ai-explain-dialog textarea{font-size:16px}
+html.large-text .ai-explain-dialog .ai-explain-note{font-size:15px}
+/* One-minute label lesson: an original sample label, each row opens its explanation. */
+.label-lesson-dialog .lesson-lead,.label-lesson-dialog .lesson-foot{font-size:13px;line-height:1.7;color:#3d5446}
+.label-lesson-dialog .lesson-foot{margin-top:12px}
+.sample-label{border:2px solid var(--ink);border-radius:8px;padding:10px 12px;background:#fff}
+.sample-label-note{margin:0 0 6px;font-size:12px;color:#5d6d55}
+.sample-label-title{margin:8px 0 4px;padding-bottom:4px;border-bottom:3px solid var(--ink);font-size:16px;font-weight:800;color:var(--ink)}
+.sample-label details{border-bottom:1px solid #d5dccb}
+.sample-label details:last-child{border-bottom:0}
+.sample-label summary{display:flex;justify-content:space-between;gap:12px;padding:9px 2px;cursor:pointer;font-size:14px;font-weight:700;color:var(--ink);list-style:none}
+.sample-label summary::-webkit-details-marker{display:none}
+.sample-label .row-toggle{flex:0 0 auto;margin-left:4px;color:var(--green);font-weight:400}
+.sample-label .row-toggle::before{content:'＋'}
+.sample-label details[open]>summary .row-toggle::before{content:'－'}
+.sample-label summary span:first-child{flex:1 1 auto}
+.sample-label .sub-row summary{padding-left:22px;font-weight:400}
+.sample-label details>p{margin:0 0 10px;padding:8px 10px;border-radius:8px;background:#f1f6e6;font-size:13px;line-height:1.7;color:#2f4a3c}
+.sample-label summary:focus-visible{outline:3px solid #7fae5a;outline-offset:2px;border-radius:4px}
+html.large-text .label-lesson-dialog .lesson-lead,html.large-text .label-lesson-dialog .lesson-foot,html.large-text .sample-label details>p{font-size:16px}
+html.large-text .sample-label summary{font-size:17px}
+html.large-text .sample-label-note{font-size:15px}
+html.large-text .sample-label-title{font-size:20px}

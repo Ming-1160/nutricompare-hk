@@ -1,0 +1,230 @@
+NutriCompare HK v1.10 · unit tests · 12 November 2026
+Command: node --test app/tests/*.test.mjs (clean copy of the release files; Node v22.23.4)
+
+ok 1 - product words rank ahead of broad shared category matches in relevance search
+ok 2 - entire bundled food feed is searchable once, with all curated enrichments retained
+ok 3 - every new price-only food stays unknown for nutrition, origin, barcode and allergies
+ok 4 - bulk feed never expands the source-scoped allergy matches by treating missing facts as absent
+ok 5 - nutrition and complete-HK-label views expose only documented data, while full catalogue retains price-only foods
+ok 6 - unknown comparison bases stay null for both per-100 and user-entered portions
+ok 7 - all curated label evidence and nutrition survive exact-code price enrichment
+ok 8 - all approved food source categories are complete and every excluded category stays outside the food catalogue
+ok 9 - bundled import includes every approved code and exact merchant price from the locally retained official snapshot # SKIP
+ok 10 - bulk prices retain exact source amounts and do not turn retrieval dates into effective dates
+ok 11 - an additional food can be searched in both languages and filtered by its actual merchant price
+ok 12 - similar names never transfer labels or prices across different source codes, and inputs are unchanged
+ok 13 - same-store independent retailer facts keep their own provenance when a Pricewatch code matches
+ok 14 - every complete allergy record has HK evidence, full ingredients, dated sources and no physical-batch claim
+ok 15 - unknown older catalogue entries cannot pass an enabled allergy restriction
+ok 16 - milk restriction has real sourced matches but excludes soy drinks and may-contain dairy
+ok 17 - peanut plus HKD20 has documented inexpensive choices and excludes factory peanut warnings
+ok 18 - HK milk serving arithmetic uses the actual 236ml label and keeps missing fibre unknown
+ok 19 - retailer salt-to-sodium conversions and partial nutrition stay distinct
+ok 20 - mixed g/ml label records are not placed into a misleading nutrition ranking
+ok 21 - Bonchi unmatched pack price is unknown and cannot pass budget filters
+ok 22 - all public catalogue identifiers are unique and numeric facts never contain negative or invalid values
+ok 23 - full-pack budget follows the selected store, including exact boundary
+ok 24 - unknown prices cannot pass a budget and do not become zero
+ok 25 - numeric zero is retained while invalid, blank, negative and infinite prices are excluded
+ok 26 - unknown selected merchant does not borrow another store price
+ok 27 - contains and may-contain declarations both exclude matching allergens
+ok 28 - incomplete or missing allergy data never passes an active allergy filter
+ok 29 - allergy conflicts take priority over incomplete status
+ok 30 - normalizes cereal and tree-nut aliases conservatively, with no guarantee language
+ok 31 - label arithmetic preserves unknowns and converts specified portions
+ok 32 - unknown units, invalid portions, and invalid source amounts do not fabricate values
+ok 33 - search matches Chinese/English and cream synonyms, with independent filters
+ok 34 - search includes English and Chinese alternate brand fields
+ok 35 - sesame and Chinese sesame aliases exclude both ingredient and precaution matches
+ok 36 - sorting is stable, puts unknown last and never mutates source
+ok 37 - nutrition sorting does not rank grams against millilitres
+ok 38 - phrase parser transparently sets budget, store, category and explicit milk allergy
+ok 39 - English phrase parser avoids treating an ordinary food mention as an allergy
+ok 40 - clinical request provides limits, never individual treatment recommendations
+ok 41 - additional original HK labels never create new catalogue products, prices or duplicate nutrition-library barcodes
+ok 42 - Fuku five-pack nutrients stay per90g inner pack, not multiplied into a five-pack serving
+ok 43 - dessert440g uses labelled220g serving and retains coconut separately from an explicit tree-nut declaration
+ok 44 - ingredients add sesame exclusions even when the official headline allergy statement lists only soy
+ok 45 - new HK tables have explicit native units and keep unavailable nutrients unknown
+ok 46 - HK sugar-free gum retains polyol carbohydrate, real kJ conversion, source warnings and partial allergy status
+ok 47 - reviewed labels enrich only the original priced identities and preserve all merchant snapshots
+ok 48 - coverage separates any nutrition, HK-reviewed sources and full1+7 rather than reporting the goal as achieved
+ok 49 - an overlay cannot introduce an unpriced food or relabel a community-library item as an original HK product
+ok 50 - a checked HK table replaces a whole community table without filling its unknown fields from another formulation
+ok 51 - new label evidence preserves an already-reviewed HK formulation and the ingredients supporting its complete allergy statement
+ok 52 - partial labels retain previously known hazards and never pass a selected allergy restriction
+ok 53 - Maggi200ml conflicting published sodium values remain unknown in comparisons with both exact sources retained
+ok 54 - native5ml oil label arithmetic preserves nonzero trans fat and never converts between grams and millilitres
+ok 55 - the236ml milk table is read as one labelled portion rather than misreported as per100ml
+ok 56 - more source-scoped allergy choices retain whole-pack budget filtering and complete data requirements
+ok 57 - newly read physical barcodes remove only duplicate unpriced references and accept equivalent leading-zero codes
+ok 58 - review metadata keeps the two independent source batches and OFF photo credits rather than claiming current physical checks
+ok 59 - review operations do not mutate their source catalogue or either independent overlay
+ok 60 - source enrichment keeps 1788 identities and original merchant-price coverage while increasing evidence
+ok 61 - milk restriction has additional source-scoped Nissin choices but lactose-free milk remains excluded
+ok 62 - peanut and HKD20 now finds bread and noodles using exact dated merchant prices
+ok 63 - ingredient and factory warnings override incomplete automated allergen tags
+ok 64 - partial OFF photos stay excluded by allergy filters and corrected arithmetic uses actual label portions
+ok 65 - contradictory official fat values are not repaired from a different pack
+ok 66 - all added barcodes have valid check digits and manufacturer artwork is distinguished from physical photos
+ok 67 - OFF changes and images retain machine-readable share-alike licence, original source, author and date
+ok 68 - documented nutrition remains internally plausible and unreported fields are not filled with zero
+ok 69 - priced coverage and separate unpriced nutrition library are counted without duplicate barcodes
+ok 70 - all previously reviewed nutrition, full statements and merchant prices survive expansion exactly
+ok 71 - unknown basis can display original per100 reference values but never portion arithmetic or ranking
+ok 72 - community nutrition does not add any allergy matches, local complete cereal statements preserve may-contain milk
+ok 73 - budget and library scope do not give expanded references invented HK prices or stores
+ok 74 - audited variant conflicts, test records, alcohol and supplements stay outside imported OFF candidates
+ok 75 - HKNA secondary values never supply missing carbohydrate or use school classifications as patient advice
+ok 76 - Indomie five-pack: HK$15 whole pack governs the store and budget filters
+ok 77 - 90g Demae Ramen uses 52.7g carbs per pack, preserving the distinct per-100g value
+ok 78 - declared bottle size and count produce distinct whole-pack and inner values
+ok 79 - unclear amounts, conflicting declarations and serving-only information cannot supply unit rates
+ok 80 - nutrition is withheld when the unit, preparation, assortment or formulation does not match
+ok 81 - the block starts with the fixed header and carries its own limits
+ok 82 - figures are written plainly, and unknown is never written as zero
+ok 83 - the block tells the AI which rows the site itself does not rank
+ok 84 - the checker passes a reply that only repeats numbers from the block
+ok 85 - the checker lists any number the block does not contain
+ok 86 - known limit: a real number given to the wrong food is not caught, so a person still has to read the reply
+ok 87 - number reading handles separators, full-width digits and list numbering
+ok 88 - the command-line tool reports the same result and sets the exit code
+ok 89 - the gap between highest and lowest uses the printed values
+ok 90 - unknown values are never treated as zero
+ok 91 - equal values give no lowest mark and no gap
+ok 92 - with every file, the catalogue is exactly what the previous loader built
+ok 93 - rebuilding from the same files gives the same catalogue and leaves the files untouched
+ok 94 - the site cannot start without the core product file
+ok 95 - the Hong Kong nutrition file is used without the OFF library, but the library never stands in for it
+ok 96 - every state that still lists foods shows the complete catalogue's figures or "unknown", never a different figure
+ok 97 - with a label file missing some foods would show other figures, so nothing is listed at all
+ok 98 - prices need both price files, and the notice says so plainly
+ok 99 - allergy hold: with any file missing, results for a person avoiding allergens are held back
+ok 100 - comparing is paused whenever any file is missing
+ok 101 - second check on the data: in all 511 combinations of missing files, no food passes an allergen filter that it fails with all files
+ok 102 - files are fetched together, failures are reported, and a retry only asks for what is missing
+ok 103 - a request that never answers is abandoned, and HTTP errors are failures
+ok 104 - a slow file is not cut off while data keeps arriving, but a stalled one is
+ok 105 - data requests carry no Referer, because the page address can hold the chosen allergens
+ok 106 - the root page and app/ page are the same page, apart from the one <base> line
+ok 107 - both pages say so when the program cannot start, instead of showing "loading" forever
+ok 108 - a typing mistake in the assistant settings cannot stop the site: the settings are read on their own
+ok 109 - assistant settings have the expected shape, and 「叫 AI 解釋」 is never switched on without a working link
+ok 110 - one name for the sentence filter: the old name is gone from the pages and the program
+ok 111 - requests are grouped by host and the site itself is told apart from other sites
+ok 112 - addresses that never leave the device, and unreadable entries, are not counted as requests
+ok 113 - storage is reported by name only, with known items explained
+ok 114 - a brand name that is also an everyday word no longer empties an AI link (pure orange juice)
+ok 115 - the sentence filter uses the same safeguard and says what it did
+ok 116 - a brand that has matching foods is always kept
+ok 117 - budget and allergy conditions never cause a brand to be dropped
+ok 118 - allergy wording is read the same with or without the brand list, and the fallback never drops an allergen
+ok 119 - without a product list the parser behaves exactly as before
+ok 120 - ranking by unit price keeps grams and millilitres apart and puts unknown last
+ok 121 - unit-price ranking does not change which foods the allergy filter lets through
+ok 122 - links accept the new ranking and reject anything unknown
+ok 123 - the search box and shared links allow the same length, so a shared search is never cut short
+ok 124 - the AI assistant button follows the link and its expiry date
+ok 125 - AI/shared links apply only validated values and report what was ignored
+ok 126 - English food words in an AI link become the precise site search word; copied links keep typed words
+ok 127 - common AI spelling variants for category, store and sort are accepted
+ok 128 - invalid link values are ignored instead of guessed
+ok 129 - link text is cleaned, capped and cannot inject markup
+ok 130 - a link only adds allergy exclusions; it never removes an existing one
+ok 131 - current filters round-trip through a shareable link
+ok 132 - mixed 100ml and 100g values are ranked in separate blocks, unknown values last
+ok 133 - sodium can be ranked from low to high
+ok 134 - "cream crackers" and "ice cream" categories no longer match a 夾心 (filled biscuit) search
+ok 135 - offline parser understands sodium, no-sugar, instant noodle and brand wording
+ok 136 - allergy lists are read in full, and "有冇" (do you have) is never read as "without"
+ok 137 - everyday "堅果 / nuts" wording avoids both peanuts and tree nuts and says so
+ok 138 - clinical wording never becomes a search term
+ok 139 - every repeated avoid parameter counts, and empty ones are reported
+ok 140 - allergy parameter spellings are accepted and unknown parameter names are reported
+ok 141 - generic nuts in a link avoids peanuts and tree nuts; object keys are never allergens
+ok 142 - allergy words inside an AI search are added as exclusions, never searched for
+ok 143 - a typed budget with more decimals still round-trips through a link
+ok 144 - allergy sentences the parser used to miss are read as exclusions, not searches
+ok 145 - an allergy the parser cannot name never becomes a product search
+ok 146 - lactose-free milk is a kind of milk, not "without milk"
+ok 147 - biscuit wording, Chinese numerals and nutrient limits no longer corrupt the search or budget
+ok 148 - single-concept top-level groups such as 飲品 stay searchable
+ok 149 - a second allergy word is never searched; an allergy the site cannot name is flagged
+ok 150 - every allergen in a partly recognised list is kept, and the rest is flagged
+ok 151 - clear English exclusions are never dropped
+ok 152 - a negated food is never the search; a food the site cannot exclude is named back
+ok 153 - everyday diabetic or price wording is not an allergy, and the requested search stays
+ok 154 - 沒有／冇 questions ask for the product instead of hiding it
+ok 155 - an allergy elsewhere in the sentence does not suppress the product asked for
+ok 156 - budgets survive nearby nutrient words and Cantonese numbers
+ok 157 - polite words and question words never become a junk search
+ok 158 - lactose-free wording asks for lactose-free milk; lactose intolerance still avoids milk
+ok 159 - 不耐放, 帶走 and 拎走 are not "without"
+ok 160 - lists split by commas or colons, or written without 對, keep every allergen and the food words
+ok 161 - shellfish wording warns that molluscs are not filtered, in sentences and in links
+ok 162 - links accept the page labels and everyday allergen words, and tell unknown from unfilterable
+ok 163 - repeated link values are reported, and every AI search phrase is read for allergies
+ok 164 - 食唔得／飲唔得 work before or after the food
+ok 165 - free-from questions keep the exclusion; only "doesn't the shop have X?" asks for X
+ok 166 - comma lists that start with 對 keep the first allergen
+ok 167 - "that contains" and "derived from" phrasing still names the allergen
+ok 168 - items after "allergies:" are part of the list, even food words; a wanted product after a comma is not
+ok 169 - coeliac wording, 敏感食物 lists and allergy-reaction words are read
+ok 170 - exceptions and filler words are not flagged as allergies
+ok 171 - budgets in words, no-added-sugar sorting, 奶油 and junk words
+ok 172 - link avoid values read suffixed and joined words
+ok 173 - safety matrix: every allergen word in every exclusion template is set and never searched
+ok 174 - a second exclusion that starts with 唔可以 is kept
+ok 175 - Chinese refusals before or after the food avoid it and never search it
+ok 176 - English refusals avoid the allergen
+ok 177 - a refused chocolate is named back, not searched; an allowed exception is not added
+ok 178 - space-joined allergens stop before a product they describe
+ok 179 - molluscs are reported as unfilterable, never read as fish; 牛油果 is not butter
+ok 180 - the negation safety net never hides a product the person asked for
+ok 181 - long repeated allergen lists are parsed quickly
+ok 182 - "besides X, also Y" adds X; the person is never told an allergen is safe
+ok 183 - symptom wording names the food
+ok 184 - incidental negation words never exclude the product asked for
+ok 185 - more refusals are read
+ok 186 - 除咗X…都 / besides X adds X and never tells the person X is safe
+ok 187 - symptoms with adverbs or body parts, and English symptom wording, name the food
+ok 188 - dislikes and short refusals are read; "can't do without X" asks for X
+ok 189 - sandwich biscuits and cream dairy stay separate when the biscuit category is cleared
+ok 190 - legacy AI cream links still mean filled biscuits, including after category relaxation
+ok 191 - 代糖 finds named sweeteners and never plain sugar in the shared source category
+ok 192 - 低糖乳酪 compares yoghurt without returning cheese or claiming a low-sugar classification
+ok 193 - 檸茶 and 凍檸茶 find named drinks, including from the quick parser, without plain tea bags or citron mix
+ok 194 - 蘇打餅 works in both search boxes and 嘉頓 stays attached to the biscuit in an offline or AI request
+ok 195 - v1.9 AI links keep the catalogue brand alongside the food, including multi-word brands
+ok 196 - main search retains v1.8 result counts for words that resemble brands
+ok 197 - AI fresh milk link retains the v1.8 count of 96
+ok 198 - brand lookup excludes OFF-only brands and produce placeholders
+ok 199 - v1.9 the quick parser keeps Chinese brands and catalogue punctuation
+ok 200 - v1.9 奶油曲奇 is a butter-cookie search in both boxes
+ok 201 - v1.9 low GI bread uses the same 96 hits in both searches and discloses the limitation
+ok 202 - v1.9 named soda crackers rank ahead of products matching only by category
+ok 203 - v1.9 sandwich bread and cream cake keep the bakery category
+ok 204 - unsupported low GI never defaults to the catalogue; any matching food results disclose the limitation
+ok 205 - the filled-biscuit allergy demo can be empty and the noodle example retains all conservative conditions
+ok 206 - v1.9 data files match the v1.8 ZIP byte for byte
+ok 207 - all ten v1.9 allergen exclusion sets match the v1.8 ZIP catalogue exactly
+ok 208 - the v1.9 peanut and filled-biscuit quick request has zero results and the v1.8 exclusion groups
+ok 209 - comparison URL reopens the exact ordered catalogue items and preserves validated conditions
+ok 210 - unknown, malformed, repeated and surplus comparison IDs are ignored and explained
+ok 211 - a shared comparison cannot bypass the existing allergy rule for known products
+ok 212 - browser share prefers the native share sheet, then clipboard and a manual fallback
+ok 213 - the local QR SVG has an accessible name, quiet zone and payload-dependent modules
+ok 214 - A2: the five-pack and single-pack sesame Demae Ramen compare on one 91g pack each
+ok 215 - A4: community, reviewed Hong Kong, overseas and unreviewed records retain distinct source badges
+ok 216 - B2: Demae Ramen carbohydrate traces from 52.7g per 90g to 58.6g per 100g
+ok 217 - B2: an unresolved source conflict stays unknown, with both URLs and declared values
+ok 218 - B2: source evidence distinguishes HKNA, local label images and community records
+ok 219 - B3: the real bowl noodle example includes the matching Wellcome prices and 20%+ sodium reduction
+ok 220 - B3: each failed criterion independently excludes a replacement; exact thresholds qualify
+
+tests 220
+pass 219
+fail 0
+skipped 1
+
+The skipped test compares the price data with the original raw Pricewatch file, which is not part of the release files. With that file present, 220 of 220 pass.

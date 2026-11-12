@@ -1,0 +1,15 @@
+{
+  "name": "nutricompare-hk-browser-checks",
+  "private": true,
+  "description": "Browser checks for NutriCompare HK. Developer tooling only; nothing here is loaded by the website.",
+  "scripts": {
+    "v110": "node v110.cjs",
+    "v19": "node v19-batch1.cjs"
+  },
+  "devDependencies": {
+    "axe-core": "^4.10.3",
+    "jsqr": "^1.4.0",
+    "playwright": "^1.49.0",
+    "pngjs": "^7.0.0"
+  }
+}

@@ -1,5 +1,5 @@
 /** NutriCompare HK: deterministic search, conservative filters and label arithmetic. */
-import {hasReviewedHkNutrition} from './hk-labels.mjs?v=19';
+import {hasReviewedHkNutrition} from './hk-labels.mjs?v=110';
 
 export const ALLERGENS = Object.freeze([
   'gluten', 'crustaceans', 'eggs', 'fish', 'peanuts', 'soy', 'milk', 'tree-nuts', 'sesame', 'sulphites',
@@ -1170,7 +1170,7 @@ export function parseRequest(text = '', { brandIndex } = {}) {
   const result = {
     query: '', category: 'all', budget: null, allergens: [], store: 'all', origin: null,
     sort: 'relevance', notices: [], isRuleBased: true, allergyUnclear: false, unsupportedAllergens: [], unclearAllergyWords: [],
-    avoidedFoods: [], otherRestrictions: [],
+    avoidedFoods: [], otherRestrictions: [], brand: '',
   };
   const report = {
     triggered: false, noAllergy: false, genericAllergy: false, listItems: [], exceptions: [], negationGuess: [], unclear: [], unsupported: [], sorts: [], other: [], avoidedFoods: [], genericNuts: false,
@@ -1297,7 +1297,7 @@ export function parseRequest(text = '', { brandIndex } = {}) {
   if (!medical && !allergyLeft && !refusalLeft) {
     const otherBrand = brandText(leftover);
     const brand = brandIndex?.get(directBrand?.brand ?? otherBrand);
-    if (brand) result.query = [brand, result.query || (directBrand ? leftover : '')].filter(Boolean).join(' ');
+    if (brand) { result.brand = brand; result.query = [brand, result.query || (directBrand ? leftover : '')].filter(Boolean).join(' '); }
     else if (!result.query && meaningful) result.query = leftover.slice(0, 30);
   }
   // A sentence that clearly talks about an allergy but names nothing the site can use is flagged, never searched.
@@ -1316,4 +1316,35 @@ export function parseRequest(text = '', { brandIndex } = {}) {
   }
   result.notices.push('以固定關鍵字解讀，並非 AI；請核對已填入的搜尋及篩選條件。');
   return result;
+}
+
+/** Shown when a brand word from a sentence or an AI link matches no food of that kind. */
+export const brandDroppedNotice = (brand, query = '') => `目錄入面搵唔到「${brand}」牌子嘅呢類食品，所以改為搜尋所有牌子${query ? `嘅「${query}」` : ''}。如果你係想搵呢個牌子，請喺搜尋欄直接打牌子名。`;
+
+/**
+ * parseRequest, plus one safeguard for brand names that are also everyday words (PURE, Select ...).
+ * If no catalogue food matches the brand together with the food, the same words are read again without
+ * the brand list (the v1.8 reading) and the person is told. A brand that has matching foods is always kept.
+ * Budget, shop and allergy conditions are never part of this check, so they cannot cause a brand to be dropped.
+ * Allergens understood from the sentence are always kept, whichever reading is used.
+ */
+export function parseRequestWithBrandFallback(text = '', { brandIndex, products, libraryScope = 'priced' } = {}) {
+  const parsed = parseRequest(text, { brandIndex });
+  if (!parsed.brand || !Array.isArray(products) || !products.length) return parsed;
+  const found = reading => Boolean(reading.query)
+    && filterProducts(products, { query: reading.query, category: reading.category === 'all' ? '' : reading.category, libraryScope }).length > 0;
+  if (found(parsed)) return parsed;
+  const plain = parseRequest(text);
+  if (!found(plain)) return parsed;
+  // Allergy safety: the second reading may add to what was understood about allergies, never take away.
+  const union = (first = [], second = []) => [...new Set([...first, ...second])];
+  return {
+    ...plain,
+    allergens: union(parsed.allergens, plain.allergens),
+    unsupportedAllergens: union(parsed.unsupportedAllergens, plain.unsupportedAllergens),
+    unclearAllergyWords: union(parsed.unclearAllergyWords, plain.unclearAllergyWords),
+    allergyUnclear: parsed.allergyUnclear || plain.allergyUnclear,
+    brandDropped: parsed.brand,
+    notices: [brandDroppedNotice(parsed.brand, plain.query), ...plain.notices],
+  };
 }

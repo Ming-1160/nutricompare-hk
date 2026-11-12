@@ -4,8 +4,8 @@ import { readFileSync } from 'node:fs';
 import { buildCatalogue, mergeLabelSources } from '../catalogue.mjs';
 import { enrichCatalogue } from '../enrichment.mjs';
 import { applyHkLabelReview } from '../hk-labels.mjs';
-import { comparisonShareUrl, qrSvg, shareComparison, whatsappShareUrl } from '../compare-share.mjs?v=19';
-import { filtersFromParams } from '../url-state.mjs?v=19';
+import { comparisonShareUrl, qrSvg, shareComparison, whatsappShareUrl } from '../compare-share.mjs?v=110';
+import { filtersFromParams } from '../url-state.mjs?v=110';
 
 const read = name => JSON.parse(readFileSync(new URL(`../data/${name}.json`, import.meta.url), 'utf8'));
 let catalogue = buildCatalogue(mergeLabelSources(read('products'), read('off-hk-labels')), read('pricewatch-foods'), read('pricewatch-meta'));

@@ -1,5 +1,5 @@
-import { paramsFromFilters } from './url-state.mjs?v=19';
-import qrcode from './vendor/qrcode-generator.mjs?v=19';
+import { paramsFromFilters } from './url-state.mjs?v=110';
+import qrcode from './vendor/qrcode-generator.mjs?v=110';
 
 export function comparisonShareUrl(pageUrl, filters, compareIds) {
   const url = new URL(pageUrl);

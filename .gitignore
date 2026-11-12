@@ -1,2 +1,4 @@
 tools/pricewatch-current.json
 tools/pricewatch-retrieval.json
+tools/acceptance/node_modules/
+tools/acceptance/package-lock.json

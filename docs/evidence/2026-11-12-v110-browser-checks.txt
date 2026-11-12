@@ -1,0 +1,145 @@
+NutriCompare HK v1.10 · browser checks (tools/acceptance/v110.cjs) · 12 November 2026
+Clean copy of the release files on a local server; Chromium via Playwright; phone emulation 390 px and desktop 1366 px; axe-core 4.10.3.
+
+PASS  phone: normal load shows no load notice — 1,788 項食品
+PASS  phone: search box limit equals the link limit (60)
+PASS  phone: version label says v1.10
+PASS  phone: first card and its buttons still fit the first screen — {"vh":664,"name":463,"strip":528,"buttons":524,"overflowX":false}
+PASS  phone: panel names the sentence filter (not AI) first and the AI assistant second — 一句話篩選 喺你部機處理 · 唔係 AI | ✧ AI 助手 EdUHK MaaS
+PASS  phone: AI assistant shows "being set up" while no link is configured
+PASS  phone: sentence "pure orange juice" → 30 foods and a note that the brand was not used — 30 項食品
+PASS  phone: after a sentence, the applied conditions are shown beside it without scrolling — {"text":"已套用：搜尋：果汁 · 飲品 30 項食品","visible":true}
+PASS  phone: "see results" moves to the result count — {"inView":true,"focus":"result-count"}
+PASS  phone: AI link "pure orange juice" → 30 foods with the same note in the banner — 30 項食品
+PASS  phone: a pasted sentence that hits the search limit gets a notice pointing to the sentence filter — 搜尋欄最多 60 個字，後面嘅字冇輸入到。長句請用「句子篩選」。
+PASS  phone: AI link "Vita lemon tea" still keeps the brand — 4 項食品
+PASS  phone: unit-price ranking is ascending within each unit, and the unit price is emphasised — 24 cards with unit price; first {"v":1.59,"u":"ml"}
+PASS  phone: ranking note explains that g and ml are ranked apart — 已按單位分開排名：先列 86 項每100ml，再列 26 項每100g；兩組數值唔可以互相比較，未知數值排最後。
+PASS  phone: the ranking is kept in the address and survives a reload — q=%E7%89%9B%E5%A5%B6&sort=unit-price-asc
+PASS  phone: reload restores the unit-price ranking
+PASS  phone: as shipped, the comparison has no "ask the AI to explain" button
+PASS  phone: sodium follows carbohydrates and sugars in the comparison — 能量 高低相差 40.3 kcal | 碳水化合物 | 糖 高低相差 4.1 g | 鈉 目前排序項目 高低相差 701.9 mg | 蛋白質
+PASS  phone: the ranked row is marked and shows the gap 701.9 mg — 鈉 目前排序項目 高低相差 701.9 mg
+PASS  phone: "lowest" and the gap appear only on rows with no unknown value — 能量、糖、鈉、總脂肪、飽和脂肪
+PASS  phone: explain text starts with the fixed header and uses only figures shown in the table — 992 chars; not on screen: none
+PASS  phone: explain text writes unknown as 未知 and gives no health verdict of its own
+PASS  phone: explain text: gaps match the table, and rows the site does not rank are named as "do not rank" — gaps: 能量 40.3 kcal；糖 4.1 g；鈉 701.9 mg；總脂肪 4 g；飽和脂肪 2.6 g；每 100 g／ml 價 4.66 港元 || no rank: 碳水化合物（各款碳水化合物定義唔同或者未寫明）；反式脂肪、膳食纖維（有數字未知）；整包價（包裝大細唔同，要睇每 100 g／ml 價）
+PASS  phone: "copy" puts exactly that text on the clipboard — 已複製比較資料，可以貼俾 AI 助手。
+PASS  phone: with a tested assistant link, the explain dialog offers the link
+PASS  phone: privacy receipt: every request went to the site itself, 0 cookies — 呢張收據係你部瀏覽器自己嘅紀錄，撳開嗰刻先讀出嚟，唔會傳去任何地方。 呢頁連過邊度 由開頁到而家，瀏覽器一共發出 29 個請求： 127.0.0.1:8811 · 29 個請求 · 呢個網站本身 全部請求都係連去呢個網站本身，冇連去廣告或者
+PASS  phone: privacy receipt says the page address is not passed on, and no request carried a Referer — 232 requests so far, 0 with a Referer
+PASS  phone: privacy receipt lists the text-size setting once it is saved
+PASS  phone: label lesson rows open with the keyboard
+PASS  phone: label lesson explains 1+7, the reference amount, sugars within carbohydrates, and "may contain"
+PASS  phone: label lesson rows are announced without the open/close sign, and all 4 sources are government pages — www.cfs.gov.hk, www.cfs.gov.hk, www.cfs.gov.hk, www.gov.hk
+PASS  phone: product details: nutrition comes before the label-checking record — 營養標籤比較 | 香港標籤核對紀錄 | 成分與過敏聲明
+PASS  phone: label lesson opens from product details
+PASS  phone: ranking by price marks the whole-pack price row — {"cls":"sorted-row","text":"整包單件價 目前排序項目"}
+PASS  phone: every request went to the site itself, none carried a Referer, no cookies, no page errors — 290 requests; errors: none
+PASS  desktop: normal load shows no load notice — 1,788 項食品
+PASS  desktop: search box limit equals the link limit (60)
+PASS  desktop: version label says v1.10
+PASS  desktop: first row shows food name and nutrient figures on the first screen — {"vh":900,"name":748,"strip":839,"buttons":1062,"overflowX":false}
+PASS  desktop: panel names the sentence filter (not AI) first and the AI assistant second — 一句話篩選 喺你部機處理 · 唔係 AI | ✧ AI 助手 EdUHK MaaS
+PASS  desktop: AI assistant shows "being set up" while no link is configured
+PASS  desktop: sentence "pure orange juice" → 30 foods and a note that the brand was not used — 30 項食品
+PASS  desktop: after a sentence, the applied conditions are shown beside it without scrolling — {"text":"已套用：搜尋：果汁 · 飲品 30 項食品","visible":true}
+PASS  desktop: "see results" moves to the result count — {"inView":true,"focus":"result-count"}
+PASS  desktop: AI link "pure orange juice" → 30 foods with the same note in the banner — 30 項食品
+PASS  desktop: a pasted sentence that hits the search limit gets a notice pointing to the sentence filter — 搜尋欄最多 60 個字，後面嘅字冇輸入到。長句請用「句子篩選」。
+PASS  desktop: AI link "Vita lemon tea" still keeps the brand — 4 項食品
+PASS  desktop: unit-price ranking is ascending within each unit, and the unit price is emphasised — 24 cards with unit price; first {"v":1.59,"u":"ml"}
+PASS  desktop: ranking note explains that g and ml are ranked apart — 已按單位分開排名：先列 86 項每100ml，再列 26 項每100g；兩組數值唔可以互相比較，未知數值排最後。
+PASS  desktop: the ranking is kept in the address and survives a reload — q=%E7%89%9B%E5%A5%B6&sort=unit-price-asc
+PASS  desktop: reload restores the unit-price ranking
+PASS  desktop: as shipped, the comparison has no "ask the AI to explain" button
+PASS  desktop: sodium follows carbohydrates and sugars in the comparison — 能量 高低相差 40.3 kcal | 碳水化合物 | 糖 高低相差 4.1 g | 鈉 目前排序項目 高低相差 701.9 mg | 蛋白質
+PASS  desktop: the ranked row is marked and shows the gap 701.9 mg — 鈉 目前排序項目 高低相差 701.9 mg
+PASS  desktop: "lowest" and the gap appear only on rows with no unknown value — 能量、糖、鈉、總脂肪、飽和脂肪
+PASS  desktop: explain text starts with the fixed header and uses only figures shown in the table — 992 chars; not on screen: none
+PASS  desktop: explain text writes unknown as 未知 and gives no health verdict of its own
+PASS  desktop: explain text: gaps match the table, and rows the site does not rank are named as "do not rank" — gaps: 能量 40.3 kcal；糖 4.1 g；鈉 701.9 mg；總脂肪 4 g；飽和脂肪 2.6 g；每 100 g／ml 價 4.66 港元 || no rank: 碳水化合物（各款碳水化合物定義唔同或者未寫明）；反式脂肪、膳食纖維（有數字未知）；整包價（包裝大細唔同，要睇每 100 g／ml 價）
+PASS  desktop: "copy" puts exactly that text on the clipboard — 已複製比較資料，可以貼俾 AI 助手。
+PASS  desktop: with a tested assistant link, the explain dialog offers the link
+PASS  desktop: privacy receipt: every request went to the site itself, 0 cookies — 呢張收據係你部瀏覽器自己嘅紀錄，撳開嗰刻先讀出嚟，唔會傳去任何地方。 呢頁連過邊度 由開頁到而家，瀏覽器一共發出 29 個請求： 127.0.0.1:8811 · 29 個請求 · 呢個網站本身 全部請求都係連去呢個網站本身，冇連去廣告或者
+PASS  desktop: privacy receipt says the page address is not passed on, and no request carried a Referer — 232 requests so far, 0 with a Referer
+PASS  desktop: privacy receipt lists the text-size setting once it is saved
+PASS  desktop: label lesson rows open with the keyboard
+PASS  desktop: label lesson explains 1+7, the reference amount, sugars within carbohydrates, and "may contain"
+PASS  desktop: label lesson rows are announced without the open/close sign, and all 4 sources are government pages — www.cfs.gov.hk, www.cfs.gov.hk, www.cfs.gov.hk, www.gov.hk
+PASS  desktop: product details: nutrition comes before the label-checking record — 營養標籤比較 | 香港標籤核對紀錄 | 成分與過敏聲明
+PASS  desktop: label lesson opens from product details
+PASS  desktop: ranking by price marks the whole-pack price row — {"cls":"sorted-row","text":"整包單件價 目前排序項目"}
+PASS  desktop: every request went to the site itself, none carried a Referer, no cookies, no page errors — 290 requests; errors: none
+PASS  hold: a missing file is reported above the results with a retry button — 有 1 份資料未能載入（營養參考資料）。部分食品嘅營養數字同過敏資料會顯示為未知。 資料未齊嗰陣，網站唔會顯示過敏篩選結果，亦暫停比較，等載入齊先顯示。 再試一
+PASS  hold: with an allergen chosen and a file missing, no food is listed at all — 資料未載入齊 · 暫停顯示過敏篩選結果
+PASS  hold: no exclusion counts, no "nothing found" suggestions
+PASS  hold: compared foods are kept but comparing is paused, and the tray says so
+PASS  hold: the address is left as it arrived, and the banner says the link may be only partly applied — q=即食麵&avoid=crustaceans&sort=sodium-asc&compare=P000000304,P000000014
+PASS  hold: "try again" brings the results back and keeps search, allergy, ranking and compared foods — {"count":"14 項來源未列所選過敏原","cards":14,"tray":"2","search":"即食麵","sort":"sodium-asc","avoid":true,"focus":"result-count","toast":"資料已經載入齊，已經再讀一次連結入面嘅條件同比較食品。"}
+PASS  hold: after "try again" focus moves to the result count and the message says the link was read again — result-count | 資料已經載入齊，已經再讀一次連結入面嘅條件同比較食品。
+PASS  hold: the recovered page equals a normal load of the same link — 14 項來源未列所選過敏原; errors: none
+PASS  degraded: without an allergen chosen, foods are still listed under the notice — 9 cards
+PASS  degraded: product details warn that the allergen statement may be incomplete, and suggest no alternatives
+PASS  degraded: comparing is paused while any file is missing, even with no allergen chosen — 資料未載入齊，暫停比較 · 出前一丁碗麵 - 麻油味 99克 · 出前一丁即食麵 - 五香牛肉味 90克
+PASS  degraded: choosing an allergen starts the hold and pauses comparing — 資料未載入齊 · 暫停顯示過敏篩選結果
+PASS  degraded: a retry that still fails says so, keeps the hold, and puts focus back on the retry button — retry in notice | 仍然有資料未能載入，可以遲啲再試。
+PASS  degraded: removing the allergen lists the foods again (comparing stays paused) — 9 cards
+PASS  label hold: with a label file missing no food is listed, even with no allergen chosen — 標籤資料未載入齊 · 暫時唔顯示食品 | 有 1 份資料未能載入（標籤及過敏資料）。少咗標籤資料，部分營養數字同過敏聲明會同核對過嘅標籤唔同，所以網站暫時唔顯示食
+PASS  label hold: the comparison cannot be opened on incomplete label data — 標籤資料未載入齊 · 暫時唔顯示食品
+PASS  label hold: after "try again" the comparison shows the reviewed figures (3,920 mg lowest, 6,540 mg) — ["3,920 mg最低","6,540 mg"]
+PASS  retry while details are open: the dialog stays open, shows the complete data, and keeps focus inside — {"open":true,"warned":false,"focusInside":true,"toast":"資料已經載入齊，你揀嘅條件保持不變。","search":"出前一丁碗麵"}
+PASS  early choice: an allergen ticked during loading is kept together with the link's allergen — milk+peanuts | 4 項來源未列所選過敏原
+PASS  early choice: without a link, a search and an allergen entered during loading are both applied — 14 項來源未列所選過敏原
+PASS  failure: missing price catalogue is stated plainly (not hidden) — 48 項食品
+PASS  failure: with the price catalogue missing, an allergy filter is held back as well
+PASS  failure: core file missing → clear error with a retry button — 暫時載入唔到食品資料。請檢查網絡，然後撳「再試一次」；如果你直接開啟 HTML 檔案，請改用網站連結。 再試一次
+PASS  failure: "sources" before any data arrives explains itself instead of breaking — 食品資料未載入，暫時未有來源清單。請先撳「再試一次」。
+PASS  failure: retry after a core failure loads the full catalogue and moves focus to the result count — 1,788 項食品 | focus result-count
+PASS  failure: a slow file shows a "still loading" hint after 6 seconds — 網絡較慢，仍然載入緊食品資料…
+PASS  failure: the page appears once the slow file arrives
+PASS  failure: a file that never answers is given up after about 10 seconds — 10247 ms
+PASS  settings slip (a missing quote mark): the site still loads, the AI button stays hidden, and the console says why — 1,788 項食品; errors 0
+PASS  settings slip (curly quotes): the site still loads, the AI button stays hidden, and the console says why — 1,788 項食品; errors 0
+PASS  program cannot start (a program file is missing): the page says so and offers a reload — {"count":"網站程式未能啟動","grid":"網站程式載入唔到，暫時用唔到。請重新整理頁面；如果仍然一樣，請通知 NutriCompare 小組。 重新整理","busy":"false","reload":true}
+PASS  program cannot start (a program file is damaged): the page says so and offers a reload — {"count":"網站程式未能啟動","grid":"網站程式載入唔到，暫時用唔到。請重新整理頁面；如果仍然一樣，請通知 NutriCompare 小組。 重新整理","busy":"false","reload":true}
+PASS  assistant (working link, Mode 2 tested): button shown with the expiry date — 連結有效至 2099年12月31日
+PASS  assistant (working link, Mode 2 tested): "ask the AI to explain" is offered
+PASS  assistant (working link, Mode 2 tested): the explain dialog opens with the AI link
+PASS  assistant (working link, Mode 2 not tested yet): button shown with the expiry date — 連結有效至 2099年12月31日
+PASS  assistant (working link, Mode 2 not tested yet): "ask the AI to explain" is not offered
+PASS  assistant (expired link): button hidden and the page says the link expired — AI 助手連結已經喺 2020年1月1日 到期，小組更新之後會再出現。你可以先用「一句話篩選」。
+PASS  assistant (expired link): "ask the AI to explain" is not offered
+
+==== axe (WCAG 2.1 A/AA)
+ok    phone sentence filter / AI panel open
+ok    phone sentence applied (summary shown)
+ok    phone unit-price ranking
+ok    phone comparison with ranked row
+ok    phone explain dialog
+ok    phone privacy receipt
+ok    phone privacy receipt A+
+ok    phone label lesson A+ (all rows open)
+ok    phone label lesson over details
+ok    desktop sentence filter / AI panel open
+ok    desktop sentence applied (summary shown)
+ok    desktop unit-price ranking
+ok    desktop comparison with ranked row
+ok    desktop explain dialog
+ok    desktop privacy receipt
+ok    desktop privacy receipt A+
+ok    desktop label lesson A+ (all rows open)
+ok    desktop label lesson over details
+ok    phone allergy hold
+ok    phone details while data is missing
+ok    phone label hold
+ok    desktop load notice (prices missing)
+ok    desktop allergy hold
+ok    phone fatal load error
+ok    phone program failed to start (a program file is missing)
+ok    phone program failed to start (a program file is damaged)
+ok    phone assistant panel (working link, Mode 2 tested)
+ok    phone assistant panel (working link, Mode 2 not tested yet)
+ok    phone assistant panel (expired link)
+
+109 passed, 0 failed; axe screens 29, with violations 0

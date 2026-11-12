@@ -20,6 +20,8 @@ const DECORATIVE = /art-|visual-caption|tiny-leaf|note-symbol|floating-note|pack
 
 const source = fs.readFileSync(FILE, 'utf8');
 const base = source.includes(BEGIN) ? source.slice(0, source.indexOf(BEGIN)).trimEnd() : source.trimEnd();
+// Hand-written blocks placed after the generated layer (v1.9, v1.10) are kept exactly as they are.
+const tail = source.includes(END) ? source.slice(source.indexOf(END) + END.length).trim() : '';
 
 /** Minimal parser for flat CSS with one level of @media nesting. */
 function parse(css) {
@@ -120,5 +122,5 @@ const layer = [BEGIN,
   emit(large),
   'html.large-text .product-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}',
   END].join('\n');
-fs.writeFileSync(FILE, `${base}\n${layer}\n`);
+fs.writeFileSync(FILE, `${base}\n${layer}\n${tail ? `${tail}\n` : ''}`);
 console.log(`readability layer: ${darkened} colours, ${raised} sizes, ${large.length} large-text rules`);

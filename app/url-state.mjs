@@ -4,10 +4,10 @@
  * Every value is checked against a fixed list; anything unknown is reported and ignored, never guessed.
  * A link can only add allergy exclusions. It can never weaken the deterministic allergy exclusion.
  */
-import { ALLERGENS, getAllergenAssessment, parseRequest, readAllergenPhrase, searchQueryLimitations } from './engine.mjs?v=19';
+import { ALLERGENS, brandDroppedNotice, getAllergenAssessment, parseRequestWithBrandFallback, readAllergenPhrase, searchQueryLimitations } from './engine.mjs?v=110';
 
 export const CATEGORY_IDS = Object.freeze(['biscuits', 'snacks', 'drinks', 'bakery', 'dairy', 'pantry', 'meals']);
-export const SORT_IDS = Object.freeze(['relevance', 'price-asc', 'carbs-asc', 'sugar-asc', 'sodium-asc', 'protein-desc']);
+export const SORT_IDS = Object.freeze(['relevance', 'price-asc', 'unit-price-asc', 'carbs-asc', 'sugar-asc', 'sodium-asc', 'protein-desc']);
 export const DATA_SCOPES = Object.freeze(['nutrition', 'hk-nutrition', 'comparable', 'hk-label']);
 const LIBRARY_SCOPES = new Map([['priced', 'priced'], ['off-library', 'off-library'], ['all', '']]);
 
@@ -38,6 +38,7 @@ const STORE_ALIASES = new Map([
 const SORT_ALIASES = new Map([
   ['sugar', 'sugar-asc'], ['low-sugar', 'sugar-asc'], ['carbs', 'carbs-asc'], ['low-carb', 'carbs-asc'], ['sodium', 'sodium-asc'],
   ['salt', 'sodium-asc'], ['low-sodium', 'sodium-asc'], ['protein', 'protein-desc'], ['price', 'price-asc'], ['cheap', 'price-asc'],
+  ['unit-price', 'unit-price-asc'], ['unitprice', 'unit-price-asc'], ['per100', 'unit-price-asc'],
 ]);
 const ALLERGEN_LABELS = Object.freeze({ gluten: '含麩質穀物', crustaceans: '甲殼類', eggs: '蛋類', fish: '魚類', peanuts: '花生', soy: '大豆', milk: '奶類', 'tree-nuts': '木本堅果', sesame: '芝麻', sulphites: '亞硫酸鹽' });
 /** Everyday "shellfish / seafood" also covers molluscs (oysters, scallops, squid), which the label filter cannot cover. */
@@ -114,13 +115,19 @@ export function filtersFromParams(input, { storeIds = [], base = {}, products = 
     if (source === 'ai') {
       // v1.7 MaaS prompts sent bare "cream" for filled biscuits. Keep that old link working
       // without giving the same special meaning to a person's direct search for cream.
-      const parsedList = queries.map(query => ({ query, parsed: parseRequest(/^cream$/i.test(query) ? 'cream sandwich biscuits' : query, { brandIndex }) }));
+      // The brand check looks in the same library the link asks for.
+      const libraryText = cleanText(first('lib'), 20).toLowerCase();
+      const libraryScope = LIBRARY_SCOPES.has(libraryText) ? LIBRARY_SCOPES.get(libraryText) : (base.libraryScope ?? 'priced');
+      const parsedList = queries.map(query => ({ query, parsed: parseRequestWithBrandFallback(/^cream$/i.test(query) ? 'cream sandwich biscuits' : query, { brandIndex, products, libraryScope }) }));
       const named = new Set();
       for (const [index, { query, parsed }] of parsedList.entries()) {
         const allergyWords = parsed.allergens.length || parsed.unsupportedAllergens.length || parsed.allergyUnclear || parsed.avoidedFoods.length || parsed.otherRestrictions.length;
         // Raw words are kept as the search only when they carry no allergy or "without" wording ("bread", "wafer").
         const search = parsed.query || (allergyWords ? '' : query);
-        if (index === 0 || !filters.query) filters.query = search || filters.query || '';
+        if (index === 0 || !filters.query) {
+          filters.query = search || filters.query || '';
+          if (parsed.brandDropped && search) notes.push(brandDroppedNotice(parsed.brandDropped, search));
+        }
         if (!impliedCategory && parsed.category && parsed.category !== 'all') impliedCategory = parsed.category;
         parsed.allergens.forEach(id => { addAllergen(id); named.add(id); });
         unsupportedAllergens.push(...parsed.unsupportedAllergens);

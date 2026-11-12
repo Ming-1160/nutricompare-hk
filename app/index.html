@@ -3,12 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
   <meta name="theme-color" content="#174f46">
   <meta name="description" content="按口味、預算及過敏限制，比較包裝食品營養、香港超市價格與購買渠道。每項資料有來源，未知資料清楚標示。">
   <title>NutriCompare HK｜比較清楚，再作選擇</title>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=19">
-  <script type="module" src="app.mjs?v=19"></script>
+  <link rel="stylesheet" href="styles.css?v=110">
+  <script>
+    // If the program cannot start (a file is missing or damaged), say so instead of showing "loading" forever.
+    (function () {
+      function show() {
+        var count = document.getElementById('result-count');
+        var grid = document.getElementById('product-grid');
+        if (count) count.textContent = '網站程式未能啟動';
+        if (grid) {
+          grid.setAttribute('aria-busy', 'false');
+          grid.innerHTML = '<div class="error-message" role="alert"><p>網站程式載入唔到，暫時用唔到。請重新整理頁面；如果仍然一樣，請通知 NutriCompare 小組。</p><button type="button" class="secondary-button" id="reload-page">重新整理</button></div>';
+          document.getElementById('reload-page').addEventListener('click', function () { location.reload(); });
+        }
+      }
+      window.addEventListener('error', function (event) {
+        if (document.documentElement.dataset.app) return;
+        // Only this site's own program counts: its script failed to load, or one of its files has an error.
+        // Errors from anything else (an image, a browser extension) are ignored.
+        var ownScript = event.target && event.target.tagName === 'SCRIPT' && /app\.mjs/.test(event.target.src || '');
+        var ownError = event.target === window && typeof event.filename === 'string' && event.filename.indexOf(location.origin + '/') === 0;
+        if (!ownScript && !ownError) return;
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', show); else show();
+      }, true);
+    })();
+  </script>
+  <script type="module" src="app.mjs?v=110"></script>
 </head>
 <body>
 <a class="skip-link" href="#results">跳至食品結果</a>
@@ -16,7 +41,7 @@
   <div class="header-inner">
     <a class="brand" href="./" aria-label="NutriCompare HK 主頁"><span class="brand-icon" aria-hidden="true">n<span>c</span></span><span>NutriCompare<span class="brand-hk">HK</span></span></a>
     <nav aria-label="主要導覽"><a class="nav-current" href="#explore">探索食品</a><button class="text-button" id="sources-button">資料來源</button><a class="nav-about" href="../project.html">關於計劃</a><button class="text-size-toggle" id="text-size-toggle" type="button" aria-pressed="false" title="放大網站文字">A+ 大字</button></nav>
-    <span class="prototype-label"><span></span> 功能原型 v1.9</span>
+    <span class="prototype-label"><span></span> 功能原型 v1.10</span>
   </div>
 </header>
 <main>
@@ -40,24 +65,25 @@
   <section class="search-section" aria-label="搜尋食品">
     <form id="search-form" class="search-box" role="search">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
-      <label class="sr-only" for="food-search">食品名稱或品牌</label><input id="food-search" type="search" placeholder="搜尋食品或品牌" autocomplete="off" maxlength="160">
+      <label class="sr-only" for="food-search">食品名稱或品牌</label><input id="food-search" type="search" placeholder="搜尋食品或品牌" autocomplete="off" maxlength="60">
       <button type="submit" class="primary-button">搜尋 <span aria-hidden="true">→</span></button>
     </form>
     <div class="search-bottom">
       <details class="search-suggestions"><summary>搜尋例子</summary><div class="quick-search"><button type="button" data-request="低糖飲品 20蚊以下">低糖飲品 $20 以下</button><button type="button" data-request="即食麵 少鈉">即食麵 · 鈉較低</button><button type="button" data-query="夾心餅">夾心餅</button><button type="button" data-query="嘉頓">嘉頓</button></div></details>
-      <button class="assistant-toggle text-button" id="assistant-toggle" type="button" aria-expanded="false" aria-controls="assistant-panel">AI／句子篩選</button>
+      <button class="assistant-toggle text-button" id="assistant-toggle" type="button" aria-expanded="false" aria-controls="assistant-panel">句子篩選／AI 助手</button>
     </div>
     <div class="assistant-panel" id="assistant-panel" hidden>
-      <div class="assistant-ai">
-        <p class="assistant-title"><span aria-hidden="true">✧</span> AI 條件助手 <span class="assistant-badge" id="ai-assistant-platform">EdUHK MaaS</span></p>
-        <p class="assistant-lead">用一句話講你想食咩、預算同要避開嘅食材。AI 會建議篩選條件，再提供連結返嚟核對。</p>
-        <div class="assistant-action"><a id="ai-assistant-link" class="primary-button" href="#" target="_blank" rel="noopener noreferrer" hidden>開啟 AI 助手 <span aria-hidden="true">↗</span></a><span id="ai-assistant-pending" class="assistant-pending">AI 助手設定中：小組喺 EdUHK MaaS 發佈之後，按鈕會喺呢度出現。</span></div>
-        <p class="assistant-privacy">AI 助手會將你嘅輸入傳送到教大 MaaS 處理，小組可查閱紀錄。請勿輸入個人或醫療資料。營養、過敏同價格由本網站按資料來源處理。</p>
-      </div>
       <div class="assistant-offline">
-        <label for="request-input">唔使 AI 都得：離線快速解讀，例如「想食即食麵，少鈉，20蚊以下」</label>
+        <p class="assistant-title">一句話篩選 <span class="assistant-badge">喺你部機處理 · 唔係 AI</span></p>
+        <label for="request-input">用一句話講想食咩、預算同要避開嘅食材，例如「想食即食麵，少鈉，20蚊以下」</label>
         <form id="request-form"><input id="request-input" maxlength="240" placeholder="輸入想食嘅食品、預算或過敏限制"><button class="primary-button" type="submit">套用條件</button></form>
-        <p>句子只喺你部機處理。只識常用字詞，請核對套用條件。</p><div id="request-feedback" role="status"></div>
+        <p>網站用固定字詞規則解讀，句子唔會傳出去。只識常用字詞，請核對套用咗嘅條件。</p><div id="request-feedback" role="status"></div>
+      </div>
+      <div class="assistant-ai">
+        <p class="assistant-title"><span aria-hidden="true">✧</span> AI 助手 <span class="assistant-badge" id="ai-assistant-platform">EdUHK MaaS</span></p>
+        <p class="assistant-lead">想用對話方式講需要，可以開 AI 助手（另一個網站）。AI 只會建議篩選條件，再俾一條連結你返嚟呢度核對。</p>
+        <div class="assistant-action"><a id="ai-assistant-link" class="primary-button" href="#" target="_blank" rel="noopener noreferrer" hidden>開啟 AI 助手 <span aria-hidden="true">↗</span></a><span id="ai-assistant-pending" class="assistant-pending">AI 助手設定中：小組喺 EdUHK MaaS 發佈之後，按鈕會喺呢度出現。</span><span id="ai-assistant-expiry" class="assistant-expiry" hidden></span></div>
+        <p class="assistant-privacy">AI 助手會將你嘅輸入傳送到教大 MaaS 處理，小組可查閱紀錄。請勿輸入個人或醫療資料。營養、過敏同價格由本網站按資料來源處理。</p>
       </div>
     </div>
   </section>
@@ -82,7 +108,8 @@
 
     <section class="results" id="results" aria-label="食品搜尋結果">
       <div class="category-tabs" role="group" aria-label="食品分類"><button class="active" data-category="" aria-pressed="true">全部</button><button data-category="biscuits" aria-pressed="false">餅乾</button><button data-category="snacks" aria-pressed="false">小食</button><button data-category="drinks" aria-pressed="false">飲品</button><button data-category="bakery" aria-pressed="false">麵包</button><button data-category="dairy" aria-pressed="false">奶 / 蛋</button><button data-category="pantry" aria-pressed="false">糧油調味</button><button data-category="meals" aria-pressed="false">麵食食材</button></div>
-      <div class="results-toolbar"><div><h2>食品結果</h2><p id="result-count" role="status">正在載入食品資料…</p></div><div class="sort-field"><label for="sort">排序</label><select id="sort" aria-label="排序"><option value="relevance">資料較完整優先</option><option value="price-asc">價格：低至高</option><option value="carbs-asc">碳水：低至高</option><option value="sugar-asc">糖：低至高</option><option value="sodium-asc">鈉：低至高</option><option value="protein-desc">蛋白質：高至低</option></select></div></div>
+      <div class="results-toolbar"><div><h2>食品結果</h2><p id="result-count" role="status">正在載入食品資料…</p></div><div class="sort-field"><label for="sort">排序</label><select id="sort" aria-label="排序"><option value="relevance">資料較完整優先</option><option value="price-asc">價格：低至高</option><option value="unit-price-asc">單位價：低至高</option><option value="carbs-asc">碳水：低至高</option><option value="sugar-asc">糖：低至高</option><option value="sodium-asc">鈉：低至高</option><option value="protein-desc">蛋白質：高至低</option></select></div></div>
+      <div id="load-notice" class="link-banner warning load-notice" role="alert" hidden></div>
       <p class="inline-notice" id="search-feedback" role="status" hidden></p>
       <div id="link-banner" class="link-banner" role="status" hidden></div>
       <div class="filter-row"><div id="active-filters" class="active-filters" role="group" aria-label="已套用條件"></div><button id="copy-link" class="text-button copy-link" type="button" hidden>複製呢組條件嘅連結</button></div>
@@ -99,7 +126,7 @@
   </div>
 
   <section class="how-it-works"><div><span class="eyebrow">由想食，到睇得明</span><h2>唔使每個網站來回搵。</h2></div><ol><li><span>01</span><div><strong>搵想食嘅食品</strong><p>按名稱、口味或品牌搜尋。</p></div></li><li><span>02</span><div><strong>揀你嘅條件</strong><p>預算、商戶、過敏限制。</p></div></li><li><span>03</span><div><strong>放埋一齊比較</strong><p>睇份量、營養同資料來源。</p></div></li></ol></section>
-  <footer><a class="brand footer-brand" href="./">NutriCompare <span class="brand-hk">HK</span></a><p>香港食品比較 · ITC2010 學生功能原型<br>網站篩選條件只喺你部機處理。</p><div><button class="text-button" id="footer-sources">資料來源與限制</button><a href="../project.html">關於計劃</a></div></footer>
+  <footer><a class="brand footer-brand" href="./">NutriCompare <span class="brand-hk">HK</span></a><p>香港食品比較 · ITC2010 學生功能原型<br>網站篩選條件只喺你部機處理。</p><div><button class="text-button" id="footer-sources">資料來源與限制</button><button class="text-button" id="label-lesson-button" type="button" data-open-label-lesson>點樣睇營養標籤？</button><button class="text-button" id="privacy-button" type="button">私隱收據</button><a href="../project.html">關於計劃</a></div></footer>
 </main>
 <div class="compare-tray" id="compare-tray" hidden><div class="tray-inner"><div class="tray-copy"><strong>已選 <span id="compare-count">0</span> / 3</strong><span id="selected-names">選擇食品作比較</span></div><div class="tray-actions"><button class="text-button" id="clear-comparison">清空</button><button class="primary-button" id="open-comparison" disabled>比較營養 <span aria-hidden="true">↗</span></button></div></div></div>
 <dialog id="detail-dialog" class="detail-dialog" aria-labelledby="detail-title"><div class="dialog-top"><span id="detail-title" class="eyebrow">食品資料</span><button class="close-button" data-close="detail-dialog" aria-label="關閉食品資料">×</button></div><div id="detail-content"></div></dialog>
@@ -117,6 +144,40 @@
   <input id="comparison-link-field" type="url" readonly>
   <button id="copy-comparison-link" class="secondary-button" type="button">複製連結</button>
   <p id="comparison-qr-status" role="status"></p>
+</dialog>
+<dialog id="label-lesson-dialog" class="label-lesson-dialog" aria-labelledby="label-lesson-title">
+  <div class="dialog-top"><h2 id="label-lesson-title">點樣睇營養標籤？</h2><button type="button" class="close-button" data-close="label-lesson-dialog" aria-label="關閉睇標籤教學">×</button></div>
+  <p class="lesson-lead">香港嘅營養標籤要列出「1+7」：能量，加七種營養素。撳示範標籤嘅每一行睇解釋，大約一分鐘睇完。</p>
+  <div class="sample-label" role="group" aria-label="示範營養標籤">
+    <p class="sample-label-note">示範標籤 · 唔係真實產品</p>
+    <p class="sample-label-title">營養資料</p>
+    <details><summary><span>參考量</span><span>每 100 克</span><span class="row-toggle" aria-hidden="true"></span></summary><p>標籤會寫明啲數字係按幾多食物計：每 100 克／毫升、每食用分量，或者每包裝。比較兩款食品之前，要先確定參考量一樣。NutriCompare 會先換算做每 100 克／毫升，再放埋一齊比較。</p></details>
+    <details><summary><span>能量</span><span>480 千卡</span><span class="row-toggle" aria-hidden="true"></span></summary><p>呢個就係「1+7」入面嘅「1」。能量用千卡（kcal）或者千焦（kJ）表示。</p></details>
+    <details><summary><span>蛋白質</span><span>7 克</span><span class="row-toggle" aria-hidden="true"></span></summary><p>「1+7」嘅七種營養素之一。七種係：蛋白質、總脂肪、飽和脂肪、反式脂肪、碳水化合物、糖同鈉。</p></details>
+    <details><summary><span>總脂肪</span><span>20 克</span><span class="row-toggle" aria-hidden="true"></span></summary><p>總脂肪已經包括下面兩行嘅飽和脂肪同反式脂肪。</p></details>
+    <details class="sub-row"><summary><span>飽和脂肪</span><span>9 克</span><span class="row-toggle" aria-hidden="true"></span></summary><p>飽和脂肪係總脂肪嘅一部分，唔好同總脂肪加埋。</p></details>
+    <details class="sub-row"><summary><span>反式脂肪</span><span>0 克</span><span class="row-toggle" aria-hidden="true"></span></summary><p>反式脂肪亦係總脂肪嘅一部分。</p></details>
+    <details><summary><span>碳水化合物</span><span>68 克</span><span class="row-toggle" aria-hidden="true"></span></summary><p>標籤寫「碳水化合物」，即係可獲得的碳水化合物；寫「總碳水化合物」嘅話，數字已經包埋膳食纖維，標籤亦會另外列出膳食纖維。NutriCompare 會寫明每款食品用邊一種。</p></details>
+    <details class="sub-row"><summary><span>糖</span><span>25 克</span><span class="row-toggle" aria-hidden="true"></span></summary><p>糖係碳水化合物嘅一部分，所以呢 25 克已經計咗入上面嘅 68 克，唔好再加埋。糖少唔代表碳水化合物少，兩行都要睇。</p></details>
+    <details><summary><span>鈉</span><span>350 毫克</span><span class="row-toggle" aria-hidden="true"></span></summary><p>鈉主要嚟自鹽同調味料。單位係毫克（mg），1,000 毫克等於 1 克。</p></details>
+    <p class="sample-label-title">配料</p>
+    <details><summary><span>小麥粉、糖、植物油、奶粉、鹽</span><span class="row-toggle" aria-hidden="true"></span></summary><p>配料按用量由多到少排列。食品用咗八類指定致敏物做配料，配料表就要標明，例如含麩質嘅穀類（呢度嘅小麥粉）同奶類（呢度嘅奶粉）。</p></details>
+    <details><summary><span>可能含有花生</span><span class="row-toggle" aria-hidden="true"></span></summary><p>呢類字眼係生產商提醒食品可能沾到花生。上面嘅致敏物規定講嘅係用咗落配料嘅情況，所以包裝冇寫「可能含有」，唔等於一定冇沾到。有過敏就要每次核對手上包裝，有需要可以問生產商。NutriCompare 會將「含有」、「可能含有」同資料不足嘅食品一齊排除。</p></details>
+  </div>
+  <p class="lesson-foot">資料來源（全部係食物安全中心或者政府網頁）：<a href="https://www.cfs.gov.hk/english/multimedia/multimedia_avr/files/Nutrition_Label.pdf" target="_blank" rel="noopener noreferrer">《活用營養標籤》單張 ↗</a>、<a href="https://www.cfs.gov.hk/english/faq/faq_14.html" target="_blank" rel="noopener noreferrer">營養標籤常見問題（英文）↗</a>（「1+7」、參考量、碳水化合物）、<a href="https://www.cfs.gov.hk/sc_chi/committee/files/TCF_50/50_Labelling_of_Prepackaged_Food_c.pdf" target="_blank" rel="noopener noreferrer">《香港預先包裝食物的標籤制度》↗</a>（配料次序、八類致敏物）、<a href="https://www.gov.hk/tc/residents/health/foodsafe/nutrition.htm" target="_blank" rel="noopener noreferrer">香港政府一站通「營養資料標籤」↗</a>。呢個教學只教點睇標籤，唔可以代替醫生或者營養師嘅建議。</p>
+</dialog>
+<dialog id="ai-explain-dialog" class="ai-explain-dialog" aria-labelledby="ai-explain-title">
+  <div class="dialog-top"><h2 id="ai-explain-title">叫 AI 解釋呢個比較</h2><button type="button" class="close-button" data-close="ai-explain-dialog" aria-label="關閉 AI 解釋">×</button></div>
+  <p>網站已經將比較表嘅數字整理成下面呢段文字。複製之後貼俾 AI 助手，請佢只用呢啲數字解釋分別。</p>
+  <label for="ai-explain-text">比較資料（只包含食品資料）</label>
+  <textarea id="ai-explain-text" readonly rows="9"></textarea>
+  <div class="ai-explain-actions"><button id="copy-ai-explain" class="primary-button" type="button">複製資料</button><a id="ai-explain-link" class="secondary-button" href="#" target="_blank" rel="noopener noreferrer" hidden>開啟 AI 助手 <span aria-hidden="true">↗</span></a><span id="ai-explain-pending" class="assistant-pending">AI 助手設定中：小組喺 EdUHK MaaS 發佈之後，呢度會有按鈕。你可以先睇網站會交咩資料俾 AI。</span></div>
+  <p id="ai-explain-status" role="status"></p>
+  <p class="ai-explain-note">AI 助手係另一個網站，可能會講錯。請以比較表嘅數字同手上包裝為準；AI 唔可以話你知邊款啱你食。</p>
+</dialog>
+<dialog id="privacy-dialog" class="privacy-dialog" aria-labelledby="privacy-title">
+  <div class="dialog-top"><h2 id="privacy-title">私隱收據：呢頁連過邊度？</h2><button type="button" class="close-button" data-close="privacy-dialog" aria-label="關閉私隱收據">×</button></div>
+  <div id="privacy-content"></div>
 </dialog>
 <div id="toast" class="toast" role="status" hidden></div>
 <noscript><p class="noscript">請啟用 JavaScript 使用搜尋、篩選及比較功能。你仍可閱讀<a href="../project.html">關於計劃及資料來源說明</a>。</p></noscript>

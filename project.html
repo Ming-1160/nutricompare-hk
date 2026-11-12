@@ -72,7 +72,7 @@
 <header><div class="wrap bar"><a class="brand" href="./"><span class="brand-icon" aria-hidden="true">nc</span>NutriCompare <small>HK</small></a><a class="cta" href="./">試用原型 →</a></div></header>
 <main class="wrap">
   <div class="hero">
-    <p class="eyebrow">ITC2010 Digital Literacy · 小組項目 · 原型 v1.9 第一批</p>
+    <p class="eyebrow">ITC2010 Digital Literacy · 小組項目 · 原型 v1.10</p>
     <h1>糖尿病人揀包裝食品，<br><em>標籤、過敏同價錢一次比較清楚。</em></h1>
     <p class="lead">NutriCompare HK 幫香港第二型糖尿病成人同照顧者比較包裝食品。用家可以按食品、預算同過敏限制篩選，再並排睇碳水、糖、鈉同港幣價格。網站已備妥 AI 條件連結驗證，MaaS 助手仍待設定。</p>
     <div class="summary-en"><strong>In English</strong> NutriCompare HK helps adults with type 2 diabetes and their caregivers in Hong Kong compare packaged-food labels and prices. Search and filters run in the browser. Users can compare nutrition, allergen warnings and whole-pack and unit prices with links to the source data. The site can validate filter links from the planned EdUHK MaaS assistant. The assistant is pending setup.</div>
@@ -102,7 +102,7 @@
     <span class="step">Step 2 · Solution</span>
     <h2 id="solution-title">方案：一個畫面完成「搵 → 篩 → 比較 → 核對來源」</h2>
     <div class="grid">
-      <div class="card"><h3>快速解讀與 AI 設定</h3><p>可以用離線快速解讀輸入「想搵即食麵，20蚊以下，避開花生，少鈉」。MaaS 條件助手待組員設定和測試。</p></div>
+      <div class="card"><h3>快速解讀與 AI 設定</h3><p>可以用「一句話篩選」輸入「想搵即食麵，20蚊以下，避開花生，少鈉」。MaaS 條件助手待組員設定和測試。</p></div>
       <div class="card"><h3>篩選</h3><p>可以按名稱、品牌、分類、整包預算同商戶篩選，亦可以避開 10 類過敏原：「含有」、「可能含有」同資料不足都會排除。</p></div>
       <div class="card"><h3>並排比較</h3><p>手機同電腦都可以並排比較最多 3 款，切換每 100 g／ml、每個售賣包裝或自訂份量。「—」代表未知。</p></div>
       <div class="card"><h3>來源同價格</h3><p>價格用消委會格價資訊通 2026 年 10 月 21 日快照。規格清楚時會列每 100 g／ml 價錢及每小包價。預算按整個售賣包裝價篩選。</p></div>
@@ -115,7 +115,7 @@
     <div class="table-scroll"><table>
       <tbody>
         <tr><th scope="row">目標用家</th><td>香港第二型糖尿病成人及照顧者（唔係所有慢性病人）</td></tr>
-        <tr><th scope="row">核心功能</th><td>AI／離線條件解讀 · 預算及商戶篩選 · 10 類過敏排除 · 同一基準營養比較 · 來源及購買渠道 · 分享條件連結 · 大字模式</td></tr>
+        <tr><th scope="row">核心功能</th><td>AI 助手／一句話篩選 · 預算及商戶篩選 · 10 類過敏排除 · 同一基準營養比較 · 來源及購買渠道 · 分享條件連結 · 大字模式</td></tr>
         <tr><th scope="row">資料</th><td>消委會格價資訊通開放資料（1,788 款食品、4,496 筆價格）；逐件核對嘅香港品牌、零售商標籤同 Open Food Facts 原圖</td></tr>
         <tr><th scope="row">平台及原因</th><td><strong>GitHub Pages</strong>：靜態網站，免費、不需登入、冇第三方追蹤，組員同老師開條連結就用得。<br><strong>EdUHK MaaS</strong>：課程 Lesson 2 教嘅 AI 平台，用家唔使登入，亦唔使喺公開網站放 API key。</td></tr>
       </tbody>
@@ -147,13 +147,14 @@
       <div class="card"><h3>AI 會做</h3><ul class="clean"><li>理解廣東話、英文同混合講法</li><li>追問唔清楚嘅地方</li><li>講清楚篩選條件同限制</li></ul></div>
       <div class="card"><h3>AI 唔會做</h3><ul class="clean"><li>判斷某食品「糖尿病人可以食」</li><li>保證冇過敏原</li><li>自己作出產品、營養數字或者價格</li><li>處理藥物、份量或者餐單建議</li></ul></div>
     </div>
-    <p class="note">狀態：網站已經可以接收同驗證 AI 連結（v1.7）。MaaS 助手要由組員喺 EdUHK MaaS 建立同發佈，system prompt 同測試題見 <a href="https://github.com/Ming-1160/nutricompare-hk/blob/main/docs/maas-assistant.md">docs/maas-assistant.md</a>。發佈前，網站會顯示「AI 助手設定中」。</p>
+    <p class="note">狀態：網站已經可以接收同驗證 AI 連結（v1.7）。MaaS 助手要由組員喺 EdUHK MaaS 建立同發佈，system prompt 同測試題見 <a href="https://github.com/Ming-1160/nutricompare-hk/blob/main/docs/maas-assistant.md">docs/maas-assistant.md</a>。發佈前，網站會顯示「AI 助手設定中」。v1.10 加咗「叫 AI 解釋」：網站將比較表嘅數字整理成文字，用家貼俾 AI 助手，AI 只可以用呢啲數字解釋分別。網站部分已經做好，AI 嘅表現要等發佈之後逐題測試；測試完成之前，「叫 AI 解釋」個按鈕唔會出現。</p>
   </section>
 
   <section id="testing" aria-labelledby="testing-title">
     <span class="step">Step 4 · Prototype &amp; testing</span>
     <h2 id="testing-title">原型及測試</h2>
-    <div class="ok"><strong>v1.9 第一批</strong><p>手機卡加入營養數字同來源性質，多包裝可以按每小包比較。網站可展開過敏排除原因、查營養數字出處、睇近價替代，以及用連結或本機 QR code 分享所選食品。</p><p>10 種過敏原逐個核對，排除名單同 v1.8 一致。避開花生、HK$20 或以下嘅夾心餅示範有 0 項結果，4 款列出所選過敏原，另有 10 款資料不足。MaaS 發佈、真人測試、實地資料匯入同第二批功能待做。</p></div>
+    <div class="ok"><strong>v1.10</strong><p>資料檔逐個獨立載入：有檔案載入唔到時，網站會喺結果上面講明，並提供「再試一次」，已揀嘅條件保持不變。新增按每 100 g／ml 單位價排序、私隱收據同一分鐘睇標籤教學。比較表將鈉放喺碳水同糖後面，並顯示同一基準下嘅高低相差。</p><p>資料未載入齊嗰陣，網站寧願唔顯示：少咗標籤資料就唔顯示食品；少咗其他資料而用家揀咗過敏原，就唔顯示篩選結果；任何資料未齊都暫停比較。10 種過敏原嘅排除名單仍然同 v1.8 一致。另外測試咗全部 511 個資料檔缺失組合，以現有資料計，冇食品會因為少咗資料而通過過敏篩選。</p><p>「叫 AI 解釋」嘅網站部分已經做好，但要等 MaaS 助手發佈同測試完成先會開放。呢個版本由另一個 AI 審查員同一個三席 AI 評議會檢查過（自動審查，唔係真人測試）：搵到嘅問題已經修正，只有一項係工具本身嘅限制，已經喺文件寫明。英文介面未做。MaaS 發佈、真人測試同實地資料匯入待做。</p></div>
+    <div class="ok"><strong>v1.9 第一批</strong><p>手機卡加入營養數字同來源性質，多包裝可以按每小包比較。網站可展開過敏排除原因、查營養數字出處、睇近價替代，以及用連結或本機 QR code 分享所選食品。</p><p>10 種過敏原逐個核對，排除名單同 v1.8 一致。避開花生、HK$20 或以下嘅夾心餅示範有 0 項結果，4 款列出所選過敏原，另有 10 款資料不足。</p></div>
     <h3>用家測試計劃 <span class="todo">結果待填</span></h3>
     <p>對象：同學、家人或者照顧者。只記錄完成情況同意見，唔記錄姓名或者健康資料。先講明係學生原型，對方同意先開始。</p>
     <div class="table-scroll"><table>
@@ -162,7 +163,7 @@
         <tr><td>T1 搵一款 $20 以下、糖最低嘅飲品，講出佢每100ml 嘅糖同價錢</td><td>2 分鐘內答啱</td><td><span class="todo">待填</span></td></tr>
         <tr><td>T2 比較兩款即食麵嘅鈉，講出邊款低啲，同埋用緊咩基準</td><td>講得出「每100g」同較低嗰款</td><td><span class="todo">待填</span></td></tr>
         <tr><td>T3 設定「避開花生」，喺詳情搵出「可能含有」，解釋「未列出唔等於保證安全」</td><td>搵到警告，解釋正確</td><td><span class="todo">待填</span></td></tr>
-        <tr><td>T4 用 AI 助手（或者離線解讀）講「想食夾心餅，20蚊以下，花生過敏」，核對條件，再解釋點解冇結果</td><td>條件全部啱，明白冇結果嘅原因</td><td><span class="todo">待填</span></td></tr>
+        <tr><td>T4 用 AI 助手（或者「一句話篩選」）講「想食夾心餅，20蚊以下，花生過敏」，核對條件，再解釋點解冇結果</td><td>條件全部啱，明白冇結果嘅原因</td><td><span class="todo">待填</span></td></tr>
         <tr><td>T5 開 A+ 大字再做一次 T1</td><td>覺得易睇（1–5 分）</td><td><span class="todo">待填</span></td></tr>
       </tbody>
     </table></div>
@@ -173,7 +174,7 @@
     <span class="step">Step 5 · Limitations &amp; future improvement</span>
     <h2 id="limits-title">限制同之後點改</h2>
     <div class="grid">
-      <div class="card"><h3>而家做唔到</h3><ul class="clean"><li>1,788 款之中，只有 328 款有營養數值，125 款有完整過敏聲明</li><li>價格係 10 月 21 日嘅快照，唔係即時價，亦唔知有冇貨</li><li>只包括消委會清單入面嘅商戶同商品</li><li>MaaS 連結有到期日同 credit 上限</li><li>未做過患者或者照顧者測試，亦冇臨床驗證</li><li>離線快速解讀用固定字詞，唔係 AI；少見嘅講法仍然可能讀錯，所以每個條件都會列出嚟俾用家核對同移除，過敏以篩選剔選為準</li></ul></div>
+      <div class="card"><h3>而家做唔到</h3><ul class="clean"><li>1,788 款之中，只有 328 款有營養數值，125 款有完整過敏聲明</li><li>價格係 10 月 21 日嘅快照，唔係即時價，亦唔知有冇貨</li><li>只包括消委會清單入面嘅商戶同商品</li><li>MaaS 連結有到期日同 credit 上限</li><li>未做過患者或者照顧者測試，亦冇臨床驗證</li><li>「一句話篩選」用固定字詞，唔係 AI；少見嘅講法仍然可能讀錯，所以每個條件都會列出嚟俾用家核對同移除，過敏以篩選剔選為準</li></ul></div>
       <div class="card"><h3>之後改進</h3><ul class="clean"><li>優先補 demo 會用到嘅類別（飲品、即食麵、餅乾）嘅完整標籤</li><li>完成用家測試，再按結果修改</li><li>加英文介面</li><li>研究條碼／相片輔助，但要另外設計核對步驟</li><li>如果要搵患者測試，要先處理同意同私隱安排</li></ul></div>
     </div>
     <p class="source">老師 Lesson 1：坦白講出限制，個項目會更可信。</p>
@@ -185,10 +186,10 @@
     <div class="table-scroll"><table>
       <thead><tr><th scope="col">議題</th><th scope="col">風險</th><th scope="col">我哋點處理</th></tr></thead>
       <tbody>
-        <tr><td>私隱</td><td>用家可能輸入病歷或者藥物</td><td>不需登入，網站唔儲存資料，離線解讀喺本機進行。AI 助手旁邊清楚提示句子會傳送到 MaaS，叫用家唔好輸入個人或者健康資料。</td></tr>
+        <tr><td>私隱</td><td>用家可能輸入病歷或者藥物</td><td>不需登入，網站唔儲存資料，「一句話篩選」喺本機進行。AI 助手旁邊清楚提示句子會傳送到 MaaS，叫用家唔好輸入個人或者健康資料。</td></tr>
         <tr><td>醫療界線</td><td>用家以為係醫療建議</td><td>網站唔會講「適合糖尿病人」，亦唔評健康分，提醒用家跟醫護人員建議；AI 遇到醫療問題會拒答同轉介。</td></tr>
         <tr><td>過敏安全</td><td>漏報過敏原</td><td>「含有」、「可能含有」同資料不足都排除，網站唔會自動放寬；未能辨認嘅過敏原會提示用家；一定要核對實物包裝。</td></tr>
-        <tr><td>AI 幻覺</td><td>AI 作出食品或者數字</td><td>AI 只建議條件，產品同數字全部由網站嘅資料同規則提供；網站逐項驗證 AI 連結。</td></tr>
+        <tr><td>AI 幻覺</td><td>AI 作出食品或者數字</td><td>AI 只建議條件，產品同數字全部由網站嘅資料同規則提供；網站逐項驗證 AI 連結。「叫 AI 解釋」要等小組完成測試先會開放；到時 AI 亦只可以讀出網站整理好嘅比較數字，唔可以自己加數字或者比高低。</td></tr>
         <tr><td>透明度</td><td>用家誤會資料完整</td><td>每項數字都有來源同日期；「—」＝未知；資料覆蓋同進度公開。</td></tr>
         <tr><td>公平及無障礙</td><td>年長或者視力差嘅用家睇唔清楚；資料偏向大型連鎖店</td><td>有 A+ 大字，文字對比度提升到 WCAG AA；亦會清楚講明只涵蓋消委會清單入面嘅商戶。</td></tr>
         <tr><td>版權及授權</td><td>濫用他人資料或者圖片</td><td>保留消委會、Open Food Facts（ODbL／CC BY-SA）等署名，只連結品牌圖片，唔會整批轉載。</td></tr>

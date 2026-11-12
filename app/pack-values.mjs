@@ -1,5 +1,5 @@
 /** Derive pack values from declared sizes, without changing the listed retail price. */
-import { nutritionFor } from './engine.mjs?v=19';
+import { nutritionFor } from './engine.mjs?v=110';
 
 const text = value => typeof value === 'string' ? value.normalize('NFKC').trim().toLowerCase() : '';
 const number = value => {
@@ -122,6 +122,27 @@ export function getPackPrices(product, wholePrice) {
   const per100 = price !== null && spec.totalAmount ? (price / spec.totalAmount) * 100 : null;
   const perInner = price !== null && spec.innerCount ? price / spec.innerCount : null;
   return { ...spec, wholePrice:price, per100:Number.isFinite(per100) ? per100 : null, perInner };
+}
+
+/**
+ * Rank foods by price per 100 g or 100 ml (v1.10).
+ * Grams and millilitres are never ranked against each other: each unit forms its own block (the bigger block
+ * first), and foods whose unit price is unknown always come last. Nothing is estimated.
+ * `priceOf(product)` is the whole-pack price being compared, normally the lowest eligible shop price.
+ */
+export function rankByUnitPrice(products, priceOf) {
+  const rows = (Array.isArray(products) ? products : []).map((product, index) => {
+    const pack = getPackPrices(product, priceOf(product));
+    const known = pack.per100 !== null && ['g', 'ml'].includes(pack.unit);
+    return { product, index, unit: known ? pack.unit : null, per100: known ? pack.per100 : null };
+  });
+  const counts = new Map();
+  for (const row of rows) if (row.unit) counts.set(row.unit, (counts.get(row.unit) ?? 0) + 1);
+  const groups = [...counts].map(([unit, count]) => ({ unit, count })).sort((a, b) => b.count - a.count);
+  const order = groups.map(group => group.unit);
+  const block = row => (row.unit ? order.indexOf(row.unit) : order.length);
+  rows.sort((a, b) => block(a) - block(b) || (a.per100 ?? 0) - (b.per100 ?? 0) || a.index - b.index);
+  return { products: rows.map(row => row.product), groups };
 }
 
 const TRANSFORMED = /\b(?:as (?:prepared|consumed|served|cooked)|after (?:preparation|cooking|draining|dilution)|prepared|cooked|drained|diluted|reconstituted|reheated|brewed|rehydrated)\b|沖調後|沖泡後|烹調後|煮熟後?|瀝乾後?|加水後|稀釋後/u;

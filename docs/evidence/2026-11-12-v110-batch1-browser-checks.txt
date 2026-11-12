@@ -1,0 +1,65 @@
+NutriCompare HK v1.10 · version 1.9 batch 1 browser checks run again (tools/acceptance/v19-batch1.cjs) · 12 November 2026
+Clean copy of the release files on a local server; Chromium via Playwright; phone emulation 390 px and desktop 1366 px; axe-core 4.10.3.
+
+PASS  A1 phone card shows a nutrient line — 碳水 49.3g 糖 3.6g 鈉 370mg （每100g）
+INFO  A1 basis label on first card — 每 100 g
+PASS  A1 first card and its buttons fit the first screen (390×664) — card bottom 561px, buttons 524/524px, viewport 664px
+PASS  A1 sodium sort: every card shows sodium in bold — 24/24 cards
+INFO  A1 unknown shown as — — no — on this page
+INFO  A1 A+ first card bottom — 756px
+PASS  A3 AI link q=Vita lemon tea — 4 results, first P000005391, all 維他: true
+PASS  A3 AI link q=Lee Kum Kee oyster sauce — 3 results, first P000000071, all 李錦記: true
+PASS  A3 AI link q=Nissin cup noodles — 3 results, first P000000660, all 日清: true
+PASS  A3 AI link q=Nestle coffee — 9 results, first P000002282, all 雀巢: true
+PASS  A3 quick request 「維他 檸檬茶」 keeps the brand — search box "維他 檸檬茶", 4 results
+PASS  A3 quick request 「李錦記 蠔油」 keeps the brand — search box "李錦記 蠔油", 3 results
+PASS  A3 quick request 「嘉頓 梳打餅」 keeps the brand — search box "嘉頓 克力架", 2 results
+PASS  A5 奶油曲奇 → butter cookies (Kjeldsens + Walkers), no sandwich biscuits — 5 results: P000000967 P000001868 P000001020 P000000990 P000003211
+PASS  A5 quick 低GI 麵包 → bread results + no-GI notice — 96 項食品 | 網站冇升糖指數（GI）資料，未能篩選低 GI；以下只按其他已套用嘅條件搜尋。
+PASS  A5 蘇打餅: named 梳打/克力架 before category-only matches — first: P000000651 P000003676 P000004062 P000001187; almond crisp at #18
+PASS  A5 quick 「夾心麵包」 keeps the bakery category — 15 results; filters: 搜尋：夾心麵包× × 麵包 / 蛋糕× ×
+PASS  A5 quick 「忌廉蛋糕」 keeps the bakery category — 1 results; filters: 搜尋：忌廉蛋糕× × 麵包 / 蛋糕× ×
+PASS  A5 card allergy wording 「來源未列所選過敏原 · 請核對包裝」
+PASS  A5 allergy notice says 「唔等於安全保證」 — 排除含有／可能含有嘅 9 項同資料不足嘅 16 項。來源未列出唔等於安全保證，購買前請核對實物包裝。
+PASS  B1 flagship: 0 results, 「已排除 14 款」 — 0 results; toggle "已排除 14 款 · 點解冇呢款？"
+PASS  B1 panel has 4 listed + 10 insufficient — 14 items; 點解冇呢款？ 含有／可能含有（4 款） 嘉頓 · 忌廉威化 - 朱古力味 200克 可能含有／廠房聲明列出 花生 嘉頓 · 忌廉威化 - 士多啤梨味 200克 可能含有／廠房聲明列出 花生 嘉頓 · 忌廉威化 - 花生味 200克 含有 花
+PASS  B1 panel has no compare buttons and no result-card styling — compare controls 0, cards 0
+PASS  B1 panel comes after the results / empty state — {"afterGrid":true,"afterEmpty":true,"emptyShown":true}
+PASS  B1 insufficient wording
+PASS  A2 compare link restores 2 items — tray "2"
+PASS  A2 per-inner-pack header 「每小包 91g（5 包裝）」 and 53.8g carbs — 比較方式 每 100 g／ml 每包／每小包 自訂份量 分享 WhatsApp 分享 顯示 QR code 營養按標籤換算。「—」係未知。購買前請核對實物。 項目 出前一丁即食麵 - 麻油味 91克 x 5 香港標籤已讀 每小包 91g（5 包裝） 移除 × 出前一丁即食麵 - 麻油味 91克 香港標籤已讀 每包 91
+PASS  A4 compare header tags differ (營多 vs 出前一丁) — OFF 社群參考 | 香港標籤已讀
+PASS  B2 P000000014 carbs evidence (keyboard): official Nissin source, 90g 52.7g → 58.6g/100g — 出前一丁即食麵 - 五香牛肉味 90克 · 碳水化合物 來源 香港日清官方：此口味及包裝之成分、過敏及營養資料 ↗ 資料性質 香港官網 查閱日期 2026年10月21日 原標份量同數值 每 90 g · 52.7 g 目前顯示 每 100 g · 58.6 g 有冇換算 已按來源基準換算 來源限制：已閱讀香港日清此口味及規格官方網頁嘅全部成分、過敏聲明及營養表，未核對你將購買嘅實物包裝或當前批次。網頁未列出某過敏原唔等於不存在；過敏者仍
+PASS  B2 「—」 is clickable and explains 「冇來源數值」 — 傳統撈麵 (印尼撈麵) 85克 x 5 · 碳水化合物 來源 Open Food Facts 社群產品資料 ↗ 資料性質 OFF 社群參考 查閱日期 2026年10月21日 原標份量同數值 — 目前顯示 — 有冇換算 未能確認或冇可換算數值 冇可用來源數值。冇來源數值。現有來源冇
+PASS  B3 P000000304 suggests 公仔碗麵日式豬骨 at 惠康 $10 → $8.5 with 鈉較低 2,091.9 → 1,601.9 — 價錢差唔多嘅其他選擇 公仔 · 炒麵王 - 特式香辣醬味 120克 Market Place · 原款 HK$10.5，呢款 HK$10.5 鈉較低 · 每100g由 2,091.9 mg 至 1,420.8 mg 公仔 · 碗麵 - 日式豬骨濃湯味 106克 惠康 · 原款 HK$10.0，呢款 HK$8.5 鈉較低 · 每100g由 2,091.9 mg 至 1,601.9 mg 日清 · 合味道杯麵 - 海鮮味 72克 惠康 · 原款 HK$10.0，呢款 HK$8.0 糖較低 · 每100g由 4.6 g 至 3.6 g
+PASS  B3 wording never says 較健康
+PASS  B4 link keeps max 3 catalogue IDs and reports skipped ones — tray "3" | 已套用分享連結 · 已選 3 款比較食品。下面每個條件都可以逐個移除。 已還原 3 款比較食品。 有 3 項比較資料已略過（「BAD123」未能辨認、「P000000304」重複、「P000000015」超出 3 款上限）。 知道
+PASS  B4 link with 避開花生 drops the peanut product and says why — 已套用連結帶入嘅條件，請先核對：下面每個條件都可以逐個移除。 有 2 項比較資料已略過（「P000000037」未能符合過敏條件、「P000000014」未能符合過敏條件）。 知道
+PASS  B4 WhatsApp link is https://wa.me/?text=<link> (no phone number) — https://wa.me/?text=http%3A%2F%2F127.0.0.1%3A8811%2F%3Fcompare%3DP000000304%252CP000000298%252CP000000014
+PASS  B4 QR decodes to exactly the share link — decoded http://127.0.0.1:8811/?compare=P000000304%2CP000000298%2CP000000014 | field http://127.0.0.1:8811/?compare=P000000304%2CP000000298%2CP000000014
+PASS  B4 opening the QR link restores the same 3 products — tray "3"
+PASS  Rule 6: every browser request goes to the site itself
+INFO  Network: requests on first phone load — 29
+PASS  No cookies set — 0 cookies
+PASS  No page errors (phone)
+PASS  No page errors (desktop)
+PASS  app/ entry point loads — 1,788 項食品
+
+==== axe (WCAG 2.1 A/AA)
+ok    phone home (sodium sort)
+ok    phone home A+
+ok    phone exclusion panel
+ok    phone compare dialog (per pack)
+ok    phone nutrient evidence dialog
+ok    phone detail with swaps
+ok    phone share/QR dialog
+ok    desktop home
+ok    desktop home A+
+ok    desktop exclusion panel
+ok    desktop compare dialog
+ok    desktop compare dialog per pack
+ok    desktop evidence dialog
+ok    desktop share/QR dialog
+ok    desktop detail with swaps
+ok    desktop detail A+
+ok    desktop sources dialog
