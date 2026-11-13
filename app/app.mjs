@@ -1,15 +1,16 @@
-import { filterProducts, getEligiblePrices, getMinPrice, getAllergenAssessment, nutritionFor, parseRequestWithBrandFallback, rankingGroups, searchQueryLimitations, buildBrandIndex } from './engine.mjs?v=110';
-import { filtersFromParams, paramsFromFilters } from './url-state.mjs?v=110';
-import { assistantState } from './assistant-state.mjs?v=110';
-import { hkLabelCoverage, hasReviewedHkNutrition } from './hk-labels.mjs?v=110';
-import { getPackPrices, getPackNutrition, rankByUnitPrice } from './pack-values.mjs?v=110';
-import { findAlternatives, getComparisonPackNutrition, getNutrientEvidence, getNutritionSourceLabel } from './nutrition-evidence.mjs?v=110';
-import { comparisonShareUrl, qrSvg, shareComparison, whatsappShareUrl } from './compare-share.mjs?v=110';
-import { getExclusionReasons } from './exclusion-reasons.mjs?v=110';
-import { valueSpread } from './compare-highlights.mjs?v=110';
-import { summariseConnections, summariseStorage } from './privacy-receipt.mjs?v=110';
-import { buildExplainText, plainNumber } from './ai-explain.mjs?v=110';
-import { HK_EXPANSION_FILE, OFF_LABEL_FILE, OFF_LIBRARY_FILE, REVIEW_FILES, assembleDataset, comparingPaused, describeMissing, fetchJson, loadDataFiles, resultsHold } from './data-loader.mjs?v=110';
+import { filterProducts, getEligiblePrices, getMinPrice, getAllergenAssessment, nutritionFor, parseRequestWithBrandFallback, rankingGroups, searchQueryLimitations, buildBrandIndex } from './engine.mjs?v=111';
+import { filtersFromParams, paramsFromFilters } from './url-state.mjs?v=111';
+import { initEmbeddedAssistant } from './embedded-ai.mjs?v=111';
+import { assistantState } from './assistant-state.mjs?v=111';
+import { hkLabelCoverage, hasReviewedHkNutrition } from './hk-labels.mjs?v=111';
+import { getPackPrices, getPackNutrition, rankByUnitPrice } from './pack-values.mjs?v=111';
+import { findAlternatives, getComparisonPackNutrition, getNutrientEvidence, getNutritionSourceLabel } from './nutrition-evidence.mjs?v=111';
+import { comparisonShareUrl, qrSvg, shareComparison, whatsappShareUrl } from './compare-share.mjs?v=111';
+import { getExclusionReasons } from './exclusion-reasons.mjs?v=111';
+import { valueSpread } from './compare-highlights.mjs?v=111';
+import { summariseConnections, summariseStorage } from './privacy-receipt.mjs?v=111';
+import { buildExplainText, plainNumber } from './ai-explain.mjs?v=111';
+import { HK_EXPANSION_FILE, OFF_LABEL_FILE, OFF_LIBRARY_FILE, REVIEW_FILES, assembleDataset, comparingPaused, describeMissing, fetchJson, loadDataFiles, resultsHold } from './data-loader.mjs?v=111';
 
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -126,11 +127,8 @@ function allergyLabel(product) {
   return {text:list?`已知含有：${list}；資料未齊`:'過敏資料未齊，未能確認',cls:''};
 }
 function foodArt(product,index=0) {
-  const drinks=product.category==='drinks';
-  const colour=['#ad8058','#7d9670','#ba8b6d','#ad9d68','#648c81'][index%5];
-  const label=drinks?'DRINK':/oat|燕麥/i.test(product.nameEn+' '+product.nameZh)?'OATS':product.category==='biscuits'?'CRUNCH':product.category==='snacks'?'SNACK':'FOOD';
-  const svg=drinks?`<svg viewBox="0 0 140 125" aria-hidden="true"><path d="M45 16 57 6h31l12 12v99H42V18Z" fill="${colour}"/><path d="m45 16 12-10 1 12h40M58 18v99" fill="none" stroke="#ffffff66"/><path d="M41 39h59v50H41Z" fill="#faf8ed"/><text x="71" y="61" text-anchor="middle" fill="${colour}" font-size="11" font-family="Georgia,serif" font-weight="bold">${label}</text><path d="M58 72q13-15 26 0-14 17-26 0" fill="${colour}" opacity=".65"/><path d="M67 11h13" stroke="#e9f0df" stroke-width="4"/></svg>`:`<svg viewBox="0 0 140 125" aria-hidden="true"><path d="M24 15h91l-3 99H27Z" fill="${colour}"/><path d="M24 15h91v7H24m3 85h85v7H27" fill="#ffffff25"/><path d="M24 22h91M27 107h85" fill="none" stroke="#ffffff55"/><rect x="31" y="34" width="77" height="42" rx="2" fill="#faf7e9"/><text x="70" y="52" fill="${colour}" font-size="6" text-anchor="middle" font-family="system-ui">EVERYDAY CHOICES</text><text x="70" y="67" fill="${colour}" font-size="12" font-weight="bold" text-anchor="middle" font-family="Georgia,serif">${label}</text><circle cx="63" cy="92" r="18" fill="#dfbc81" stroke="#c18e54" stroke-width="3"/><circle cx="80" cy="96" r="17" fill="#d1a05d" stroke="#bd8448" stroke-width="3"/><path d="m58 89 4 0m15 3 4 0m-9 8 4 0m-13-5 2 0" stroke="#a07140" stroke-width="2.5"/></svg>`;
-  return `<div class="product-visual tone-${index%5+1}">${svg}<span class="visual-caption">品類示意圖</span></div>`;
+  const kind=['biscuits','snacks','drinks','bakery','dairy','pantry','meals'].includes(product.category)?product.category:'all';
+  return `<div class="product-visual tone-${index%5+1}" aria-hidden="true"><svg viewBox="0 0 40 40"><use href="assets/categories.svg#${kind}"></use></svg><span class="visual-caption">品類示意圖</span></div>`;
 }
 function productCard(product,index) {
   const n=nutritionFor(product);
@@ -724,9 +722,9 @@ function renderPrivacyReceipt(){
   const hostRow=item=>`<li><strong>${esc(item.host)}</strong> · ${number(item.count)} 個請求 · ${item.own?'呢個網站本身':'其他網站'}</li>`;
   const verdict=net.otherHosts.length
     ?`<p class="privacy-result warning">有 ${number(net.otherHosts.reduce((sum,item)=>sum+item.count,0))} 個請求連咗去其他網站（見上面清單）。</p>`
-    :'<p class="privacy-result">全部請求都係連去呢個網站本身，冇連去廣告或者追蹤服務。</p>';
+    :'<p class="privacy-result">呢個主頁記錄到嘅請求都連去本網站。AI 對話視窗有獨立連線，唔包括喺呢個清單。</p>';
   $('privacy-content').innerHTML=`
-    <p>呢張收據係你部瀏覽器自己嘅紀錄，撳開嗰刻先讀出嚟，唔會傳去任何地方。</p>
+    <p>呢張收據只讀取呢個主頁嘅瀏覽器紀錄，唔會將收據傳出去。跨網站 AI 視窗內嘅請求、Cookie 同儲存唔喺呢個清單入面。</p>
     <section class="detail-section"><h3>呢頁連過邊度</h3>
       <p>由開頁到而家，瀏覽器一共發出 <strong>${number(net.total)}</strong> 個請求：</p>
       <ul class="privacy-list">${net.hosts.map(hostRow).join('')||'<li>瀏覽器冇提供紀錄。</li>'}</ul>
@@ -743,7 +741,7 @@ function renderPrivacyReceipt(){
         <li>搜尋同篩選喺你部機計算。不過你揀嘅條件（包括過敏原）會顯示喺網址；重新整理或者分享連結時，網址會送到網站伺服器同收連結嘅人。</li>
         <li>除此之外，呢頁唔會將呢個網址傳出去：載入資料同開其他網站嘅連結嗰陣，都唔會附上你而家嘅網址。</li>
         <li>網站放喺 GitHub Pages。GitHub 表示會為保安記錄到訪者嘅 IP 位址。${link('https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages','GitHub 說明','text-link')}</li>
-        <li>AI 助手係另一個網站（${esc(AI_ASSISTANT.platform||'AI')}）。你開咗佢，先會將你打嘅字傳過去，小組可以查閱對話紀錄。</li>
+        <li>AI 對話視窗由另一個網站（${esc(AI_ASSISTANT.platform||'AI')}）提供。按「載入 AI 對話」之後，瀏覽器會連到 MaaS 及佢使用嘅服務；你輸入嘅內容會傳去處理，小組可以查閱紀錄。主頁無法列出視窗內部嘅所有連線。</li>
         <li>商戶同資料來源連結會開其他網站，佢哋有自己嘅私隱做法。</li>
       </ul>
     </section>`;
@@ -1017,7 +1015,7 @@ function start(){
   $('allergy-options').innerHTML=Object.entries(allergens).map(([id,label])=>`<label><input type="checkbox" name="allergen" value="${id}">${label}</label>`).join('');
   if(window.matchMedia('(max-width:760px)').matches)$('filter-details').open=false;
   initAssistant();
-  import('./ai-config.mjs?v=110').then(module=>{
+  import('./ai-config.mjs?v=111').then(module=>{
     if(!module.AI_ASSISTANT||typeof module.AI_ASSISTANT!=='object')throw new Error('AI_ASSISTANT is missing');
     AI_ASSISTANT=module.AI_ASSISTANT;
     initAssistant();
@@ -1025,6 +1023,20 @@ function start(){
   }).catch(error=>console.warn('app/ai-config.mjs could not be read, so the AI assistant button stays hidden. Check its quotes and commas.',error?.message??error));
   initTextSize();
   wireEvents();
+  initEmbeddedAssistant({getConfig:()=>AI_ASSISTANT,onResultLink:url=>{
+    if(!linkReady||missingFiles.length)return false;
+    const storeIds=[...new Set(products.flatMap(product=>(product.prices??[]).map(price=>price.store)))];
+    const state=filtersFromParams(new URL(url).search,{storeIds,base:{...filters,allergens:[...filters.allergens]},products,brandIndex});
+    if(!state.present)return false;
+    filters=state.filters;
+    // Applying a new AI suggestion never relaxes the person's existing allergy choices.
+    const importedSelection=new URL(url).searchParams.has('compare')?state.compareIds:selected;
+    selected=importedSelection.filter(id=>{const product=products.find(p=>p.id===id);return product&&(!filters.allergens.length||getAllergenAssessment(product,filters.allergens).status==='no-listed-match');});
+    visibleCount=PAGE_SIZE;
+    syncInputs();showLinkBanner(state);render();
+    $('results').scrollIntoView({behavior:'smooth',block:'start'});
+    return true;
+  }});
   document.addEventListener('click',event=>{const button=event.target.closest('[data-retry-load]');if(button)loadData({byUser:true,slot:button.closest('#load-notice')?'notice':'grid'});});
   loadData();
 }

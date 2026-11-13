@@ -1,0 +1,41 @@
+{
+  "added": [
+    "app/assets/categories.svg",
+    "app/assets/shopping.svg",
+    "app/embedded-ai.mjs",
+    "app/redesign.css",
+    "app/tests/v111-embedded-ai.test.mjs",
+    "app/tests/v111-origin.test.mjs",
+    "docs/evidence/v111-preview/file-changes.json",
+    "docs/evidence/v111-preview/unit-tests.txt",
+    "docs/evidence/v111-preview/verification.json",
+    "docs/v111-preview-notes.md"
+  ],
+  "modified": [
+    "README.md",
+    "app/app.mjs",
+    "app/compare-share.mjs",
+    "app/data-loader.mjs",
+    "app/engine.mjs",
+    "app/exclusion-reasons.mjs",
+    "app/hk-labels.mjs",
+    "app/index.html",
+    "app/nutrition-evidence.mjs",
+    "app/pack-values.mjs",
+    "app/tests/helpers/catalogue.mjs",
+    "app/tests/v110-ai-explain.test.mjs",
+    "app/tests/v110-compare.test.mjs",
+    "app/tests/v110-data-loading.test.mjs",
+    "app/tests/v110-pages.test.mjs",
+    "app/tests/v110-privacy.test.mjs",
+    "app/tests/v110-search-links.test.mjs",
+    "app/tests/v19-allergen-parity.test.mjs",
+    "app/tests/v19-compare-share.test.mjs",
+    "app/url-state.mjs",
+    "docs/maas-assistant.md",
+    "index.html",
+    "project.html",
+    "tools/acceptance/v110.cjs"
+  ],
+  "deleted": []
+}

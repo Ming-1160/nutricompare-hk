@@ -1,3 +1,5 @@
+> v1.11 local-preview note (13 November2026): the website adds an opt-in embedded MaaS frame and validated result-link import. The published MaaS agent/model/prompt described below are unchanged. Opening the frame and greeting were verified, but full answer/import end-to-end was not signed off. The preview is not deployed. Mode2 stays disabled. See v111-preview-notes.md and evidence/v111-preview/verification.json.
+
 # NutriCompare HK × EdUHK MaaS：AI 條件助手設定包
 
 網站版本 v1.10。呢份設定包畀負責 AI 部分嘅組員用。

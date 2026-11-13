@@ -1,10 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { buildBrandIndex, filterProducts, getMinPrice, parseRequest, parseRequestWithBrandFallback } from '../engine.mjs?v=110';
-import { SORT_IDS, filtersFromParams, paramsFromFilters } from '../url-state.mjs?v=110';
-import { getPackPrices, rankByUnitPrice } from '../pack-values.mjs?v=110';
-import { assistantState, expiryInstant } from '../assistant-state.mjs?v=110';
+import { buildBrandIndex, filterProducts, getMinPrice, parseRequest, parseRequestWithBrandFallback } from '../engine.mjs?v=111';
+import { SORT_IDS, filtersFromParams, paramsFromFilters } from '../url-state.mjs?v=111';
+import { getPackPrices, rankByUnitPrice } from '../pack-values.mjs?v=111';
+import { assistantState, expiryInstant } from '../assistant-state.mjs?v=111';
 import { products } from './helpers/catalogue.mjs';
 
 const brandIndex = buildBrandIndex(products);

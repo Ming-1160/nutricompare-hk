@@ -17,9 +17,9 @@
  * allergen filter that it fails with all files loaded, and that the states which still list foods never show
  * a figure different from the complete catalogue.
  */
-import { buildCatalogue, mergeLabelSources } from './catalogue.mjs?v=110';
-import { enrichCatalogue } from './enrichment.mjs?v=110';
-import { applyHkLabelReview } from './hk-labels.mjs?v=110';
+import { buildCatalogue, mergeLabelSources } from './catalogue.mjs?v=111';
+import { enrichCatalogue } from './enrichment.mjs?v=111';
+import { applyHkLabelReview } from './hk-labels.mjs?v=111';
 
 export const REQUIRED_FILE = 'products.json';
 export const OFF_LABEL_FILE = 'off-hk-labels.json';

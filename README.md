@@ -1,6 +1,31 @@
 # NutriCompare HK
 
+## Version 1.11 release
+
+This release prepares the reviewed v1.11 website for the existing GitHub Pages site. Source data and MaaS configuration are unchanged. The preview verification below is a historical record from before publication; its unverified full AI roundtrip and real-device checks remain explicit limits.
+
+## Preview verification on 13 November 2026
+
+This is a local review build; it has not been pushed or deployed. The completed preview unit run has 229 tests: 228 pass, zero fail and one optional raw-price-snapshot check skipped. All ten data JSON files are byte-identical to the AI-link baseline.
+
+Cloud Chromium checks confirmed the 390px layout, three-product comparison without horizontal overflow, origin retention across reload, no iframe before the explicit load action, and the real MaaS iframe ready event and greeting. A complete AI-answer-to-condition-import run was not verified: one question was submitted but a development reload interrupted observation; the final manual import check was stopped with browser use. Mobile and desktop home axe 4.10.3 scans reported zero violations, with six desktop color-contrast nodes requiring manual review. Other dialog states, real phones, Safari and Firefox remain unverified. The earlier v1.10 browser-check totals below are historical and are not v1.11 test results.
+
+Detailed results: [preview verification](docs/evidence/v111-preview/verification.json).
+
+
 Traditional Chinese, mobile-responsive ITC2010 functional prototype for adults with type 2 diabetes and their caregivers in Hong Kong. Static HTML/CSS/JavaScript; no build dependencies, login, tracking, third-party runtime, stored health profile or paid API required. Project page (problem, plan, AI role, testing, limitations, ethics): [project.html](project.html).
+
+## Version 1.11 Preview · 13 November 2026
+
+This is a redesign preview based on the v1.10 AI-link release. It has not been pushed to the public website. The changes below are implemented in the preview code and await final visual, accessibility and browser verification; they are not evidence of real-user testing or a working embedded MaaS session.
+
+- **A task-focused interface.** Search, filters, nutrient figures and comparison actions receive clearer hierarchy on phones and desktop. The existing data, unknown values, source notices and conservative allergen rules remain authoritative.
+- **AI in the page, after a load action.** Opening the assistant panel does not itself load MaaS. The person must choose to load the page-internal iframe; an external assistant link remains available if the embedded page cannot be used. MaaS still processes the conversation. The configured share URL and the assistant's existing production result links are retained rather than rewritten or intercepted by the preview.
+- **Privacy scope.** The parent page's privacy receipt can describe its own resource records. It cannot inspect requests, cookies, storage or conversations inside the cross-origin MaaS iframe, so it is not an audit of the assistant or its model provider. The interface must explain this before MaaS is loaded.
+- **Document corrections.** The project page now records the connected AI state in both languages, has three unassigned member slots, and directs T3 through the exclusion-reasons list. Mode 2 may describe higher/lower values only where the website permits a direct comparison.
+- **Still pending.** `explainTested` remains `false`; the comparison-explanation button stays off. The English interface, fieldwork-label import, group contributions and real-user T1–T5 results remain incomplete. No new MaaS response test, quota check, real-phone result or published deployment is claimed by this preview.
+
+Design references: [FoodSwitch](https://www.foodswitch.com/app/foodswitch/), [Yuka](https://yuka.io/en/app/) and [Open Food Facts](https://openfoodfacts.github.io/smooth-app/). The preview draws a design inference from these examples: start with the shopping task, expose key figures first, and reveal supporting evidence on demand. This is a design rationale, not evidence that the new layout improves usability. Their health scores, branding and product claims are not adopted.
 
 ## Version 1.10 · 12 November 2026
 

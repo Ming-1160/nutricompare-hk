@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-13",
+  "baseline_commit": "599481896f18bf6e90b92bc3a8c5c0520fc78131",
+  "published": false,
+  "unit_tests": {
+    "total": 229,
+    "pass": 228,
+    "fail": 0,
+    "skip": 1,
+    "skip_reason": "Original raw Pricewatch snapshot not included"
+  },
+  "data_files_byte_identical": 10,
+  "browser": {
+    "engine": "Cloud Chromium through CUA, managed static preview",
+    "mobile_css_viewport_width": 390,
+    "mobile_first_card_bottom_px": 615.42,
+    "mobile_first_actions_bottom_px": 603.42,
+    "mobile_three_comparison_columns": true,
+    "mobile_comparison_table_width_px": 334,
+    "horizontal_body_overflow": false,
+    "origin_hong_kong_before_and_after_reload": 12,
+    "embedded_iframe_before_explicit_load": 0,
+    "embedded_maas_ready_event_and_greeting_seen": true,
+    "full_ai_reply_to_import_roundtrip_verified": false,
+    "one_prompt_started_but_observation_interrupted_by_preview_reload": true,
+    "final_manual_import_check_incomplete": "Browser operation stopped by user after tool timeouts",
+    "real_phones": false,
+    "safari_firefox": false
+  },
+  "axe_4_10_3": {
+    "wcag_tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21a",
+      "wcag21aa"
+    ],
+    "mobile_home_violations": 0,
+    "desktop_home_violations": 0,
+    "desktop_incomplete_color_contrast_nodes": 6,
+    "manual_contrast_signoff": false,
+    "all_dialog_states_scanned": false
+  },
+  "unchanged_options": {
+    "compare_ai_explainTested": false,
+    "language": "Traditional Chinese",
+    "maas_model_and_prompt": "unchanged",
+    "price_snapshot": "2026-10-21",
+    "fieldwork_import": false,
+    "real_user_tests": false
+  }
+}

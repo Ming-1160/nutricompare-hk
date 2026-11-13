@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { AI_ASSISTANT } from '../ai-config.mjs?v=110';
-import { assistantState } from '../assistant-state.mjs?v=110';
+import { AI_ASSISTANT } from '../ai-config.mjs?v=111';
+import { assistantState } from '../assistant-state.mjs?v=111';
 
 const read = path => readFileSync(new URL(path, import.meta.url), 'utf8');
 const rootPage = read('../../index.html');
@@ -19,7 +19,7 @@ test('the root page and app/ page are the same page, apart from the one <base> l
 test('both pages say so when the program cannot start, instead of showing "loading" forever', () => {
   for (const [name, page] of [['index.html', rootPage], ['app/index.html', appPage]]) {
     const safetyNet = page.indexOf("window.addEventListener('error'");
-    const programTag = page.indexOf('<script type="module" src="app.mjs?v=110">');
+    const programTag = page.indexOf('<script type="module" src="app.mjs?v=111">');
     assert.ok(safetyNet > 0 && programTag > safetyNet, `${name}: the safety net is in place before the program is loaded`);
     assert.match(page, /網站程式載入唔到/, name);
     assert.match(page, /document\.documentElement\.dataset\.app/, name);
@@ -29,7 +29,7 @@ test('both pages say so when the program cannot start, instead of showing "loadi
 
 test('a typing mistake in the assistant settings cannot stop the site: the settings are read on their own', () => {
   assert.doesNotMatch(program, /^import[^\n]*ai-config/m, 'ai-config.mjs is not part of the start-up chain');
-  assert.match(program, /import\('\.\/ai-config\.mjs\?v=110'\)\.then\(/);
+  assert.match(program, /import\('\.\/ai-config\.mjs\?v=111'\)\.then\(/);
   assert.match(program, /\.catch\(error=>console\.warn\('app\/ai-config\.mjs could not be read/);
 });
 

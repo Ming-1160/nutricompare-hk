@@ -72,10 +72,11 @@
 <header><div class="wrap bar"><a class="brand" href="./"><span class="brand-icon" aria-hidden="true">nc</span>NutriCompare <small>HK</small></a><a class="cta" href="./">試用原型 →</a></div></header>
 <main class="wrap">
   <div class="hero">
-    <p class="eyebrow">ITC2010 Digital Literacy · 小組項目 · 原型 v1.10</p>
+    <p class="eyebrow">ITC2010 Digital Literacy · 小組項目 · v1.11</p>
     <h1>糖尿病人揀包裝食品，<br><em>標籤、過敏同價錢一次比較清楚。</em></h1>
     <p class="lead">NutriCompare HK 幫香港第二型糖尿病成人同照顧者比較包裝食品。用家可以按食品、預算同過敏限制篩選，再並排睇碳水、糖、鈉同港幣價格。AI 條件助手已經喺 EdUHK MaaS 發佈，並由 11 月 12 日起接入網站。</p>
-    <div class="summary-en"><strong>In English</strong> NutriCompare HK helps adults with type 2 diabetes and their caregivers in Hong Kong compare packaged-food labels and prices. Search and filters run in the browser. Users can compare nutrition, allergen warnings and whole-pack and unit prices with links to the source data. The site can validate filter links from the planned EdUHK MaaS assistant. The assistant is pending setup.</div>
+    <div class="summary-en"><strong>In English</strong> NutriCompare HK helps adults with type 2 diabetes and their caregivers in Hong Kong compare packaged-food labels and prices. Search and filters run in the browser. Users can compare nutrition, allergen warnings and whole-pack and unit prices with links to the source data. The EdUHK MaaS condition assistant was connected in the v1.10 release. This v1.11 update adds an optional in-page assistant view, loaded only after the user chooses to load MaaS, with an external-link fallback. Its embedded operation and the redesigned interface still require final verification; the source is prepared for the existing GitHub Pages deployment.</div>
+    <p class="note">v1.11 沿用原有資料，更新首頁、食品卡、比較介面及按需載入的 MaaS 對話視窗。程式測試已通過；真人、真機及完整 AI 回覆套用驗收仍待完成。詳細記錄見下方。</p>
     <div class="meta"><span>目標用家：第二型糖尿病成人及照顧者</span><span>價格：消委會格價資訊通</span><span>不需登入 · 不收集病歷</span></div>
   </div>
   <nav class="toc" aria-label="本頁內容"><a href="#problem">1 問題</a><a href="#solution">2 方案</a><a href="#plan">3 計劃</a><a href="#ai">AI 點樣用</a><a href="#testing">4 原型及測試</a><a href="#limits">5 限制及改進</a><a href="#ethics">倫理考慮</a><a href="#data">資料進度</a><a href="#sources">來源</a></nav>
@@ -120,17 +121,16 @@
         <tr><th scope="row">平台及原因</th><td><strong>GitHub Pages</strong>：靜態網站，免費、不需登入、冇第三方追蹤，組員同老師開條連結就用得。<br><strong>EdUHK MaaS</strong>：課程 Lesson 2 教嘅 AI 平台，用家唔使登入，亦唔使喺公開網站放 API key。</td></tr>
       </tbody>
     </table></div>
-    <h3>組員分工 <span class="todo">請組員填寫</span></h3>
+    <h3>三人小組分工 <span class="todo">按實際工作填寫</span></h3>
     <div class="table-scroll"><table>
       <thead><tr><th scope="col">組員</th><th scope="col">負責部分</th><th scope="col">可以交出嘅證據</th></tr></thead>
       <tbody>
-        <tr><td><span class="todo">姓名</span></td><td>資料及標籤核對</td><td>新增標籤紀錄、暫緩清單</td></tr>
-        <tr><td><span class="todo">姓名</span></td><td>EdUHK MaaS AI 助手（system prompt、測試）</td><td>AI 測試表、對話截圖</td></tr>
-        <tr><td><span class="todo">姓名</span></td><td>網站原型及 UI</td><td>GitHub commit、測試結果</td></tr>
-        <tr><td><span class="todo">姓名</span></td><td>用家測試、promo video 同簡報</td><td>測試紀錄、MP4、PPT</td></tr>
+        <tr><td><span class="todo">組員 1：姓名待填</span></td><td><span class="todo">實際負責部分待確認</span></td><td><span class="todo">對應工作紀錄待填</span></td></tr>
+        <tr><td><span class="todo">組員 2：姓名待填</span></td><td><span class="todo">實際負責部分待確認</span></td><td><span class="todo">對應工作紀錄待填</span></td></tr>
+        <tr><td><span class="todo">組員 3：姓名待填</span></td><td><span class="todo">實際負責部分待確認</span></td><td><span class="todo">對應工作紀錄待填</span></td></tr>
       </tbody>
     </table></div>
-    <p class="source">個人反思（60%）Dimension 1 要寫「你負責邊部分」，所以每人都要保留自己嘅工作紀錄。</p>
+    <p class="source">三位組員按實際貢獻分配資料核對、MaaS 設定、網站、用家測試、影片同簡報工作；呢頁未代任何人認領工作。個人反思（60%）Dimension 1 要寫「你負責邊部分」，所以每人都要保留自己嘅工作紀錄。</p>
   </section>
 
   <section id="ai" aria-labelledby="ai-title">
@@ -148,11 +148,15 @@
       <div class="card"><h3>AI 唔會做</h3><ul class="clean"><li>判斷某食品「糖尿病人可以食」</li><li>保證冇過敏原</li><li>自己作出產品、營養數字或者價格</li><li>處理藥物、份量或者餐單建議</li></ul></div>
     </div>
     <p class="note">狀態（11 月 12 日）：MaaS 助手已經發佈，免登入連結已經接入網站，有效到 2027 年 11 月 12 日；用嘅模型係平台上嘅 Deepseek-V4.1。System prompt、設定同 28 條測試題嘅結果見 <a href="https://github.com/Ming-1160/nutricompare-hk/blob/main/docs/maas-assistant.md">docs/maas-assistant.md</a>。測試由 AI 助手（Claude）經免登入連結代跑，唔係組員或者真實用家測試。v1.10 加咗「叫 AI 解釋」：網站將比較表嘅數字整理成文字，用家貼俾 AI 助手，AI 只可以用呢啲數字解釋分別。呢部分嘅 7 條測試題都通過咗，但按鈕暫時仍然關閉，等小組決定開唔開。</p>
+    <p>v1.11保留原有 MaaS 分享網址同助手產生嘅正式網站結果連結，唔會攔截或者改寫。頁內視窗只係另一種打開同一個助手嘅方式，唔會令本網站取得對話內容。父頁面嘅私隱收據亦睇唔到 MaaS 視窗內部嘅請求、cookie 同儲存紀錄。</p>
   </section>
 
   <section id="testing" aria-labelledby="testing-title">
     <span class="step">Step 4 · Prototype &amp; testing</span>
     <h2 id="testing-title">原型及測試</h2>
+    <p><strong>v1.11：</strong>新版介面同按需載入嘅頁內 AI 視窗已加入程式；最終畫面、無障礙、瀏覽器同嵌入操作仍待核對。以下 v1.10 結果係上一版保存嘅紀錄，唔當作新版已通過嘅證明。</p>
+    <h3>介面設計參考</h3>
+    <p>參考 <a href="https://www.foodswitch.com/app/foodswitch/" target="_blank" rel="noopener noreferrer">FoodSwitch</a>、<a href="https://yuka.io/en/app/" target="_blank" rel="noopener noreferrer">Yuka</a> 同 <a href="https://openfoodfacts.github.io/smooth-app/" target="_blank" rel="noopener noreferrer">Open Food Facts</a> 嘅官方介紹後，預覽採用「先做購物任務、先見關鍵數字、再開來源細節」嘅設計方向。呢個係設計推論，未有真人測試證明新版更易用；亦冇採用佢哋嘅健康評分、品牌圖像或者產品判斷。</p>
     <div class="ok"><strong>v1.10</strong><p>資料檔逐個獨立載入：有檔案載入唔到時，網站會喺結果上面講明，並提供「再試一次」，已揀嘅條件保持不變。新增按每 100 g／ml 單位價排序、私隱收據同一分鐘睇標籤教學。比較表將鈉放喺碳水同糖後面，並顯示同一基準下嘅高低相差。</p><p>資料未載入齊嗰陣，網站寧願唔顯示：少咗標籤資料就唔顯示食品；少咗其他資料而用家揀咗過敏原，就唔顯示篩選結果；任何資料未齊都暫停比較。10 種過敏原嘅排除名單仍然同 v1.8 一致。另外測試咗全部 511 個資料檔缺失組合，以現有資料計，冇食品會因為少咗資料而通過過敏篩選。</p><p>「叫 AI 解釋」嘅網站部分已經做好；MaaS 助手喺 11 月 12 日發佈並接入網站，「叫 AI 解釋」暫時仍然關閉。呢個版本由另一個 AI 審查員同一個三席 AI 評議會檢查過（自動審查，唔係真人測試）：搵到嘅問題已經修正，只有一項係工具本身嘅限制，已經喺文件寫明。英文介面未做。真人測試同實地資料匯入待做。</p></div>
     <div class="ok"><strong>v1.9 第一批</strong><p>手機卡加入營養數字同來源性質，多包裝可以按每小包比較。網站可展開過敏排除原因、查營養數字出處、睇近價替代，以及用連結或本機 QR code 分享所選食品。</p><p>10 種過敏原逐個核對，排除名單同 v1.8 一致。避開花生、HK$20 或以下嘅夾心餅示範有 0 項結果，4 款列出所選過敏原，另有 10 款資料不足。</p></div>
     <h3>用家測試計劃 <span class="todo">結果待填</span></h3>
@@ -162,7 +166,7 @@
       <tbody>
         <tr><td>T1 搵一款 $20 以下、糖最低嘅飲品，講出佢每100ml 嘅糖同價錢</td><td>2 分鐘內答啱</td><td><span class="todo">待填</span></td></tr>
         <tr><td>T2 比較兩款即食麵嘅鈉，講出邊款低啲，同埋用緊咩基準</td><td>講得出「每100g」同較低嗰款</td><td><span class="todo">待填</span></td></tr>
-        <tr><td>T3 設定「避開花生」，喺詳情搵出「可能含有」，解釋「未列出唔等於保證安全」</td><td>搵到警告，解釋正確</td><td><span class="todo">待填</span></td></tr>
+        <tr><td>T3 設定「避開花生」，打開排除原因清單，再由「含有／可能含有」組別進入一款被排除食品嘅詳情，搵出「可能含有」警告，解釋「未列出唔等於保證安全」</td><td>經排除清單搵到警告，解釋正確</td><td><span class="todo">待填</span></td></tr>
         <tr><td>T4 用 AI 助手（或者「一句話篩選」）講「想食夾心餅，20蚊以下，花生過敏」，核對條件，再解釋點解冇結果</td><td>條件全部啱，明白冇結果嘅原因</td><td><span class="todo">待填</span></td></tr>
         <tr><td>T5 開 A+ 大字再做一次 T1</td><td>覺得易睇（1–5 分）</td><td><span class="todo">待填</span></td></tr>
       </tbody>
@@ -186,10 +190,10 @@
     <div class="table-scroll"><table>
       <thead><tr><th scope="col">議題</th><th scope="col">風險</th><th scope="col">我哋點處理</th></tr></thead>
       <tbody>
-        <tr><td>私隱</td><td>用家可能輸入病歷或者藥物</td><td>不需登入，網站唔儲存資料，「一句話篩選」喺本機進行。AI 助手旁邊清楚提示句子會傳送到 MaaS，叫用家唔好輸入個人或者健康資料。</td></tr>
+        <tr><td>私隱</td><td>用家可能輸入病歷或者藥物</td><td>本網站唔建立病歷或用家帳戶；「一句話篩選」喺本機進行，瀏覽器可保存大字設定。頁內 AI 要由用家先撳載入，對話交俾 MaaS 處理，小組可以查閱平台對話紀錄。父頁面嘅私隱收據唔能夠審計跨網站 AI 視窗內部嘅請求同儲存；請勿輸入個人或者健康資料。</td></tr>
         <tr><td>醫療界線</td><td>用家以為係醫療建議</td><td>網站唔會講「適合糖尿病人」，亦唔評健康分，提醒用家跟醫護人員建議；AI 遇到醫療問題會拒答同轉介。</td></tr>
         <tr><td>過敏安全</td><td>漏報過敏原</td><td>「含有」、「可能含有」同資料不足都排除，網站唔會自動放寬；未能辨認嘅過敏原會提示用家；一定要核對實物包裝。</td></tr>
-        <tr><td>AI 幻覺</td><td>AI 作出食品或者數字</td><td>AI 只建議條件，產品同數字全部由網站嘅資料同規則提供；網站逐項驗證 AI 連結。「叫 AI 解釋」要等小組完成測試先會開放；到時 AI 亦只可以讀出網站整理好嘅比較數字，唔可以自己加數字或者比高低。</td></tr>
+        <tr><td>AI 幻覺</td><td>AI 作出食品或者數字</td><td>AI 先建議條件，產品同數字由網站嘅資料同規則提供；網站逐項驗證 AI 連結。「叫 AI 解釋」仍然關閉（explainTested: false），等小組決定開放。開放後只可以用網站整理好嘅數字，亦只可以為網站容許直接比較嘅項目講高低；未知、份量或單位不同、定義未能對齊嘅項目只讀數字同限制，唔可以自行計數或者作健康判斷。</td></tr>
         <tr><td>透明度</td><td>用家誤會資料完整</td><td>每項數字都有來源同日期；「—」＝未知；資料覆蓋同進度公開。</td></tr>
         <tr><td>公平及無障礙</td><td>年長或者視力差嘅用家睇唔清楚；資料偏向大型連鎖店</td><td>有 A+ 大字，文字對比度提升到 WCAG AA；亦會清楚講明只涵蓋消委會清單入面嘅商戶。</td></tr>
         <tr><td>版權及授權</td><td>濫用他人資料或者圖片</td><td>保留消委會、Open Food Facts（ODbL／CC BY-SA）等署名，只連結品牌圖片，唔會整批轉載。</td></tr>

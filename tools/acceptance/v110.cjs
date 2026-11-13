@@ -39,7 +39,7 @@ async function flow(browser, label, contextOptions) {
   await open(page);
   check(T('normal load shows no load notice'), await page.locator('#load-notice').isHidden(), await text(page, '#result-count'));
   check(T('search box limit equals the link limit (60)'), (await page.getAttribute('#food-search', 'maxlength')) === '60');
-  check(T('version label says v1.10'), /v1\.10/.test(await page.locator('.prototype-label').textContent()), '');
+  check(T('version label says v1.11'), /v1\.11/.test(await page.locator('.prototype-label').textContent()), '');
 
   // Desktop first screen / phone first card
   const fold = await page.evaluate(() => { const c = document.querySelector('#product-grid .product-card'); const b = s => Math.round(c.querySelector(s)?.getBoundingClientRect().bottom ?? 99999); return { vh: innerHeight, name: b('h3'), strip: Math.round(c.querySelector('.nutrient-strip').getBoundingClientRect().top), buttons: b('.card-actions'), overflowX: document.documentElement.scrollWidth > innerWidth }; });

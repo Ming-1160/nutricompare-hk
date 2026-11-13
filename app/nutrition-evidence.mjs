@@ -1,6 +1,6 @@
-import { getAllergenAssessment, getEligiblePrices, nutritionFor } from './engine.mjs?v=110';
-import { hasReviewedHkNutrition } from './hk-labels.mjs?v=110';
-import { getPackNutrition } from './pack-values.mjs?v=110';
+import { getAllergenAssessment, getEligiblePrices, nutritionFor } from './engine.mjs?v=111';
+import { hasReviewedHkNutrition } from './hk-labels.mjs?v=111';
+import { getPackNutrition } from './pack-values.mjs?v=111';
 
 const finite = value => Number.isFinite(value) ? value : null;
 const metricUnit = key => key === 'energyKcal' ? 'kcal' : key === 'sodiumMg' ? 'mg' : 'g';

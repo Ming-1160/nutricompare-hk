@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<symbol id="all" viewBox="0 0 40 40"><path d="M7 15h26l-3 18H10L7 15Z" fill="#e7f0c8"/><path d="m13 15 7-9 7 9M16 22v5m8-5v5"/></symbol>
+<symbol id="biscuits" viewBox="0 0 40 40"><circle cx="20" cy="20" r="13" fill="#f3dcb6"/><circle cx="20" cy="20" r="9" stroke-dasharray="1 4"/><path d="M15 17h1m8 0h1m-6 6h1m-8 2h1m10 0h1"/></symbol>
+<symbol id="snacks" viewBox="0 0 40 40"><path d="M10 6h20l-2 28H12L10 6Z" fill="#f4d4c9"/><path d="M11 10h18M12 30h16"/><path d="M15 20c-2-4 5-8 8-5 2 3-5 9-8 5Zm6 6c-3-2 1-7 4-5 2 2-1 6-4 5Z"/></symbol>
+<symbol id="drinks" viewBox="0 0 40 40"><path d="M12 5h14l4 7v22H10V12l2-7Z" fill="#e4edbc"/><path d="m12 5 4 7h14M16 12v22M16 19h14M23 6v-3"/></symbol>
+<symbol id="bakery" viewBox="0 0 40 40"><path d="M10 17c-6-5-1-13 10-13s16 8 10 13v16H10V17Z" fill="#f0dcbb"/><path d="M14 15v8m6-10v10m6-8v8M10 29h20"/></symbol>
+<symbol id="dairy" viewBox="0 0 40 40"><path d="M14 5h12v7l4 7v15H10V19l4-7V5Z" fill="#dcebed"/><path d="M14 9h12M11 22h18M11 28h18"/></symbol>
+<symbol id="pantry" viewBox="0 0 40 40"><rect x="10" y="11" width="20" height="23" rx="5" fill="#e8e1f0"/><path d="M13 6h14v5H13ZM10 18h20M16 25h8"/></symbol>
+<symbol id="meals" viewBox="0 0 40 40"><path d="M6 20h28c-1 9-7 14-14 14S7 29 6 20Z" fill="#f4dcc2"/><path d="M10 25h20M12 14c-4-4 3-5 0-9m8 9c-4-4 3-5 0-9m8 9c-4-4 3-5 0-9"/></symbol>
+</svg>

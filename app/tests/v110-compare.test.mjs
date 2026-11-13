@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { valueSpread } from '../compare-highlights.mjs?v=110';
+import { valueSpread } from '../compare-highlights.mjs?v=111';
 
 test('the gap between highest and lowest uses the printed values', () => {
   // 出前一丁碗麵 2,091.9 mg vs 公仔碗麵 1,601.9 mg sodium per 100 g, as printed in the table.

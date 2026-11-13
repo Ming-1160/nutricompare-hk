@@ -4,7 +4,7 @@
  * Every value is checked against a fixed list; anything unknown is reported and ignored, never guessed.
  * A link can only add allergy exclusions. It can never weaken the deterministic allergy exclusion.
  */
-import { ALLERGENS, brandDroppedNotice, getAllergenAssessment, parseRequestWithBrandFallback, readAllergenPhrase, searchQueryLimitations } from './engine.mjs?v=110';
+import { ALLERGENS, brandDroppedNotice, getAllergenAssessment, parseRequestWithBrandFallback, readAllergenPhrase, searchQueryLimitations } from './engine.mjs?v=111';
 
 export const CATEGORY_IDS = Object.freeze(['biscuits', 'snacks', 'drinks', 'bakery', 'dairy', 'pantry', 'meals']);
 export const SORT_IDS = Object.freeze(['relevance', 'price-asc', 'unit-price-asc', 'carbs-asc', 'sugar-asc', 'sodium-asc', 'protein-desc']);
@@ -17,12 +17,13 @@ const KEY_ALIASES = new Map([
   ['cat', 'cat'], ['category', 'cat'],
   ['budget', 'budget'], ['max', 'budget'], ['maxprice', 'budget'], ['price', 'budget'],
   ['store', 'store'], ['shop', 'store'], ['merchant', 'store'], ['supermarket', 'store'],
+  ['origin', 'origin'],
   ['avoid', 'avoid'], ['allergens', 'avoid'], ['allergen', 'avoid'], ['allergy', 'avoid'], ['allergies', 'avoid'],
   ['exclude', 'avoid'], ['excludes', 'avoid'], ['without', 'avoid'], ['free', 'avoid'],
   ['sort', 'sort'], ['order', 'sort'], ['sortby', 'sort'],
   ['data', 'data'], ['lib', 'lib'], ['library', 'lib'], ['src', 'src'], ['source', 'src'], ['compare', 'compare'],
 ]);
-const KEY_LABELS = Object.freeze({ cat: '分類', budget: '預算', store: '商戶', sort: '排序', data: '資料範圍', lib: '資料庫', src: '來源' });
+const KEY_LABELS = Object.freeze({ cat: '分類', budget: '預算', store: '商戶', origin: '產地', sort: '排序', data: '資料範圍', lib: '資料庫', src: '來源' });
 
 /** Small spelling differences an AI may produce; anything else is still rejected. */
 const CATEGORY_ALIASES = new Map([
@@ -77,7 +78,7 @@ function readComparison(values, products, allergens, notes) {
 }
 
 /**
- * Reads ?q=&cat=&budget=&store=&avoid=&sort=&data=&lib=&src=&compare= into the app's filter shape.
+ * Reads ?q=&cat=&budget=&store=&origin=&avoid=&sort=&data=&lib=&src=&compare= into the app's filter shape.
  * ignoredAllergens are avoid words the site could not recognise; unsupportedAllergens are allergies it recognises but cannot filter.
  * @returns {{present:boolean, source:'ai'|'link'|null, filters:object, compareIds:string[], applied:string[], ignored:string[], ignoredAllergens:string[], unsupportedAllergens:string[], notes:string[]}}
  */
@@ -167,6 +168,15 @@ export function filtersFromParams(input, { storeIds = [], base = {}, products = 
     if (storeIds.includes(store)) { filters.store = store; applied.push('store'); } else ignored.push(`商戶「${shown(store)}」`);
   }
 
+  // Use only origins actually present in the loaded catalogue, just as the page's origin menu does.
+  // Country names and brand locations are never translated or guessed into manufacturing origins.
+  const origin = first('origin').trim();
+  if (origin) {
+    const known = products.some(product => typeof product.origin === 'string' && product.origin === origin);
+    if (known) { filters.origin = origin; applied.push('origin'); }
+    else ignored.push(`產地「${shown(origin)}」`);
+  }
+
   // Every avoid value counts, including repeated ?avoid=…&avoid=… parameters.
   const avoidValues = values.get('avoid') ?? [];
   const avoidParts = avoidValues.flatMap(value => cleanText(value, 200).split(/[,，、|/;；]+/)).map(part => part.trim()).filter(Boolean);
@@ -219,6 +229,7 @@ export function paramsFromFilters(filters = {}, { compareIds = [] } = {}) {
   if (filters.category && CATEGORY_IDS.includes(filters.category)) params.set('cat', filters.category);
   if (filters.budget !== null && filters.budget !== undefined && Number.isFinite(Number(filters.budget))) params.set('budget', String(Math.round(Number(filters.budget) * 100) / 100));
   if (filters.store) params.set('store', filters.store);
+  if (typeof filters.origin === 'string' && filters.origin.trim()) params.set('origin', filters.origin.trim());
   if (Array.isArray(filters.allergens) && filters.allergens.length) params.set('avoid', filters.allergens.join(','));
   if (filters.sort && filters.sort !== 'relevance' && SORT_IDS.includes(filters.sort)) params.set('sort', filters.sort);
   if (filters.dataScope && DATA_SCOPES.includes(filters.dataScope)) params.set('data', filters.dataScope);

@@ -1,4 +1,4 @@
-import { filterProducts, getAllergenAssessment, normalizeAllergen } from './engine.mjs?v=110';
+import { filterProducts, getAllergenAssessment, normalizeAllergen } from './engine.mjs?v=111';
 
 export function getExclusionReasons(products, filters) {
   const conflicts = [];

@@ -5,7 +5,7 @@ import { mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { EXPLAIN_HEADER, buildExplainText, plainNumber } from '../ai-explain.mjs?v=110';
+import { EXPLAIN_HEADER, buildExplainText, plainNumber } from '../ai-explain.mjs?v=111';
 import { numbersIn, unsupportedNumbers } from '../../tools/check-ai-numbers.mjs';
 
 const comparison = {

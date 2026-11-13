@@ -1,4 +1,4 @@
-import {hasNutrition,barcodeKey} from './enrichment.mjs?v=110';
+import {hasNutrition,barcodeKey} from './enrichment.mjs?v=111';
 
 /** A checked HK source is not a claim about the current physical batch. */
 export function hasReviewedHkNutrition(product){

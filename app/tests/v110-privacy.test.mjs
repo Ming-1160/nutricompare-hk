@@ -1,11 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { summariseConnections, summariseStorage } from '../privacy-receipt.mjs?v=110';
+import { summariseConnections, summariseStorage } from '../privacy-receipt.mjs?v=111';
 
 const page = 'https://ming-1160.github.io/nutricompare-hk/?q=%E5%8D%B3%E9%A3%9F%E9%BA%B5&avoid=peanuts';
 
 test('requests are grouped by host and the site itself is told apart from other sites', () => {
-  const own = ['https://ming-1160.github.io/nutricompare-hk/', 'https://ming-1160.github.io/nutricompare-hk/app/app.mjs?v=110', 'https://ming-1160.github.io/nutricompare-hk/app/data/products.json'];
+  const own = ['https://ming-1160.github.io/nutricompare-hk/', 'https://ming-1160.github.io/nutricompare-hk/app/app.mjs?v=111', 'https://ming-1160.github.io/nutricompare-hk/app/data/products.json'];
   const summary = summariseConnections(own.map(name => ({ name })), page);
   assert.equal(summary.total, 3);
   assert.equal(summary.ownHost, 'ming-1160.github.io');
