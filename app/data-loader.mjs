@@ -17,9 +17,10 @@
  * allergen filter that it fails with all files loaded, and that the states which still list foods never show
  * a figure different from the complete catalogue.
  */
-import { buildCatalogue, mergeLabelSources } from './catalogue.mjs?v=111';
-import { enrichCatalogue } from './enrichment.mjs?v=111';
-import { applyHkLabelReview } from './hk-labels.mjs?v=111';
+import { buildCatalogue, mergeLabelSources } from './catalogue.mjs?v=112';
+import { enrichCatalogue } from './enrichment.mjs?v=112';
+import { applyHkLabelReview } from './hk-labels.mjs?v=112';
+import { appendFdcLibrary, isFdcLibraryPayload } from './international-library.mjs?v=112';
 
 export const REQUIRED_FILE = 'products.json';
 export const OFF_LABEL_FILE = 'off-hk-labels.json';
@@ -33,6 +34,10 @@ export const REVIEW_FILES = Object.freeze([
 export const LABEL_FILES = Object.freeze([OFF_LABEL_FILE, ...REVIEW_FILES]);
 /** Files in the order they are applied. The order decides which source wins, so it never changes with arrival time. */
 export const DATA_FILES = Object.freeze([REQUIRED_FILE, OFF_LABEL_FILE, ...PRICE_FILES, HK_EXPANSION_FILE, OFF_LIBRARY_FILE, ...REVIEW_FILES]);
+/** Overseas references are append-only and optional; their absence cannot weaken or block original HK records. */
+export const FDC_LIBRARY_FILE = 'fdc-nutrition-library.json';
+export const OPTIONAL_DATA_FILES = Object.freeze([FDC_LIBRARY_FILE]);
+export const ALL_DATA_FILES = Object.freeze([...DATA_FILES, ...OPTIONAL_DATA_FILES]);
 
 /**
  * Fetch one JSON file. The request is abandoned only when nothing has arrived for timeoutMs, so the page is
@@ -69,12 +74,13 @@ export async function fetchJson(url, { timeoutMs = 10000, fetchImpl = globalThis
  * Fetch every file that is not loaded yet, all at the same time.
  * Files already in `loaded` are kept, so "try again" only asks for what is missing.
  */
-export async function loadDataFiles(read, loaded = new Map(), names = DATA_FILES) {
+export async function loadDataFiles(read, loaded = new Map(), names = ALL_DATA_FILES) {
   const wanted = names.filter(name => !loaded.has(name));
   const settled = await Promise.allSettled(wanted.map(name => read(name)));
   const failures = [];
   settled.forEach((result, index) => {
-    const usable = result.status === 'fulfilled' && result.value !== null && typeof result.value === 'object';
+    const usable = result.status === 'fulfilled' && result.value !== null && typeof result.value === 'object'
+      && (wanted[index] !== FDC_LIBRARY_FILE || isFdcLibraryPayload(result.value));
     if (usable) loaded.set(wanted[index], result.value);
     else failures.push({ file: wanted[index], reason: result.status === 'rejected' ? (result.reason?.message ?? 'failed') : 'not a data object' });
   });
@@ -91,7 +97,8 @@ export async function loadDataFiles(read, loaded = new Map(), names = DATA_FILES
 export function assembleDataset(loaded) {
   const has = name => loaded.get(name) !== null && typeof loaded.get(name) === 'object';
   const missing = DATA_FILES.filter(name => !has(name));
-  if (!has(REQUIRED_FILE)) return { dataset: null, missing, fatal: true, priced: false };
+  const optionalMissing = isFdcLibraryPayload(loaded.get(FDC_LIBRARY_FILE)) ? [] : [FDC_LIBRARY_FILE];
+  if (!has(REQUIRED_FILE)) return { dataset: null, missing, optionalMissing, fatal: true, priced: false };
   let curated = loaded.get(REQUIRED_FILE);
   if (has(OFF_LABEL_FILE)) curated = mergeLabelSources(curated, loaded.get(OFF_LABEL_FILE));
   // Prices need both files: the second one carries the snapshot date and the shop details.
@@ -101,8 +108,9 @@ export function assembleDataset(loaded) {
     dataset = enrichCatalogue(dataset, loaded.get(HK_EXPANSION_FILE), has(OFF_LIBRARY_FILE) ? loaded.get(OFF_LIBRARY_FILE) : {});
   }
   for (const name of REVIEW_FILES) if (has(name)) dataset = applyHkLabelReview(dataset, loaded.get(name));
-  if (!Array.isArray(dataset.products) || !dataset.products.length) return { dataset: null, missing, fatal: true, priced };
-  return { dataset, missing, fatal: false, priced };
+  if (!Array.isArray(dataset.products) || !dataset.products.length) return { dataset: null, missing, optionalMissing, fatal: true, priced };
+  if (!optionalMissing.length) dataset = appendFdcLibrary(dataset, loaded.get(FDC_LIBRARY_FILE));
+  return { dataset, missing, optionalMissing, fatal: false, priced };
 }
 
 /**

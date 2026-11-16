@@ -1,0 +1,4223 @@
+{
+  "checkedDateHongKong": "2026-11-16",
+  "inputRecordCount": 359,
+  "activeRecordCount": 358,
+  "activeComplete1plus7": 316,
+  "activePartial1plus7": 42,
+  "explicitHouseholdGramRecords": 89,
+  "ambiguousGramRecords": 0,
+  "rule": "Only one unambiguous explicit household gram weight is checked. Hold when its difference from native GRM/g serving exceeds both2g and5% of household grams. Counts, volume, ounces, ranges and multiple weights are not inferred.",
+  "heldCount": 1,
+  "heldRecords": [
+    {
+      "id": "FDC-2774415",
+      "fdcId": 2774415,
+      "gtin": "00076410901404",
+      "title": "Lance Sandwich Crackers, Malt with Peanut Butter, 8 Individually Wrapped Packs, 6 Sandwiches Each",
+      "reason": "The numeric native serving weight and the single explicit household gram weight materially conflict. Standardized source nutrient values cannot be trusted for exact ranking; no values were recalculated.",
+      "sourceResponseSha256": "ad6e56821cd6bd66fc68dc692a1979f090240cfe9d53563279a2e0ace31b08a9",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2774415/nutrients",
+      "rawSourceRecord": {
+        "fdcId": 2774415,
+        "description": "Lance Sandwich Crackers, Malt with Peanut Butter, 8 Individually Wrapped Packs, 6 Sandwiches Each",
+        "dataType": "Branded",
+        "gtinUpc": "00076410901404",
+        "publishedDate": "2026-08-20",
+        "brandOwner": "SNYDER'S-LANCE INC.",
+        "brandName": "LANCE",
+        "ingredients": "INGREDIENTS: ENRICHED FLOUR (WHEAT FLOUR, NIACIN, REDUCED IRON, THIAMINE MONONITRATE, RIBOFLAVIN, FOLIC ACID), PEANUT BUTTER (ROASTED PEANUTS), PALM AND/OR SOYBEAN OIL, SUGAR, DEXTROSE, SALT, CORN SYRUP, MALT EXTRACT, LEAVENING (SODIUM BICARBONATE, MONOCALCIUM PHOSPHATE, AMMONIUM BICARBONATE), SOY LECITHIN, WHEY (MILK). CONTAINS: WHEAT, PEANUTS, SOY, MILK.",
+        "marketCountry": "US",
+        "foodCategory": "Biscuits/Cookies",
+        "modifiedDate": "2026-07-30",
+        "dataSource": "GDSN",
+        "packageWeight": "10.3 ONZ",
+        "servingSizeUnit": "GRM",
+        "servingSize": 245.0,
+        "householdServingFullText": "1 Pack (36g)",
+        "gpcClassCode": 50182100,
+        "shortDescription": "SANDWICH CRACKER, MALT W/PB",
+        "preparationStateCode": "UNPREPARED",
+        "tradeChannels": [
+          "GROCERY"
+        ],
+        "allHighlightFields": "",
+        "score": -506.8303,
+        "microbes": [],
+        "foodNutrients": [
+          {
+            "nutrientId": 1003,
+            "nutrientName": "Protein",
+            "nutrientNumber": "203",
+            "unitName": "G",
+            "derivationCode": "LCSA",
+            "derivationDescription": "Calculated from an approximate value per serving size measure",
+            "derivationId": 71,
+            "value": 1.63,
+            "foodNutrientSourceId": 9,
+            "foodNutrientSourceCode": "12",
+            "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation",
+            "rank": 600,
+            "indentLevel": 1,
+            "foodNutrientId": 35196087,
+            "percentDailyValue": 2
+          },
+          {
+            "nutrientId": 1004,
+            "nutrientName": "Total lipid (fat)",
+            "nutrientNumber": "204",
+            "unitName": "G",
+            "derivationCode": "LCSA",
+            "derivationDescription": "Calculated from an approximate value per serving size measure",
+            "derivationId": 71,
+            "value": 4.08,
+            "foodNutrientSourceId": 9,
+            "foodNutrientSourceCode": "12",
+            "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation",
+            "rank": 800,
+            "indentLevel": 1,
+            "foodNutrientId": 35196088,
+            "percentDailyValue": 13
+          },
+          {
+            "nutrientId": 1005,
+            "nutrientName": "Carbohydrate, by difference",
+            "nutrientNumber": "205",
+            "unitName": "G",
+            "derivationCode": "LCSA",
+            "derivationDescription": "Calculated from an approximate value per serving size measure",
+            "derivationId": 71,
+            "value": 8.57,
+            "foodNutrientSourceId": 9,
+            "foodNutrientSourceCode": "12",
+            "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation",
+            "rank": 1110,
+            "indentLevel": 2,
+            "foodNutrientId": 35196089,
+            "percentDailyValue": 8
+          },
+          {
+            "nutrientId": 1008,
+            "nutrientName": "Energy",
+            "nutrientNumber": "208",
+            "unitName": "KCAL",
+            "derivationCode": "LCSA",
+            "derivationDescription": "Calculated from an approximate value per serving size measure",
+            "derivationId": 71,
+            "value": 73.0,
+            "foodNutrientSourceId": 9,
+            "foodNutrientSourceCode": "12",
+            "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation",
+            "rank": 300,
+            "indentLevel": 1,
+            "foodNutrientId": 35196090
+          },
+          {
+            "nutrientId": 2000,
+            "nutrientName": "Total Sugars",
+            "nutrientNumber": "269",
+            "unitName": "G",
+            "derivationCode": "LCSA",
+            "derivationDescription": "Calculated from an approximate value per serving size measure",
+            "derivationId": 71,
+            "value": 1.63,
+            "foodNutrientSourceId": 9,
+            "foodNutrientSourceCode": "12",
+            "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation",
+            "rank": 1510,
+            "indentLevel": 3,
+            "foodNutrientId": 35196091
+          },
+          {
+            "nutrientId": 1079,
+            "nutrientName": "Fiber, total dietary",
+            "nutrientNumber": "291",
+            "unitName": "G",
+            "derivationCode": "LCSA",
+            "derivationDescription": "Calculated from an approximate value per serving size measure",
+            "derivationId": 71,
+            "value": 0.4,
+            "foodNutrientSourceId": 9,
+            "foodNutrientSourceCode": "12",
+            "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation",
+            "rank": 1200,
+            "indentLevel": 3,
+            "foodNutrientId": 35196092,
+            "percentDailyValue": 4
+          },
+          {
+            "nutrientId": 1087,
+            "nutrientName": "Calcium, Ca",
+            "nutrientNumber": "301",
+            "unitName": "MG",
+            "derivationCode": "LCSA",
+            "derivationDescription": "Calculated from an approximate value per serving size measure",
+            "derivationId": 71,
+            "value": 12.0,
+            "foodNutrientSourceId": 9,
+            "foodNutrientSourceCode": "12",
+            "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation",
+            "rank": 5300,
+            "indentLevel": 1,
+            "foodNutrientId": 35196093,
+            "percentDailyValue": 2
+          },
+          {
+            "nutrientId": 1089,
+            "nutrientName": "Iron, Fe",
+            "nutrientNumber": "303",
+            "unitName": "MG",
+            "derivationCode": "LCSA",
+            "derivationDescription": "Calculated from an approximate value per serving size measure",
+            "derivationId": 71,
+            "value": 0.49,
+            "foodNutrientSourceId": 9,
+            "foodNutrientSourceCode": "12",
+            "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation",
+            "rank": 5400,
+            "indentLevel": 1,
+            "foodNutrientId": 35196094,
+            "percentDailyValue": 6
+          },
+          {
+            "nutrientId": 1092,
+            "nutrientName": "Potassium, K",
+            "nutrientNumber": "306",
+            "unitName": "MG",
+            "derivationCode": "LCSA",
+            "derivationDescription": "Calculated from an approximate value per serving size measure",
+            "derivationId": 71,
+            "value": 29.0,
+            "foodNutrientSourceId": 9,
+            "foodNutrientSourceCode": "12",
+            "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation",
+            "rank": 5700,
+            "indentLevel": 1,
+            "foodNutrientId": 35196095,
+            "percentDailyValue": 0
+          },
+          {
+            "nutrientId": 1093,
+            "nutrientName": "Sodium, Na",
+            "nutrientNumber": "307",
+            "unitName": "MG",
+            "derivationCode": "LCSA",
+            "derivationDescription": "Calculated from an approximate value per serving size measure",
+            "derivationId": 71,
+            "value": 73.0,
+            "foodNutrientSourceId": 9,
+            "foodNutrientSourceCode": "12",
+            "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation",
+            "rank": 5800,
+            "indentLevel": 1,
+            "foodNutrientId": 35196096,
+            "percentDailyValue": 8
+          },
+          {
+            "nutrientId": 1114,
+            "nutrientName": "Vitamin D (D2 + D3)",
+            "nutrientNumber": "328",
+            "unitName": "UG",
+            "derivationCode": "LCSA",
+            "derivationDescription": "Calculated from an approximate value per serving size measure",
+            "derivationId": 71,
+            "value": 0.0,
+            "foodNutrientSourceId": 9,
+            "foodNutrientSourceCode": "12",
+            "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation",
+            "rank": 8700,
+            "indentLevel": 1,
+            "foodNutrientId": 35196097,
+            "percentDailyValue": 0
+          },
+          {
+            "nutrientId": 1235,
+            "nutrientName": "Sugars, added",
+            "nutrientNumber": "539",
+            "unitName": "G",
+            "derivationCode": "LCSA",
+            "derivationDescription": "Calculated from an approximate value per serving size measure",
+            "derivationId": 71,
+            "value": 1.6,
+            "foodNutrientSourceId": 9,
+            "foodNutrientSourceCode": "12",
+            "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation",
+            "rank": 1540,
+            "indentLevel": 0,
+            "foodNutrientId": 35196098,
+            "percentDailyValue": 8
+          },
+          {
+            "nutrientId": 1253,
+            "nutrientName": "Cholesterol",
+            "nutrientNumber": "601",
+            "unitName": "MG",
+            "derivationCode": "LCSA",
+            "derivationDescription": "Calculated from an approximate value per serving size measure",
+            "derivationId": 71,
+            "value": 0.0,
+            "foodNutrientSourceId": 9,
+            "foodNutrientSourceCode": "12",
+            "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation",
+            "rank": 15700,
+            "indentLevel": 1,
+            "foodNutrientId": 35196099,
+            "percentDailyValue": 0
+          },
+          {
+            "nutrientId": 1257,
+            "nutrientName": "Fatty acids, total trans",
+            "nutrientNumber": "605",
+            "unitName": "G",
+            "derivationCode": "LCSA",
+            "derivationDescription": "Calculated from an approximate value per serving size measure",
+            "derivationId": 71,
+            "value": 0.0,
+            "foodNutrientSourceId": 9,
+            "foodNutrientSourceCode": "12",
+            "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation",
+            "rank": 15400,
+            "indentLevel": 1,
+            "foodNutrientId": 35196100
+          },
+          {
+            "nutrientId": 1258,
+            "nutrientName": "Fatty acids, total saturated",
+            "nutrientNumber": "606",
+            "unitName": "G",
+            "derivationCode": "LCSA",
+            "derivationDescription": "Calculated from an approximate value per serving size measure",
+            "derivationId": 71,
+            "value": 0.82,
+            "foodNutrientSourceId": 9,
+            "foodNutrientSourceCode": "12",
+            "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation",
+            "rank": 9700,
+            "indentLevel": 1,
+            "foodNutrientId": 35196101,
+            "percentDailyValue": 10
+          },
+          {
+            "nutrientId": 1292,
+            "nutrientName": "Fatty acids, total monounsaturated",
+            "nutrientNumber": "645",
+            "unitName": "G",
+            "derivationCode": "LCSA",
+            "derivationDescription": "Calculated from an approximate value per serving size measure",
+            "derivationId": 71,
+            "value": 1.63,
+            "foodNutrientSourceId": 9,
+            "foodNutrientSourceCode": "12",
+            "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation",
+            "rank": 11400,
+            "indentLevel": 1,
+            "foodNutrientId": 35196102
+          },
+          {
+            "nutrientId": 1293,
+            "nutrientName": "Fatty acids, total polyunsaturated",
+            "nutrientNumber": "646",
+            "unitName": "G",
+            "derivationCode": "LCSA",
+            "derivationDescription": "Calculated from an approximate value per serving size measure",
+            "derivationId": 71,
+            "value": 1.43,
+            "foodNutrientSourceId": 9,
+            "foodNutrientSourceCode": "12",
+            "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation",
+            "rank": 12900,
+            "indentLevel": 1,
+            "foodNutrientId": 35196103
+          }
+        ],
+        "finalFoodInputFoods": [],
+        "foodMeasures": [],
+        "foodAttributes": [],
+        "foodAttributeTypes": [],
+        "foodVersionIds": []
+      },
+      "previousNormalizedRecord": {
+        "id": "FDC-2774415",
+        "fdcId": 2774415,
+        "barcode": "00076410901404",
+        "nameZh": "Lance Sandwich Crackers, Malt with Peanut Butter, 8 Individually Wrapped Packs, 6 Sandwiches Each",
+        "nameEn": "Lance Sandwich Crackers, Malt with Peanut Butter, 8 Individually Wrapped Packs, 6 Sandwiches Each",
+        "brand": "LANCE",
+        "brandEn": "LANCE",
+        "category": "biscuits",
+        "tags": [],
+        "packSize": "10.3 ONZ",
+        "quantity": null,
+        "quantityUnit": null,
+        "servingSize": 245.0,
+        "origin": null,
+        "marketCountry": "United States",
+        "catalogueGroup": "fdc-library",
+        "libraryGroup": "fdc-library",
+        "dataStatus": "fdc-reference",
+        "prices": [],
+        "nutrition": {
+          "basisAmount": 100,
+          "basisUnit": "g",
+          "energyKcal": 73.0,
+          "protein": 1.63,
+          "fat": 4.08,
+          "saturatedFat": 0.82,
+          "transFat": 0.0,
+          "carbohydrates": 8.57,
+          "sugars": 1.63,
+          "sodiumMg": 73.0,
+          "fibre": 0.4,
+          "carbohydrateDefinition": "total",
+          "status": "reference",
+          "region": "us-fdc-reference",
+          "hkLabelVerified": false,
+          "sourceLimit": "USDA branded-food reference for the stated market; not a reviewed Hong Kong formulation. Standardized per100g values retained without re-scaling by serving size."
+        },
+        "allergens": {
+          "contains": [],
+          "mayContain": [],
+          "status": "unknown",
+          "text": "海外來源未逐張核對完整過敏聲明；空白不代表不含過敏原。"
+        },
+        "physicalPackChecked": false,
+        "sourceIsCurrentVerified": false,
+        "sources": [
+          {
+            "label": "USDA FoodData Central · United States",
+            "url": "https://fdc.nal.usda.gov/food-details/2774415/nutrients",
+            "checkedAt": "2026-11-13",
+            "scope": "Overseas branded-food reference; CC0 1.0; no Hong Kong price or formula verification"
+          }
+        ],
+        "fdcMetadata": {
+          "marketCountry": "United States",
+          "sourceMarketCountry": "US",
+          "publicationDate": "2026-08-20",
+          "modifiedDate": "2026-07-30",
+          "availableDate": null,
+          "discontinuedDate": null,
+          "rawServingSize": 245.0,
+          "rawServingSizeUnit": "GRM",
+          "householdServingFullText": "1 Pack (36g)",
+          "packageWeight": "10.3 ONZ",
+          "dataSource": "GDSN",
+          "foodCategory": "Biscuits/Cookies",
+          "nutrientEvidence": {
+            "protein": {
+              "nutrientId": 1003,
+              "unit": "g",
+              "valuePer100": 1.63,
+              "derivation": {
+                "derivationCode": "LCSA",
+                "derivationDescription": "Calculated from an approximate value per serving size measure",
+                "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation"
+              }
+            },
+            "fat": {
+              "nutrientId": 1004,
+              "unit": "g",
+              "valuePer100": 4.08,
+              "derivation": {
+                "derivationCode": "LCSA",
+                "derivationDescription": "Calculated from an approximate value per serving size measure",
+                "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation"
+              }
+            },
+            "carbohydrates": {
+              "nutrientId": 1005,
+              "unit": "g",
+              "valuePer100": 8.57,
+              "derivation": {
+                "derivationCode": "LCSA",
+                "derivationDescription": "Calculated from an approximate value per serving size measure",
+                "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation"
+              }
+            },
+            "energyKcal": {
+              "nutrientId": 1008,
+              "unit": "kcal",
+              "valuePer100": 73.0,
+              "derivation": {
+                "derivationCode": "LCSA",
+                "derivationDescription": "Calculated from an approximate value per serving size measure",
+                "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation"
+              }
+            },
+            "sugars": {
+              "nutrientId": 2000,
+              "unit": "g",
+              "valuePer100": 1.63,
+              "derivation": {
+                "derivationCode": "LCSA",
+                "derivationDescription": "Calculated from an approximate value per serving size measure",
+                "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation"
+              }
+            },
+            "fibre": {
+              "nutrientId": 1079,
+              "unit": "g",
+              "valuePer100": 0.4,
+              "derivation": {
+                "derivationCode": "LCSA",
+                "derivationDescription": "Calculated from an approximate value per serving size measure",
+                "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation"
+              }
+            },
+            "sodiumMg": {
+              "nutrientId": 1093,
+              "unit": "mg",
+              "valuePer100": 73.0,
+              "derivation": {
+                "derivationCode": "LCSA",
+                "derivationDescription": "Calculated from an approximate value per serving size measure",
+                "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation"
+              }
+            },
+            "transFat": {
+              "nutrientId": 1257,
+              "unit": "g",
+              "valuePer100": 0.0,
+              "derivation": {
+                "derivationCode": "LCSA",
+                "derivationDescription": "Calculated from an approximate value per serving size measure",
+                "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation"
+              }
+            },
+            "saturatedFat": {
+              "nutrientId": 1258,
+              "unit": "g",
+              "valuePer100": 0.82,
+              "derivation": {
+                "derivationCode": "LCSA",
+                "derivationDescription": "Calculated from an approximate value per serving size measure",
+                "foodNutrientSourceDescription": "Manufacturer's analytical; partial documentation"
+              }
+            }
+          },
+          "labelNutrients": null,
+          "originalIngredientsAvailable": true,
+          "sourceMode": "official-api-snapshot",
+          "sourceQuery": "crackers",
+          "sourceResponseSha256": "ad6e56821cd6bd66fc68dc692a1979f090240cfe9d53563279a2e0ace31b08a9",
+          "gtinCheckDigitValid": true,
+          "latestWithinQueriedSnapshotOnly": true,
+          "sourceVersionLimit": "Not a guarantee of current availability or the newest version outside these bounded queries.",
+          "boundNutrients": []
+        },
+        "dataLicence": {
+          "name": "CC0-1.0",
+          "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "source": "USDA FoodData Central"
+        },
+        "sourceLimit": "海外資料；資料市場不等於製造產地，未核實香港版本、現時銷售、實物批次或完整過敏聲明。"
+      }
+    }
+  ],
+  "retainedSmallDiscrepancies": [
+    {
+      "id": "FDC-2777322",
+      "fdcId": 2777322,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "3 Cookies (28g / 1 oz)",
+      "explicitGramValues": [
+        28.0
+      ],
+      "householdGrams": 28.0,
+      "absoluteDifferenceG": 2.0,
+      "materialThresholdG": 2.0,
+      "status": "retained-small-source-serving-discrepancy"
+    }
+  ],
+  "statusCounts": {
+    "no-explicit-household-gram-weight": 270,
+    "matching-explicit-gram-weight": 87,
+    "held-material-source-serving-conflict": 1,
+    "retained-small-source-serving-discrepancy": 1
+  },
+  "allInputRecordChecks": [
+    {
+      "id": "FDC-2778830",
+      "fdcId": 2778830,
+      "rawServingSize": 42.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pouch",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778831",
+      "fdcId": 2778831,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "27 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778833",
+      "fdcId": 2778833,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "27 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778832",
+      "fdcId": 2778832,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "27 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778836",
+      "fdcId": 2778836,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "29 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778584",
+      "fdcId": 2778584,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "3 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778586",
+      "fdcId": 2778586,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "3 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778585",
+      "fdcId": 2778585,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "3 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778841",
+      "fdcId": 2778841,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pouch",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778867",
+      "fdcId": 2778867,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 PIECES (30G)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2778876",
+      "fdcId": 2778876,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "27 crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2779200",
+      "fdcId": 2779200,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "4 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2779202",
+      "fdcId": 2779202,
+      "rawServingSize": 39.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Package",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2779201",
+      "fdcId": 2779201,
+      "rawServingSize": 51.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Package",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2779199",
+      "fdcId": 2779199,
+      "rawServingSize": 51.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Package",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778863",
+      "fdcId": 2778863,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (35g)",
+      "explicitGramValues": [
+        35.0
+      ],
+      "householdGrams": 35.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2778866",
+      "fdcId": 2778866,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "60 PIECES (30G)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2778838",
+      "fdcId": 2778838,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "26 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778829",
+      "fdcId": 2778829,
+      "rawServingSize": 29.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "18 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778864",
+      "fdcId": 2778864,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 PIECES (30G)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2778868",
+      "fdcId": 2778868,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "89 PIECES (30G)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2778865",
+      "fdcId": 2778865,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2778624",
+      "fdcId": 2778624,
+      "rawServingSize": 39.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (39g)",
+      "explicitGramValues": [
+        39.0
+      ],
+      "householdGrams": 39.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2778869",
+      "fdcId": 2778869,
+      "rawServingSize": 26.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (26g)",
+      "explicitGramValues": [
+        26.0
+      ],
+      "householdGrams": 26.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2778266",
+      "fdcId": 2778266,
+      "rawServingSize": 99.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 jar Cherry Cheesecake",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778504",
+      "fdcId": 2778504,
+      "rawServingSize": 283.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "10 ounces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778507",
+      "fdcId": 2778507,
+      "rawServingSize": 321.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "11.35 ounces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778503",
+      "fdcId": 2778503,
+      "rawServingSize": 173.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "6.1 ounces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778505",
+      "fdcId": 2778505,
+      "rawServingSize": 311.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "11 ounces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778506",
+      "fdcId": 2778506,
+      "rawServingSize": 234.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "8.28 ounces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778500",
+      "fdcId": 2778500,
+      "rawServingSize": 169.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5.95 ounces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775790",
+      "fdcId": 2775790,
+      "rawServingSize": 31.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1.1 ounces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2777051",
+      "fdcId": 2777051,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "27 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776750",
+      "fdcId": 2776750,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "4 CRACKERS",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776749",
+      "fdcId": 2776749,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "28 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2777066",
+      "fdcId": 2777066,
+      "rawServingSize": 42.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pouch",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2777067",
+      "fdcId": 2777067,
+      "rawServingSize": 42.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pouch",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776414",
+      "fdcId": 2776414,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "4 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776399",
+      "fdcId": 2776399,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "4 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776407",
+      "fdcId": 2776407,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "8 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2777068",
+      "fdcId": 2777068,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pouch",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776171",
+      "fdcId": 2776171,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 OZ / About 10 Crackers (28g)",
+      "explicitGramValues": [
+        28.0
+      ],
+      "householdGrams": 28.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2776762",
+      "fdcId": 2776762,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776565",
+      "fdcId": 2776565,
+      "rawServingSize": 8.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "4 crackers (8g)",
+      "explicitGramValues": [
+        8.0
+      ],
+      "householdGrams": 8.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2776557",
+      "fdcId": 2776557,
+      "rawServingSize": 8.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "8g",
+      "explicitGramValues": [
+        8.0
+      ],
+      "householdGrams": 8.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2776772",
+      "fdcId": 2776772,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "52 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776415",
+      "fdcId": 2776415,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "4 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776788",
+      "fdcId": 2776788,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "33 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776708",
+      "fdcId": 2776708,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 PIECES (30G)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2776710",
+      "fdcId": 2776710,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "54 PIECES (30G)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2776711",
+      "fdcId": 2776711,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "43 PIECES (30G)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2776058",
+      "fdcId": 2776058,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 OZ (28 G/ABOUT 10 CRACKERS)",
+      "explicitGramValues": [
+        28.0
+      ],
+      "householdGrams": 28.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2775794",
+      "fdcId": 2775794,
+      "rawServingSize": 96.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "3.41 oz",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776163",
+      "fdcId": 2776163,
+      "rawServingSize": 23.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (23g)",
+      "explicitGramValues": [
+        23.0
+      ],
+      "householdGrams": 23.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2776176",
+      "fdcId": 2776176,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (28g)",
+      "explicitGramValues": [
+        28.0
+      ],
+      "householdGrams": 28.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2776151",
+      "fdcId": 2776151,
+      "rawServingSize": 40.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (40g)",
+      "explicitGramValues": [
+        40.0
+      ],
+      "householdGrams": 40.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2776178",
+      "fdcId": 2776178,
+      "rawServingSize": 42.5,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (42.5g)",
+      "explicitGramValues": [
+        42.5
+      ],
+      "householdGrams": 42.5,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.125,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2776162",
+      "fdcId": 2776162,
+      "rawServingSize": 42.5,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (42.5g)",
+      "explicitGramValues": [
+        42.5
+      ],
+      "householdGrams": 42.5,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.125,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2776144",
+      "fdcId": 2776144,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (35g)",
+      "explicitGramValues": [
+        35.0
+      ],
+      "householdGrams": 35.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2776177",
+      "fdcId": 2776177,
+      "rawServingSize": 43.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (43g)",
+      "explicitGramValues": [
+        43.0
+      ],
+      "householdGrams": 43.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.15,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2776461",
+      "fdcId": 2776461,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "per container",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775807",
+      "fdcId": 2775807,
+      "rawServingSize": 265.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "9.33 ounces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775808",
+      "fdcId": 2775808,
+      "rawServingSize": 259.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "9.13 ounces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775805",
+      "fdcId": 2775805,
+      "rawServingSize": 326.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "11.50 ounces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775806",
+      "fdcId": 2775806,
+      "rawServingSize": 386.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "13.6 ounces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775027",
+      "fdcId": 2775027,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "14 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775493",
+      "fdcId": 2775493,
+      "rawServingSize": 7.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Package",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775508",
+      "fdcId": 2775508,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775499",
+      "fdcId": 2775499,
+      "rawServingSize": 39.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Package",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774853",
+      "fdcId": 2774853,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "28 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774847",
+      "fdcId": 2774847,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "28 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775020",
+      "fdcId": 2775020,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "20 Chips",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775026",
+      "fdcId": 2775026,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "26 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775024",
+      "fdcId": 2775024,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "26 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775030",
+      "fdcId": 2775030,
+      "rawServingSize": 29.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "26 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775037",
+      "fdcId": 2775037,
+      "rawServingSize": 29.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "26 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775033",
+      "fdcId": 2775033,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "29 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775034",
+      "fdcId": 2775034,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "26 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775510",
+      "fdcId": 2775510,
+      "rawServingSize": 16.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775511",
+      "fdcId": 2775511,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774846",
+      "fdcId": 2774846,
+      "rawServingSize": 16.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774856",
+      "fdcId": 2774856,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774858",
+      "fdcId": 2774858,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774860",
+      "fdcId": 2774860,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "33 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775029",
+      "fdcId": 2775029,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "27 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775494",
+      "fdcId": 2775494,
+      "rawServingSize": 16.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775503",
+      "fdcId": 2775503,
+      "rawServingSize": 39.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Package",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775032",
+      "fdcId": 2775032,
+      "rawServingSize": 29.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1/2 Cup",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775023",
+      "fdcId": 2775023,
+      "rawServingSize": 29.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1/2 Cup",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775019",
+      "fdcId": 2775019,
+      "rawServingSize": 29.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1/2 Cup",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775509",
+      "fdcId": 2775509,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774845",
+      "fdcId": 2774845,
+      "rawServingSize": 16.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774859",
+      "fdcId": 2774859,
+      "rawServingSize": 16.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774851",
+      "fdcId": 2774851,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774849",
+      "fdcId": 2774849,
+      "rawServingSize": 31.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "16 crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774401",
+      "fdcId": 2774401,
+      "rawServingSize": 16.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774854",
+      "fdcId": 2774854,
+      "rawServingSize": 31.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 Full Cracker Sheets",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774855",
+      "fdcId": 2774855,
+      "rawServingSize": 31.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 Full Cracker Sheets",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775218",
+      "fdcId": 2775218,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (28g)",
+      "explicitGramValues": [
+        28.0
+      ],
+      "householdGrams": 28.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2775036",
+      "fdcId": 2775036,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "20 Chips",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774876",
+      "fdcId": 2774876,
+      "rawServingSize": 14.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "4 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774857",
+      "fdcId": 2774857,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774861",
+      "fdcId": 2774861,
+      "rawServingSize": 16.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774850",
+      "fdcId": 2774850,
+      "rawServingSize": 16.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775228",
+      "fdcId": 2775228,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (28g)",
+      "explicitGramValues": [
+        28.0
+      ],
+      "householdGrams": 28.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2775224",
+      "fdcId": 2775224,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2775225",
+      "fdcId": 2775225,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2775232",
+      "fdcId": 2775232,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2774848",
+      "fdcId": 2774848,
+      "rawServingSize": 29.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "16 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774927",
+      "fdcId": 2774927,
+      "rawServingSize": 18.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5 crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774926",
+      "fdcId": 2774926,
+      "rawServingSize": 21.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "4 crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774962",
+      "fdcId": 2774962,
+      "rawServingSize": 100.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774789",
+      "fdcId": 2774789,
+      "rawServingSize": 100.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774788",
+      "fdcId": 2774788,
+      "rawServingSize": 100.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774997",
+      "fdcId": 2774997,
+      "rawServingSize": 100.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774790",
+      "fdcId": 2774790,
+      "rawServingSize": 100.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774862",
+      "fdcId": 2774862,
+      "rawServingSize": 100.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775234",
+      "fdcId": 2775234,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (28g)",
+      "explicitGramValues": [
+        28.0
+      ],
+      "householdGrams": 28.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2775233",
+      "fdcId": 2775233,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "51 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2775226",
+      "fdcId": 2775226,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (28g)",
+      "explicitGramValues": [
+        28.0
+      ],
+      "householdGrams": 28.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2774878",
+      "fdcId": 2774878,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "16 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774792",
+      "fdcId": 2774792,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775505",
+      "fdcId": 2775505,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pouch",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775504",
+      "fdcId": 2775504,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "9 Pieces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774963",
+      "fdcId": 2774963,
+      "rawServingSize": 100.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774964",
+      "fdcId": 2774964,
+      "rawServingSize": 100.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775223",
+      "fdcId": 2775223,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "51 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2775500",
+      "fdcId": 2775500,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pouch",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774416",
+      "fdcId": 2774416,
+      "rawServingSize": 36.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (36g)",
+      "explicitGramValues": [
+        36.0
+      ],
+      "householdGrams": 36.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2775231",
+      "fdcId": 2775231,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2775235",
+      "fdcId": 2775235,
+      "rawServingSize": 43.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (43g)",
+      "explicitGramValues": [
+        43.0
+      ],
+      "householdGrams": 43.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.15,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2774415",
+      "fdcId": 2774415,
+      "rawServingSize": 245.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (36g)",
+      "explicitGramValues": [
+        36.0
+      ],
+      "householdGrams": 36.0,
+      "absoluteDifferenceG": 209.0,
+      "materialThresholdG": 2.0,
+      "status": "held-material-source-serving-conflict"
+    },
+    {
+      "id": "FDC-2774418",
+      "fdcId": 2774418,
+      "rawServingSize": 24.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (24g)",
+      "explicitGramValues": [
+        24.0
+      ],
+      "householdGrams": 24.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2774844",
+      "fdcId": 2774844,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774877",
+      "fdcId": 2774877,
+      "rawServingSize": 15.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "5 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2773399",
+      "fdcId": 2773399,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773279",
+      "fdcId": 2773279,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773404",
+      "fdcId": 2773404,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "52 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2772637",
+      "fdcId": 2772637,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773256",
+      "fdcId": 2773256,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773281",
+      "fdcId": 2773281,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773181",
+      "fdcId": 2773181,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773180",
+      "fdcId": 2773180,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773328",
+      "fdcId": 2773328,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773231",
+      "fdcId": 2773231,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773258",
+      "fdcId": 2773258,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "63 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773174",
+      "fdcId": 2773174,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "63 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773263",
+      "fdcId": 2773263,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "63 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773413",
+      "fdcId": 2773413,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "51 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773274",
+      "fdcId": 2773274,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "51 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2774117",
+      "fdcId": 2774117,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "27 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2772021",
+      "fdcId": 2772021,
+      "rawServingSize": 221.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "7.8 ounces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2773991",
+      "fdcId": 2773991,
+      "rawServingSize": 6.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pouch",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2773339",
+      "fdcId": 2773339,
+      "rawServingSize": 21.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2773239",
+      "fdcId": 2773239,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773380",
+      "fdcId": 2773380,
+      "rawServingSize": 21.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2773382",
+      "fdcId": 2773382,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2772635",
+      "fdcId": 2772635,
+      "rawServingSize": 21.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2773237",
+      "fdcId": 2773237,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773689",
+      "fdcId": 2773689,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 PACK (28 G)",
+      "explicitGramValues": [
+        28.0
+      ],
+      "householdGrams": 28.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2772023",
+      "fdcId": 2772023,
+      "rawServingSize": 191.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "6.75 ounces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2773214",
+      "fdcId": 2773214,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "51 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773245",
+      "fdcId": 2773245,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773177",
+      "fdcId": 2773177,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "51 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773406",
+      "fdcId": 2773406,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "57 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773280",
+      "fdcId": 2773280,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "51 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773314",
+      "fdcId": 2773314,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "51 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773248",
+      "fdcId": 2773248,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773330",
+      "fdcId": 2773330,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773332",
+      "fdcId": 2773332,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "43 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2771204",
+      "fdcId": 2771204,
+      "rawServingSize": 43.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (43g)",
+      "explicitGramValues": [
+        43.0
+      ],
+      "householdGrams": 43.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.15,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773355",
+      "fdcId": 2773355,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "43 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2774090",
+      "fdcId": 2774090,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "26 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2774145",
+      "fdcId": 2774145,
+      "rawServingSize": 29.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "26 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2772192",
+      "fdcId": 2772192,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 pouch",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2773366",
+      "fdcId": 2773366,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "43 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773534",
+      "fdcId": 2773534,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "43 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773539",
+      "fdcId": 2773539,
+      "rawServingSize": 14.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2772660",
+      "fdcId": 2772660,
+      "rawServingSize": 21.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2773384",
+      "fdcId": 2773384,
+      "rawServingSize": 21.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2771203",
+      "fdcId": 2771203,
+      "rawServingSize": 42.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (42g)",
+      "explicitGramValues": [
+        42.0
+      ],
+      "householdGrams": 42.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.1,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773234",
+      "fdcId": 2773234,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773171",
+      "fdcId": 2773171,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "59 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773204",
+      "fdcId": 2773204,
+      "rawServingSize": 21.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (21g)",
+      "explicitGramValues": [
+        21.0
+      ],
+      "householdGrams": 21.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773170",
+      "fdcId": 2773170,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2774089",
+      "fdcId": 2774089,
+      "rawServingSize": 29.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "18 Crackers",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2773973",
+      "fdcId": 2773973,
+      "rawServingSize": 51.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Package",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2773186",
+      "fdcId": 2773186,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773316",
+      "fdcId": 2773316,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773563",
+      "fdcId": 2773563,
+      "rawServingSize": 57.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pack (57g)",
+      "explicitGramValues": [
+        57.0
+      ],
+      "householdGrams": 57.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.85,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2773288",
+      "fdcId": 2773288,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "55 Pieces (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2778600",
+      "fdcId": 2778600,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 Cookies",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778948",
+      "fdcId": 2778948,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 tray with frosting",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778723",
+      "fdcId": 2778723,
+      "rawServingSize": 42.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 pouch",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778747",
+      "fdcId": 2778747,
+      "rawServingSize": 32.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 - 1 inch balls of dough",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778583",
+      "fdcId": 2778583,
+      "rawServingSize": 40.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "N/A",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778929",
+      "fdcId": 2778929,
+      "rawServingSize": 24.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "Per 2 tbsp mix",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778609",
+      "fdcId": 2778609,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778608",
+      "fdcId": 2778608,
+      "rawServingSize": 32.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "3 Cookies",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778614",
+      "fdcId": 2778614,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778430",
+      "fdcId": 2778430,
+      "rawServingSize": 33.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "3 cookies (33g)",
+      "explicitGramValues": [
+        33.0
+      ],
+      "householdGrams": 33.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2778811",
+      "fdcId": 2778811,
+      "rawServingSize": 51.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1/8 package",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778598",
+      "fdcId": 2778598,
+      "rawServingSize": 25.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778597",
+      "fdcId": 2778597,
+      "rawServingSize": 21.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778599",
+      "fdcId": 2778599,
+      "rawServingSize": 27.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778345",
+      "fdcId": 2778345,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778601",
+      "fdcId": 2778601,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778605",
+      "fdcId": 2778605,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778612",
+      "fdcId": 2778612,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778557",
+      "fdcId": 2778557,
+      "rawServingSize": 42.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 pouch",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778551",
+      "fdcId": 2778551,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 pouch",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778462",
+      "fdcId": 2778462,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "31 cookies",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778606",
+      "fdcId": 2778606,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778607",
+      "fdcId": 2778607,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778602",
+      "fdcId": 2778602,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778603",
+      "fdcId": 2778603,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778571",
+      "fdcId": 2778571,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778604",
+      "fdcId": 2778604,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778730",
+      "fdcId": 2778730,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 cookies",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778727",
+      "fdcId": 2778727,
+      "rawServingSize": 33.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778648",
+      "fdcId": 2778648,
+      "rawServingSize": 34.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778972",
+      "fdcId": 2778972,
+      "rawServingSize": 25.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 bar",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778517",
+      "fdcId": 2778517,
+      "rawServingSize": 26.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 cookies",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778878",
+      "fdcId": 2778878,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 pouch (30g)",
+      "explicitGramValues": [
+        30.0
+      ],
+      "householdGrams": 30.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2778915",
+      "fdcId": 2778915,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 tray with frosting",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778556",
+      "fdcId": 2778556,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 pouch",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778953",
+      "fdcId": 2778953,
+      "rawServingSize": 36.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 cup Cookie Crisp",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778405",
+      "fdcId": 2778405,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 Tbsp (28g)",
+      "explicitGramValues": [
+        28.0
+      ],
+      "householdGrams": 28.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2778676",
+      "fdcId": 2778676,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 COOKIE DOUGH PIECE",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778677",
+      "fdcId": 2778677,
+      "rawServingSize": 43.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 COOKIE DOUGH PIECE",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778482",
+      "fdcId": 2778482,
+      "rawServingSize": 26.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 Cookies (26g)",
+      "explicitGramValues": [
+        26.0
+      ],
+      "householdGrams": 26.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2778465",
+      "fdcId": 2778465,
+      "rawServingSize": 31.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie (31g)",
+      "explicitGramValues": [
+        31.0
+      ],
+      "householdGrams": 31.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2778498",
+      "fdcId": 2778498,
+      "rawServingSize": 42.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 cookie (42g)",
+      "explicitGramValues": [
+        42.0
+      ],
+      "householdGrams": 42.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.1,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2778720",
+      "fdcId": 2778720,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "38",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778611",
+      "fdcId": 2778611,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778610",
+      "fdcId": 2778610,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778466",
+      "fdcId": 2778466,
+      "rawServingSize": 31.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie (31g)",
+      "explicitGramValues": [
+        31.0
+      ],
+      "householdGrams": 31.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2778468",
+      "fdcId": 2778468,
+      "rawServingSize": 31.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie (31g)",
+      "explicitGramValues": [
+        31.0
+      ],
+      "householdGrams": 31.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2778389",
+      "fdcId": 2778389,
+      "rawServingSize": 113.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 container (113g)",
+      "explicitGramValues": [
+        113.0
+      ],
+      "householdGrams": 113.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 5.65,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2779077",
+      "fdcId": 2779077,
+      "rawServingSize": 105.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "105g",
+      "explicitGramValues": [
+        105.0
+      ],
+      "householdGrams": 105.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 5.25,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2778516",
+      "fdcId": 2778516,
+      "rawServingSize": 65.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 bars Choco Chip Cookie Dough",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778225",
+      "fdcId": 2778225,
+      "rawServingSize": 20.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778224",
+      "fdcId": 2778224,
+      "rawServingSize": 20.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie (20g)",
+      "explicitGramValues": [
+        20.0
+      ],
+      "householdGrams": 20.0,
+      "absoluteDifferenceG": 0.0,
+      "materialThresholdG": 2.0,
+      "status": "matching-explicit-gram-weight"
+    },
+    {
+      "id": "FDC-2779019",
+      "fdcId": 2779019,
+      "rawServingSize": 102.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "3.64 OZ SERVING,  72 Servings Per Container",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778449",
+      "fdcId": 2778449,
+      "rawServingSize": 46.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 Tortilla Rounds",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778419",
+      "fdcId": 2778419,
+      "rawServingSize": 32.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "3 shells",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778450",
+      "fdcId": 2778450,
+      "rawServingSize": 31.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 shells",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778447",
+      "fdcId": 2778447,
+      "rawServingSize": 27.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 shells",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778499",
+      "fdcId": 2778499,
+      "rawServingSize": 34.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 biscuit",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2778508",
+      "fdcId": 2778508,
+      "rawServingSize": 89.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 biscuit",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776794",
+      "fdcId": 2776794,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776903",
+      "fdcId": 2776903,
+      "rawServingSize": 36.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 cup",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2777373",
+      "fdcId": 2777373,
+      "rawServingSize": 36.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 cup",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2777444",
+      "fdcId": 2777444,
+      "rawServingSize": 36.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 cup",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2777423",
+      "fdcId": 2777423,
+      "rawServingSize": 36.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 cup",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776303",
+      "fdcId": 2776303,
+      "rawServingSize": 43.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776521",
+      "fdcId": 2776521,
+      "rawServingSize": 43.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1.5 ounces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2777433",
+      "fdcId": 2777433,
+      "rawServingSize": 36.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 cup",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776408",
+      "fdcId": 2776408,
+      "rawServingSize": 43.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776520",
+      "fdcId": 2776520,
+      "rawServingSize": 43.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1.5 ounces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776614",
+      "fdcId": 2776614,
+      "rawServingSize": 56.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 pouch",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776283",
+      "fdcId": 2776283,
+      "rawServingSize": 36.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 Cookies",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2777322",
+      "fdcId": 2777322,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "3 Cookies (28g / 1 oz)",
+      "explicitGramValues": [
+        28.0
+      ],
+      "householdGrams": 28.0,
+      "absoluteDifferenceG": 2.0,
+      "materialThresholdG": 2.0,
+      "status": "retained-small-source-serving-discrepancy"
+    },
+    {
+      "id": "FDC-2776775",
+      "fdcId": 2776775,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775722",
+      "fdcId": 2775722,
+      "rawServingSize": 43.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775724",
+      "fdcId": 2775724,
+      "rawServingSize": 43.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775747",
+      "fdcId": 2775747,
+      "rawServingSize": 54.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2777015",
+      "fdcId": 2777015,
+      "rawServingSize": 20.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "Per 2 tbsp mix",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776523",
+      "fdcId": 2776523,
+      "rawServingSize": 43.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1.5 ounces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775721",
+      "fdcId": 2775721,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776385",
+      "fdcId": 2776385,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776292",
+      "fdcId": 2776292,
+      "rawServingSize": 25.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 COOKIE",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775737",
+      "fdcId": 2775737,
+      "rawServingSize": 43.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2777376",
+      "fdcId": 2777376,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "3 tbsp mix",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776752",
+      "fdcId": 2776752,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "10 Cookies",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775725",
+      "fdcId": 2775725,
+      "rawServingSize": 43.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776288",
+      "fdcId": 2776288,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776798",
+      "fdcId": 2776798,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776810",
+      "fdcId": 2776810,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776278",
+      "fdcId": 2776278,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776786",
+      "fdcId": 2776786,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776281",
+      "fdcId": 2776281,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776298",
+      "fdcId": 2776298,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776284",
+      "fdcId": 2776284,
+      "rawServingSize": 36.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 Cookies",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776881",
+      "fdcId": 2776881,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 COOKIE",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776974",
+      "fdcId": 2776974,
+      "rawServingSize": 28.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "3 tbsp mix",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776604",
+      "fdcId": 2776604,
+      "rawServingSize": 56.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Pouch",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776592",
+      "fdcId": 2776592,
+      "rawServingSize": 17.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 pouch",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776519",
+      "fdcId": 2776519,
+      "rawServingSize": 43.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1.5 ounces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776304",
+      "fdcId": 2776304,
+      "rawServingSize": 52.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776293",
+      "fdcId": 2776293,
+      "rawServingSize": 33.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 COOKIES",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776384",
+      "fdcId": 2776384,
+      "rawServingSize": 26.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776796",
+      "fdcId": 2776796,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776277",
+      "fdcId": 2776277,
+      "rawServingSize": 25.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776329",
+      "fdcId": 2776329,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776386",
+      "fdcId": 2776386,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776388",
+      "fdcId": 2776388,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776396",
+      "fdcId": 2776396,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776334",
+      "fdcId": 2776334,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776888",
+      "fdcId": 2776888,
+      "rawServingSize": 27.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 COOKIE",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776290",
+      "fdcId": 2776290,
+      "rawServingSize": 29.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "4 Cookies",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776889",
+      "fdcId": 2776889,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "3 Cookies",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776802",
+      "fdcId": 2776802,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 Cookies",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776299",
+      "fdcId": 2776299,
+      "rawServingSize": 36.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 Cookies",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776339",
+      "fdcId": 2776339,
+      "rawServingSize": 36.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 Cookies",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776395",
+      "fdcId": 2776395,
+      "rawServingSize": 36.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 Cookies",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776637",
+      "fdcId": 2776637,
+      "rawServingSize": 31.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 Cookies",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776779",
+      "fdcId": 2776779,
+      "rawServingSize": 25.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776780",
+      "fdcId": 2776780,
+      "rawServingSize": 25.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776323",
+      "fdcId": 2776323,
+      "rawServingSize": 27.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776337",
+      "fdcId": 2776337,
+      "rawServingSize": 33.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "4 Cookies",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776789",
+      "fdcId": 2776789,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776761",
+      "fdcId": 2776761,
+      "rawServingSize": 30.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776759",
+      "fdcId": 2776759,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776795",
+      "fdcId": 2776795,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776297",
+      "fdcId": 2776297,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776330",
+      "fdcId": 2776330,
+      "rawServingSize": 76.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 Cookies",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776286",
+      "fdcId": 2776286,
+      "rawServingSize": 22.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776760",
+      "fdcId": 2776760,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776287",
+      "fdcId": 2776287,
+      "rawServingSize": 33.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "4 COOKIES",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776321",
+      "fdcId": 2776321,
+      "rawServingSize": 31.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "3 Cookies",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776280",
+      "fdcId": 2776280,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776318",
+      "fdcId": 2776318,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776326",
+      "fdcId": 2776326,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776296",
+      "fdcId": 2776296,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776276",
+      "fdcId": 2776276,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776873",
+      "fdcId": 2776873,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776776",
+      "fdcId": 2776776,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776324",
+      "fdcId": 2776324,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776389",
+      "fdcId": 2776389,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776751",
+      "fdcId": 2776751,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776340",
+      "fdcId": 2776340,
+      "rawServingSize": 36.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "2 COOKIES",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776394",
+      "fdcId": 2776394,
+      "rawServingSize": 23.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2777016",
+      "fdcId": 2777016,
+      "rawServingSize": 23.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "Per 2 tbsp mix",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776490",
+      "fdcId": 2776490,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776522",
+      "fdcId": 2776522,
+      "rawServingSize": 43.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1.5 ounces",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776777",
+      "fdcId": 2776777,
+      "rawServingSize": 25.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776770",
+      "fdcId": 2776770,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776811",
+      "fdcId": 2776811,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776737",
+      "fdcId": 2776737,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776736",
+      "fdcId": 2776736,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776942",
+      "fdcId": 2776942,
+      "rawServingSize": 33.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2775720",
+      "fdcId": 2775720,
+      "rawServingSize": 52.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776327",
+      "fdcId": 2776327,
+      "rawServingSize": 26.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776784",
+      "fdcId": 2776784,
+      "rawServingSize": 35.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776301",
+      "fdcId": 2776301,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776392",
+      "fdcId": 2776392,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776391",
+      "fdcId": 2776391,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776291",
+      "fdcId": 2776291,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776393",
+      "fdcId": 2776393,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776328",
+      "fdcId": 2776328,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776273",
+      "fdcId": 2776273,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776791",
+      "fdcId": 2776791,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776272",
+      "fdcId": 2776272,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776271",
+      "fdcId": 2776271,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776270",
+      "fdcId": 2776270,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776264",
+      "fdcId": 2776264,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776267",
+      "fdcId": 2776267,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 COOKIE",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    },
+    {
+      "id": "FDC-2776265",
+      "fdcId": 2776265,
+      "rawServingSize": 38.0,
+      "rawServingUnit": "GRM",
+      "householdServingFullText": "1 Cookie",
+      "explicitGramValues": [],
+      "status": "no-explicit-household-gram-weight"
+    }
+  ],
+  "activeDataSha256": "48cd60e2dc294d371c31096618a425c1ca4bcaa4de143c3567aff312b7bb2f6a",
+  "sourceSnapshotNotes": "All raw source fields are preserved in the cached official responses. The held normalized record and complete raw food record are retained here for audit. No nutrient values were rescaled or invented.",
+  "limitations": [
+    "Records without explicit household grams do not receive a weight-consistency claim.",
+    "The2g/5% threshold identifies material inconsistencies and does not certify source accuracy.",
+    "The retained30g versus28g/1oz discrepancy remains visibly noted in the product source limit."
+  ]
+}

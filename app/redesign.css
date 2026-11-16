@@ -120,3 +120,19 @@ footer{margin-top:25px;padding-bottom:35px;gap:25px}footer p,footer>div{font-siz
 html.large-text .product-card h3{font-size:19px}html.large-text .product-brand,html.large-text .product-size,html.large-text .field-note,html.large-text .status-badge,html.large-text .allergen-line{font-size:14px}
 html.large-text .product-card .card-nutrient,html.large-text .product-card .card-nutrient small{font-size:16px}html.large-text .data-banner p,html.large-text .data-banner strong{font-size:14px}
 html.large-text .product-card .product-body{min-width:0}html.large-text .product-pricing{max-width:145px}
+
+/* v1.12 source separation and licensed local source photographs. */
+.library-note{padding:10px 13px;margin:8px 0 12px;border:1px solid #c9d7bd;border-radius:10px;background:#f3f7ec;color:#314a35;font-size:13px;line-height:1.55}
+.library-note[hidden]{display:none}.library-note p{margin:0}.library-note p+p{margin-top:8px}.library-note button{color:#25472e;text-decoration:underline}
+.overseas-badge{display:block;color:#4b5c3c;font-size:12px;line-height:1.4;margin-top:5px}
+.product-visual.has-source-photo{display:flex;align-items:center;justify-content:center;background:#fff;padding:2px;height:100%;min-height:0}
+.product-visual.has-source-photo:before,.product-visual.has-source-photo:after{display:none}
+.product-visual.has-source-photo img{width:100%;height:100%;max-height:140px;object-fit:contain;filter:none}
+.detail-heading>.product-visual.has-source-photo{width:110px;height:140px;min-width:90px;border:1px solid #dce3d8;border-radius:12px}
+.source-photo-section summary{cursor:pointer;color:#25472e;font-weight:700;min-height:40px;padding:8px 0}
+.source-photo-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:10px}.source-photo-gallery figure{margin:0;min-width:0}
+.source-photo-gallery img{width:100%;height:260px;object-fit:contain;background:#f8faf4;border:1px solid #dce3d8;border-radius:10px}
+.source-photo-gallery figcaption{font-size:13px;line-height:1.55;color:#40583e;margin-top:6px;overflow-wrap:anywhere}.overseas-source{padding:10px 0;color:#40583e}
+@media(max-width:540px){.source-photo-gallery{grid-template-columns:1fr}.source-photo-gallery img{height:240px}.detail-heading>.product-visual.has-source-photo{width:88px;height:112px;min-width:70px}.overseas-badge{font-size:12px}.library-note{font-size:13px}}
+
+@media(max-width:540px){html .product-card.has-source-photo-card .product-artwork{display:block;position:absolute;left:12px;right:auto;top:12px;width:50px;height:70px;border-radius:7px;background:#fff}html .product-card.has-source-photo-card .product-identity{padding-left:60px;min-height:72px}}

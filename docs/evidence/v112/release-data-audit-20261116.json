@@ -1,0 +1,35 @@
+{
+  "checkedDateHongKong": "2026-11-16",
+  "mode": "Independent all-row cached-official-source audit; no live product API requests",
+  "records": 358,
+  "complete1plus7": 316,
+  "partial1plus7": 42,
+  "nutrientCellsCompared": 3222,
+  "lessThanFields": {
+    "fibre": 111,
+    "sugars": 17,
+    "protein": 22
+  },
+  "lessThanAffectedProducts": 133,
+  "missingSourceFields": {
+    "transFat": 4
+  },
+  "uniqueIds": 358,
+  "uniqueCanonicalGtins": 358,
+  "publicationDateRange": [
+    "2026-07-23",
+    "2026-10-22"
+  ],
+  "heldSourceRecordCount": 1,
+  "heldEvidence": "serving-basis-holds.json",
+  "originalDataUnchanged": 10,
+  "photoOriginals": 4,
+  "photoProducts": 2,
+  "issues": [],
+  "limits": [
+    "Cached official source comparison is not a fresh independent product retrieval.",
+    "Photographs do not verify the current physical batch or complete current allergen statement.",
+    "No medical suitability, real-user or real-device verification.",
+    "The two API searches are a bounded reference subset, not the entire US market."
+  ]
+}

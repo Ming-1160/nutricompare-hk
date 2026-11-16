@@ -1,0 +1,99 @@
+{
+  "data": {
+    "recordCount": 359,
+    "complete1plus7": 317,
+    "publicationDateRange": [
+      "2026-07-23",
+      "2026-10-22"
+    ],
+    "boundRecords": 133,
+    "sha256": "bd5bf511b5a5f11a2b5872950e60fc3a68f3f038a022f4eeb4554655c9cae0a3"
+  },
+  "checks": [
+    {
+      "name": "HK priced remains default1788, no overseas notice",
+      "pass": true
+    },
+    {
+      "name": "actual current USDA file count and no-HK-price/source/market shown",
+      "pass": true,
+      "detail": {
+        "records": 359,
+        "firstId": "FDC-2778830",
+        "card": "KELLOGG'S CHEEZ IT\n\nKellogg's Cheez It Crackers Original 1.5oz\n\n1.5 ONZ · USDA 分類：Biscuits/Cookies\n\nUSDA 海外品牌營養參考\n美國市場資料 · USDA 來源；未核實香港配方\n碳水 59.5g\n糖 0g\n鈉 690mg\n（每100g）\n未有香港價格\n詳情\n比較"
+      }
+    },
+    {
+      "name": "source category is visible on FDC card",
+      "pass": true
+    },
+    {
+      "name": "valid optional file has no missing warning",
+      "pass": true
+    },
+    {
+      "name": "original publication/modification dates and market versus origin are distinguished",
+      "pass": true
+    },
+    {
+      "name": "FDC-2778830 absent trans fat remains unknown",
+      "pass": true
+    },
+    {
+      "name": "FDC-2778836 fibre bound is unknown with note",
+      "pass": true
+    },
+    {
+      "name": "bounded source values have concise detail honesty note",
+      "pass": true
+    },
+    {
+      "name": "FDC-2778584 protein and sugar bounds both remain unknown",
+      "pass": true
+    },
+    {
+      "name": "bounded sugar is unknown and has no false lowest or gap",
+      "pass": true,
+      "detail": {
+        "id": "FDC-2778584",
+        "text": "糖\t—\t2.3 g",
+        "lowest": 0,
+        "gaps": 0
+      }
+    },
+    {
+      "name": "comparison source badge identifies overseas market",
+      "pass": true
+    },
+    {
+      "name": "HKbudget excludes overseas references with clear explanation",
+      "pass": true
+    },
+    {
+      "name": "clearing price restrictions preserves peanuts and unknown-allergy exclusions",
+      "pass": true
+    },
+    {
+      "name": "international count equals existing OFF plus actual USDA",
+      "pass": true,
+      "detail": {
+        "count": "1,616 項食品 · 國際營養參考（OFF＋USDA）"
+      }
+    },
+    {
+      "name": "verified local Vita source thumbnail remains visible on phone",
+      "pass": true
+    },
+    {
+      "name": "source panel credits and bounded-value note visible",
+      "pass": true
+    },
+    {
+      "name": "no page errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "networkMode": "Exact final candidate files fulfilled locally into headlessChrome; no external requests or MaaS prompts."
+}

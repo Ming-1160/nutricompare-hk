@@ -1,4 +1,4 @@
-import { assistantState } from './assistant-state.mjs?v=111';
+import { assistantState } from './assistant-state.mjs?v=112';
 
 export const MAAS_ORIGIN = 'https://maas.eduhk.hk';
 export const RESULT_ORIGIN = 'https://ming-1160.github.io';

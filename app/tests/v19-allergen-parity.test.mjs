@@ -3,8 +3,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFileSync, readdirSync } from 'node:fs';
-import { ALLERGENS, filterProducts, getAllergenAssessment, parseRequest } from '../engine.mjs?v=111';
-import { getExclusionReasons } from '../exclusion-reasons.mjs?v=111';
+import { ALLERGENS, filterProducts, getAllergenAssessment, parseRequest } from '../engine.mjs?v=112';
+import { getExclusionReasons } from '../exclusion-reasons.mjs?v=112';
 import { buildCatalogue, mergeLabelSources } from '../catalogue.mjs';
 import { enrichCatalogue } from '../enrichment.mjs';
 import { applyHkLabelReview } from '../hk-labels.mjs';
@@ -21,8 +21,10 @@ for (const overlay of ['hk-reviewed-labels', 'off-hk-reviewed-labels', 'hk-revie
 }
 
 test('v1.9 data files match the v1.8 ZIP byte for byte', () => {
-  const filenames = readdirSync(dataDirectory).sort();
+  const actualFiles = readdirSync(dataDirectory).sort();
+  const filenames = actualFiles.filter(name => Object.hasOwn(baseline.dataSha256, name));
   assert.deepEqual(filenames, Object.keys(baseline.dataSha256));
+  assert.ok(actualFiles.every(name => Object.hasOwn(baseline.dataSha256, name) || name === 'fdc-nutrition-library.json'), 'only the separate FDC reference library may be added');
   for (const name of filenames) {
     const actual = createHash('sha256').update(readFileSync(new URL(name, dataDirectory))).digest('hex');
     assert.equal(actual, baseline.dataSha256[name], name);

@@ -1,6 +1,7 @@
-import { getAllergenAssessment, getEligiblePrices, nutritionFor } from './engine.mjs?v=111';
-import { hasReviewedHkNutrition } from './hk-labels.mjs?v=111';
-import { getPackNutrition } from './pack-values.mjs?v=111';
+import { getAllergenAssessment, getEligiblePrices, nutritionFor } from './engine.mjs?v=112';
+import { hasReviewedHkNutrition } from './hk-labels.mjs?v=112';
+import { getPackNutrition } from './pack-values.mjs?v=112';
+import { isFdcReference } from './international-library.mjs?v=112';
 
 const finite = value => Number.isFinite(value) ? value : null;
 const metricUnit = key => key === 'energyKcal' ? 'kcal' : key === 'sodiumMg' ? 'mg' : 'g';
@@ -16,6 +17,7 @@ export function getComparisonPackNutrition(product) {
 }
 
 export function getNutritionSourceLabel(product) {
+  if (isFdcReference(product)) return 'USDA 海外品牌營養參考';
   if (hasReviewedHkNutrition(product)) return '香港標籤已讀';
   if (offCommunity(product)) return 'OFF 社群參考';
   if (overseas(product)) return '海外配方參考';
@@ -36,7 +38,10 @@ function nutritionSource(product) {
   const raw = product.sourceNutrition ?? {};
   let candidates = [];
   let type;
-  if (offCommunity(product)) {
+  if (isFdcReference(product)) {
+    candidates = sources.filter(source => { try { return new URL(source.url).hostname === 'fdc.nal.usda.gov' || new URL(source.url).hostname === 'api.nal.usda.gov'; } catch { return false; } });
+    type = 'USDA FoodData Central 海外品牌營養參考（CC0）';
+  } else if (offCommunity(product)) {
     candidates = sources.filter(source => isOff(source) && /社群/i.test(sourceText(source)));
     type = 'OFF 社群參考';
   } else if (product.nutrition?.region === 'HKNA-reference') {

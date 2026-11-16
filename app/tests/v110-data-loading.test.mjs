@@ -1,14 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { ALLERGENS, getAllergenAssessment, nutritionFor } from '../engine.mjs?v=111';
-import { buildCatalogue, mergeLabelSources } from '../catalogue.mjs?v=111';
-import { enrichCatalogue } from '../enrichment.mjs?v=111';
-import { applyHkLabelReview, hkLabelCoverage } from '../hk-labels.mjs?v=111';
+import { ALLERGENS, getAllergenAssessment, nutritionFor } from '../engine.mjs?v=112';
+import { buildCatalogue, mergeLabelSources } from '../catalogue.mjs?v=112';
+import { enrichCatalogue } from '../enrichment.mjs?v=112';
+import { applyHkLabelReview, hkLabelCoverage } from '../hk-labels.mjs?v=112';
 import {
-  DATA_FILES, LABEL_FILES, REQUIRED_FILE, OFF_LABEL_FILE, PRICE_FILES, HK_EXPANSION_FILE, OFF_LIBRARY_FILE, REVIEW_FILES,
+  DATA_FILES, ALL_DATA_FILES, FDC_LIBRARY_FILE, LABEL_FILES, REQUIRED_FILE, OFF_LABEL_FILE, PRICE_FILES, HK_EXPANSION_FILE, OFF_LIBRARY_FILE, REVIEW_FILES,
   assembleDataset, comparingPaused, describeMissing, fetchJson, loadDataFiles, resultsHold,
-} from '../data-loader.mjs?v=111';
+} from '../data-loader.mjs?v=112';
 
 const dataDirectory = new URL('../data/', import.meta.url);
 const files = new Map(DATA_FILES.map(name => [name, JSON.parse(readFileSync(new URL(name, dataDirectory), 'utf8'))]));
@@ -197,10 +197,11 @@ test('files are fetched together, failures are reported, and a retry only asks f
     calls.push(name);
     if (name === OFF_LIBRARY_FILE && libraryAttempts++ === 0) throw new Error('HTTP 503');
     if (name === REVIEW_FILES[1]) return null;
+    if (name === FDC_LIBRARY_FILE) return { metadata:{}, products:[] };
     return files.get(name);
   };
   const first = await loadDataFiles(read);
-  assert.equal(calls.length, DATA_FILES.length);
+  assert.equal(calls.length, ALL_DATA_FILES.length);
   assert.deepEqual(first.failures.map(failure => failure.file).sort(), [OFF_LIBRARY_FILE, REVIEW_FILES[1]].sort());
   assert.equal(first.failures.find(failure => failure.file === OFF_LIBRARY_FILE).reason, 'HTTP 503');
   const degraded = assembleDataset(first.loaded);

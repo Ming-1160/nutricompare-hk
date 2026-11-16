@@ -1,5 +1,6 @@
 /** NutriCompare HK: deterministic search, conservative filters and label arithmetic. */
-import {hasReviewedHkNutrition} from './hk-labels.mjs?v=111';
+import {hasReviewedHkNutrition} from './hk-labels.mjs?v=112';
+import {isFdcReference,isInternationalReference} from './international-library.mjs?v=112';
 
 export const ALLERGENS = Object.freeze([
   'gluten', 'crustaceans', 'eggs', 'fish', 'peanuts', 'soy', 'milk', 'tree-nuts', 'sesame', 'sulphites',
@@ -74,7 +75,7 @@ export function buildBrandIndex(products) {
   if (!brandIndexes.has(products)) {
     const brands = new Map();
     for (const product of products) {
-      if (product.libraryGroup === 'off-library' || /^(?:\(|包裝)/u.test(clean(product.nameZh))) continue;
+      if (isInternationalReference(product) || /^(?:\(|包裝)/u.test(clean(product.nameZh))) continue;
       for (const label of productBrandLabels(product)) {
         const key = brandText(label);
         if (key && !brands.has(key)) brands.set(key, label);
@@ -278,9 +279,22 @@ function unitOf(product) {
   return ['g', 'ml'].includes(product?.nutrition?.basisUnit) ? product.nutrition.basisUnit : null;
 }
 
+function nutritionRankingGroup(product, sort) {
+  const unit = unitOf(product);
+  if (!unit) return null;
+  if (sort !== 'carbs-asc') return { unit };
+  const carbohydrateDefinition = product?.nutrition?.carbohydrateDefinition;
+  // Total and available carbohydrate are different measures. An unspecified definition
+  // can still be displayed, but cannot establish a numeric position in this ranking.
+  return ['available', 'total'].includes(carbohydrateDefinition) ? { unit, carbohydrateDefinition } : null;
+}
+
+const nutritionRankingGroupKey = group => group ? `${group.unit}:${group.carbohydrateDefinition ?? ''}` : null;
+
 /**
- * Unit blocks used by a nutrition ranking, e.g. [{unit:'ml',count:66},{unit:'g',count:7}].
- * Only products with a known value on an explicit g/ml basis are counted. Ties keep first appearance.
+ * Comparable blocks used by a nutrition ranking. Carbohydrate blocks also carry
+ * carbohydrateDefinition ('available' or 'total'). Unknown definitions are not ranked.
+ * Only known values on an explicit g/ml basis are counted. Ties keep first appearance.
  */
 export function rankingGroups(products, sort) {
   const nutritionSort = NUTRITION_SORTS[sort];
@@ -288,10 +302,14 @@ export function rankingGroups(products, sort) {
   const [key] = nutritionSort;
   const counts = new Map();
   for (const product of Array.isArray(products) ? products : []) {
-    const unit = unitOf(product);
-    if (unit && nutritionFor(product)[key] !== null) counts.set(unit, (counts.get(unit) ?? 0) + 1);
+    const group = nutritionRankingGroup(product, sort);
+    const groupKey = nutritionRankingGroupKey(group);
+    if (group && nutritionFor(product)[key] !== null) {
+      const previous = counts.get(groupKey);
+      counts.set(groupKey, { ...group, count:(previous?.count ?? 0) + 1 });
+    }
   }
-  return [...counts].map(([unit, count]) => ({ unit, count })).sort((a, b) => b.count - a.count);
+  return [...counts.values()].sort((a, b) => b.count - a.count);
 }
 
 function compareNullable(left, right, descending = false) {
@@ -310,8 +328,10 @@ export function filterProducts(products, filters = {}) {
   const tokens = queryTokens(filters.query);
   const hasAllergenSelection = Array.isArray(filters.allergens) && filters.allergens.length > 0;
   const filtered = (Array.isArray(products) ? products : []).filter(product => {
-    if(filters.libraryScope==='priced'&&product.libraryGroup==='off-library')return false;
+    if(filters.libraryScope==='priced'&&isInternationalReference(product))return false;
     if(filters.libraryScope==='off-library'&&product.libraryGroup!=='off-library')return false;
+    if(filters.libraryScope==='fdc-library'&&!isFdcReference(product))return false;
+    if(filters.libraryScope==='international'&&!isInternationalReference(product))return false;
     if (filters.dataScope === 'nutrition' && !NUTRIENTS.some(key => numeric(product.nutrition?.[key]) !== null)) return false;
     if (filters.dataScope === 'hk-nutrition' && !hasReviewedHkNutrition(product)) return false;
     if (filters.dataScope === 'comparable' && (!['g','ml'].includes(product.nutrition?.basisUnit)||!NUTRIENTS.some(key=>numeric(product.nutrition?.[key])!==null)))return false;
@@ -331,11 +351,12 @@ export function filterProducts(products, filters = {}) {
   const nutritionSort = NUTRITION_SORTS[filters.sort];
   if (nutritionSort) {
     const [key, descending] = nutritionSort;
-    const value = product => unitOf(product) ? nutritionFor(product)[key] : null;
-    // 100g and 100ml values are never ranked against each other. Each unit is ranked as its own block
-    // (the block with more known values first) and every unknown value follows all known values.
-    const order = rankingGroups(filtered, filters.sort).map(group => group.unit);
-    const block = product => value(product) === null ? order.length : order.indexOf(unitOf(product));
+    const group = product => nutritionRankingGroup(product, filters.sort);
+    const value = product => group(product) ? nutritionFor(product)[key] : null;
+    // Units and carbohydrate definitions each form separate comparable blocks.
+    // Unknown values/definitions follow all known blocks without being numerically ranked.
+    const order = rankingGroups(filtered, filters.sort).map(nutritionRankingGroupKey);
+    const block = product => value(product) === null ? order.length : order.indexOf(nutritionRankingGroupKey(group(product)));
     return filtered.sort((a, b) => block(a) - block(b) || compareNullable(value(a), value(b), descending));
   }
   if (tokens?.length && (!filters.sort || filters.sort === 'relevance')) {

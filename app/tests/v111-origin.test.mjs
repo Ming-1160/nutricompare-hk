@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { filterProducts } from '../engine.mjs?v=111';
-import { filtersFromParams, paramsFromFilters } from '../url-state.mjs?v=111';
-import { comparisonShareUrl } from '../compare-share.mjs?v=111';
+import { filterProducts } from '../engine.mjs?v=112';
+import { filtersFromParams, paramsFromFilters } from '../url-state.mjs?v=112';
+import { comparisonShareUrl } from '../compare-share.mjs?v=112';
 import { products } from './helpers/catalogue.mjs';
 
 const base = { query: '', category: '', budget: null, store: '', allergens: [], origin: '', sort: 'relevance', dataScope: '', libraryScope: 'priced' };

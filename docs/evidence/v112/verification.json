@@ -1,0 +1,52 @@
+{
+  "dateHongKong": "2026-11-13",
+  "version": "1.12",
+  "unitTests": {
+    "total": 236,
+    "pass": 235,
+    "fail": 0,
+    "skip": 1,
+    "skipReason": "Optional original raw Pricewatch snapshot is not bundled"
+  },
+  "targetedInternationalTestsAfterRegionFix": {
+    "pass": 7,
+    "fail": 0
+  },
+  "browserChecks": {
+    "pass": 17,
+    "fail": 0,
+    "pageErrors": 0,
+    "mode": "Headless Chromium using exact candidate files, no live MaaS requests"
+  },
+  "usda": {
+    "records": 359,
+    "complete1plus7": 317,
+    "partial1plus7": 42,
+    "lessThanDerivedFieldsMaskedUnknown": 150,
+    "productsWithBounds": 133,
+    "nutrientCellsComparedToSavedOfficialResponses": 3231,
+    "mismatches": 0,
+    "marketCountries": [
+      "United States"
+    ],
+    "publicationDateRange": [
+      "2026-07-23",
+      "2026-10-22"
+    ],
+    "sourceLicense": "CC0-1.0"
+  },
+  "images": {
+    "existingProducts": 2,
+    "localOriginalJpegs": 4,
+    "sourceLicense": "CC-BY-SA-3.0",
+    "modified": false
+  },
+  "sourceDataSha256": "bd5bf511b5a5f11a2b5872950e60fc3a68f3f038a022f4eeb4554655c9cae0a3",
+  "originalDataFilesUnchanged": 10,
+  "limits": [
+    "No physical-pack, real-user or real-device verification",
+    "Full live AI answer-to-import flow remains unverified",
+    "No claim of complete accessibility audit",
+    "Old bulk-prefix trial rejected; only current API snapshot released"
+  ]
+}

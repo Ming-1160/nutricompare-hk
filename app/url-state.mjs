@@ -4,12 +4,12 @@
  * Every value is checked against a fixed list; anything unknown is reported and ignored, never guessed.
  * A link can only add allergy exclusions. It can never weaken the deterministic allergy exclusion.
  */
-import { ALLERGENS, brandDroppedNotice, getAllergenAssessment, parseRequestWithBrandFallback, readAllergenPhrase, searchQueryLimitations } from './engine.mjs?v=111';
+import { ALLERGENS, brandDroppedNotice, getAllergenAssessment, parseRequestWithBrandFallback, readAllergenPhrase, searchQueryLimitations } from './engine.mjs?v=112';
 
 export const CATEGORY_IDS = Object.freeze(['biscuits', 'snacks', 'drinks', 'bakery', 'dairy', 'pantry', 'meals']);
 export const SORT_IDS = Object.freeze(['relevance', 'price-asc', 'unit-price-asc', 'carbs-asc', 'sugar-asc', 'sodium-asc', 'protein-desc']);
 export const DATA_SCOPES = Object.freeze(['nutrition', 'hk-nutrition', 'comparable', 'hk-label']);
-const LIBRARY_SCOPES = new Map([['priced', 'priced'], ['off-library', 'off-library'], ['all', '']]);
+const LIBRARY_SCOPES = new Map([['priced', 'priced'], ['off-library', 'off-library'], ['international', 'international'], ['fdc-library', 'fdc-library'], ['all', '']]);
 
 /** Parameter names, plus the spellings an AI or a person may use instead. Matching ignores letter case. */
 const KEY_ALIASES = new Map([

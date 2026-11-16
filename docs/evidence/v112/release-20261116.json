@@ -1,0 +1,63 @@
+{
+  "dateHongKong": "2026-11-16",
+  "version": "1.12",
+  "baseCommit": "5dc1011d4bb66ffeb539fa8050833647498617de",
+  "unitTests": {
+    "total": 240,
+    "pass": 239,
+    "fail": 0,
+    "skip": 1,
+    "skipReason": "Optional original raw Pricewatch snapshot is not bundled"
+  },
+  "fdc": {
+    "activeRecords": 358,
+    "complete1plus7": 316,
+    "partial1plus7": 42,
+    "heldFromPreliminaryCandidate": 1,
+    "sourceHold": "FDC-2774415:245g versus 1 Pack (36g)",
+    "sourceSha256": "48cd60e2dc294d371c31096618a425c1ca4bcaa4de143c3567aff312b7bb2f6a",
+    "nutrientCellsCompared": 3222,
+    "mismatches": 0,
+    "boundFieldsUnknown": 150,
+    "recordsWithBounds": 133
+  },
+  "photos": {
+    "products": 2,
+    "unchangedOriginalJpegs": 4,
+    "license": "CC-BY-SA-3.0",
+    "author": "macrofactor / Open Food Facts contributors"
+  },
+  "originalHkJsonUnchanged": 10,
+  "liveAiCase": {
+    "query": "惠康有冇低糖檸檬茶？每包20蚊以下。",
+    "mode": "Actual MaaS share iframe in in-app Chromium, local final candidate",
+    "replyLinkAutomaticallyPrefilled": true,
+    "explicitConfirmationBeforeApply": true,
+    "finalScope": "priced",
+    "store": "WELLCOME",
+    "budget": 20,
+    "sort": "sugar-asc",
+    "resultCount": 5,
+    "iframeRemovedOnClose": true,
+    "participantStudy": false
+  },
+  "browserObservations": [
+    "Default HK catalogue1788",
+    "USDA358 after source hold",
+    "GTIN/source market/no HK price displayed",
+    "International scope and all-data counts recomputed from active library",
+    "Clear HK budget/store restrictions retains selected peanuts",
+    "Total/available carbohydrate groups separate; unknown definitions unranked",
+    "Actual source-photo card and expandable gallery author/date/license links",
+    "390px browser viewport; no real-phone claim",
+    "Both root and app entry points loaded"
+  ],
+  "limitations": [
+    "Old HK price snapshot21Oct2026",
+    "No real-phone or user study",
+    "Not exhaustive live AI acceptance",
+    "Comparison explanation stays disabled",
+    "No complete accessibility certification",
+    "1,000 HK-source target remains unmet"
+  ]
+}

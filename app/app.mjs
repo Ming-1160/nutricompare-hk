@@ -1,16 +1,17 @@
-import { filterProducts, getEligiblePrices, getMinPrice, getAllergenAssessment, nutritionFor, parseRequestWithBrandFallback, rankingGroups, searchQueryLimitations, buildBrandIndex } from './engine.mjs?v=111';
-import { filtersFromParams, paramsFromFilters } from './url-state.mjs?v=111';
-import { initEmbeddedAssistant } from './embedded-ai.mjs?v=111';
-import { assistantState } from './assistant-state.mjs?v=111';
-import { hkLabelCoverage, hasReviewedHkNutrition } from './hk-labels.mjs?v=111';
-import { getPackPrices, getPackNutrition, rankByUnitPrice } from './pack-values.mjs?v=111';
-import { findAlternatives, getComparisonPackNutrition, getNutrientEvidence, getNutritionSourceLabel } from './nutrition-evidence.mjs?v=111';
-import { comparisonShareUrl, qrSvg, shareComparison, whatsappShareUrl } from './compare-share.mjs?v=111';
-import { getExclusionReasons } from './exclusion-reasons.mjs?v=111';
-import { valueSpread } from './compare-highlights.mjs?v=111';
-import { summariseConnections, summariseStorage } from './privacy-receipt.mjs?v=111';
-import { buildExplainText, plainNumber } from './ai-explain.mjs?v=111';
-import { HK_EXPANSION_FILE, OFF_LABEL_FILE, OFF_LIBRARY_FILE, REVIEW_FILES, assembleDataset, comparingPaused, describeMissing, fetchJson, loadDataFiles, resultsHold } from './data-loader.mjs?v=111';
+import { filterProducts, getEligiblePrices, getMinPrice, getAllergenAssessment, nutritionFor, parseRequestWithBrandFallback, rankingGroups, searchQueryLimitations, buildBrandIndex } from './engine.mjs?v=112';
+import { filtersFromParams, paramsFromFilters } from './url-state.mjs?v=112';
+import { initEmbeddedAssistant } from './embedded-ai.mjs?v=112';
+import { getProductPhotoSet } from './product-photos.mjs?v=112';
+import { assistantState } from './assistant-state.mjs?v=112';
+import { hkLabelCoverage, hasReviewedHkNutrition } from './hk-labels.mjs?v=112';
+import { getPackPrices, getPackNutrition, rankByUnitPrice } from './pack-values.mjs?v=112';
+import { findAlternatives, getComparisonPackNutrition, getNutrientEvidence, getNutritionSourceLabel } from './nutrition-evidence.mjs?v=112';
+import { comparisonShareUrl, qrSvg, shareComparison, whatsappShareUrl } from './compare-share.mjs?v=112';
+import { getExclusionReasons } from './exclusion-reasons.mjs?v=112';
+import { valueSpread } from './compare-highlights.mjs?v=112';
+import { summariseConnections, summariseStorage } from './privacy-receipt.mjs?v=112';
+import { buildExplainText, plainNumber } from './ai-explain.mjs?v=112';
+import { HK_EXPANSION_FILE, OFF_LABEL_FILE, OFF_LIBRARY_FILE, REVIEW_FILES, assembleDataset, comparingPaused, describeMissing, fetchJson, loadDataFiles, resultsHold } from './data-loader.mjs?v=112';
 
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -61,6 +62,8 @@ let linkReady=false;
 let linkSignature=null;
 /** Data files that have not arrived. Empty once everything is loaded. */
 let missingFiles=[];
+/** Optional overseas reference failures never pause the Hong Kong catalogue. */
+let optionalMissingFiles=[];
 /** Why results are held back while data is missing ('labels', 'allergy' or ''); the rules are in data-loader.mjs. */
 const holdReason=()=>resultsHold(missingFiles,filters.allergens);
 /**
@@ -75,6 +78,34 @@ function toast(message) { $('toast').textContent=message; $('toast').hidden=fals
 function brandName(product) { return typeof product.brand === 'object' ? product.brand['zh-Hant'] ?? product.brand.zh ?? product.brand.en ?? '' : product.brand ?? ''; }
 function productNameWithBrand(product) {
   return [brandName(product)||product.brandEn,product.nameZh||product.nameEn].filter(Boolean).join(' · ');
+}
+const isFdcReference = product => product?.nutritionSourceFamily==='usda-fdc-reference'||product?.libraryGroup==='fdc-library';
+const isUnpricedReference = product => isFdcReference(product)||product?.libraryGroup==='off-library';
+const libraryScopeLabel = scope => ({international:'國際營養參考（OFF＋USDA）','fdc-library':'USDA 海外品牌食品參考','off-library':'OFF 社群營養參考庫','':'全部資料庫'}[scope]??'全部資料庫');
+const fdcMarketLabel = product => ({'United States':'美國','New Zealand':'紐西蘭'}[product?.marketCountry]??product?.marketCountry??'來源市場未列');
+const FDC_BOUND_NOTE='部分原標數值只有「少於」上限，未當成確實數字比較；詳情請睇USDA來源。';
+function fdcDateLabel(value) {
+  const us=typeof value==='string'&&value.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  return us?`${us[3]}年${Number(us[1])}月${Number(us[2])}日`:dateLabel(value,'未提供');
+}
+function referenceCountryText(product) {
+  if(isFdcReference(product))return `${fdcMarketLabel(product)}市場資料 · USDA 來源；未核實香港配方 · ${product.barcode?`條碼 ${product.barcode}`:`來源編號 ${product.id}`}`;
+  return '';
+}
+function referenceDetailMarkup(product) {
+  if(isFdcReference(product)){
+    const meta=product.fdcMetadata??{};
+    return `<div class="source-scope overseas-source"><p><strong>資料市場：${esc(fdcMarketLabel(product))} · 來源：USDA FoodData Central。</strong>呢個係海外品牌食品紀錄，唔等同香港現售包裝；來源國家唔代表生產地。未有香港價格或購買渠道，亦未核實完整過敏聲明。</p><p>來源發布日期：${esc(fdcDateLabel(meta.publicationDate??meta.publishedDate??product.publishedDate))}；來源修改日期：${esc(fdcDateLabel(meta.modifiedDate))}。匯出版本日期唔代表每款商品資料同日更新，亦唔代表目前有售。</p>${meta.boundNutrients?.length?`<p class="fdc-bound-note">${esc(FDC_BOUND_NOTE)}</p>`:''}</div>`;
+  }
+  const tags=product.offMetadata?.countryTags;
+  if(Array.isArray(tags)&&tags.length)return `<p class="source-scope">OFF 社群市場標記：${esc(tags.map(tag=>String(tag).replace(/^en:/,'')).join('、'))}。呢啲係社群標記，唔代表生產地、目前有售或香港配方相同。</p>`;
+  return '';
+}
+function photoEvidenceMarkup(product) {
+  const set=getProductPhotoSet(product);
+  if(!set)return '';
+  const authors=[...new Set(set.images.map(photo=>photo.author))].join('、');
+  return `<section class="detail-section source-photo-section"><h3>來源包裝照片</h3><p>照片：${esc(authors)}／Open Food Facts contributors · ${link('https://creativecommons.org/licenses/by-sa/3.0/','CC BY-SA 3.0')}。原始 JPEG 未修改；包裝設計及商標權利另屬權利人。</p><p>${esc(set.sourceLimit)} 照片日期係上載日期，唔係本組核對現售實物嘅日期；照片唔會自動補齊營養或過敏資料。</p><details><summary>查看正面、營養標籤與逐張署名</summary><div class="source-photo-gallery">${set.images.map(photo=>`<figure><a href="${esc(photo.path)}" target="_blank" rel="noopener noreferrer"><img src="${esc(photo.path)}" loading="lazy" decoding="async" alt="${esc(productNameWithBrand(product))} · ${photo.role==='front'?'來源正面照片':'來源營養標籤照片'}"></a><figcaption>${photo.role==='front'?'正面':'營養標籤'} · ${esc(photo.author)} · ${esc(dateLabel(photo.uploadedAt))}<br>${link(photo.sourceUrl,'原始來源照片')} · ${link(photo.licenseUrl,photo.license)}</figcaption></figure>`).join('')}</div></details></section>`;
 }
 function productUnit(product) { return ['g','ml'].includes(product.nutrition?.basisUnit)?product.nutrition.basisUnit:null; }
 function packPriceLines(product,price) {
@@ -127,6 +158,8 @@ function allergyLabel(product) {
   return {text:list?`已知含有：${list}；資料未齊`:'過敏資料未齊，未能確認',cls:''};
 }
 function foodArt(product,index=0) {
+  const photo=getProductPhotoSet(product)?.images.find(image=>image.role==='front');
+  if(photo)return `<div class="product-visual has-source-photo" aria-hidden="true"><img src="${esc(photo.path)}" loading="lazy" decoding="async" width="110" height="140" alt=""><span class="visual-caption">來源包裝照片</span></div>`;
   const kind=['biscuits','snacks','drinks','bakery','dairy','pantry','meals'].includes(product.category)?product.category:'all';
   return `<div class="product-visual tone-${index%5+1}" aria-hidden="true"><svg viewBox="0 0 40 40"><use href="assets/categories.svg#${kind}"></use></svg><span class="visual-caption">品類示意圖</span></div>`;
 }
@@ -142,15 +175,16 @@ function productCard(product,index) {
   if(filters.sort==='protein-desc')cardNutrients.push(['protein','蛋白質','g']);
   const offer=(product.offers??[]).some(item=>(!filters.store||item.store===filters.store)&&(item.textZh||item.textEn));
   const productName=product.nameZh||product.nameEn;
-  return `<article class="product-card${chosen?' selected':''}" data-product="${esc(product.id)}">
+  return `<article class="product-card${chosen?' selected':''}${getProductPhotoSet(product)?' has-source-photo-card':''}" data-product="${esc(product.id)}">
     <div class="product-artwork">${foodArt(product,index)}</div>
     <div class="product-body">
       <div class="product-identity">
         <p class="product-brand">${esc(brandName(product))}</p>
         <h3>${esc(productName)}</h3>
-        <p class="product-size">${esc(product.packSize??'包裝待確認')} · ${esc(categories[product.category]??'包裝食品')}</p>
+        <p class="product-size">${esc(product.packSize??'包裝待確認')} · ${esc(isFdcReference(product)&&product.fdcMetadata?.foodCategory?`USDA 分類：${product.fdcMetadata.foodCategory}`:categories[product.category]??'包裝食品')}</p>
       </div>
       <div class="product-badges"><span class="status-badge${complete?'':' partial'}">${sourceStatus}</span>
+        ${referenceCountryText(product)?`<span class="overseas-badge">${esc(referenceCountryText(product))}</span>`:''}
         ${offer?'<span class="offer-badge" title="來源記有優惠，請向商戶確認">有優惠紀錄</span>':''}
       </div>
       <div class="nutrient-heading">${esc(basisLabel(product))}</div>
@@ -163,8 +197,8 @@ function productCard(product,index) {
       </div>
       <p class="allergen-line ${a.cls}">${esc(a.text)}</p>
       <div class="product-pricing">
-        <div class="price-line"><span class="price">${price===null?'價格待補':`<small>HK$</small>${money(price)}<span class="price-from">${filters.store?'':'起'}</span>`}</span><span class="merchant-count">${prices.length} 個渠道</span></div>
-        <p class="merchant-label">${esc(prices.length?stores[prices[0].store]??prices[0].store:'暫無已核實價格')}${prices.length?' · 整包單件價':''}</p>
+        <div class="price-line"><span class="price">${price===null?(isUnpricedReference(product)?'未有香港價格':'價格待補'):`<small>HK$</small>${money(price)}<span class="price-from">${filters.store?'':'起'}</span>`}</span><span class="merchant-count">${isUnpricedReference(product)?'營養參考':`${prices.length} 個渠道`}</span></div>
+        <p class="merchant-label">${esc(prices.length?stores[prices[0].store]??prices[0].store:(isUnpricedReference(product)?'海外來源；香港價格及渠道未核實':'暫無已核實價格'))}${prices.length?' · 整包單件價':''}</p>
         ${cardUnitPrice(product,price)}
       </div>
       <div class="card-actions">
@@ -195,7 +229,7 @@ function activeFilterEntries() {
   if(filters.store)entries.push(['store',stores[filters.store]??filters.store]);
   if(filters.origin)entries.push(['origin',`產地：${filters.origin}`]);
   if(filters.dataScope)entries.push(['dataScope',filters.dataScope==='nutrition'?'有營養參考數值':filters.dataScope==='hk-nutrition'?'香港營養來源已讀':filters.dataScope==='comparable'?'明確每100g／ml基準':'香港完整過敏聲明']);
-  if(filters.libraryScope!=='priced')entries.push(['libraryScope',filters.libraryScope==='off-library'?'OFF擴展營養參考庫':'全部資料庫']);
+  if(filters.libraryScope!=='priced')entries.push(['libraryScope',libraryScopeLabel(filters.libraryScope)]);
   filters.allergens.forEach(id=>entries.push([`allergen:${id}`,`避開${allergens[id]??id}`]));
   if(filters.sort&&filters.sort!=='relevance')entries.push(['sort',`排序：${sortLabels[filters.sort]??filters.sort}`]);
   return entries;
@@ -263,7 +297,8 @@ function render() {
   $('search-feedback').textContent=queryWarnings.join(' ');
   $('search-feedback').hidden=!queryWarnings.length;
   $('result-count').textContent=hold==='labels'?'標籤資料未載入齊 · 暫時唔顯示食品':hold?'資料未載入齊 · 暫停顯示過敏篩選結果':filters.allergens.length?`${number(results.length)} 項來源未列所選過敏原`:
-    `${number(results.length)} 項食品${filters.libraryScope==='off-library'?' · OFF 參考庫':filters.libraryScope==='all'?' · 全部資料庫':''}`;
+    `${number(results.length)} 項${['fdc-library','international','off-library'].includes(filters.libraryScope)?'參考紀錄':'食品'}${filters.libraryScope!=='priced'?` · ${libraryScopeLabel(filters.libraryScope)}`:''}`;
+  renderLibraryNotice();
   $('product-grid').innerHTML=hold?holdMessage(hold):results.slice(0,visibleCount).map(productCard).join('');
   $('load-more').hidden=visibleCount>=results.length;
   $('page-status').textContent=results.length?`顯示 ${Math.min(visibleCount,results.length)} / ${results.length} 項；搜尋及篩選已涵蓋全部資料。`:'';
@@ -271,8 +306,11 @@ function render() {
   $('empty-state').hidden=Boolean(hold)||results.length>0;
   renderExclusions();
   const groups=unitRanking?unitRanking.groups:rankingGroups(results,filters.sort);
-  $('sort-note').hidden=groups.length<2;
-  $('sort-note').textContent=groups.length<2?'':`已按單位分開排名：先列 ${groups.map(g=>`${number(g.count)} 項每100${g.unit}`).join('，再列 ')}；兩組數值唔可以互相比較，未知數值排最後。`;
+  const carbohydrateSort=filters.sort==='carbs-asc';
+  $('sort-note').hidden=!carbohydrateSort&&groups.length<2;
+  $('sort-note').textContent=carbohydrateSort
+    ?`碳水只按相同單位及定義分組排名${groups.length?`：先列 ${groups.map(g=>`${number(g.count)} 項每100${g.unit}（${g.carbohydrateDefinition==='available'?'可利用碳水':'總碳水'}）`).join('，再列 ')}`:'：未有定義及數值明確嘅可排名項目'}。不同組別唔可以直接比較；定義或數值未知嘅項目排最後，未作數值排序。`
+    :groups.length<2?'':`已按單位分開排名：先列 ${groups.map(g=>`${number(g.count)} 項每100${g.unit}`).join('，再列 ')}；各組數值唔可以互相比較，未知數值排最後。`;
   renderActiveFilters();
   renderTray();
   renderEmptyActions();
@@ -405,6 +443,10 @@ function renderDetail(product) {
   const prices=getEligiblePrices(product).sort((a,b)=>a.price-b.price);
   const label=product.allergens??{};
   $('detail-content').innerHTML=`<div class="detail-heading">${foodArt(product,index)}<div><p>${esc(brandName(product))}</p><h2>${esc(product.nameZh??product.nameEn)}</h2><p>${esc(product.nameEn??'')}</p><p>${esc(product.packSize??'包裝待確認')} · 產地：${esc(product.origin??'未確認')}</p>${product.offMetadata?`<p class="source-scope">OFF 來源最後修改：${esc(String(product.offMetadata.lastModifiedAt??'未提供').slice(0,10))} · ${esc(product.offMetadata.sourceApi??'社群資料')} · 未逐張核對香港包裝</p>`:''}${product.barcode?`<p>來源條碼：${esc(product.barcode)}</p>`:''}</div></div>${warning?`<div class="inline-notice amber">${esc(warning)}</div>`:''}${product.sourceCategory?`<p class="source-scope">消委會分類：${esc([product.sourceCategory.zh,...(product.sourceCategory.pathZh??[])].filter(Boolean).join(" / "))} · 商品代號 ${esc(product.id)}（非條碼）</p>`:''}<section class="detail-section"><h3>營養標籤比較</h3>${detailNutritionTable(product)}<p>碳水定義：${esc(carbDefinition(product))}。糖係碳水化合物嘅一部分；本頁唔計算「淨碳水」。</p><p><button type="button" class="text-button" data-open-label-lesson>點樣睇營養標籤？</button></p>${notesText(product)?`<p>${esc(notesText(product))}</p>`:''}</section><section class="detail-section" data-allergen-evidence><h3>成分與過敏聲明</h3>${missingFiles.length?'<p class="inline-notice amber">部分資料未載入，呢度嘅過敏聲明可能唔完整。請關閉呢個視窗，再撳結果上面嘅「再試一次」。</p>':''}<p><strong>資料狀態：</strong>${label.status==='complete'?'已記錄指定版本完整聲明；仍須核對當前包裝':'未完整核實，不能用作確認過敏安全'}</p><p><strong>已知含有：</strong>${esc(label.contains?.length?label.contains.map(id=>allergens[id]??id).join('、'):'未列出／未能確認')}</p><p><strong>已知可能含有：</strong>${esc(label.mayContain?.length?label.mayContain.map(id=>allergens[id]??id).join('、'):'未列出／未能確認')}</p>${label.text?`<p>${esc(label.text)}</p>`:''}${product.ingredients||product.ingredientsSummary?`<p><strong>成分資料摘要：</strong>${esc(product.ingredientsSummary??(typeof product.ingredients==='string'?product.ingredients:product.ingredients.text??'見原始來源'))}</p>`:''}<p>未列出唔代表不存在。對食品過敏者應核對實物包裝，必要時直接向生產商確認。</p></section><section class="detail-section"><h3>香港價格與購買渠道</h3><p>整包單件價格快照。單位價按標示淨重／容量計，優惠另列。</p>${merchantPriceRows(product,prices)}</section>${product.offers?.length?`<section class="detail-section"><h3>來源優惠備註</h3><p>以下只保留原始優惠文字，未套入單件預算；適用日期、會員及購買數量請向商戶核實。</p>${product.offers.map(offer=>`<p><strong>${esc(stores[offer.store]??offer.store)}：</strong>${esc(offer.textZh||offer.textEn||'見來源')}</p>`).join('')}</section>`:''}<section class="detail-section"><h3>逐項資料來源</h3>${sourceLinks(product)}</section><div style="margin-top:20px"><button class="secondary-button" data-detail-compare="${esc(product.id)}">${selected.includes(product.id)?'從比較移除':'加入營養比較'}</button></div>`;
+  const referenceNote=referenceDetailMarkup(product);
+  if(referenceNote)$('detail-content').querySelector('.detail-heading').insertAdjacentHTML('afterend',referenceNote);
+  const photoEvidence=photoEvidenceMarkup(product);
+  if(photoEvidence)$('detail-content').insertAdjacentHTML('beforeend',photoEvidence);
   const action=$('detail-content').querySelector('[data-detail-compare]');
   if(filters.allergens.length&&getAllergenAssessment(product,filters.allergens).status!=='no-listed-match')action.parentElement.remove();
   // Suggested alternatives compare figures between foods, so they wait for complete data like the comparison does.
@@ -594,7 +636,7 @@ function renderComparison(){
       <table class="comparison-table comparison-${chosen.length}">
         <thead><tr><th scope="col">項目</th>${chosen.map(product=>`<th scope="col">
           <span class="compare-product-name">${esc(product.nameZh||product.nameEn)}</span>
-          <span class="comparison-source-badge">${esc(getNutritionSourceLabel(product))}</span>
+          <span class="comparison-source-badge">${esc(getNutritionSourceLabel(product))}${isFdcReference(product)?` · ${esc(fdcMarketLabel(product))}`:''}</span>
           ${comparisonBasis==='package'?`<span class="table-small">${esc(comparisonPackLabel(getComparisonPackNutrition(product)))}</span>`:''}
           <button type="button" class="comparison-remove" data-remove-compare="${esc(product.id)}" aria-label="移除 ${esc(product.nameZh||product.nameEn)}">移除 ×</button>
         </th>`).join('')}</tr></thead>
@@ -622,6 +664,24 @@ function showPortionError(invalid) {
   error.hidden=!invalid;
   error.textContent=invalid?'請輸入大於 0、最多 10000 嘅份量。數值未有效前，營養換算保留未知。':'';
 }
+function renderLibraryNotice() {
+  const note=$('library-note');
+  if(!note)return;
+  const scope=filters.libraryScope;
+  if(scope==='priced'){note.hidden=true;note.innerHTML='';return;}
+  const includesFdc=scope===''||scope==='international'||scope==='fdc-library';
+  const missing=includesFdc&&optionalMissingFiles.length>0;
+  const description=scope==='off-library'?'OFF 係社群營養參考，市場標記唔代表現售配方；未有已核實香港價格。':scope==='fdc-library'?'USDA 海外品牌食品資料按每項紀錄標明來源市場，唔等同香港現售配方；未有香港價格或完整過敏核對。':'國際參考包含 OFF 社群資料及 USDA 海外品牌資料，唔等同香港現售配方；未有香港價格或完整過敏核對。';
+  const priceLimited=filters.budget!==null||Boolean(filters.store);
+  note.innerHTML=`<p>${esc(description)}${priceLimited?' 海外參考項目沒有香港價格；預算／商戶篩選會排除這些項目。':''}</p>${priceLimited?'<p><button type="button" class="text-button" data-clear-reference-prices>清除預算及商戶限制</button>（保留過敏及其他條件）</p>':''}${missing?'<p><strong>USDA 參考庫暫未載入；其他已載入資料照常使用。</strong> <button type="button" class="text-button" data-retry-load>重試 USDA 參考庫</button></p>':''}`;
+  note.hidden=false;
+}
+function internationalSourceCredits() {
+  const fdc=dataset?.nutritionLibraries?.fdc;
+  const count=products.filter(isFdcReference).length;
+  const bounded=products.some(product=>isFdcReference(product)&&product.fdcMetadata?.boundNutrients?.length);
+  return `<div class="source-card"><h3>USDA FoodData Central：海外品牌食品參考</h3><p>${count?`另外收錄 ${number(count)} 項海外品牌食品紀錄。`:'USDA 參考庫未載入或未有可用紀錄。'}來源係 USDA 官方品牌食品資料；以每100g原始數值作參考，各項紀錄標明資料市場，唔等同香港現售配方，沒有香港價格或完整過敏核對。新紀錄唔會覆寫香港食品，亦唔計入1,000款香港來源目標。${fdc?.releaseDate?`來源版本：${esc(fdc.releaseDate)}。`:''}逐項FDC識別碼見原始資料。</p>${bounded?`<p>${esc(FDC_BOUND_NOTE)}</p>`:''}<p>${link('https://fdc.nal.usda.gov/','USDA FoodData Central')} · ${link(fdc?.sourceDocumentation??'https://fdc.nal.usda.gov/','USDA 資料說明')} · ${link('https://creativecommons.org/publicdomain/zero/1.0/','CC0 1.0 公有領域奉獻')}</p><p><a class="source-link" href="data/fdc-nutrition-library.json" target="_blank" rel="noopener noreferrer">本次原始數值、版本、來源及篩選紀錄 ↗</a></p><p>本地包裝照片：macrofactor／Open Food Facts contributors，${link('https://creativecommons.org/licenses/by-sa/3.0/','CC BY-SA 3.0')}；逐張日期、原圖及署名喺食品詳情。兩款維他照片本來已有已讀來源；下載圖片唔代表新增營養覆蓋。</p></div>`;
+}
 function renderSources(){
   const dated=snapshotLabel();
   const nutritionCount=products.filter(hasNutrition).length;
@@ -629,6 +689,7 @@ function renderSources(){
   const imported=dataset?.imports?.pricewatch;
   const prices=products.reduce((sum,p)=>sum+(p.prices??[]).length,0);
   $('sources-content').innerHTML=`<p>網站收錄 <strong>${number(products.length)} 項食品</strong>、${number(prices)} 筆商戶價格。${nutritionCount} 項有部分或完整營養數值；${completeCount} 項有指定香港來源完整過敏聲明。大量格價記錄唔等於大量已核對營養／過敏標籤。</p><div class="source-card"><h3>消費者委員會「格價資訊通」：已批量匯入</h3><p>${imported?`已匯入 ${number(imported.importedCount)} 項一般食品、${number(imported.priceObservationCount)} 筆價格，涵蓋 ${imported.merchantCount} 個商戶代碼，包括惠康、百佳、Market Place 及 AEON。`:'整批資料暫未載入，目前只顯示逐件核對記錄。'}來源提供中英文品牌、商品、分類、規格名稱、各店單件價及優惠文字；沒有營養、成分、過敏原、條碼或即時庫存。擷取：${esc(dated)}；唔係即時價格。官方每日更新，本網站係已儲存快照，未有自動每日同步。</p>${link('https://data.gov.hk/tc-data/dataset/cc-pricewatch-pricewatch','DATA.GOV.HK 官方資料集','source-link')}${link('https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch.json','消委會原始價格資料','source-link')}${link('https://online-price-watch.consumer.org.hk/opw/opendata/pricewatch_data_dictionary.pdf','欄位說明','source-link')}<p>${imported?`原檔 ${number(imported.rawRecordCount)} 項，排除 ${number(imported.excludedRecordCount)} 項酒類、家居／寵物用品、個人護理及混合奶粉／嬰兒用品組；因此成人奶粉亦暫未涵蓋。`:''}只涵蓋官方清單所列商戶及商品，唔代表全港超市所有商品。P 開頭來源代號唔係條碼；只在另有品牌、口味及容量一致證據時配對參考營養，唔會單靠相似名稱混配。</p></div><div class="source-card"><h3>惠康、百佳與香港品牌：逐件補充標籤</h3><p>香港價格由消委會清單提供；可取得嘅香港品牌／零售商商品頁及背標照片，另作逐件核對。商戶連結會標示係商品頁、商戶主頁或格價資料頁。已由惠康公開商品詳情取得對應包裝圖並逐張閱讀，並非全庫營養／過敏表。部分圖庫混有不同口味或容量舊圖，已按可見身份扣起；百佳部分頁面未能存取，未繞過限制。</p></div><div class="source-card"><h3>政府食安中心 NIIS：一般食物營養參考</h3><p>政府資料庫可查一般食物營養；品牌、配方及批次可以不同，平均值不能代填某款包裝食品嘅營養或過敏聲明。本網站提供官方查詢入口，未將其整個資料庫複製公開；食安中心再分發條款要求事先書面授權。</p>${link('https://www.cfs.gov.hk/tc_chi/nutrient/','到政府 NIIS 查詢','source-link')}${link('https://www.cfs.gov.hk/english/notices/notices.html','政府資料使用條款','source-link')}${link('https://www.cfs.gov.hk/english/faq/faq_14.html','營養標籤 FAQ','source-link')}</div><div class="source-card"><h3>香港營養學會 HKNA</h3><p>已閱讀2026年飲品及食品兩份共39頁表格，選取同品牌、口味及個別包裝容量一致嘅營養事實；原表有320項，未整庫複製。能量按明示單包容量換算，未提供嘅總碳水等維持未知。學生小食分類唔係糖尿病患者適合標準，未有用一般食品平均值填補品牌數字。</p>${link('https://www.hkna.org.hk/database-of-prepackaged-snacks-2026/','HKNA 官方資料庫介紹','source-link')}</div><h3>篩選及比較方式</h3><ul><li>預算按所選商戶嘅整包單件價計算；未套用會員、多件優惠、運費，未知價格唔當零。</li><li>過敏篩選排除含有、可能含有及資料不足。大量新增價格記錄唔會自動通過過敏條件；未列出唔等於保證安全。</li><li>已確認基準可按每100g／100ml或自訂份量計算；OFF舊索引未區分g／ml時只顯示每100單位原值，禁止份量換算及營養排名；缺失值保留未知；唔作藥物相容性或整日膳食判斷。</li><li>每次先顯示24項；搜尋及篩選涵蓋整個已載入資料庫。</li><li>AI 條件助手（EdUHK MaaS）只會建議條件同連結，網站會逐項驗證，未能辨認嘅過敏原會提示；AI 唔會自己提供產品數字。小組測試完成之後，比較表先會出現「叫 AI 解釋」，到時 AI 亦只可以讀出你貼俾佢、由網站整理嘅比較數字。「一句話篩選」係固定字詞，唔係生成式 AI，喺你部機處理。網站冇要求登入或儲存病歷、藥物及過敏資料。</li><li>每100ml 同每100g 會分開排名；比較表嘅「最低」只係同一基準下嘅數字比較。</li></ul><p>價格資料擁有權：消費者委員會。來源：消費者委員會「格價資訊通」及 DATA.GOV.HK。資料供應方沒有認可或背書本學生原型。品牌及零售商保留各自權利。</p>${link('https://data.gov.hk/en/terms-and-conditions','DATA.GOV.HK 使用條款','source-link')}<p><a href="data/products.json" target="_blank" rel="noopener">逐件核對嘅標籤資料 ↗</a> · <a href="data/pricewatch-meta.json" target="_blank" rel="noopener">整批匯入範圍及日期 ↗</a> · <a href="data/pricewatch-foods.json" target="_blank" rel="noopener">本網站食品價格快照 ↗</a></p>`;
+  $('sources-content').insertAdjacentHTML('afterbegin',internationalSourceCredits());
 }
 
 function addOpenFoodFactsSources(){
@@ -779,6 +840,7 @@ function wireEvents(){
   });
   $('load-more').addEventListener('click',()=>{visibleCount+=PAGE_SIZE;render();});
   $('library-scope').addEventListener('change',()=>{filters.libraryScope=$('library-scope').value;updateFilters();});
+  $('library-note').addEventListener('click',event=>{if(!event.target.closest('[data-clear-reference-prices]'))return;filters.budget=null;filters.store='';updateFilters({sync:true});});
   $('data-scope').addEventListener('change',()=>{filters.dataScope=$('data-scope').value;updateFilters();});
   $('search-form').addEventListener('submit',event=>{event.preventDefault();clearTimeout(searchTimeout);searchTimeout=null;filters.query=$('food-search').value.trim();render();$('results').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});});
   $('food-search').addEventListener('input',()=>{clearTimeout(searchTimeout);searchTimeout=setTimeout(()=>{searchTimeout=null;filters.query=$('food-search').value.trim();render();},160);});
@@ -900,6 +962,7 @@ function applyDataset(assembled){
   dataset=assembled.dataset;
   products=dataset.products;
   missingFiles=assembled.missing;
+  optionalMissingFiles=assembled.optionalMissing??[];
   const coverage=hkLabelCoverage(products);
   $('coverage-products').textContent=number(coverage.original);
   $('coverage-nutrition').textContent=number(coverage.anyNutrition);
@@ -910,6 +973,8 @@ function applyDataset(assembled){
   let status='';
   if(dataset.imports?.pricewatch)status=`已匯入消委會 ${number(dataset.imports.pricewatch.importedCount)} 項一般食品；標籤另按 Open Food Facts、品牌／香港零售商資料逐件核對。價格資料唔包含營養或過敏聲明。`;
   if(dataset.enrichment&&assembled.priced){status=`以上全部按原有香港格價目錄計算。「有營養參考數值」包含部分資料、社群及次級參考；「香港來源已讀」另行核對品牌／香港零售商網頁或包裝圖片，並非現批實物檢驗。未用額外無價格食品計入1,000款目標。`;}
+  const fdcCount=products.filter(isFdcReference).length;
+  if(fdcCount)status+=` 另有 ${number(fdcCount)} 項 USDA 海外品牌食品參考，未有香港價格，另列而不計入上述香港覆蓋。`;
   const gaps=[];
   const missing=assembled.missing;
   if(!assembled.priced)gaps.push('整批價格資料暫未載入；目前只顯示逐件核對嘅小型資料集。');
@@ -994,7 +1059,7 @@ async function loadData({byUser=false,slot=''}={}){
     if(assembled.fatal){if(first)showLoadFailure();else renderLoadNotice(assembled.missing);console.error('NutriCompare dataset loading failed: core product data unavailable');return;}
     const outcome=applyDataset(assembled);
     if(!first){
-      const message=assembled.missing.length?'仍然有資料未能載入，可以遲啲再試。':
+      const message=assembled.missing.length||assembled.optionalMissing?.length?'仍然有資料未能載入，可以遲啲再試。':
         outcome.reapplied?'資料已經載入齊，已經再讀一次連結入面嘅條件同比較食品。':'資料已經載入齊，你揀嘅條件保持不變。';
       toast(message+(outcome.dropped?`已移除 ${outcome.dropped} 項未能符合過敏條件嘅比較食品。`:''));
     }
@@ -1015,7 +1080,7 @@ function start(){
   $('allergy-options').innerHTML=Object.entries(allergens).map(([id,label])=>`<label><input type="checkbox" name="allergen" value="${id}">${label}</label>`).join('');
   if(window.matchMedia('(max-width:760px)').matches)$('filter-details').open=false;
   initAssistant();
-  import('./ai-config.mjs?v=111').then(module=>{
+  import('./ai-config.mjs?v=112').then(module=>{
     if(!module.AI_ASSISTANT||typeof module.AI_ASSISTANT!=='object')throw new Error('AI_ASSISTANT is missing');
     AI_ASSISTANT=module.AI_ASSISTANT;
     initAssistant();
@@ -1028,6 +1093,13 @@ function start(){
     const storeIds=[...new Set(products.flatMap(product=>(product.prices??[]).map(price=>price.store)))];
     const state=filtersFromParams(new URL(url).search,{storeIds,base:{...filters,allergens:[...filters.allergens]},products,brandIndex});
     if(!state.present)return false;
+    // A validated Hong Kong shop/budget request cannot be served by an unpriced reference library.
+    // Keep explicit library requests and existing allergy choices authoritative.
+    if(!state.applied.includes('lib')&&['fdc-library','international','off-library'].includes(filters.libraryScope)
+      &&state.applied.some(key=>key==='store'||key==='budget')){
+      state.filters.libraryScope='priced';
+      state.notes.push('AI 條件包含香港商戶或預算，已切換到香港格價食品；過敏條件保留。');
+    }
     filters=state.filters;
     // Applying a new AI suggestion never relaxes the person's existing allergy choices.
     const importedSelection=new URL(url).searchParams.has('compare')?state.compareIds:selected;

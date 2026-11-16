@@ -1,0 +1,1683 @@
+{
+  "checkedAt": "2026-11-13T06:45:35.206678+00:00",
+  "auditMode": "Independent OFFLINE cached official API response-to-normalized-data audit; no new network retrieval or API request",
+  "networkRequestsMade": 0,
+  "finalDataFile": "work\\data-expansion-20261113\\fdc-reference-final.json",
+  "finalDataSha256": "bd5bf511b5a5f11a2b5872950e60fc3a68f3f038a022f4eeb4554655c9cae0a3",
+  "canonicalProductsSha256": "72647bdd70d342df05686ea468cbadd72b31cd0450f9137460fb5f83389c9f57",
+  "appDataByteIdentical": true,
+  "cachedResponses": [
+    {
+      "file": "01-search.json",
+      "sha256": "ad6e56821cd6bd66fc68dc692a1979f090240cfe9d53563279a2e0ace31b08a9",
+      "foods": 200,
+      "criteria": {
+        "dataType": [
+          "Branded"
+        ],
+        "query": "crackers",
+        "generalSearchInput": "crackers",
+        "pageNumber": 1,
+        "sortBy": "publishedDate",
+        "sortOrder": "desc",
+        "numberOfResultsPerPage": 50,
+        "pageSize": 200,
+        "requireAllWords": false,
+        "foodTypes": [
+          "Branded"
+        ]
+      }
+    },
+    {
+      "file": "02-search.json",
+      "sha256": "8ea01063384c212c7bec931f4e60c9fa759400813dcdea6bdb47b47ef2f55979",
+      "foods": 200,
+      "criteria": {
+        "dataType": [
+          "Branded"
+        ],
+        "query": "cookies",
+        "generalSearchInput": "cookies",
+        "pageNumber": 1,
+        "sortBy": "publishedDate",
+        "sortOrder": "desc",
+        "numberOfResultsPerPage": 50,
+        "pageSize": 200,
+        "requireAllWords": false,
+        "foodTypes": [
+          "Branded"
+        ]
+      }
+    }
+  ],
+  "recordCount": 359,
+  "allRowsComparedToRawCache": 359,
+  "allRowsNutrientComparisons": 3231,
+  "deterministicSample": {
+    "method": "All missing-trans-fat records, then evenly spaced FDC IDs, filled in sorted order to20",
+    "selectedIds": [
+      2778829,
+      2778830,
+      2779199,
+      2779202,
+      2771203,
+      2773237,
+      2773366,
+      2774415,
+      2774856,
+      2775024,
+      2775234,
+      2775747,
+      2776270,
+      2776297,
+      2776340,
+      2776519,
+      2776752,
+      2776796,
+      2777373,
+      2778468
+    ],
+    "results": [
+      {
+        "fdcId": 2778830,
+        "sourceQuery": "crackers",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [
+          "transFat"
+        ],
+        "issues": []
+      },
+      {
+        "fdcId": 2779202,
+        "sourceQuery": "crackers",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [
+          "transFat"
+        ],
+        "issues": []
+      },
+      {
+        "fdcId": 2779199,
+        "sourceQuery": "crackers",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [
+          "transFat",
+          "fibre"
+        ],
+        "issues": []
+      },
+      {
+        "fdcId": 2778829,
+        "sourceQuery": "crackers",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [
+          "transFat"
+        ],
+        "issues": []
+      },
+      {
+        "fdcId": 2775024,
+        "sourceQuery": "crackers",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [],
+        "issues": []
+      },
+      {
+        "fdcId": 2774856,
+        "sourceQuery": "crackers",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [],
+        "issues": []
+      },
+      {
+        "fdcId": 2775234,
+        "sourceQuery": "crackers",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [
+          "fibre"
+        ],
+        "issues": []
+      },
+      {
+        "fdcId": 2774415,
+        "sourceQuery": "crackers",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [],
+        "issues": []
+      },
+      {
+        "fdcId": 2773237,
+        "sourceQuery": "crackers",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [],
+        "issues": []
+      },
+      {
+        "fdcId": 2773366,
+        "sourceQuery": "crackers",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [
+          "sugars",
+          "fibre"
+        ],
+        "issues": []
+      },
+      {
+        "fdcId": 2771203,
+        "sourceQuery": "crackers",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [],
+        "issues": []
+      },
+      {
+        "fdcId": 2778468,
+        "sourceQuery": "cookies",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [
+          "fibre"
+        ],
+        "issues": []
+      },
+      {
+        "fdcId": 2777373,
+        "sourceQuery": "cookies",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [],
+        "issues": []
+      },
+      {
+        "fdcId": 2775747,
+        "sourceQuery": "cookies",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [],
+        "issues": []
+      },
+      {
+        "fdcId": 2776752,
+        "sourceQuery": "cookies",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [],
+        "issues": []
+      },
+      {
+        "fdcId": 2776519,
+        "sourceQuery": "cookies",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [],
+        "issues": []
+      },
+      {
+        "fdcId": 2776796,
+        "sourceQuery": "cookies",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [],
+        "issues": []
+      },
+      {
+        "fdcId": 2776297,
+        "sourceQuery": "cookies",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [],
+        "issues": []
+      },
+      {
+        "fdcId": 2776340,
+        "sourceQuery": "cookies",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [],
+        "issues": []
+      },
+      {
+        "fdcId": 2776270,
+        "sourceQuery": "cookies",
+        "nutrientFieldsCompared": 9,
+        "missingFields": [],
+        "issues": []
+      }
+    ]
+  },
+  "invalidGtinCount": 0,
+  "duplicateFdcIds": 0,
+  "duplicateCanonicalGtins": 0,
+  "complete1plus7": 317,
+  "missingValues": {
+    "energyKcal": 0,
+    "protein": 22,
+    "fat": 0,
+    "saturatedFat": 0,
+    "transFat": 4,
+    "carbohydrates": 0,
+    "sugars": 17,
+    "sodiumMg": 0,
+    "fibre": 111
+  },
+  "marketCounts": {
+    "United States": 359
+  },
+  "sourceMarketCodeCounts": {
+    "US": 359
+  },
+  "sourceServingUnitCounts": {
+    "GRM": 359
+  },
+  "publicationDateRange": [
+    "2026-07-23",
+    "2026-10-22"
+  ],
+  "valueRanges": {
+    "energyKcal": [
+      73.0,
+      556
+    ],
+    "protein": [
+      0.0,
+      30.8
+    ],
+    "fat": [
+      0.0,
+      32.3
+    ],
+    "saturatedFat": [
+      0.0,
+      16.7
+    ],
+    "transFat": [
+      0.0,
+      0.5
+    ],
+    "carbohydrates": [
+      8.57,
+      87.5
+    ],
+    "sugars": [
+      0.0,
+      50.0
+    ],
+    "sodiumMg": [
+      0.0,
+      1420.0
+    ],
+    "fibre": [
+      0.0,
+      41.3
+    ]
+  },
+  "derivationCodeCounts": {
+    "LCSA": 2937,
+    "LCSL": 150,
+    "LCSE": 130,
+    "LCCS": 10
+  },
+  "lessThanQualifierRecords": [
+    {
+      "fdcId": 2778836,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778584,
+      "field": "protein",
+      "rawStandardizedBoundValue": 6.67,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778584,
+      "field": "sugars",
+      "rawStandardizedBoundValue": 6.67,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778586,
+      "field": "protein",
+      "rawStandardizedBoundValue": 6.67,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778585,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 6.7,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778841,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.6,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778867,
+      "field": "sugars",
+      "rawStandardizedBoundValue": 3.33,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778867,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778876,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2779200,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 6.7,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2779201,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 2.0,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2779199,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 2.0,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778866,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778838,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778868,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778865,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778624,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 2.6,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778869,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.8,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778266,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 1.0,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2776749,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2777066,
+      "field": "sugars",
+      "rawStandardizedBoundValue": 2.38,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2777066,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 2.4,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2777067,
+      "field": "sugars",
+      "rawStandardizedBoundValue": 2.38,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2777067,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 2.4,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2777068,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.6,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2776762,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2776772,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2776788,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 6.7,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2776708,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2776710,
+      "field": "sugars",
+      "rawStandardizedBoundValue": 3.33,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2776176,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.6,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2776151,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 2.5,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775493,
+      "field": "sugars",
+      "rawStandardizedBoundValue": 14.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775508,
+      "field": "protein",
+      "rawStandardizedBoundValue": 6.67,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775499,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 2.6,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2774847,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775026,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775030,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.4,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775037,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.4,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775033,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775511,
+      "field": "protein",
+      "rawStandardizedBoundValue": 6.67,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2774846,
+      "field": "protein",
+      "rawStandardizedBoundValue": 6.25,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2774860,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 6.7,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775494,
+      "field": "protein",
+      "rawStandardizedBoundValue": 6.25,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775503,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 2.6,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775032,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.4,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775023,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.4,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775019,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.4,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775509,
+      "field": "protein",
+      "rawStandardizedBoundValue": 6.67,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2774845,
+      "field": "protein",
+      "rawStandardizedBoundValue": 6.25,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2774845,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 6.2,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2774401,
+      "field": "protein",
+      "rawStandardizedBoundValue": 6.25,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775218,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.6,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2774876,
+      "field": "protein",
+      "rawStandardizedBoundValue": 7.14,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2774861,
+      "field": "protein",
+      "rawStandardizedBoundValue": 6.25,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2774850,
+      "field": "protein",
+      "rawStandardizedBoundValue": 6.25,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775228,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.6,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775224,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775225,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775232,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775234,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.6,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775233,
+      "field": "sugars",
+      "rawStandardizedBoundValue": 3.33,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775233,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775226,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.6,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2775223,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2774416,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 2.8,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2774418,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 4.2,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2774844,
+      "field": "protein",
+      "rawStandardizedBoundValue": 6.67,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2774844,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 6.7,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2774877,
+      "field": "protein",
+      "rawStandardizedBoundValue": 6.67,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2774877,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 6.7,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773399,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773279,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773256,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773181,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773180,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773328,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773231,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773258,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773174,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773263,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773413,
+      "field": "sugars",
+      "rawStandardizedBoundValue": 3.33,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773274,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773239,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773380,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 4.8,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773382,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2772635,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 4.8,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773689,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.6,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773214,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773245,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773177,
+      "field": "sugars",
+      "rawStandardizedBoundValue": 3.33,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773177,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773406,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773280,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773314,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773248,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773330,
+      "field": "sugars",
+      "rawStandardizedBoundValue": 3.33,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773330,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773332,
+      "field": "sugars",
+      "rawStandardizedBoundValue": 3.33,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773332,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773355,
+      "field": "sugars",
+      "rawStandardizedBoundValue": 3.33,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773355,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2774090,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2772192,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.6,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773366,
+      "field": "sugars",
+      "rawStandardizedBoundValue": 3.33,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773366,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773534,
+      "field": "sugars",
+      "rawStandardizedBoundValue": 3.33,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773534,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773234,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773171,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773204,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 4.8,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773170,
+      "field": "sugars",
+      "rawStandardizedBoundValue": 3.33,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773170,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773973,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 2.0,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773186,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773316,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2773288,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778948,
+      "field": "protein",
+      "rawStandardizedBoundValue": 3.57,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778723,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 2.4,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778608,
+      "field": "protein",
+      "rawStandardizedBoundValue": 3.12,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778430,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.0,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778597,
+      "field": "protein",
+      "rawStandardizedBoundValue": 4.76,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778557,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 2.4,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778551,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.6,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778462,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778730,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 2.6,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778727,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.0,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778517,
+      "field": "protein",
+      "rawStandardizedBoundValue": 3.85,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778915,
+      "field": "protein",
+      "rawStandardizedBoundValue": 3.57,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778915,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.6,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778556,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.6,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778465,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.2,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778498,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 2.4,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778720,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 2.6,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778468,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.2,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2779077,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 1.0,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778225,
+      "field": "protein",
+      "rawStandardizedBoundValue": 5.0,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778224,
+      "field": "protein",
+      "rawStandardizedBoundValue": 5.0,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778419,
+      "field": "sugars",
+      "rawStandardizedBoundValue": 3.12,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778419,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.1,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778450,
+      "field": "sugars",
+      "rawStandardizedBoundValue": 3.23,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2778508,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 1.1,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2776614,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 1.8,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2777322,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2777015,
+      "field": "protein",
+      "rawStandardizedBoundValue": 5.0,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2776604,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 1.8,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2776334,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 2.9,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2776287,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 3.0,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2777016,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 4.3,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    },
+    {
+      "fdcId": 2776777,
+      "field": "fibre",
+      "rawStandardizedBoundValue": 4.0,
+      "normalizedDisplayValue": null,
+      "maskedAsUnknown": true,
+      "code": "LCSL",
+      "description": "Calculated from a less than value per serving size measure"
+    }
+  ],
+  "lessThanCountsByField": {
+    "fibre": 111,
+    "protein": 22,
+    "sugars": 17
+  },
+  "lessThanAffectedProducts": 133,
+  "lessThanCoreAffectedProducts": 38,
+  "lessThanTransformation": "LCSL/less-than derived source numeric bounds remain in nutrientEvidence; normalized nutrient display/ranking value is null. Ordinary source values are unchanged; absent nutrients remain null.",
+  "acceptedNormalizations": [
+    "Leading/trailing description whitespace is trimmed without product substitution.",
+    "US and GRM source codes normalize to United States and grams; original source codes remain available."
+  ],
+  "failureCount": 0,
+  "failures": [],
+  "limitations": [
+    "Audits cached official payloads only, not a second independent network retrieval.",
+    "Source label/analytical quality, current shelf availability, physical packaging and complete allergen statements are not verified.",
+    "The two bounded food searches are not a representative market sample and do not prove the latest product outside these queries.",
+    "The old partial-ZIP dataset is rejected and is not the subject of this final audit."
+  ]
+}

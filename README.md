@@ -1,5 +1,15 @@
 # NutriCompare HK
 
+## Version 1.12 release: 16 November 2026
+
+This release adds 358 distinct US-market USDA FoodData Central branded-food reference records under CC0, retrieved on 13 November 2026. Of these, 316 have complete 1+7 numeric fields; the remaining 42 have partial tables because of missing values or source less-than bounds. Source publication dates range from 23 July to 22 October 2026. Original Hong Kong nutrition, prices and allergy decisions are unchanged. The default priced catalogue remains 1,788; the international reference scope contains 1,615 records (1,257 OFF plus 358 USDA).
+
+Across 133 records, 150 source-derived LCSL (less-than) nutrient fields (111 fibre, 22 protein and 17 sugars) are displayed as unknown (`null`) and blocked from exact numeric ranking. Four original missing trans-fat values also stay unknown. Total and available carbohydrate are ranked in separate unit/definition groups; unspecified definitions remain visible but unranked. Every USDA reference card shows its GTIN so same-title source records can be distinguished.
+
+Two exact existing Vita products now have locally hosted original front/label photographs, with macrofactor/Open Food Facts author, dates and CC BY-SA 3.0 credits. Photographs do not establish current physical-pack or allergen verification.
+
+[Release changes and validation](docs/v112-release.md) · [Source and import rules](docs/v112-data-sources.md). Earlier sections below are historical version records. One live MaaS answer-to-confirmed-filter flow was checked on 16 November 2026 (Wellcome lemon tea, HK$20 budget, sugar ranking; five results). This is one assistant-run integration case, not a complete AI evaluation or participant test. Real-device/user checks remain pending.
+
 ## Version 1.11 release
 
 This release prepares the reviewed v1.11 website for the existing GitHub Pages site. Source data and MaaS configuration are unchanged. The preview verification below is a historical record from before publication; its unverified full AI roundtrip and real-device checks remain explicit limits.
@@ -77,7 +87,7 @@ Design references: [FoodSwitch](https://www.foodswitch.com/app/foodswitch/), [Yu
 
 ## Features
 
-- Chinese/English food and brand search across3,045 records:1,788 original HK price-comparison products plus1,257 separately labelled, unpriced OFF community nutrition references.24-item progressive loading; original priced catalogue shown by default. This release adds no new unpriced products; newly identified duplicate references are removed.
+- Chinese/English food and brand search across 3,403 records: 1,788 original HK priced products, 1,257 separate OFF community references and 358 separate USDA overseas reference records. Progressive loading shows 24 at a time; the original priced catalogue remains the default.
 - Whole-pack HKD budget and merchant filters; verified origin field when available.
 - Conservative multi-allergen filtering: contains, may-contain and incomplete records are excluded.
 - Compare up to three products per 100 g/ml, per pack or inner pack when known, or at a custom amount. Missing values remain unknown and package prices stay on their original price basis.

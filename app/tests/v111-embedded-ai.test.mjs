@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { embeddedAssistantUrl, validatedResultUrl, isTrustedAssistantMessage, resultLinkFromAnswer, MAAS_ORIGIN } from '../embedded-ai.mjs?v=111';
+import { embeddedAssistantUrl, validatedResultUrl, isTrustedAssistantMessage, resultLinkFromAnswer, MAAS_ORIGIN } from '../embedded-ai.mjs?v=112';
 
 const now = Date.UTC(2026, 10, 13);
 const config = { url: 'https://maas.eduhk.hk/chat/share?shareId=public-share', linkExpires: '2027-11-12' };

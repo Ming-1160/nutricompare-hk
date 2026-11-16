@@ -8,8 +8,8 @@
   <meta name="description" content="按口味、預算及過敏限制，比較包裝食品營養、香港超市價格與購買渠道。每項資料有來源，未知資料清楚標示。">
   <title>NutriCompare HK｜比較清楚，再作選擇</title>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=111">
-  <link rel="stylesheet" href="redesign.css?v=111">
+  <link rel="stylesheet" href="styles.css?v=112">
+  <link rel="stylesheet" href="redesign.css?v=112">
   <script>
     // If the program cannot start (a file is missing or damaged), say so instead of showing "loading" forever.
     (function () {
@@ -34,7 +34,7 @@
       }, true);
     })();
   </script>
-  <script type="module" src="app.mjs?v=111"></script>
+  <script type="module" src="app.mjs?v=112"></script>
 </head>
 <body>
 <a class="skip-link" href="#results">跳至食品結果</a>
@@ -42,7 +42,7 @@
   <div class="header-inner">
     <a class="brand" href="./" aria-label="NutriCompare HK 主頁"><span class="brand-icon" aria-hidden="true">n<span>c</span></span><span>NutriCompare<span class="brand-hk">HK</span></span></a>
     <nav aria-label="主要導覽"><a class="nav-current" href="#explore">探索食品</a><button class="text-button" id="sources-button">資料來源</button><a class="nav-about" href="../project.html">關於計劃</a><button class="text-size-toggle" id="text-size-toggle" type="button" aria-pressed="false" title="放大網站文字">A+ 大字</button></nav>
-    <span class="prototype-label"><span></span> 功能原型 v1.11</span>
+    <span class="prototype-label"><span></span> 功能原型 v1.12</span>
   </div>
 </header>
 <main>
@@ -93,7 +93,7 @@
           <details class="filter-secondary">
             <summary>更多篩選：產地及資料</summary>
             <fieldset><legend>產地</legend><label class="sr-only" for="origin">選擇已核對產地</label><select id="origin"><option value="">所有／未確認產地</option></select><p class="field-note">品牌所屬國家唔等於生產地。</p></fieldset>
-            <fieldset><legend>資料範圍</legend><label class="sr-only" for="library-scope">選擇資料庫</label><select id="library-scope"><option value="priced">香港格價食品（原有目錄）</option><option value="off-library">OFF 擴展營養參考（未有價格）</option><option value="">全部資料庫</option></select><label class="sr-only" for="data-scope">顯示資料範圍</label><select id="data-scope" class="second-select"><option value="">全部食品（包含只有價格）</option><option value="nutrition">只看有營養數值</option><option value="hk-nutrition">只看已讀香港營養來源</option><option value="comparable">只看明確每100g／ml基準</option><option value="hk-label">只看有香港完整過敏聲明</option></select><p class="field-note">OFF 參考庫屬社群資料，未有香港價格。</p></fieldset>
+            <fieldset><legend>資料範圍</legend><label class="sr-only" for="library-scope">選擇資料庫</label><select id="library-scope"><option value="priced">香港格價食品（原有目錄）</option><option value="international">國際營養參考（OFF＋USDA；無香港價格）</option><option value="fdc-library">USDA 海外品牌食品參考</option><option value="off-library">只看 OFF 社群營養參考</option><option value="">全部資料庫</option></select><label class="sr-only" for="data-scope">顯示資料範圍</label><select id="data-scope" class="second-select"><option value="">全部食品（包含只有價格）</option><option value="nutrition">只看有營養數值</option><option value="hk-nutrition">只看已讀香港營養來源</option><option value="comparable">只看明確每100g／ml基準</option><option value="hk-label">只看有香港完整過敏聲明</option></select><p class="field-note">國際參考唔等同香港現售配方；USDA 每項紀錄標明來源市場，OFF 市場標記由社群提供。兩者未有已核實香港價格；來源國家唔代表生產地。</p></fieldset>
           </details>
         </div>
       </details>
@@ -102,6 +102,7 @@
     <section class="results" id="results" aria-label="食品搜尋結果">
       <div class="category-tabs" role="group" aria-label="食品分類"><button class="active" data-category="" aria-pressed="true"><svg class="category-icon" aria-hidden="true" viewBox="0 0 40 40"><use href="assets/categories.svg#all"></use></svg><span>全部</span></button><button data-category="biscuits" aria-pressed="false"><svg class="category-icon" aria-hidden="true" viewBox="0 0 40 40"><use href="assets/categories.svg#biscuits"></use></svg><span>餅乾</span></button><button data-category="snacks" aria-pressed="false"><svg class="category-icon" aria-hidden="true" viewBox="0 0 40 40"><use href="assets/categories.svg#snacks"></use></svg><span>小食</span></button><button data-category="drinks" aria-pressed="false"><svg class="category-icon" aria-hidden="true" viewBox="0 0 40 40"><use href="assets/categories.svg#drinks"></use></svg><span>飲品</span></button><button data-category="bakery" aria-pressed="false"><svg class="category-icon" aria-hidden="true" viewBox="0 0 40 40"><use href="assets/categories.svg#bakery"></use></svg><span>麵包</span></button><button data-category="dairy" aria-pressed="false"><svg class="category-icon" aria-hidden="true" viewBox="0 0 40 40"><use href="assets/categories.svg#dairy"></use></svg><span>奶 / 蛋</span></button><button data-category="pantry" aria-pressed="false"><svg class="category-icon" aria-hidden="true" viewBox="0 0 40 40"><use href="assets/categories.svg#pantry"></use></svg><span>糧油調味</span></button><button data-category="meals" aria-pressed="false"><svg class="category-icon" aria-hidden="true" viewBox="0 0 40 40"><use href="assets/categories.svg#meals"></use></svg><span>麵食食材</span></button></div>
       <div class="results-toolbar"><div><h2>揀啱條件，慢慢比較<span class="results-subtitle">食品結果</span></h2><p id="result-count" role="status">正在載入食品資料…</p></div><div class="sort-field"><label for="sort">排序</label><select id="sort" aria-label="排序"><option value="relevance">資料較完整優先</option><option value="price-asc">價格：低至高</option><option value="unit-price-asc">單位價：低至高</option><option value="carbs-asc">碳水：低至高</option><option value="sugar-asc">糖：低至高</option><option value="sodium-asc">鈉：低至高</option><option value="protein-desc">蛋白質：高至低</option></select></div></div>
+      <div id="library-note" class="library-note" role="status" hidden></div>
       <div id="load-notice" class="link-banner warning load-notice" role="alert" hidden></div>
       <p class="inline-notice" id="search-feedback" role="status" hidden></p>
       <div id="link-banner" class="link-banner" role="status" hidden></div>

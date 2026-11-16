@@ -69,7 +69,7 @@
   </style>
 </head>
 <body>
-<header><div class="wrap bar"><a class="brand" href="./"><span class="brand-icon" aria-hidden="true">nc</span>NutriCompare <small>HK</small></a><a class="cta" href="./">試用原型 →</a></div></header>
+<header><div class="wrap bar"><a class="brand" href="./"><span class="brand-icon" aria-hidden="true">nc</span>NutriCompare <small>HK</small></a><a class="cta" href="./">試用原型 →</a></div></header><section class="wrap" aria-label="v1.12資料更新" style="margin-top:22px"><h2>v1.12：海外營養參考與產品照片</h2><p>新增358筆美國市場USDA品牌食品參考紀錄（CC0）；316筆有完整1+7數字，其餘42筆因缺值或來源的「少於某值」標示而只有部分1+7數字。133款產品共有150個來源標為「少於某值」（LCSL）的欄位（111個纖維、22個蛋白質、17個糖），均以未知顯示，不用於精確數值排序；原有4款的反式脂肪缺值亦保留未知，並非全部42款都缺反式脂肪。來源紀錄出版於2026年7月23日至10月22日，查閱於11月13日。可在篩選條件選擇海外／USDA參考庫；原有香港價格及過敏規則保留。兩款維他產品加入有作者、日期及CC BY-SA3.0署名的實物來源照片，未核對當前批次。</p><p><a href="docs/v112-data-sources.md">資料來源、授權與匯入規則</a></p></section>
 <main class="wrap">
   <div class="hero">
     <p class="eyebrow">ITC2010 Digital Literacy · 小組項目 · v1.11</p>
@@ -117,7 +117,7 @@
       <tbody>
         <tr><th scope="row">目標用家</th><td>香港第二型糖尿病成人及照顧者（唔係所有慢性病人）</td></tr>
         <tr><th scope="row">核心功能</th><td>AI 助手／一句話篩選 · 預算及商戶篩選 · 10 類過敏排除 · 同一基準營養比較 · 來源及購買渠道 · 分享條件連結 · 大字模式</td></tr>
-        <tr><th scope="row">資料</th><td>消委會格價資訊通開放資料（1,788 款食品、4,496 筆價格）；逐件核對嘅香港品牌、零售商標籤同 Open Food Facts 原圖</td></tr>
+        <tr><th scope="row">資料</th><td>香港格價目錄（消委會格價資訊通 1,780 款，加 8 款獨立來源；合計 4,496 筆價格）；逐件核對嘅香港品牌、零售商標籤同 Open Food Facts 原圖</td></tr>
         <tr><th scope="row">平台及原因</th><td><strong>GitHub Pages</strong>：靜態網站，免費、不需登入、冇第三方追蹤，組員同老師開條連結就用得。<br><strong>EdUHK MaaS</strong>：課程 Lesson 2 教嘅 AI 平台，用家唔使登入，亦唔使喺公開網站放 API key。</td></tr>
       </tbody>
     </table></div>
@@ -178,7 +178,7 @@
     <span class="step">Step 5 · Limitations &amp; future improvement</span>
     <h2 id="limits-title">限制同之後點改</h2>
     <div class="grid">
-      <div class="card"><h3>而家做唔到</h3><ul class="clean"><li>1,788 款之中，只有 328 款有營養數值，125 款有完整過敏聲明</li><li>價格係 10 月 21 日嘅快照，唔係即時價，亦唔知有冇貨</li><li>只包括消委會清單入面嘅商戶同商品</li><li>MaaS 連結有到期日（2027 年 11 月 12 日）；AI 用量由一個學生帳戶每月 1,000 點扣（一條問題約 3 點），用完助手就會停</li><li>AI 助手嘅回覆未經組員或者真實用家測試；佢可能理解錯，所以網站一定會列出條件俾用家核對</li><li>未做過患者或者照顧者測試，亦冇臨床驗證</li><li>「一句話篩選」用固定字詞，唔係 AI；少見嘅講法仍然可能讀錯，所以每個條件都會列出嚟俾用家核對同移除，過敏以篩選剔選為準</li></ul></div>
+      <div class="card"><h3>而家做唔到</h3><ul class="clean"><li>1,788 款之中，只有 328 款有營養數值，125 款有完整過敏聲明</li><li>價格係 10 月 21 日嘅快照，唔係即時價，亦唔知有冇貨</li><li>只包括本次目錄收錄嘅商戶同商品，唔代表完整香港市場</li><li>MaaS 連結有到期日（2027 年 11 月 12 日）；AI 用量由一個學生帳戶每月 1,000 點扣（一條問題約 3 點），用完助手就會停</li><li>AI 助手嘅回覆未經組員或者真實用家測試；佢可能理解錯，所以網站一定會列出條件俾用家核對</li><li>未做過患者或者照顧者測試，亦冇臨床驗證</li><li>「一句話篩選」用固定字詞，唔係 AI；少見嘅講法仍然可能讀錯，所以每個條件都會列出嚟俾用家核對同移除，過敏以篩選剔選為準</li></ul></div>
       <div class="card"><h3>之後改進</h3><ul class="clean"><li>優先補 demo 會用到嘅類別（飲品、即食麵、餅乾）嘅完整標籤</li><li>完成用家測試，再按結果修改</li><li>加英文介面</li><li>研究條碼／相片輔助，但要另外設計核對步驟</li><li>如果要搵患者測試，要先處理同意同私隱安排</li></ul></div>
     </div>
     <p class="source">老師 Lesson 1：坦白講出限制，個項目會更可信。</p>
@@ -208,7 +208,7 @@
     <p>香港營養來源已讀 <strong>182 / 1,000</strong> 款目標，其中 143 款有完整「1+7」數值。只計原有有價格嘅商品；冇價格嘅 OFF 參考庫唔計入目標。</p>
     <progress max="1000" value="182" aria-label="香港營養來源已讀 182 / 1,000"></progress>
     <div class="grid">
-      <div class="card"><div class="stat">1,788</div><p class="stat-note">香港格價食品（消委會）</p></div>
+      <div class="card"><div class="stat">1,788</div><p class="stat-note">香港格價目錄（含獨立來源）</p></div>
       <div class="card"><div class="stat">328</div><p class="stat-note">有任何營養數值</p></div>
       <div class="card"><div class="stat">182</div><p class="stat-note">已人工閱讀香港營養來源</p></div>
       <div class="card"><div class="stat">125</div><p class="stat-note">有完整過敏聲明</p></div>

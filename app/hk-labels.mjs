@@ -1,4 +1,5 @@
-import {hasNutrition,barcodeKey} from './enrichment.mjs?v=111';
+import {hasNutrition,barcodeKey} from './enrichment.mjs?v=112';
+import {isInternationalReference} from './international-library.mjs?v=112';
 
 /** A checked HK source is not a claim about the current physical batch. */
 export function hasReviewedHkNutrition(product){
@@ -7,7 +8,7 @@ export function hasReviewedHkNutrition(product){
   return product.dataStatus==='hk-retailer-label'&&product.nutrition?.region==='hk-retailer-online';
 }
 export function hkLabelCoverage(products){
-  const original=products.filter(p=>p.libraryGroup!=='off-library');
+  const original=products.filter(p=>!isInternationalReference(p));
   const reviewed=original.filter(hasReviewedHkNutrition);
   return {original:original.length,anyNutrition:original.filter(hasNutrition).length,reviewedNutrition:reviewed.length,
     completeAllergy:original.filter(p=>p.allergens?.status==='complete').length,
@@ -16,7 +17,7 @@ export function hkLabelCoverage(products){
 }
 
 export function applyHkLabelReview(dataset,overlay={}){
-  const originalIds=new Set(dataset.products.filter(p=>p.libraryGroup!=='off-library').map(p=>p.id));
+  const originalIds=new Set(dataset.products.filter(p=>!isInternationalReference(p)).map(p=>p.id));
   const byId=new Map(dataset.products.map(p=>[p.id,p]));
   let nutritionAdded=0,nutritionUpgraded=0,allergyUpgraded=0;
   for(const row of overlay.products??[]){
@@ -61,10 +62,10 @@ export function applyHkLabelReview(dataset,overlay={}){
     byId.set(row.id,next);
   }
   // A newly read physical barcode can reveal an old unpriced library duplicate.
-  const originalBarcodes=new Set([...byId.values()].filter(p=>p.libraryGroup!=='off-library').map(p=>barcodeKey(p.barcode)).filter(Boolean));
+  const originalBarcodes=new Set([...byId.values()].filter(p=>!isInternationalReference(p)).map(p=>barcodeKey(p.barcode)).filter(Boolean));
   const products=[...byId.values()].filter(p=>p.libraryGroup!=='off-library'||!originalBarcodes.has(barcodeKey(p.barcode)));
   const enrichment=dataset.enrichment?{...dataset.enrichment,
-    pricedNutrition:products.filter(p=>p.libraryGroup!=='off-library'&&hasNutrition(p)).length,
+    pricedNutrition:products.filter(p=>!isInternationalReference(p)&&hasNutrition(p)).length,
     added:products.filter(p=>p.libraryGroup==='off-library').length,
     nutritionCount:products.filter(hasNutrition).length,
     explicitBasis:products.filter(p=>hasNutrition(p)&&['g','ml'].includes(p.nutrition?.basisUnit)).length}:undefined;
